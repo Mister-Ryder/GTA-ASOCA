@@ -1,0 +1,13 @@
+# Tested direct dependencies; Python 3.11.17 on Linux, CUDA 12.8.
+# The PyTorch local-version pin selects the tested CUDA wheel.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.7.1+cu128
+monai==1.5.1
+numpy==1.26.4
+scipy==1.15.3
+scikit-image==0.25.2
+SimpleITK==2.5.2
+scikit-learn==1.7.2
+pandas==2.3.3
+tqdm==4.67.1
+# Optional tested plotting runtime: install requirements-plot.txt separately.

@@ -1,0 +1,3 @@
+# Optional curve rendering after requirements.txt; runtime import verified.
+# Produced figures have not yet been visually reviewed.
+matplotlib==3.10.7

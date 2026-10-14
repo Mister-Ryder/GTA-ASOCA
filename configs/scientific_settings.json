@@ -1,0 +1,122 @@
+{
+  "role": "GTA fidelity development, not a publication or independent-test protocol",
+  "fold": 0,
+  "split_seed": 20261014,
+  "training_seed": 20261013,
+  "internal_diagnostic_cases": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "classifier": {
+    "epochs": 80,
+    "steps": 64,
+    "total_updates": 5120,
+    "patch_size": 128,
+    "batch_size": 2,
+    "learning_rate": 0.0001,
+    "warmup_epochs": 5,
+    "sampling": "geometry",
+    "sampling_fov": "image-body",
+    "stats_samples": 2048,
+    "validation_patches": 512,
+    "eval_every": 5,
+    "guidance_weight": 0.1,
+    "init_domain": "airway",
+    "semantic_head_policy": "reinit",
+    "diagnostic_checkpoint_selection_metric": "mean_head_nonempty_balanced_accuracy",
+    "main_initialization_checkpoint": "fixed80-epoch final.pt",
+    "best_selection_checkpoint_role": "classification diagnostic reference only; not main initialization",
+    "classification_accuracy_is_main_startup_gate": false,
+    "pretraining_purpose": "stabilize multitask convergence; training-derived prior features serve segmentation",
+    "selection_uses_heldout_masks_for_crop": false,
+    "outer8_used_for_selection": false,
+    "smoke_budget": {
+      "epochs": 2,
+      "steps": 2,
+      "separate_output_required": true
+    },
+    "main_initialization": "fixed final80 final.pt",
+    "best_selection_role": "attribute diagnostic only",
+    "accuracy_is_GTA_startup_gate": false
+  },
+  "segmentation_starting_recipe": {
+    "cohort": "internal28",
+    "epochs": 200,
+    "steps": 125,
+    "total_updates": 25000,
+    "patch_size": 128,
+    "batch_size": 2,
+    "learning_rate": 0.0003,
+    "warmup_epochs": 5,
+    "seg_loss": "dice_ce",
+    "sampling": "standard",
+    "sampling_fov": "image-body",
+    "decoder_deep_supervision": true,
+    "backbone_warmup_epochs": 0,
+    "freeze_epochs": 50,
+    "partial_until": 70,
+    "classifier_lr_scale": 0.1,
+    "classifier_weight": 0.1,
+    "guidance_weight": 0.1,
+    "gaussian_weight": 10.0,
+    "gaussian_late_weight": null,
+    "optional_ramp_example": {
+      "late_weight": 30.0,
+      "start_epoch": 150,
+      "end_epoch": 200,
+      "enabled_by_default": false
+    },
+    "save_every": 10,
+    "gradient_probe_every": 250,
+    "checkpoint_selection": "fixed final",
+    "periodic_evaluation": "sequential internal-four after training; explicitly recorded extra inference cost",
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "auxiliary_metric": "cldice",
+    "outer8_used_for_selection": false,
+    "protocol_prerequisites": "fixed80 final.pt, completed pretraining budget, frozen source identity, patient isolation, finite initialization parameters and strict transfer shapes; no attribute-accuracy threshold",
+    "public_direct_CLI_enforcement": "patient scope, manifest identity, pretrained flag, smoke role and key/shape compatibility are checked; epoch79,5120 updates,completion marker,initialization source and finite-parameter readiness are not comprehensively enforced by the public train.py. Private readiness wrapper is not published."
+  },
+  "standard_unet_diagnostic": {
+    "method": "unet",
+    "same_segmentation_loss_sampler_FOV_DS_budget": true,
+    "external_baseline_paper_reproduction_claim": false
+  },
+  "output_root_environment_override": "GTA_OUTPUT_ROOT",
+  "historical_initialization": {
+    "backbone": "initialization/airway_backbone_epoch599.pkl",
+    "classifier_features": "initialization/airway_classifier_improved_epoch100.pkl",
+    "full_gta_optional_audit": "initialization/airway_gta_epoch350.pkl",
+    "source": "BAS airway historical feature warm-start; coronary semantic heads reinitialized",
+    "historical_best_checkpoint_identity_verified": false
+  },
+  "repository": "Mister-Ryder/GTA-ASOCA",
+  "paths": {
+    "manifest": "${ASOCA_MANIFEST}",
+    "raw_root": "${ASOCA_RAW_ROOT}",
+    "output_root": "${GTA_OUTPUT_ROOT}",
+    "airway_backbone": "${GTA_AIRWAY_BACKBONE_INIT}",
+    "airway_classifier": "${GTA_AIRWAY_CLASSIFIER_INIT}",
+    "coronary_classifier": "${GTA_CORONARY_CLASSIFIER_INIT}"
+  },
+  "paths_are_descriptive": "Pass actual environment variables to CLI; entry points do not interpolate JSON strings.",
+  "execution_status": {
+    "development_only": true,
+    "classifier80_complete": true,
+    "main_three_stage_cuda_smoke": "passed",
+    "peak_GiB": 14.446,
+    "classifier_stage_gradient_norms": [
+      0,
+      11.919,
+      16.165
+    ],
+    "new_segmentation_results_available": false,
+    "formal_segmentation_status": "running; last observed log epoch6 at documentation review",
+    "smoke_classifier_initializer": "independent two-epoch classifier_smoke128 final.pt; mechanical only",
+    "formal_classifier_initializer": "fixed classifier80x64 final.pt"
+  }
+}

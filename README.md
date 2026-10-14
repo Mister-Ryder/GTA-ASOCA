@@ -5,27 +5,34 @@ artery segmentation. The intended AEI study concerns the same engineering
 problem across airway and coronary CT: segmenting small, branching tubular
 structures under severe foreground and scale imbalance, with intrinsic
 hierarchical, structural and spatial priors guiding multiscale features. The
-auxiliary tasks provide a multitask inductive bias and help stabilize
-optimization; the final task is segmentation, judged by Dice and ASSD. It is
+auxiliary tasks provide a multitask inductive bias and are intended to support
+stable optimization; a matched ablation has not established this benefit. The
+final task is segmentation, judged by Dice and ASSD. It is
 not a separate whole-heart architecture or an attribute-classification study.
 
-**Development status, 14 October 2026:** the execution source is fixed and
-coronary classifier pretraining has completed. The three-stage GTA CUDA smoke
-passed at `128³`, batch 2, with 14.446 GiB peak memory. Classifier gradient norms
-were `0 / 11.919 / 16.165` in frozen / partial / joint stages, respectively.
-The smoke used the independent two-epoch classifier-smoke `final.pt`, not the
-80-epoch formal classifier. These are mechanical checks, not segmentation
-results. The formal 200-epoch run is active; its last observed log epoch was 6
-at this documentation review. It uses the fixed 80-epoch classifier `final.pt`.
-New model Dice/ASSD results are not yet available. This is development source
-for `Mister-Ryder/GTA-ASOCA`.
+**Development status, 14 October 2026:** reference recipe A has completed
+`200 × 125 = 25,000` segmentation updates using the fixed 80-epoch coronary
+classifier `final.pt`. Its 20-checkpoint internal-four trajectory comprises
+80 case evaluations. Fixed-final predictions for all four patients have been
+independently checked against the original-grid GT pixels; the aggregate
+development results are reported below. The classifier required an additional
+`80 × 64 = 5,120` pretraining updates, beyond segmentation training.
+
+The earlier three-stage GTA CUDA smoke passed at `128³`, batch 2, with
+14.446 GiB peak memory and classifier gradient norms `0 / 11.919 / 16.165` in
+frozen / partial / joint stages. That mechanical check used a separate two-epoch
+classifier-smoke `final.pt`, not the formal 80-epoch initializer. B and the
+Gaussian-λ0 control remain in progress; their code and results are not included
+in this snapshot. No final winning method is designated. This is development
+source for `Mister-Ryder/GTA-ASOCA`.
 
 Historical airway initialization weights are **not provided**. Without the
 separately supplied weights, the commands describe the executed protocol but
 do not constitute a complete independent reproduction of its initialization.
 The inherited pretraining cost and historical checkpoint optimality are not
-known. A public source snapshot is released before final experimental results;
-method claims remain provisional.
+known. This public source snapshot includes only aggregate internal-development
+results, without data, weights or per-case result files; method claims remain
+provisional.
 
 ## Dataset and development split
 
@@ -383,7 +390,35 @@ measures surface distance, not connectivity. clDice and centerline measures are
 structural diagnostics. Empty-prediction distances are null; a complete-cohort
 ASSD mean is not reported if any distance is undefined.
 
-These are **previously inspected eight-case development references**, not new
+### Completed reference A and shared-recipe U-Net: internal four
+
+Both runs use the fixed final checkpoint after `200 × 125` segmentation updates.
+The four patients are `Diseased_10`, `Diseased_20`, `Normal_12`, and `Normal_3`.
+Saved predictions and original GT pixels reproduce Dice and pooled physical-mm
+ASSD on the original CT grid. All four ASSD values are defined. Values below are
+mean ± sample SD across patients (`ddof=1`), not fold or seed SD.
+
+| Fixed-final development run | Dice (%) | Pooled ASSD (mm) |
+| --- | ---: | ---: |
+| Reference GTA A | 83.185390 ± 5.262188 | 0.567825 ± 0.323106 |
+| Shared-recipe plain 3D U-Net | 81.845551 ± 7.676467 | 0.749233 ± 0.455919 |
+
+A has higher Dice and lower ASSD on `Diseased_10` and `Normal_12`, and lower
+Dice and higher ASSD on `Diseased_20` and `Normal_3`. These are four exposed
+internal development patients, not an independent test or a five-fold result.
+No significance or superiority claim follows from these means. The comparison
+includes architecture/capacity, historical airway initialization, an additional
+5,120 classifier-pretraining updates, anatomy reweighting and auxiliary
+objectives; it does not isolate a prior or Gaussian-module effect. It is not
+a same-protocol literature ranking.
+
+Reference A's training-source SHA-256 is
+`bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652`.
+Its fixed `final.pt` SHA-256 is
+`2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820`.
+The checkpoint identity is disclosed without distributing its weights.
+
+The following are **previously inspected eight-case development references**, not new
 fidelity_v2 results or a literature ranking:
 
 | Previous experiment | Mean Dice (%) | Mean pooled ASSD (mm) |

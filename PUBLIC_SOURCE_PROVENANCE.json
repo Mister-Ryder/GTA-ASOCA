@@ -2,12 +2,10 @@
   "schema_version": 1,
   "repository": "Mister-Ryder/GTA-ASOCA",
   "development_only": true,
-  "no_new_segmentation_performance_claim": true,
-  "source_only_no_data_weights_results": true,
   "source_hash_algorithm": "sha256(sorted relative_posix_path UTF8 plus original file bytes)",
   "upstream_main_code_package_sha256": "0d14f942a7d87c81d272cca0a1b3b55c458aa0da0e0da01f6b15456107e7c48b",
   "public_main_code_package_sha256": "f399ab8a3dad7ea9e52a8d453bbba9bd1f44bdce719d40d8255cb13875c91873",
-  "public_package_sha256_excluding_this_manifest": "fa3fad9af0fae985f79efc7cf8cab6bbe251bf42e67ae75678fef6c1c2539480",
+  "public_package_sha256_excluding_this_manifest": "d2e113c5dbdeed308e18f996807ff8187913bba0e7fc6bd4718e8cd6381ba960",
   "package_manifest_self_excluded": true,
   "public_file_allowlist": [
     ".gitignore",
@@ -68,12 +66,12 @@
       "bytes": 518
     },
     "PUBLIC_RELEASE_NOTES.md": {
-      "sha256": "16880f35e88c19dd454faaba7f58ab45cac683e78d8e6541277d092201a6fce1",
-      "bytes": 11217
+      "sha256": "9183207272b8b9c5e42a09bf529482844ee6e7acda65df7754d49dd850490477",
+      "bytes": 12417
     },
     "README.md": {
-      "sha256": "bbac53c26c74af27085718f6a7cf27cce1b6c625832acd92c03079f15b5dc206",
-      "bytes": 24541
+      "sha256": "c061c33824580f9655dda8ea530050df878d77574c6c88b176ef0f093c6e59d9",
+      "bytes": 26518
     },
     "classifier_pretraining/README.md": {
       "sha256": "602dc4e87b65edcdeb4ba2dfd2864056bf4980c4ea4fba297129eeb31fa6d898",
@@ -220,8 +218,8 @@
       "bytes": 500
     },
     "configs/scientific_settings.json": {
-      "sha256": "40cf876df6d9001f7c2df1e6579d2467fe0830a94674bb898ccdccb1b749ac07",
-      "bytes": 4780
+      "sha256": "5ed16a5c38dd0696455784d16ed56d455c3ae18dac1ae32273cdcb1c409fee95",
+      "bytes": 7640
     },
     "docs/methodology_and_metric_protocol.txt": {
       "sha256": "c89a85947fc56469e74a2e329a54ce7d1a5db8beae21ebf1e433e806839379cc",
@@ -287,9 +285,9 @@
       11.919,
       16.165
     ],
-    "new_segmentation_results_available": false,
     "classifier_initializer": "independent two-epoch classifier_smoke128 final.pt; mechanical only",
-    "formal_classifier_initializer": "fixed classifier80x64 final.pt"
+    "formal_classifier_initializer": "fixed classifier80x64 final.pt",
+    "mechanical_only_not_segmentation_results": true
   },
   "license_scope": "NaviAirway notice preserved; remaining GTA code independently unlicensed, no whole-repository MIT claim",
   "checks": {
@@ -305,7 +303,7 @@
     "git_mutations_by_packaging_audit": false,
     "CLI_options_valid": true
   },
-  "formal_segmentation_status": "running; last observed log epoch6 at documentation review",
+  "formal_segmentation_status": "reference A completed: 200x125 segmentation updates, 20-checkpoint/80-case internal trajectory and fixed-final original-grid four-patient pixel checks",
   "roundtrip_diagnostic": {
     "role": "four internal development patients; quantization/geometry only, not a model result or ceiling",
     "n_cases": 4,
@@ -329,5 +327,87 @@
     "matplotlib": "3.10.7",
     "runtime_verified": true,
     "generated_figures_visually_reviewed": false
+  },
+  "aggregate_internal_development_results_reported": true,
+  "no_independent_test_or_superiority_claim": true,
+  "source_and_aggregate_summary_only_no_data_weights_or_per_case_result_files": true,
+  "reference_A_internal4_aggregate_results": {
+    "role": "aggregate results on four exposed internal development patients",
+    "case_ids": [
+      "Diseased_10",
+      "Diseased_20",
+      "Normal_12",
+      "Normal_3"
+    ],
+    "reference_A_training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "reference_A_fixed_final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "checkpoint_selection": "fixed final",
+    "segmentation_updates_per_run": 25000,
+    "A_additional_classifier_pretraining_updates": 5120,
+    "A_trajectory_checkpoint_evaluations": 20,
+    "A_trajectory_case_evaluations": 80,
+    "fixed_final_original_grid_pixel_checks_complete": true,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "patient_statistics": {
+      "A": {
+        "dice": {
+          "mean": 0.8318539004693745,
+          "sd": 0.05262188083735396,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        },
+        "assd_mm": {
+          "mean": 0.5678251259083507,
+          "sd": 0.3231060045482814,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        }
+      },
+      "U": {
+        "dice": {
+          "mean": 0.818455511253775,
+          "sd": 0.07676466971407239,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        },
+        "assd_mm": {
+          "mean": 0.7492326552685586,
+          "sd": 0.45591914607380335,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        }
+      }
+    },
+    "sd_definition": "sample SD across the four patients (ddof=1); Dice stored as a fraction, ASSD in mm",
+    "A_better_in_both_metrics_than_U": [
+      "Diseased_10",
+      "Normal_12"
+    ],
+    "A_worse_in_both_metrics_than_U": [
+      "Diseased_20",
+      "Normal_3"
+    ],
+    "formal_final_test": false,
+    "fivefold_result": false,
+    "significance_claim": false,
+    "single_module_attribution_claim": false,
+    "same_protocol_literature_ranking_claim": false,
+    "final_winning_method_designated": false,
+    "comparison_scope": "A/U differ in architecture, capacity, historical airway initialization, additional classifier pretraining, anatomy weighting and auxiliary objectives; historical warm-start weights are not distributed"
+  },
+  "controls": {
+    "B": "in progress; code and results not included in this public snapshot",
+    "Gaussian_lambda0": "in progress; code and results not included in this public snapshot"
   }
 }

@@ -1,11 +1,29 @@
 # Public source scope, attribution and limitations
 
-This is a source-only development snapshot. Main training Python source and
-the frozen classifier stage retain their execution identities. The three-stage
-GTA GPU smoke has passed using a separate two-epoch classifier-smoke final.pt;
-formal segmentation is running with fixed classifier80 final.pt. New model
-segmentation results are pending. Per-file hashes
-and the separate public package identity are in PUBLIC_SOURCE_PROVENANCE.json.
+This development snapshot contains source and aggregate internal-four results;
+it contains no data, weights or per-case result files. Main training Python
+source and the frozen classifier stage retain their execution identities.
+Reference A has completed 200 × 125 segmentation updates, its 20-checkpoint /
+80-case internal trajectory, and independent fixed-final four-patient pixel
+checks against original-grid GT. The earlier three-stage GPU smoke used a
+separate two-epoch classifier-smoke final.pt and remains a mechanical check.
+Per-file hashes and the separate public package identity are in
+PUBLIC_SOURCE_PROVENANCE.json.
+
+The fixed-final internal-four mean ± patient sample SD is Dice
+83.185390 ± 5.262188% and pooled ASSD 0.567825 ± 0.323106 mm for A, versus
+81.845551 ± 7.676467% and 0.749233 ± 0.455919 mm for the shared-recipe U-Net.
+A improves both metrics on two patients and worsens both on two. These exposed
+development cases provide no independent-test, significance, module-attribution
+or same-protocol literature-ranking claim. A includes 5,120 additional coronary
+classifier-pretraining updates and historical airway initialization; matched
+segmentation updates do not imply matched initialization or total compute.
+Reference A's training-source SHA-256 is
+`bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652`;
+its fixed-final SHA-256 is
+`2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820`.
+B and the Gaussian-λ0 control remain in progress; their code and results are
+not included, and this release designates no final winning method.
 
 ## Provenance, license and citations
 
@@ -173,7 +191,8 @@ through segmentation after unfreezing. Historical feedback features remain
 unused by the loss. Do not claim that these dead branches implement active
 bidirectional refinement or differentiable soft semantic routing.
 
-Classifier pretraining supplies a warm-up to stabilize joint optimization. Its
+Classifier pretraining is intended to stabilize joint optimization; a matched
+ablation has not established this benefit. Its
 three attributes encode intrinsic priors and provide a multitask inductive
 bias; classification is not the final task. Attribute accuracy and the
 accuracy-selected `best_selection.pt` are diagnostic comparisons, not a GTA

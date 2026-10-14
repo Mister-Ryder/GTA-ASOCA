@@ -29,7 +29,7 @@
     "main_initialization_checkpoint": "fixed80-epoch final.pt",
     "best_selection_checkpoint_role": "classification diagnostic reference only; not main initialization",
     "classification_accuracy_is_main_startup_gate": false,
-    "pretraining_purpose": "stabilize multitask convergence; training-derived prior features serve segmentation",
+    "pretraining_purpose": "intended to stabilize multitask convergence; a matched ablation has not established this benefit; training-derived prior features serve segmentation",
     "selection_uses_heldout_masks_for_crop": false,
     "outer8_used_for_selection": false,
     "smoke_budget": {
@@ -114,9 +114,88 @@
       11.919,
       16.165
     ],
-    "new_segmentation_results_available": false,
-    "formal_segmentation_status": "running; last observed log epoch6 at documentation review",
+    "new_segmentation_results_available": true,
+    "formal_segmentation_status": "reference A completed: 200x125 segmentation updates, 20-checkpoint/80-case internal trajectory and fixed-final original-grid four-patient pixel checks",
     "smoke_classifier_initializer": "independent two-epoch classifier_smoke128 final.pt; mechanical only",
-    "formal_classifier_initializer": "fixed classifier80x64 final.pt"
+    "formal_classifier_initializer": "fixed classifier80x64 final.pt",
+    "controls": {
+      "B": "in progress; code and results not included in this public snapshot",
+      "Gaussian_lambda0": "in progress; code and results not included in this public snapshot"
+    }
+  },
+  "reference_A_internal4_aggregate_results": {
+    "role": "aggregate results on four exposed internal development patients",
+    "case_ids": [
+      "Diseased_10",
+      "Diseased_20",
+      "Normal_12",
+      "Normal_3"
+    ],
+    "reference_A_training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "reference_A_fixed_final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "checkpoint_selection": "fixed final",
+    "segmentation_updates_per_run": 25000,
+    "A_additional_classifier_pretraining_updates": 5120,
+    "A_trajectory_checkpoint_evaluations": 20,
+    "A_trajectory_case_evaluations": 80,
+    "fixed_final_original_grid_pixel_checks_complete": true,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "patient_statistics": {
+      "A": {
+        "dice": {
+          "mean": 0.8318539004693745,
+          "sd": 0.05262188083735396,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        },
+        "assd_mm": {
+          "mean": 0.5678251259083507,
+          "sd": 0.3231060045482814,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        }
+      },
+      "U": {
+        "dice": {
+          "mean": 0.818455511253775,
+          "sd": 0.07676466971407239,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        },
+        "assd_mm": {
+          "mean": 0.7492326552685586,
+          "sd": 0.45591914607380335,
+          "n_patients": 4,
+          "n_defined": 4,
+          "undefined_case_ids": [],
+          "reason": null
+        }
+      }
+    },
+    "sd_definition": "sample SD across the four patients (ddof=1); Dice stored as a fraction, ASSD in mm",
+    "A_better_in_both_metrics_than_U": [
+      "Diseased_10",
+      "Normal_12"
+    ],
+    "A_worse_in_both_metrics_than_U": [
+      "Diseased_20",
+      "Normal_3"
+    ],
+    "formal_final_test": false,
+    "fivefold_result": false,
+    "significance_claim": false,
+    "single_module_attribution_claim": false,
+    "same_protocol_literature_ranking_claim": false,
+    "final_winning_method_designated": false,
+    "comparison_scope": "A/U differ in architecture, capacity, historical airway initialization, additional classifier pretraining, anatomy weighting and auxiliary objectives; historical warm-start weights are not distributed"
   }
 }

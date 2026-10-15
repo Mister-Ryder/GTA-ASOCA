@@ -1,0 +1,65 @@
+{
+  "role": "ACTUAL_LAMBDA0_LAUNCH_AND_THETA0_NOT_COMPLETED_RESULTS",
+  "captured_at_utc": "2026-10-14T10:18:04.701592+00:00",
+  "files": {
+    "launch.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_LAMBDA0_CONTROL_LAUNCH_20261014.json",
+      "bytes": 732,
+      "sha256": "aa897d26c2ec7d3c11b76963f7834ee8a35556b3f07227f1fb6234aba53056eb"
+    },
+    "deployed_controller.py": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_gaussian_lambda0_control.py",
+      "bytes": 33795,
+      "sha256": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040"
+    },
+    "protocol.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/PROTOCOL.json",
+      "bytes": 17768,
+      "sha256": "b01bcf332332d7ee61c9091b0fad9438c9691b8ebc4c795e42162da0ee50fea7"
+    },
+    "expected_lambda0_config.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/expected_lambda0_config.json",
+      "bytes": 24286,
+      "sha256": "c2611c5b38008dade04060635ff8c3788b642403ae0e38b2a1bb31658d1d32bb"
+    },
+    "train_argv.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/train_argv.json",
+      "bytes": 1770,
+      "sha256": "8517c5859755a8b223dad1243d1ec4ef5e8a3314df115d62036271069eb563d8"
+    },
+    "CPU_PREFLIGHT.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/cpu_preflight/CONTROL_PREFLIGHT.json",
+      "bytes": 4583,
+      "sha256": "ba5699c353f45a5cf0bc40581ee172c273c4055e0389f4e02addac8b11cc67f1"
+    },
+    "cache_input_identity.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/cache_input_identity.json",
+      "bytes": 32014,
+      "sha256": "974127ea26c38575e30600946e3adfdee78fc02e8b0d08a370b16dabba8a206e"
+    },
+    "ACTUAL_CONTROL_THETA0.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/ACTUAL_CONTROL_THETA0.json",
+      "bytes": 100597,
+      "sha256": "5d03a282ea9d186fc95a40a35d1fe03214352d113c70995329731ff47bd9eb57"
+    },
+    "actual_training_config.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_gaussian_lambda0_200x125_20261014/training/config.json",
+      "bytes": 24285,
+      "sha256": "ef4f1b44e8de4e62dd5a1ebc95d5b55c8d3be5abffd0b9f06aa428fb01cb25c1"
+    },
+    "status_at_capture.json": {
+      "remote": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/STATUS.json",
+      "bytes": 17067,
+      "sha256": "38682d533dfe1ad5a3e7ed532e9d4927f3919643f3a2da95045a213ae765dd7c"
+    },
+    "history_at_capture.jsonl": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_gaussian_lambda0_200x125_20261014/training/history.jsonl",
+      "bytes": 1584,
+      "sha256": "4bd439ece194c9fa60863740ca99fe101c48cb4aa4fef35525d3985c51de0931"
+    }
+  },
+  "actual_initial_model_matches_expected_CPU_rebuild": true,
+  "actual_original_main_initial_model_verified": false,
+  "remote_commands_or_writes": false,
+  "model_weight_snapshots_downloaded": false
+}

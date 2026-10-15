@@ -1,0 +1,399 @@
+{
+  "overall": {
+    "n_cases": 4,
+    "empty_predictions": 0,
+    "dice": {
+      "mean": 0.8156804830905796,
+      "sd": 0.06768855919197844,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "assd_mm": {
+      "mean": 0.6185970287578868,
+      "sd": 0.4390916831280507,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "assd_directional_mean_mm": {
+      "mean": 0.6036868554288107,
+      "sd": 0.43140148593922245,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "cldice": {
+      "mean": 0.8614942064301065,
+      "sd": 0.04697914467725661,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "precision": {
+      "mean": 0.8921224268753388,
+      "sd": 0.040154939789778285,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "recall": {
+      "mean": 0.7590157175258629,
+      "sd": 0.1180255774265693,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "centerline_recall": {
+      "mean": 0.8103057211467654,
+      "sd": 0.08841771107147756,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "centerline_precision": {
+      "mean": 0.9263147657788531,
+      "sd": 0.04827442896749171,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "thin_centerline_recall_radius_le_1mm": {
+      "mean": 0.6725810854987057,
+      "sd": 0.14711080576544452,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "surface_hd95_mm": {
+      "mean": 4.460304492078683,
+      "sd": 4.4653300291089,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asoca_foreground_hd95_mm": {
+      "mean": 2.116919968619127,
+      "sd": 2.199392941664655,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asd_prediction_to_truth_mm": {
+      "mean": 0.5106683373696717,
+      "sd": 0.39769867225940453,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asd_truth_to_prediction_mm": {
+      "mean": 0.6967053734879498,
+      "sd": 0.5219428040828163,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "prediction_components": {
+      "mean": 13.25,
+      "sd": 5.737304826019502,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "truth_components": {
+      "mean": 2.0,
+      "sd": 0.0,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "seconds": {
+      "mean": 75.3725,
+      "sd": 9.315336368949149,
+      "n_valid": 4,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    }
+  },
+  "smoke": false,
+  "fold": 0,
+  "method": "gta",
+  "evaluation_split": "internal_diagnostic",
+  "evaluation_role": "internal diagnostic/model-selection cases; not final independent test",
+  "formal_final_test": false,
+  "checkpoint_selection": "periodic internal-four diagnostic; not final selection",
+  "checkpoint_epoch": 109,
+  "internal_selection_valid": true,
+  "training_source_verified_against_live_code": true,
+  "geometry_only": false,
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "metric_protocol": {
+    "version": 2,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "assd_mm": {
+      "definition": "pooled_bidirectional_surface_voxel_distances",
+      "formula": "(sum(d_prediction_to_truth)+sum(d_truth_to_prediction))/(n_prediction_surface+n_truth_surface)",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "assd_directional_mean_mm": {
+      "definition": "equal_weight_mean_of_two_directional_surface_means",
+      "formula": "(mean(d_prediction_to_truth)+mean(d_truth_to_prediction))/2",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "surface_definition": "foreground boundary voxels removed by one 6-neighbour binary erosion, border_value=0",
+    "surface_connectivity_neighbors": 6,
+    "component_connectivity_neighbors": 26,
+    "surface_hd95_mm": "max of the two directional surface-distance 95th percentiles",
+    "asoca_foreground_hd95_mm": "max of the two directional ALL-foreground-voxel distance 95th percentiles",
+    "evaluation_grid": "original CT",
+    "spacing_axis_order": "z,y,x",
+    "empty_distance_policy": "null; cohort distance mean undefined if any required distance is undefined",
+    "cldice_role": "auxiliary skeleton overlap; ASSD is a boundary error, not connectivity"
+  },
+  "primary_metrics": [
+    "dice",
+    "assd_mm"
+  ],
+  "Normal": {
+    "n_cases": 2,
+    "empty_predictions": 0,
+    "dice": {
+      "mean": 0.8687315293894894,
+      "sd": 0.019628271745551006,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "assd_mm": {
+      "mean": 0.3705922260145861,
+      "sd": 0.06547262681520807,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "assd_directional_mean_mm": {
+      "mean": 0.365185735040668,
+      "sd": 0.061714723469650255,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "cldice": {
+      "mean": 0.9009240509182892,
+      "sd": 0.012796436557890825,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "precision": {
+      "mean": 0.8799297358774495,
+      "sd": 0.04783553318524426,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "recall": {
+      "mean": 0.8586511956704167,
+      "sd": 0.0072565344923258635,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "centerline_recall": {
+      "mean": 0.8816209402027637,
+      "sd": 0.051321113760972994,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "centerline_precision": {
+      "mean": 0.926297497769532,
+      "sd": 0.08346774697682857,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "thin_centerline_recall_radius_le_1mm": {
+      "mean": 0.7975289575289576,
+      "sd": 0.04390068355783662,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "surface_hd95_mm": {
+      "mean": 1.8802009317351986,
+      "sd": 0.49349396868977097,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asoca_foreground_hd95_mm": {
+      "mean": 0.5039060000000006,
+      "sd": 0.17125277712200668,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asd_prediction_to_truth_mm": {
+      "mean": 0.3677335207658845,
+      "sd": 0.28712935031217474,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asd_truth_to_prediction_mm": {
+      "mean": 0.36263794931545146,
+      "sd": 0.16369990337287424,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "prediction_components": {
+      "mean": 8.5,
+      "sd": 0.7071067811865476,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "truth_components": {
+      "mean": 2.0,
+      "sd": 0.0,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "seconds": {
+      "mean": 68.85499999999999,
+      "sd": 6.908433252192566,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    }
+  },
+  "Diseased": {
+    "n_cases": 2,
+    "empty_predictions": 0,
+    "dice": {
+      "mean": 0.7626294367916697,
+      "sd": 0.045850845478621255,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "assd_mm": {
+      "mean": 0.8666018315011876,
+      "sd": 0.5727934400633581,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "assd_directional_mean_mm": {
+      "mean": 0.8421879758169535,
+      "sd": 0.5718232956195247,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "cldice": {
+      "mean": 0.8220643619419239,
+      "sd": 0.015444117643641156,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "precision": {
+      "mean": 0.904315117873228,
+      "sd": 0.04420828517784319,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "recall": {
+      "mean": 0.6593802393813093,
+      "sd": 0.045039310245736076,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "centerline_recall": {
+      "mean": 0.7389905020907669,
+      "sd": 0.021812296982916625,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "centerline_precision": {
+      "mean": 0.9263320337881742,
+      "sd": 0.004939179920568811,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "thin_centerline_recall_radius_le_1mm": {
+      "mean": 0.5476332134684537,
+      "sd": 0.02344386065640399,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "surface_hd95_mm": {
+      "mean": 7.040408052422168,
+      "sd": 5.739881791558376,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asoca_foreground_hd95_mm": {
+      "mean": 3.729933937238253,
+      "sd": 2.0187630296840733,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asd_prediction_to_truth_mm": {
+      "mean": 0.6536031539734589,
+      "sd": 0.557070902803005,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "asd_truth_to_prediction_mm": {
+      "mean": 1.0307727976604482,
+      "sd": 0.5865756884360446,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "prediction_components": {
+      "mean": 18.0,
+      "sd": 2.8284271247461903,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "truth_components": {
+      "mean": 2.0,
+      "sd": 0.0,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    },
+    "seconds": {
+      "mean": 81.89,
+      "sd": 6.533666658163706,
+      "n_valid": 2,
+      "n_undefined": 0,
+      "undefined_case_ids": []
+    }
+  }
+}

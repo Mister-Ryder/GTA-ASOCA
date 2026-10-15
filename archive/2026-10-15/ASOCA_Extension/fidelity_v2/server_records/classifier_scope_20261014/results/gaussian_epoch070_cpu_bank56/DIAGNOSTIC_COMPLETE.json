@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "n_patches": 56,
+  "summary_sha256": "e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff",
+  "fixed_sampling_bank_sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+  "patch_metrics_sha256": "9778d22aa8eb109fd6945d07c754920edd8f589ddeaf67c88e03d5c7682bbc8a",
+  "parameter_updates": false,
+  "outer8_used": false
+}

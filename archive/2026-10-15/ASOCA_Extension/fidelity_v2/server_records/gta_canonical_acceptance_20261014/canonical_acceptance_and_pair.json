@@ -1,0 +1,929 @@
+{
+  "schema_version": 1,
+  "status": "verified_real_canonical20_80_and_fixed_final_pair",
+  "recorded_at_utc": "2026-10-14T10:36:09.461536+00:00",
+  "role": "four training-internal development patients; no formal test/fivefold/significance",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "formal_final_test": false,
+  "checkpoint_selection": "fixed final",
+  "canonical_proof": {
+    "actual_postfit_verified_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+    "actual_POSTFIT_STATUS_completed": true,
+    "verified_checkpoint_evaluations": 20,
+    "verified_case_metadata_and_prediction_SHA": 80,
+    "local_fixed_final_primary_pixel_recalculations": 4,
+    "local_periodic_checkpoint_tensor_bytes_checked": false,
+    "actual_server_periodic_tensor_audit_receipt_retained": true,
+    "curve_source_and_artifact_SHA_verified": true
+  },
+  "canonical_preview_all4_decoded_masks_equal": true,
+  "canonical_preview_agreement": [
+    {
+      "case_id": "Diseased_10",
+      "decoded_mask_voxels_equal": true,
+      "geometry_matches_within1e_minus6": true,
+      "geometry_exact_dictionary_equal": true,
+      "different_voxels": 0,
+      "different_fraction_of_full_grid": 0.0,
+      "different_fraction_of_foreground_union": 0.0,
+      "mask_to_mask_dice": 1.0,
+      "canonical_NRRD_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+      "preview_NRRD_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+      "canonical_decoded_pixel_sha256": "639facf9eb48a1076f726c33fe7ee8f76e151999d6e6f3f531e2b48c04680fe7",
+      "preview_decoded_pixel_sha256": "639facf9eb48a1076f726c33fe7ee8f76e151999d6e6f3f531e2b48c04680fe7",
+      "canonical_dtype": "uint8",
+      "preview_dtype": "uint8",
+      "shape_zyx": [
+        224,
+        512,
+        512
+      ],
+      "canonical_dice": 0.778544956084683,
+      "preview_dice": 0.778544956084683,
+      "canonical_minus_preview_dice": 0.0,
+      "canonical_assd_mm": 0.40105120364364777,
+      "preview_assd_mm": 0.40105120364364777,
+      "canonical_minus_preview_assd_mm": 0.0
+    },
+    {
+      "case_id": "Diseased_20",
+      "decoded_mask_voxels_equal": true,
+      "geometry_matches_within1e_minus6": true,
+      "geometry_exact_dictionary_equal": true,
+      "different_voxels": 0,
+      "different_fraction_of_full_grid": 0.0,
+      "different_fraction_of_foreground_union": 0.0,
+      "mask_to_mask_dice": 1.0,
+      "canonical_NRRD_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+      "preview_NRRD_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+      "canonical_decoded_pixel_sha256": "a5a0a24714a805887c8f727b34c81ba6a53937ec14622681cba6915f3de95e9c",
+      "preview_decoded_pixel_sha256": "a5a0a24714a805887c8f727b34c81ba6a53937ec14622681cba6915f3de95e9c",
+      "canonical_dtype": "uint8",
+      "preview_dtype": "uint8",
+      "shape_zyx": [
+        224,
+        512,
+        512
+      ],
+      "canonical_dice": 0.798590942307332,
+      "preview_dice": 0.798590942307332,
+      "canonical_minus_preview_dice": 0.0,
+      "canonical_assd_mm": 1.052244664395905,
+      "preview_assd_mm": 1.052244664395905,
+      "canonical_minus_preview_assd_mm": 0.0
+    },
+    {
+      "case_id": "Normal_12",
+      "decoded_mask_voxels_equal": true,
+      "geometry_matches_within1e_minus6": true,
+      "geometry_exact_dictionary_equal": true,
+      "different_voxels": 0,
+      "different_fraction_of_full_grid": 0.0,
+      "different_fraction_of_foreground_union": 0.0,
+      "mask_to_mask_dice": 1.0,
+      "canonical_NRRD_sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+      "preview_NRRD_sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+      "canonical_decoded_pixel_sha256": "99805ebddcc750c4804ba4e137e8e40d228b55f5418df3281e8fc4524c7bfc10",
+      "preview_decoded_pixel_sha256": "99805ebddcc750c4804ba4e137e8e40d228b55f5418df3281e8fc4524c7bfc10",
+      "canonical_dtype": "uint8",
+      "preview_dtype": "uint8",
+      "shape_zyx": [
+        206,
+        512,
+        512
+      ],
+      "canonical_dice": 0.8576531148229856,
+      "preview_dice": 0.8576531148229856,
+      "canonical_minus_preview_dice": 0.0,
+      "canonical_assd_mm": 0.4205624076888011,
+      "preview_assd_mm": 0.4205624076888011,
+      "canonical_minus_preview_assd_mm": 0.0
+    },
+    {
+      "case_id": "Normal_3",
+      "decoded_mask_voxels_equal": true,
+      "geometry_matches_within1e_minus6": true,
+      "geometry_exact_dictionary_equal": true,
+      "different_voxels": 0,
+      "different_fraction_of_full_grid": 0.0,
+      "different_fraction_of_foreground_union": 0.0,
+      "mask_to_mask_dice": 1.0,
+      "canonical_NRRD_sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+      "preview_NRRD_sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+      "canonical_decoded_pixel_sha256": "f65c48bc537362b4d5157362eba0b05b533bf205292d704e9accf4b2c8712f96",
+      "preview_decoded_pixel_sha256": "f65c48bc537362b4d5157362eba0b05b533bf205292d704e9accf4b2c8712f96",
+      "canonical_dtype": "uint8",
+      "preview_dtype": "uint8",
+      "shape_zyx": [
+        212,
+        512,
+        512
+      ],
+      "canonical_dice": 0.8926265886624974,
+      "preview_dice": 0.8926265886624974,
+      "canonical_minus_preview_dice": 0.0,
+      "canonical_assd_mm": 0.39744222790504896,
+      "preview_assd_mm": 0.39744222790504896,
+      "canonical_minus_preview_assd_mm": 0.0
+    }
+  ],
+  "canonical_unet_per_case": [
+    {
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "gta_dice": 0.778544956084683,
+      "unet_dice": 0.712825254259675,
+      "dice_gta_minus_unet": 0.06571970182500797,
+      "gta_assd_mm": 0.40105120364364777,
+      "unet_assd_mm": 1.3455745965646293,
+      "assd_gta_minus_unet_mm": -0.9445233929209815
+    },
+    {
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "gta_dice": 0.798590942307332,
+      "unet_dice": 0.8262480606005294,
+      "dice_gta_minus_unet": -0.02765711829319739,
+      "gta_assd_mm": 1.052244664395905,
+      "unet_assd_mm": 0.5418889670719269,
+      "assd_gta_minus_unet_mm": 0.510355697323978
+    },
+    {
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "gta_dice": 0.8576531148229856,
+      "unet_dice": 0.8384446224919453,
+      "dice_gta_minus_unet": 0.019208492331040272,
+      "gta_assd_mm": 0.4205624076888011,
+      "unet_assd_mm": 0.8279659085981665,
+      "assd_gta_minus_unet_mm": -0.40740350090936545
+    },
+    {
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "gta_dice": 0.8926265886624974,
+      "unet_dice": 0.8963041076629507,
+      "dice_gta_minus_unet": -0.003677519000453211,
+      "gta_assd_mm": 0.39744222790504896,
+      "unet_assd_mm": 0.28150114883951166,
+      "assd_gta_minus_unet_mm": 0.1159410790655373
+    }
+  ],
+  "patient_statistics": {
+    "gta_canonical": {
+      "dice": {
+        "mean": 0.8318539004693745,
+        "sd": 0.05262188083735396,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.5678251259083507,
+        "sd": 0.3231060045482814,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    },
+    "unet": {
+      "dice": {
+        "mean": 0.818455511253775,
+        "sd": 0.07676466971407239,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.7492326552685586,
+        "sd": 0.45591914607380335,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    }
+  },
+  "sd_definition": "sample SD of4patients, not folds/seeds/significance; undefinedASSD prevents complete-four mean",
+  "attribution_boundary": "Common segmentation recipe; pretrained donors, extra5120 classifier updates, capacity/prior/auxiliary objectives differ. No module causal attribution or model winner.",
+  "agreement_policy": "Canonical retained even if devices differ; no averaging, voting, checkpoint/device selection or insertion of preview into canonical ledger.",
+  "audits": {
+    "gta_canonical": {
+      "method": "gta",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training",
+      "final_checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+      "weights_bytes_checked": true,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": false,
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.778544956084683,
+            "assd_mm": 0.40105120364364777,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.798590942307332,
+            "assd_mm": 1.0522446643959051,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8576531148229856,
+            "assd_mm": 0.42056240768880115,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8926265886624974,
+            "assd_mm": 0.39744222790504896,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\config.json",
+          "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\TRAINING_COMPLETE.json",
+          "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\history.jsonl",
+          "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\summary.json",
+          "sha256": "69eceed68698b56bd3d8ea45eeed7fa6bf4fd44e7dcad6c5f39fca15054ed701"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "a1195b08d5d73327370f0c65cdd50684e0034cbfbc8d89061d5016a707178107"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "f19190b55d6364ccf45314d45847f6732b5f27e57cd46e5b7cd1af697e4e4618"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "cbe4ff290ac409761663b033258f3b303b909abca1a9ef421ab9f030f1f0af9a"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "1bf12cc622f1008ede7cc9a2903456351d6c38be9286b63de0955703a4535e1b"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "1842da2e4ca60b60b1342b0452993f554d18a5c7d481ef97e4782fb1d576191d"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "fa5f1e37c8984af0f4d2d2918204dc89773a9be8e5f2d5866fa193612aa72f64"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "055837df77b9065d71427aa9a919c4eef303abe95d1a67d2ce80ff3bdeb1b289"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "80cebac9ec5b39f76e753c4cf3eae1abfda7b3499abac48a780bf3a5be0dbe8c"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\final.pt",
+          "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+        }
+      ]
+    },
+    "unet": {
+      "method": "unet",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training",
+      "final_checkpoint_sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c",
+      "weights_bytes_checked": true,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": true,
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.712825254259675,
+            "assd_mm": 1.345574596564629,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8262480606005294,
+            "assd_mm": 0.541888967071927,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "b5736058a41bfe52bf83d50f18c0761481bea5744b8809e859af4c0b3e8dd5ab",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8384446224919453,
+            "assd_mm": 0.8279659085981665,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "eee1f64a455792ee8339d460adfbf9d40b9a35cbea951f08141a4ca5e6973b58",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8963041076629507,
+            "assd_mm": 0.2815011488395116,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\config.json",
+          "sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\TRAINING_COMPLETE.json",
+          "sha256": "8eb5bd82ce4db74e374f465b7ca3230adcea73c0158e4e74eda3f4af63c2ba41"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\history.jsonl",
+          "sha256": "b3a3debbb3a2552208aa617487b47437226913c844534e13cde0073249fe7a53"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\summary.json",
+          "sha256": "a4c9218f433842c3989ec96790b00bbd98f0b39c088122ad8430498e5e0a3a45"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "d5823afdb4fb288646bd0b2af178f119ec3e170b005ffde37b31e7237314c6ee"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "4d4f1da96ed941acff2f8bc661b5cb0deb72bbd366985307ab3cab5382d71fe4"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "44f2b4ed14de1eb11ad033b25b330307b10544d8190c9f2f916306e0fc788629"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "b1c2cfbedac2c5679f7b6d2dab483bb0da0c75157abd1aeaecdf308e076a2ed3"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "61e1a565fa5f01f70d4db727b9176623ba73f376942b699e6c859ef226b2ed04"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "3c864d9a02c4993b645ba917a0af7f742b7d3cac03c4983a8947bfc252e80250"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "bd5e8dfa0ec8806984f66ad1b7d5a684c2e047b79546d1e7fb0e3970585eb039"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "b5736058a41bfe52bf83d50f18c0761481bea5744b8809e859af4c0b3e8dd5ab"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "ee218ca234f5825bdefc7373eb7b53d9db92e3f5548a5e8239e0aed5f9b3962e"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "eee1f64a455792ee8339d460adfbf9d40b9a35cbea951f08141a4ca5e6973b58"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\final.pt",
+          "sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c"
+        }
+      ],
+      "saved80_case_metadata_and_prediction_bytes_verified": true,
+      "primary_pixel_metrics_recomputed_case_evaluations": 4,
+      "actual_global_completion_sha256": "3fc851db9f7afcb58de93730f527cdacf1526f9f79cbdeba45c65eb300102d18"
+    },
+    "preview": {
+      "method": "gta_early_preview",
+      "weights_bytes_checked": true,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "canonical_trajectory_evidence_created": false,
+      "canonical_agreement_verified": true,
+      "preview_protocol_sha256": "4f064930e1a60e63186c7fd52e77eceab36c5fd97876bacd71f2d02578239938",
+      "preview_complete_sha256": "4dad8a9ed4b7fa0a13adc4e6ede64cc5888be6e1cd10eecf1e4ae6258a6701b7",
+      "READY_sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d",
+      "local_payload_records": {
+        "TRAINING_COMPLETE.json": {
+          "bytes": 996,
+          "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+        },
+        "config.json": {
+          "bytes": 24269,
+          "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+        },
+        "final.pt": {
+          "bytes": 68670910,
+          "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+        },
+        "history.jsonl": {
+          "bytes": 220801,
+          "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+        },
+        "input_runtime_audit.json": {
+          "bytes": 1686,
+          "sha256": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7"
+        },
+        "manifest.json": {
+          "bytes": 136829,
+          "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+        }
+      },
+      "payload_view_origin": "local byte view assembled from downloaded original source files and checked against actual shared READY and old guard payload fingerprints; not every file claimed re-downloaded from shared",
+      "assembly_receipt": null,
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.778544956084683,
+            "assd_mm": 0.40105120364364777,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.798590942307332,
+            "assd_mm": 1.0522446643959051,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8576531148229856,
+            "assd_mm": 0.42056240768880115,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8926265886624974,
+            "assd_mm": 0.39744222790504896,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "canonical_agreement_check_completed": true
+    }
+  },
+  "tool_sha256": "7f75c7abc9bd3bfda0ceaca5bf2de8539890fe4d7cb3502906a540b3d49ac026",
+  "model_or_forward_or_GPU_used": false
+}

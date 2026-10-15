@@ -1,0 +1,19 @@
+usage: prepare_data.py [-h] --raw-root RAW_ROOT --output OUTPUT
+                       [--spacing SPACING] [--workers WORKERS] [--seed SEED]
+                       [--case-ids CASE_IDS [CASE_IDS ...]] [--force]
+
+Prepare the public ASOCA training set without changing the input field of
+view. Only binary segmentation labels are available. The auxiliary topology
+categories below are geometric training targets, not named coronary artery
+classes.
+
+options:
+  -h, --help            show this help message and exit
+  --raw-root RAW_ROOT
+  --output OUTPUT
+  --spacing SPACING
+  --workers WORKERS
+  --seed SEED
+  --case-ids CASE_IDS [CASE_IDS ...]
+                        Smoke-test subset; manifest still freezes all 40 folds
+  --force

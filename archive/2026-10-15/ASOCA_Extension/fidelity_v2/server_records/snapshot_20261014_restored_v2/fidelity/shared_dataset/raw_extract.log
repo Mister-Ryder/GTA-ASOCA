@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/root/autodl-fs/datasets/ASOCA_GTA_20261014/extract_verified_raw.py", line 29, in <module>
+    if not root.is_dir():raise RuntimeError('Expected raw CompressedVersion root missing')
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Expected raw CompressedVersion root missing

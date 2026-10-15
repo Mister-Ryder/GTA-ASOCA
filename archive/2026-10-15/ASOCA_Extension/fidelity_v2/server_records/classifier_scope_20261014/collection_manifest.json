@@ -1,0 +1,52 @@
+{
+  "captured_at_utc": "2026-10-14T07:03:59.120833+00:00",
+  "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "records": [
+    {
+      "path": "CPU_GAUSSIAN70_STATUS.json",
+      "bytes": 1327,
+      "sha256": "ac529899938c7de3a4833e0cf9fa0fcda80a4b83d32d5716a0e394ec30f1515b"
+    },
+    {
+      "path": "CPU_GAUSSIAN70_LIVE_CHECK.json",
+      "bytes": 7180,
+      "sha256": "992d3ad9393ab97afb46297644ab70082df68cff4d6fbec0c275949c8b23a296"
+    },
+    {
+      "path": "LIVE_MAIN_CHECK_20261014.json",
+      "bytes": 2656,
+      "sha256": "1da37f86fc4c527eb6d5236cd5cd612a1db44e23eb83adb2d9d6b0a1a03d2a81"
+    },
+    {
+      "path": "dataset/cache/manifest.json",
+      "bytes": 136829,
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+    },
+    {
+      "path": "results/gaussian_epoch070_cpu_bank56/diagnostic_plan.json",
+      "bytes": 46685,
+      "sha256": "0c47aac57eb73b6e8fd1f73832982af488919dc390997d2e989336296745c4bc"
+    },
+    {
+      "path": "results/gaussian_epoch070_cpu_bank56/fixed_sampling_bank.json",
+      "bytes": 81765,
+      "sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14"
+    },
+    {
+      "path": "results/gaussian_epoch070_cpu_bank56/patch_metrics.jsonl",
+      "bytes": 271270,
+      "sha256": "9778d22aa8eb109fd6945d07c754920edd8f589ddeaf67c88e03d5c7682bbc8a"
+    },
+    {
+      "path": "results/gaussian_epoch070_cpu_bank56/summary.json",
+      "bytes": 57392,
+      "sha256": "e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff"
+    },
+    {
+      "path": "results/gaussian_epoch070_cpu_bank56/DIAGNOSTIC_COMPLETE.json",
+      "bytes": 383,
+      "sha256": "25f8d546ec032dbd6287d08d90a15eb8d8367cf33ff4c6713884b2d7c9b15aed"
+    }
+  ],
+  "read_only_server_access": true
+}

@@ -1,0 +1,110 @@
+{
+  "patients": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "samples": 32,
+  "source": "fixed deterministic training-only patch bank; inverse-square-root frequency weights",
+  "heads": {
+    "generation": {
+      "counts": [
+        0,
+        10,
+        4,
+        10,
+        5,
+        2,
+        1
+      ],
+      "focal_weights": [
+        5.0,
+        0.5772728323936462,
+        0.9127485156059265,
+        0.5772728323936462,
+        0.8163871169090271,
+        1.2908213138580322,
+        1.825497031211853
+      ],
+      "absent_training_classes": [
+        0
+      ],
+      "majority_class": 1
+    },
+    "structure": {
+      "counts": [
+        0,
+        2,
+        0,
+        3,
+        8,
+        19,
+        0
+      ],
+      "focal_weights": [
+        5.0,
+        1.5146125555038452,
+        5.0,
+        1.2366759777069092,
+        0.7573062777519226,
+        0.491405189037323,
+        5.0
+      ],
+      "absent_training_classes": [
+        0,
+        2,
+        6
+      ],
+      "majority_class": 5
+    },
+    "location": {
+      "counts": [
+        0,
+        5,
+        2,
+        4,
+        9,
+        3,
+        9
+      ],
+      "focal_weights": [
+        5.0,
+        0.9258003830909729,
+        1.463818907737732,
+        1.0350762605667114,
+        0.6900508999824524,
+        1.1952030658721924,
+        0.6900508999824524
+      ],
+      "absent_training_classes": [
+        0
+      ],
+      "majority_class": 4
+    }
+  }
+}

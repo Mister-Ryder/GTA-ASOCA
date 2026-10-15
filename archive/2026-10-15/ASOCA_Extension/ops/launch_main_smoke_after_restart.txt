@@ -1,0 +1,15 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,time
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+py='/root/miniconda3/envs/gta-asoca311/bin/python'
+if (r/'stage_records/main_smoke128.json').exists():raise RuntimeError('Smoke has durable state; inspect before repeating')
+with (r/'logs/main_smoke_controller.log').open('a') as log:
+ p=subprocess.Popen([py,'-u',str(r/'ops/run_saved_stage.py'),'--root',str(r),'--recipe','run_main_smoke.sh','--tag','main_smoke128'],
+                    cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+for _ in range(10):
+ status=r/'stage_records/main_smoke128.json'
+ if status.exists():print(status.read_text());break
+ if p.poll() is not None:print((r/'logs/main_smoke_controller.log').read_text()[-2000:]);raise RuntimeError('Smoke controller did not start')
+ time.sleep(.5)
+PY

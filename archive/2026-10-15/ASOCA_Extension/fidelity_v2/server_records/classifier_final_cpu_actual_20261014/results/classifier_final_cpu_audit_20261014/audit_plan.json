@@ -1,0 +1,2746 @@
+{
+  "schema_version": 1,
+  "role": "CPU_CLASSIFIER_DISTRIBUTIONS_TRAIN28_ONLY_NOT_SELECTION",
+  "root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+  "device": "cpu",
+  "deadline_seconds": 900,
+  "threads_max": 2,
+  "nice_min": 10,
+  "checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "full_source_package_sha256": "0d14f942a7d87c81d272cca0a1b3b55c458aa0da0e0da01f6b15456107e7c48b",
+  "evaluation_sources": {
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "reference_bank_sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+  "reference_bank_has_run_root": false,
+  "n_patches": 56,
+  "last_sampling_index": 194,
+  "logical_relocation": {
+    "config_untouched": true,
+    "recorded_output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training",
+    "actual_checkpoint": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/final.pt",
+    "recorded_manifest": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+    "actual_manifest": "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+    "basis": "exact config/SHA, full source/evaluator guards and exact sampled bank"
+  },
+  "model_mode": "direct classifier.eval forward only, CPU FP32 batch1 CT128",
+  "training_patients": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "excluded_internal4": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "held_out_GT_read": false,
+  "parameter_updates": false,
+  "optimizer_created": false,
+  "tracked_input_sha256": {
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/shadow_gaussian_region_balance.py": "a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/configs/main_source_freeze.json": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/diagnose_gaussian.py": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_early_fixed_final_eval.py": "2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/final.pt": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/config.json": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/history.jsonl": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/TRAINING_COMPLETE.json": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/manifest.json": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/input_runtime_audit.json": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7",
+    "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/READY.json": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops_inputs/gaussian_region_balance_shadow_20261014/fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/audit_final_classifier_cpu.py": "b321207067fb81536e0c70b45e83cd48280a9a6e2fce93589b9fa10da6aaaf3d",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4"
+  },
+  "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014",
+  "classifier_donor_sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+  "CUDA_allowed": false,
+  "donor_logical_relocation": {
+    "recorded_main_donor_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+    "actual_CPU_donor_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+    "identity_basis": "same308 byte SHA and exact original load audit except physical path"
+  },
+  "GPU_query_or_idle_required": false,
+  "segmentation_lock_used": false,
+  "independent_lock": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/.classifier_final_cpu_audit.lock",
+  "accuracy_is_gate": false,
+  "classifier_selection_performed": false,
+  "scope": "all56 and nonempty49 standard fixed bank; never mix geometry512 pretraining bank frequencies",
+  "actual_main_header": {
+    "epoch": 199,
+    "model_state_tensor_count": 327,
+    "all_model_tensors_finite": true,
+    "load_mode": "torch.load(map_location=cpu, weights_only=True)",
+    "CUDA_context_initialized": false
+  },
+  "donor_load_audit": {
+    "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+    "sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+    "component": "classifier",
+    "source_domain": "asoca",
+    "format_key": "model_state_dict",
+    "source_tensor_count": 90,
+    "component_tensor_count": 90,
+    "semantic_head_policy": "load",
+    "excluded_semantic_keys": [],
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "shape_mismatches": {},
+    "source_epoch": 79,
+    "loaded_key_count": 90,
+    "allowed_missing_prefixes": [],
+    "allowed_unexpected_prefixes": [],
+    "loaded_keys": [
+      "attention_blocks.0.fc.0.weight",
+      "attention_blocks.0.fc.2.weight",
+      "attention_blocks.1.fc.0.weight",
+      "attention_blocks.1.fc.2.weight",
+      "attention_blocks.2.fc.0.weight",
+      "attention_blocks.2.fc.2.weight",
+      "encoder.0.bn.bias",
+      "encoder.0.bn.num_batches_tracked",
+      "encoder.0.bn.running_mean",
+      "encoder.0.bn.running_var",
+      "encoder.0.bn.weight",
+      "encoder.0.conv.bias",
+      "encoder.0.conv.weight",
+      "encoder.1.bn.bias",
+      "encoder.1.bn.num_batches_tracked",
+      "encoder.1.bn.running_mean",
+      "encoder.1.bn.running_var",
+      "encoder.1.bn.weight",
+      "encoder.1.conv.bias",
+      "encoder.1.conv.weight",
+      "encoder.2.bn.bias",
+      "encoder.2.bn.num_batches_tracked",
+      "encoder.2.bn.running_mean",
+      "encoder.2.bn.running_var",
+      "encoder.2.bn.weight",
+      "encoder.2.conv.bias",
+      "encoder.2.conv.weight",
+      "encoder.3.bn.bias",
+      "encoder.3.bn.num_batches_tracked",
+      "encoder.3.bn.running_mean",
+      "encoder.3.bn.running_var",
+      "encoder.3.bn.weight",
+      "encoder.3.conv.bias",
+      "encoder.3.conv.weight",
+      "encoder.4.bn.bias",
+      "encoder.4.bn.num_batches_tracked",
+      "encoder.4.bn.running_mean",
+      "encoder.4.bn.running_var",
+      "encoder.4.bn.weight",
+      "encoder.4.conv.bias",
+      "encoder.4.conv.weight",
+      "encoder.5.bn.bias",
+      "encoder.5.bn.num_batches_tracked",
+      "encoder.5.bn.running_mean",
+      "encoder.5.bn.running_var",
+      "encoder.5.bn.weight",
+      "encoder.5.conv.bias",
+      "encoder.5.conv.weight",
+      "encoder.6.bn.bias",
+      "encoder.6.bn.num_batches_tracked",
+      "encoder.6.bn.running_mean",
+      "encoder.6.bn.running_var",
+      "encoder.6.bn.weight",
+      "encoder.6.conv.bias",
+      "encoder.6.conv.weight",
+      "encoder.7.bn.bias",
+      "encoder.7.bn.num_batches_tracked",
+      "encoder.7.bn.running_mean",
+      "encoder.7.bn.running_var",
+      "encoder.7.bn.weight",
+      "encoder.7.conv.bias",
+      "encoder.7.conv.weight",
+      "generation_head.0.bias",
+      "generation_head.0.weight",
+      "generation_head.3.bias",
+      "generation_head.3.weight",
+      "guidance_head.0.bn.bias",
+      "guidance_head.0.bn.num_batches_tracked",
+      "guidance_head.0.bn.running_mean",
+      "guidance_head.0.bn.running_var",
+      "guidance_head.0.bn.weight",
+      "guidance_head.0.conv.bias",
+      "guidance_head.0.conv.weight",
+      "guidance_head.1.bias",
+      "guidance_head.1.weight",
+      "location_head.0.bias",
+      "location_head.0.weight",
+      "location_head.3.bias",
+      "location_head.3.weight",
+      "multi_scale_fusion.0.bias",
+      "multi_scale_fusion.0.weight",
+      "multi_scale_fusion.1.bias",
+      "multi_scale_fusion.1.num_batches_tracked",
+      "multi_scale_fusion.1.running_mean",
+      "multi_scale_fusion.1.running_var",
+      "multi_scale_fusion.1.weight",
+      "structure_head.0.bias",
+      "structure_head.0.weight",
+      "structure_head.3.bias",
+      "structure_head.3.weight"
+    ],
+    "randomly_retained_keys": []
+  },
+  "cache_headers_training28_only": {
+    "Diseased_11": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        506,
+        506
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.49414100000000005,
+        0.49414100000000005,
+        0.6250000000000001
+      ],
+      "source_CT_SHA": "23873ca744f9fd6694de0a9ce18d9f2aa7b9250bf1557b6a6f57fd7eed29a576",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          506,
+          506
+        ]
+      }
+    },
+    "Diseased_12": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        360,
+        360
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.3515619934,
+        0.3515619934,
+        0.625
+      ],
+      "source_CT_SHA": "65d8d932abd341f137f89d5dbb6dc473a18cf51a68ea8b9acd9e753793a8941b",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          360,
+          360
+        ]
+      }
+    },
+    "Diseased_13": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        404,
+        404
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.3945310116,
+        0.3945310116,
+        0.625
+      ],
+      "source_CT_SHA": "411c481acd43cf50369669fab5238d28223fa8a5f2114e56e273aaff645d080e",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      }
+    },
+    "Diseased_14": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        439,
+        439
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4284380078,
+        0.4284380078,
+        0.625
+      ],
+      "source_CT_SHA": "8914023e28054b7f230e156d0b02d28ad844d526a25bcd768b599e8ecc709578",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          439,
+          439
+        ]
+      }
+    },
+    "Diseased_16": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        480,
+        480
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.46875,
+        0.46875,
+        0.625
+      ],
+      "source_CT_SHA": "c5c8e255c3451c2b400245b2eaf12dcc8fb185c5f7139d635876a0c2d7d26a5c",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          480,
+          480
+        ]
+      }
+    },
+    "Diseased_17": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        404,
+        404
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.3945310116,
+        0.3945310116,
+        0.625
+      ],
+      "source_CT_SHA": "0fdfe6cbd7cfea5ec547485f363d2bed1cc80f49587003c0429604365e843e64",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ]
+      }
+    },
+    "Diseased_19": {
+      "CT_full_cache_shape_zyx": [
+        210,
+        442,
+        442
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        168
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.43164100000000005,
+        0.43164100000000005,
+        0.6250000000000001
+      ],
+      "source_CT_SHA": "373273906a113e7fff58696518c426903770a97acec2fd6ca9875b4a64f1dec8",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          442,
+          442
+        ]
+      }
+    },
+    "Diseased_2": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        448,
+        448
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4375,
+        0.4375,
+        0.625
+      ],
+      "source_CT_SHA": "4ef7c09c4e0fbdca1888b305a5ae38230b9e0482f251626bd2d03aec4a65317f",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          448,
+          448
+        ]
+      }
+    },
+    "Diseased_3": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        452,
+        452
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4414060116,
+        0.4414060116,
+        0.625
+      ],
+      "source_CT_SHA": "386de942db7c233e35dbadc98ba180028882eb90f5b04960d1eb60a3d3598b2b",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      }
+    },
+    "Diseased_4": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        500,
+        500
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4882810115999999,
+        0.4882810115999999,
+        0.6249999999999999
+      ],
+      "source_CT_SHA": "fabccd474a03d605204fba8bcf39c66c78d83c4962195a2aeef0d938b738df83",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          500,
+          500
+        ]
+      }
+    },
+    "Diseased_5": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        456,
+        456
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.44531199999999993,
+        0.44531199999999993,
+        0.6250000000000001
+      ],
+      "source_CT_SHA": "eead7749a9fe029aad5190e0571ce633a7bf213fa87abea42c6bd87a0e32ab17",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          456,
+          456
+        ]
+      }
+    },
+    "Diseased_6": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        452,
+        452
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4414060116,
+        0.4414060116,
+        0.625
+      ],
+      "source_CT_SHA": "1c5a3cfa2df22738ea1ccbaea6ebb91c324a97d76514f2a695618864d28b45db",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ]
+      }
+    },
+    "Diseased_8": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        408,
+        408
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.398438,
+        0.398438,
+        0.625
+      ],
+      "source_CT_SHA": "2ece49db4beb5da671686d48a85c5c60bbb0b46a972bbf57ef8b900505373fe3",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          408,
+          408
+        ]
+      }
+    },
+    "Diseased_9": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        476,
+        476
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4648439884,
+        0.4648439884,
+        0.625
+      ],
+      "source_CT_SHA": "69f23316074ed9cb8c9413043c65a1c474c8cb4bd8a22d01ab506bfbe43a6732",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          476,
+          476
+        ]
+      }
+    },
+    "Normal_1": {
+      "CT_full_cache_shape_zyx": [
+        255,
+        426,
+        426
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        204
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.41601600000000005,
+        0.41601600000000005,
+        0.6250000000000001
+      ],
+      "source_CT_SHA": "4f63104ecd48662d2e270315aff47c24c5275d613d860c320b6760e91e56514f",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          255,
+          426,
+          426
+        ]
+      }
+    },
+    "Normal_10": {
+      "CT_full_cache_shape_zyx": [
+        261,
+        446,
+        446
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        209
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.43554700000000013,
+        0.43554700000000013,
+        0.6250000000000001
+      ],
+      "source_CT_SHA": "eb05db21a6b76ba286e9bc4ed19daa144e27147cba5bef583015bda1164a547a",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          261,
+          446,
+          446
+        ]
+      }
+    },
+    "Normal_11": {
+      "CT_full_cache_shape_zyx": [
+        265,
+        314,
+        314
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        212
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.306641,
+        0.306641,
+        0.625
+      ],
+      "source_CT_SHA": "7a85e9082f31a41011263990dda5ac66d438fc50c9d84359114cc8b4f971dab1",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          265,
+          314,
+          314
+        ]
+      }
+    },
+    "Normal_13": {
+      "CT_full_cache_shape_zyx": [
+        249,
+        342,
+        342
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        199
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.333984,
+        0.333984,
+        0.625
+      ],
+      "source_CT_SHA": "bfc8b0fa503cb32655b1a788bda5320fedc89a2a2a2f33f49ca34615ed4092fb",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          249,
+          342,
+          342
+        ]
+      }
+    },
+    "Normal_14": {
+      "CT_full_cache_shape_zyx": [
+        270,
+        374,
+        374
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        216
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.36523400000000006,
+        0.36523400000000006,
+        0.625
+      ],
+      "source_CT_SHA": "8066ec13176a615cd8b83ce4b93a5506d6d918c0029c4c30705bce6b53399957",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          270,
+          374,
+          374
+        ]
+      }
+    },
+    "Normal_15": {
+      "CT_full_cache_shape_zyx": [
+        259,
+        394,
+        394
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        207
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.3847659999999999,
+        0.3847659999999999,
+        0.625
+      ],
+      "source_CT_SHA": "53bb63ffa6a100661313ae3273c364c0bbad821612c3733c2b55d83295e3e978",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          259,
+          394,
+          394
+        ]
+      }
+    },
+    "Normal_17": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        368,
+        368
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.359375,
+        0.359375,
+        0.6249999999999998
+      ],
+      "source_CT_SHA": "4a27495716e69ca5ca3b61d4c83f4cd4333df1f98608140ff30507e82d17020d",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          368,
+          368
+        ]
+      }
+    },
+    "Normal_18": {
+      "CT_full_cache_shape_zyx": [
+        210,
+        358,
+        358
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        168
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.349609,
+        0.349609,
+        0.6249999999999998
+      ],
+      "source_CT_SHA": "feb4f145e709768db23be55f239091977c0585f551d6c5e7239fb500409cdb88",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          358,
+          358
+        ]
+      }
+    },
+    "Normal_20": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        430,
+        430
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.4199219942000001,
+        0.4199219942000001,
+        0.625
+      ],
+      "source_CT_SHA": "360a483293a3b34189c833c4c6a3bf62ed44b10c7994465ee7f913cd61650d69",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          430,
+          430
+        ]
+      }
+    },
+    "Normal_4": {
+      "CT_full_cache_shape_zyx": [
+        264,
+        390,
+        390
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        211
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.380859,
+        0.380859,
+        0.6250000000000002
+      ],
+      "source_CT_SHA": "43851349c09f7f3163b9db65e0984ecb7d0b5b7f1ec5240cf0e267a09e6e39f6",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          264,
+          390,
+          390
+        ]
+      }
+    },
+    "Normal_5": {
+      "CT_full_cache_shape_zyx": [
+        251,
+        360,
+        360
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        201
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.35156199999999993,
+        0.35156199999999993,
+        0.6249999999999999
+      ],
+      "source_CT_SHA": "cc9b8544b8cfe16b85d3064c1788d30741afc6c9e65baca959088c35775654e3",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          251,
+          360,
+          360
+        ]
+      }
+    },
+    "Normal_6": {
+      "CT_full_cache_shape_zyx": [
+        271,
+        404,
+        404
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        217
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.3945310000000001,
+        0.3945310000000001,
+        0.625
+      ],
+      "source_CT_SHA": "f759658d685e14248bf6901a0092bee2237385a4797ec3ce5263d0845daedc25",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          271,
+          404,
+          404
+        ]
+      }
+    },
+    "Normal_7": {
+      "CT_full_cache_shape_zyx": [
+        252,
+        410,
+        410
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        202
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.400391,
+        0.400391,
+        0.6249999999999998
+      ],
+      "source_CT_SHA": "1e25a419d3449022960be58dee1d08461e234b3e622507baa2a4c081dfdc2554",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          252,
+          410,
+          410
+        ]
+      }
+    },
+    "Normal_9": {
+      "CT_full_cache_shape_zyx": [
+        280,
+        388,
+        388
+      ],
+      "CT_original_size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "CT_original_spacing_xyz_mm": [
+        0.3789060000000001,
+        0.3789060000000001,
+        0.6250000000000001
+      ],
+      "source_CT_SHA": "28d9c8ef28122420c9d7a6577b901c6c70b91532653ec74e86b303809d2b1f2b",
+      "patch_CT_shape": [
+        1,
+        128,
+        128,
+        128
+      ],
+      "patch_priors_shape": [
+        3
+      ],
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          388,
+          388
+        ]
+      }
+    }
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.7.2",
+    "pandas": "2.3.3",
+    "tqdm": "4.67.1"
+  },
+  "state_sha256_before": {
+    "main327": "f7be181fcb4245d756e072f22785da65be64e2a592db806e2dd2f3927a66fb7b",
+    "main200": "b78826ed8c41f22a921d68ca96c2efac5f83b2bcf13b52004b18828b4b6a2901",
+    "classifier80_fixedfinal": "5eceb707b9a1137ee7d1c7ea2336498c72082bd266395ee1ef84377ef199fe0a"
+  },
+  "rng_sha256_before": {
+    "python": "7e8532bc4df80fbb629b9a1bf2c0ac2e0fad697d9d8d742d7d9acb9cbe355d86",
+    "numpy": "9815e5966252284ed684629381757ececfa533173ce31cfd0b978802cf287a32",
+    "torch_cpu": "5e8b8a24bd7c21ff81400339c469025849a5111300a84b8ae2fc35df8c18d570"
+  },
+  "eval_flags_before": {
+    "main200": {
+      "": false,
+      "encoder": false,
+      "encoder.0": false,
+      "encoder.0.conv": false,
+      "encoder.0.bn": false,
+      "encoder.0.relu": false,
+      "encoder.1": false,
+      "encoder.1.conv": false,
+      "encoder.1.bn": false,
+      "encoder.1.relu": false,
+      "encoder.2": false,
+      "encoder.2.conv": false,
+      "encoder.2.bn": false,
+      "encoder.2.relu": false,
+      "encoder.3": false,
+      "encoder.3.conv": false,
+      "encoder.3.bn": false,
+      "encoder.3.relu": false,
+      "encoder.4": false,
+      "encoder.4.conv": false,
+      "encoder.4.bn": false,
+      "encoder.4.relu": false,
+      "encoder.5": false,
+      "encoder.5.conv": false,
+      "encoder.5.bn": false,
+      "encoder.5.relu": false,
+      "encoder.6": false,
+      "encoder.6.conv": false,
+      "encoder.6.bn": false,
+      "encoder.6.relu": false,
+      "encoder.7": false,
+      "encoder.7.conv": false,
+      "encoder.7.bn": false,
+      "encoder.7.relu": false,
+      "attention_blocks": false,
+      "attention_blocks.0": false,
+      "attention_blocks.0.avg_pool": false,
+      "attention_blocks.0.fc": false,
+      "attention_blocks.0.fc.0": false,
+      "attention_blocks.0.fc.1": false,
+      "attention_blocks.0.fc.2": false,
+      "attention_blocks.0.fc.3": false,
+      "attention_blocks.1": false,
+      "attention_blocks.1.avg_pool": false,
+      "attention_blocks.1.fc": false,
+      "attention_blocks.1.fc.0": false,
+      "attention_blocks.1.fc.1": false,
+      "attention_blocks.1.fc.2": false,
+      "attention_blocks.1.fc.3": false,
+      "attention_blocks.2": false,
+      "attention_blocks.2.avg_pool": false,
+      "attention_blocks.2.fc": false,
+      "attention_blocks.2.fc.0": false,
+      "attention_blocks.2.fc.1": false,
+      "attention_blocks.2.fc.2": false,
+      "attention_blocks.2.fc.3": false,
+      "multi_scale_fusion": false,
+      "multi_scale_fusion.0": false,
+      "multi_scale_fusion.1": false,
+      "multi_scale_fusion.2": false,
+      "global_avg_pool": false,
+      "global_max_pool": false,
+      "generation_head": false,
+      "generation_head.0": false,
+      "generation_head.1": false,
+      "generation_head.2": false,
+      "generation_head.3": false,
+      "structure_head": false,
+      "structure_head.0": false,
+      "structure_head.1": false,
+      "structure_head.2": false,
+      "structure_head.3": false,
+      "location_head": false,
+      "location_head.0": false,
+      "location_head.1": false,
+      "location_head.2": false,
+      "location_head.3": false,
+      "guidance_head": false,
+      "guidance_head.0": false,
+      "guidance_head.0.conv": false,
+      "guidance_head.0.bn": false,
+      "guidance_head.0.relu": false,
+      "guidance_head.1": false
+    },
+    "classifier80_fixedfinal": {
+      "": false,
+      "encoder": false,
+      "encoder.0": false,
+      "encoder.0.conv": false,
+      "encoder.0.bn": false,
+      "encoder.0.relu": false,
+      "encoder.1": false,
+      "encoder.1.conv": false,
+      "encoder.1.bn": false,
+      "encoder.1.relu": false,
+      "encoder.2": false,
+      "encoder.2.conv": false,
+      "encoder.2.bn": false,
+      "encoder.2.relu": false,
+      "encoder.3": false,
+      "encoder.3.conv": false,
+      "encoder.3.bn": false,
+      "encoder.3.relu": false,
+      "encoder.4": false,
+      "encoder.4.conv": false,
+      "encoder.4.bn": false,
+      "encoder.4.relu": false,
+      "encoder.5": false,
+      "encoder.5.conv": false,
+      "encoder.5.bn": false,
+      "encoder.5.relu": false,
+      "encoder.6": false,
+      "encoder.6.conv": false,
+      "encoder.6.bn": false,
+      "encoder.6.relu": false,
+      "encoder.7": false,
+      "encoder.7.conv": false,
+      "encoder.7.bn": false,
+      "encoder.7.relu": false,
+      "attention_blocks": false,
+      "attention_blocks.0": false,
+      "attention_blocks.0.avg_pool": false,
+      "attention_blocks.0.fc": false,
+      "attention_blocks.0.fc.0": false,
+      "attention_blocks.0.fc.1": false,
+      "attention_blocks.0.fc.2": false,
+      "attention_blocks.0.fc.3": false,
+      "attention_blocks.1": false,
+      "attention_blocks.1.avg_pool": false,
+      "attention_blocks.1.fc": false,
+      "attention_blocks.1.fc.0": false,
+      "attention_blocks.1.fc.1": false,
+      "attention_blocks.1.fc.2": false,
+      "attention_blocks.1.fc.3": false,
+      "attention_blocks.2": false,
+      "attention_blocks.2.avg_pool": false,
+      "attention_blocks.2.fc": false,
+      "attention_blocks.2.fc.0": false,
+      "attention_blocks.2.fc.1": false,
+      "attention_blocks.2.fc.2": false,
+      "attention_blocks.2.fc.3": false,
+      "multi_scale_fusion": false,
+      "multi_scale_fusion.0": false,
+      "multi_scale_fusion.1": false,
+      "multi_scale_fusion.2": false,
+      "global_avg_pool": false,
+      "global_max_pool": false,
+      "generation_head": false,
+      "generation_head.0": false,
+      "generation_head.1": false,
+      "generation_head.2": false,
+      "generation_head.3": false,
+      "structure_head": false,
+      "structure_head.0": false,
+      "structure_head.1": false,
+      "structure_head.2": false,
+      "structure_head.3": false,
+      "location_head": false,
+      "location_head.0": false,
+      "location_head.1": false,
+      "location_head.2": false,
+      "location_head.3": false,
+      "guidance_head": false,
+      "guidance_head.0": false,
+      "guidance_head.0.conv": false,
+      "guidance_head.0.bn": false,
+      "guidance_head.0.relu": false,
+      "guidance_head.1": false
+    }
+  },
+  "n_threads": 2,
+  "n_interop_threads": 1,
+  "affinity": [
+    0,
+    1
+  ],
+  "nice": 10
+}

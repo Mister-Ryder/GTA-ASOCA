@@ -1,0 +1,44 @@
+{
+  "captured_at_utc": "2026-10-14T07:14:20.809315+00:00",
+  "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/label_scale_audit_v1",
+  "records": [
+    {
+      "name": "audit_plan.json",
+      "bytes": 8701,
+      "sha256": "e45cae8bcac96a5332b245a140dd14a3fda86af4b27f6e08ccef5a7a67849138"
+    },
+    {
+      "name": "fixed_sampling_bank.json",
+      "bytes": 81765,
+      "sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14"
+    },
+    {
+      "name": "training_tree_extents.json",
+      "bytes": 29423,
+      "sha256": "fb7f8d26ebc4bb7b44210f42541ff9079786085aabb41e37d940327b50ca986a"
+    },
+    {
+      "name": "roi_patch_metrics.jsonl",
+      "bytes": 614156,
+      "sha256": "8041da10d2a34bc63ed6c507039d869733735bcc29ec6db83b7c162120cc149d"
+    },
+    {
+      "name": "roi_patch_metrics.csv",
+      "bytes": 16177,
+      "sha256": "08e0900c1a28c0cbbc4302d37f554a932a4b16028dfad0ac673e73ea9fb45bb3"
+    },
+    {
+      "name": "summary.json",
+      "bytes": 40607,
+      "sha256": "ca3182d572649667eabc6651e5672470ff712cb844f8cc56003e76c3afe94705"
+    },
+    {
+      "name": "LABEL_SCALE_AUDIT_COMPLETE.json",
+      "bytes": 817,
+      "sha256": "c8a481aa8759aa4ad829ce366a30ba41016bff9aaa30a57bcd3283d3b639c1bb"
+    }
+  ],
+  "complete_artifact_hashes_verified": true,
+  "actual_Gaussian56_bank_identical": true,
+  "read_only_server_access": true
+}

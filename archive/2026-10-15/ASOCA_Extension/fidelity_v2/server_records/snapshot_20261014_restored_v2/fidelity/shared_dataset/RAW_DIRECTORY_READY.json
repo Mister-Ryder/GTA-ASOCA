@@ -1,0 +1,11 @@
+{
+  "status": "ready",
+  "raw_root": "/root/autodl-fs/datasets/ASOCA_GTA_20261014/raw",
+  "archive_sha256": "08ed5cf3d70743517ec83d9f1b18fc5d5a520d99203b4a876df5b7d1600bdb38",
+  "crc_verified": true,
+  "case_count": 40,
+  "image_label_sha256_verified": 80,
+  "archive_layout": "direct group folders",
+  "previous_layout_assumption_error_resolved": true,
+  "verified_at": "2026-10-14T04:03:22.906685+00:00"
+}

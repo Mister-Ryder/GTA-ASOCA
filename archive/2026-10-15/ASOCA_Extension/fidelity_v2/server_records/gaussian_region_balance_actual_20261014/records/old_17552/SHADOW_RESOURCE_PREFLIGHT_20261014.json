@@ -1,0 +1,20 @@
+{
+  "captured_at_utc": "2026-10-14T09:45:22.787276+00:00",
+  "scope": "read-only resource/input readiness; not model results",
+  "completed_preview_controller": {
+    "pid": 136666,
+    "alive": false
+  },
+  "GPU_processes": "",
+  "GPU_hardware": "NVIDIA GeForce RTX 4080, 595.71.05, 32760 MiB, 8.9",
+  "meminfo": {
+    "MemTotal": "791159988 kB",
+    "MemAvailable": "674805772 kB"
+  },
+  "cgroup_memory_max": "96636764160",
+  "cgroup_memory_current": "45840240640",
+  "cpu_max": "2500000 100000",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "formal_final_shared_bytes": 68670910,
+  "training_started": false
+}

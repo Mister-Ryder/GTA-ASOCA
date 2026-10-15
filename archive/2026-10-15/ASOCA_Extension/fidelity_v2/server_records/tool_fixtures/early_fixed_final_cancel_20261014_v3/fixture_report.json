@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "role": "NOT_MODEL_RESULTS",
+  "controller_source_sha256": "2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42",
+  "fixture_source_sha256": "260b55fda26e5b0b9b72cbd873256af1ea2c32deb1f092ce4599156ce10e0d44",
+  "checks": [
+    "SIGTERM_before_Popen_assignment_deferred_until_PID_PGID_owned",
+    "repeated_cancel_during_TERM_KILL_wait_cannot_interrupt_cleanup",
+    "GPU_lease_retained_until_owned_child_exit_confirmed",
+    "PGID_inspection_failure_sends_no_unrelated_group_signal_and_keeps_lease_until_exit"
+  ],
+  "events": [
+    [
+      "child_created_before_assignment",
+      424242
+    ],
+    [
+      "constructor_returned_without_raising_signal",
+      424242
+    ],
+    [
+      "cancellation_raised_after_child_owned",
+      424242
+    ],
+    [
+      "wait",
+      15
+    ],
+    [
+      "wait",
+      10
+    ],
+    [
+      "lease_retained_while_owned_child_live",
+      424242
+    ],
+    [
+      "wait",
+      10
+    ],
+    [
+      "owned_exit_confirmed",
+      -9
+    ],
+    [
+      "GPU_lease_released_only_after_owned_exit",
+      424242
+    ],
+    [
+      "wait",
+      10
+    ],
+    [
+      "fallback_owned_wait_with_lease_held",
+      true
+    ],
+    [
+      "wait",
+      10
+    ],
+    [
+      "fallback_owned_wait_with_lease_held",
+      true
+    ],
+    [
+      "wait",
+      10
+    ],
+    [
+      "owned_exit_confirmed",
+      -9
+    ]
+  ],
+  "actual_OS_process_started": false,
+  "actual_OS_signal_sent": false,
+  "server_connections": 0,
+  "model_inference_or_training_started": false,
+  "not_executed": [
+    "Linux subprocess and OS signal delivery",
+    "GPU or server evaluation"
+  ]
+}

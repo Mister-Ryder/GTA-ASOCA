@@ -1,0 +1,12 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json
+d=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+print((d/'publish_status.json').read_text())
+for p in [d/'cache',d/'raw/CompressedVersion']:
+ if p.exists():
+  print(subprocess.check_output(['du','-sh',str(p)],text=True).strip())
+  if p==d/'cache':print('cache directories',len(list((p/'cases').glob('*'))),'files',len(list(p.rglob('*.npy'))))
+print(subprocess.getoutput('ps -eo pid,ppid,stat,%cpu,args | rg "publish.py|rsync"'))
+print((d/'publish.log').read_text(errors='replace')[-2500:])
+PY

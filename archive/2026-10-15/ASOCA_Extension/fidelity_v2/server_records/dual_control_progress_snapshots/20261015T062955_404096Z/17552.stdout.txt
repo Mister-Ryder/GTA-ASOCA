@@ -1,0 +1,132 @@
+{
+  "captured_at_utc": "2026-10-15T06:30:33.709622+00:00",
+  "launch": {
+    "time_utc": "2026-10-14T10:14:14.065076+00:00",
+    "pid": 140646,
+    "argv": [
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+      "-B",
+      "-u",
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_gaussian_lambda0_control.py"
+    ],
+    "controller_sha256": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040",
+    "log": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_LAMBDA0_CONTROL_20261014.log",
+    "records": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014",
+    "disk_free_bytes_before": 22396698624,
+    "role": "FORMAL_25000_UPDATE_ALLOCATED_GAUSSIAN_LAMBDA0_CONTROL_LAUNCHED_NOT_COMPLETED"
+  },
+  "status": {
+    "status": "completed",
+    "controller_pid": 140646,
+    "child_pid": null,
+    "updated_at_utc": "2026-10-14T16:01:43.693396+00:00",
+    "gpu_lock_acquired": false,
+    "error_type": null,
+    "error": null,
+    "stage_wall_seconds": 0.0013455264270305634
+  },
+  "parent_process": {
+    "pid": 140646,
+    "alive": false,
+    "cmdline": null
+  },
+  "child_process": null,
+  "epochs_completed": 200,
+  "latest_epoch": {
+    "epoch": 199,
+    "loss": 0.3358506358861923,
+    "seconds": 75.415716862306,
+    "stage": "joint",
+    "iterations": 125,
+    "gaussian_lambda": 0.0,
+    "gaussian_lambda_configured": 0.0,
+    "classifier_lambda": 0.1,
+    "lr_by_group": {
+      "segmentation": 3.379645067493802e-08,
+      "classifier": 3.379645067493802e-09
+    },
+    "component_means": {
+      "generation_focal": 0.36589023226499556,
+      "guidance_weighted": 0.0002159316586330533,
+      "gaussian": 0.25005439245700833,
+      "segmentation": 0.22710262447595597,
+      "segmentation_head_1": 0.18113509011268616,
+      "segmentation_gradient_norm": 0.9042980347871781,
+      "segmentation_head_0": 0.24387599819898606,
+      "classifier_lambda": 0.1,
+      "guidance_lambda": 0.1,
+      "segmentation_weighted": 0.22710262447595597,
+      "classifier_weight": 0.1,
+      "segmentation_head_2": 0.2519441192150116,
+      "gaussian_weighted": 0.0,
+      "structure_focal": 0.3291753445267677,
+      "classification": 1.085320764541626,
+      "location_focal": 0.15079165374813602,
+      "classification_weighted": 0.10853207823634148,
+      "gaussian_lambda": 0.0,
+      "guidance_map": 0.002159316547214985,
+      "structure_correctness": 0.14975172060834302,
+      "classifier_gradient_norm": 2.3548996663093567
+    },
+    "gradient_probe_count": 0,
+    "gpu_peak_GiB": 14.44914436340332
+  },
+  "actual_theta0_brief": {
+    "state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+    "tensor_count": 327,
+    "model_state_and_RNG_unchanged": true,
+    "actual_original_main_epoch0_state_verified": false
+  },
+  "GPU": "",
+  "controller_log_tail": [],
+  "CPU_preflight_log_tail": "{\"proposal\": \"/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/cpu_preflight\", \"status\": \"prepared_not_launched\", \"cpu_reconstruction_performed\": true, \"actual_original_main_epoch0_state_verified\": false, \"training_started\": false}\n",
+  "formal_training_log_tail": "40699470043182, \"structure_correctness\": 0.20232321321964264, \"classification\": 1.442911148071289, \"classifier_weight\": 0.1, \"classification_weighted\": 0.14429111778736115, \"guidance_map\": 0.00188074866309762, \"guidance_weighted\": 0.00018807487504091114, \"gaussian\": 0.24989959597587585, \"gaussian_weighted\": 0.0}, \"segmentation_gradient_norm\": 0.9631849527359009, \"classifier_gradient_norm\": 3.0023193359375}\n{\"epoch\": 199, \"loss\": 0.3358506358861923, \"seconds\": 75.415716862306, \"stage\": \"joint\", \"iterations\": 125, \"gaussian_lambda\": 0.0, \"gaussian_lambda_configured\": 0.0, \"classifier_lambda\": 0.1, \"lr_by_group\": {\"segmentation\": 3.379645067493802e-08, \"classifier\": 3.379645067493802e-09}, \"component_means\": {\"generation_focal\": 0.36589023226499556, \"guidance_weighted\": 0.0002159316586330533, \"gaussian\": 0.25005439245700833, \"segmentation\": 0.22710262447595597, \"segmentation_head_1\": 0.18113509011268616, \"segmentation_gradient_norm\": 0.9042980347871781, \"segmentation_head_0\": 0.24387599819898606, \"classifier_lambda\": 0.1, \"guidance_lambda\": 0.1, \"segmentation_weighted\": 0.22710262447595597, \"classifier_weight\": 0.1, \"segmentation_head_2\": 0.2519441192150116, \"gaussian_weighted\": 0.0, \"structure_focal\": 0.3291753445267677, \"classification\": 1.085320764541626, \"location_focal\": 0.15079165374813602, \"classification_weighted\": 0.10853207823634148, \"gaussian_lambda\": 0.0, \"guidance_map\": 0.002159316547214985, \"structure_correctness\": 0.14975172060834302, \"classifier_gradient_norm\": 2.3548996663093567}, \"gradient_probe_count\": 0, \"gpu_peak_GiB\": 14.44914436340332}\nTRAINING_COMPLETE\n",
+  "classifier_audit": {
+    "launch": {
+      "captured_at_utc": "2026-10-14T10:30:14.915056+00:00",
+      "parent_pid": 141899,
+      "argv": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-B",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/audit_final_classifier_cpu.py",
+        "--audit",
+        "--reference-bank",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops_inputs/gaussian_region_balance_shadow_20261014/fixed_sampling_bank.json",
+        "--classifier-donor",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+        "--output",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014",
+        "--deadline",
+        "900"
+      ],
+      "source_sha256": "b321207067fb81536e0c70b45e83cd48280a9a6e2fce93589b9fa10da6aaaf3d",
+      "log": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/CLASSIFIER_FINAL_CPU_AUDIT_20261014.log",
+      "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014",
+      "role": "CPU_ONLY_CLASSIFIER_DISTRIBUTION_AUDIT_LAUNCHED_NOT_COMPLETE",
+      "GPU_query_or_allocation": false,
+      "optimizer_updates": false
+    },
+    "parent_process": {
+      "pid": 141899,
+      "alive": false,
+      "cmdline": null
+    },
+    "completed_patches": 56,
+    "complete": {
+      "status": "completed",
+      "n_patches": 56,
+      "n_nonempty": 49,
+      "artifact_sha256": {
+        "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+        "audit_plan.json": "79f480cbfa0edf8ae8d6a0691607e7943154b104ece994dad578deb999b3b0c5",
+        "patch_predictions.jsonl": "dc7ebf831979ecf2668f0a5a1cda89f2dba3935913200ef652287a79a1fc41ea",
+        "summary.json": "963c66f839f877655f49c9af3beb362ff39e23fd32a8484d801e4d5ee44306a7"
+      },
+      "states_RNG_eval_unchanged": true,
+      "CUDA_initialized": false,
+      "parameter_updates": false
+    },
+    "log_tail": " 72.61950400657952}\n{\"classifier_patches_complete\": 37, \"total\": 56, \"seconds\": 74.33976606279612}\n{\"classifier_patches_complete\": 38, \"total\": 56, \"seconds\": 76.04099300689995}\n{\"classifier_patches_complete\": 39, \"total\": 56, \"seconds\": 77.76855568960309}\n{\"classifier_patches_complete\": 40, \"total\": 56, \"seconds\": 79.55834162048995}\n{\"classifier_patches_complete\": 41, \"total\": 56, \"seconds\": 81.322146454826}\n{\"classifier_patches_complete\": 42, \"total\": 56, \"seconds\": 83.03542332910001}\n{\"classifier_patches_complete\": 43, \"total\": 56, \"seconds\": 84.76319179497659}\n{\"classifier_patches_complete\": 44, \"total\": 56, \"seconds\": 86.52033347450197}\n{\"classifier_patches_complete\": 45, \"total\": 56, \"seconds\": 88.2154048141092}\n{\"classifier_patches_complete\": 46, \"total\": 56, \"seconds\": 89.95487822592258}\n{\"classifier_patches_complete\": 47, \"total\": 56, \"seconds\": 91.90134397149086}\n{\"classifier_patches_complete\": 48, \"total\": 56, \"seconds\": 93.94811886921525}\n{\"classifier_patches_complete\": 49, \"total\": 56, \"seconds\": 95.77405776455998}\n{\"classifier_patches_complete\": 50, \"total\": 56, \"seconds\": 97.52601798065007}\n{\"classifier_patches_complete\": 51, \"total\": 56, \"seconds\": 99.28332675993443}\n{\"classifier_patches_complete\": 52, \"total\": 56, \"seconds\": 101.1709805522114}\n{\"classifier_patches_complete\": 53, \"total\": 56, \"seconds\": 102.9201719686389}\n{\"classifier_patches_complete\": 54, \"total\": 56, \"seconds\": 104.65252115018666}\n{\"classifier_patches_complete\": 55, \"total\": 56, \"seconds\": 106.36219031922519}\n{\"classifier_patches_complete\": 56, \"total\": 56, \"seconds\": 108.49923426285386}\n"
+  }
+}

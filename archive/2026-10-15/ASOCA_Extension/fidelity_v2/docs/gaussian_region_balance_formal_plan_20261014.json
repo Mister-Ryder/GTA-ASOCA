@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "PLAN_ONLY_NOT_AUTHORIZATION_NOT_MODEL_RESULTS",
+  "ROOT": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "decision": "E:/01-\u6295\u7a3f\u5907\u4efd/\u8f6c\u7a3f\u6295\u671f\u520a-elsevier/\u8f6c\u6295\u51c6\u5907\u6750\u6599/ASOCA_Extension/fidelity_v2/server_records/B_formal_controller_local_review_20261014/decision_contract_fixture_NOT_AUTHORIZATION.json",
+  "records": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014",
+  "training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+  "Python": "/root/miniconda3/envs/gta-asoca311/bin/python",
+  "required_helper_sha256": {
+    "diagnose_initial_gaussian_parameter_gradients.py": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+    "verify_postfit.py": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51"
+  },
+  "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+  "allowed_config_changes": [
+    "output",
+    "source_sha256",
+    "source_files_sha256"
+  ],
+  "Gaussian_lambda": 10,
+  "epochs": 200,
+  "updates_per_epoch": 125,
+  "classifier_pretraining_updates_reused": 5120,
+  "internal4_checkpoint_evaluations": 20,
+  "case_inferences": 80,
+  "checkpoint_selection": "fixed final",
+  "historical_main_theta0_verified": false,
+  "no_decision_no_training": true,
+  "decision_contract": {
+    "schema_version": 1,
+    "action": "authorize_one_B_formal_run",
+    "decision_author": "ROOT",
+    "created_at_utc": "fresh ISO8601 timezone-aware, after actual diagnostic release, within six hours",
+    "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+    "evidence": "exact evidence JSON printed by --decision-evidence after actual completion",
+    "canonical_review": {
+      "all20_checkpoints_reviewed": true,
+      "late_checkpoint_names": [
+        "epoch160",
+        "epoch170",
+        "epoch180",
+        "epoch190",
+        "final"
+      ],
+      "rationale": "ROOT actual complete/late curve interpretation"
+    },
+    "gradient_review": {
+      "all28_batches_reviewed": true,
+      "nonfinite_batches": "exact actual summary list",
+      "batches_implying_clip12": "exact actual summary dict",
+      "proceed_with_fixed_lambda10_after_risk_review": true,
+      "rationale": "ROOT explicit nonfinite/clipping assessment, not merely gradient finite"
+    }
+  },
+  "script_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "controller_argv": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py"
+  ],
+  "actual_evidence_only_argv": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py",
+    "--decision-evidence"
+  ]
+}

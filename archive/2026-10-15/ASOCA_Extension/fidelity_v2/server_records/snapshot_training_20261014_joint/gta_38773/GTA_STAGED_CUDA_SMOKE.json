@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "role": "mechanical three-stage test only; not segmentation performance",
+  "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "stage_classifier_gradient_norms": [
+    0.0,
+    11.919203519821167,
+    16.165205717086792
+  ],
+  "max_gpu_peak_GiB": 14.446227073669434,
+  "segmentation_updates": 6,
+  "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+  "classifier_initializer": "separate smoke fixed-final; formal uses independent80-final"
+}

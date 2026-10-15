@@ -1,0 +1,1 @@
+{"status": "passed", "role": "synthetic mechanical smoke only; not prior-quality evidence", "loss": 4.693291187286377, "gradient_norm": 46.8878173828125, "patch_size": 128, "batch_size": 2, "gpu_peak_GiB": 1.1472749710083008, "torch": "2.7.1+cu128", "cuda_runtime": "12.8"}

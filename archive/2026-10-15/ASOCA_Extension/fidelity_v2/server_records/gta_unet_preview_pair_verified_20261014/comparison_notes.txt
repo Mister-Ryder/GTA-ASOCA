@@ -1,0 +1,10 @@
+old-server early fixed-final preview; canonical agreement pending
+仅4例train28内部development病例；GTA为旧服务器提前fixed-final推理，canonical逐像素一致性仍待核对。
+差值=GTA preview−U-Net；患者样本SD不是fold SD/显著性。未定义ASSD病例保留，不补0，不报告缺病例的完整均值。
+主指标已对同一原GT/保存prediction在原网格CPU重算；没有加载模型、推理或训练，没有伪造canonical轨迹。
+相同分割recipe仍存在预训练/初始化、模型容量、先验及辅助目标差异；不能单模块归因。
+local byte view assembled from downloaded original source files and checked against actual shared READY and old guard payload fingerprints; not every file claimed re-downloaded from shared
+gta_early_preview dice: mean=0.8318539004693745; patient_SD=0.05262188083735396; defined=4/4
+gta_early_preview assd_mm: mean=0.5678251259083507; patient_SD=0.3231060045482814; defined=4/4
+unet dice: mean=0.818455511253775; patient_SD=0.07676466971407239; defined=4/4
+unet assd_mm: mean=0.7492326552685586; patient_SD=0.45591914607380335; defined=4/4

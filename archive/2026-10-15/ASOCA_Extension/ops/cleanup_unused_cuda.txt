@@ -1,0 +1,31 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+from importlib import metadata
+from packaging.requirements import Requirement
+from packaging.utils import canonicalize_name
+import subprocess,sys,json
+packages={canonicalize_name(d.metadata['Name']):d for d in metadata.distributions()}
+roots=['torch','torchvision','monai','nnunetv2','numpy','scipy','simpleitk','scikit-image','einops']
+needed=set()
+pending=roots[:]
+while pending:
+    key=canonicalize_name(pending.pop())
+    if key in needed or key not in packages: continue
+    needed.add(key)
+    for value in packages[key].requires or []:
+        req=Requirement(value)
+        if req.marker is None or req.marker.evaluate({'extra':''}): pending.append(req.name)
+candidates=[k for k in packages if (k.startswith('nvidia-') or k.startswith('cuda-')) and k not in needed]
+print(json.dumps({'unneeded_cuda_distributions':candidates,'retained_roots':roots}))
+if candidates:
+    subprocess.run([sys.executable,'-m','pip','uninstall','-y']+candidates,check=True)
+subprocess.run([sys.executable,'-m','pip','check'],check=True)
+subprocess.run([sys.executable,'-m','pip','freeze'],stdout=open('/root/autodl-tmp/ASOCA_GTAirway_20261013/manifests/environment.lock.txt','w'),check=True)
+import torch
+assert torch.__version__=='2.7.1+cu128'
+from nnunetv2.experiment_planning.plan_and_preprocess_entrypoints import plan_and_preprocess_entry
+from nnunetv2.run.run_training import run_training_entry
+from nnunetv2.inference.predict_from_raw_data import predict_entry_point
+from nnunetv2.training.nnUNetTrainer.variants.training_length.nnUNetTrainer_Xepochs import nnUNetTrainer_100epochs
+print('Pinned native nnU-Net entrypoints import successfully')
+PY
+df -h /root/autodl-tmp

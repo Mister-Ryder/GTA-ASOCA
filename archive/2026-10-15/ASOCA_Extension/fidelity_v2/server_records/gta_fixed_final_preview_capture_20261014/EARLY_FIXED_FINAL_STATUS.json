@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "role": "early fixed-final preview only; no training or checkpoint selection",
+  "status": "completed",
+  "controller_pid": 136666,
+  "controller_source_sha256": "2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42",
+  "python_executable": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+  "boot_id": "a234d464-ea3d-4b10-9333-faae3d612783",
+  "root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+  "shared": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014",
+  "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gta_fixed_final_preview_20261014",
+  "started_at_utc": "2026-10-14T08:53:10.295126+00:00",
+  "max_wait_seconds": 7200,
+  "max_evaluation_seconds": 7200,
+  "canonical_final_unchanged": true,
+  "canonical20_trajectory_unchanged": true,
+  "fivefold": false,
+  "formal_final_test": false,
+  "gpu_lock_acquired": false,
+  "updated_at_utc": "2026-10-14T08:58:18.245081+00:00",
+  "unet_completion": {
+    "complete_marker_sha256": "3fc851db9f7afcb58de93730f527cdacf1526f9f79cbdeba45c65eb300102d18",
+    "trajectory_complete_sha256": "bf803b19e19e2b8d152ed6e641da4574523bff3fde7897dcf0f9dd0b46a85eb5",
+    "n_evaluations": 20
+  },
+  "runtime": {
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "python_executable": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+    "packages": {
+      "torch": "2.7.1+cu128",
+      "monai": "1.5.1",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-image": "0.25.2",
+      "SimpleITK": "2.5.2",
+      "scikit-learn": "1.7.2",
+      "pandas": "2.3.3",
+      "tqdm": "4.67.1"
+    },
+    "torch_cuda_runtime": "12.8",
+    "torch_cudnn_version": 90701,
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "CUDA_context_initialized": false
+  },
+  "READY_sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d",
+  "checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "actual_final_CPU_header": {
+    "epoch": 199,
+    "model_state_tensor_count": 327,
+    "all_model_tensors_finite": true,
+    "load_mode": "torch.load(map_location=cpu, weights_only=True)",
+    "CUDA_context_initialized": false
+  },
+  "command": [
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+    "-u",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/code/evaluate.py",
+    "--manifest",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+    "--raw-root",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion",
+    "--checkpoint",
+    "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/final.pt",
+    "--output",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gta_fixed_final_preview_20261014",
+    "--fold",
+    "0",
+    "--split",
+    "internal_diagnostic",
+    "--sw-batch-size",
+    "1"
+  ],
+  "canonical_runtime": {
+    "captured_at_utc": "2026-10-14T08:00:08.673228+00:00",
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "python_executable": "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "packages": {
+      "torch": "2.7.1+cu128",
+      "monai": "1.5.1",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-image": "0.25.2",
+      "SimpleITK": "2.5.2",
+      "scikit-learn": "1.7.2",
+      "pandas": "2.3.3",
+      "tqdm": "4.67.1"
+    },
+    "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "evaluation_sources": {
+      "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+      "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+      "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+    },
+    "cache_CT_inputs": {
+      "Diseased_10": {
+        "bytes": 87817088,
+        "sha256": "a1bd28a693cca4a6c522f081eedf93e02190f1ee2bfb1bc05e23d5cbe425e82c"
+      },
+      "Diseased_20": {
+        "bytes": 130101568,
+        "sha256": "e323458226308c017157313aeee0df6f310fa63819786cc7c6ffcf5007ec8a0e"
+      },
+      "Normal_12": {
+        "bytes": 73442504,
+        "sha256": "35758699a03988d17e6eebedb494d57cef17be442616efc25a394c771bf8d849"
+      },
+      "Normal_3": {
+        "bytes": 81442048,
+        "sha256": "41ac6043bc416f8f5dd32ff82c55c25f7fb00b1dc783f6f20abed045f0f02d7e"
+      }
+    },
+    "scope": "read-only versions/source/actual internal4 CT input bytes; no inference/training",
+    "gpu": "NVIDIA vGPU-32GB, 580.76.05, 32760 MiB, 8.9",
+    "gpu_processes": "1943, 19444 MiB"
+  },
+  "child_pid": null,
+  "child_pgid": 136681,
+  "child_proc_start_ticks": "1338554598",
+  "evaluation_started_at_utc": "2026-10-14T08:53:17.672042+00:00",
+  "GPU": {
+    "captured_at_utc": "2026-10-14T08:58:02.068470+00:00",
+    "gpu": "NVIDIA GeForce RTX 4080, 595.71.05, 32760 MiB, 8.9",
+    "gpu_processes": "136681, 4522 MiB",
+    "all_compute_GPUs_idle": false
+  },
+  "log": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/logs/early_fixed_final_eval.log",
+  "evaluation_wall_seconds": 300.5723999571055,
+  "evaluator_return_code": 0,
+  "completion_marker_sha256": "4dad8a9ed4b7fa0a13adc4e6ede64cc5888be6e1cd10eecf1e4ae6258a6701b7",
+  "n_cases": 4,
+  "owned_child_exit_confirmed": true,
+  "locks_released_at_utc": "2026-10-14T08:58:18.245075+00:00",
+  "cancellation_signals": []
+}

@@ -1,0 +1,178 @@
+{
+  "role": "SYNTHETIC_PARAMETER_GRADIENT_FIXTURE_NOT_MODEL_RESULTS",
+  "hand_fixture": {
+    "schema_version": 1,
+    "role": "ANALYTIC_FIXTURE_NOT_ACTUAL_MODEL_DIAGNOSTIC",
+    "status": "hand_verified_torch_unavailable",
+    "torch_available": false,
+    "cases": [
+      {
+        "name": "uneven_fg",
+        "hand_A": "21/400",
+        "hand_B": "23/600",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": false
+      },
+      {
+        "name": "all_empty",
+        "hand_A": "21/400",
+        "hand_B": "21/400",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": false
+      },
+      {
+        "name": "all_fg",
+        "hand_A": "21/400",
+        "hand_B": "21/400",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": false
+      },
+      {
+        "name": "one_voxel",
+        "hand_A": "1/128",
+        "hand_B": "1/32",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": false
+      },
+      {
+        "name": "batchavg",
+        "hand_A": "153/6400",
+        "hand_B": "57/1600",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": false
+      }
+    ],
+    "empty_policy": "renormalize over present regions; all-empty/all-FG B equals A",
+    "batch_policy": "mean of per-patch losses; never pool batch region denominators"
+  },
+  "actual_candidate_torch_verified": true,
+  "actual_model_forward_executed": false,
+  "status": "passed",
+  "actual_cases": [
+    {
+      "name": "uneven_fg",
+      "candidate_loss": 0.03833333030343056,
+      "shadow_B_and_hand_expected_verified": true,
+      "candidate_q_gradient_matches_reviewed_shadow": true
+    },
+    {
+      "name": "all_empty",
+      "candidate_loss": 0.05249999463558197,
+      "shadow_B_and_hand_expected_verified": true,
+      "candidate_q_gradient_matches_reviewed_shadow": true
+    },
+    {
+      "name": "all_fg",
+      "candidate_loss": 0.05249999463558197,
+      "shadow_B_and_hand_expected_verified": true,
+      "candidate_q_gradient_matches_reviewed_shadow": true
+    },
+    {
+      "name": "one_voxel",
+      "candidate_loss": 0.03125,
+      "shadow_B_and_hand_expected_verified": true,
+      "candidate_q_gradient_matches_reviewed_shadow": true
+    },
+    {
+      "name": "batchavg",
+      "candidate_loss": 0.035624995827674866,
+      "shadow_B_and_hand_expected_verified": true,
+      "candidate_q_gradient_matches_reviewed_shadow": true
+    }
+  ],
+  "actual_shadow_torch_fixture": {
+    "schema_version": 1,
+    "role": "ANALYTIC_FIXTURE_NOT_ACTUAL_MODEL_DIAGNOSTIC",
+    "status": "passed",
+    "torch_available": true,
+    "cases": [
+      {
+        "name": "uneven_fg",
+        "hand_A": "21/400",
+        "hand_B": "23/600",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": true
+      },
+      {
+        "name": "all_empty",
+        "hand_A": "21/400",
+        "hand_B": "21/400",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": true
+      },
+      {
+        "name": "all_fg",
+        "hand_A": "21/400",
+        "hand_B": "21/400",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": true
+      },
+      {
+        "name": "one_voxel",
+        "hand_A": "1/128",
+        "hand_B": "1/32",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": true
+      },
+      {
+        "name": "batchavg",
+        "hand_A": "153/6400",
+        "hand_B": "57/1600",
+        "hand_calculation_verified": true,
+        "actual_torch_autograd_verified": true
+      }
+    ],
+    "empty_policy": "renormalize over present regions; all-empty/all-FG B equals A",
+    "batch_policy": "mean of per-patch losses; never pool batch region denominators"
+  },
+  "torch_version": "2.7.1+cu128",
+  "parameter_sum_and_group_metric_fixture": {
+    "finite": true,
+    "energy": {
+      "segmentation": 56.0,
+      "A": 6.0,
+      "B": 54.0,
+      "totalA": 50.0,
+      "totalB": 74.0
+    },
+    "norms": {
+      "segmentation": 7.483314773547883,
+      "A": 2.449489742783178,
+      "B": 7.3484692283495345,
+      "totalA": 7.0710678118654755,
+      "totalB": 8.602325267042627
+    },
+    "gaussian_dot_seg": {
+      "A": -6.0,
+      "B": -18.0
+    },
+    "tensor_counts": {
+      "segmentation": {
+        "unused_None": 0,
+        "nonzero": 1
+      },
+      "A": {
+        "unused_None": 0,
+        "nonzero": 1
+      },
+      "B": {
+        "unused_None": 0,
+        "nonzero": 1
+      },
+      "totalA": {
+        "unused_None": 0,
+        "nonzero": 1
+      },
+      "totalB": {
+        "unused_None": 0,
+        "nonzero": 1
+      }
+    },
+    "cos_A_seg": -0.3273268353539886,
+    "A_over_seg_norm": 0.32732683535398854,
+    "A_direct_vs_sum_relative_residual": 0.0,
+    "cos_B_seg": -0.32732683535398854,
+    "B_over_seg_norm": 0.9819805060619657,
+    "B_direct_vs_sum_relative_residual": 0.0
+  }
+}

@@ -1,0 +1,40 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,hashlib,shutil,os,time
+source=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+dest=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+expected='141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356'
+if hashlib.sha256((source/'cache/manifest.json').read_bytes()).hexdigest()!=expected:raise RuntimeError('Original frozen manifest differs')
+if shutil.disk_usage(dest.parent).free<18*1024**3:raise RuntimeError('Need 18 GiB free for sparse cache and raw copy')
+dest.mkdir(exist_ok=True)
+script=dest/'publish.py'
+program="""from pathlib import Path
+import subprocess,hashlib,json,datetime,shutil
+s=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+d=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+def status(value):
+ (d/'publish_status.json').write_text(json.dumps(value,indent=2)+'\\n')
+try:
+ status({'status':'copying','method':'rsync --sparse, checksum verification','source':str(s)})
+ for folder in ['cache','raw/CompressedVersion']:
+  target=d/folder;target.mkdir(parents=True,exist_ok=True)
+  subprocess.run(['rsync','-a','--sparse','--ignore-existing',str(s/folder)+'/',str(target)+'/'],check=True)
+ status({'status':'verifying_checksums'})
+ for folder in ['cache','raw/CompressedVersion']:
+  p=subprocess.run(['rsync','-a','--sparse','--checksum','--dry-run','--itemize-changes',str(s/folder)+'/',str(d/folder)+'/'],capture_output=True,text=True,check=True)
+  if p.stdout.strip():raise RuntimeError('Shared copy differs: '+p.stdout[:3000])
+ h=hashlib.sha256((d/'cache/manifest.json').read_bytes()).hexdigest()
+ if h!='141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356':raise RuntimeError('Manifest changed')
+ value={'status':'ready','verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'manifest_sha256':h,'case_count':40,'raw_root':str(d/'raw/CompressedVersion'),'cache_root':str(d/'cache'),'source_root':str(s),'verification':'Full-file rsync checksums for cache and raw; sparse zero regions preserved','shared_disk_free_bytes':shutil.disk_usage(d).free,'dataset_archive_sha256':'08ed5cf3d70743517ec83d9f1b18fc5d5a520d99203b4a876df5b7d1600bdb38','archive_copy':'Original verified archive retained on first server; not duplicated here'}
+ status(value);(d/'DATA_READY.json').write_text(json.dumps(value,indent=2)+'\\n');print(json.dumps(value),flush=True)
+except Exception as e:
+ status({'status':'failed','error':repr(e)});raise
+"""
+script.write_text(program)
+if (dest/'DATA_READY.json').exists():print((dest/'DATA_READY.json').read_text());raise SystemExit(0)
+if (dest/'publish_status.json').exists() and json.loads((dest/'publish_status.json').read_text()).get('status') not in ['failed']:
+ raise RuntimeError('Publication already exists; inspect status before starting a duplicate')
+with (dest/'publish.log').open('a') as log:
+ p=subprocess.Popen(['/root/miniconda3/bin/python','-u',str(script)],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print(json.dumps({'publish_pid':p.pid,'destination':str(dest),'started':True}))
+PY

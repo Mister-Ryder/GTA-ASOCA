@@ -1,0 +1,18 @@
+{
+  "changed_at": "2026-10-14T01:41:36.994366+00:00",
+  "request": "User deferred fivefold evaluation while deciding method",
+  "stage": "fold0 method development",
+  "old_queue_pid": 6398,
+  "old_queue_parent_frozen": true,
+  "preserve_current_job": "nnunet/fold0",
+  "current_job_child_pid": 54628,
+  "allowed_new_jobs": [
+    "gta_no_ds/fold0",
+    "gta_no_prior/fold0",
+    "gta_no_gaussian/fold0",
+    "gta_no_balance/fold0"
+  ],
+  "deferred": "All folds 1-4 and all not-yet-started external-method reproductions",
+  "evaluation_role": "These eight held-out cases are development validation after method selection; not an independent final test",
+  "existing_outputs": "Preserved without deletion"
+}

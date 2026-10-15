@@ -1,0 +1,79 @@
+{
+  "status": "bounded_existing_model_context_rotation_probe",
+  "created_at_utc": "2026-10-15T07:27:14.128075+00:00",
+  "samples": [
+    {
+      "case_id": "Diseased_1",
+      "sample_id": "Diseased_1_FP",
+      "selection": "nearest FP voxel to coordinate median in existing B native prediction; diagnostic only",
+      "native_center_zyx": [
+        127,
+        381,
+        303
+      ],
+      "center_cache_zyx": [
+        159,
+        295,
+        234
+      ]
+    },
+    {
+      "case_id": "Diseased_1",
+      "sample_id": "Diseased_1_TP",
+      "selection": "nearest TP voxel to coordinate median in existing B native prediction; diagnostic only",
+      "native_center_zyx": [
+        166,
+        257,
+        331
+      ],
+      "center_cache_zyx": [
+        208,
+        199,
+        256
+      ]
+    },
+    {
+      "case_id": "Normal_16",
+      "sample_id": "Normal_16_FP",
+      "selection": "nearest FP voxel to coordinate median in existing B native prediction; diagnostic only",
+      "native_center_zyx": [
+        123,
+        320,
+        377
+      ],
+      "center_cache_zyx": [
+        154,
+        224,
+        264
+      ]
+    },
+    {
+      "case_id": "Normal_16",
+      "sample_id": "Normal_16_TP",
+      "selection": "nearest TP voxel to coordinate median in existing B native prediction; diagnostic only",
+      "native_center_zyx": [
+        138,
+        193,
+        229
+      ],
+      "center_cache_zyx": [
+        172,
+        135,
+        160
+      ]
+    }
+  ],
+  "base_roi_zyx": [
+    128,
+    128,
+    128
+  ],
+  "context_roi_zyx": [
+    128,
+    160,
+    160
+  ],
+  "rotation": "XY90deg, inverse on probability output",
+  "model_updates": 0,
+  "role": "four selected local patches; not whole8 metrics or generalization proof"
+}

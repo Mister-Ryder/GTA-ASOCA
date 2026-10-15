@@ -1,0 +1,23 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+def load(path):return json.loads(path.read_text()) if path.is_file() else None
+def process(pid):
+    folder=Path('/proc')/str(pid)
+    if not folder.is_dir():return {'pid':pid,'alive':False}
+    return {'pid':pid,'alive':True,'state':(folder/'stat').read_text().rsplit(')',1)[1].split()[0],'cmdline':(folder/'cmdline').read_bytes().replace(b'\0',b' ').decode()}
+state=load(root/'EARLY_FIXED_FINAL_STATUS.json')
+output=root/'results/gta_fixed_final_preview_20261014'
+rows=[]
+for case_id in ('Diseased_10','Diseased_20','Normal_12','Normal_3'):
+    value=load(output/(case_id+'.json'))
+    if value:rows.append({'case_id':case_id,'dice':value.get('dice'),'assd_mm':value.get('assd_mm'),'checkpoint_sha256':value.get('checkpoint_sha256'),'empty_prediction':value.get('empty_prediction')})
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'state':state,'controller_proc':process(state['controller_pid']) if state else None,'child_proc':process(state['child_pid']) if state and state.get('child_pid') else None,'completed_case_records':rows,'summary':load(output/'summary.json'),'EVAL_COMPLETE':load(output/'EVAL_COMPLETE.json'),'GPU_processes':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip()}
+(root/'EARLY_FINAL_LIVE_CHECK_20261014.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+for name in ('logs/early_fixed_final_controller.log','logs/early_fixed_final_eval.log'):
+    path=root/name
+    if path.is_file():print(json.dumps({'log':name,'tail':path.read_text(errors='replace').splitlines()[-6:]}))
+PY

@@ -1,0 +1,25 @@
+四例原网格保存像素误差诊断；GTA为旧服务器early fixed-final preview，canonical一致性仍待核验。
+先核四例实际GT/预测字节与物理网格，再进行CPU<=2计算；没有模型、forward、训练或新测试。
+骨架指标计数Lee skeleton体素；半径为原GT物理EDT代理，不是毫米长度加权或临床分支真值。
+FN区域只给26邻接几何bbox/体积/半径，不由几何位置命名远端、近端、主干或冠脉解剖段。
+四例全部保留，无p值/显著性/模型胜者；错误分解不是Gaussian或分类器的因果证明。
+
+Diseased_10
+gta_preview: TP=15335, FP=2688, FN=6036; precision=0.850857, recall=0.717561; Dice=0.778545, ASSD=0.401051203643647; surface pred→GT=0.42248568835345235, GT→pred=0.3819103229511301; skeleton≤1mm=0.726316, >1mm=0.983871
+unet: TP=13492, FP=2992, FN=7879; precision=0.818491, recall=0.631323; Dice=0.712825, ASSD=1.3455745965646286; surface pred→GT=0.34993363368322206, GT→pred=2.139395342963561; skeleton≤1mm=0.625263, >1mm=0.829032
+paired accounting: {"case_id": "Diseased_10", "GT_newly_recovered_by_GTA_voxels": 3221, "GT_newly_missed_by_GTA_voxels": 1378, "FP_newly_added_by_GTA_voxels": 1158, "FP_removed_by_GTA_voxels": 1462, "GT_skeleton_newly_recovered_radius_le1mm": 83, "GT_skeleton_newly_missed_radius_le1mm": 35, "GT_skeleton_newly_recovered_radius_gt1mm": 48, "GT_skeleton_newly_missed_radius_gt1mm": 0, "TP_GTA_minus_UNet": 1843, "FP_GTA_minus_UNet": -304}
+
+Diseased_20
+gta_preview: TP=21310, FP=1428, FN=9321; precision=0.937198, recall=0.695700; Dice=0.798591, ASSD=1.0522446643959043; surface pred→GT=0.39948632272431656, GT→pred=1.5501007673345382; skeleton≤1mm=0.521739, >1mm=0.971761
+unet: TP=22633, FP=1521, FN=7998; precision=0.937029, recall=0.738892; Dice=0.826248, ASSD=0.5418889670719264; surface pred→GT=0.27179759683070864, GT→pred=0.760472986926033; skeleton≤1mm=0.590062, >1mm=0.996678
+paired accounting: {"case_id": "Diseased_20", "GT_newly_recovered_by_GTA_voxels": 998, "GT_newly_missed_by_GTA_voxels": 2321, "FP_newly_added_by_GTA_voxels": 568, "FP_removed_by_GTA_voxels": 661, "GT_skeleton_newly_recovered_radius_le1mm": 36, "GT_skeleton_newly_missed_radius_le1mm": 80, "GT_skeleton_newly_recovered_radius_gt1mm": 0, "GT_skeleton_newly_missed_radius_gt1mm": 15, "TP_GTA_minus_UNet": -1323, "FP_GTA_minus_UNet": -93}
+
+Normal_12
+gta_preview: TP=24492, FP=4909, FN=3221; precision=0.833033, recall=0.883773; Dice=0.857653, ASSD=0.4205624076888006; surface pred→GT=0.649331669744002, GT→pred=0.1605394147283737; skeleton≤1mm=0.880519, >1mm=1.000000
+unet: TP=24592, FP=6356, FN=3121; precision=0.794623, recall=0.887381; Dice=0.838445, ASSD=0.827965908598166; surface pred→GT=1.3132027471260175, GT→pred=0.2516849256382345; skeleton≤1mm=0.818182, >1mm=0.992840
+paired accounting: {"case_id": "Normal_12", "GT_newly_recovered_by_GTA_voxels": 1028, "GT_newly_missed_by_GTA_voxels": 1128, "FP_newly_added_by_GTA_voxels": 1369, "FP_removed_by_GTA_voxels": 2816, "GT_skeleton_newly_recovered_radius_le1mm": 31, "GT_skeleton_newly_missed_radius_le1mm": 7, "GT_skeleton_newly_recovered_radius_gt1mm": 3, "GT_skeleton_newly_missed_radius_gt1mm": 0, "TP_GTA_minus_UNet": -100, "FP_GTA_minus_UNet": -1447}
+
+Normal_3
+gta_preview: TP=35398, FP=4639, FN=3877; precision=0.884132, recall=0.901286; Dice=0.892627, ASSD=0.39744222790504885; surface pred→GT=0.40606822141173, GT→pred=0.3885042257421018; skeleton≤1mm=0.816216, >1mm=1.000000
+unet: TP=35698, FP=4683, FN=3577; precision=0.884030, recall=0.908924; Dice=0.896304, ASSD=0.2815011488395115; surface pred→GT=0.2621708868660562, GT→pred=0.30173078799293906; skeleton≤1mm=0.827027, >1mm=1.000000
+paired accounting: {"case_id": "Normal_3", "GT_newly_recovered_by_GTA_voxels": 821, "GT_newly_missed_by_GTA_voxels": 1121, "FP_newly_added_by_GTA_voxels": 1330, "FP_removed_by_GTA_voxels": 1374, "GT_skeleton_newly_recovered_radius_le1mm": 32, "GT_skeleton_newly_missed_radius_le1mm": 42, "GT_skeleton_newly_recovered_radius_gt1mm": 0, "GT_skeleton_newly_missed_radius_gt1mm": 0, "TP_GTA_minus_UNet": -300, "FP_GTA_minus_UNet": -44}

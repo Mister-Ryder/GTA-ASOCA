@@ -1,0 +1,41 @@
+{
+  "protocol": {
+    "schema_version": 1,
+    "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+    "destination": "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014",
+    "main_pid": 1943,
+    "config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "source_freeze_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+    "evaluation_sources": {
+      "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+      "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+      "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+    },
+    "source_guard_helper_sha256": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51",
+    "publisher_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+    "wait_seconds": 7200,
+    "role": "early fixed-final inference mirror; no new training",
+    "GPU_used": false,
+    "model_loaded": false,
+    "training_started": false
+  },
+  "pid": 17636,
+  "started_at": "2026-10-14T08:40:04.539286+00:00",
+  "deadline_unix": 1791974404.5392783,
+  "confirmed_main_process": {
+    "pid": 1943,
+    "starttime_ticks": "3481571793",
+    "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+    "script": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/train.py"
+  },
+  "status": "completed",
+  "main_or_postfit_signals_sent": false,
+  "phase": "fixed_final_mirror_published",
+  "updated_at": "2026-10-14T08:47:38.260939+00:00",
+  "remaining_seconds": 6779.725195407867,
+  "temporary_directory": "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/.early_final_mirror_20261014.pending.b41dc4296ff5471da7376e93ff7aad05",
+  "READY": "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/READY.json",
+  "READY_sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d"
+}

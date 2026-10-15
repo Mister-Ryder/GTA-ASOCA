@@ -1,0 +1,273 @@
+{
+  "status": "STATIC_SOURCE_AND_PLAN_VERIFIED",
+  "role": "NOT_MODEL_RESULTS",
+  "tool_sha256": "fb3cf09ee7ae2459c83b19c40517b821832d37ef5f69764be3841c5936f19bc3",
+  "anonymous_bare_head": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+  "anonymous_bare_all48_blob_SHA_match": true,
+  "source_identity": {
+    "commit": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+    "origin": "https://github.com/Mister-Ryder/GTA-ASOCA.git",
+    "source_files": {
+      ".gitignore": {
+        "bytes": 540,
+        "sha256": "ff25fc2c1a08e4e544a546faa48e6c943724cc3f1ed62f93f687d1ff56baccff"
+      },
+      "LICENSE_SCOPE.md": {
+        "bytes": 518,
+        "sha256": "3943ab1167866fc6eba81bb8feb06f36e326a6fc3df0f695b065cfde4beada0f"
+      },
+      "PUBLIC_RELEASE_NOTES.md": {
+        "bytes": 11217,
+        "sha256": "16880f35e88c19dd454faaba7f58ab45cac683e78d8e6541277d092201a6fce1"
+      },
+      "PUBLIC_SOURCE_PROVENANCE.json": {
+        "bytes": 13595,
+        "sha256": "f31b69c60938455b8fb26c5ab8fcee667475733120e31f9215b6d993ae27136a"
+      },
+      "README.md": {
+        "bytes": 24541,
+        "sha256": "bbac53c26c74af27085718f6a7cf27cce1b6c625832acd92c03079f15b5dc206"
+      },
+      "classifier_pretraining/README.md": {
+        "bytes": 641,
+        "sha256": "602dc4e87b65edcdeb4ba2dfd2864056bf4980c4ea4fba297129eeb31fa6d898"
+      },
+      "classifier_pretraining/code/checkpoint_utils.py": {
+        "bytes": 5142,
+        "sha256": "d5875f24380ceaa66c397635b6fd36a2d05a31221c3176ae503ff3427e03bc17"
+      },
+      "classifier_pretraining/code/classification_data.py": {
+        "bytes": 11495,
+        "sha256": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622"
+      },
+      "classifier_pretraining/code/data.py": {
+        "bytes": 10947,
+        "sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6"
+      },
+      "classifier_pretraining/code/historical/func/AnatomicalClassifier.py": {
+        "bytes": 6864,
+        "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222"
+      },
+      "classifier_pretraining/code/losses.py": {
+        "bytes": 10221,
+        "sha256": "ac0481a9f89c419015793acc08e1bd5af31198740671d0e275232569e6f6bba1"
+      },
+      "classifier_pretraining/code/pretrain_classifier.py": {
+        "bytes": 16627,
+        "sha256": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2"
+      },
+      "code/.gitignore": {
+        "bytes": 56,
+        "sha256": "9c906d45e9fa90685434bd29ce9764a076b348f41b04b7cbdbaa44b5a313d071"
+      },
+      "code/aggregate_results.py": {
+        "bytes": 22137,
+        "sha256": "a77d30f862e476bcf2a64ce3798d7ab1e4045d5e8e30e8cf3daa3e3d249aa010"
+      },
+      "code/audit_priors.py": {
+        "bytes": 23589,
+        "sha256": "82958858f99f034f6222afcb96376b0abe504a25cebd2ff4b33f41cd21a01df0"
+      },
+      "code/checkpoint_utils.py": {
+        "bytes": 5201,
+        "sha256": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca"
+      },
+      "code/classification_data.py": {
+        "bytes": 11495,
+        "sha256": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622"
+      },
+      "code/data.py": {
+        "bytes": 10947,
+        "sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6"
+      },
+      "code/evaluate.py": {
+        "bytes": 18550,
+        "sha256": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb"
+      },
+      "code/evaluate_trajectory.py": {
+        "bytes": 12155,
+        "sha256": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+      },
+      "code/historical/NaviAirway-MIT.txt": {
+        "bytes": 1067,
+        "sha256": "a8d637dcbcd086a0072c4394565c715f88d0327f3b927067c0e596579cfcfd1c"
+      },
+      "code/historical/README.md": {
+        "bytes": 3297,
+        "sha256": "877373089f75b983f6e4d0c28bda5056dc378bd3a72d4d4d73067de2da1d2bf0"
+      },
+      "code/historical/THIRD_PARTY_NOTICES.md": {
+        "bytes": 1152,
+        "sha256": "511bb82ea8773e30f58c0ea5531d187708cde071fd17c213824f4bcc75f8be3b"
+      },
+      "code/historical/__init__.py": {
+        "bytes": 81,
+        "sha256": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0"
+      },
+      "code/historical/func/AnatomicalClassifier.py": {
+        "bytes": 6864,
+        "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222"
+      },
+      "code/historical/func/AnatomicalFusionModules.py": {
+        "bytes": 14098,
+        "sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01"
+      },
+      "code/historical/func/EnhancedAirwaySegmentation2gau.py": {
+        "bytes": 15437,
+        "sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc"
+      },
+      "code/historical/func/__init__.py": {
+        "bytes": 70,
+        "sha256": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e"
+      },
+      "code/historical/func/model_arch_model10.py": {
+        "bytes": 34321,
+        "sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003"
+      },
+      "code/historical/source_hashes.json": {
+        "bytes": 931,
+        "sha256": "f792cc0ed802ab119ef173870390b2c015d8d2727eee94d499614876a4dbdd27"
+      },
+      "code/losses.py": {
+        "bytes": 11280,
+        "sha256": "9af9c6dc2b8c9fcb7ba896bf14a959cd2421d07d1581247976ff10c2cb17aa09"
+      },
+      "code/metrics.py": {
+        "bytes": 7755,
+        "sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9"
+      },
+      "code/model.py": {
+        "bytes": 21286,
+        "sha256": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c"
+      },
+      "code/nnunet_runner.py": {
+        "bytes": 31436,
+        "sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144"
+      },
+      "code/prepare_data.py": {
+        "bytes": 21995,
+        "sha256": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b"
+      },
+      "code/pretrain_classifier.py": {
+        "bytes": 16627,
+        "sha256": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2"
+      },
+      "code/run_queue.py": {
+        "bytes": 29321,
+        "sha256": "aeed60059bf819c1c685a8b5bdafe276379a5cdbfe794ff7b953655b82ba3c1e"
+      },
+      "code/swin_model.py": {
+        "bytes": 1153,
+        "sha256": "4d0b821a53ad4d09335f284c14d6567f14c324735ca781b3fbc4c5fbcc619477"
+      },
+      "code/train.py": {
+        "bytes": 25470,
+        "sha256": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+      },
+      "code/verify_candidate.py": {
+        "bytes": 12440,
+        "sha256": "a98e6c9a01429bcd4020372a6ffa767c5bd92e782419242bd531e8ddbba74385"
+      },
+      "configs/public_paths.env.example": {
+        "bytes": 500,
+        "sha256": "e92ab2aee4c2593b12e145fa0fe5a1f66fbde7225d1733b7b43fdd66987e7b16"
+      },
+      "configs/scientific_settings.json": {
+        "bytes": 4780,
+        "sha256": "40cf876df6d9001f7c2df1e6579d2467fe0830a94674bb898ccdccb1b749ac07"
+      },
+      "docs/methodology_and_metric_protocol.txt": {
+        "bytes": 8865,
+        "sha256": "c89a85947fc56469e74a2e329a54ce7d1a5db8beae21ebf1e433e806839379cc"
+      },
+      "docs/prior_audit_protocol.txt": {
+        "bytes": 7986,
+        "sha256": "eab16f769360489df723d25e5e2e26f2b4c9466e856be27dd86dea613893d47e"
+      },
+      "ops/curve_interpretation_guide.txt": {
+        "bytes": 2432,
+        "sha256": "8fe8d8685ccb0f716970e9c4d47bedf6a6e443d820280b9944109a064f8ce579"
+      },
+      "ops/plot_learning_curves.py": {
+        "bytes": 27414,
+        "sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd"
+      },
+      "requirements-plot.txt": {
+        "bytes": 151,
+        "sha256": "1e0ecebb6a2e1bf87217af29669ab9f28fdab80d45b188b348815c6d93b81085"
+      },
+      "requirements.txt": {
+        "bytes": 409,
+        "sha256": "979d3c9c7596c9e0d802690e6c16a404f5513e91275ca1c4203dc184764d6fc4"
+      }
+    },
+    "source_file_count": 48,
+    "main12_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "classifier6_source_sha256": "61d752700a57dc02c6c1d7cdbcc59d1171957bf072f4fd46394af3980eff0bb1",
+    "public_package_sha256_excluding_manifest": "fa3fad9af0fae985f79efc7cf8cab6bbe251bf42e67ae75678fef6c1c2539480",
+    "README_sha256": "bbac53c26c74af27085718f6a7cf27cce1b6c625832acd92c03079f15b5dc206",
+    "anonymous_download_authentication_scope": "Origin/commit/blob identity verified here; root records the separate fresh anonymous clone command."
+  },
+  "help_entrypoints": [
+    "code/prepare_data.py",
+    "code/audit_priors.py",
+    "classifier_pretraining/code/pretrain_classifier.py",
+    "code/train.py",
+    "code/evaluate.py",
+    "code/evaluate_trajectory.py"
+  ],
+  "CPU_forward_input": [
+    1,
+    1,
+    32,
+    32,
+    32
+  ],
+  "expected_main_logits": [
+    1,
+    2,
+    32,
+    32,
+    32
+  ],
+  "expected_DS_shapes": [
+    [
+      1,
+      2,
+      16,
+      16,
+      16
+    ],
+    [
+      1,
+      2,
+      8,
+      8,
+      8
+    ]
+  ],
+  "expected_Gaussian_shape": [
+    1,
+    1,
+    32,
+    32,
+    32
+  ],
+  "expected_classifier_heads_each": [
+    1,
+    7
+  ],
+  "expected_classifier_guidance": [
+    1,
+    16,
+    2,
+    2,
+    2
+  ],
+  "actual_help_or_import_or_forward_executed": false,
+  "server_operations": 0,
+  "expected_CPU_threads_max": 2,
+  "expected_nice_minimum": 10,
+  "expected_timeout_max_seconds": 300,
+  "private_warmstart_reproduction": false
+}

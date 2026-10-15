@@ -1,0 +1,13 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json,subprocess
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+s=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+for p in [r/'ENV_READY.json',r/'CHECKPOINT_CUDA_SMOKE.json',r/'LOCAL_CACHE_READY.json',r/'classifier_setup_status.json',s/'CACHE_ARCHIVE_READY.json',s/'RAW_ARCHIVE_READY.json',s/'RAW_DIRECTORY_READY.json']:
+ print('STATE',str(p),p.read_text() if p.exists() else 'pending')
+for name in ['classifier_setup','checkpoint_cuda_smoke','materialize_cache','prior_audit','classifier_smoke128','classifier80x64']:
+ p=r/'logs'/ (name+'.log')
+ if p.exists():print('LOG',name,'\n'+'\n'.join(p.read_text(errors='replace').splitlines()[-6:]))
+print('GPU',subprocess.getoutput('nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv,noheader'))
+print('DISK',subprocess.getoutput('df -h /root /root/autodl-tmp /root/autodl-fs'))
+PY

@@ -1,0 +1,948 @@
+{
+  "schema_version": 1,
+  "status": "verified_fixed_final_pair",
+  "recorded_at_utc": "2026-10-14T06:34:32.164827+00:00",
+  "role": "four training-internal development patients; previously used for method development, not independent final test",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "n_patients": 4,
+  "checkpoint_selection": "fixed final",
+  "formal_final_test": false,
+  "fivefold_result": false,
+  "significance_test": false,
+  "metric_protocol": {
+    "version": 2,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "assd_mm": {
+      "definition": "pooled_bidirectional_surface_voxel_distances",
+      "formula": "(sum(d_prediction_to_truth)+sum(d_truth_to_prediction))/(n_prediction_surface+n_truth_surface)",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "assd_directional_mean_mm": {
+      "definition": "equal_weight_mean_of_two_directional_surface_means",
+      "formula": "(mean(d_prediction_to_truth)+mean(d_truth_to_prediction))/2",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "surface_definition": "foreground boundary voxels removed by one 6-neighbour binary erosion, border_value=0",
+    "surface_connectivity_neighbors": 6,
+    "component_connectivity_neighbors": 26,
+    "surface_hd95_mm": "max of the two directional surface-distance 95th percentiles",
+    "asoca_foreground_hd95_mm": "max of the two directional ALL-foreground-voxel distance 95th percentiles",
+    "evaluation_grid": "original CT",
+    "spacing_axis_order": "z,y,x",
+    "empty_distance_policy": "null; cohort distance mean undefined if any required distance is undefined",
+    "cldice_role": "auxiliary skeleton overlap; ASSD is a boundary error, not connectivity"
+  },
+  "source_freeze_manifest_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+  "paired_difference_direction": "GTA minus U-Net; higher Dice and lower ASSD are better",
+  "per_case": [
+    {
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "gta_dice": 1.0,
+      "unet_dice": 0.0,
+      "dice_gta_minus_unet": 1.0,
+      "gta_assd_mm": 0.0,
+      "unet_assd_mm": null,
+      "assd_gta_minus_unet_mm": null
+    },
+    {
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "gta_dice": 1.0,
+      "unet_dice": 1.0,
+      "dice_gta_minus_unet": 0.0,
+      "gta_assd_mm": 0.0,
+      "unet_assd_mm": 0.0,
+      "assd_gta_minus_unet_mm": 0.0
+    },
+    {
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "gta_dice": 1.0,
+      "unet_dice": 1.0,
+      "dice_gta_minus_unet": 0.0,
+      "gta_assd_mm": 0.0,
+      "unet_assd_mm": 0.0,
+      "assd_gta_minus_unet_mm": 0.0
+    },
+    {
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "gta_dice": 1.0,
+      "unet_dice": 1.0,
+      "dice_gta_minus_unet": 0.0,
+      "gta_assd_mm": 0.0,
+      "unet_assd_mm": 0.0,
+      "assd_gta_minus_unet_mm": 0.0
+    }
+  ],
+  "patient_statistics": {
+    "gta": {
+      "dice": {
+        "mean": 1.0,
+        "sd": 0.0,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.0,
+        "sd": 0.0,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    },
+    "unet": {
+      "dice": {
+        "mean": 0.75,
+        "sd": 0.5,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": null,
+        "sd": null,
+        "n_patients": 4,
+        "n_defined": 3,
+        "undefined_case_ids": [
+          "Diseased_10"
+        ],
+        "reason": "undefined values retained; no complete-four mean"
+      }
+    }
+  },
+  "paired_statistics": {
+    "dice_gta_minus_unet": {
+      "mean": 0.25,
+      "sd": 0.5,
+      "n_patients": 4,
+      "n_defined": 4,
+      "undefined_case_ids": [],
+      "reason": null
+    },
+    "assd_gta_minus_unet_mm": {
+      "mean": null,
+      "sd": null,
+      "n_patients": 4,
+      "n_defined": 3,
+      "undefined_case_ids": [
+        "Diseased_10"
+      ],
+      "reason": "undefined values retained; no complete-four mean"
+    }
+  },
+  "sd_definition": "sample SD across these four patients (ddof=1); not folds, seeds, or uncertainty of model superiority",
+  "common_recipe": {
+    "fold": 0,
+    "epochs": 200,
+    "steps": 125,
+    "batch_size": 2,
+    "patch_size": 128,
+    "seed": 20261013,
+    "split_seed": 20261014,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "warmup_epochs": 5,
+    "seg_loss": "dice_ce",
+    "sampling": "standard",
+    "sampling_fov": "image-body",
+    "no_ds": false,
+    "cohort": "internal28"
+  },
+  "attribution_boundary": "Comparison includes architecture/capacity, BAS airway-backbone initialization, classifier pretraining, anatomy loss reweighting and auxiliary objectives; it cannot isolate Gaussian/prior effects.",
+  "initialization_and_capacity": {
+    "gta": {
+      "parameters": 17125962,
+      "backbone_init": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl",
+      "classifier_init": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+      "full_init": null,
+      "init_audits": [
+        {
+          "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl",
+          "sha256": "29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3",
+          "component": "backbone",
+          "source_domain": "airway",
+          "format_key": "model_state_dict",
+          "source_tensor_count": 118,
+          "component_tensor_count": 118,
+          "semantic_head_policy": "reinit",
+          "excluded_semantic_keys": [],
+          "missing_keys": [],
+          "unexpected_keys": [],
+          "shape_mismatches": {},
+          "source_epoch": null,
+          "loaded_key_count": 118,
+          "allowed_missing_prefixes": [],
+          "allowed_unexpected_prefixes": [],
+          "loaded_keys": [
+            "decoders.0.att.fc.0.weight",
+            "decoders.0.att.fc.2.weight",
+            "decoders.0.conv1.conv.weight",
+            "decoders.0.conv1.groupnorm.bias",
+            "decoders.0.conv1.groupnorm.weight",
+            "decoders.0.conv2.conv.weight",
+            "decoders.0.conv2.groupnorm.bias",
+            "decoders.0.conv2.groupnorm.weight",
+            "decoders.0.dilation_conv.conv.weight",
+            "decoders.0.dilation_conv.groupnorm.bias",
+            "decoders.0.dilation_conv.groupnorm.weight",
+            "decoders.0.upsample.bias",
+            "decoders.0.upsample.weight",
+            "decoders.1.att.fc.0.weight",
+            "decoders.1.att.fc.2.weight",
+            "decoders.1.conv1.conv.weight",
+            "decoders.1.conv1.groupnorm.bias",
+            "decoders.1.conv1.groupnorm.weight",
+            "decoders.1.conv2.conv.weight",
+            "decoders.1.conv2.groupnorm.bias",
+            "decoders.1.conv2.groupnorm.weight",
+            "decoders.1.dilation_conv.conv.weight",
+            "decoders.1.dilation_conv.groupnorm.bias",
+            "decoders.1.dilation_conv.groupnorm.weight",
+            "decoders.1.upsample.bias",
+            "decoders.1.upsample.weight",
+            "decoders.2.att.fc.0.weight",
+            "decoders.2.att.fc.2.weight",
+            "decoders.2.conv1.conv.weight",
+            "decoders.2.conv1.groupnorm.bias",
+            "decoders.2.conv1.groupnorm.weight",
+            "decoders.2.conv2.conv.weight",
+            "decoders.2.conv2.groupnorm.bias",
+            "decoders.2.conv2.groupnorm.weight",
+            "decoders.2.dilation_conv.conv.weight",
+            "decoders.2.dilation_conv.groupnorm.bias",
+            "decoders.2.dilation_conv.groupnorm.weight",
+            "decoders.2.upsample.bias",
+            "decoders.2.upsample.weight",
+            "encoders.0.att.fc.0.weight",
+            "encoders.0.att.fc.2.weight",
+            "encoders.0.conv1.conv.weight",
+            "encoders.0.conv1.groupnorm.bias",
+            "encoders.0.conv1.groupnorm.weight",
+            "encoders.0.conv2.conv.weight",
+            "encoders.0.conv2.groupnorm.bias",
+            "encoders.0.conv2.groupnorm.weight",
+            "encoders.0.dilation_conv.conv.weight",
+            "encoders.0.dilation_conv.groupnorm.bias",
+            "encoders.0.dilation_conv.groupnorm.weight",
+            "encoders.1.att.fc.0.weight",
+            "encoders.1.att.fc.2.weight",
+            "encoders.1.conv1.conv.weight",
+            "encoders.1.conv1.groupnorm.bias",
+            "encoders.1.conv1.groupnorm.weight",
+            "encoders.1.conv2.conv.weight",
+            "encoders.1.conv2.groupnorm.bias",
+            "encoders.1.conv2.groupnorm.weight",
+            "encoders.1.dilation_conv.conv.weight",
+            "encoders.1.dilation_conv.groupnorm.bias",
+            "encoders.1.dilation_conv.groupnorm.weight",
+            "encoders.2.att.fc.0.weight",
+            "encoders.2.att.fc.2.weight",
+            "encoders.2.conv1.conv.weight",
+            "encoders.2.conv1.groupnorm.bias",
+            "encoders.2.conv1.groupnorm.weight",
+            "encoders.2.conv2.conv.weight",
+            "encoders.2.conv2.groupnorm.bias",
+            "encoders.2.conv2.groupnorm.weight",
+            "encoders.2.dilation_conv.conv.weight",
+            "encoders.2.dilation_conv.groupnorm.bias",
+            "encoders.2.dilation_conv.groupnorm.weight",
+            "encoders.3.att.fc.0.weight",
+            "encoders.3.att.fc.2.weight",
+            "encoders.3.conv1.conv.weight",
+            "encoders.3.conv1.groupnorm.bias",
+            "encoders.3.conv1.groupnorm.weight",
+            "encoders.3.conv2.conv.weight",
+            "encoders.3.conv2.groupnorm.bias",
+            "encoders.3.conv2.groupnorm.weight",
+            "encoders.3.dilation_conv.conv.weight",
+            "encoders.3.dilation_conv.groupnorm.bias",
+            "encoders.3.dilation_conv.groupnorm.weight",
+            "extension_module.att.fc.0.weight",
+            "extension_module.att.fc.2.weight",
+            "extension_module.dilation_conv.conv.weight",
+            "extension_module.dilation_conv.groupnorm.bias",
+            "extension_module.dilation_conv.groupnorm.weight",
+            "extension_module.layers.0.conv.weight",
+            "extension_module.layers.0.groupnorm.bias",
+            "extension_module.layers.0.groupnorm.weight",
+            "final_conv.bias",
+            "final_conv.weight",
+            "final_conv2.bias",
+            "final_conv2.weight",
+            "final_conv3.bias",
+            "final_conv3.weight",
+            "fusion_module_decoder.convs.0.conv.weight",
+            "fusion_module_decoder.convs.0.groupnorm.bias",
+            "fusion_module_decoder.convs.0.groupnorm.weight",
+            "fusion_module_decoder.convs.1.conv.weight",
+            "fusion_module_decoder.convs.1.groupnorm.bias",
+            "fusion_module_decoder.convs.1.groupnorm.weight",
+            "fusion_module_decoder.convs.2.conv.weight",
+            "fusion_module_decoder.convs.2.groupnorm.bias",
+            "fusion_module_decoder.convs.2.groupnorm.weight",
+            "fusion_module_encoder.convs.0.conv.weight",
+            "fusion_module_encoder.convs.0.groupnorm.bias",
+            "fusion_module_encoder.convs.0.groupnorm.weight",
+            "fusion_module_encoder.convs.1.conv.weight",
+            "fusion_module_encoder.convs.1.groupnorm.bias",
+            "fusion_module_encoder.convs.1.groupnorm.weight",
+            "fusion_module_encoder.convs.2.conv.weight",
+            "fusion_module_encoder.convs.2.groupnorm.bias",
+            "fusion_module_encoder.convs.2.groupnorm.weight",
+            "fusion_module_encoder.convs.3.conv.weight",
+            "fusion_module_encoder.convs.3.groupnorm.bias",
+            "fusion_module_encoder.convs.3.groupnorm.weight"
+          ],
+          "randomly_retained_keys": []
+        },
+        {
+          "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+          "sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+          "component": "classifier",
+          "source_domain": "asoca",
+          "format_key": "model_state_dict",
+          "source_tensor_count": 90,
+          "component_tensor_count": 90,
+          "semantic_head_policy": "load",
+          "excluded_semantic_keys": [],
+          "missing_keys": [],
+          "unexpected_keys": [],
+          "shape_mismatches": {},
+          "source_epoch": 79,
+          "loaded_key_count": 90,
+          "allowed_missing_prefixes": [],
+          "allowed_unexpected_prefixes": [],
+          "loaded_keys": [
+            "attention_blocks.0.fc.0.weight",
+            "attention_blocks.0.fc.2.weight",
+            "attention_blocks.1.fc.0.weight",
+            "attention_blocks.1.fc.2.weight",
+            "attention_blocks.2.fc.0.weight",
+            "attention_blocks.2.fc.2.weight",
+            "encoder.0.bn.bias",
+            "encoder.0.bn.num_batches_tracked",
+            "encoder.0.bn.running_mean",
+            "encoder.0.bn.running_var",
+            "encoder.0.bn.weight",
+            "encoder.0.conv.bias",
+            "encoder.0.conv.weight",
+            "encoder.1.bn.bias",
+            "encoder.1.bn.num_batches_tracked",
+            "encoder.1.bn.running_mean",
+            "encoder.1.bn.running_var",
+            "encoder.1.bn.weight",
+            "encoder.1.conv.bias",
+            "encoder.1.conv.weight",
+            "encoder.2.bn.bias",
+            "encoder.2.bn.num_batches_tracked",
+            "encoder.2.bn.running_mean",
+            "encoder.2.bn.running_var",
+            "encoder.2.bn.weight",
+            "encoder.2.conv.bias",
+            "encoder.2.conv.weight",
+            "encoder.3.bn.bias",
+            "encoder.3.bn.num_batches_tracked",
+            "encoder.3.bn.running_mean",
+            "encoder.3.bn.running_var",
+            "encoder.3.bn.weight",
+            "encoder.3.conv.bias",
+            "encoder.3.conv.weight",
+            "encoder.4.bn.bias",
+            "encoder.4.bn.num_batches_tracked",
+            "encoder.4.bn.running_mean",
+            "encoder.4.bn.running_var",
+            "encoder.4.bn.weight",
+            "encoder.4.conv.bias",
+            "encoder.4.conv.weight",
+            "encoder.5.bn.bias",
+            "encoder.5.bn.num_batches_tracked",
+            "encoder.5.bn.running_mean",
+            "encoder.5.bn.running_var",
+            "encoder.5.bn.weight",
+            "encoder.5.conv.bias",
+            "encoder.5.conv.weight",
+            "encoder.6.bn.bias",
+            "encoder.6.bn.num_batches_tracked",
+            "encoder.6.bn.running_mean",
+            "encoder.6.bn.running_var",
+            "encoder.6.bn.weight",
+            "encoder.6.conv.bias",
+            "encoder.6.conv.weight",
+            "encoder.7.bn.bias",
+            "encoder.7.bn.num_batches_tracked",
+            "encoder.7.bn.running_mean",
+            "encoder.7.bn.running_var",
+            "encoder.7.bn.weight",
+            "encoder.7.conv.bias",
+            "encoder.7.conv.weight",
+            "generation_head.0.bias",
+            "generation_head.0.weight",
+            "generation_head.3.bias",
+            "generation_head.3.weight",
+            "guidance_head.0.bn.bias",
+            "guidance_head.0.bn.num_batches_tracked",
+            "guidance_head.0.bn.running_mean",
+            "guidance_head.0.bn.running_var",
+            "guidance_head.0.bn.weight",
+            "guidance_head.0.conv.bias",
+            "guidance_head.0.conv.weight",
+            "guidance_head.1.bias",
+            "guidance_head.1.weight",
+            "location_head.0.bias",
+            "location_head.0.weight",
+            "location_head.3.bias",
+            "location_head.3.weight",
+            "multi_scale_fusion.0.bias",
+            "multi_scale_fusion.0.weight",
+            "multi_scale_fusion.1.bias",
+            "multi_scale_fusion.1.num_batches_tracked",
+            "multi_scale_fusion.1.running_mean",
+            "multi_scale_fusion.1.running_var",
+            "multi_scale_fusion.1.weight",
+            "structure_head.0.bias",
+            "structure_head.0.weight",
+            "structure_head.3.bias",
+            "structure_head.3.weight"
+          ],
+          "randomly_retained_keys": []
+        }
+      ],
+      "classifier_pretraining_updates": 5120,
+      "segmentation_updates": 25000,
+      "pretrained_prior": true,
+      "disable_anatomy_reweighting": false
+    },
+    "unet": {
+      "parameters": 5601542,
+      "backbone_init": null,
+      "classifier_init": null,
+      "full_init": null,
+      "init_audits": [],
+      "classifier_pretraining_updates": 0,
+      "segmentation_updates": 25000,
+      "pretrained_prior": false,
+      "disable_anatomy_reweighting": false
+    }
+  },
+  "audits": {
+    "gta": {
+      "method": "gta",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/fixture_only/gta/training",
+      "final_checkpoint_sha256": "d2bdf75c1034a25a13c8cff0f63038e5e010e43e07e585025e91c19ae0828079",
+      "weights_bytes_checked": false,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": false,
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\training\\config.json",
+          "sha256": "d2bdf75c1034a25a13c8cff0f63038e5e010e43e07e585025e91c19ae0828079"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\training\\TRAINING_COMPLETE.json",
+          "sha256": "ed18fa73972938b198ee5ab1817511fbc1dd8f0e503d5729e11af15cd28a12b6"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\training\\history.jsonl",
+          "sha256": "ff37201e126b77454bcb3c9d38caaf1cfaeca2994e03a94cd6d4207cd2fe5f13"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\summary.json",
+          "sha256": "4d640e8b10c906b2c82106633635d372b2ceff23caee678de0b148ccce8e2668"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "036cdcc30f920474d1cd848f900bd25f8f7c5d29a216792985f6639570468178"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "62bf266f7583d32e658e746a4499d5cbfe364566b5337ac899ec86d62e3f9c58"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "cb7d5f4e0d12f1d8672b1b1891b97a694ca5ea74efa2846dcccdf0e0833ca307"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "5c711ac91ba316df231c2e0c468321c84d0ed72bb355ad79fac845a0aa74f8db"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "32e728f5e15d9a5ad4b73bb70ac963092bb2a7c0148ac30341eea228135104ad"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "03a7f6a328f93ac337b6f00c95087e30c2cb64cf3e1b8ddea7d5948e6466aa95"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "d30084563483d8b5e559fc2cbb2986464202eb3941d0af3bdd7d411a5b3ce0ee"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "d0ec87f9a17f09fb023a0b6fed2e0043b9461e1154333379d6e71152fbf4688e"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\gta\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        }
+      ]
+    },
+    "unet": {
+      "method": "unet",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/fixture_only/unet/training",
+      "final_checkpoint_sha256": "67b138b9c875da0c62d09629c100e4911a39e49f1a29e63d3391e9f452c49aea",
+      "weights_bytes_checked": false,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": false,
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "c84c0803251542aab937b2c5616d4ba6328687b13e9d3f080127d4cc3effe108",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.0,
+            "assd_mm": null,
+            "empty_prediction": true
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 1.0,
+            "assd_mm": 0.0,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\training\\config.json",
+          "sha256": "67b138b9c875da0c62d09629c100e4911a39e49f1a29e63d3391e9f452c49aea"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\training\\TRAINING_COMPLETE.json",
+          "sha256": "9d75dfe5b04a5e62592b04bdccf103822e40c45927fb04c5af273d38d6527ac1"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\training\\history.jsonl",
+          "sha256": "ff37201e126b77454bcb3c9d38caaf1cfaeca2994e03a94cd6d4207cd2fe5f13"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\summary.json",
+          "sha256": "17634b24edfc72be7ae9d114368e300b4983c4acca565f4cbd9e8815cb4aa337"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "9eb547873daa964b6b2787f2fd4cf39a1c50202a35e768453353ed08eecf1de3"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "7c9855da2dffd7cdbf11dfd7b915bb23fd10610a3738251c25f2cfd14a327419"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "ca22115a59b3d77cacf51aeb3d4cfbb3811f640b6fcb15079c2f3c5de7c345d8"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "89218137c9d33a754728a6a458ea16bf116db71f18d6dc669a690762f77e1c5d"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "a84b6c5678d81255abe8f55860c43413b24ff91ca865921bf4fccbeffc0ed290"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "c84c0803251542aab937b2c5616d4ba6328687b13e9d3f080127d4cc3effe108"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "6594662bc05d535ed9dd600d73d19564fab9aa6793ca99231b6dd84aa86bb6e6"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "929b92092f0eeec159d5a4919f0729aef5b7739919f270d5a9b3fbe97e15e3b3"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "a2049ea6b1c563e2d27aa8d4dbbfa1a6dfe62b08d5e8245d3fc8953aeae366e8"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2\\unet\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        }
+      ]
+    }
+  },
+  "fixture_only": true
+}

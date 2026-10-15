@@ -1,0 +1,22 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,time,hashlib
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+source=r/'ops/start_unet_calibration.py'
+if hashlib.sha256(source.read_bytes()).hexdigest()!='54fd789b35ad14c56ed74b7fb3f14b1f8a794d1be995fba968da99d1c94bd807':raise RuntimeError('Controller differs from reviewed final version')
+command=['bash',str(r/'ops/start_unet_calibration_17552.sh')]
+check=subprocess.run(command+['--plan'],capture_output=True,text=True)
+if check.returncode:
+ print(check.stdout[-1500:]);print(check.stderr[-1500:]);raise RuntimeError('Read-only calibration preflight failed')
+print('UNET_PLAN_VERIFIED',flush=True)
+(r/'logs').mkdir(exist_ok=True)
+if (r/'unet_calibration_status.json').exists():raise RuntimeError('Calibration already has state; inspect before starting')
+with (r/'logs/unet_calibration_controller.log').open('a') as log:
+ p=subprocess.Popen(command,cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+for _ in range(10):
+ status=r/'unet_calibration_status.json'
+ if status.exists():
+  st=json.loads(status.read_text());print(json.dumps({k:st.get(k) for k in ['status','phase','pid','child_pid','error']},indent=2));break
+ if p.poll() is not None:print((r/'logs/unet_calibration_controller.log').read_text()[-2500:]);raise RuntimeError('Calibration controller exited during startup')
+ time.sleep(.5)
+PY

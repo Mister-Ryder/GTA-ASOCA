@@ -1,0 +1,30 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,os,sys
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+py='/root/miniconda3/envs/gta-asoca311/bin/python'
+subprocess.run([py,str(r/'configs/verify_main_source.py'),'--root',str(r)],check=True)
+sys.path.insert(0,str(r/'code'))
+from model import build_model
+from checkpoint_utils import load_audited
+from train import source_hash
+import torch
+model=build_model('gta')
+audit=load_audited(model.base_model,r/'initialization/airway_backbone_epoch599.pkl','backbone','airway')
+if not all(torch.isfinite(v).all() for v in model.state_dict().values() if v.is_floating_point()):raise RuntimeError('Nonfinite initialized backbone tensor')
+receipt={'status':'passed','role':'Required backbone CPU transfer audit only; staged CUDA gradients still require real smoke',
+ 'training_source_sha256':source_hash(),'backbone_audit':audit}
+(r/'MAIN_BACKBONE_TRANSFER_READY.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print('BACKBONE_TRANSFER',audit['loaded_key_count'],'tensors',flush=True)
+ready=json.loads(Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014/RAW_DIRECTORY_READY.json').read_text())
+out=r/'results/label_roundtrip_internal4'
+if out.exists():raise RuntimeError('Roundtrip output already exists; inspect before repeating')
+logfile=r/'logs/label_roundtrip_internal4.log'
+env=os.environ.copy();env.update(OMP_NUM_THREADS='8',MKL_NUM_THREADS='8',PYTHONUNBUFFERED='1')
+with logfile.open('a') as log:
+ p=subprocess.Popen([py,'-u',str(r/'ops/label_roundtrip_sanity.py'),'--manifest',str(r/'dataset/cache/manifest.json'),
+                     '--raw-root',ready['raw_root'],'--code-root',str(r/'code'),'--output',str(out)],
+                    cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,env=env)
+(r/'LABEL_ROUNDTRIP_PID.json').write_text(json.dumps({'pid':p.pid,'output':str(out),'log':str(logfile)})+'\n')
+print('ROUNDTRIP_STARTED',p.pid,flush=True)
+PY

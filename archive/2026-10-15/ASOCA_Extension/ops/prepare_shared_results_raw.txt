@@ -1,0 +1,62 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json,subprocess
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+s=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+out=Path('/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/results')
+out.mkdir(parents=True,exist_ok=True)
+p=r/'results'
+if p.is_symlink():
+ if p.resolve()!=out.resolve():raise RuntimeError('Result symlink points elsewhere')
+elif p.exists():
+ print('RESULT_STORAGE_EXISTING_LOCAL_PRESERVED',str(p))
+ print('NEW_SEGMENTATION_OUTPUT_ROOT',str(out))
+else:p.symlink_to(out,target_is_directory=True)
+print('RESULT_STORAGE',str(p),'->',str(out))
+script=s/'extract_verified_raw.py'
+program="""from pathlib import Path,PurePosixPath
+import zipfile,json,hashlib,datetime,fcntl
+s=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+lock=(s/'.raw_extract.lock').open('a+')
+fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+status=s/'raw_extract_status.json'
+def record(x):status.write_text(json.dumps(x,indent=2)+'\\n')
+try:
+ record({'status':'verifying_raw_archive'})
+ ready=json.loads((s/'RAW_ARCHIVE_READY.json').read_text())
+ archive=Path(ready['archive']);h=hashlib.sha256()
+ with archive.open('rb') as f:
+  for b in iter(lambda:f.read(8*1024**2),b''):h.update(b)
+ if h.hexdigest()!=ready['sha256']:raise RuntimeError('Original raw archive checksum differs')
+ raw=s/'raw';raw.mkdir(exist_ok=True)
+ if any(raw.iterdir()):raise RuntimeError('Raw destination already has files; inspect before extracting')
+ record({'status':'extracting_raw_archive'})
+ with zipfile.ZipFile(archive) as z:
+  for i in z.infolist():
+   rel=PurePosixPath(i.filename)
+   if rel.is_absolute() or '..' in rel.parts or '\\\\' in i.filename:raise RuntimeError('Unsafe archive member')
+   dest=(raw/i.filename).resolve()
+   if not dest.is_relative_to(raw.resolve()):raise RuntimeError('Archive path escapes destination')
+   if (i.external_attr>>16)&0o170000==0o120000:raise RuntimeError('Symlink archive member refused')
+  z.extractall(raw)
+  bad=z.testzip()
+  if bad:raise RuntimeError('Raw zip CRC failed: '+bad)
+ root=raw/'CompressedVersion'
+ if not root.is_dir():raise RuntimeError('Expected raw CompressedVersion root missing')
+ receipt={'status':'ready','raw_root':str(root),'archive_sha256':ready['sha256'],'crc_verified':True,'nrrd_count':len(list(root.rglob('*.nrrd'))),'verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+ (s/'RAW_DIRECTORY_READY.json').write_text(json.dumps(receipt,indent=2)+'\\n')
+ record(receipt);print('RAW_EXTRACTION_COMPLETE',flush=True)
+except Exception as e:
+ record({'status':'failed','error':repr(e)});raise
+finally:
+ fcntl.flock(lock,fcntl.LOCK_UN);lock.close()
+"""
+if not (s/'RAW_DIRECTORY_READY.json').exists():
+ if (s/'raw_extract_status.json').exists():raise RuntimeError('Extraction has durable state; inspect before restarting')
+ script.write_text(program)
+ with (s/'raw_extract.log').open('a') as log:
+  p=subprocess.Popen(['/root/miniconda3/envs/gta-asoca311/bin/python','-u',str(script)],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+ (s/'raw_extract_pid.json').write_text(json.dumps({'pid':p.pid}))
+ print('RAW_EXTRACTION_PID',p.pid)
+else:print((s/'RAW_DIRECTORY_READY.json').read_text())
+PY

@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-10-14T10:25:46.544913+00:00",
+  "parent_pid": 31589,
+  "argv": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-B",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_initial_gaussian_parameter_gradients.py",
+    "--diagnose",
+    "--precision",
+    "amp",
+    "--reference-bank",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops_inputs/gaussian_epoch070_fixed_sampling_bank.json",
+    "--output",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014"
+  ],
+  "tool_sha256": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+  "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/INITIAL_PARAMETER_GRADIENT_CONTROLLER_20261014.log",
+  "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014",
+  "role": "NO_UPDATE_PARAMETER_DIAGNOSTIC_QUEUED_REQUIRES_ACTUAL_CPU_FIXTURE_CANONICAL20_IDLE_BEFORE_CUDA"
+}

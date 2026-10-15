@@ -1,0 +1,7 @@
+{
+  "source_hashes": {
+    "audit_priors.py": "82958858f99f034f6222afcb96376b0abe504a25cebd2ff4b33f41cd21a01df0",
+    "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6"
+  },
+  "role": "train32 prior diagnostics only"
+}

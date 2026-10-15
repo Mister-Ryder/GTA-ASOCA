@@ -1,0 +1,23 @@
+提前固定末权重评估守卫（2026-10-14）
+
+独立入口：ops/run_early_fixed_final_eval.py，当前SHA2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42。root 审查后才部署，本地作者没有连接服务器、部署或运行推理。保留逻辑ROOT/共享路径用于argv与metadata，实际目录通过双方resolve值比较，避免AutoDL共享目录软链接被误拒绝。
+
+Linux 服务器实际入口应为：
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_early_fixed_final_eval.py
+
+--plan 仅输出协议和命令，不读 Torch 权重、不连接服务器、不持锁、不写状态。真实执行固定 OLD_ROOT、共享目录及隔离 Python 解释器，不允许任意 ROOT；最长等待 7200 秒，最长单次评估 7200 秒。默认每 10 秒更新状态。没有自动 resume 或覆盖已有结果的入口；已有 durable 状态或输出会拒绝重启，root 必须先检查其真实进程与终态。
+
+等待期只持 .early_fixed_final_eval.lock，不占 .segmentation_stage.lock。UNET_CALIBRATION_COMPLETE 与 READY 都出现后，核验旧 U-Net 完整 200 周期末权重、完整 20 点轨迹和账本的 marker-bound hashes；核验共享 READY 的固定六文件SHA/大小、原 config b613 与 manifest141、源BC8、原训练28/内部4、完整200×125 history与50/20/130 stage。完整28文件和全部保存命令受固定 main_source_freeze SHA9b保护，独立检查三个 evaluator SHA。Torch weights_only=True 实际读取 final 到 CPU，要求epoch199、完整config字典相等、全部model tensors有限，不创建CUDA上下文。
+
+九个包版本与 Python3.11.17使用隔离运行环境的实际 metadata 和实际 import版本核对。逐例完整旧 image.npy 字节SHA/大小必须和READY/input_runtime_audit对应，检查shape/float16/.5mm；原GT label SHA同时对应manifest与READY。CUDAruntime/cuDNN/TF32/backend flags、GPU硬件/driver/compute capability另记录；硬件差异并没有被伪装成跨设备确定性保证。
+
+只有观察所有GPU计算进程为空、非阻塞获取共享stage flock后再次观察GPU为空，才会进入固定 evaluate.py。GPU不空或锁未取得时立即释放临时锁并继续有限等待。启动前再次核验payload/source/CT/GT、runtime与U-Net身份。实际命令固定internal_diagnostic、sw_batch_size1、旧manifest父/cache、旧raw父/raw/CompressedVersion、共享原final.pt、全新 results/gta_fixed_final_preview_20261014，没有smoke/geometry-only/partial cases、checkpoint选择、训练参数改写或后处理。
+
+独立的status/protocol记录实际argv、源哈希、parent/child PID、PGID、start ticks、时间、GPU与版本。信号和wall-time超限只终止Popen所拥有的仍存活子进程组，不给别的GPU进程发信号。Popen创建到child赋值及PGID归属捕获期间仅记录pending取消；持有child后才抛出，且首次抛出前即标记cleaning防止重复信号打断异常展开。清理期仅记录新信号；TERM/KILL后分段等待到owned child确实退出才释放GPU锁，PGID检查或信号失败不能允许提前解锁，保留租约等待owned child退出。没有preexec_fn或信号mask，不使child继承blocked signals。等待期间不占GPU锁；推理与事后验证期间才持锁。现有U-Net与canonical GTA训练/轨迹的文件和controller不修改。
+
+完成后使用frozen verify_evaluation核对4例metadata、预测SHA和summary，检查账本与case JSON一致、summary由各例精确重算，解码预测验证原网格与二值像素，并独立复算Dice/precision/recall；保留空预测的ASSD null策略。记录decoded pixel SHA与geometry，待canonical final可用时做逐例像素与指标比较。其后再次核验READY、全部payload、源/CT/GT、U-Net与本守卫源码及runtime；只有全部通过才在preview目录写独立EVAL_COMPLETE.json。不会写canonical EVALUATION_COMPLETE/TRAJECTORY_COMPLETE或20点validation ledger，也不会赋予GTA新的trained_case_ids/训练output。额外4例推理成本与耗时单独记录，不平均、择优或替换canonical结果。
+
+本地验证
+--plan与Python编译通过。test_early_fixed_final_guard.py产生40个metadata/source/argv检查，当前版本重验报告在server_records/tool_fixtures/early_fixed_final_20261014_cancel_fix_v2/fixture_report.json，显式NOT_MODEL_RESULTS。覆盖READY schema/path/digest/runtime/cohort负例、真实只读config/manifest隔离约束、mock CPU tensor header、真实本地full28/commands/BC8以及额外文件/command/evaluator篡改拒绝。针对取消竞态的4项必要mock检查见server_records/tool_fixtures/early_fixed_final_cancel_20261014_v3/fixture_report.json：构造器返回赋值前取消、清理期重复取消、确认exit后才解锁、PGID错误时不信号其他组。此fixture没有创建真实OS子进程或发送真实OS信号，不冒充Linux并发运行验证。
+
+这些本地fixture没有读取真实Torch final、没有运行Linux flock/GPUidle/信号/预算循环、没有核服务器payload/cache/GT、没有执行真实9包隔离runtime或模型推理、没有完成真实NRRD评估。实际服务器上的守卫将执行这些检查，不能把本地fixture说成已验证真实推理、性能或服务器运行。

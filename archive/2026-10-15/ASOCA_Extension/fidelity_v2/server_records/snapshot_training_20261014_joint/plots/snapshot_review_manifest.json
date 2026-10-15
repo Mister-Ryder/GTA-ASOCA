@@ -1,0 +1,57 @@
+{
+  "role": "read-only downloaded snapshot figures and arithmetic reviews; no validation points invented",
+  "plotter_path": "ops/plot_learning_curves.py",
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+  "training_snapshots": {
+    "gta_capture_manifest_sha256": "9638fec5922c2ba15671d0a193d8346839cf3321806cdd4b31564ce14f35c60f",
+    "unet_capture_manifest_sha256": "409f631f6fb483c4dc96c24036078e4eaa9554123e43501229e659c1f713ffe5"
+  },
+  "label_scale_collection_sha256": "4974b83ae14ca1a7c5093e0058fed093282505dfcdaa1338f8d7d521045d1230",
+  "visual_review": "Both2550x2720 PNGs viewed; axes/ticks/legends readable; coefficient0.1 exact values also stated in stage review; missing validation panels intentionally remain empty",
+  "artifacts": {
+    "curve_manifest.json": {
+      "bytes": 4695,
+      "sha256": "3dcc04bff801956c25333dc46ae27ce87d024383f326979c5a3422e76d3cdd56"
+    },
+    "curve_notes.txt": {
+      "bytes": 1090,
+      "sha256": "8296bdcb994942fe61e8bbd4cd100f863043e597be6ec60b0089db7bc3751015"
+    },
+    "epoch_summary.csv": {
+      "bytes": 1979280,
+      "sha256": "93f6bdf121163e67f802c4d37e5fe93d84dd1e8042c58e007109dae53e42c738"
+    },
+    "gta_learning_curves.png": {
+      "bytes": 565598,
+      "sha256": "ed943f8045c6507b2ff13845d248bac42977f7289c1b76b9bd29a382afd5fed0"
+    },
+    "gta_learning_curves.svg": {
+      "bytes": 425397,
+      "sha256": "b54ca25cd473645260447f506ad05894e586365a0353135013f9fd59930556cb"
+    },
+    "label_scale_readonly_review.json": {
+      "bytes": 2555,
+      "sha256": "0ad6651113c2e6e5d235b86517286f596ea0336031621cf88b485bf7bbbcab8f"
+    },
+    "label_scale_readonly_review.txt": {
+      "bytes": 1829,
+      "sha256": "170a79e2423a291613bd28af32deb65541cf389b3eb6ebb260e3595ae87d97da"
+    },
+    "training_stage_review.json": {
+      "bytes": 28567,
+      "sha256": "a38f50e750c469a51887b33c43fa291873f692ae8d926c12e314d300118a7ce7"
+    },
+    "training_stage_review.txt": {
+      "bytes": 3954,
+      "sha256": "b7fa6a50e2faf2402e88fe46c3d869352e892cdbe707363e5ca3ac9f999aaf74"
+    },
+    "unet_learning_curves.png": {
+      "bytes": 482371,
+      "sha256": "7731b63abf1ecc9c044508e8f261b2796f4fa27656f55568cde3772fe00f7f66"
+    },
+    "unet_learning_curves.svg": {
+      "bytes": 406641,
+      "sha256": "bf73818d584da04cd5d166dac51cd35d1880c296cb7bf470fac8779ea382d329"
+    }
+  }
+}

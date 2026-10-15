@@ -1,0 +1,11 @@
+{
+  "instruction": "Classifier pretraining was introduced to reduce convergence and stability difficulties in classification, structure and segmentation multitask learning. Its attributes are extracted from intrinsic priors and serve the segmentation main task. Only segmentation is required at inference; classification accuracy is auxiliary analysis, not a main goal or prerequisite performance gate.",
+  "execution_changes": [
+    "Remove the classifier accuracy quality gate from main-training startup",
+    "Keep source, donor-patient isolation, completed pretraining and finite-gradient checks",
+    "Use the fixed final80x64 classifier checkpoint for initialization; best attribute-accuracy checkpoint is diagnostic only",
+    "Judge candidate retention by segmentation Dice/ASSD and analyze auxiliary gradient balance/stability",
+    "Do not change the GTA architecture or retrain the already frozen classifier solely to raise classification accuracy"
+  ],
+  "goal_status": "active"
+}

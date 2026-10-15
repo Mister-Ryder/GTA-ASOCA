@@ -1,0 +1,74 @@
+GTAirway→ASOCA 方法忠实性审查记录
+日期：2026-10-14（Asia/Shanghai）；本轮为只读审查与文档更正。
+
+最新范围
+  waiting开发coordinator PID102978已SIGSTOP；未开始的四项自身fold0
+  消融全部pending暂停，当前不自动继续。native PID54628保留本次收尾。
+  实况：development/method_fidelity_hold.json。
+  下一优先级：核验历史权重、属性定义与分类器有效性，审查恢复预训练
+  和原阶段训练。覆盖scope_decision_20261014.txt此前继续四项的安排。
+
+当前结果性质
+  GTA fold0已开decoder DS：96³主输出、48³/24³辅助输出，分割尺度权重
+  [1,.5,.25]归一化为4/7、2/7、1/7；200×125=25,000次更新。
+  32例训练、8例方法开发验证，已用于方法比较，非最终独立test。
+  GTA Dice80.01%，共同U-Net78.70%。完整五折未完成；不与VFM论文
+  完整协议90.15%作严格同条件排名，也不视80.01%为原GTA性能上限。
+
+保留与变化
+  主体架构保留：三头属性编码、尺度指导、多尺度融合、Gaussian辅助。
+  当前ASOCA从随机初始化联合学习，没有加载预训练。原trainer配置
+  加载分割与分类器checkpoint，并按冻结/部分解冻/全部解冻分阶段训练。
+  更正：不能再笼统写“历史权重不存在/不可用”。备份已找到BAS599、
+  classifier improved/hybrid100和GTA联合350候选；兼容性、训练来源与
+  是否原best尚未验证。候选存在不等于已经可直接加载或已用于当前运行。
+
+  当前新增DS仅decoder。增强forward没有调用encoder fusion输出；
+  原base预训练使用两个seg输出，原流程不能描述成完全没有encoder/
+  decoder监督。应分别核查base预训练与增强阶段，不能只看增强trainer。
+
+  原气道代次来自气管根及解析树；新冠脉从每个骨架组件最大半径分支
+  BFS生成深度。分箱数字相同不等于解剖语义相同。
+  原位置为气管/左右/上中下规则；新位置为扫描z三等分×左右半区。
+  结构原代码采用bbox长宽比与分支复杂度，不是PCA；阈值概念保留，
+  但分支map来源改变。当前是几何proxy训练目标，不是已验证冠脉知识。
+
+  原采样按代次逆频次及阶段重点类；新采样uniform/thin/junction各1/3，
+  thin为每例半径最低1/3。Gaussian累加思想与10×MSE/.5+.5field保留，
+  但EDT半径、sigma下限、4sigma截断和浮点存储属于数值适配。
+  新DS、background Dice对称分母修复、focal统一alpha和epoch0分类ramp
+  也改变训练配方。不能从当前均值确定哪一项解释全部差距。
+
+分类器证据缺口
+  现有history只保存总loss等字段，没有三头balanced accuracy、逐类
+  recall/confusion或独立属性验证。分类loss下降也不自动证明有效先验。
+  root本轮服务器抽查：最后epoch199的5个logged batches，classification
+  约1.884，系数.5后约.942；segmentation约.1356。这是抽查的loss标量，
+  不是全epoch均值，也不是梯度量级或性能差距因果证明。须验证分类器
+  balanced accuracy/逐类混淆以及先验对分割的实际贡献。
+
+现有错误信号
+  GTA整体precision74.18%、recall88.49%，薄中心线recall78.75%；预测
+  连通体平均13.5，GT均2。Diseased_1 precision48.24%、recall92.90%、
+  18组件、foreground-HD95约22.92mm，提示假阳性与碎片也需检查，
+  不能只解释为遗漏细分支。组件数量单独不能区分误检与真血管断裂。
+
+文献条件
+  已核VFM采用预训练基础模型、600epochs、160×160×128输入；本地
+  从头学习、96³、25,000更新。600/200不能推出三倍updates，不能据此
+  认定全部差距来自训练预算。论文3D-U-Net84.78%与本地78.70%的
+  条件也不同，整体数据/训练/验证方案同样需要核查。
+
+源码定位（相对当前项目根，旧源码路径另列）
+  code/model.py:65 分类器新建；:104 默认联合forward。
+  code/prepare_data.py:107 冠脉骨架proxy；:161 root；:212 Gaussian。
+  code/data.py:56 patch属性；:84位置；:108/183采样。
+  code/losses.py:83平衡权重；:91 DS；:110分类ramp；:124 Gaussian。
+  code/train.py:138 step aux打印；:141 epoch history只保存总loss。
+  原ICME-GTAirway-main-BAS/resume_train_enhanced_airway_DDP_gaumse.py:
+    71预训练路径；118加载；145阶段；258采样重点；366分类class weights。
+  原dataset_pre/AirwayMetadataGenerator.py:70气管根；265结构；296位置。
+  原func/load_dataset.py:199逆频次采样。
+
+本轮只更新README、本审查与method_audit文字；不改代码、不启动训练、
+不执行SSH修改。后续恢复以核验后的方案与明确记录为准。

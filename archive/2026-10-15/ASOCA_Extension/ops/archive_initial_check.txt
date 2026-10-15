@@ -1,0 +1,32 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import os,signal,time,json
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013').resolve()
+pid=4807
+cmd=Path('/proc/'+str(pid)+'/cmdline')
+if cmd.exists() and str(root/'ops/formal.sh') in cmd.read_bytes().decode(errors='replace'):
+    os.killpg(pid,signal.SIGTERM)
+    for _ in range(60):
+        if not cmd.exists(): break
+        time.sleep(.25)
+state_file=root/'results/queue_status.json'
+state=json.loads(state_file.read_text())
+if any(job.get('status')=='completed' for job in state['jobs']):
+    raise RuntimeError('Completed scientific runs exist; do not archive under startup checks')
+for job in state['jobs']:
+    child=job.get('child_pid')
+    if child:
+        path=Path('/proc/'+str(child)+'/cmdline')
+        if path.exists() and str(root/'code/train.py') in path.read_bytes().decode(errors='replace'):
+            os.killpg(child,signal.SIGTERM)
+            for _ in range(60):
+                if not path.exists(): break
+                time.sleep(.25)
+            if path.exists(): raise RuntimeError('Owned training process did not exit')
+source=(root/'results').resolve()
+target=root/'results_initial_amp_check'
+assert source.parent==root and source.name=='results' and not target.exists()
+source.rename(target)
+(target/'STARTUP_CHECK_ONLY.txt').write_text('Retained initial startup run. No heldout metrics produced. Restarted with bounded AMP scaling before publication runs.\n')
+print('Initial runtime checks retained at',target)
+PY

@@ -1,0 +1,21 @@
+Gaussian λ10 vs λ0：执行前最小匹配控制方案，尚未启动。
+
+参照是正在执行的现有GTA λ10主训练。仅准备一个λ0候选，不追加λ10重跑、五折或其他方法。先看现有固定final的内部4 Dice/ASSD，再由主任务决定是否执行一次λ0。分类准确率不作为启动门槛。
+
+保留frozen train.py的method=gta和Gaussian模块，不用gta_no_gaussian。这样参数容量、Gaussian卷积、DS head创建顺序及相应随机初始化顺序不变。只把gaussian_weight从10改0，声明gaussian_schedule.base同步改0；gaussian_late_weight/late仍None，原ramp端点不改且在late=None时无作用，不引入新的schedule。
+
+其余保持实际main config：200epochs×125steps=25000分割updates、seed20261013/fold0、split_seed20261014、internal28/4、128³/batch2、DS与Dice+CE、standard/image-body采样、AdamW及LR/weight_decay、前50epoch frozen→51–70partial→71–200joint、classifier/guidance系数.1、anatomy reweighting、airway BAS backbone donor和已完成classifier80固定final（额外5120预训练updates）。λ0不重新预训练classifier。新的输出目录独立；路径搬迁必须给出显式旧根→新根映射，donor SHA、患者范围、来源和加载key审计保持一致。
+
+工具ops/prepare_gaussian_control.py从实际下载main config构造expected_lambda0_config，并可逐字段核查人工给定candidate config。只接受gaussian_weight、gaussian_schedule.base、output和明确列出的manifest/donor路径及init_audits.path重定位变化；method、DS、采样、seed、阶段、预算、其他loss权重或新的Gaussian late schedule均拒绝。冻结train CLI从原源码解析，生成提案argv JSON但从不执行。候选完整运行配置是预期记录，不是已经产生的训练结果。
+
+CPU初始化检查仅在显式--cpu-check时执行：要求实际两份donor文件SHA匹配main init_audits；仅CPU safe checkpoint读取；按原顺序设Python/NumPy/Torch seed，make_model(gta,DS)后先加载backbone再加载classifier，核ASOCA donor患者仍属于训练28、fixed80来源/更新数/focal权重及加载key审计。要求记录的Torch build相同；不创建optimizer、不forward、不初始化CUDA。分别重建main与λ0的初始模型，比较全部state tensor的name/dtype/shape/原始字节SHA和CPU RNG状态。
+
+证据限制必须保留：原主训练没有保存更新前epoch0初始化张量。两次CPU重建相同，最多证明同一源码/环境/seed/donor规则可构造相同的预期开始；它不能逐字节认证历史main真正用过的随机参数，更不能由seed相同直接宣称实际初始化已匹配。报告actual_original_main_epoch0_state_verified始终False。已有main audit能核其加载donor的文件身份，但Gaussian/DS/guidance等随机初始化参数没有历史快照可追溯验证。
+
+λ0保留模块仍会计算其输出，优化器容量和forward路径不变。零系数切断Gaussian目标对共享seg输出的损失梯度；Gaussian自身参数可能仍有零梯度张量对应的AdamW weight decay，但它的输出在该模型中仅用于辅助损失，不是final seg推理输出。不能把这项控制称为删除Gaussian架构。
+
+最终只比较同一个固定final、同4内部development患者的Dice及pooled ASSD；Null ASSD保留、缺一例不报告完整均值。它可帮助估计该配方中Gaussian损失系数的作用，不能单凭一次种子/4病例确立统计显著性或外部泛化，也不能解决局部分类标签语义等其他问题。当前主训练、classifier80、冻结源码均不改。
+
+当前本地提案使用2026-10-14真实下载main config（sha b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b）。启动前必须重新用服务器实际不可变main config、manifest、donor bytes和资源状态核验；本地准备不声称最新服务器状态已检验。本机未安装Torch且未下载两份donor，因此本轮仅完成配置/源码/manifest静态核验，没有执行CPU模型重建。
+
+实际CPU核验补充：上述准备以后，root在新服务器使用真实不可变main config、完整manifest和两份actual donor bytes运行了--cpu-check。资源测量67.52GiB可用、12CPU quota、既有约2.11核；nice10、300sec限制、无CUDA/forward/optimizer/训练。两套重建327个state tensors与CPU RNG一致，重建state SHA=d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79，Torch2.7.1+cu128。实际差异只gaussian_weight、gaussian_schedule.base、output。5份结果已下载server_records/gaussian_lambda0_cpu_preflight_20261014并核对；historical actual epoch0核验仍False，不变成已核历史起点。控制训练仍未启动。

@@ -1,0 +1,17 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -m pip install --disable-pip-version-check scipy==1.15.3 scikit-learn==1.7.2 pandas==2.3.3 tqdm==4.67.1
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python - <<'PY'
+import datetime,importlib.metadata as md,json,sys
+from pathlib import Path
+expected={'torch':'2.7.1+cu128','monai':'1.5.1','numpy':'1.26.4','scipy':'1.15.3','scikit-image':'0.25.2','SimpleITK':'2.5.2','scikit-learn':'1.7.2','pandas':'2.3.3','tqdm':'4.67.1'}
+actual={name:md.version(name) for name in expected}
+assert actual==expected,'Isolated environment versions differ'
+assert sys.version.split()[0]=='3.11.17'
+import numpy,scipy,torch,monai,SimpleITK,skimage,pandas,sklearn,tqdm
+assert not torch.cuda.is_initialized()
+result={'status':'isolated_eval_runtime_ready','captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'python':sys.version,'python_executable':sys.executable,'packages':actual,'CUDA_context_initialized':False,'old_baseline_environment_unchanged':True,'inference_or_training_started':False,'scope':'same top-level package versions; hardware/driver differences remain recorded'}
+dest=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/EARLY_FINAL_ENV_READY_20261014.json')
+assert not dest.exists(),'Inspect existing readiness receipt before overwriting'
+dest.write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+PY

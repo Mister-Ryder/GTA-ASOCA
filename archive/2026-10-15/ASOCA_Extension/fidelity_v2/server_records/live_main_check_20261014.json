@@ -1,0 +1,72 @@
+{
+  "captured_at_utc": "2026-10-14T05:55:52.338693+00:00",
+  "complete_epochs": 67,
+  "latest_epoch": {
+    "epoch": 66,
+    "loss": 0.5175216298103332,
+    "seconds": 73.79955872893333,
+    "stage": "partial",
+    "iterations": 125,
+    "gaussian_lambda": 10.0,
+    "gaussian_lambda_configured": 10.0,
+    "classifier_lambda": 0.1,
+    "lr_by_group": {
+      "segmentation": 0.0002126082395047293,
+      "classifier": 2.126082395047293e-05
+    },
+    "component_means": {
+      "segmentation_head_1": 0.2900089487433434,
+      "gaussian_lambda": 10.0,
+      "segmentation": 0.35312394946813586,
+      "segmentation_head_0": 0.37978692990541457,
+      "classification": 1.6377282040119172,
+      "classification_weighted": 0.1637728235721588,
+      "segmentation_head_2": 0.37270191383361817,
+      "classifier_lambda": 0.1,
+      "guidance_map": 0.0018112273532897233,
+      "segmentation_gradient_norm": 1.6000286084413529,
+      "generation_focal": 0.4976853353083134,
+      "classifier_weight": 0.1,
+      "segmentation_weighted": 0.35312394946813586,
+      "gaussian_weighted": 0.0004437315079849213,
+      "guidance_lambda": 0.1,
+      "gaussian": 4.4373150885803624e-05,
+      "classifier_gradient_norm": 2.847387149810791,
+      "guidance_weighted": 0.00018112273816950618,
+      "structure_correctness": 0.19177330486639402,
+      "structure_focal": 0.521603655591607,
+      "location_focal": 0.26175073245633396
+    },
+    "gradient_probe_count": 1,
+    "gpu_peak_GiB": 13.703960418701172
+  },
+  "stage": {
+    "status": "running",
+    "pid": 1921,
+    "recipe": "run_gta200.sh",
+    "tag": "gta200",
+    "role": "single-fold method development; classification accuracy diagnostic only",
+    "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+    "output_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results",
+    "started_at": "2026-10-14T04:35:46.558580+00:00",
+    "command": [
+      "bash",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/configs/run_gta200.sh"
+    ],
+    "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/logs/gta200.log",
+    "updated_at": "2026-10-14T04:35:46.560078+00:00",
+    "child_pid": 1922
+  },
+  "postfit": {
+    "status": "waiting",
+    "pid": 7223,
+    "role": "internal-four method development; classifier accuracy diagnostic only",
+    "started_at": "2026-10-14T05:53:15.453880+00:00",
+    "protocol_sha256": "abc4074c2034552ce886206a7383acdba90de8d1598e414de56319704b30c2d8",
+    "new_training": false,
+    "outer8_used_for_selection": false,
+    "phase": "waiting_for_fixed_budget_training",
+    "updated_at": "2026-10-14T05:53:15.454249+00:00"
+  },
+  "postfit_owned_process_alive": true
+}

@@ -1,3 +1,5 @@
+> **Existing-work archive (2026-10-15):** [code, experiment records, results, figures and prior reports](archive/2026-10-15/README.md), with [available trained checkpoints](https://github.com/Mister-Ryder/GTA-ASOCA/releases/tag/experiment-archive-2026-10-15). The text below describes the earlier reference-source release.
+
 # GTA-ASOCA: GTAirway coronary extension
 
 This is a development implementation of the GTAirway framework for coronary

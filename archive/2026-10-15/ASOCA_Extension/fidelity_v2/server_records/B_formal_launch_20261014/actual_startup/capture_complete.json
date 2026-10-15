@@ -1,0 +1,96 @@
+{
+  "status": "actual_B_config_and_initial_state_verified_not_final_results",
+  "captured_at_utc": "2026-10-14T10:49:02.854719+00:00",
+  "files": {
+    "deployed_controller.py": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py",
+      "bytes": 29212,
+      "sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b"
+    },
+    "launch_receipt.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/GAUSSIAN_REGION_BALANCE_CONTROL_LAUNCH_20261014.json",
+      "bytes": 650,
+      "sha256": "5e42ac524752bc154c692866094f49150c5f53b2f62d834c07302e9a31f39098"
+    },
+    "protocol.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/PROTOCOL.json",
+      "bytes": 13983,
+      "sha256": "1b349f7b9c1291771555abda8ba92e66081c2e00217298cf00a1e5071fee0abd"
+    },
+    "status_at_capture.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/STATUS.json",
+      "bytes": 962,
+      "sha256": "e6d05d997063f98826ece95b716c5ead44704f31be4ae7e68b649fe0f700caf3"
+    },
+    "expected_B_config.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/expected_B_config.json",
+      "bytes": 24285,
+      "sha256": "1dea54ff5597621d2753f1dca5be915ec27ca89b900940d2a831b12b8b0896ae"
+    },
+    "train_argv.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/train_argv.json",
+      "bytes": 1767,
+      "sha256": "377c63ca41eb4422c5ce842d8ca12abdcdfe68913255a7a7690917b5ed025f3b"
+    },
+    "ACTUAL_B_THETA0.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/ACTUAL_B_THETA0.json",
+      "bytes": 102923,
+      "sha256": "cd6cbaf752899e027a52c06c10ff249e8610882038fc6ba89c77b62dcf986b2c"
+    },
+    "actual_training_config.json": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/config.json",
+      "bytes": 24284,
+      "sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae"
+    },
+    "history_at_capture.jsonl": {
+      "remote": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/history.jsonl",
+      "bytes": 2412,
+      "sha256": "0f9ab8b92f99185482319979323c43b0ee2d29fddbe22d0cb7b8698978e65516"
+    }
+  },
+  "independent_local_actual_config_binding": {
+    "status": "actual_config_bound_to_sealed_B_protocol",
+    "actual_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+    "actual_config_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+    "gaussian_reduction": {
+      "id": "per_patch_equal_fg_bg_present_mean_v1",
+      "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+      "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+      "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+      "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+      "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+      "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+      "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+      "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+      "target_unchanged": "t=.5+.5*cached_G",
+      "lambda_unchanged": 10.0,
+      "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+      "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+      "not_changed": [
+        "Gaussian field/support/normalization",
+        "classifier labels",
+        "sampler",
+        "architecture/parameter shapes",
+        "DS4/7,2/7,1/7",
+        "50 frozen /20 partial /130 joint",
+        "optimizer/lr/clip12",
+        "200x125 updates",
+        "prediction/evaluation interface"
+      ],
+      "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+    },
+    "actual_config_has_gaussian_reduction_field": false,
+    "binding": "Exact actual config bytes plus source/file SHA map bind the separate immutable loss protocol; no config/checkpoint edits.",
+    "allowed_actual_config_differences_from_A": [
+      "output",
+      "source_sha256",
+      "source_files_sha256"
+    ],
+    "same_25000_updates": true,
+    "training_started_by_auditor": false
+  },
+  "actual_historical_main_theta0_verified": false,
+  "model_weights_downloaded": false,
+  "remote_commands_or_writes": false
+}

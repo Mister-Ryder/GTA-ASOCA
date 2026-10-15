@@ -1,0 +1,11 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import json,subprocess
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+for p in [r/'GTA_STAGED_CUDA_SMOKE.json',r/'stage_records/main_smoke128.json',r/'stage_records/gta200.json']:
+ print('STATE',str(p),p.read_text() if p.exists() else 'pending')
+for tag in ['main_smoke_controller','main_smoke128','gta200']:
+ p=r/'logs'/ (tag+'.log')
+ if p.exists():print('LOG',tag,'\n'+'\n'.join(p.read_text(errors='replace').splitlines()[-5:]))
+print('GPU',subprocess.getoutput('nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv,noheader'))
+PY

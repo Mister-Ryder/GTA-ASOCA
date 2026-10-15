@@ -1,0 +1,16 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python -B - <<'PY'
+import datetime,json,pathlib,subprocess
+r=pathlib.Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+status=r/'UNET_OUTER8_BASELINE_ONLY_STATUS.json'
+launch=r/'ops_inputs/UNET_OUTER8_BASELINE_ONLY_LAUNCH_20261015.json'
+out=dict(at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),role='operational_status_only_no_outer8_outcomes')
+if status.exists():
+ s=json.loads(status.read_text())
+ out['status']={k:s.get(k) for k in ('state','completed','attention','controller_pid','evaluator_pid','case_count','updated_at_utc')}
+ for label,key in [('controller','controller_pid'),('evaluator','evaluator_pid')]:
+  pid=s.get(key);p=pathlib.Path('/proc')/str(pid)/'cmdline'
+  out[label]=dict(pid=pid,alive=p.exists() if pid else False,cmdline=p.read_bytes().replace(b'\0',b' ').decode() if pid and p.exists() else None)
+elif launch.exists():out['launch']=json.loads(launch.read_text())
+out['GPU_compute_processes']=subprocess.run(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader,nounits'],capture_output=True,text=True,check=True).stdout.strip()
+print(json.dumps(out))
+PY

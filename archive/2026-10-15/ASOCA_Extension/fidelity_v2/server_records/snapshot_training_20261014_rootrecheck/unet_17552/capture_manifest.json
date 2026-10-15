@@ -1,0 +1,196 @@
+{
+  "capture_started_at_utc": "2026-10-14T05:32:03.079199+00:00",
+  "port": 17552,
+  "remote_root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+  "training_relative": "results/unet_recipe200x125/training",
+  "scope": "read-only SFTP and system status queries; no GPU work or remote writes",
+  "jsonl_policy": "retain captured bytes; ignore incomplete final line when analysing live JSONL",
+  "files": [
+    {
+      "relative_path": "results/unet_recipe200x125/training/config.json",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/config.json",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\results\\unet_recipe200x125\\training\\config.json",
+      "capture_started_at_utc": "2026-10-14T05:32:03.438345+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:03.760996+00:00",
+      "captured_bytes": 6743,
+      "source_bytes_before": 6743,
+      "source_bytes_after": 6743,
+      "source_mtime_epoch_before": 1791952475,
+      "source_mtime_epoch_after": 1791952475,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": false,
+      "sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd"
+    },
+    {
+      "relative_path": "results/unet_recipe200x125/training/history.jsonl",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/history.jsonl",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\results\\unet_recipe200x125\\training\\history.jsonl",
+      "capture_started_at_utc": "2026-10-14T05:32:03.841508+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:04.399689+00:00",
+      "captured_bytes": 81508,
+      "source_bytes_before": 81508,
+      "source_bytes_after": 81508,
+      "source_mtime_epoch_before": 1791955918,
+      "source_mtime_epoch_after": 1791955918,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": true,
+      "sha256": "8d385e05d0314ab43b4effcf13af4abf3b5e0b7213807be1124a30ad7a6a9294"
+    },
+    {
+      "relative_path": "results/unet_recipe200x125/training/gradient_probes.jsonl",
+      "missing": true,
+      "collected_at_utc": "2026-10-14T05:32:04.486124+00:00"
+    },
+    {
+      "relative_path": "results/unet_recipe200x125/training/TRAINING_COMPLETE.json",
+      "missing": true,
+      "collected_at_utc": "2026-10-14T05:32:04.562142+00:00"
+    },
+    {
+      "relative_path": "unet_calibration_status.json",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/unet_calibration_status.json",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\unet_calibration_status.json",
+      "capture_started_at_utc": "2026-10-14T05:32:04.637751+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:04.988241+00:00",
+      "captured_bytes": 1511,
+      "source_bytes_before": 1511,
+      "source_bytes_after": 1511,
+      "source_mtime_epoch_before": 1791952471,
+      "source_mtime_epoch_after": 1791952471,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": true,
+      "sha256": "284da11347dbf9af19a04695ba9c6c48e27ff476cc0a43473d2ce5a8349cb568"
+    },
+    {
+      "relative_path": "unet_calibration_protocol.json",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/unet_calibration_protocol.json",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\unet_calibration_protocol.json",
+      "capture_started_at_utc": "2026-10-14T05:32:05.073661+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:05.466179+00:00",
+      "captured_bytes": 4698,
+      "source_bytes_before": 4698,
+      "source_bytes_after": 4698,
+      "source_mtime_epoch_before": 1791952461,
+      "source_mtime_epoch_after": 1791952461,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": true,
+      "sha256": "b496c036639e5d748ad70afa53c109065fef57f97ad56b3d22b00c8e98cc5f0d"
+    },
+    {
+      "relative_path": "UNET_CALIBRATION_COMPLETE.json",
+      "missing": true,
+      "collected_at_utc": "2026-10-14T05:32:05.541167+00:00"
+    },
+    {
+      "relative_path": "GTA_STAGED_CUDA_SMOKE.json",
+      "missing": true,
+      "collected_at_utc": "2026-10-14T05:32:05.631938+00:00"
+    },
+    {
+      "relative_path": "configs/main_source_freeze.json",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/configs/main_source_freeze.json",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\configs\\main_source_freeze.json",
+      "capture_started_at_utc": "2026-10-14T05:32:05.705852+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:06.018535+00:00",
+      "captured_bytes": 10604,
+      "source_bytes_before": 10604,
+      "source_bytes_after": 10604,
+      "source_mtime_epoch_before": 1791951711,
+      "source_mtime_epoch_after": 1791951711,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": true,
+      "sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46"
+    },
+    {
+      "relative_path": "AFTER_RESTART_READY.json",
+      "missing": true,
+      "collected_at_utc": "2026-10-14T05:32:06.110462+00:00"
+    },
+    {
+      "relative_path": "logs/unet_calibration_controller.log",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/logs/unet_calibration_controller.log",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\logs\\unet_calibration_controller.log",
+      "capture_started_at_utc": "2026-10-14T05:32:06.641727+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:06.986553+00:00",
+      "captured_bytes": 4969,
+      "source_bytes_before": 4969,
+      "source_bytes_after": 4969,
+      "source_mtime_epoch_before": 1791952471,
+      "source_mtime_epoch_after": 1791952471,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": true,
+      "sha256": "441f5ecd342a07b3436699935b8e897da06b82e765d5049fe783b552989af98e"
+    },
+    {
+      "relative_path": "logs/unet_calibration_formal.log",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/logs/unet_calibration_formal.log",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\logs\\unet_calibration_formal.log",
+      "capture_started_at_utc": "2026-10-14T05:32:07.081021+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:07.560576+00:00",
+      "captured_bytes": 40000,
+      "source_bytes_before": 379812,
+      "source_bytes_after": 379812,
+      "source_mtime_epoch_before": 1791955925,
+      "source_mtime_epoch_after": 1791955925,
+      "source_changed_during_capture": false,
+      "tail_only": true,
+      "tail_start_byte": 339812,
+      "ends_with_newline": true,
+      "sha256": "d023c8156ade2cbaa634e5530d4bffe70c838a90385108e2a9790bcfdc1ea3d8"
+    },
+    {
+      "relative_path": "logs/unet_calibration_smoke.log",
+      "source_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/logs/unet_calibration_smoke.log",
+      "local_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\unet_17552\\logs\\unet_calibration_smoke.log",
+      "capture_started_at_utc": "2026-10-14T05:32:07.640138+00:00",
+      "capture_finished_at_utc": "2026-10-14T05:32:08.005186+00:00",
+      "captured_bytes": 9326,
+      "source_bytes_before": 9326,
+      "source_bytes_after": 9326,
+      "source_mtime_epoch_before": 1791952467,
+      "source_mtime_epoch_after": 1791952467,
+      "source_changed_during_capture": false,
+      "tail_only": false,
+      "tail_start_byte": 0,
+      "ends_with_newline": true,
+      "sha256": "d93a4865083906e68242b438a34f9f3ab4b773e62e63117829d021ddf1b827ca"
+    }
+  ],
+  "status_queries": [
+    {
+      "command": "nvidia-smi --query-compute-apps=pid,process_name,used_memory --format=csv,noheader",
+      "exit_code": 0,
+      "capture_finished_at_utc": "2026-10-14T05:32:08.291583+00:00",
+      "sha256": "21ae835c57f01978b0e6f6a10bbab029f7f018ffae9524ea43f8b680180877c4",
+      "stderr": ""
+    },
+    {
+      "command": "nvidia-smi --query-gpu=timestamp,name,utilization.gpu,memory.used,memory.total --format=csv,noheader",
+      "exit_code": 0,
+      "capture_finished_at_utc": "2026-10-14T05:32:08.528450+00:00",
+      "sha256": "1147bf6da53c228832603ed5c9ef1bcf84c366e2cabe3294cc9eb24d66f68226",
+      "stderr": ""
+    },
+    {
+      "command": "ps -eo pid,ppid,pgid,etimes,stat,comm",
+      "exit_code": 0,
+      "capture_finished_at_utc": "2026-10-14T05:32:08.729497+00:00",
+      "sha256": "9af60ee5120ee2d0840fe29dc75689146c89e29351c0daac857addc8194bbcf1",
+      "stderr": ""
+    }
+  ],
+  "status": "captured",
+  "capture_finished_at_utc": "2026-10-14T05:32:08.729522+00:00"
+}

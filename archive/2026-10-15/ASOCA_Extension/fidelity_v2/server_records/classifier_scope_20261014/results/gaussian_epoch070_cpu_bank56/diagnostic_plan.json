@@ -1,0 +1,2260 @@
+{
+  "schema_version": 1,
+  "role": "train28 offline Gaussian diagnostic; not final test or model selection",
+  "run_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "code": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "source_files_sha256": {
+    "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+    "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+    "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+    "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+    "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+    "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+    "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+    "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+    "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+    "losses.py": "9af9c6dc2b8c9fcb7ba896bf14a959cd2421d07d1581247976ff10c2cb17aa09",
+    "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+    "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+  },
+  "source_hash_algorithm": "gta_fidelity_selected_python_path_and_bytes_v1",
+  "diagnostic_script_sha256": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+  "inputs": {
+    "checkpoint": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/checkpoints/epoch070.pt",
+    "manifest": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+    "training_config": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/config.json"
+  },
+  "input_sha256": {
+    "checkpoint": "d71074157b9173e78e14761b01c56b6a9b1bd4cd72458f6c1b3f3168d08752b0",
+    "manifest": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "training_config": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+  },
+  "missing_inputs": [],
+  "seed": 20261013,
+  "bank_epoch": 0,
+  "patches_per_training_case": 2,
+  "bank_size": 56,
+  "device_for_explicit_diagnostic": "cpu",
+  "model_mode": "eval, no CT augmentation",
+  "probe_space": "detached FP32 main logits, batch one; DS sibling derivatives excluded",
+  "parameter_updates": false,
+  "optimizer_created": false,
+  "outer8_used": false,
+  "formal_final_test": false,
+  "bank_population": "patient-stratified original training-sampler indices; not natural patch-frequency estimate",
+  "readiness_scope": "cache array headers/sampling keys and finite model parameters only; no full cache-content hashes, patch traversal, forward, or CUDA",
+  "fixed_bank_scope": "explicit diagnostics persist dtype/shape/content SHA of actual CT/label/field/priors/start and sampling stratum; CPU readiness does not certify patch-content identity",
+  "training_patients": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "excluded_internal4": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "fold": 0,
+  "patch_size": 128,
+  "sampling": "standard",
+  "sampling_fov": "image-body",
+  "method": "gta",
+  "segmentation_loss": "dice_ce",
+  "decoder_DS": true,
+  "checkpoint_epoch": 69,
+  "bank": [
+    {
+      "index": 0,
+      "case_id": "Diseased_6"
+    },
+    {
+      "index": 1,
+      "case_id": "Normal_7"
+    },
+    {
+      "index": 2,
+      "case_id": "Diseased_2"
+    },
+    {
+      "index": 3,
+      "case_id": "Normal_7"
+    },
+    {
+      "index": 4,
+      "case_id": "Diseased_16"
+    },
+    {
+      "index": 5,
+      "case_id": "Normal_5"
+    },
+    {
+      "index": 7,
+      "case_id": "Normal_9"
+    },
+    {
+      "index": 8,
+      "case_id": "Normal_1"
+    },
+    {
+      "index": 9,
+      "case_id": "Normal_20"
+    },
+    {
+      "index": 10,
+      "case_id": "Diseased_11"
+    },
+    {
+      "index": 11,
+      "case_id": "Diseased_11"
+    },
+    {
+      "index": 12,
+      "case_id": "Diseased_16"
+    },
+    {
+      "index": 15,
+      "case_id": "Normal_6"
+    },
+    {
+      "index": 16,
+      "case_id": "Normal_18"
+    },
+    {
+      "index": 18,
+      "case_id": "Diseased_4"
+    },
+    {
+      "index": 19,
+      "case_id": "Diseased_9"
+    },
+    {
+      "index": 20,
+      "case_id": "Normal_15"
+    },
+    {
+      "index": 21,
+      "case_id": "Diseased_9"
+    },
+    {
+      "index": 22,
+      "case_id": "Normal_4"
+    },
+    {
+      "index": 23,
+      "case_id": "Diseased_17"
+    },
+    {
+      "index": 26,
+      "case_id": "Diseased_13"
+    },
+    {
+      "index": 29,
+      "case_id": "Diseased_14"
+    },
+    {
+      "index": 31,
+      "case_id": "Normal_11"
+    },
+    {
+      "index": 32,
+      "case_id": "Normal_1"
+    },
+    {
+      "index": 33,
+      "case_id": "Diseased_4"
+    },
+    {
+      "index": 35,
+      "case_id": "Diseased_19"
+    },
+    {
+      "index": 36,
+      "case_id": "Normal_17"
+    },
+    {
+      "index": 41,
+      "case_id": "Diseased_19"
+    },
+    {
+      "index": 42,
+      "case_id": "Normal_6"
+    },
+    {
+      "index": 43,
+      "case_id": "Normal_5"
+    },
+    {
+      "index": 45,
+      "case_id": "Normal_13"
+    },
+    {
+      "index": 46,
+      "case_id": "Normal_20"
+    },
+    {
+      "index": 49,
+      "case_id": "Diseased_17"
+    },
+    {
+      "index": 50,
+      "case_id": "Diseased_13"
+    },
+    {
+      "index": 53,
+      "case_id": "Normal_14"
+    },
+    {
+      "index": 54,
+      "case_id": "Normal_18"
+    },
+    {
+      "index": 55,
+      "case_id": "Normal_11"
+    },
+    {
+      "index": 56,
+      "case_id": "Normal_17"
+    },
+    {
+      "index": 57,
+      "case_id": "Normal_13"
+    },
+    {
+      "index": 58,
+      "case_id": "Diseased_6"
+    },
+    {
+      "index": 61,
+      "case_id": "Normal_15"
+    },
+    {
+      "index": 62,
+      "case_id": "Normal_10"
+    },
+    {
+      "index": 63,
+      "case_id": "Diseased_12"
+    },
+    {
+      "index": 66,
+      "case_id": "Normal_10"
+    },
+    {
+      "index": 69,
+      "case_id": "Diseased_3"
+    },
+    {
+      "index": 74,
+      "case_id": "Diseased_12"
+    },
+    {
+      "index": 75,
+      "case_id": "Normal_4"
+    },
+    {
+      "index": 80,
+      "case_id": "Normal_9"
+    },
+    {
+      "index": 85,
+      "case_id": "Diseased_3"
+    },
+    {
+      "index": 92,
+      "case_id": "Diseased_2"
+    },
+    {
+      "index": 103,
+      "case_id": "Diseased_5"
+    },
+    {
+      "index": 105,
+      "case_id": "Diseased_5"
+    },
+    {
+      "index": 122,
+      "case_id": "Normal_14"
+    },
+    {
+      "index": 147,
+      "case_id": "Diseased_8"
+    },
+    {
+      "index": 172,
+      "case_id": "Diseased_8"
+    },
+    {
+      "index": 194,
+      "case_id": "Diseased_14"
+    }
+  ],
+  "patches_by_patient": {
+    "Diseased_11": 2,
+    "Diseased_12": 2,
+    "Diseased_13": 2,
+    "Diseased_14": 2,
+    "Diseased_16": 2,
+    "Diseased_17": 2,
+    "Diseased_19": 2,
+    "Diseased_2": 2,
+    "Diseased_3": 2,
+    "Diseased_4": 2,
+    "Diseased_5": 2,
+    "Diseased_6": 2,
+    "Diseased_8": 2,
+    "Diseased_9": 2,
+    "Normal_1": 2,
+    "Normal_10": 2,
+    "Normal_11": 2,
+    "Normal_13": 2,
+    "Normal_14": 2,
+    "Normal_15": 2,
+    "Normal_17": 2,
+    "Normal_18": 2,
+    "Normal_20": 2,
+    "Normal_4": 2,
+    "Normal_5": 2,
+    "Normal_6": 2,
+    "Normal_7": 2,
+    "Normal_9": 2
+  },
+  "cache_headers": {
+    "Diseased_11": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "<f2",
+          "file_size": 143380288
+        },
+        "label": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "|u1",
+          "file_size": 71690208
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "<f2",
+          "file_size": 143380288
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "|u1",
+          "file_size": 71690208
+        },
+        "radius": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "<f2",
+          "file_size": 143380288
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "<u2",
+          "file_size": 143380288
+        },
+        "depth": {
+          "shape": [
+            280,
+            506,
+            506
+          ],
+          "dtype": "|u1",
+          "file_size": 71690208
+        }
+      },
+      "case_metadata_sha256": "d2e06f0edb46acb09e1ea31ad790ee777313646f15512693ce2abb038c2eb1bc"
+    },
+    "Diseased_12": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "<f2",
+          "file_size": 72576128
+        },
+        "label": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "|u1",
+          "file_size": 36288128
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "<f2",
+          "file_size": 72576128
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "|u1",
+          "file_size": 36288128
+        },
+        "radius": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "<f2",
+          "file_size": 72576128
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "<u2",
+          "file_size": 72576128
+        },
+        "depth": {
+          "shape": [
+            280,
+            360,
+            360
+          ],
+          "dtype": "|u1",
+          "file_size": 36288128
+        }
+      },
+      "case_metadata_sha256": "aeb15d4873a645803f9597c01845bde181e11cc310e5c8a07c80f441f6f329af"
+    },
+    "Diseased_13": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 91401088
+        },
+        "label": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 45700608
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 91401088
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 45700608
+        },
+        "radius": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 91401088
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<u2",
+          "file_size": 91401088
+        },
+        "depth": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 45700608
+        }
+      },
+      "case_metadata_sha256": "d53bfcc7419115428e76d5f42202fe2ecf4a40a953ec29387f74fa5aecf1632d"
+    },
+    "Diseased_14": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "<f2",
+          "file_size": 107923888
+        },
+        "label": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "|u1",
+          "file_size": 53962008
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "<f2",
+          "file_size": 107923888
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "|u1",
+          "file_size": 53962008
+        },
+        "radius": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "<f2",
+          "file_size": 107923888
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "<u2",
+          "file_size": 107923888
+        },
+        "depth": {
+          "shape": [
+            280,
+            439,
+            439
+          ],
+          "dtype": "|u1",
+          "file_size": 53962008
+        }
+      },
+      "case_metadata_sha256": "7b68c18a7c96154dbf0a4f7ca0d0b8e97fc8d7a73be7e6178d91d8afa46a6915"
+    },
+    "Diseased_16": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "<f2",
+          "file_size": 129024128
+        },
+        "label": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "|u1",
+          "file_size": 64512128
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "<f2",
+          "file_size": 129024128
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "|u1",
+          "file_size": 64512128
+        },
+        "radius": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "<f2",
+          "file_size": 129024128
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "<u2",
+          "file_size": 129024128
+        },
+        "depth": {
+          "shape": [
+            280,
+            480,
+            480
+          ],
+          "dtype": "|u1",
+          "file_size": 64512128
+        }
+      },
+      "case_metadata_sha256": "b938a63056f0ef7a63f654dd993b26714fe7199146fe51cd66c5282ac082601d"
+    },
+    "Diseased_17": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 91401088
+        },
+        "label": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 45700608
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 91401088
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 45700608
+        },
+        "radius": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 91401088
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "<u2",
+          "file_size": 91401088
+        },
+        "depth": {
+          "shape": [
+            280,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 45700608
+        }
+      },
+      "case_metadata_sha256": "32fc9f94bfcb3cc158600bc037dff3651c0b8f9fa16f991772a7ac29042689b1"
+    },
+    "Diseased_19": {
+      "arrays": {
+        "image": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "<f2",
+          "file_size": 82053008
+        },
+        "label": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "|u1",
+          "file_size": 41026568
+        },
+        "gaussian": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "<f2",
+          "file_size": 82053008
+        },
+        "skeleton": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "|u1",
+          "file_size": 41026568
+        },
+        "radius": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "<f2",
+          "file_size": 82053008
+        },
+        "branch_id": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "<u2",
+          "file_size": 82053008
+        },
+        "depth": {
+          "shape": [
+            210,
+            442,
+            442
+          ],
+          "dtype": "|u1",
+          "file_size": 41026568
+        }
+      },
+      "case_metadata_sha256": "12d70e5ac04ffa1a974fc35d7c66af6ba11d58f1d07ae40d5f9bece81fd6221c"
+    },
+    "Diseased_2": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "<f2",
+          "file_size": 112394368
+        },
+        "label": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "|u1",
+          "file_size": 56197248
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "<f2",
+          "file_size": 112394368
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "|u1",
+          "file_size": 56197248
+        },
+        "radius": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "<f2",
+          "file_size": 112394368
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "<u2",
+          "file_size": 112394368
+        },
+        "depth": {
+          "shape": [
+            280,
+            448,
+            448
+          ],
+          "dtype": "|u1",
+          "file_size": 56197248
+        }
+      },
+      "case_metadata_sha256": "12f55fa6b0d1ad8dbc0b9dccb83800ef6b0131c5e09cfd17fdcf53743c2be091"
+    },
+    "Diseased_3": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<f2",
+          "file_size": 114410368
+        },
+        "label": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "|u1",
+          "file_size": 57205248
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<f2",
+          "file_size": 114410368
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "|u1",
+          "file_size": 57205248
+        },
+        "radius": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<f2",
+          "file_size": 114410368
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<u2",
+          "file_size": 114410368
+        },
+        "depth": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "|u1",
+          "file_size": 57205248
+        }
+      },
+      "case_metadata_sha256": "301e8c2ff59abfaef5c6cf6fe7c5502414f90b167e82991c88bfacc43be0e5f0"
+    },
+    "Diseased_4": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "<f2",
+          "file_size": 140000128
+        },
+        "label": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "|u1",
+          "file_size": 70000128
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "<f2",
+          "file_size": 140000128
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "|u1",
+          "file_size": 70000128
+        },
+        "radius": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "<f2",
+          "file_size": 140000128
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "<u2",
+          "file_size": 140000128
+        },
+        "depth": {
+          "shape": [
+            280,
+            500,
+            500
+          ],
+          "dtype": "|u1",
+          "file_size": 70000128
+        }
+      },
+      "case_metadata_sha256": "4e9ff3bd65c105d06dc21920403b38a3c9f2ac7d886b40acdd1095db417a89d6"
+    },
+    "Diseased_5": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "<f2",
+          "file_size": 116444288
+        },
+        "label": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "|u1",
+          "file_size": 58222208
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "<f2",
+          "file_size": 116444288
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "|u1",
+          "file_size": 58222208
+        },
+        "radius": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "<f2",
+          "file_size": 116444288
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "<u2",
+          "file_size": 116444288
+        },
+        "depth": {
+          "shape": [
+            280,
+            456,
+            456
+          ],
+          "dtype": "|u1",
+          "file_size": 58222208
+        }
+      },
+      "case_metadata_sha256": "5e31592f2a6c6bac976164897e6c9bc47e42e51a04b208afec55e512d7007b7d"
+    },
+    "Diseased_6": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<f2",
+          "file_size": 114410368
+        },
+        "label": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "|u1",
+          "file_size": 57205248
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<f2",
+          "file_size": 114410368
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "|u1",
+          "file_size": 57205248
+        },
+        "radius": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<f2",
+          "file_size": 114410368
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "<u2",
+          "file_size": 114410368
+        },
+        "depth": {
+          "shape": [
+            280,
+            452,
+            452
+          ],
+          "dtype": "|u1",
+          "file_size": 57205248
+        }
+      },
+      "case_metadata_sha256": "9e4fdd85a7766035adc720b3195f648242f08e023d3a73bbbf080e017c676207"
+    },
+    "Diseased_8": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "<f2",
+          "file_size": 93219968
+        },
+        "label": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "|u1",
+          "file_size": 46610048
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "<f2",
+          "file_size": 93219968
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "|u1",
+          "file_size": 46610048
+        },
+        "radius": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "<f2",
+          "file_size": 93219968
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "<u2",
+          "file_size": 93219968
+        },
+        "depth": {
+          "shape": [
+            280,
+            408,
+            408
+          ],
+          "dtype": "|u1",
+          "file_size": 46610048
+        }
+      },
+      "case_metadata_sha256": "543bcb36bcb8e7aad8b4cc11a3137edd62bab23cf59cbf8b514eaf03c4b19f1e"
+    },
+    "Diseased_9": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "<f2",
+          "file_size": 126882688
+        },
+        "label": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "|u1",
+          "file_size": 63441408
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "<f2",
+          "file_size": 126882688
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "|u1",
+          "file_size": 63441408
+        },
+        "radius": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "<f2",
+          "file_size": 126882688
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "<u2",
+          "file_size": 126882688
+        },
+        "depth": {
+          "shape": [
+            280,
+            476,
+            476
+          ],
+          "dtype": "|u1",
+          "file_size": 63441408
+        }
+      },
+      "case_metadata_sha256": "41c9e62a026415319c307ec472cdb11b13baa7314549f440e7da0d5491c41b2e"
+    },
+    "Normal_1": {
+      "arrays": {
+        "image": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "<f2",
+          "file_size": 92552888
+        },
+        "label": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "|u1",
+          "file_size": 46276508
+        },
+        "gaussian": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "<f2",
+          "file_size": 92552888
+        },
+        "skeleton": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "|u1",
+          "file_size": 46276508
+        },
+        "radius": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "<f2",
+          "file_size": 92552888
+        },
+        "branch_id": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "<u2",
+          "file_size": 92552888
+        },
+        "depth": {
+          "shape": [
+            255,
+            426,
+            426
+          ],
+          "dtype": "|u1",
+          "file_size": 46276508
+        }
+      },
+      "case_metadata_sha256": "beacb8918031fa360f384d1ffef4cd9215619db9d74cb98b1d05582d3eb9c775"
+    },
+    "Normal_10": {
+      "arrays": {
+        "image": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "<f2",
+          "file_size": 103834280
+        },
+        "label": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "|u1",
+          "file_size": 51917204
+        },
+        "gaussian": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "<f2",
+          "file_size": 103834280
+        },
+        "skeleton": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "|u1",
+          "file_size": 51917204
+        },
+        "radius": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "<f2",
+          "file_size": 103834280
+        },
+        "branch_id": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "<u2",
+          "file_size": 103834280
+        },
+        "depth": {
+          "shape": [
+            261,
+            446,
+            446
+          ],
+          "dtype": "|u1",
+          "file_size": 51917204
+        }
+      },
+      "case_metadata_sha256": "f85ca61c710c8300abb736e6432cf3469bcd75926ff6e7e6334edf6bbd328d7b"
+    },
+    "Normal_11": {
+      "arrays": {
+        "image": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "<f2",
+          "file_size": 52256008
+        },
+        "label": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "|u1",
+          "file_size": 26128068
+        },
+        "gaussian": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "<f2",
+          "file_size": 52256008
+        },
+        "skeleton": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "|u1",
+          "file_size": 26128068
+        },
+        "radius": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "<f2",
+          "file_size": 52256008
+        },
+        "branch_id": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "<u2",
+          "file_size": 52256008
+        },
+        "depth": {
+          "shape": [
+            265,
+            314,
+            314
+          ],
+          "dtype": "|u1",
+          "file_size": 26128068
+        }
+      },
+      "case_metadata_sha256": "d3a4eebc6b9aa7e70dc45fd13178e3ad26544c071ddfecb520411b4dfd0453a3"
+    },
+    "Normal_13": {
+      "arrays": {
+        "image": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "<f2",
+          "file_size": 58248200
+        },
+        "label": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "|u1",
+          "file_size": 29124164
+        },
+        "gaussian": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "<f2",
+          "file_size": 58248200
+        },
+        "skeleton": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "|u1",
+          "file_size": 29124164
+        },
+        "radius": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "<f2",
+          "file_size": 58248200
+        },
+        "branch_id": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "<u2",
+          "file_size": 58248200
+        },
+        "depth": {
+          "shape": [
+            249,
+            342,
+            342
+          ],
+          "dtype": "|u1",
+          "file_size": 29124164
+        }
+      },
+      "case_metadata_sha256": "cd27e862a5bb35a6569a3648211950a48521750e21f341aa898b7a4093555d79"
+    },
+    "Normal_14": {
+      "arrays": {
+        "image": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "<f2",
+          "file_size": 75533168
+        },
+        "label": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "|u1",
+          "file_size": 37766648
+        },
+        "gaussian": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "<f2",
+          "file_size": 75533168
+        },
+        "skeleton": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "|u1",
+          "file_size": 37766648
+        },
+        "radius": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "<f2",
+          "file_size": 75533168
+        },
+        "branch_id": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "<u2",
+          "file_size": 75533168
+        },
+        "depth": {
+          "shape": [
+            270,
+            374,
+            374
+          ],
+          "dtype": "|u1",
+          "file_size": 37766648
+        }
+      },
+      "case_metadata_sha256": "d9669c7ef004e284718c9cfa4ed1d686daebce1c2549d917e9a8ef7b90056e83"
+    },
+    "Normal_15": {
+      "arrays": {
+        "image": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "<f2",
+          "file_size": 80412376
+        },
+        "label": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "|u1",
+          "file_size": 40206252
+        },
+        "gaussian": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "<f2",
+          "file_size": 80412376
+        },
+        "skeleton": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "|u1",
+          "file_size": 40206252
+        },
+        "radius": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "<f2",
+          "file_size": 80412376
+        },
+        "branch_id": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "<u2",
+          "file_size": 80412376
+        },
+        "depth": {
+          "shape": [
+            259,
+            394,
+            394
+          ],
+          "dtype": "|u1",
+          "file_size": 40206252
+        }
+      },
+      "case_metadata_sha256": "8a58179a9249eda69e7bbbbe76ed62b0957bc122b903f9611ee7c58653ec7944"
+    },
+    "Normal_17": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "<f2",
+          "file_size": 75837568
+        },
+        "label": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "|u1",
+          "file_size": 37918848
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "<f2",
+          "file_size": 75837568
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "|u1",
+          "file_size": 37918848
+        },
+        "radius": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "<f2",
+          "file_size": 75837568
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "<u2",
+          "file_size": 75837568
+        },
+        "depth": {
+          "shape": [
+            280,
+            368,
+            368
+          ],
+          "dtype": "|u1",
+          "file_size": 37918848
+        }
+      },
+      "case_metadata_sha256": "fab34d24aa6aa0725a5e88f25a0fbdf304ed63d2da0144751a730a9212f5fdc5"
+    },
+    "Normal_18": {
+      "arrays": {
+        "image": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "<f2",
+          "file_size": 53829008
+        },
+        "label": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "|u1",
+          "file_size": 26914568
+        },
+        "gaussian": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "<f2",
+          "file_size": 53829008
+        },
+        "skeleton": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "|u1",
+          "file_size": 26914568
+        },
+        "radius": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "<f2",
+          "file_size": 53829008
+        },
+        "branch_id": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "<u2",
+          "file_size": 53829008
+        },
+        "depth": {
+          "shape": [
+            210,
+            358,
+            358
+          ],
+          "dtype": "|u1",
+          "file_size": 26914568
+        }
+      },
+      "case_metadata_sha256": "14940b83a7e113233288ec22a635c96b0e41b4e6b4f3811d31e7adede25dd245"
+    },
+    "Normal_20": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "<f2",
+          "file_size": 103544128
+        },
+        "label": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "|u1",
+          "file_size": 51772128
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "<f2",
+          "file_size": 103544128
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "|u1",
+          "file_size": 51772128
+        },
+        "radius": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "<f2",
+          "file_size": 103544128
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "<u2",
+          "file_size": 103544128
+        },
+        "depth": {
+          "shape": [
+            280,
+            430,
+            430
+          ],
+          "dtype": "|u1",
+          "file_size": 51772128
+        }
+      },
+      "case_metadata_sha256": "c3904bdc645ae060d25d6d106c5e1d46210e8a15b95391dc0e9d8bb66de36417"
+    },
+    "Normal_4": {
+      "arrays": {
+        "image": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "<f2",
+          "file_size": 80308928
+        },
+        "label": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "|u1",
+          "file_size": 40154528
+        },
+        "gaussian": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "<f2",
+          "file_size": 80308928
+        },
+        "skeleton": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "|u1",
+          "file_size": 40154528
+        },
+        "radius": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "<f2",
+          "file_size": 80308928
+        },
+        "branch_id": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "<u2",
+          "file_size": 80308928
+        },
+        "depth": {
+          "shape": [
+            264,
+            390,
+            390
+          ],
+          "dtype": "|u1",
+          "file_size": 40154528
+        }
+      },
+      "case_metadata_sha256": "1f50a3d06df1357a6029e343e1a14e496bf6c8176a19d43f992edae6bb3baf64"
+    },
+    "Normal_5": {
+      "arrays": {
+        "image": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "<f2",
+          "file_size": 65059328
+        },
+        "label": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "|u1",
+          "file_size": 32529728
+        },
+        "gaussian": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "<f2",
+          "file_size": 65059328
+        },
+        "skeleton": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "|u1",
+          "file_size": 32529728
+        },
+        "radius": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "<f2",
+          "file_size": 65059328
+        },
+        "branch_id": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "<u2",
+          "file_size": 65059328
+        },
+        "depth": {
+          "shape": [
+            251,
+            360,
+            360
+          ],
+          "dtype": "|u1",
+          "file_size": 32529728
+        }
+      },
+      "case_metadata_sha256": "833fd1cd0bb53dac7a8106f60a1d3ba910b643bf2bd72b6c440ab02844b03488"
+    },
+    "Normal_6": {
+      "arrays": {
+        "image": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 88463200
+        },
+        "label": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 44231664
+        },
+        "gaussian": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 88463200
+        },
+        "skeleton": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 44231664
+        },
+        "radius": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "<f2",
+          "file_size": 88463200
+        },
+        "branch_id": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "<u2",
+          "file_size": 88463200
+        },
+        "depth": {
+          "shape": [
+            271,
+            404,
+            404
+          ],
+          "dtype": "|u1",
+          "file_size": 44231664
+        }
+      },
+      "case_metadata_sha256": "f372f35272160134edad4ea20821d581c4449ea2dbe5c55c7f8b0cc3bfe32f19"
+    },
+    "Normal_7": {
+      "arrays": {
+        "image": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "<f2",
+          "file_size": 84722528
+        },
+        "label": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "|u1",
+          "file_size": 42361328
+        },
+        "gaussian": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "<f2",
+          "file_size": 84722528
+        },
+        "skeleton": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "|u1",
+          "file_size": 42361328
+        },
+        "radius": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "<f2",
+          "file_size": 84722528
+        },
+        "branch_id": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "<u2",
+          "file_size": 84722528
+        },
+        "depth": {
+          "shape": [
+            252,
+            410,
+            410
+          ],
+          "dtype": "|u1",
+          "file_size": 42361328
+        }
+      },
+      "case_metadata_sha256": "3ffd9ec6666497b1535b3f2cb5be5c5f9b0ff46c60fd16c8c87cb3dc0a4471fc"
+    },
+    "Normal_9": {
+      "arrays": {
+        "image": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "<f2",
+          "file_size": 84304768
+        },
+        "label": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "|u1",
+          "file_size": 42152448
+        },
+        "gaussian": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "<f2",
+          "file_size": 84304768
+        },
+        "skeleton": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "|u1",
+          "file_size": 42152448
+        },
+        "radius": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "<f2",
+          "file_size": 84304768
+        },
+        "branch_id": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "<u2",
+          "file_size": 84304768
+        },
+        "depth": {
+          "shape": [
+            280,
+            388,
+            388
+          ],
+          "dtype": "|u1",
+          "file_size": 42152448
+        }
+      },
+      "case_metadata_sha256": "32c0703609aed642ad5963fb1ca2748b233ac28fcbad2d3c33115e48c130045c"
+    }
+  },
+  "readiness": "explicit offline diagnostic; no optimizer or parameter update",
+  "torch": "2.7.1+cu128",
+  "numpy": "1.26.4",
+  "fixed_sampling_bank_sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+  "reference_bank_verified": false,
+  "gaussian_lambda": 10.0
+}

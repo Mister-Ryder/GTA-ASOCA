@@ -1,0 +1,15 @@
+/root/miniconda3/bin/python - <<'PY'
+import subprocess,importlib.util,sys,json
+from pathlib import Path
+print(subprocess.getoutput('nvidia-smi'))
+print(subprocess.getoutput('command -v python3.11; command -v python; command -v rsync'))
+print(subprocess.getoutput('/root/miniconda3/bin/conda --version'))
+for name in ['torch','numpy','scipy','SimpleITK','skimage']:
+ spec=importlib.util.find_spec(name)
+ print('MODULE',name,str(spec.origin) if spec else None)
+if importlib.util.find_spec('torch'):
+ import torch
+ print('TORCH',torch.__version__,torch.version.cuda,'CUDA',torch.cuda.is_available())
+ if torch.cuda.is_available():print('CAPABILITY',torch.cuda.get_device_capability())
+for p in Path('/root/autodl-fs/datasets').iterdir():print('DATASET',p.name)
+PY

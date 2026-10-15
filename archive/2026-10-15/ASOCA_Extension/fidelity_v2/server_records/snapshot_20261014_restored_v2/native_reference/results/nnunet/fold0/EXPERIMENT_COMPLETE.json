@@ -1,0 +1,19 @@
+{
+  "method": "nnunet",
+  "fold": 0,
+  "smoke": false,
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "checkpoint_sha256": "47f9c83c139952d24edc4007792cb0eea0ca36d357f554a598ecb4d7ec1242b3",
+  "protocol_sha256": "a57f06f77e495a375b1b6c9c0fd2534a1505d3729e38bf58a019e69a70da7727",
+  "heldout_case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "evaluation_complete": true
+}

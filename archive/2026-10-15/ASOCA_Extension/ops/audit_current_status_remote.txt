@@ -1,0 +1,22 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json, collections
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+d=json.loads((r/'results/development_queue_status.json').read_text())
+print(json.dumps({'development_status':d['status'],'phase':d.get('phase'),'pid':d['pid'],'jobs':[{k:j.get(k) for k in ['job_id','status','phase','child_pid']} for j in d['jobs']],'adopted_native':d['adopted_native'].get('completed')}))
+f=r/'results/nnunet/fold0/native_runner.log'
+print('NATIVE_TAIL\n'+'\n'.join(f.read_text(errors='replace').splitlines()[-9:]))
+f=r/'results/gta/fold0/training/config.json'
+c=json.loads(f.read_text())
+print('GTA_CONFIG',json.dumps(c))
+f=r/'results/gta/fold0/training.log'
+rows=collections.defaultdict(list)
+if f.exists():
+ for line in f.open(errors='replace'):
+  try:row=json.loads(line)
+  except (ValueError,TypeError):continue
+  if isinstance(row,dict) and row.get('epoch') in [0,10,40,100,199] and 'aux' in row:rows[row['epoch']].append(row['aux'])
+ for e,v in sorted(rows.items()):
+  keys=set().union(*(x.keys() for x in v))
+  print('GTA_LOSS_COMPONENT_SAMPLE',json.dumps({'epoch':e,'logged_batches':len(v),'mean_components':{k:sum(x[k] for x in v if k in x)/sum(k in x for x in v) for k in keys}}))
+PY

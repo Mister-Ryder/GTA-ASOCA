@@ -1,0 +1,29 @@
+公开源码 fresh-checkout CPU检查（2026-10-14）
+
+独立工具：ops/public_source_cpu_smoke.py
+SHA：fb3cf09ee7ae2459c83b19c40517b821832d37ef5f69764be3841c5936f19bc3
+锁定公开commit：7a7e7faafef9ee99f5b714d6e808d239b79d95a0
+
+本地实际证据：public_repo/GTA-ASOCA与匿名bare验证库的48个Git blobs逐字节SHA再次对应；README、public provenance、主12文件BC8和正确classifier_pretraining/code六文件61d均一致。source_and_plan_review.json在server_records/public_source_cpu_smoke_plan_20261014保存，明确STATIC_SOURCE_AND_PLAN_VERIFIED / NOT_MODEL_RESULTS，actual_help_or_import_or_forward_executed=false。只有计划/源码验证和Python编译，作者没有连接服务器、运行模型或修改public源码。
+
+ROOT实际运行建议（Linux，两个独立新目录；helper与receipt在checkout外）
+
+GIT_TERMINAL_PROMPT=0 git -c credential.helper= -c http.extraHeader= clone --no-tags https://github.com/Mister-Ryder/GTA-ASOCA.git /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_7a7e_20261014
+
+git -C /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_7a7e_20261014 checkout --detach 7a7e7faafef9ee99f5b714d6e808d239b79d95a0
+
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py --checkout /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_7a7e_20261014 --output /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/public_source_cpu_smoke_7a7e_20261014 --timeout-seconds 300
+
+ROOT保存实际匿名clone的argv/时间/退出码，与最终receipt相配。工具核origin HTTPS、commit和48个blob，不假称仅凭origin就验证过下载时的认证状态；本次独立工具本身没有执行clone/network。不要在checkout内保存clone日志或receipt。已有source/receipt目录不能覆盖；重试需先查看实际终态，再使用新的目录身份。
+
+也可以给上述工具加--plan，只验证当前checkout bytes并输出只读计划，绝不执行help/import/模型。实际CPU模式要求Linux、Python3.11.17与requirements九包一致，使用当前OLD隔离early_final_env311而不是更改原baseline环境。这里是使用已安装依赖的fresh-source检查，不是从空环境安装验证。
+
+检查范围
+6个当前README入口分别在独立python -I子进程中执行--help：prepare_data、audit_priors、正确六文件pretrain_classifier、train、evaluate、evaluate_trajectory。每个子进程内部源码import路径必须在对应fresh源码目录，避免同名main/pretraining模块混用。两次额外forward分别覆盖主GTA和正确classifier6。所有help/forward共享最长300秒工作预算；CPU affinity最多2核、Torch2 threads/interop1、OMP/MKL/OpenBLAS/NumExpr2、SimpleITK2、nice至少10。CUDA_VISIBLE_DEVICES为空，Torch CUDA lazy_init、checkpoint加载、optimizer构造禁止。等待或失败时只处理自己的子进程组，不调用GPU锁或其他训练控制器。
+
+未训练随机输入：[1,1,32,32,32]，model.eval() + inference_mode。
+主GTA预期：logits[1,2,32³]；decoder DS[1,2,16³]和[1,2,8³]；Gaussian[1,1,32³]。
+主GTA内classifier与standalone classifier预期：三head各[1,7]；guide[1,16,2³]；空间features[1,64,8³]、[1,128,4³]、[1,256,2³]。
+这些shape是按源码预定的检查条件，实际完成receipt才证明实际forward通过。每次forward检查输出finite/CPU、所有parameter.grad为None、完整model state hash前后相同、torch.cuda.is_initialized=false。不会读private donor、真实CT/GT、进行loss backward/optimizer更新、训练或Dice/ASSD评估。
+
+输出真实PUBLIC_SOURCE_CPU_SMOKE_COMPLETE.json仅在六help＋两forward和源码前后哈希全部通过后写入，保留各worker实际receipt/log SHA与argv、时间及源码48指纹。全部显式NOT_MODEL_RESULTS，不冒充128³ batch2三阶段训练、完整CT评估、完整privatewarmstart独立复现、主方法收益或临床性能。历史初始化权重未公开这一限制保持不变。

@@ -1,0 +1,44 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python - <<'PY'
+import ctypes,datetime,hashlib,json,os,platform,select,shutil,signal,subprocess
+from pathlib import Path
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+status_path=root/'EARLY_FIXED_FINAL_STATUS.json'
+state=json.loads(status_path.read_text())
+assert state['controller_pid']==136304 and state['controller_source_sha256']=='81785e611e0d3664f9f4d74bef7ba4dc471c9386b15c5c00a67e9b7c85830529'
+assert state['status']=='waiting_unet_and_ready' and not state['gpu_lock_acquired'] and not state.get('child_pid')
+shared=Path(state['shared'])
+assert not (shared/'READY.json').exists(),'Do not treat an evaluator phase as a waiting-only stop'
+assert not Path(state['output']).exists()
+pid=state['controller_pid']
+assert platform.machine()=='x86_64','Syscall IDs below are restricted to the verified Linux x86_64 platform'
+library=ctypes.CDLL(None,use_errno=True)
+library.syscall.restype=ctypes.c_long
+fd=library.syscall(434,ctypes.c_int(pid),ctypes.c_uint(0))
+assert fd>=0,('pidfd_open unavailable',ctypes.get_errno())
+try:
+    argv=Path(f'/proc/{pid}/cmdline').read_bytes().split(b'\0')
+    assert str(root/'ops/run_early_fixed_final_eval.py').encode() in argv
+    assert Path('/proc/sys/kernel/random/boot_id').read_text().strip()==state['boot_id']
+    baseline=root/'UNET_CALIBRATION_COMPLETE.json'
+    baseline_sha=hashlib.sha256(baseline.read_bytes()).hexdigest()
+    assert not select.select([fd],[],[],0)[0],'Owned PID already exited; inspect state'
+    rc=library.syscall(424,ctypes.c_int(fd),ctypes.c_int(signal.SIGTERM),ctypes.c_void_p(0),ctypes.c_uint(0))
+    assert rc==0,('pidfd_send_signal failed',ctypes.get_errno())
+    assert select.select([fd],[],[],15)[0],'Owned controller did not exit; inspect before touching files'
+finally:os.close(fd)
+stopped=json.loads(status_path.read_text())
+assert stopped['status']=='interrupted' and not stopped.get('child_pid') and not stopped['gpu_lock_acquired']
+assert not Path(state['output']).exists()
+assert hashlib.sha256(baseline.read_bytes()).hexdigest()==baseline_sha
+archive=root/'results/early_preview_controller_attempts/81785_waiting_stop_20261014'
+archive.mkdir(parents=True,exist_ok=False)
+for name in ['EARLY_FIXED_FINAL_STATUS.json','EARLY_FIXED_FINAL_LAUNCH_20261014.json','logs/early_fixed_final_controller.log']:
+    source=root/name
+    assert source.resolve().is_relative_to(root.resolve()) and source.is_file()
+    source.rename(archive/source.name)
+shutil.copyfile(root/'ops/run_early_fixed_final_eval.py',archive/'run_early_fixed_final_eval_81785.py')
+receipt={'status':'owned_waiting_controller_stopped_and_archived','captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'controller_pid':pid,'reason':'independent review requires deferred cancellation during Popen construction and cleanup','inference_started':False,'training_or_canonical_postfit_stopped':False,'UNET_complete_sha256':baseline_sha,'archive':str(archive),'stopped_state':stopped}
+(archive/'STOP_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt))
+PY

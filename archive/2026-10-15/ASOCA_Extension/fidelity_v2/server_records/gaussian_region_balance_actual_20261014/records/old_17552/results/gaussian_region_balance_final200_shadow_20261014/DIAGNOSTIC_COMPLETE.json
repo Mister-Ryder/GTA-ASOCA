@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "n_patches": 56,
+  "artifacts_sha256": {
+    "analytic_fixture.json": "f84c3dc006d4c5873889584ca57465087bb7e5bc30f18f83ccde8daa36925c2c",
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "diagnostic_plan.json": "1a908579c374badf7590beec084a4ad58e0348fdb6f164b5061c381923c77871",
+    "patch_metrics.jsonl": "1d2aba21056914befde4d288fd9eb42799e54a7fcd85d33b38759afdf1004648",
+    "summary.json": "34e0f497cba2848d0bf817561c81f479b640e23463fa4d42468eff056566f415"
+  },
+  "state_unchanged": true,
+  "parameter_updates": false,
+  "held_out_GT_read": false
+}

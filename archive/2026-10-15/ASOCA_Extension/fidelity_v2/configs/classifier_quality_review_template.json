@@ -1,0 +1,9 @@
+{
+  "diagnostic_reference_only": true,
+  "classifier_checkpoint_sha256": "OPTIONAL_80x64_FIXED_FINAL_SHA256",
+  "classifier_source_sha256": "REPLACE_WITH_CLASSIFIER_STAGE_SOURCE_SHA256",
+  "development_only": true,
+  "outer8_used_for_selection": false,
+  "classification_accuracy_is_startup_gate": false,
+  "review_note": "Classification pretraining stabilizes multitask optimization and provides training-derived prior features serving segmentation. Confusion, balanced accuracy, support and baselines remain diagnostic references. Main GTA initializes fixed80-epoch final.pt, not the BA-selected checkpoint; startup checks completeness/source/patient isolation/finite parameters only. Dice and ASSD determine segmentation quality. No manual approval record is required."
+}

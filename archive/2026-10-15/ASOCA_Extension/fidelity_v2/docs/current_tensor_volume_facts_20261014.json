@@ -1,0 +1,281 @@
+{
+  "schema_version": 1,
+  "scope": "40-case immutable manifest metadata only; no new GT-array audit or server task",
+  "axis_order_warning": "original size xyz; numpy cache shape zyx; component ranges are not necessarily one observed scan",
+  "original": {
+    "size_xyz_component_min": [
+      512,
+      512,
+      168
+    ],
+    "size_xyz_component_max": [
+      512,
+      512,
+      224
+    ],
+    "spacing_xyz_component_min_mm": [
+      0.306641,
+      0.306641,
+      0.6249999999999996
+    ],
+    "spacing_xyz_component_max_mm": [
+      0.49414100000000005,
+      0.49414100000000005,
+      0.6250000000000002
+    ],
+    "n_voxels_min": 44040192,
+    "n_voxels_max": 58720256
+  },
+  "cache": {
+    "shape_zyx_component_min": [
+      210,
+      314,
+      314
+    ],
+    "shape_zyx_component_max": [
+      280,
+      506,
+      506
+    ],
+    "spacing_zyx_mm": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "n_voxels_min": 26127940,
+    "n_voxels_max": 71690080,
+    "image_dtype": "float16",
+    "label_dtype": "uint8",
+    "gaussian_dtype": "float16"
+  },
+  "representative_cases": {
+    "Diseased_11": {
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.49414100000000005,
+          0.49414100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -117.0999984741211,
+          -159.80000305175778,
+          -225.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cache_shape_zyx": [
+        280,
+        506,
+        506
+      ],
+      "cache_spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "Normal_11": {
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.306641,
+          0.306641,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -60.400001525878906,
+          -96.0999984741211,
+          -219.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cache_shape_zyx": [
+        265,
+        314,
+        314
+      ],
+      "cache_spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "Diseased_10": {
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -111.80000305175781,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cache_shape_zyx": [
+        280,
+        396,
+        396
+      ],
+      "cache_spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "Normal_12": {
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          206
+        ],
+        "spacing_xyz_mm": [
+          0.369141,
+          0.369141,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -94.49999999999999,
+          -193.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "cache_shape_zyx": [
+        257,
+        378,
+        378
+      ],
+      "cache_spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    }
+  },
+  "current_training_tensors": {
+    "CT": [
+      2,
+      1,
+      128,
+      128,
+      128
+    ],
+    "segmentation_GT": [
+      2,
+      128,
+      128,
+      128
+    ],
+    "gaussian_GT": [
+      2,
+      1,
+      128,
+      128,
+      128
+    ],
+    "classifier_targets": [
+      2,
+      3
+    ],
+    "classifier_logits_each_head": [
+      2,
+      7
+    ],
+    "fused_classifier_feature": [
+      2,
+      256,
+      8,
+      8,
+      8
+    ],
+    "main_segmentation_logits": [
+      2,
+      2,
+      128,
+      128,
+      128
+    ],
+    "decoder_DS_logits": [
+      [
+        2,
+        2,
+        64,
+        64,
+        64
+      ],
+      [
+        2,
+        2,
+        32,
+        32,
+        32
+      ]
+    ],
+    "physical_input_side_mm": 64,
+    "physical_input_cube_volume_cm3": 262.144,
+    "gaussian_mse_target": ".5+.5*cached_unit_field"
+  },
+  "bank_roles": {
+    "classifier_pretraining_frequency_bank": "2048 geometry-sampler training-only patches",
+    "gaussian_or_new_label_scale_audit_bank": "56 fixed standard-sampler training-only patches; 2 per training case",
+    "not_poolable_frequency_estimates": true
+  }
+}

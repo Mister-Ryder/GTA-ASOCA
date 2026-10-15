@@ -1,0 +1,37 @@
+GTA fixed-final 旧服务器提前推理：只读可行性审查（2026-10-14）
+
+结论
+值得在旧服务器 U-Net 完整轨迹结束、GPU 确认空闲之后，为同一份 GTA immutable final.pt 额外推理内部 4 例。它可以提前提供 fixed-final 方法开发诊断，不需要修改冻结代码、checkpoint selection 或新服务器的完整 20 点轨迹。新服务器后来产生的 final 仍为 canonical 结果，旧服务器 early-final 单独保存，不能复制入 canonical trajectory 充当已完成的第 20 点。
+
+此结论是源码可行性结论，不是已经执行或已验证两机当前环境相同。没有本次服务器连接、传输、推理或训练。
+
+跨 ROOT 的实际约束
+evaluate.py 从传入的 checkpoint 读取其原 config，核验本次 manifest 字节 SHA 与 config.manifest_sha256、fold、smoke、训练源组合与逐文件 SHA。它没有检查 config.output 或 config.manifest 的原绝对路径是否等于当前 ROOT。因此必须原样镜像 final.pt，保留嵌入 config 的原路径字符串；不要重写 config、重新打包 checkpoint 或换用旧 U-Net config。
+
+data.load_manifest 把 _cache_root 设为本次 manifest 文件所在目录，case_directory 读取这个目录下的 cache_subdir/image.npy。manifest 中保存的旧 image_path / label_path 绝对路径没有用于这里的预测或原 GT 读取。raw GT 通过 --raw-root 与 label_relative_path 解析，并逐例核验其字节 SHA。original_prediction 使用 manifest 中 resampled_geometry 后按实际原 GT 的几何执行 nearest-neighbor 重采样。
+
+evaluation_cases 默认 internal_diagnostic：config 内部 28/4 必须分割冻结 outer32，4 例须 Normal / Diseased 各 2 例。若训练患者与内部 4 例重叠或 config.internal_selection_valid=False，会保留 invalid-selection 标记而不是自动阻止推理。因此本次外部守卫必须明确要求 internal_selection_valid=True、无重叠，仍只推理 Diseased_10、Diseased_20、Normal_12、Normal_3。完整 CT 输入到滑窗，不使用 GT ROI、分类伪标签或 Gaussian supervision 作为预测输入。模型全部 state_dict 以 strict=True 的默认行为加载；不需要另行复制 airway 或预训练分类器 donor 文件。eval() 关闭 Dropout 并使用 checkpoint 的 BatchNorm running statistics，分类器 frozen/partial/joint 的训练设置不改变该 eval 路径。
+
+重要的守卫缺口
+1. evaluate.py 不检查 TRAINING_COMPLETE.json、200 行 history 或最终文件前后稳定性。不能因为 final.pt 文件出现就立即复制。须由独立守卫确认新服务器正式训练已完成、epoch199 / 200×125 更新、final_sha256 与文件一致，再传输并在共享镜像、旧本地镜像、推理结束后分别核 SHA，期间 canonical final 不可变。
+2. BC8 训练组合 source hash 不包含 evaluate.py 或 metrics.py。必须独立核验两机这两个 evaluator 文件和依赖版本；若使用 verify_evaluation，还须一致的 evaluate_trajectory.py。不能只看 BC8 相同就称整个推理协议相同。
+3. evaluate.py 不核验实际缓存 image.npy 的字节，只信 manifest 并读取数组。即使 manifest 完全相同，旧缓存 CT 仍可能不同。至少提前逐例比较两机 internal4 的完整 image.npy SHA、shape、dtype；原 CT 和 GT 的 source SHA 与 manifest、原始和重采样几何也要一致。此次推理不需要重新生成标签或辅助场。
+4. evaluate.py 不提供 GPU 锁或 GPU 空闲检测。要遵守旧服务器已有作业的锁与自动控制器所有权，确认 U-Net trajectory / 曲线处理及控制器已到终态，不存在即将自动启动的后继 GPU 工作；额外推理只取得空闲 GPU，不并行塞进正式训练。不能恢复暂停的旧 legacy 控制器。
+5. evaluate.py 允许复用已有 case JSON。early-final 必须用全新输出目录，避免任何历史结果被重写或被程序视为可复用。不要使用 --geometry-only、--smoke、--max-cases 或 outer_development。
+
+推理协议与运行环境
+当前 frozen run_internal_trajectory.sh 使用 sw_batch_size=1，必须与 early-final 相同，而不是 evaluate.py CLI 的默认 2。其余固定行为：128³ ROI、overlap=0.5、Gaussian 滑窗加权、cval=-1、CUDA autocast float16、返回 logits.float()、CPU 滑窗累积、argmax 后回原始 CT 网格。CPU 不是主推理设备；CPU 做数组准备、滑窗累积、原网格重采样与指标，GPU 做网络 forward。evaluate.py 固定 torch.set_num_threads(8)。不另加 TTA、阈值搜索、连通域后处理、ROI 或 precision 切换。
+
+现有记录都支持 Torch2.7.1+cu128、CUDA12.8、MONAI1.5.1、NumPy1.26.4、SimpleITK2.5.2、scikit-image0.25.2。旧 environment.lock.txt 记录 SciPy1.14.1，而新环境安装配方为 SciPy1.15.3；这说明目前不能假定 exact software 已满足，实施前必须读取两机实际版本。Python micro version、Torch/cuDNN/cuBLAS、CUDA runtime、GPU compute capability、驱动及 backend TF32 / benchmark / deterministic flags 均应记录。旧 GPU 日志名为 RTX4080，新为 vGPU-32GB；仅显存或名称不能证明数值环境相同。
+
+如关键版本不同，优先使用旧服务器独立评估环境匹配 canonical 版本，不能直接替换旧正式训练环境。若暂时只做跨环境提前诊断，必须明确标为非 canonical；后续在同一指标环境中对两套保存像素重算主指标。跨硬件、AMP 与不同 kernel selection 即使同软件也不能保证逐体素一致；分类器 argmax 还可能把很小的数值差异传到离散条件引导。evaluate.py 没有强制跨硬件确定性设置，不能把 bitwise equality 当作预先保证。为了保持 exact evaluator 行为，不擅自在早期作业设置 canonical 程序没有设置的推理 flags。
+
+完成与成本记录
+early-final 独立协议应保存：origin training ROOT 与真实完成标记、原始 config / final / manifest SHA、镜像传输前后 SHA、两机 source 与 evaluator SHA、真实软件和硬件状态、4 例 cache CT / raw GT SHA、固定推理参数、实际开始结束时间、wall seconds、逐例预测 NRRD 与像素 / geometry 身份、每例指标和独立 completion。不能伪造 TRAJECTORY_COMPLETE 或把一次 final4 推理写成 20 点完成。
+
+新服务器 canonical final 之后比较两套保存结果：先验证同 checkpoint / manifest / 4 例 / CT cache / GT / evaluator / 滑窗协议身份；NRRD 文件 SHA 可记录但文件压缩或头信息差异不足以证明像素不同，须解码后逐体素比较并验证 size / spacing / origin / direction。逐例报告不一致体素数与体素比例、两 mask 的 Dice、各自前景数，以及对同一 GT 的 Dice 和 ASSD 差值。若像素一致，仍分别保留两次计算的来源与成本；若不一致，保留 canonical 结果并调查环境差异，不择优、不混合平均、不投票或选择表现更好的设备预测。
+
+额外成本是一次 fixed-final ×4 全 CT 推理和指标计算。原 GTA 20×4=80 次病例评估变成总计 84 次，约增加 5% 的病例推理次数；wall/GPU/CPU 时间须以实际记录为准，不能据 U-Net 时间直接预测 GTA 开销。这不是额外训练、第五折或增加样本量。提前结果只可作当前内部 4 例方法开发诊断，不作独立测试、显著性或原始 8 例结论。正式 paired-final comparison 与论文表格仍等 canonical 轨迹完成并使用其 final。
+
+最小执行边界（供 root 决策）
+只有在主训练完成并 immutable final 校验、旧 GPU 与控制器已终态、两机 CT / GT / source / evaluator 与 runtime 核验、独立 fresh output / provenance 守卫就绪时才值得早算。若等待上述核验的代价已接近新服务器 canonical final 的剩余时间，直接等 canonical final 更合算。无需修改冻结 evaluate.py 或完整轨迹顺序，也无需占用新服务器训练 GPU。

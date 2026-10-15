@@ -1,0 +1,21 @@
+{
+  "port": 38773,
+  "owner": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "records": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014",
+  "run": "gta_region_balance200x125_20261014",
+  "source": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "weight": 10.0,
+  "controller": "run_gaussian_region_balance_control.py",
+  "controller_sha": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "theta": "ACTUAL_B_THETA0.json",
+  "expected": "expected_B_config.json",
+  "output": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014",
+  "role": "PLAN_ONLY_NO_SERVER_ACCESS",
+  "kind": "B",
+  "logical_training_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "expected_checkpoint_evaluations": 20,
+  "expected_case_evaluations": 80,
+  "completion_contract": "own CONTROL_COMPLETE + fully released completed STATUS + own POSTFIT_VERIFIED; no POSTFIT_STATUS exists",
+  "final_weights": "download actual bytes once after completion; SHA against actual training/postfit receipt",
+  "private_initial_snapshot_downloaded": false
+}

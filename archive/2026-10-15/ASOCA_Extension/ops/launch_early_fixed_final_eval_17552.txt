@@ -1,0 +1,27 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python - <<'PY'
+import hashlib,json,os,subprocess,time
+from pathlib import Path
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+script=root/'ops/run_early_fixed_final_eval.py'
+expected='2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42'
+assert hashlib.sha256(script.read_bytes()).hexdigest()==expected
+assert not (root/'EARLY_FIXED_FINAL_STATUS.json').exists(),'Inspect existing preview state'
+assert not (root/'EARLY_FIXED_FINAL_LAUNCH_20261014.json').exists(),'Inspect existing launcher receipt'
+assert not (root/'results/gta_fixed_final_preview_20261014').exists(),'Preview output must be fresh'
+ready=json.loads((root/'EARLY_FINAL_ENV_READY_20261014.json').read_text())
+assert ready['status']=='isolated_eval_runtime_ready' and not ready['inference_or_training_started']
+python=str(root/'early_final_env311/bin/python')
+subprocess.run([python,str(script),'--plan'],check=True)
+env=dict(os.environ,OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',PYTHONDONTWRITEBYTECODE='1',PYTHONUNBUFFERED='1')
+log=root/'logs/early_fixed_final_controller.log'
+with log.open('x') as stream:
+    child=subprocess.Popen([python,'-u',str(script),'--max-wait-seconds','7200','--max-evaluation-seconds','7200'],cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+receipt={'pid':child.pid,'source_sha256':expected,'script':str(script),'role':'waiting for fixed-final mirror; extra4 inference only','log':str(log),'new_training':False,'canonical_trajectory_unchanged':True}
+(root/'EARLY_FIXED_FINAL_LAUNCH_20261014.json').write_text(json.dumps(receipt,indent=2)+'\n')
+time.sleep(2)
+assert child.poll() is None,'Preview controller exited; inspect own log, do not restart main'
+receipt['cmdline_observed']=Path(f'/proc/{child.pid}/cmdline').read_bytes().replace(b'\0',b' ').decode()
+print(json.dumps(receipt))
+if (root/'EARLY_FIXED_FINAL_STATUS.json').exists():print((root/'EARLY_FIXED_FINAL_STATUS.json').read_text())
+PY

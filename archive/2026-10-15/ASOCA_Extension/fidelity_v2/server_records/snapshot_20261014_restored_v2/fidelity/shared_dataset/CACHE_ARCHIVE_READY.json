@@ -1,0 +1,11 @@
+{
+  "status": "ready",
+  "cache_archive": "/root/autodl-fs/datasets/ASOCA_GTA_20261014/cache_sparse.tar.gz",
+  "archive_bytes": 1533085658,
+  "cache_archive_sha256": "f19ee5c059f8c7ebe6eb11874a56da3b9326af5a3237597577d8bda19c9da444",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "source_cache": "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache",
+  "case_count": 40,
+  "sparse_format": "GNU1.0; extract with GNUtar on local SSD",
+  "verified_at": "2026-10-14T03:28:52.858237+00:00"
+}

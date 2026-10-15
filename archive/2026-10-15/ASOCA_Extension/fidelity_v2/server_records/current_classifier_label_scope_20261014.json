@@ -1,0 +1,82 @@
+{
+  "scope": "Current frozen implementation, dimensions verified from all 40 labelled cases; no model changes",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "raw_shape_xyz_axis_range": [
+    [
+      512,
+      512
+    ],
+    [
+      512,
+      512
+    ],
+    [
+      168,
+      224
+    ]
+  ],
+  "cache_shape_xyz_axis_range": [
+    [
+      314,
+      506
+    ],
+    [
+      314,
+      506
+    ],
+    [
+      210,
+      280
+    ]
+  ],
+  "range_note": "Independent axis extrema do not imply an existing extreme-combination volume",
+  "spacing_xyz_mm": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "batch_size": 2,
+  "image_tensor": [
+    2,
+    1,
+    128,
+    128,
+    128
+  ],
+  "segmentation_target_tensor": [
+    2,
+    128,
+    128,
+    128
+  ],
+  "segmentation_class_values": [
+    0,
+    1
+  ],
+  "gaussian_field_tensor": [
+    2,
+    1,
+    128,
+    128,
+    128
+  ],
+  "gaussian_target_transform": "0.5+0.5*field",
+  "prior_target_tensor": [
+    2,
+    3
+  ],
+  "classifier_head_logits_each": [
+    2,
+    7
+  ],
+  "prior_scope": "one triple per entire 128^3 input patch",
+  "patch_edge_mm": 64,
+  "full_scan_labelled_cases": 40,
+  "blind_unlabelled_cases_excluded": 20,
+  "generation_scope": "full-volume graph depth; patch-volume-dominant branch; not re-rooted within each patch",
+  "structure_scope": "branch count and foreground voxel volume within the current patch",
+  "location_scope": "patch center relative to full CT Z thirds and X halves; not coronary anatomy regions",
+  "classifier_pretraining_sampler": "geometry/image-body",
+  "main_segmentation_sampler": "standard/image-body",
+  "current_source_unchanged": true
+}

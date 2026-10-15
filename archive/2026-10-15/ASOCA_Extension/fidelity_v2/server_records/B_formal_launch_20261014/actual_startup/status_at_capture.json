@@ -1,0 +1,26 @@
+{
+  "status": "formal_training",
+  "controller_pid": 32758,
+  "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "started_at_utc": "2026-10-14T10:45:17.167560+00:00",
+  "gpu_lock_acquired": true,
+  "children": [
+    {
+      "stage": "formal_training",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "-u",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py",
+        "--worker"
+      ],
+      "started_at_utc": "2026-10-14T10:45:26.150291+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/formal_training.log",
+      "pid": 32897,
+      "pgid": 32897
+    }
+  ],
+  "updated_at_utc": "2026-10-14T10:48:46.158436+00:00",
+  "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+  "child_pid": 32897,
+  "stage_wall_seconds": 200.00811198353767
+}

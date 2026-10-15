@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "pid": 7223,
+  "role": "internal-four method development; classifier accuracy diagnostic only",
+  "started_at": "2026-10-14T05:53:15.453880+00:00",
+  "protocol_sha256": "abc4074c2034552ce886206a7383acdba90de8d1598e414de56319704b30c2d8",
+  "new_training": false,
+  "outer8_used_for_selection": false,
+  "phase": "development_curves_ready",
+  "updated_at": "2026-10-14T10:32:01.628237+00:00",
+  "command": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_saved_stage.py",
+    "--root",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+    "--recipe",
+    "run_internal_trajectory.sh",
+    "--tag",
+    "gta200_internal4",
+    "--training",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training"
+  ],
+  "verified_receipt": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/POSTFIT_VERIFIED.json",
+  "verified_receipt_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+  "verified_checkpoints": 20,
+  "verified_case_evaluations": 80,
+  "validation_history_sha256": "1bf12cc622f1008ede7cc9a2903456351d6c38be9286b63de0955703a4535e1b",
+  "curve_manifest_sha256": "bf3e7fc8a1ba3cbe0474c51a5f2873ba2c869ea12a1e70beb013ab36989fa430",
+  "finite_curve_observations": {
+    "dice": 20,
+    "assd_mm": 20
+  },
+  "note": "Dice/ASSD observations retain undefined distances; no performance threshold, new training or final-test claim"
+}

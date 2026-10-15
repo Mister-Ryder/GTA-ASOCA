@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "method_label": "nnunet",
+  "training_method": "nnunet",
+  "fold": 0,
+  "smoke": false,
+  "protocol_identity": "fdf058c3d65b92f0665a7460778b9e41a4180554ff8d325e57013d6c72b3e71f",
+  "job_identity": "f121909bedde047d0cfcf25b08684a952fcf32a3ab6b75c5f1517e1ae6953f10",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "completed_at": "2026-10-14T04:00:18.984942+00:00",
+  "execution_stage": "method_development",
+  "development_protocol_identity": "aa3063d86ebcddca91dc63c4d664534b9d6d91e6db5f9e0a2725e5dfdc148c7b",
+  "validation_role": "method-development validation used for selection; not an independent test",
+  "case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "checkpoint_sha256": "47f9c83c139952d24edc4007792cb0eea0ca36d357f554a598ecb4d7ec1242b3",
+  "checkpoint_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/nnUNet_results/Dataset881_ASOCA_Fold0/nnUNetTrainer_100epochs__nnUNetPlans__3d_fullres/fold_all/checkpoint_final.pth",
+  "n_cases": 8
+}

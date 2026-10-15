@@ -1,0 +1,7 @@
+Four development patients, repeated at 20 scheduled checkpoints; no independent test or significance claim.
+A includes an airway backbone warm start and 5,120 classifier-pretraining updates; U is cold start. Both use decoder deep supervision.
+Final endpoints remain epoch200. Late panels show every scheduled point from140 onward; they do not select an earlier winner.
+Points are recorded cohort means. Lines only join adjacent points; no extra/interpolated measurements or confidence bands.
+Panel(b) uses a logarithmic ASSD axis; panel(d) is linear. Patient SD is not shown as a confidence interval.
+Physical pooled boundary-voxel ASSD follows the frozen evaluator. All four distances are defined at all displayed points.
+The B and lambda0 controls are still training and are not plotted.

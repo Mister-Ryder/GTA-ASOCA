@@ -1,0 +1,600 @@
+HARL: Heterogeneity-aware Adaptive Representation
+Learning for Dense Volumetric Segmentation of
+Pulmonary Airways
+Anonymous Author(s)
+Affiliation
+Address
+email
+Abstract
+Segmentation of tree-like structures in volumetric medical images presents unique1
+challenges due to intrinsic anatomical heterogeneity—systematic variations in ap-2
+pearance, structure, and connectivity across hierarchical levels. Pulmonary airways3
+exemplify this "anatomical heterogeneity continuum" with: (1) intensity hetero-4
+geneity, where voxel distributions vary significantly across generations of branches;5
+and (2) structural heterogeneity, where morphology transitions from simple tubular6
+structures to complex bifurcations. Conventional networks apply uniform repre-7
+sentation strategies across all regions, fundamentally limiting their capacity for8
+differentiated representation and creating an inherent contradiction between spatial9
+accuracy and structural integrity, particularly the ability to maintain peripheral10
+connectivity while preserving global precision. We introduce Heterogeneity-aware11
+Adaptive Representation Learning (HARL), a novel framework that dynamically12
+adjusts representation strategies according to region-specific anatomical character-13
+istics. HARL comprises three key innovations: (1) an anatomical heterogeneity14
+disentanglement encoder that explicitly models generation type, morphological15
+structure, and spatial location attributes; (2) hierarchical adaptive modules that16
+conditionally transform feature spaces based on anatomical attributes at different17
+network levels; and (3) structure-preserving distance field regularization that implic-18
+itly enforces topological consistency. Extensive experiments on three pulmonary19
+CT datasets demonstrate that HARL not only significantly outperforms state-of-the-20
+art methods, but also achieves remarkably consistent performance with standard21
+deviations of merely 3.31% compared to conventional approaches reaching up to22
+19.32% for structural metrics.Methodologically, it introduces a paradigm shift by23
+explicitly modeling anatomical heterogeneity—applicable to vascular networks,24
+neuronal pathways, and lymphatic systems.25
+1 Introduction26
+Medical volumetric image segmentation, particularly of tree-like anatomical structures [1], is critical27
+for disease diagnosis, treatment planning, and quantitative assessment [ 2]. Pulmonary airways28
+represent one of the most challenging segmentation targets due to their hierarchical branching pattern,29
+progressively diminishing size, and varying morphology. Despite significant advances in deep30
+learning methods, accurate and complete airway segmentation remains challenging—especially for31
+peripheral branches beyond the 4th generation where most respiratory diseases initially manifest32
+[3, 4] .33
+The fundamental difficulty lies in what we identify as the anatomical heterogeneity contin-34
+uum—systematic variations in appearance, structure, and connectivity across the airway hierarchy.35
+Submitted to 39th Conference on Neural Information Processing Systems (NeurIPS 2025). Do not distribute.
+Structural Heterogeneity
+Intensity heterogeneity
+Disappearance of 
+airway boundaries 
+in different regions 
+with varying 
+contrast levels.
+An observation of Intensity heterogeneity
+Morphology 
+transitions from 
+simple tubular 
+structures to complex 
+bifurcations.
+BAS dataset heterogeneity 
+density distribution statistics：
+ accuracyconnectivity
+Wide dispersion across heterogeneity dimensions with 
+notable non-uniform density distribution
+Constraints strengthen under 
+Homogeneous Representation
+Leakage
+ Discontinuity
+Classic Dense Volumetric Segmentation
+Enhanced accuracy: Tight 
+Contours but Terminal airway 
+Disconnections
+Enhanced Connectivity: 
+structural integrity but 
+Imprecise Boundaries
+Inherent Trade-offs under 
+Static Representation
+An observation of  Structural heterogeneity
+Heterogeneity-aware Adaptive 
+Representation Learning 
+Figure 1: The anatomical heterogeneity continuum in pulmonary airways and its impact on
+segmentation performance. Detailed statistical analysis of Dataset heterogeneity metrics is provided
+in Appendix A.3.
+As illustrated in Figure 1, this heterogeneity manifests in two critical dimensions: (1) intensity36
+heterogeneity, where voxel distributions vary dramatically from the trachea (diameter ∼20mm,37
+clear contrast) to peripheral bronchioles; and (2) structural heterogeneity, where morphology tran-38
+sitions from simple tubular structures to complex bifurcations with varying branching angles and39
+thickness-to-lumen ratios. Our dataset analysis reveals significant non-uniform distributions across40
+heterogeneity dimensions (see Figure 1, center), highlighting the challenge’s pervasiveness across41
+different clinical conditions.42
+These variations create fundamentally different representation requirements across regions—central43
+airways demand precise boundary delineation, while peripheral branches prioritize connectivity44
+preservation. As shown in the right panel of Figure 1, conventional segmentation approaches face45
+an inherent trade-off: methods emphasizing boundary accuracy often produce terminal airway46
+disconnections, while those prioritizing connectivity result in imprecise boundaries.47
+Conventional deep learning approaches [5–8] employ uniform feature extraction and classification48
+operations across the entire volume, fundamentally limiting their ability to address heterogeneous49
+requirements [9–12]. This limitation creates what we term the representation allocation paradox:50
+networks must either allocate representation capacity according to voxel prevalence (favoring high-51
+volume central airways) or artificially balance them (potentially compromising precision in critical52
+regions). Our analysis reveals this paradox manifests consistently across methodological categories:53
+Generic volumetric networks (e.g., nnU-Net, 3D UX-Net) achieve high Dice scores but frequently fail54
+to preserve peripheral airway connectivity, with significantly reduced performance in distal branches;55
+Topology-constrained methods better maintain connectivity but sacrifice boundary precision and often56
+require computationally expensive post-processing; Multi-task learning approaches incorporating57
+anatomical knowledge show moderate improvements but still employ uniform feature extraction58
+operations across all regions.59
+We introduce Heterogeneity-aware Adaptive Representation Learning (HARL), a framework designed60
+to fundamentally address the anatomical heterogeneity challenge. Rather than applying uniform61
+representation strategies, HARL dynamically adapts its representation approach based on region-62
+specific anatomical characteristics. This paradigm shift enables simultaneous optimization for63
+different objectives—maintaining boundary precision in central airways while preserving connectivity64
+in peripheral branches.65
+HARL’s core innovation lies in its dynamic allocation of representation capacity through three66
+integrated components: (1) Anatomical Heterogeneity Disentanglement, an encoder network that67
+explicitly classifies voxels according to generation type, morphological structure, and spatial loca-68
+tion; (2) Hierarchical Adaptive Modules that conditionally transform features based on anatomical69
+attributes at strategic network levels; and (3) Structure-Preserving Distance Field Regularizationthat70
+implicitly enforces topological consistency through Gaussian field reconstruction.71
+2
+Through extensive experiments on multiple datasets, we demonstrate that HARL significantly out-72
+performs state-of-the-art methods, achieving both superior structural preservation and remarkably73
+consistent performance across heterogeneous regions. Our contributions include:74
+• Identification and formal characterization of the anatomical heterogeneity continuum in75
+pulmonary airways and its impact on representation learning76
+• A novel framework that dynamically adapts representation strategies according to region-77
+specific anatomical characteristics78
+• Three technical innovations: anatomical heterogeneity disentanglement, hierarchical adap-79
+tive modules, and structure-preserving distance field regularization80
+• A theoretical analysis of the structure-preserving distance field regularization, establishing81
+mathematical guarantees for topology preservation in heterogeneous representations82
+2 Related Work83
+2.1 Dense Volumetric Segmentation in Medical Imaging84
+V olumetric segmentation[5, 6] is dominated by encoder-decoder architectures like 3D U-Net [8] and85
+V-Net [13], with subsequent refinements through nnU-Net [7] and architectural innovations [4, 11, 14].86
+Despite their advancements, these approaches share a fundamental limitation: uniform convolutional87
+operations that cannot adapt to regional anatomical variations, creating an inherent trade-off between88
+spatial accuracy and structural preservation—the "representation allocation paradox." Attention89
+mechanisms [15–17] and multi-scale techniques [18, 12, 19, 20] partially address this challenge but90
+still apply identical transformation operations across anatomically distinct regions, failing to capture91
+the full heterogeneity continuum.92
+2.2 Anatomical Knowledge Integration and Topology Preservation93
+Existing methods incorporate anatomical knowledge through topological constraints [ 4, 21, 22],94
+multi-task learning with branch classification [23] or generation-type prediction [18], and structure-95
+specific solutions [24–26]. While these approaches improve performance for specific metrics, they96
+collectively suffer from treating anatomical attributes as auxiliary information rather than fundamental97
+drivers of representation adaptation. They typically apply uniform operations across heterogeneous98
+regions—either causing over-smoothing in central airways or insufficient preservation in peripheral99
+branches—and fail to leverage anatomical characteristics to dynamically adapt strategies across the100
+heterogeneity continuum. This heterogeneous performance manifests as large standard deviations in101
+experimental results across test cases, empirically confirming the significant disparity in representation102
+capability when confronting diverse anatomical regions along the heterogeneity continuum. HARL103
+addresses these limitations by enabling anatomical attributes to directly modulate both feature104
+extraction and processing, achieving region-specific optimization throughout the airway tree.105
+3 Heterogeneity-aware Adaptive Representation Learning106
+We introduce Heterogeneity-aware Adaptive Representation Learning (HARL), a framework that107
+addresses the anatomical heterogeneity challenge in volumetric airway segmentation. HARL dynami-108
+cally adapts representation strategies according to region-specific anatomical characteristics through109
+three integrated components: an anatomical heterogeneity disentanglement encoder, hierarchical110
+adaptive modules, and structure-preserving distance field regularization. The synergistic integration111
+of these components enables simultaneous optimization for boundary precision in central airways112
+and connectivity preservation in peripheral branches.113
+The fundamental limitation of existing volumetric segmentation approaches lies in their uniform114
+representation strategy. Our HARL framework addresses this through a region-adaptive paradigm115
+that dynamically allocates representation capacity according to anatomical characteristics:116
+FHARL(X) =Fbase(X|A(X)) (1)
+whereA(X) represents anatomical attributes extracted from input volume X, enabling dynamically117
+adaptive computation based on region-specific characteristics.118
+3
+Prediction & 
+possibility
+SE attention & Multi 
+scale fusion 
+Fused    feature
+Conv3D
+BN3D
+ReLU
+SE Block​​
+C AdaptiveAvgPool3d
+AdaptiveMaxPool3d
+Generation
+head
+Structure
+head
+Location
+head
+C
+Anatomical Heterogeneity Disentanglement (AHD) Encoder
+Feature
+LAAM
+AGM
+Loc 
+Adaptive
+GAAM
+AGM
+Gen 
+Adaptive
+SAAM
+AGM
+Struc 
+Adaptive
+Hierarchical Adaptive Modules (HAMs)
+Gaussian field prediction: continuous mapping 
+from Euclidean space to Geodesic space.
+Airway 
+segmentation
+Field Regularization
+gdff
+Seg
+Encoder
+Seg
+Decoder
+Baseline
+Seg Feature
+Gen Feature
+AGM
+Gen 
+prediction
+Gen 
+possibility
+Gen Adaptive
+Final Feature
+Enhance mask
+Uncertainty gate  
+enhanced baseF ( 1 W U) F ( W U)uG uG⋅− ⋅ + ⋅ ⋅
+UG
+baseF
+enhancedF
+Wu
+GAAM
+Seg Feature
+Struc Feature
+AGM
+Struc 
+prediction
+Struc 
+possibility
+Struc Adaptive
+Final Feature
+baseF
+varying dilation rates 
+morphF
+Confidence-based
+Modulation
+enhancedF
+enhanced baseF C F (1 C )SS⋅ + ⋅−
+Conv
+SAAM
+Seg Feature
+Loc Feature
+AGM
+Loc 
+prediction
+Loc 
+possibility
+Final Feature
+baseF
+0    1    …      6
+selectively applying different operations
+Uncertainty gate  Wu
+regionF
+LAAM
+Seg Feature
+Attribute Feature
+Conv3D
+BN3D
+ReLU
+Conv3D
+BN3D
+ReLU
+interpolate
+baseFAGM
+Pulmonary CT 
+volumetric data
+Figure 2: Overview of HARL.
+3.1 Anatomical Heterogeneity Disentanglement119
+We formalize airway heterogeneity along three complementary dimensions: Generation Type120
+(G): Encodes the hierarchical position within the bronchial tree, from the trachea (generation 0)121
+to peripheral bronchioles (generations 5-6). Morphological Structure (S): Characterizes local122
+geometric configuration, distinguishing between simple tubular structures (classes 1-2), bifurcations123
+(classes 3-4), and complex junctions (classes 5-6). Spatial Location (L): Maps the 3D anatomical124
+position within the pulmonary system, differentiating between upper, middle, and lower lung regions,125
+as well as left versus right lung placement, and trachea. Together, these attributes form a 3D attribute126
+space:A(X) = {G(X),S (X),L (X)}, that comprehensively characterizes regional anatomical127
+context.128
+The Anatomical Heterogeneity Disentanglement (AHD) encoder explicitly models these attributes129
+through a specialized multi-task classification network. The AHD encoder employs a shared backbone130
+with channel attention mechanisms to capture multi-scale features:FA =EA(X), whereEA extracts131
+rich anatomical features FA from the input volume. These features are processed by attribute-specific132
+classification heads:133
+G(X) =σG(WG· Pool(FA))∈ R7,S (X) = σS(WS· Pool(FA))∈ R7
+L(X) =σL(WL· Pool(FA))∈ R7 (2)
+The encoder incorporates channel-attention mechanisms through Squeeze-and-Excitation (SE) blocks134
+and multi-scale feature aggregation to capture both fine-grained details and broader contextual135
+information. Additionally, the encoder generates a spatially-aware anatomical guidance map: GA =136
+HG(FA)∈ RD′×H ′×W ′×C′
+. Training the AHD encoder requires addressing class imbalance, as137
+peripheral airways and certain morphological structures are significantly underrepresented. We138
+employ a focal loss variant:139
+LAHD =λGLFL(G(X), YG) +λSLFL(S(X), YS) +λLLFL(L(X), YL) (3)
+with class-specific weighting factors that emphasize underrepresented classes (particularly peripheral140
+bronchioles) and a focusing parameterγ = 2.0 that adjusts learning toward difficult examples. This141
+explicit disentanglement approach provides several advantages: interpretability of anatomical context,142
+targeted adaptation for region-specific challenges, improved data efficiency through structured143
+inductive bias, and a generalizable framework for characterizing anatomical heterogeneity.144
+3.2 Hierarchical Adaptive Modules145
+With anatomical attributes disentangled, we introduce Hierarchical Adaptive Modules (HAMs) that146
+implement conditional computation based on these attributes at strategic network levels. The core147
+4
+principle is that feature processing should vary according to anatomical context, formalized as:148
+F′
+i =Ti(Fi|A(X)) (4)
+where Fi represents features at layer i, A(X) represents anatomical attributes, and Ti is a149
+learned context-conditional transformation. Each HAM implements this through: F′
+i = Fbase +150
+M(Fbase,A(X)), whereM is a module-specific modulation function that conditionally transforms151
+features.152
+3.2.1 Module Details153
+The Generation-Aware Adaptive Module (GAAM)operates on deep decoder features, adapting154
+representations based on airway generation: F′
+deep = GAAM(Fdeep,G (X), PG). GAAM implements155
+an enhancement mechanism: F′
+deep = Fbase· Menhance· (1 +βG· Mfine). The enhancement mask156
+Menhance is generated through depth-wise separable convolutions, while the fine airway maskMfine =157
+1 [G(X)≥5] identifies peripheral airways that receive additional enhancement. GAAM also incorporates158
+uncertainty modulation: Ffinal = Fenhanced· (1− Wu· UG) + Fbase· (Wu· UG), where UG =159
+1− max(PG) is the generation prediction uncertainty, creating a dynamic interpolation between160
+enhanced and original features.161
+The Structure-Aware Adaptive Module (SAAM) targets morphological structure variations at162
+middle decoder layers: F′
+mid = SAAM(Fmid,S (X), PS). SAAM implements a multi-path mor-163
+phological processing approach: Fmorph = Conv1×1×1 (Concat [{MConvd(Fbase)}d∈D]), where164
+{MConvd}d∈D are structure-specialized convolutions with varying dilation rates optimized for165
+different structures. The enhanced representation incorporates targeted bifurcation enhancement:166
+Fenhanced = Fbase + Fmorph· (1 + βS· Mbifurcation) with confidence-based modulation. Ffinal =167
+Fenhanced· CS + Fbase· (1− CS), where CS = max(PS) represents structure classification confi-168
+dence.169
+The Location-Aware Adaptive Module (LAAM) addresses spatial context variations at shallow170
+encoder layers: F′
+shallow = LAAM(Fshallow,L (X), PL). LAAM implements true conditional compu-171
+tation by selectively applying different operations based on predicted location:172
+Fregion[i] =
+RConvl(Fbase[i]) ifL(X)[i] =l,l∈{ 1, 2,..., 6}
+Fbase[i] ifL(X)[i] = 0 (5)
+where{RConvl}6
+l=1 are specialized convolutions for each anatomical region. LAAM also incorpo-173
+rates location uncertainty modulation.174
+3.2.2 Hierarchical Integration175
+The three adaptive modules are strategically integrated at specific network levels:176
+F(j)
+enc = LAAM(Encoderj(F(j−1)
+enc ),L (X), PL)
+F(k)
+dec = SAAM(Decoderk(F(n−k)
+enc , F(k−1)
+dec ),S (X), PS)
+F(m)
+dec = GAAM(Decoderm(F(n−m)
+enc , F(m−1)
+dec ),G (X), PG)
+(6)
+This hierarchical placement reflects the natural progression of feature abstraction, with LAAM177
+processing low-level features where regional variations first manifest, SAAM operating on mid-178
+level features where morphological structures emerge, and GAAM modulating high-level features179
+where generation-specific characteristics influence final segmentation decisions. By dynamically180
+adapting representations according to region-specific requirements, our framework overcomes the181
+fundamental limitations of static homogeneous processing, enabling simultaneous optimization for182
+different objectives across the anatomical heterogeneity continuum.183
+3.3 Structure-Preserving Distance Field Regularization184
+While the hierarchical adaptive modules explicitly modulate feature transformations based on anatom-185
+ical attributes, they primarily operate at the local feature level. The anatomical heterogeneity contin-186
+uum, however, extends to the topological structure of airways—particularly critical for peripheral187
+branches where connectivity is easily disrupted. To address this structural dimension of heterogeneity,188
+5
+we introduce a structure-preserving distance field regularization that adaptively encodes topological189
+relationships throughout the heterogeneous airway tree. We formulate airway segmentation as a190
+dual-task problem: predicting both the binary segmentation mask and a cumulative Gaussian field191
+that encodes the proximity to the airway centerline:Y ={Yseg,Ygdf}, whereYseg∈{ 0, 1}D×H×W192
+is the binary segmentation mask andYgdf∈ [0, 1]D×H×W is the cumulative Gaussian field defined193
+as:194
+Ygdf(p) =
+X
+c∈C
+exp
+
+−∥p−c∥2
+2σ2c
+
+·M(p) (7)
+wherep is a voxel position,C is the set of centerline points,M(p) is the airway mask, andσc is a195
+scale parameter that varies with the distance from point c to the airway boundary, accounting for196
+varying airway diameters.197
+We implement the Gaussian field prediction as an auxiliary task within our segmentation framework198
+through a lightweight convolutional mapping: ˆYgdf = fgdf(Fseg), where fgdf is a mapping from199
+segmentation features to the Gaussian field. This direct mapping design avoids the complexity of200
+additional decoders while maintaining complete transfer of topological information. Theoretically,201
+our cumulative Gaussian field establishes a continuous mapping from Euclidean space to geodesic202
+space, providing mathematical guarantees for topology preservation (Theorem 1 in Appendix A.1).203
+This mapping ensures that connected regions in the airway maintain their topological structure during204
+optimization, naturally guiding the network to preserve connectivity in small airway branches.205
+We train the Gaussian field prediction with a mean squared error loss:206
+Lgdf =∥fgdf(Fseg)−Ygdf∥2
+2 (8)
+This regularization mechanism creates an implicit topological field during training that naturally207
+guides the network to learn to maintain connectivity in small airways without complex explicit208
+topological constraints.209
+3.4 Heterogeneity-aware Learning Objectives210
+To fully leverage this multi-faceted representation framework, we design heterogeneity-aware learning211
+objectives that dynamically balance different optimization priorities across the anatomical hetero-212
+geneity continuum. We employ an anatomically-weighted Dice loss for the segmentation task:213
+Lseg = 1−
+2P
+pwa(p)· ˆYseg(p)· Yseg(p)
+P
+pwa(p)· ˆYseg(p) +P
+pwa(p)· Yseg(p)
+(9)
+wherewa is an anatomical weighting function defined as:214
+wa(p) =wbase· (1 +βg·fg(G(X)p) +βs·fs(S(X)p) +βl·fl(L(X)p)) (10)
+The anatomical weighting functionsfg,fs, andfl assign higher weights to challenging regions. This215
+weighting scheme ensures that peripheral airways and bifurcation points receive significantly higher216
+attention during training, counteracting the volumetric imbalance inherent in airway trees.217
+The overall training objective combines the segmentation loss, distance field loss, and anatomical218
+classification losses:219
+Ltotal =Lseg +λgdf·L gdf +λahd·L AHD (11)
+whereλgdf andλahd are balancing coefficients.220
+4 Experiment221
+4.1 Datasets and Setup222
+We evaluated HARL on three pulmonary CT datasets: BAS [27] and AeroPath [28]. BAS includes223
+90 cases (20 from EXACT’09, 70 from LIDC) with varied clinical conditions. AeroPath contains224
+27 CT scans from patients with pathologies ranging from emphysema to large tumors, providing a225
+challenging test for generalization capabilities. For BAS dataset experimentation, we adopted the226
+standardized evaluation protocol established in previous benchmarks to ensure fair comparison with227
+6
+existing methods. This includes the official train/test splits and preprocessing pipelines consistent228
+with community practices. Preprocessing involved HU thresholding [-1000, 600] and comprehensive229
+augmentation techniques (random flipping, affine transformations, noise addition). Our network230
+architecture extends the 3D U-Net [ 8] with residual connections, integrating our proposed AHD231
+encoder and hierarchical adaptive modules.232
+Our evaluation metrics comprehensively capture both spatial accuracy (DSC, Sensitivity, Precision)233
+and structural integrity (Branch Detection, Tree-length Detection). This dual evaluation approach234
+directly addresses our central thesis: heterogeneity-aware representation enables simultaneous opti-235
+mization of boundary precision and connectivity preservation across the anatomical heterogeneity236
+continuum. To comprehensively evaluate segmentation performance across both spatial accuracy and237
+structural preservation dimensions, we compute an overall SCORE metric following the weighted238
+formula: SCORE = 0.3×TL + 0.3×BD + 0.2×DIC + 0.1×SEN + 0.1×PRE. This weighting scheme,239
+inspired by the ATM22 competition framework, appropriately emphasizes structural integrity metrics240
+(TL, BD) while still accounting for volumetric accuracy (DIC, SEN, PRE), aligning with clinical241
+priorities for airway analysis.242
+4.2 Results and Analysis243
+Table 1: Comparison Results on BAS and Open BAS Datasets
+Methods DIC↑ PRE↑ SEN↑ TL/DLR↑ BD/DBR↑ AMR↓ SCORE↑
+Attention UNet [29]93.35±3.18 92.07±3.0994.84±4.18 88.61±8.3282.43±10.655.16±4.18 88.32
+V-Net [13] 83.34±11.8397.81±1.572.85±17.9933.96±17.9622.04±14.2227.15±17.99 47.45
+SFCN [26] 84.34±5.54 76.36±7.3794.93±6.1985.05±12.2778.58±14.205.07±6.19 82.96
+nnUNet [30] 93.61±2.67 94.36±2.3493.04±4.02 86.84±7.00 79.21±9.43 6.96±4.02 87.19
+WingsNet [31] 91.54±4.48 93.73±3.0389.68±6.8988.00±11.9583.11±13.4610.32±6.89 88.48
+NaviAirway [32] 91.09±2.70 86.76±4.0195.87±3.04 87.34±7.16 81.01±9.52 4.13±3.04 87.40
+PSAR [33] 89.61±3.34 86.00±4.0193.77±5.05 89.02±9.6784.39±12.616.23±5.05 87.81
+ERNet [34] 92.79±3.51*95.87±2.0590.42±3.70 83.72±8.4075.86±10.599.58±3.70 84.86
+Rose [35] 93.79±3.85* 94.99±2.0892.59±4.83 84.84±7.88 77.31±9.59 7.41±4.83 85.96
+CENet [36] 92.46±3.76*94.98±2.4091.18±3.7981.33±11.4373.37±14.508.82±3.79 82.25
+LFSCNN [37] 90.05±5.42*95.37±2.2487.42±5.0369.09±15.0858.26±16.9212.58±5.03 72.55
+BronchiNet [38] 66.56±11.28*85.88±6.2156.79±18.6564.28±16.2857.52±18.0143.21±18.65 62.81
+Juarez et al. [39]†91.12±6.18*93.44±3.1488.83±7.6273.46±14.1964.25±15.5511.17±7.62 75.19
+FANN [16] 93.24±3.16 91.87±3.2094.78±4.50 92.71±7.93 89.01±10.3 5.22±4.50 90.96
+HRAL 88.74±2.26 81.60±4.7497.58±1.66 94.85±3.31 91.30±5.81 2.42±1.66 91.51
+Note: All values are denoted by the percentage (%) of mean/standard deviation. * denotes that DIC values were
+calculated from IOU using the formula DIC = 2×IOU/(1+IOU).
+Table 2: Comparison on the public pathological dataset AeroPach
+Methods Dice↑ Precision↑ DLR↑ DBR↑ AMR↓ SEN↑ SCORE↑
+WingsNet [31]87.43±5.88* 90.13±6.17* 86.60±8.30* 82.75±10.15* 10.40±7.68* 89.60±7.68 86.26
+nnUNet [30] 90.16±2.62* 92.21±6.21* 80.62±10.47* 71.57±13.74* 8.43±7.29* 91.57±7.29 82.07
+AGU-Net-PW — 87.23±6.56 91.80±3.50 84.67±7.11 — — —
+FANN [16] 86.54±10.37* 85.19±17.85* 90.58±19.32* 88.98±19.23* 12.33±8.82* 87.67±8.82 88.46
+HRAL 86.03±3.87 80.38±8.60 92.07±6.25 87.70±9.54 6.18±5.83 93.82±5.83 88.56
+4.2.1 Performance Comparison244
+Table 1 presents our comparative evaluation against state-of-the-art methods on the BAS dataset.245
+The comparative results presented represent the best reported performance for each method. For246
+methods without available implementations, performance metrics were carefully compiled from247
+orther publications. This comparative analysis approach, while having inherent limitations, provides248
+a comprehensive landscape of current state-of-the-art performance on this challenging task.249
+Superior structural preservation with reduced variance: HARL significantly outperforms other250
+methods in connectivity metrics, achieving the highest tree-length detection (94.85%) and branch251
+detection (91.30%) rates. Notably, HARL exhibits remarkably lower standard deviations (±3.31% for252
+TL versus ±7.93% for FANN, ±5.81% for BD versus ±10.3% for FANN), demonstrating that our253
+adaptive representation approach maintains consistent performance across anatomically diverse re-254
+gions—exactly what our heterogeneity-aware design aims to achieve. Optimal heterogeneity-aware255
+balance: While models like Attention UNet and nnUNet achieve higher Dice scores (93.35% and256
+93.61%), they significantly underperform in sensitivity (94.84% and 93.04% versus our 97.58%) and257
+structural preservation. This performance pattern confirms our identified "representation allocation258
+7
+Table 3: Ablation Study of HARL on Three Datasets
+Datasets ComponentsSCORE↑ MetricsBaseline AHD SPDF DIC↑ BD↑ TL↑ SEN↑ PRE↑ BR↑ TR↑
+BAS
+✓ 83.13 79.54±4.36 81.01±13.04 88.23±9.17 96.78±2.65 67.76±6.00126.05±27.20 106.15±19.80✓ ✓ 89.80 89.18±2.65 87.80±7.48 92.23±5.00 96.26±3.16 83.26±4.69120.59±30.48 113.46±18.28✓ ✓ 87.77 81.24±3.87 89.00±6.16 93.58±3.46 97.59±1.73 69.88±6.16158.08±38.35 130.00±24.02✓ ✓ ✓ 91.64 88.71±2.24 91.58±5.66 95.03±3.16 97.68±1.73 81.43±4.80122.59±29.72 121.89±18.97
+AeroPath
+✓ 79.87 76.39±6.78 77.12±14.39 85.00±10.58 94.62±3.87 64.96±10.39165.02±48.68 121.10±36.18✓ ✓ 84.61 84.92±6.00 81.47±11.31 86.68±8.25 89.18±10.91 82.61±8.12119.05±30.17 112.04±32.09✓ ✓ 84.45 81.00±5.57 83.61±11.87 88.52±9.64 94.11±4.58 71.98±9.8 179.08±52.89 134.84±43.29✓ ✓ ✓ 88.45 86.27±3.61 87.41±9.64 91.76±6.32 93.28±6.16 81.21±8.37124.99±28.88 121.03±29.83
+AIIB ✓ ✓ 67.58 80.53±12.45 53.86±17.78 63.31±18.08 85.2±16.19 78.03±9.8 104.93±46.18 84.07±30.79✓ ✓ ✓ 73.19 84.87±15.07 60.75±18.95 69.25±19.13 85.14±18.92 86.99±8.89 79.15±34.61 77.50±30.03
+paradox"—conventional approaches with uniform representations either excel at boundary precision259
+(high Dice) or connectivity preservation (high sensitivity), but not both simultaneously. HARL260
+effectively resolves this paradox through adaptive representation learning. Enhanced performance261
+stability: The consistently lower standard deviations across all metrics for HARL ( ±1.66% for262
+sensitivity versus ±4.02% for nnUNet) indicate reduced sensitivity to anatomical variations. This263
+directly validates our anatomical heterogeneity disentanglement approach, which explicitly models264
+generation type, morphological structure, and spatial location to enable robust performance across265
+the heterogeneity continuum.266
+Table 2 demonstrates HARL’s effectiveness on the challenging AeroPath dataset. Despite complex267
+anatomical variations in diseased lungs, HARL achieves the best overall score (88.56), with superior268
+performance in sensitivity (93.82%) and lowest anatomical missing rate (6.18%). Most importantly,269
+HARL maintains substantially lower standard deviations in structural metrics compared to other270
+methods (±6.25% vs. ±19.32% for tree length detection), confirming that our heterogeneity-aware271
+approach is particularly valuable in pathological scenarios where anatomical variations are more272
+pronounced.273
+Table 4: Model Performance under Different Thresholds
+Metric 0.4 0.45 0.5 0.55 0.6
+Mean% Std Dev Mean% Std Dev Mean% Std Dev Mean% Std Dev Mean% Std Dev
+DIC 87.4525 0.02645 88.0975 0.02449 88.7075 0.02236 89.2350 0.02000 90.2155 0.02000
+PRE 79.0913 0.05000 80.2613 0.04899 81.4343 0.04796 82.5546 0.04583 84.6391 0.04471
+SEN 98.0870 0.01414 97.9161 0.01414 97.6820 0.01732 97.3591 0.01732 96.8354 0.02000
+TL 95.5000 0.03162 95.3390 0.03162 95.0320 0.03162 94.6245 0.03317 93.7330 0.03742
+BD 92.2995 0.05657 91.9390 0.05568 91.5830 0.05657 90.5885 0.05831 89.7860 0.06325
+BR 131.1811 0.31796125.8301 0.28583122.5872 0.29715119.7793 0.28807111.0931 0.24495
+TR 124.7379 0.19697123.3269 0.18894121.8909 0.18974120.2309 0.18221116.1149 0.17059
+4.2.2 Ablation Study274
+The ablation study in Table 3 confirms the importance of each HARL component in addressing275
+specific aspects of the anatomical heterogeneity challenge:276
+Anatomical Heterogeneity Disentanglement (AHD): Adding AHD to the baseline improves the277
+overall score from 83.13 to 89.80, with substantial gains in Dice coefficient (+9.64%). Most signifi-278
+cantly, AHD reduces standard deviations across all metrics (±2.65% vs. ±4.36% for Dice), confirming279
+that explicit anatomical attribute modeling enables more consistent performance across heterogeneous280
+regions. Structure-Preserving Distance Field (SPDF): Integrating SPDF dramatically enhances281
+connectivity metrics, increasing branch detection from 81.01% to 89.00% (+7.99%) and tree length282
+detection from 88.23% to 93.58% (+5.35%). The significant reduction in standard deviations for283
+structural metrics (±6.16% vs. ±13.04% for BD) demonstrates SPDF’s effectiveness in preserving284
+topological consistency throughout the anatomical continuum. Full HARL Framework: The com-285
+plete framework yields the best overall performance (score 91.64), with balanced improvements286
+across both spatial accuracy and structural preservation metrics. The synergistic integration of287
+these components enables region-specific optimization across the anatomical heterogeneity contin-288
+uum—maintaining boundary precision in central airways while preserving connectivity in peripheral289
+branches.290
+4.2.3 Threshold Analysis and Clinical Adaptability291
+The threshold analysis in Table 4 reveals an important trade-off between boundary precision and con-292
+nectivity preservation. As the threshold increases from 0.4 to 0.6, we observe improved Dice (87.45%293
+to 90.22%) and precision (79.09% to 84.64%) but slightly decreased sensitivity and connectivity294
+metrics.295
+8
+Overlay ComparisonLabel Backbone Segmentation
+S: 945mm => 944mm => 943mm
+Figure 3: Comparison of effects on multiple con-
+secutive slices.
+This analysis highlights a key clinical advan-296
+tage of HARL: its ability to be adaptively tuned297
+according to specific requirements. For early298
+disease detection where complete tree visual-299
+ization is critical, lower thresholds maximize300
+connectivity. For interventional planning re-301
+quiring precise boundary delineation, higher302
+thresholds can be selected. Importantly, HARL303
+maintains consistently low standard deviations304
+across all thresholds—a direct benefit of our305
+heterogeneity-aware design that enables robust306
+performance regardless of parameter settings.307
+Figure 3 provides qualitative visualization of308
+HARL’s performance compared to ground truth.309
+Note how HARL successfully captures periph-310
+eral branches (circled regions) that are typically311
+missed by conventional approaches, while maintaining accurate boundary delineation in central312
+airways. This visual comparison further validates our central hypothesis that heterogeneity-aware313
+representation learning enables simultaneous optimization for different objectives across different314
+regions. Additional extensive visualizations and quantitative analyses across different anatomical315
+regions are provided in Appendix A.4, offering further evidence of HARL’s consistent performance316
+throughout the heterogeneity continuum. By dynamically adapting representation strategies according317
+to region-specific anatomical characteristics, our approach achieves superior structural preservation318
+and reduced sensitivity to anatomical variations without compromising volumetric accuracy. This319
+represents a significant advancement over conventional approaches that apply uniform representation320
+strategies across heterogeneous regions.321
+5 Conclusion322
+We introduced HARL (Heterogeneity-aware Adaptive Representation Learning), a novel framework323
+for dense volumetric segmentation of pulmonary airways that addresses anatomical heterogene-324
+ity. HARL dynamically adapts representation strategies according to region-specific characteristics325
+through: (1) an anatomical heterogeneity disentanglement encoder modeling generation type, mor-326
+phology, and location; (2) hierarchical adaptive modules transforming features based on anatomical327
+attributes; and (3) structure-preserving distance field regularization enforcing topological consistency.328
+Experiments across multiple datasets show HARL outperforms state-of-the-art methods by: achieving329
+superior structural preservation in airways (94.85% tree-length detection), exhibiting lower variance330
+across metrics (±3.31% vs. ±7.93%), and successfully balancing spatial accuracy with structural in-331
+tegrity—resolving the "representation allocation paradox" facing conventional uniform-representation332
+approaches.333
+5.1 Limitations334
+Limitations include: dependence on quality annotations for attribute extraction, higher computational335
+complexity than conventional networks, and tendency toward over-segmentation despite improved336
+connectivity. The theoretical framework, while demonstrated effectively on airways, requires further337
+validation for other tree-like anatomical structures.338
+5.2 Broader Impact339
+Clinically, HARL enables earlier detection of small airway diseases through complete peripheral340
+airway extraction. Methodologically, it introduces a paradigm shift by explicitly modeling anatomical341
+heterogeneity—applicable to vascular networks, neuronal pathways, and lymphatic systems. The342
+integration of explicit anatomical knowledge into deep learning demonstrates a path toward more343
+interpretable medical AI systems that dynamically adjust processing strategies based on region-344
+specific characteristics, potentially increasing clinical trust and adoption.345
+9

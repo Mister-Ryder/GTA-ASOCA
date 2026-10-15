@@ -1,0 +1,15 @@
+{
+  "role": "PLAN_ONLY_NO_ACCEPTANCE_CREATED",
+  "kind": "lambda0",
+  "capture": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_lambda0_complete_trajectory_20261014",
+  "output": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\lambda0_fixed_final4_acceptance_20261014",
+  "paired_labels": [
+    "A",
+    "lambda0",
+    "U"
+  ],
+  "actual_completed_capture_required": true,
+  "fixed_final_pixel_recalculations_when_run": 12,
+  "CPU_only": true,
+  "network_or_model_operations": false
+}

@@ -1,0 +1,144 @@
+{
+  "training_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "split": "internal_diagnostic",
+  "smoke": false,
+  "checkpoints": [
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch010.pt",
+      "epoch": 9,
+      "name": "epoch010",
+      "checkpoint_sha256": "f832706b76951dd542fd9f6d0f5136687d1eeac883372edd88f6ba87748c2dfb"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch020.pt",
+      "epoch": 19,
+      "name": "epoch020",
+      "checkpoint_sha256": "e9c135fb3263ab9e53e5aaeb3e732c18e6ae319af5d19a766c3557e12fa0af85"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch030.pt",
+      "epoch": 29,
+      "name": "epoch030",
+      "checkpoint_sha256": "4d9f1bf3d3fac886bcc1f5e3f690576e4184911295afed9fdc4e64cb6c099d56"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch040.pt",
+      "epoch": 39,
+      "name": "epoch040",
+      "checkpoint_sha256": "6a4c4f1c49b3ec5c3fc56eccaa1f2d0c8d70b581edd71cd70a9ec55f9c61421f"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch050.pt",
+      "epoch": 49,
+      "name": "epoch050",
+      "checkpoint_sha256": "a9aff0eb534a90d806f93e0b3ee167d6fd5bb5d8f36b9f3da22fad67ef551df0"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch060.pt",
+      "epoch": 59,
+      "name": "epoch060",
+      "checkpoint_sha256": "7ada55c564dee4141361224cfec333cabdff5326da9dcca3921292bfcf294340"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch070.pt",
+      "epoch": 69,
+      "name": "epoch070",
+      "checkpoint_sha256": "2740368574e7d478be3b2163b47550605a751d92fe514c39c1ffec563122a182"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch080.pt",
+      "epoch": 79,
+      "name": "epoch080",
+      "checkpoint_sha256": "14706f92ba601ab3b83a96f5e7fb0cacfa72e5d974023e9673f94eee955c8f7c"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch090.pt",
+      "epoch": 89,
+      "name": "epoch090",
+      "checkpoint_sha256": "edafbafdfa8e638aa21d0e55c030795e6e57a52481e3742aba705898cfe9ba52"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch100.pt",
+      "epoch": 99,
+      "name": "epoch100",
+      "checkpoint_sha256": "25b03adf117a8dc1c51ac53336ca9c19872d51aef4b0db993d26316f8076c2e8"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch110.pt",
+      "epoch": 109,
+      "name": "epoch110",
+      "checkpoint_sha256": "f06c20d83bd63d80eb35f3098edd50a6e7065dc7190eee236fe151d167110ac1"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch120.pt",
+      "epoch": 119,
+      "name": "epoch120",
+      "checkpoint_sha256": "ab3948af440f04b9a29af37d64584052305afb81ec9cc96c2edbb8e8d01dbf00"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch130.pt",
+      "epoch": 129,
+      "name": "epoch130",
+      "checkpoint_sha256": "03140040a86217cef65f4628970f37556f6f36444ad01124916c98c099b54baf"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch140.pt",
+      "epoch": 139,
+      "name": "epoch140",
+      "checkpoint_sha256": "c9d3c0a855ca677109ee3a846ff55b1fc8d2000f7d9fbb1d440d5215163a8b4e"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch150.pt",
+      "epoch": 149,
+      "name": "epoch150",
+      "checkpoint_sha256": "3a0b3262ec782829682bd2d8753632e6a6d938cd2b67d04606a79468c6daf462"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch160.pt",
+      "epoch": 159,
+      "name": "epoch160",
+      "checkpoint_sha256": "38d524a178008422da58c58d1ecdbb3440c4edee4a3d2be9730e8ddc0465881e"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch170.pt",
+      "epoch": 169,
+      "name": "epoch170",
+      "checkpoint_sha256": "37dfb16a85ec2f12bc8d73fd2d4646f2777902b7a201dcc223b63c60f15061a3"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch180.pt",
+      "epoch": 179,
+      "name": "epoch180",
+      "checkpoint_sha256": "4c3d37a9da52ab805d144899e90d24c45336d791ece55bb83c937977373b5b39"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/checkpoints/epoch190.pt",
+      "epoch": 189,
+      "name": "epoch190",
+      "checkpoint_sha256": "a20b947af2b202cf293f91c3e40c56bcc6cc5e17035715d520b4b2679d013f42"
+    },
+    {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/final.pt",
+      "epoch": 199,
+      "name": "final",
+      "checkpoint_sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4"
+    }
+  ],
+  "sw_batch_size": 1,
+  "checkpoint_selection": "fixed final remains unchanged; intermediate weights are trajectory diagnostics",
+  "formal_final_test": false,
+  "outer8_used_for_selection": false
+}

@@ -1,0 +1,5 @@
+head -8 /root/autodl-tmp/ASOCA_GTAirway_20261013/logs/smoke.log
+tail -15 /root/autodl-tmp/ASOCA_GTAirway_20261013/logs/formal.log
+tail -8 /root/autodl-tmp/ASOCA_GTAirway_20261013/results/gta/fold0/training.log
+nvidia-smi --query-gpu=name,memory.used,utilization.gpu --format=csv,noheader
+df -h /root/autodl-tmp

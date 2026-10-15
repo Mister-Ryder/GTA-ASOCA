@@ -1,0 +1,36 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+from pathlib import Path
+import sys,json,datetime,collections,hashlib
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+sys.path.insert(0,str(r/'code'));sys.path.insert(0,str(r/'development'))
+import run_queue as q
+import coordinator as d
+from data import load_manifest
+state=json.loads((r/'results/queue_status.json').read_text())
+dev=json.loads((r/'results/development_queue_status.json').read_text())
+job=next(j for j in state['jobs'] if j['job_id']=='nnunet/fold0')
+manifest=load_manifest(r/'cache/manifest.json');mh=q.sha256_file(r/'cache/manifest.json')
+verified=q.verify_evaluation(job,manifest,mh)
+d.verify_native_finished(job,manifest,mh)
+folder=Path(job['folder'])
+for case_id in verified['case_ids']:
+ row=json.loads((folder/'evaluation'/(case_id+'.json')).read_text())
+ if q.sha256_file(folder/'evaluation'/(case_id+'_prediction.nrrd'))!=row['prediction_sha256']:raise RuntimeError('Prediction changed: '+case_id)
+ if not row.get('native_prediction_geometry_matches_reference'):raise RuntimeError('Native geometry not verified: '+case_id)
+verified=d.mark_complete(job,state['protocol_identity'],manifest,mh,dev['protocol_identity'])
+summary=json.loads((folder/'evaluation/summary.json').read_text())
+receipt={'status':'verified_complete','role':'single-fold development reference; no independent publication test claim',
+ 'native_training_epochs':100,'native_training_updates':25000,'manifest_sha256':mh,**verified,
+ 'dice':summary['overall']['dice'],'assd_mm':summary['overall']['assd_mm'],
+ 'original_queue_remains_held':True,'new_ablation_or_fold_started':False,
+ 'verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+q.atomic_json(folder/'reference_verification_20261014.json',receipt)
+job.update(status='completed',phase='verified_native_development_reference',completed_at=q.timestamp(),**verified)
+state['counts']=dict(collections.Counter(j['status'] for j in state['jobs']))
+state.update(status='scope_reduced_method_audit_hold',updated_at=q.timestamp())
+q.atomic_json(r/'results/queue_status.json',state)
+dev['adopted_native'].update(completed=True,completed_at=q.timestamp(),**verified)
+dev.update(status='held_for_method_audit',phase='native_reference_complete_no_new_job',updated_at=q.timestamp())
+q.atomic_json(r/'results/development_queue_status.json',dev)
+print(json.dumps(receipt,indent=2))
+PY

@@ -1,0 +1,28 @@
+训练遥测复核：2026-10-14 UTC07:13（北京时间15:13）下载快照。
+GTA仅完成127/200轮，15,875/25,000更新：frozen50、partial20、joint57；UNet训练history完整200轮/25,000更新且完成marker已下载，但这不等于其内部四例轨迹已经完成。
+所有捕获文件记录SHA与bytes匹配；history/probes全部完整JSONL，无截断末行。当前下载不含完整验证结果；图中Dice/ASSD均0个观测，未从日志尾部拼造验证点。
+
+第51轮（partial）启动分类/引导辅助损失：有效classifier/guidance λ由0转0.1；Gaussian λ始终10。
+第50→51轮 total loss 0.330244→0.502231，同时 segmentation 0.329716→0.311375。分类加权项首次加入0.190109；总loss跳升不能直接判作分割退化。
+第70→71轮（joint） total loss 0.442442→0.462869，segmentation 0.292632→0.307503；classifier/guidance λ仍0.1，Gaussian仍10，此时改变的是可训练范围。
+
+固定5轮窗口均值（仅训练观测，无因果/验证性能解释）：
+46–50轮 N=5：segmentation=0.353812；加权classification=未计算；加权Gaussian=0.00051354；classifier参数组总梯度norm=0.0000。
+  主logits probe N=2（轮[47, 49]）：Gaussian/segmentation norm比 mean=0.012785, median=0.012785；cosine mean=-0.002670。
+51–55轮 N=5：segmentation=0.329563；加权classification=0.171562；加权Gaussian=0.00049605；classifier参数组总梯度norm=2.6732。
+  主logits probe N=3（轮[51, 53, 55]）：Gaussian/segmentation norm比 mean=0.045873, median=0.048574；cosine mean=-0.035755。
+66–70轮 N=5：segmentation=0.317698；加权classification=0.150456；加权Gaussian=0.00046584；classifier参数组总梯度norm=2.4747。
+  主logits probe N=2（轮[67, 69]）：Gaussian/segmentation norm比 mean=0.353598, median=0.353598；cosine mean=0.032016。
+71–75轮 N=5：segmentation=0.332859；加权classification=0.156824；加权Gaussian=0.00044272；classifier参数组总梯度norm=2.7152。
+  主logits probe N=3（轮[71, 73, 75]）：Gaussian/segmentation norm比 mean=0.012537, median=0.014166；cosine mean=0.017404。
+118–127轮 N=10：segmentation=0.279414；加权classification=0.138702；加权Gaussian=0.00033789；classifier参数组总梯度norm=2.6015。
+  主logits probe N=5（轮[119, 121, 123, 125, 127]）：Gaussian/segmentation norm比 mean=0.023265, median=0.012197；cosine mean=-0.001205。
+
+最新第127轮：segmentation=0.279036；加权classification=0.128479；加权Gaussian=0.00036146；seg LR=0.000123914894、classifier LR=1.23914894e-05。
+参数组梯度norm来自总目标且segmentation组包括Gaussian头；不能称为分割损失专属梯度。probe是主logits导数，DS旁支/分类辅助项/参数更新不在其比较空间。小Gaussian scalar loss不能证明结构已学好；也不能仅凭总loss大小或一处probe峰值决定增加λ/epochs。
+GTA与UNet总目标、模型实现、解剖加权及初始化/额外预训练成本不同，因此不直接比较总loss作胜负结论；应等同一内部四例原空间Dice/ASSD。分类准确率只是独立诊断，不是分割启动门槛。
+绘图脚本保持SHA103b564...不变。两张PNG已查看，标签/刻度可读，无截断；0.1与10共享系数轴使小系数靠近0，因此本报告给出确值。空分类验证面板表示本快照未带其历史，不能解释成classifier80未训练。
+未修改冻结源码、读取服务器或启动任何GPU工作。
+
+最大probe比值出现在第69轮partial阶段：ratio=0.695071，cosine=0.064414。它使66–70轮窗口mean被单点拉高，不是第71轮joint引起的峰值，也不表示多数步结构梯度同样大。
+独立复核也确认29份捕获文件（含系统状态）及三份JSONL完整、有限、无重复；探针调度和history计数匹配。U-Net最终权重未下载，完成marker里的权重SHA仍未作本地独立重算。

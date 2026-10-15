@@ -1,0 +1,26 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+from pathlib import Path
+import subprocess, json
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+command=[str(r/'env/bin/python'),str(r/'development/coordinator.py'),'--root',str(r),'--raw-root',str(r/'raw/CompressedVersion'),'--manifest',str(r/'cache/manifest.json'),'--old-parent-pid','6398','--native-runner-pid','54628','--plan']
+p=subprocess.run(command,capture_output=True,text=True)
+if p.returncode:
+    print(p.stdout,p.stderr)
+    raise SystemExit(p.returncode)
+plan=json.loads(p.stdout)
+(r/'development/verified_plan.json').write_text(json.dumps(plan,indent=2)+'\n')
+print(json.dumps({'identity':plan['development_protocol_identity'],'new_jobs':plan['protocol']['new_jobs'],'deferred_count':len(plan['protocol']['deferred']),'old_parent_state':plan['old_parent_observed']['state'],'native_state':plan['native_observed']['state'],'read_only_plan_verified':plan['read_only']}))
+formal=r/'ops/formal.sh'
+text=formal.read_text()
+guard='if test -f "$ROOT/development/scope_change.json"; then\n  echo "Fivefold launcher is deferred by the current method-development scope. Use development/coordinator.py."\n  exit 2\nfi\n'
+if guard not in text:
+    anchor='ROOT=/root/autodl-tmp/ASOCA_GTAirway_20261013\n'
+    if anchor not in text:
+        raise RuntimeError('Legacy launch root is unexpected')
+    formal.write_text(text.replace(anchor,anchor+guard,1))
+subprocess.run(['bash','-n',str(formal)],check=True)
+guard_result=subprocess.run(['bash',str(formal)],capture_output=True,text=True)
+if guard_result.returncode!=2:
+    raise RuntimeError('Legacy launch scope guard did not refuse fivefold execution')
+print(guard_result.stdout.strip())
+PY

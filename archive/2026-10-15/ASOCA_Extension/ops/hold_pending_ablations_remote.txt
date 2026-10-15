@@ -1,0 +1,29 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json, os, signal, datetime, time
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+s=json.loads((r/'results/development_queue_status.json').read_text())
+if s['status']!='running' or s.get('phase')!='waiting_for_existing_native_runner' or any(j['status']!='pending' for j in s['jobs']):
+    raise RuntimeError('Development queue has advanced; inspect before holding any active job')
+pid=s['pid']
+p=Path('/proc')/str(pid)
+argv=p.joinpath('cmdline').read_bytes().decode().rstrip('\0').split('\0')
+cwd=p.joinpath('cwd').resolve()
+if (r/'development/coordinator.py').resolve() not in [(cwd/a).resolve() for a in argv if a.endswith('.py')]:
+    raise RuntimeError('Development PID is not the expected controller')
+os.kill(pid,signal.SIGSTOP)
+time.sleep(.2)
+stat=p.joinpath('stat').read_text()
+state=stat[stat.rfind(')')+2:].split()[0]
+if state not in ['T','t']:raise RuntimeError('Controller did not enter stopped state')
+receipt={'changed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+         'reason':'User requests method-fidelity audit. Missing pretrained/staged initialization confirmed; review before further ablations.',
+         'controller_pid':pid,'controller_state':state,'signal':'SIGSTOP to waiting controller only',
+         'pending_jobs':[j['job_id'] for j in s['jobs']],
+         'native_reference_runner':54628,'native_reference_action':'Preserved to finish existing training and evaluation',
+         'native_runner_exists':Path('/proc/54628').exists(),
+         'active_training_code':'Preserved with original hashes; no checkpoint or output overwritten',
+         'next_priority':'Validate prior-label semantics and classifier quality; restore GTA initialization and staging in a new recorded configuration'}
+(r/'development/method_fidelity_hold.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt))
+PY

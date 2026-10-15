@@ -1,0 +1,162 @@
+{
+  "status": "PASS_RECONSTRUCTIBLE_ARTIFACT_CHECKS",
+  "role": "independent downloaded-artifact review; not model-performance validation",
+  "review_script_sha256": "f70c24821c9a427bf4b0c0db40973d25fe32333da9184889b1e9b952cf8a5d06",
+  "artifact_sha256": {
+    "DIAGNOSTIC_COMPLETE.json": "25f8d546ec032dbd6287d08d90a15eb8d8367cf33ff4c6713884b2d7c9b15aed",
+    "diagnostic_plan.json": "0c47aac57eb73b6e8fd1f73832982af488919dc390997d2e989336296745c4bc",
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "patch_metrics.jsonl": "9778d22aa8eb109fd6945d07c754920edd8f589ddeaf67c88e03d5c7682bbc8a",
+    "summary.json": "e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff"
+  },
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "n_training_patients": 28,
+  "n_patches": 56,
+  "sampling_strata": {
+    "foreground": 18,
+    "uniform_image_fov": 38
+  },
+  "empty_patches": 7,
+  "foreground_fraction": 0.0014378258160182408,
+  "global_mse_reduction_vs_constant05": 0.1578262095396178,
+  "foreground_mse_reduction_vs_constant05": 0.745231802843136,
+  "background_share_of_gaussian_squared_error": 0.6974873831948715,
+  "patch_distributions": {
+    "foreground_fraction": {
+      "n": 56,
+      "minimum": 0.0,
+      "median": 0.0012814998626708984,
+      "mean": 0.0014378258160182408,
+      "maximum": 0.006757259368896484
+    },
+    "gaussian_common_fraction": {
+      "n": 56,
+      "minimum": 0.5330504839652964,
+      "median": 0.6223240010682654,
+      "mean": 0.6251803682085139,
+      "maximum": 0.7766388208766352
+    },
+    "gaussian_norm_ratio": {
+      "n": 56,
+      "minimum": 0.0024977162348764786,
+      "median": 0.018434830935011734,
+      "mean": 0.13809723934106166,
+      "maximum": 1.6517369700153448
+    },
+    "gaussian_margin_norm_ratio": {
+      "n": 56,
+      "minimum": 0.0015233522640889139,
+      "median": 0.011484174386554472,
+      "mean": 0.07547030112687263,
+      "maximum": 0.8727176634829008
+    },
+    "gradient_margin_cosine": {
+      "n": 56,
+      "minimum": -0.04985485381391239,
+      "median": 0.01946572217901278,
+      "mean": 0.026491777507991844,
+      "maximum": 0.1536303219166274
+    }
+  },
+  "patches_with_common_energy_majority": 56,
+  "patches_with_negative_margin_cosine": 18,
+  "rebuilt_regions": {
+    "all": {
+      "n_voxels": 117440512,
+      "squared_error": 4536.334534436477,
+      "gradient_rebuilt": {
+        "segmentation_common_energy": 4.0979767901618095e-18,
+        "segmentation_margin_energy": 2.7265477297955707e-05,
+        "gaussian_common_energy": 1.8027477076723507e-09,
+        "gaussian_margin_energy": 1.1407509757719654e-09,
+        "gaussian_common_fraction": 0.6124506587388301,
+        "gaussian_to_segmentation_norm_ratio": 0.010390235008147354,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.006468280903724047,
+        "full_cosine": 0.005387219822519491,
+        "margin_cosine": 0.008653686738697958
+      }
+    },
+    "foreground": {
+      "n_voxels": 168859,
+      "squared_error": 1372.298430715852,
+      "gradient_rebuilt": {
+        "segmentation_common_energy": 3.3206994850176227e-18,
+        "segmentation_margin_energy": 1.4750767114453705e-05,
+        "gaussian_common_energy": 4.292650501615492e-10,
+        "gaussian_margin_energy": 2.68124646037765e-10,
+        "gaussian_common_fraction": 0.6155311047768407,
+        "gaussian_to_segmentation_norm_ratio": 0.006875914378193773,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.004263448927731869,
+        "full_cosine": -0.037262787397389606,
+        "margin_cosine": -0.0600958860168281
+      }
+    },
+    "background": {
+      "n_voxels": 117271653,
+      "squared_error": 3164.036103720624,
+      "gradient_rebuilt": {
+        "segmentation_common_energy": 7.772773051441871e-19,
+        "segmentation_margin_energy": 1.2514710183502002e-05,
+        "gaussian_common_energy": 1.3734826575108017e-09,
+        "gaussian_margin_energy": 8.726263297342002e-10,
+        "gaussian_common_fraction": 0.6114942174713736,
+        "gaussian_to_segmentation_norm_ratio": 0.013396921557370581,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.008350332291986885,
+        "full_cosine": 0.03164496099335873,
+        "margin_cosine": 0.050769842941107736
+      }
+    },
+    "outside_0_1mm": {
+      "n_voxels": 309230,
+      "squared_error": 1298.7012760092327,
+      "gradient_rebuilt": {
+        "segmentation_common_energy": 6.107279346307745e-19,
+        "segmentation_margin_energy": 9.388003964136445e-06,
+        "gaussian_common_energy": 5.07708671043732e-10,
+        "gaussian_margin_energy": 4.1070374629495536e-10,
+        "gaussian_common_fraction": 0.5528112005660109,
+        "gaussian_to_segmentation_norm_ratio": 0.009890818701290506,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.006614205742544733,
+        "full_cosine": 0.03983168459133165,
+        "margin_cosine": 0.05956391175673489
+      }
+    },
+    "outside_1_3mm": {
+      "n_voxels": 1354219,
+      "squared_error": 208.22327189092147,
+      "gradient_rebuilt": {
+        "segmentation_common_energy": 3.158327758647059e-20,
+        "segmentation_margin_energy": 5.276564156783217e-07,
+        "gaussian_common_energy": 1.8227925592805385e-10,
+        "gaussian_margin_energy": 1.0663953126148885e-10,
+        "gaussian_common_fraction": 0.6309013605559375,
+        "gaussian_to_segmentation_norm_ratio": 0.02339980725126867,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.014216199264273616,
+        "full_cosine": 0.021279925225251246,
+        "margin_cosine": 0.03502667363005474
+      }
+    },
+    "background_gt3mm": {
+      "n_voxels": 115608204,
+      "squared_error": 1657.1115558204704,
+      "gradient_rebuilt": {
+        "segmentation_common_energy": 1.3496609292694216e-19,
+        "segmentation_margin_energy": 2.599049803687235e-06,
+        "gaussian_common_energy": 6.83494730539016e-10,
+        "gaussian_margin_energy": 3.552830521777561e-10,
+        "gaussian_common_fraction": 0.6579797353303369,
+        "gaussian_to_segmentation_norm_ratio": 0.019991897910453377,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.011691761422769302,
+        "full_cosine": 0.025870550502387596,
+        "margin_cosine": 0.044236397651997085
+      }
+    }
+  },
+  "unverified_scope": [
+    "No local epoch070 checkpoint bytes or cache voxels were supplied to this review: recorded checkpoint SHA and sample content SHA are provenance, not independently rehashed here.",
+    "No local config bytes are supplied in this artifact folder: its SHA was verified by the diagnostic on server, not independently rehashed here.",
+    "Pooled Pearson correlations cannot be reconstructed from stored per-patch coefficients alone: missing per-patch moment sums; source formula reviewed only.",
+    "Cosine dot sums reconstructed from stored per-patch cosine and energies, not raw gradient tensors.",
+    "All diagnostic evaluations use training patches at a single partial-stage checkpoint in CPU eval mode: no final Dice, ASSD, connectivity or benefit claim."
+  ]
+}

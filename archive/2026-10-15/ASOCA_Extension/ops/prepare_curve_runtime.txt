@@ -1,0 +1,23 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,sys
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+py='/root/miniconda3/envs/gta-asoca311/bin/python'
+logfile=r/'logs/curve_runtime_setup.log'
+script=r/'ops/install_and_plot_classifier.py'
+if (r/'CURVE_RUNTIME_PID.json').exists():raise RuntimeError('Curve setup already has state; inspect before repeating')
+script.write_text("""from pathlib import Path
+import subprocess,json,sys
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+subprocess.run([sys.executable,'-m','pip','install','--no-cache-dir','matplotlib==3.10.7'],check=True)
+import matplotlib,numpy,torch,monai,SimpleITK,scipy,skimage
+value={'status':'ready','matplotlib':matplotlib.__version__,'numpy':numpy.__version__,'torch':str(torch.__version__),'monai':monai.__version__,'SimpleITK':SimpleITK.Version_VersionString(),'scipy':scipy.__version__,'skimage':skimage.__version__}
+(r/'CURVE_RUNTIME_READY.json').write_text(json.dumps(value,indent=2)+'\\n')
+subprocess.run([sys.executable,str(r/'ops/plot_learning_curves.py'),'--run','classifier80='+str(r/'results/classifier80x64/training'),'--output',str(r/'results/classifier80x64/learning_curves')],check=True)
+print('ACTUAL_CLASSIFIER_CURVES_READY',flush=True)
+""")
+with logfile.open('a') as log:
+ p=subprocess.Popen([py,'-u',str(script)],cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+(r/'CURVE_RUNTIME_PID.json').write_text(json.dumps({'pid':p.pid,'log':str(logfile)})+'\n')
+print('CURVE_RUNTIME_PID',p.pid)
+PY

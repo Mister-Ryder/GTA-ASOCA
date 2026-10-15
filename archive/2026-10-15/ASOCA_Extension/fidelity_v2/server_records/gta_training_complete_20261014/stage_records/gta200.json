@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "pid": 1921,
+  "recipe": "run_gta200.sh",
+  "tag": "gta200",
+  "role": "single-fold method development; classification accuracy diagnostic only",
+  "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+  "output_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results",
+  "started_at": "2026-10-14T04:35:46.558580+00:00",
+  "command": [
+    "bash",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/configs/run_gta200.sh"
+  ],
+  "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/logs/gta200.log",
+  "updated_at": "2026-10-14T08:47:17.155555+00:00",
+  "training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training",
+  "final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "segmentation_updates": 25000,
+  "return_code": 0
+}

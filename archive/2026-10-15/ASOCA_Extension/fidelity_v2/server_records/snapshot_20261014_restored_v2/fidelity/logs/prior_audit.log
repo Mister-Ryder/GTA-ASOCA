@@ -1,0 +1,13 @@
+Audited balanced: 50/192 training patches
+Audited balanced: 100/192 training patches
+Audited balanced: 150/192 training patches
+Audited conventional: 50/192 training patches
+Audited conventional: 100/192 training patches
+Audited conventional: 150/192 training patches
+{
+  "audit_complete": true,
+  "train_cases": 32,
+  "patches": 384,
+  "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/prior_audit/results",
+  "cache_mutated": false
+}

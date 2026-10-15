@@ -1,0 +1,8 @@
+{
+  "status": "ready",
+  "cache_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "cache_archive_sha256": "f19ee5c059f8c7ebe6eb11874a56da3b9326af5a3237597577d8bda19c9da444",
+  "case_count": 40,
+  "original_folds_preserved": true
+}

@@ -1,0 +1,46 @@
+{
+  "role": "local paths for plotting only; original downloaded ledger and metrics unchanged",
+  "source_ledger": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\validation_history.jsonl",
+  "source_sha256": "b1c2cfbedac2c5679f7b6d2dab483bb0da0c75157abd1aeaecdf308e076a2ed3",
+  "relocated_ledger": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\plot_inputs\\validation_history_localpaths.jsonl",
+  "relocated_sha256": "dba501dc9e29dae7e88aefdca362eb478e3ff841fbd678d9ad743ff4e7142bed",
+  "names": [
+    "epoch010",
+    "epoch020",
+    "epoch030",
+    "epoch040",
+    "epoch050",
+    "epoch060",
+    "epoch070",
+    "epoch080",
+    "epoch090",
+    "epoch100",
+    "epoch110",
+    "epoch120",
+    "epoch130",
+    "epoch140",
+    "epoch150",
+    "epoch160",
+    "epoch170",
+    "epoch180",
+    "epoch190",
+    "final"
+  ],
+  "n_rows": 20,
+  "fields_changed": [
+    "evaluation_output",
+    "summary_path"
+  ],
+  "metric_values_changed": false,
+  "plot_command": [
+    "C:\\Users\\JIA\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\plot_learning_curves.py",
+    "--run",
+    "unet=E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training",
+    "--validation",
+    "unet=E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\plot_inputs\\validation_history_localpaths.jsonl",
+    "--output",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\plots"
+  ],
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd"
+}

@@ -1,0 +1,27 @@
+{
+  "mode": "classic",
+  "goal_mode": "active",
+  "objective": "AEI unified GTA methodology with faithful, competitive and reproducible coronary extension",
+  "scope": "Keep the existing GTA architecture. Repair initialization, attribute classifier semantics, training stages and optimization recipe. Use single-fold development before broad evaluation.",
+  "first_phase_candidate_limit": 3,
+  "metrics": {"primary": ["dice", "assd_mm"], "auxiliary": ["cldice", "thin_centerline_recall", "fragmentation"]},
+  "training_cases": 28,
+  "selection_cases": ["Diseased_10", "Diseased_20", "Normal_12", "Normal_3"],
+  "verification_cases": ["Diseased_1", "Diseased_15", "Diseased_18", "Diseased_7", "Normal_16", "Normal_19", "Normal_2", "Normal_8"],
+  "verification_role": "Previously exposed development cases; never claim a blind test",
+  "frozen_manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "pipeline": [
+    "Verify shared data/environment and historical transfer",
+    "Audit attribute targets; pretrain to stabilize multitask optimization. Classification accuracy is diagnostic, not a primary performance gate. Initialize from fixed final classifier weights.",
+    "Verify three-stage CUDA smoke and source identity",
+    "Calibrate standard UNet and faithful GTA with matching 25000 segmentation updates",
+    "Evaluate internal-four trajectories, component losses and gradient balance",
+    "Change late regularization or training duration only when measured evidence supports the change",
+    "Verify a frozen candidate on original eight development cases using original-grid Dice/ASSD",
+    "Freeze reproducible method, results and protocol; create a new public GitHub repository"
+  ],
+  "acceptance": "Same evaluated case identities; candidate Dice improves and ASSD does not worsen against the frozen cold-start reference. Assess competitiveness against the common-recipe baseline and use matched GTA ablations to attribute gains. Report extra pretraining budget; development evidence alone does not establish publication-level generalization. Classification accuracy cannot substitute for segmentation success.",
+  "publication_authorization": "User explicitly authorized a new public GitHub repository after determining the latest cardiac GTA version",
+  "excluded_from_publication": ["credentials", "raw datasets", "historical weights", "private submission documents", "unrequested experiment binaries"],
+  "five_fold_or_external_reproduction": "Not automatically authorized in the present development phase"
+}

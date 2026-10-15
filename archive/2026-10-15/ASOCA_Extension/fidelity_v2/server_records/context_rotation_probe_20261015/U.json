@@ -1,0 +1,474 @@
+{
+  "status": "completed_frozen_model_patch_probe",
+  "kind": "U",
+  "completed_at_utc": "2026-10-15T07:29:55.578088+00:00",
+  "seconds": 4.272846207022667,
+  "sample_count": 4,
+  "protocol": {
+    "status": "bounded_existing_model_context_rotation_probe",
+    "created_at_utc": "2026-10-15T07:27:14.128075+00:00",
+    "samples": [
+      {
+        "case_id": "Diseased_1",
+        "sample_id": "Diseased_1_FP",
+        "selection": "nearest FP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          127,
+          381,
+          303
+        ],
+        "center_cache_zyx": [
+          159,
+          295,
+          234
+        ]
+      },
+      {
+        "case_id": "Diseased_1",
+        "sample_id": "Diseased_1_TP",
+        "selection": "nearest TP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          166,
+          257,
+          331
+        ],
+        "center_cache_zyx": [
+          208,
+          199,
+          256
+        ]
+      },
+      {
+        "case_id": "Normal_16",
+        "sample_id": "Normal_16_FP",
+        "selection": "nearest FP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          123,
+          320,
+          377
+        ],
+        "center_cache_zyx": [
+          154,
+          224,
+          264
+        ]
+      },
+      {
+        "case_id": "Normal_16",
+        "sample_id": "Normal_16_TP",
+        "selection": "nearest TP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          138,
+          193,
+          229
+        ],
+        "center_cache_zyx": [
+          172,
+          135,
+          160
+        ]
+      }
+    ],
+    "base_roi_zyx": [
+      128,
+      128,
+      128
+    ],
+    "context_roi_zyx": [
+      128,
+      160,
+      160
+    ],
+    "rotation": "XY90deg, inverse on probability output",
+    "model_updates": 0,
+    "role": "four selected local patches; not whole8 metrics or generalization proof"
+  },
+  "checkpoint": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/final.pt",
+  "checkpoint_epoch": 199,
+  "base_roi_zyx": [
+    128,
+    128,
+    128
+  ],
+  "context_roi_zyx": [
+    128,
+    160,
+    160
+  ],
+  "rotation": "np.rot90 k=1 axes(Y,X), prediction inverse k=-1 before comparison",
+  "precision": "Existing evaluator CUDA autocast float16; logits then softmax in float32",
+  "training": false,
+  "optimizer_updates": 0,
+  "whole_case_metrics_computed": false,
+  "scope": "Selected 128-cube patch sensitivity; context difference is not whole-case improvement and GT is used only for analysis.",
+  "rows": [
+    {
+      "sample": {
+        "case_id": "Diseased_1",
+        "sample_id": "Diseased_1_FP",
+        "selection": "nearest FP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          127,
+          381,
+          303
+        ],
+        "center_cache_zyx": [
+          159,
+          295,
+          234
+        ]
+      },
+      "base_start_cache_zyx": [
+        95,
+        231,
+        170
+      ],
+      "context_start_cache_zyx": [
+        95,
+        215,
+        154
+      ],
+      "context_to_base_crop_start_zyx": [
+        0,
+        16,
+        16
+      ],
+      "cached_GT_foreground": 5087,
+      "variants": {
+        "base": {
+          "TP": 4788,
+          "FP": 8354,
+          "FN": 299,
+          "on_base_FP": {
+            "count": 8354,
+            "mean_confidence": 0.9710103273391724,
+            "fraction_confidence_ge_0_9": 0.9132152262389275,
+            "mean_probability_delta": 0.0,
+            "suppressed_count": 0
+          },
+          "base_TP_retained": 4788,
+          "new_FN_from_base_TP": 0,
+          "hard_disagreement_count": 0,
+          "hard_disagreement_fraction": 0.0,
+          "mean_absolute_probability_difference": 0.0
+        },
+        "context": {
+          "TP": 4809,
+          "FP": 8324,
+          "FN": 278,
+          "on_base_FP": {
+            "count": 8354,
+            "mean_confidence": 0.9645795822143555,
+            "fraction_confidence_ge_0_9": 0.9092650227435959,
+            "mean_probability_delta": -0.0064307390712201595,
+            "suppressed_count": 138
+          },
+          "base_TP_retained": 4780,
+          "new_FN_from_base_TP": 8,
+          "hard_disagreement_count": 283,
+          "hard_disagreement_fraction": 0.00013494491577148438,
+          "mean_absolute_probability_difference": 0.00013990208390168846
+        },
+        "rotation": {
+          "TP": 1769,
+          "FP": 2490,
+          "FN": 3318,
+          "on_base_FP": {
+            "count": 8354,
+            "mean_confidence": 0.1560172140598297,
+            "fraction_confidence_ge_0_9": 0.14699545128082356,
+            "mean_probability_delta": -0.814993143081665,
+            "suppressed_count": 7050
+          },
+          "base_TP_retained": 1750,
+          "new_FN_from_base_TP": 3038,
+          "hard_disagreement_count": 11293,
+          "hard_disagreement_fraction": 0.005384922027587891,
+          "mean_absolute_probability_difference": 0.005375511944293976,
+          "mean_absolute_probability_equivariance_error": 0.005375511944293976
+        }
+      },
+      "classifier_argmax": {
+        "base": {},
+        "context": {},
+        "rotation": {}
+      }
+    },
+    {
+      "sample": {
+        "case_id": "Diseased_1",
+        "sample_id": "Diseased_1_TP",
+        "selection": "nearest TP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          166,
+          257,
+          331
+        ],
+        "center_cache_zyx": [
+          208,
+          199,
+          256
+        ]
+      },
+      "base_start_cache_zyx": [
+        144,
+        135,
+        192
+      ],
+      "context_start_cache_zyx": [
+        144,
+        119,
+        176
+      ],
+      "context_to_base_crop_start_zyx": [
+        0,
+        16,
+        16
+      ],
+      "cached_GT_foreground": 6492,
+      "variants": {
+        "base": {
+          "TP": 6144,
+          "FP": 2459,
+          "FN": 348,
+          "on_base_FP": {
+            "count": 2459,
+            "mean_confidence": 0.9463868737220764,
+            "fraction_confidence_ge_0_9": 0.8365189101260675,
+            "mean_probability_delta": 0.0,
+            "suppressed_count": 0
+          },
+          "base_TP_retained": 6144,
+          "new_FN_from_base_TP": 0,
+          "hard_disagreement_count": 0,
+          "hard_disagreement_fraction": 0.0,
+          "mean_absolute_probability_difference": 0.0
+        },
+        "context": {
+          "TP": 6088,
+          "FP": 2299,
+          "FN": 404,
+          "on_base_FP": {
+            "count": 2459,
+            "mean_confidence": 0.8889138102531433,
+            "fraction_confidence_ge_0_9": 0.7836518910126068,
+            "mean_probability_delta": -0.057473063468933105,
+            "suppressed_count": 218
+          },
+          "base_TP_retained": 6073,
+          "new_FN_from_base_TP": 71,
+          "hard_disagreement_count": 362,
+          "hard_disagreement_fraction": 0.00017261505126953125,
+          "mean_absolute_probability_difference": 0.00017789578123483807
+        },
+        "rotation": {
+          "TP": 5437,
+          "FP": 2063,
+          "FN": 1055,
+          "on_base_FP": {
+            "count": 2459,
+            "mean_confidence": 0.6270092725753784,
+            "fraction_confidence_ge_0_9": 0.5795038633590891,
+            "mean_probability_delta": -0.3193776309490204,
+            "suppressed_count": 905
+          },
+          "base_TP_retained": 5375,
+          "new_FN_from_base_TP": 769,
+          "hard_disagreement_count": 2245,
+          "hard_disagreement_fraction": 0.0010704994201660156,
+          "mean_absolute_probability_difference": 0.0010719021083787084,
+          "mean_absolute_probability_equivariance_error": 0.0010719021083787084
+        }
+      },
+      "classifier_argmax": {
+        "base": {},
+        "context": {},
+        "rotation": {}
+      }
+    },
+    {
+      "sample": {
+        "case_id": "Normal_16",
+        "sample_id": "Normal_16_FP",
+        "selection": "nearest FP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          123,
+          320,
+          377
+        ],
+        "center_cache_zyx": [
+          154,
+          224,
+          264
+        ]
+      },
+      "base_start_cache_zyx": [
+        90,
+        160,
+        200
+      ],
+      "context_start_cache_zyx": [
+        90,
+        144,
+        184
+      ],
+      "context_to_base_crop_start_zyx": [
+        0,
+        16,
+        16
+      ],
+      "cached_GT_foreground": 6189,
+      "variants": {
+        "base": {
+          "TP": 5528,
+          "FP": 3281,
+          "FN": 661,
+          "on_base_FP": {
+            "count": 3281,
+            "mean_confidence": 0.9513981342315674,
+            "fraction_confidence_ge_0_9": 0.846388296251143,
+            "mean_probability_delta": 0.0,
+            "suppressed_count": 0
+          },
+          "base_TP_retained": 5528,
+          "new_FN_from_base_TP": 0,
+          "hard_disagreement_count": 0,
+          "hard_disagreement_fraction": 0.0,
+          "mean_absolute_probability_difference": 0.0
+        },
+        "context": {
+          "TP": 5511,
+          "FP": 3112,
+          "FN": 678,
+          "on_base_FP": {
+            "count": 3281,
+            "mean_confidence": 0.9165077805519104,
+            "fraction_confidence_ge_0_9": 0.7991466016458397,
+            "mean_probability_delta": -0.034890323877334595,
+            "suppressed_count": 189
+          },
+          "base_TP_retained": 5493,
+          "new_FN_from_base_TP": 35,
+          "hard_disagreement_count": 262,
+          "hard_disagreement_fraction": 0.00012493133544921875,
+          "mean_absolute_probability_difference": 0.00012330870958976448
+        },
+        "rotation": {
+          "TP": 3613,
+          "FP": 1100,
+          "FN": 2576,
+          "on_base_FP": {
+            "count": 3281,
+            "mean_confidence": 0.1589093953371048,
+            "fraction_confidence_ge_0_9": 0.12252362084730266,
+            "mean_probability_delta": -0.7924886345863342,
+            "suppressed_count": 2752
+          },
+          "base_TP_retained": 3317,
+          "new_FN_from_base_TP": 2211,
+          "hard_disagreement_count": 5830,
+          "hard_disagreement_fraction": 0.0027799606323242188,
+          "mean_absolute_probability_difference": 0.0027842801064252853,
+          "mean_absolute_probability_equivariance_error": 0.0027842801064252853
+        }
+      },
+      "classifier_argmax": {
+        "base": {},
+        "context": {},
+        "rotation": {}
+      }
+    },
+    {
+      "sample": {
+        "case_id": "Normal_16",
+        "sample_id": "Normal_16_TP",
+        "selection": "nearest TP voxel to coordinate median in existing B native prediction; diagnostic only",
+        "native_center_zyx": [
+          138,
+          193,
+          229
+        ],
+        "center_cache_zyx": [
+          172,
+          135,
+          160
+        ]
+      },
+      "base_start_cache_zyx": [
+        108,
+        71,
+        96
+      ],
+      "context_start_cache_zyx": [
+        108,
+        55,
+        80
+      ],
+      "context_to_base_crop_start_zyx": [
+        0,
+        16,
+        16
+      ],
+      "cached_GT_foreground": 9173,
+      "variants": {
+        "base": {
+          "TP": 8885,
+          "FP": 1000,
+          "FN": 288,
+          "on_base_FP": {
+            "count": 1000,
+            "mean_confidence": 0.9101214408874512,
+            "fraction_confidence_ge_0_9": 0.714,
+            "mean_probability_delta": 0.0,
+            "suppressed_count": 0
+          },
+          "base_TP_retained": 8885,
+          "new_FN_from_base_TP": 0,
+          "hard_disagreement_count": 0,
+          "hard_disagreement_fraction": 0.0,
+          "mean_absolute_probability_difference": 0.0
+        },
+        "context": {
+          "TP": 8878,
+          "FP": 888,
+          "FN": 295,
+          "on_base_FP": {
+            "count": 1000,
+            "mean_confidence": 0.8204366564750671,
+            "fraction_confidence_ge_0_9": 0.644,
+            "mean_probability_delta": -0.08968482166528702,
+            "suppressed_count": 128
+          },
+          "base_TP_retained": 8866,
+          "new_FN_from_base_TP": 19,
+          "hard_disagreement_count": 175,
+          "hard_disagreement_fraction": 8.344650268554688e-05,
+          "mean_absolute_probability_difference": 8.836086635710672e-05
+        },
+        "rotation": {
+          "TP": 7263,
+          "FP": 535,
+          "FN": 1910,
+          "on_base_FP": {
+            "count": 1000,
+            "mean_confidence": 0.3681521713733673,
+            "fraction_confidence_ge_0_9": 0.257,
+            "mean_probability_delta": -0.5419692993164062,
+            "suppressed_count": 632
+          },
+          "base_TP_retained": 7240,
+          "new_FN_from_base_TP": 1645,
+          "hard_disagreement_count": 2467,
+          "hard_disagreement_fraction": 0.0011763572692871094,
+          "mean_absolute_probability_difference": 0.001165333902463317,
+          "mean_absolute_probability_equivariance_error": 0.001165333902463317
+        }
+      },
+      "classifier_argmax": {
+        "base": {},
+        "context": {},
+        "rotation": {}
+      }
+    }
+  ]
+}

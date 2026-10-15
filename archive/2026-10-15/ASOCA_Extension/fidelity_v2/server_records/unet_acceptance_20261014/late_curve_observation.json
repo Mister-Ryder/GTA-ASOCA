@@ -1,0 +1,107 @@
+{
+  "scope": "observed last5 planned points; fixed final never replaced by best",
+  "n_independent_patients": 4,
+  "cohort_points": [
+    {
+      "checkpoint": "epoch160",
+      "epoch_1based": 160,
+      "dice_percent": 82.20672868750181,
+      "patient_dice_SD_percentage_points": 6.4899194624071,
+      "assd_mm": 0.774858992486437,
+      "patient_assd_SD_mm": 0.44775086798758523,
+      "n_patients": 4,
+      "assd_undefined_cases": []
+    },
+    {
+      "checkpoint": "epoch170",
+      "epoch_1based": 170,
+      "dice_percent": 80.98011818339039,
+      "patient_dice_SD_percentage_points": 8.77213045075403,
+      "assd_mm": 0.746105476638758,
+      "patient_assd_SD_mm": 0.5875984044075344,
+      "n_patients": 4,
+      "assd_undefined_cases": []
+    },
+    {
+      "checkpoint": "epoch180",
+      "epoch_1based": 180,
+      "dice_percent": 81.68668107778426,
+      "patient_dice_SD_percentage_points": 6.820818262030694,
+      "assd_mm": 0.7861441756861585,
+      "patient_assd_SD_mm": 0.4443250870256243,
+      "n_patients": 4,
+      "assd_undefined_cases": []
+    },
+    {
+      "checkpoint": "epoch190",
+      "epoch_1based": 190,
+      "dice_percent": 81.55499660906284,
+      "patient_dice_SD_percentage_points": 7.9817806491906005,
+      "assd_mm": 0.8963549529764984,
+      "patient_assd_SD_mm": 0.789902576422129,
+      "n_patients": 4,
+      "assd_undefined_cases": []
+    },
+    {
+      "checkpoint": "final",
+      "epoch_1based": 200,
+      "dice_percent": 81.84555112537751,
+      "patient_dice_SD_percentage_points": 7.6764669714072395,
+      "assd_mm": 0.7492326552685586,
+      "patient_assd_SD_mm": 0.45591914607380335,
+      "n_patients": 4,
+      "assd_undefined_cases": []
+    }
+  ],
+  "per_patient_epoch160_to200": [
+    {
+      "case_id": "Diseased_10",
+      "epoch160_dice_percent": 73.58898824265492,
+      "final_dice_percent": 71.2825254259675,
+      "delta_final_minus_epoch160_Dice_percentage_points": -2.3064628166874157,
+      "epoch160_assd_mm": 1.2451026920347916,
+      "final_assd_mm": 1.3455745965646293,
+      "delta_final_minus_epoch160_assd_mm": 0.10047190452983767
+    },
+    {
+      "case_id": "Diseased_20",
+      "epoch160_dice_percent": 82.70031453973564,
+      "final_dice_percent": 82.62480606005293,
+      "delta_final_minus_epoch160_Dice_percentage_points": -0.07550847968270658,
+      "epoch160_assd_mm": 0.5920943612664453,
+      "final_assd_mm": 0.5418889670719269,
+      "delta_final_minus_epoch160_assd_mm": -0.050205394194518416
+    },
+    {
+      "case_id": "Normal_12",
+      "epoch160_dice_percent": 83.1990223924962,
+      "final_dice_percent": 83.84446224919454,
+      "delta_final_minus_epoch160_Dice_percentage_points": 0.6454398566983266,
+      "epoch160_assd_mm": 1.02200842247802,
+      "final_assd_mm": 0.8279659085981665,
+      "delta_final_minus_epoch160_assd_mm": -0.19404251387985338
+    },
+    {
+      "case_id": "Normal_3",
+      "epoch160_dice_percent": 89.33858957512045,
+      "final_dice_percent": 89.63041076629507,
+      "delta_final_minus_epoch160_Dice_percentage_points": 0.2918211911746127,
+      "epoch160_assd_mm": 0.24023049416649075,
+      "final_assd_mm": 0.28150114883951166,
+      "delta_final_minus_epoch160_assd_mm": 0.04127065467302091
+    }
+  ],
+  "final_minus_epoch160": {
+    "Dice_percentage_points": -0.36117756212429697,
+    "assd_mm": -0.025626337217878326
+  },
+  "Dice_range_percent": [
+    80.98011818339039,
+    82.20672868750181
+  ],
+  "ASSD_range_mm": [
+    0.746105476638758,
+    0.8963549529764984
+  ],
+  "interpretation": "Observed late variation, not monotonic improvement, not a convergence/overfitting proof, no replacement selection or longer-training decision."
+}

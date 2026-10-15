@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "dataset": "ASOCA",
+  "fold": 0,
+  "record_date": "2026-10-14",
+  "role": "previously inspected eight-case development reference; not independent final test",
+  "formal_final_test": false,
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "assd_definition": "pooled_bidirectional_surface_voxel_distances",
+  "assd_unit": "mm",
+  "source_csv_sha256": "b711c4a2276ccc164ef0d6f961e2b7918e9aef0b21eecd4a47edb19447432a9f",
+  "methods": {
+    "gta": {
+      "n_cases": 8,
+      "source_sha256": "37c8c5a3f9ef3dda30da89441494d66f32b464c142d6f5ab7860fce77932c3a1",
+      "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+      "cases": [
+        {
+          "case_id": "Diseased_1",
+          "group": "Diseased",
+          "dice": 0.6350175238542418,
+          "assd_mm": 2.898938134701213,
+          "cldice": 0.7044728227820259,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "a25a33b35df711d522d73dd0bdd20e5397b6a04b1eb63ff61adab254168c7614"
+        },
+        {
+          "case_id": "Diseased_15",
+          "group": "Diseased",
+          "dice": 0.7943495258872065,
+          "assd_mm": 1.1003964887000552,
+          "cldice": 0.8811265791437949,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "e40950a1eeb9bcecc9794dfdcc6e4689a9b82026a3e2de29129a3f96afd2bff9"
+        },
+        {
+          "case_id": "Diseased_18",
+          "group": "Diseased",
+          "dice": 0.86545556176635,
+          "assd_mm": 0.4970196697370733,
+          "cldice": 0.8718084354235918,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "c78139628285cc2066841902d059fc634a080c0c371433d3d492945076b7312e"
+        },
+        {
+          "case_id": "Diseased_7",
+          "group": "Diseased",
+          "dice": 0.7948021147289885,
+          "assd_mm": 1.6256533746365773,
+          "cldice": 0.7665245109581992,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "fd949347b5b8768aedc41ead62a6766933e823f6d0a5573f5051914113dd2af0"
+        },
+        {
+          "case_id": "Normal_16",
+          "group": "Normal",
+          "dice": 0.8272363451891099,
+          "assd_mm": 1.4905073194688065,
+          "cldice": 0.8520632011765521,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "5f34b1b99b76a49b2cde56c4607c1e34af0018bf25163baaca767e4c20934d3d"
+        },
+        {
+          "case_id": "Normal_19",
+          "group": "Normal",
+          "dice": 0.8443349753694581,
+          "assd_mm": 0.6236991174661746,
+          "cldice": 0.8600855635102755,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "46725c391e1f9ba29b6470e17eff124cdea0de14bee6326f6f8b233cf67bad2b"
+        },
+        {
+          "case_id": "Normal_2",
+          "group": "Normal",
+          "dice": 0.790854493730903,
+          "assd_mm": 0.44638283374168997,
+          "cldice": 0.9080988794181742,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "e5152c168a7503e343ea7d7f00c0e5a8685ee32d147b6c75e4f16ae6e5ebb51e"
+        },
+        {
+          "case_id": "Normal_8",
+          "group": "Normal",
+          "dice": 0.8485058328450434,
+          "assd_mm": 0.7361223835105961,
+          "cldice": 0.8492082022826848,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+          "label_sha256": "ee8cbebf6b8bf9dbccff80569a2b32b9a16493384db9fb78e77b6909e18e5fbc"
+        }
+      ],
+      "summary": {
+        "dice": {
+          "mean": 0.8000695466714127,
+          "sd": 0.07241390930081658,
+          "n_valid": 8
+        },
+        "assd_mm": {
+          "mean": 1.1773399152452733,
+          "sd": 0.8252449364354092,
+          "n_valid": 8
+        },
+        "cldice": {
+          "mean": 0.8366735243369123,
+          "sd": 0.06724381103706105,
+          "n_valid": 8
+        }
+      }
+    },
+    "unet": {
+      "n_cases": 8,
+      "source_sha256": "37c8c5a3f9ef3dda30da89441494d66f32b464c142d6f5ab7860fce77932c3a1",
+      "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+      "cases": [
+        {
+          "case_id": "Diseased_1",
+          "group": "Diseased",
+          "dice": 0.6228223283385477,
+          "assd_mm": 2.733665823970408,
+          "cldice": 0.6987956553640693,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "a25a33b35df711d522d73dd0bdd20e5397b6a04b1eb63ff61adab254168c7614"
+        },
+        {
+          "case_id": "Diseased_15",
+          "group": "Diseased",
+          "dice": 0.7878125602622613,
+          "assd_mm": 0.4132365833317136,
+          "cldice": 0.9090909090909091,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "e40950a1eeb9bcecc9794dfdcc6e4689a9b82026a3e2de29129a3f96afd2bff9"
+        },
+        {
+          "case_id": "Diseased_18",
+          "group": "Diseased",
+          "dice": 0.8686198434351051,
+          "assd_mm": 0.4430662355099729,
+          "cldice": 0.8878852472974389,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "c78139628285cc2066841902d059fc634a080c0c371433d3d492945076b7312e"
+        },
+        {
+          "case_id": "Diseased_7",
+          "group": "Diseased",
+          "dice": 0.7959446884234241,
+          "assd_mm": 1.8043005807066685,
+          "cldice": 0.7587662754664032,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "fd949347b5b8768aedc41ead62a6766933e823f6d0a5573f5051914113dd2af0"
+        },
+        {
+          "case_id": "Normal_16",
+          "group": "Normal",
+          "dice": 0.7658705216844752,
+          "assd_mm": 2.4805455837471833,
+          "cldice": 0.7287774886098306,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "5f34b1b99b76a49b2cde56c4607c1e34af0018bf25163baaca767e4c20934d3d"
+        },
+        {
+          "case_id": "Normal_19",
+          "group": "Normal",
+          "dice": 0.8268196202531646,
+          "assd_mm": 0.9472856905186917,
+          "cldice": 0.8421582042385443,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "46725c391e1f9ba29b6470e17eff124cdea0de14bee6326f6f8b233cf67bad2b"
+        },
+        {
+          "case_id": "Normal_2",
+          "group": "Normal",
+          "dice": 0.7806156131374814,
+          "assd_mm": 0.7661828393103598,
+          "cldice": 0.8764296391202222,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "e5152c168a7503e343ea7d7f00c0e5a8685ee32d147b6c75e4f16ae6e5ebb51e"
+        },
+        {
+          "case_id": "Normal_8",
+          "group": "Normal",
+          "dice": 0.8476628411710911,
+          "assd_mm": 0.5890068417023192,
+          "cldice": 0.8641188959660296,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "f4cc4f8a7ce4e6aab0b5bed0acb9435ec37cea993d42e1ef340dc9caed0d714e",
+          "label_sha256": "ee8cbebf6b8bf9dbccff80569a2b32b9a16493384db9fb78e77b6909e18e5fbc"
+        }
+      ],
+      "summary": {
+        "dice": {
+          "mean": 0.7870210020881938,
+          "sd": 0.0750709841193832,
+          "n_valid": 8
+        },
+        "assd_mm": {
+          "mean": 1.2721612723496647,
+          "sd": 0.9360073975546571,
+          "n_valid": 8
+        },
+        "cldice": {
+          "mean": 0.820752789394181,
+          "sd": 0.08011102945206866,
+          "n_valid": 8
+        }
+      }
+    },
+    "swinunetr": {
+      "n_cases": 8,
+      "source_sha256": "37c8c5a3f9ef3dda30da89441494d66f32b464c142d6f5ab7860fce77932c3a1",
+      "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+      "cases": [
+        {
+          "case_id": "Diseased_1",
+          "group": "Diseased",
+          "dice": 0.6381435823060189,
+          "assd_mm": 2.8892543091162315,
+          "cldice": 0.6516922007605639,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "a25a33b35df711d522d73dd0bdd20e5397b6a04b1eb63ff61adab254168c7614"
+        },
+        {
+          "case_id": "Diseased_15",
+          "group": "Diseased",
+          "dice": 0.7882851877345294,
+          "assd_mm": 0.4415314778974975,
+          "cldice": 0.8910830212074787,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "e40950a1eeb9bcecc9794dfdcc6e4689a9b82026a3e2de29129a3f96afd2bff9"
+        },
+        {
+          "case_id": "Diseased_18",
+          "group": "Diseased",
+          "dice": 0.8614752629474932,
+          "assd_mm": 0.6397151128380081,
+          "cldice": 0.8716467055854705,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "c78139628285cc2066841902d059fc634a080c0c371433d3d492945076b7312e"
+        },
+        {
+          "case_id": "Diseased_7",
+          "group": "Diseased",
+          "dice": 0.7630858329923516,
+          "assd_mm": 3.050326661773903,
+          "cldice": 0.7397494463175661,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "fd949347b5b8768aedc41ead62a6766933e823f6d0a5573f5051914113dd2af0"
+        },
+        {
+          "case_id": "Normal_16",
+          "group": "Normal",
+          "dice": 0.7902508178844057,
+          "assd_mm": 2.271493917357192,
+          "cldice": 0.7428704957088162,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "5f34b1b99b76a49b2cde56c4607c1e34af0018bf25163baaca767e4c20934d3d"
+        },
+        {
+          "case_id": "Normal_19",
+          "group": "Normal",
+          "dice": 0.8076701600829207,
+          "assd_mm": 2.041713691992006,
+          "cldice": 0.8266823037786183,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "46725c391e1f9ba29b6470e17eff124cdea0de14bee6326f6f8b233cf67bad2b"
+        },
+        {
+          "case_id": "Normal_2",
+          "group": "Normal",
+          "dice": 0.7845005361709148,
+          "assd_mm": 0.5024434340237109,
+          "cldice": 0.8880081541559389,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "e5152c168a7503e343ea7d7f00c0e5a8685ee32d147b6c75e4f16ae6e5ebb51e"
+        },
+        {
+          "case_id": "Normal_8",
+          "group": "Normal",
+          "dice": 0.8523958647256908,
+          "assd_mm": 0.4336217514603281,
+          "cldice": 0.8727768405743339,
+          "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+          "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+          "label_sha256": "ee8cbebf6b8bf9dbccff80569a2b32b9a16493384db9fb78e77b6909e18e5fbc"
+        }
+      ],
+      "summary": {
+        "dice": {
+          "mean": 0.7857259056055406,
+          "sd": 0.06864613215218099,
+          "n_valid": 8
+        },
+        "assd_mm": {
+          "mean": 1.5337625445573595,
+          "sd": 1.1467846340055066,
+          "n_valid": 8
+        },
+        "cldice": {
+          "mean": 0.8105636460110983,
+          "sd": 0.08878513718027671,
+          "n_valid": 8
+        }
+      }
+    }
+  }
+}

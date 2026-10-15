@@ -1,0 +1,176 @@
+{
+  "role": "INITIAL_TRAINMODE_PARAMETER_GRADIENT_DIAGNOSTIC_NOT_MODEL_RESULTS",
+  "status": "actual_diagnostic_running",
+  "root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "B_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "precision": "amp",
+  "batch_size": 2,
+  "patch_size": [
+    128,
+    128,
+    128
+  ],
+  "stage": "frozen",
+  "augmentation": false,
+  "bank_patches": 56,
+  "standalone_batches": 28,
+  "paired_by": "adjacent samples in original fixed bank order",
+  "reset_before_each_batch": "all327 initial CPU state tensors and identical CPU/CUDA RNG; set frozen/train",
+  "expected_reconstructed_initial_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+  "historical_main_theta0_verified": false,
+  "losses": [
+    "segmentation",
+    "A",
+    "B",
+    "totalA",
+    "totalB"
+  ],
+  "Gaussian_lambda": 10,
+  "DS_weights": [
+    0.5714285714285714,
+    0.2857142857142857,
+    0.14285714285714285
+  ],
+  "AMP_derivative_scale": 1024,
+  "optimizer_created": false,
+  "parameter_updates": false,
+  "parameter_grad_populated": false,
+  "held_out_GT_read": false,
+  "new_validation_or_performance_claim": false,
+  "BN_policy": "Diagnostic copy buffers may update during train-mode forward; restored before each batch/end. Parameters never update.",
+  "clip_policy": "Report implied multiplier min(1,12/(direct-combined FP32 global L2 norm+1e-6)); no clipping applied.",
+  "FP32_policy": "Explicit separate run. Failure/OOM stops with retained logs; never silently lower precision/batch/patch.",
+  "later_stages": "Not assessed: initial frozen stage only; partial/joint need their own trained state and auxiliary objectives.",
+  "helpers": {
+    "run_early_fixed_final_eval.py": "2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42",
+    "prepare_gaussian_control.py": "0145556d123356956bd80546fb7f2eda0c44bd8761dac2c6ae1f6ae44c894a17",
+    "diagnose_gaussian.py": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+    "shadow_gaussian_region_balance.py": "a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137"
+  },
+  "max_wait_seconds": 7200,
+  "diagnostic_deadline_seconds": 2400,
+  "canonical": {
+    "postfit_receipt_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+    "postfit_status_sha256": "935d84eb4e75aaf9cbfa128ecdebc0d39650f1446e78140a30619b1dcaeecf94",
+    "trajectory_complete_sha256": "04b71545fbfc6b27bffae936ea660d1ac56d37221a031bde04d7726abb3fcf39",
+    "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "main_final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "held_out_GT_or_images_read": false
+  },
+  "runtime": {
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "python_executable": "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "packages": {
+      "torch": "2.7.1+cu128",
+      "monai": "1.5.1",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-image": "0.25.2",
+      "SimpleITK": "2.5.2",
+      "scikit-learn": "1.7.2",
+      "pandas": "2.3.3",
+      "tqdm": "4.67.1"
+    },
+    "torch_cuda_runtime": "12.8",
+    "torch_cudnn_version": 90701,
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "CUDA_context_initialized": false
+  },
+  "source_inspection": {
+    "status": "source_inspection_passed_not_training",
+    "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "code_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+    "source_files_sha256": {
+      "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+      "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+      "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+      "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+      "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+      "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+      "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+      "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+      "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+      "losses.py": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+      "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+      "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+    },
+    "protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+    "changed_code_files": [
+      "losses.py"
+    ],
+    "gaussian_reduction": {
+      "id": "per_patch_equal_fg_bg_present_mean_v1",
+      "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+      "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+      "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+      "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+      "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+      "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+      "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+      "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+      "target_unchanged": "t=.5+.5*cached_G",
+      "lambda_unchanged": 10.0,
+      "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+      "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+      "not_changed": [
+        "Gaussian field/support/normalization",
+        "classifier labels",
+        "sampler",
+        "architecture/parameter shapes",
+        "DS4/7,2/7,1/7",
+        "50 frozen /20 partial /130 joint",
+        "optimizer/lr/clip12",
+        "200x125 updates",
+        "prediction/evaluation interface"
+      ],
+      "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+    },
+    "actual_model_forward_executed": false,
+    "training_started": false
+  },
+  "tracked_input_sha256": {
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/config.json": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops_inputs/gaussian_epoch070_fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_initial_gaussian_parameter_gradients.py": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl": "29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4"
+  },
+  "initial_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+  "GPU_immediately_before_CUDA_allocation": {
+    "captured_at_utc": "2026-10-14T10:32:14.135711+00:00",
+    "gpu": "NVIDIA vGPU-32GB, 580.76.05, 32760 MiB, 8.9",
+    "gpu_processes": "",
+    "all_compute_GPUs_idle": true
+  },
+  "gradient_scaling": "autograd.grad(loss*1024) then FP32/1024 matches initial main GradScaler unscaled-gradient meaning; scale1 in separate FP32 mode",
+  "frozen_classifier_parameters": {
+    "n_tensors": 60,
+    "n_elements": 4086597
+  },
+  "active_parameters": {
+    "segmentation_network": {
+      "n_tensors": 202,
+      "n_elements": 13039310
+    },
+    "classifier": {
+      "n_tensors": 0,
+      "n_elements": 0
+    },
+    "Gaussian_head": {
+      "n_tensors": 2,
+      "n_elements": 55
+    },
+    "main_segmentation_optimizer_group": {
+      "n_tensors": 204,
+      "n_elements": 13039365
+    },
+    "all_trainable": {
+      "n_tensors": 204,
+      "n_elements": 13039365
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "role": "INDEPENDENT_LOCAL_ACTUAL_INITIAL_GRADIENT_REVIEW_NOT_MODEL_PERFORMANCE",
+  "status": "passed",
+  "collection_files_verified": 13,
+  "collection_manifest_sha256": "cacb27dfae30936df802bddbc01d7fdc58fbdec7412a7eb906670c2babde1391",
+  "completion_sha256": "6b31ae47b4a1e82128f1a7e7b34772f63cb20f4398c0434f5c2f37dea69c7d1f",
+  "artifacts_sha256": {
+    "diagnostic_plan.json": "666bc69e31ea1d8d2eb66b4c3ac461fae1f4f9f20bb1f0db0cf1b24f86332dd1",
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "reconstructed_initial_state.json": "d014c1da3d2ec2d88ebd7e658d863dc2b671d9e9ce1dad4022ba85f7e6320eaf",
+    "batch_metrics.jsonl": "0e9a1188d5a79065dbb600e8c920fbb78456e2275272acfcdc29d3394a51d952",
+    "summary.json": "514889782e9b0ded70e02f7611eb689a0c846448d4f5118130e48b50e1cc344c"
+  },
+  "tool_sha256": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+  "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "initial_state_reported_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+  "initial_state_tensor_count": 327,
+  "actual_weights_independently_rehashed": false,
+  "historical_main_theta0_verified": false,
+  "nonfinite_batches": [],
+  "clip_batches": {
+    "totalA": [],
+    "totalB": [
+      8,
+      12,
+      19,
+      21,
+      23
+    ]
+  },
+  "n_batches": 28,
+  "n_patches": 56,
+  "A": {
+    "global_total_norm": {
+      "min": 2.973040819168091,
+      "median": 3.3027384281158447,
+      "p90": 3.6776122093200683,
+      "max": 3.8947861194610596
+    },
+    "implied_clip12_factor": {
+      "min": 1.0,
+      "median": 1.0,
+      "p90": 1.0,
+      "max": 1.0
+    },
+    "shared_gaussian_over_seg_norm": {
+      "min": 0.4466635784134639,
+      "median": 0.6102501978937092,
+      "p90": 0.6996374702010331,
+      "max": 0.7104526694200793
+    },
+    "shared_cosine": {
+      "min": 0.1969822164009282,
+      "median": 0.2934892209852846,
+      "p90": 0.3482491290868615,
+      "max": 0.39173204963862085
+    },
+    "Gaussian_head_total_energy_share": {
+      "min": 0.027663308089465564,
+      "median": 0.04048452790682819,
+      "p90": 0.048261354200935414,
+      "max": 0.04914842564944859
+    },
+    "shared_direct_vs_sum_residual": {
+      "min": 0.0005901009167341817,
+      "median": 0.0008401113833135325,
+      "p90": 0.001017586938452619,
+      "max": 0.0011084223033808027
+    }
+  },
+  "B": {
+    "global_total_norm": {
+      "min": 3.922861099243164,
+      "median": 8.613512992858887,
+      "p90": 12.525918197631835,
+      "max": 19.097095489501953
+    },
+    "implied_clip12_factor": {
+      "min": 0.6283677734254856,
+      "median": 1.0,
+      "p90": 1.0,
+      "max": 1.0
+    },
+    "shared_gaussian_over_seg_norm": {
+      "min": 0.9367829510339247,
+      "median": 3.245172010737194,
+      "p90": 5.071417059419636,
+      "max": 6.9438743737747926
+    },
+    "shared_cosine": {
+      "min": 0.01245583461208095,
+      "median": 0.08345257302675047,
+      "p90": 0.15561729488472414,
+      "max": 0.2132957306309588
+    },
+    "Gaussian_head_total_energy_share": {
+      "min": 0.014877138886679702,
+      "median": 0.029395246259881123,
+      "p90": 0.04197384213655775,
+      "max": 0.05415328292073409
+    },
+    "shared_direct_vs_sum_residual": {
+      "min": 0.00023538750396622396,
+      "median": 0.0003564640022226295,
+      "p90": 0.0005357144831562098,
+      "max": 0.0007438221070187261
+    }
+  },
+  "small_positive_FG_patches": [
+    {
+      "batch": 23,
+      "patch_in_batch": 1,
+      "case_id": "Normal_9",
+      "index": 80,
+      "foreground_voxels": 120
+    },
+    {
+      "batch": 3,
+      "patch_in_batch": 1,
+      "case_id": "Normal_1",
+      "index": 8,
+      "foreground_voxels": 196
+    },
+    {
+      "batch": 21,
+      "patch_in_batch": 0,
+      "case_id": "Diseased_12",
+      "index": 63,
+      "foreground_voxels": 217
+    },
+    {
+      "batch": 13,
+      "patch_in_batch": 1,
+      "case_id": "Diseased_19",
+      "index": 41,
+      "foreground_voxels": 243
+    },
+    {
+      "batch": 5,
+      "patch_in_batch": 1,
+      "case_id": "Diseased_16",
+      "index": 12,
+      "foreground_voxels": 305
+    }
+  ],
+  "empty_patch_count": 7,
+  "peak_GPU_GiB": 15.048965454101562,
+  "diagnostic_wall_seconds": 101.71334985643625,
+  "interpretation": "No numerical/provenance blocker to considering one unchanged-budget lambda10 B trial. B substantially amplifies shared-network gradients and implies clipping5/28; this is a risk-bearing mechanism trial, not evidence of Dice/ASSD improvement. ROOT must explicitly decide. No decision or job is created.",
+  "limitations": [
+    "Actual tensor weights were not downloaded; we verify captured producer report and source rather than independently reconstructing state bytes.",
+    "28 independent reset initial frozen-stage minibatches, no augmentation or optimizer, not later partial/joint training.",
+    "Positive cosine does not mean beneficial optimization, and clipping suppresses segmentation and auxiliary components together.",
+    "AMP direct-vs-sum residual is measured floating-backward discrepancy, not proof of a different loss graph.",
+    "Small-patch entries are B2 batch gradients, not isolated per-patch derivatives."
+  ],
+  "summary_distributions_recomputed_match": true,
+  "all28patients_exactly_twice_in_original_order": true,
+  "empty_one_region_checks_verified": 7,
+  "clipped_batches": [
+    {
+      "batch": 8,
+      "B_total_norm": 12.525413513183594,
+      "clip_factor": 0.9580521257296061,
+      "B_Gaussian_head_energy_share": 0.026415534114977348,
+      "foreground_voxels": [
+        4619,
+        547
+      ]
+    },
+    {
+      "batch": 12,
+      "B_total_norm": 19.097095489501953,
+      "clip_factor": 0.6283677734254856,
+      "B_Gaussian_head_energy_share": 0.022732117151617215,
+      "foreground_voxels": [
+        8163,
+        1986
+      ]
+    },
+    {
+      "batch": 19,
+      "B_total_norm": 15.178890228271484,
+      "clip_factor": 0.7905715786176377,
+      "B_Gaussian_head_energy_share": 0.029673667926358567,
+      "foreground_voxels": [
+        14171,
+        6051
+      ]
+    },
+    {
+      "batch": 21,
+      "B_total_norm": 12.111770629882812,
+      "clip_factor": 0.990771653124053,
+      "B_Gaussian_head_energy_share": 0.022255705030149408,
+      "foreground_voxels": [
+        217,
+        749
+      ]
+    },
+    {
+      "batch": 23,
+      "B_total_norm": 12.527095794677734,
+      "clip_factor": 0.9579234675586066,
+      "B_Gaussian_head_energy_share": 0.015143602503785296,
+      "foreground_voxels": [
+        4108,
+        120
+      ]
+    }
+  ],
+  "cross_diagnostic_comparability": "Do not directly compare this initial train-mode B2 AMP parameter gradient (with DS) against checkpoint200 eval-mode B1 FP32 detached-logit gradients; modes/state/space/DS/precision differ."
+}

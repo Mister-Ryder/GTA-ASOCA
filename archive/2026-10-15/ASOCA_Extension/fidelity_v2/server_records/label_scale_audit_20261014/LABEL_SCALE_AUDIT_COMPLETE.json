@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "training_cases": 28,
+  "input_patches": 56,
+  "roi_observations": 168,
+  "GPU_used": false,
+  "network_forward": false,
+  "parameter_updates": false,
+  "validation_GT_read": false,
+  "artifacts_sha256": {
+    "audit_plan.json": "e45cae8bcac96a5332b245a140dd14a3fda86af4b27f6e08ccef5a7a67849138",
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "training_tree_extents.json": "fb7f8d26ebc4bb7b44210f42541ff9079786085aabb41e37d940327b50ca986a",
+    "roi_patch_metrics.jsonl": "8041da10d2a34bc63ed6c507039d869733735bcc29ec6db83b7c162120cc149d",
+    "roi_patch_metrics.csv": "08e0900c1a28c0cbbc4302d37f554a932a4b16028dfad0ac673e73ea9fb45bb3",
+    "summary.json": "ca3182d572649667eabc6651e5672470ff712cb844f8cc56003e76c3afe94705"
+  }
+}

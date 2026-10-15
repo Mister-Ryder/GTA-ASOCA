@@ -1,0 +1,37 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import json,hashlib,subprocess,datetime,os
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+py='/root/miniconda3/envs/gta-asoca311/bin/python'
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for b in iter(lambda:f.read(8*1024**2),b''):h.update(b)
+ return h.hexdigest()
+if sha(r/'dataset/cache/manifest.json')!='141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356':raise RuntimeError('Frozen patient manifest changed after restart')
+for item in json.loads((r/'initialization/initialization_sources.json').read_text()):
+ if sha(r/'initialization'/item['file'])!=item['sha256']:raise RuntimeError('Historical initialization changed after restart')
+for stage in ['classifier_smoke128','classifier80x64']:
+ p=r/'results'/stage/'training';m=json.loads((p/'CLASSIFIER_TRAINING_COMPLETE.json').read_text())
+ if sha(p/'final.pt')!=m['final_sha256']:raise RuntimeError('Final classifier changed after restart')
+status=json.loads((r/'classifier_setup_status.json').read_text())
+if status.get('status')!='completed':raise RuntimeError('Classifier stage is not complete; inspect before starting main segmentation')
+import torch
+x=torch.randn(16,device='cuda',requires_grad=True);loss=x.square().mean();loss.backward()
+if not torch.isfinite(loss) or not torch.isfinite(x.grad).all():raise RuntimeError('CUDA no longer has finite gradients')
+disk=subprocess.check_output(['df','-h','/root/autodl-tmp','/root/autodl-fs'],text=True)
+roundtrip=r/'results/label_roundtrip_internal4/label_roundtrip.json'
+roundtrip_state=json.loads(roundtrip.read_text())['overall'] if roundtrip.exists() else {'status':'no completion report; restart may have interrupted CPU audit'}
+receipt={'status':'verified','boot_id':Path('/proc/sys/kernel/random/boot_id').read_text().strip(),
+ 'verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'disk':disk,
+ 'torch':str(torch.__version__),'cuda_runtime':torch.version.cuda,'gpu':torch.cuda.get_device_name(0),
+ 'historical_and_fixed_final_classifier_weights_unchanged':True,'manifest_unchanged':True,
+ 'cuda_finite_after_restart':True,'classifier_accuracy_is_diagnostic_only':True,
+ 'next':'main staged smoke -> formal GTA segmentation, plus independent UNet recipe calibration',
+ 'segmentation_output_root':str(r/'results'),'output_root_reason':'Expanded local SSD now has sufficient space; avoid filling shared storage',
+ 'label_roundtrip':roundtrip_state}
+(r/'AFTER_RESTART_READY.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt,indent=2),flush=True)
+p=r/'logs/label_roundtrip_internal4.log'
+if p.exists():print('ROUNDTRIP_TAIL','\n'.join(p.read_text(errors='replace').splitlines()[-4:]))
+PY

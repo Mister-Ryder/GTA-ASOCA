@@ -1,0 +1,65 @@
+ASOCA标签空间处理：内部四例实测记录（2026-10-14）
+
+结论：四例cache均与原GT按既定流程重新生成的0.5mm标签逐体素相同，
+不是缓存内容错配；最近邻回投本身仍产生可测的边界/重叠误差。
+这是label-pipeline诊断，不是模型成绩、独立test或数学性能上限。
+
+一、来源与核验范围
+来源：fidelity_v2/server_records/snapshot_20261014_restored_v2/fidelity/
+results/label_roundtrip_internal4/label_roundtrip.json及同目录CSV。
+JSON SHA256：3704b4cfa5ac0c9d3053ab0a5a20a7151ad2a4aa174e4f8ecbc16e6987a78527
+manifest SHA256：141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356
+范围：fold0原train32中的内部4例（2正常+2患病），原8例未参与此检查。
+服务器报告核验raw CT/GT身份、header，cache label.npy/case.json身份，
+重新执行LPS orientation + full-FOV 0.5mm最近邻标签采样，并以冻结
+evaluate.original_prediction将保存cache回投到原CT网格。四例mismatch均0。
+回投size/spacing/origin/direction与原CT匹配；无空GT或空回投，未丢病例。
+本地检查JSON/CSV逐例数值与N4均值/患者SD一致，未在本地重算原像素。
+
+二、量化结果（均值±患者sample SD，ddof=1）
+Dice 94.35493±2.42781%
+pooled ASSD 0.064142±0.025050 mm
+directional mean ASSD 0.063789 mm（诊断定义）
+
+病例         Dice%     pooled ASSDmm  cache体积差%  回投体积差%
+Diseased_10   92.79390      0.075450     +0.18564     -1.30083
+Diseased_20   97.95173      0.026901     -1.09693     +0.18935
+Normal_12     92.99299      0.081074     -0.24135     +0.16960
+Normal_3      93.68110      0.073143     -0.28418     +0.02037
+
+体积差以原GT物理前景体积为分母，使用voxel数×物理voxel体积。
+原XY spacing为0.369141–0.470703mm，Z约0.625mm；0.5mm等距
+会同时改变XY和Z的离散采样。缓存体积差范围-1.09693%至+0.18564%，
+回投体积差范围-1.30083%至+0.18935%。总体积接近不代表局部边界
+或逐体素标签完全保留；薄结构敏感性尚未按半径/中心线分层量化。
+主ASSD按6邻域边界体素中心的双方向距离pooled平均，单位mm；
+directional mean另列，不能混入主ASSD。surface-HD95和全前景HD95
+也不能互相替代。以上定义见报告metric_protocol.version=2。
+
+三、不可据此得出的结论
+94.35493%是这四例GT经特定最近邻链后的重叠，不是网络Dice上限。
+模型输出不必等于这个重采样GT；该链也未求使原网格Dice最大的
+标签表示，故不能把roundtrip当oracle或理论ceiling。
+相对identity Dice100%的5.64507个百分点差仅描述该GT变换实验。
+不能从旧模型80.01%中直接扣除，也不能宣称解释全部80vs90差距。
+两者病例不同（内部4 vs历史8）、预测对象不同、Dice非线性；论文
+方法还有训练、预训练、输入FOV、划分与指标实现等协议差异。
+四例cache一致性不自动推广为全部40例已做同等回投实测。
+
+四、分类器只作辅助诊断，服务分割
+实测classifier80 history为epoch0–79，80×64=5,120额外更新；
+train28，内部4例固定patch bank N=512。512不是512个独立患者。
+总loss首epoch 3.834776，末epoch 1.578974。
+固定末epoch mean positive balanced accuracy 0.429460。
+各头正类BA / training-majority正类BA：
+  generation: 0.353279 / 0.166667; 非空patch支持427，缺失正类[]
+  structure: 0.294924 / 0.200000; 非空patch支持427，缺失正类[6]
+  location: 0.640176 / 0.166667; 非空patch支持427，缺失正类[]
+这些数值保留为特征/辅助任务学习的诊断；不设accuracy/BA启动阈值，
+不替代下游分割Dice与ASSD，也不证明条件先验已带来分割收益。
+主初始化按固定80×64 final.pt；best_selection.pt只保留历史诊断记录，
+不据分类BA挑选主初始化或把其当分割启动门槛。
+预训练意图是稳定分类/结构/分割相关的多任务表示，最终优化与验证
+围绕分割开展；启动核验仅关注完成、源码/患者隔离、权重/梯度有限。
+
+本轮仅分析已下载记录并写此说明；没有修改冻结代码或操作服务器。

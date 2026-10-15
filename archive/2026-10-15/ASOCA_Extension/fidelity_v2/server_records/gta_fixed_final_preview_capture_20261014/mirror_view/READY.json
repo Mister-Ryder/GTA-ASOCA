@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "status": "fixed_final_payload_ready",
+  "role": "early fixed-final inference mirror; no new training",
+  "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "files": {
+    "final.pt": {
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+    },
+    "config.json": {
+      "bytes": 24269,
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    "history.jsonl": {
+      "bytes": 220801,
+      "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+    },
+    "TRAINING_COMPLETE.json": {
+      "bytes": 996,
+      "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+    },
+    "manifest.json": {
+      "bytes": 136829,
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+    },
+    "input_runtime_audit.json": {
+      "bytes": 1686,
+      "sha256": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7"
+    }
+  },
+  "config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "checkpoint_epoch": 199,
+  "cache_CT_inputs": {
+    "Diseased_10": {
+      "bytes": 87817088,
+      "sha256": "a1bd28a693cca4a6c522f081eedf93e02190f1ee2bfb1bc05e23d5cbe425e82c"
+    },
+    "Diseased_20": {
+      "bytes": 130101568,
+      "sha256": "e323458226308c017157313aeee0df6f310fa63819786cc7c6ffcf5007ec8a0e"
+    },
+    "Normal_12": {
+      "bytes": 73442504,
+      "sha256": "35758699a03988d17e6eebedb494d57cef17be442616efc25a394c771bf8d849"
+    },
+    "Normal_3": {
+      "bytes": 81442048,
+      "sha256": "41ac6043bc416f8f5dd32ff82c55c25f7fb00b1dc783f6f20abed045f0f02d7e"
+    }
+  },
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.7.2",
+    "pandas": "2.3.3",
+    "tqdm": "4.67.1"
+  },
+  "raw_GT_source_sha256": {
+    "Diseased_10": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+    "Diseased_20": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+    "Normal_12": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+    "Normal_3": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+  },
+  "source_freeze_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+  "source_guard_full_package_verified": true,
+  "publisher_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+  "source_guard_helper_sha256": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51",
+  "training_updates": 25000,
+  "diagnostic_only": true,
+  "formal_final_test": false,
+  "new_training": false,
+  "canonical80_case_evaluation_unchanged": true,
+  "captured_at_utc": "2026-10-14T08:47:36.071773+00:00",
+  "model_loaded": false,
+  "checkpoint_payload_deserialized": false
+}

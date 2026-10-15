@@ -1,0 +1,46 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python -B - <<'PY'
+import datetime,hashlib,importlib.util,json,os,pathlib,subprocess,sys,time
+r=pathlib.Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+s=r/'ops/run_unet_outer8_baseline_only.py'
+p=r/'docs/unet_outer8_fixed_final_baseline_only_plan_20261014.json'
+h=lambda x:hashlib.sha256(x.read_bytes()).hexdigest()
+assert h(s)=='7410b8d02e1c1447f696a3efe3e602e1fad938356e89b61373851b76bcd5895c'
+assert h(p)=='27ae698cf9faa357b84408058455ea6c15bcc2dca11c185a649f643f9b4b93e3'
+receipt=r/'ops_inputs/UNET_OUTER8_BASELINE_ONLY_LAUNCH_20261015.json'
+decision=r/'ops_inputs/UNET_OUTER8_BASELINE_ONLY_ROOT_DECISION_20261015.json'
+assert not receipt.exists() and not decision.exists()
+assert not (r/'UNET_OUTER8_BASELINE_ONLY_STATUS.json').exists()
+sys.path.insert(0,str(r/'ops'))
+spec=importlib.util.spec_from_file_location('baseline_only_reviewed',s)
+m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+g,c,v=m.dependencies()
+dependency=m.dependency_ready(g)
+assert dependency is not None
+assert 'torch' not in sys.modules
+now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat()
+value=dict(status='ROOT_authorized_baseline_only_fixed_U_outer8',decided_at_utc=now(),
+ user_authorization='Continue planned GTA experiments using both servers; baseline-only scheduling supplement.',
+ controller_sha256=h(s),prospective_plan_sha256=h(p),dependency_completion=dependency,
+ scope='One frozen U final200 inference on eight previously exposed development patients; no training, tuning, GTA inference or fivefold.',
+ review='ROOT source review and independent practical controller review, corrected exact dependency status transition.',
+ quarantine='Do not read new U8 outcome files until internal4 A/B/lambda0 scientific review and next GTA freeze are documented.',
+ evaluator_deadline_seconds=2700,controller_wait_seconds=1800,
+ deadline_note='Narrower than prospective plan7200; safety cap only, not measured runtime.',
+ automatic_GTA_outer8=False,automatic_unseal=False)
+decision.parent.mkdir(exist_ok=True)
+with decision.open('x',encoding='utf-8') as f:json.dump(value,f,indent=2);f.write('\n')
+os.chmod(decision,0o600)
+log=r/'logs/unet_outer8_baseline_only_launcher_20261015.log';log.parent.mkdir(exist_ok=True)
+argv=[str(r.parent/'env/bin/python'),'-B','-u',str(s),'--run','--max-wait-seconds','1800','--max-eval-seconds','2700']
+with log.open('xb') as stream:
+ child=subprocess.Popen(argv,cwd=r,stdin=subprocess.DEVNULL,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True,umask=0o077)
+record=dict(status='baseline_only_controller_spawned_not_evaluation_acceptance',at_utc=now(),pid=child.pid,argv=argv,
+ decision_sha256=h(decision),controller_sha256=h(s),new_outer8_outcomes_observed=False)
+with receipt.open('x',encoding='utf-8') as f:json.dump(record,f,indent=2);f.write('\n')
+os.chmod(receipt,0o600)
+time.sleep(1)
+cmdline=(pathlib.Path('/proc')/str(child.pid)/'cmdline')
+print(json.dumps(dict(status=record['status'],pid=child.pid,process_alive=cmdline.exists(),
+ owned_command_verified=cmdline.exists() and str(s).encode() in cmdline.read_bytes().split(b'\0'),
+ new_outer8_outcomes_observed=False)))
+PY

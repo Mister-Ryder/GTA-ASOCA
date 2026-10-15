@@ -1,0 +1,16 @@
+panel,item,value,denominator,unit
+A,X,107.5,28,median_mm
+A,Y,94.25,28,median_mm
+A,Z,91.25,28,median_mm
+B,32_nonempty,31,56,count
+B,32_empty,25,56,count
+B,48_nonempty,41,56,count
+B,48_empty,15,56,count
+B,64_nonempty,49,56,count
+B,64_empty,7,56,count
+C,32,14,31,count
+C,48,30,41,count
+C,64,35,49,count
+D,volume,6,49,count
+D,equal_branch,23,49,count
+D,centerline_voxel,13,49,count

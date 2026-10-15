@@ -1,0 +1,23 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+s=json.loads((r/'CPU_GAUSSIAN70_STATUS.json').read_text())
+procs=[]
+for key in ['pid','child_pid']:
+ pid=s.get(key)
+ if not pid:continue
+ p=Path('/proc')/str(pid)
+ try:procs.append({'role':key,'pid':pid,'alive':p.exists(),'state':(p/'stat').read_text().split(') ')[1].split()[0],'cmdline':(p/'cmdline').read_bytes().replace(b'\0',b' ').decode()})
+ except FileNotFoundError:procs.append({'role':key,'pid':pid,'alive':False})
+out=r/'results/gaussian_epoch070_cpu_bank56'
+rows=[json.loads(line) for line in (out/'patch_metrics.jsonl').read_bytes().splitlines(keepends=True) if line.endswith(b'\n')] if (out/'patch_metrics.jsonl').exists() else []
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':s,'processes':procs,'observed_complete_patches':len(rows)}
+if (out/'summary.json').exists() and s['status']=='completed':
+ d=json.loads((out/'summary.json').read_text())
+ result['summary']={'regions':d['regions'],'gradient_regions':d['gradient_regions'],'correlations':d['correlations']}
+else:result['log_tail']=(r/'logs/gaussian_epoch070_cpu.log').read_text()[-1200:]
+(r/'CPU_GAUSSIAN70_LIVE_CHECK.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+print(subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True))
+PY

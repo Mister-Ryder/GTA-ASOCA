@@ -1,0 +1,1353 @@
+{
+  "role": "ACTUAL_CPU_CLASSIFIER_DISTRIBUTIONS_TRAIN28_NOT_SELECTION",
+  "n_patches": 56,
+  "reference_bank_sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+  "n_nonempty": 49,
+  "models": {
+    "main200": {
+      "all56": {
+        "n_patches": 56,
+        "heads": {
+          "generation": {
+            "n_patches": 56,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                6,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                9,
+                2,
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                3,
+                2,
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                8,
+                5,
+                2,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                2,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              7,
+              15,
+              8,
+              16,
+              6,
+              4,
+              0
+            ],
+            "prediction_counts": [
+              8,
+              13,
+              4,
+              13,
+              11,
+              7,
+              0
+            ],
+            "prediction_frequency": [
+              0.14285714285714285,
+              0.23214285714285715,
+              0.07142857142857142,
+              0.23214285714285715,
+              0.19642857142857142,
+              0.125,
+              0.0
+            ],
+            "predicted0_fraction": 0.14285714285714285,
+            "accuracy_analysis_only": 0.5357142857142857,
+            "confidence_max_probability": {
+              "n": 56,
+              "mean": 0.4492702944470303,
+              "population_variance": 0.0213618989197324,
+              "minimum": 0.22792202234268188,
+              "maximum": 0.9123318791389465
+            }
+          },
+          "structure": {
+            "n_patches": 56,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                6,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                2,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                3,
+                9,
+                4,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1,
+                2,
+                13,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              7,
+              4,
+              4,
+              5,
+              16,
+              20,
+              0
+            ],
+            "prediction_counts": [
+              6,
+              0,
+              9,
+              10,
+              14,
+              17,
+              0
+            ],
+            "prediction_frequency": [
+              0.10714285714285714,
+              0.0,
+              0.16071428571428573,
+              0.17857142857142858,
+              0.25,
+              0.30357142857142855,
+              0.0
+            ],
+            "predicted0_fraction": 0.10714285714285714,
+            "accuracy_analysis_only": 0.5714285714285714,
+            "confidence_max_probability": {
+              "n": 56,
+              "mean": 0.4268635612513338,
+              "population_variance": 0.03234143871850838,
+              "minimum": 0.20131652057170868,
+              "maximum": 0.8405646085739136
+            }
+          },
+          "location": {
+            "n_patches": 56,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                6,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                5,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                11,
+                2,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                13,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                4
+              ]
+            ],
+            "GT_counts": [
+              7,
+              7,
+              4,
+              16,
+              14,
+              3,
+              5
+            ],
+            "prediction_counts": [
+              7,
+              6,
+              4,
+              12,
+              18,
+              4,
+              5
+            ],
+            "prediction_frequency": [
+              0.125,
+              0.10714285714285714,
+              0.07142857142857142,
+              0.21428571428571427,
+              0.32142857142857145,
+              0.07142857142857142,
+              0.08928571428571429
+            ],
+            "predicted0_fraction": 0.125,
+            "accuracy_analysis_only": 0.7857142857142857,
+            "confidence_max_probability": {
+              "n": 56,
+              "mean": 0.6363909228571824,
+              "population_variance": 0.029355948257554228,
+              "minimum": 0.33042052388191223,
+              "maximum": 0.9489779472351074
+            }
+          }
+        },
+        "conditional_trigger_counts": {
+          "generation_ge5": 7,
+          "structure_eq3": 10,
+          "location_nonzero": 49
+        },
+        "conditional_trigger_fractions": {
+          "generation_ge5": 0.125,
+          "structure_eq3": 0.17857142857142858,
+          "location_nonzero": 0.875
+        }
+      },
+      "nonempty49": {
+        "n_patches": 49,
+        "heads": {
+          "generation": {
+            "n_patches": 49,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                9,
+                2,
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                3,
+                2,
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                8,
+                5,
+                2,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                2,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              0,
+              15,
+              8,
+              16,
+              6,
+              4,
+              0
+            ],
+            "prediction_counts": [
+              2,
+              13,
+              4,
+              13,
+              10,
+              7,
+              0
+            ],
+            "prediction_frequency": [
+              0.04081632653061224,
+              0.2653061224489796,
+              0.08163265306122448,
+              0.2653061224489796,
+              0.20408163265306123,
+              0.14285714285714285,
+              0.0
+            ],
+            "predicted0_fraction": 0.04081632653061224,
+            "accuracy_analysis_only": 0.4897959183673469,
+            "confidence_max_probability": {
+              "n": 49,
+              "mean": 0.41968064679175004,
+              "population_variance": 0.011642249106961836,
+              "minimum": 0.22792202234268188,
+              "maximum": 0.7887338995933533
+            }
+          },
+          "structure": {
+            "n_patches": 49,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                2,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                2,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                3,
+                9,
+                4,
+                0
+              ],
+              [
+                0,
+                0,
+                4,
+                1,
+                2,
+                13,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              0,
+              4,
+              4,
+              5,
+              16,
+              20,
+              0
+            ],
+            "prediction_counts": [
+              0,
+              0,
+              9,
+              10,
+              13,
+              17,
+              0
+            ],
+            "prediction_frequency": [
+              0.0,
+              0.0,
+              0.1836734693877551,
+              0.20408163265306123,
+              0.2653061224489796,
+              0.3469387755102041,
+              0.0
+            ],
+            "predicted0_fraction": 0.0,
+            "accuracy_analysis_only": 0.5306122448979592,
+            "confidence_max_probability": {
+              "n": 49,
+              "mean": 0.40265926901175053,
+              "population_variance": 0.026861159618947368,
+              "minimum": 0.20131652057170868,
+              "maximum": 0.8405646085739136
+            }
+          },
+          "location": {
+            "n_patches": 49,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                11,
+                2,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                13,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                3,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                4
+              ]
+            ],
+            "GT_counts": [
+              0,
+              7,
+              4,
+              16,
+              14,
+              3,
+              5
+            ],
+            "prediction_counts": [
+              1,
+              6,
+              4,
+              12,
+              18,
+              4,
+              4
+            ],
+            "prediction_frequency": [
+              0.02040816326530612,
+              0.12244897959183673,
+              0.08163265306122448,
+              0.24489795918367346,
+              0.3673469387755102,
+              0.08163265306122448,
+              0.08163265306122448
+            ],
+            "predicted0_fraction": 0.02040816326530612,
+            "accuracy_analysis_only": 0.7755102040816326,
+            "confidence_max_probability": {
+              "n": 49,
+              "mean": 0.6254507309320022,
+              "population_variance": 0.029416031305457755,
+              "minimum": 0.33042052388191223,
+              "maximum": 0.9489779472351074
+            }
+          }
+        },
+        "conditional_trigger_counts": {
+          "generation_ge5": 7,
+          "structure_eq3": 10,
+          "location_nonzero": 48
+        },
+        "conditional_trigger_fractions": {
+          "generation_ge5": 0.14285714285714285,
+          "structure_eq3": 0.20408163265306123,
+          "location_nonzero": 0.9795918367346939
+        }
+      }
+    },
+    "classifier80_fixedfinal": {
+      "all56": {
+        "n_patches": 56,
+        "heads": {
+          "generation": {
+            "n_patches": 56,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                6,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                8,
+                3,
+                3,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                3,
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                8,
+                4,
+                2,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                2,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              7,
+              15,
+              8,
+              16,
+              6,
+              4,
+              0
+            ],
+            "prediction_counts": [
+              8,
+              12,
+              7,
+              14,
+              9,
+              6,
+              0
+            ],
+            "prediction_frequency": [
+              0.14285714285714285,
+              0.21428571428571427,
+              0.125,
+              0.25,
+              0.16071428571428573,
+              0.10714285714285714,
+              0.0
+            ],
+            "predicted0_fraction": 0.14285714285714285,
+            "accuracy_analysis_only": 0.5178571428571429,
+            "confidence_max_probability": {
+              "n": 56,
+              "mean": 0.4429674004869802,
+              "population_variance": 0.023837209942226267,
+              "minimum": 0.21122263371944427,
+              "maximum": 0.8893899917602539
+            }
+          },
+          "structure": {
+            "n_patches": 56,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                6,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                2,
+                0,
+                1,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                3,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                8,
+                7,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                2,
+                17,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              7,
+              4,
+              4,
+              5,
+              16,
+              20,
+              0
+            ],
+            "prediction_counts": [
+              10,
+              0,
+              1,
+              4,
+              15,
+              26,
+              0
+            ],
+            "prediction_frequency": [
+              0.17857142857142858,
+              0.0,
+              0.017857142857142856,
+              0.07142857142857142,
+              0.26785714285714285,
+              0.4642857142857143,
+              0.0
+            ],
+            "predicted0_fraction": 0.17857142857142858,
+            "accuracy_analysis_only": 0.5535714285714286,
+            "confidence_max_probability": {
+              "n": 56,
+              "mean": 0.45429669453629423,
+              "population_variance": 0.03379833913705547,
+              "minimum": 0.18564923107624054,
+              "maximum": 0.861136794090271
+            }
+          },
+          "location": {
+            "n_patches": 56,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                6,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                6,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                11,
+                2,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                11,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                4
+              ]
+            ],
+            "GT_counts": [
+              7,
+              7,
+              4,
+              16,
+              14,
+              3,
+              5
+            ],
+            "prediction_counts": [
+              8,
+              7,
+              5,
+              12,
+              16,
+              4,
+              4
+            ],
+            "prediction_frequency": [
+              0.14285714285714285,
+              0.125,
+              0.08928571428571429,
+              0.21428571428571427,
+              0.2857142857142857,
+              0.07142857142857142,
+              0.07142857142857142
+            ],
+            "predicted0_fraction": 0.14285714285714285,
+            "accuracy_analysis_only": 0.7678571428571429,
+            "confidence_max_probability": {
+              "n": 56,
+              "mean": 0.6019913788352694,
+              "population_variance": 0.029028493433775664,
+              "minimum": 0.2882017195224762,
+              "maximum": 0.8936057686805725
+            }
+          }
+        },
+        "conditional_trigger_counts": {
+          "generation_ge5": 6,
+          "structure_eq3": 4,
+          "location_nonzero": 48
+        },
+        "conditional_trigger_fractions": {
+          "generation_ge5": 0.10714285714285714,
+          "structure_eq3": 0.07142857142857142,
+          "location_nonzero": 0.8571428571428571
+        }
+      },
+      "nonempty49": {
+        "n_patches": 49,
+        "heads": {
+          "generation": {
+            "n_patches": 49,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                8,
+                3,
+                3,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                3,
+                3,
+                1,
+                0,
+                1,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                8,
+                4,
+                2,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                3,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                2,
+                1,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              0,
+              15,
+              8,
+              16,
+              6,
+              4,
+              0
+            ],
+            "prediction_counts": [
+              2,
+              12,
+              7,
+              14,
+              8,
+              6,
+              0
+            ],
+            "prediction_frequency": [
+              0.04081632653061224,
+              0.24489795918367346,
+              0.14285714285714285,
+              0.2857142857142857,
+              0.16326530612244897,
+              0.12244897959183673,
+              0.0
+            ],
+            "predicted0_fraction": 0.04081632653061224,
+            "accuracy_analysis_only": 0.46938775510204084,
+            "confidence_max_probability": {
+              "n": 49,
+              "mean": 0.41609213181904386,
+              "population_variance": 0.015780132725200853,
+              "minimum": 0.21122263371944427,
+              "maximum": 0.7917578816413879
+            }
+          },
+          "structure": {
+            "n_patches": 49,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                2,
+                0,
+                1,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                1,
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                0,
+                3,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                8,
+                7,
+                0
+              ],
+              [
+                0,
+                0,
+                1,
+                0,
+                2,
+                17,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "GT_counts": [
+              0,
+              4,
+              4,
+              5,
+              16,
+              20,
+              0
+            ],
+            "prediction_counts": [
+              4,
+              0,
+              1,
+              4,
+              14,
+              26,
+              0
+            ],
+            "prediction_frequency": [
+              0.08163265306122448,
+              0.0,
+              0.02040816326530612,
+              0.08163265306122448,
+              0.2857142857142857,
+              0.5306122448979592,
+              0.0
+            ],
+            "predicted0_fraction": 0.08163265306122448,
+            "accuracy_analysis_only": 0.5102040816326531,
+            "confidence_max_probability": {
+              "n": 49,
+              "mean": 0.43343365344465995,
+              "population_variance": 0.029893302933884976,
+              "minimum": 0.18564923107624054,
+              "maximum": 0.861136794090271
+            }
+          },
+          "location": {
+            "n_patches": 49,
+            "confusion_matrix_GT_rows_prediction_columns": [
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                6,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                3,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                11,
+                2,
+                1,
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                11,
+                1,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                1,
+                0,
+                2,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                4
+              ]
+            ],
+            "GT_counts": [
+              0,
+              7,
+              4,
+              16,
+              14,
+              3,
+              5
+            ],
+            "prediction_counts": [
+              2,
+              7,
+              5,
+              12,
+              15,
+              4,
+              4
+            ],
+            "prediction_frequency": [
+              0.04081632653061224,
+              0.14285714285714285,
+              0.10204081632653061,
+              0.24489795918367346,
+              0.30612244897959184,
+              0.08163265306122448,
+              0.08163265306122448
+            ],
+            "predicted0_fraction": 0.04081632653061224,
+            "accuracy_analysis_only": 0.7551020408163265,
+            "confidence_max_probability": {
+              "n": 49,
+              "mean": 0.5919998975432649,
+              "population_variance": 0.028667388959076303,
+              "minimum": 0.2882017195224762,
+              "maximum": 0.8936057686805725
+            }
+          }
+        },
+        "conditional_trigger_counts": {
+          "generation_ge5": 6,
+          "structure_eq3": 4,
+          "location_nonzero": 47
+        },
+        "conditional_trigger_fractions": {
+          "generation_ge5": 0.12244897959183673,
+          "structure_eq3": 0.08163265306122448,
+          "location_nonzero": 0.9591836734693877
+        }
+      }
+    }
+  },
+  "state_sha256_before": {
+    "main327": "f7be181fcb4245d756e072f22785da65be64e2a592db806e2dd2f3927a66fb7b",
+    "main200": "b78826ed8c41f22a921d68ca96c2efac5f83b2bcf13b52004b18828b4b6a2901",
+    "classifier80_fixedfinal": "5eceb707b9a1137ee7d1c7ea2336498c72082bd266395ee1ef84377ef199fe0a"
+  },
+  "state_sha256_after": {
+    "main327": "f7be181fcb4245d756e072f22785da65be64e2a592db806e2dd2f3927a66fb7b",
+    "main200": "b78826ed8c41f22a921d68ca96c2efac5f83b2bcf13b52004b18828b4b6a2901",
+    "classifier80_fixedfinal": "5eceb707b9a1137ee7d1c7ea2336498c72082bd266395ee1ef84377ef199fe0a"
+  },
+  "rng_sha256_before": {
+    "python": "7e8532bc4df80fbb629b9a1bf2c0ac2e0fad697d9d8d742d7d9acb9cbe355d86",
+    "numpy": "9815e5966252284ed684629381757ececfa533173ce31cfd0b978802cf287a32",
+    "torch_cpu": "5e8b8a24bd7c21ff81400339c469025849a5111300a84b8ae2fc35df8c18d570"
+  },
+  "rng_sha256_after": {
+    "python": "7e8532bc4df80fbb629b9a1bf2c0ac2e0fad697d9d8d742d7d9acb9cbe355d86",
+    "numpy": "9815e5966252284ed684629381757ececfa533173ce31cfd0b978802cf287a32",
+    "torch_cpu": "5e8b8a24bd7c21ff81400339c469025849a5111300a84b8ae2fc35df8c18d570"
+  },
+  "states_RNG_eval_unchanged": true,
+  "CUDA_initialized": false,
+  "parameter_gradients_absent": true,
+  "optimizer_created": false,
+  "heldout_GT_read": false,
+  "accuracy_used_as_gate_or_checkpoint_selection": false,
+  "limitations": [
+    "Standard training56 frequency is not the earlier geometry512 pretraining evaluation frequency.",
+    "Two patches per training patient are a fixed diagnostic bank, not natural patch frequency or independent validation.",
+    "Whole-patch proxy prediction audit cannot establish clinical anatomy accuracy or segmentation benefit.",
+    "Conditional trigger fractions are whole-patch argmax switches, not spatial guidance maps.",
+    "Only direct classifier eval forwards; no full GTA segmentation forward or training updates."
+  ]
+}

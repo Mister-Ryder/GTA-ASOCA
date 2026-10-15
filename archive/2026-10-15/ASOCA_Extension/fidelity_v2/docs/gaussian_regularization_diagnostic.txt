@@ -1,0 +1,144 @@
+Gaussian regularization: source evidence and bounded offline diagnostics
+2026-10-14; development only; Dice/ASSD of the current model remain pending.
+
+Actual diagnostic completion update
+  The prepared CPU diagnostic was subsequently executed on immutable epoch070,
+  completed56/56 training-bank patches at2026-10-14T06:59:48Z, and was downloaded.
+  The completion summary SHA is e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff.
+  Independent recorded-statistics/hash/denominator recomputation passed; see
+  docs/gaussian_epoch070_actual_review.txt for exact scope and limitations.
+  Actual foreground MSE is0.00812689 versus constant0.5 MSE0.03189915.
+  Gaussian common energy fraction is0.61245066; margin norm relative to the
+  DS-weighted main segmentation derivative is0.00646828. These are detached
+  output-space observations, not measured full-network or final Dice/ASSD gain.
+  Empty/positive patches have markedly different relative norms. Do not infer
+  that all common energy is wasted, or select a uniform larger lambda from this.
+  The later label-scale audit reused the identical actual56-patch bank; it did
+  not change model weights, frozen source, train labels or training objectives.
+  Earlier preparation/readiness paragraphs below describe their original scope;
+  their statements about not running a forward no longer describe the whole task.
+
+Established source evidence
+  fidelity_v2/code/model.py:93-94,195-196: raw two-channel segmentation logits
+  feed a learned 3x3x3 Conv3d(2,1) followed by sigmoid. No softmax or detach is
+  inserted on this Gaussian path. historical/func/EnhancedAirwaySegmentation2gau.py
+  :111-112,232-234 has the same path; segmentation softmax is a separate output.
+  Original GTAirway/resume_train_enhanced_airway_DDP_gaumse.py:314 consumes
+  batch['gaussian2']; original func/load_dataset.py:773-775 loads the field and
+  applies 0.5 + 0.5*field. Resetting zero-field background to zero is commented out.
+  Original trainer:360 uses F.mse_loss with default mean reduction and :427
+  multiplies it by 10. Current code/losses.py:156-161 does the same transformation,
+  all-voxel mean reduction and explicit Gaussian coefficient (current recipe 10).
+  Anatomy sample weights affect segmentation, not this Gaussian MSE.
+
+Fidelity limits
+  Current code/prepare_data.py:121-122,185,212-245 uses a radius-aware sum of
+  centreline Gaussians, supports it only inside the lumen mask, normalizes by
+  the whole-volume maximum, and approximates full summation with local 4-sigma
+  stamping. The cache is float16 (:200); full-array background is zero (:249-255).
+  Original GTAirway/dataset_pre/BAS_getmap_v3.py:187-193 sums full-grid Gaussians
+  using distance to background as sigma and saves int16 at :256. The ASOCA field
+  representation is therefore an adaptation/repair, not byte-identical historical
+  preprocessing. The original loader proves the affine mapping, not equality of
+  the original BAS cached-field normalization or the coronary target distribution.
+  Dice+CE, decoder DS, sampling, initialization and stages also change the complete
+  experiment. Branch/loss fidelity does not establish equal overall training.
+
+Why a small Gaussian loss need not imply learned fine structure
+  Let g in [0,1] be zero outside the GT foreground, q=sigmoid(K*z+b),
+  t=0.5+0.5*g and L_G=lambda/N * sum_i(q_i-t_i)^2.
+  A constant q=0.5 gives raw MSE=0.25*mean(g^2)<=foreground_fraction/4.
+  For an illustrative 1% foreground fraction this is at most 0.0025, or 0.025
+  with lambda=10, even if every positive target is ignored. These are mathematical
+  bounds, not measurements of the current patches. The best bank-wide constant
+  is mean(t), with raw MSE=Var(t)=0.25*Var(g). A per-patch optimal constant would
+  use that patch's GT and is an oracle diagnostic, not an independently fit model.
+  Small branches occupy few voxels. Per-volume maximum normalization can also
+  reduce some branch amplitudes; its actual effect must be measured by radius
+  and target-amplitude strata. Pointwise MSE imposes no explicit path-connectivity
+  constraint. The 0.5 offset is historical, and is not itself an implementation bug.
+  dL_G/du_i=2*lambda/N*(q_i-t_i)*q_i*(1-q_i), u=K*z+b. Sigmoid saturation and the
+  learned convolution affect how this reaches logits. Increasing lambda scales
+  this local derivative at fixed weights, but does not guarantee better training,
+  parameter updates or Dice/ASSD; loss conflicts, clipping and AdamW remain relevant.
+  Softmax segmentation depends on margin z1-z0, not on common mode z0+z1.
+  The Gaussian head sees both, so it can encode an auxiliary field in common mode
+  without changing segmentation probability. This is a possible mechanism,
+  not an observed conclusion about the current checkpoints.
+
+What the existing training probe establishes
+  code/train.py:253-270 obtains separate weighted Gaussian and segmentation
+  derivatives with respect to main logits using autograd.grad. The temporary
+  factor 1024 is removed; no optimizer update or parameter .grad accumulation is
+  added by that probe. Scaling reduces FP16 underflow risk, but does not create
+  an exact full-precision measurement. The logged ratio and cosine describe
+  the sampled main-output space, not full shared-parameter gradients.
+  code/losses.py:109-112 weights DS 1,0.5,0.25 and divides by 1.75. Thus the main
+  logits derivative contains only 4/7 of the main segmentation-head objective;
+  sibling DS paths are excluded. Classification/guidance objectives and the
+  optimizer's moments/clipping are not represented by that ratio.
+  code/train.py:166-170 puts all non-classifier parameters, including gau_final,
+  in segmentation_parameters. Its aggregate gradient norm (:272) cannot attribute
+  gradients to the segmentation loss alone. Default 250-step probing with 125
+  steps/epoch observes the first batch of alternate epochs, not all batches.
+
+Prepared companion: ops/diagnose_gaussian.py
+  This independent script does not edit frozen code, create an optimizer, call
+  backward(), update weights/BN, select checkpoints or start training. --plan
+  uses only the standard library; missing local inputs are reported explicitly.
+  --cpu-readiness imports dependencies and validates checkpoint/config/cache
+  identity on CPU, but performs no forward pass and never initializes CUDA.
+  Actual diagnostics must be explicitly invoked later; default device is CPU.
+  The script uses fixed original training-sampler indices, stratified to obtain
+  two patches per each of the 28 training patients (56 by default). Index/seed/
+  bank epoch are fixed before looking at GT. Frozen CohortDataset supplies the
+  same sampling policy and targets; geometric/positive sampling can use GT as
+  it does in training. CT augmentation is disabled. This is not an estimate of
+  the naturally sampled training-patch population or an independent test bank.
+  The saved model is in eval mode. CT alone enters its forward. FP32 detached
+  logits then feed the frozen Gaussian head and objective for output derivatives.
+  These are eval-mode, batch-one, FP32 diagnostics, not actual training updates.
+  Common=(dL/dz0+dL/dz1)/sqrt(2); margin=(dL/dz1-dL/dz0)/sqrt(2). Energies,
+  Gaussian/segmentation norm ratios and cosine are recorded in these bases.
+  Report MSE and both constant baselines over all voxels, GT foreground, all
+  background, outside-GT shells (0,1]mm and (1,3]mm, and background >3mm.
+  Empty-patch shells are empty and distance to foreground is treated as infinity.
+  No shell extends outside the patch. Correlations compare foreground probability
+  and Gaussian prediction against the cached field, both globally and within GT.
+  Correlation is descriptive and cannot establish connectivity or benefit.
+  Source/script/checkpoint/config/manifest hashes, seed, sampler, patch starts,
+  bank indices, patients, checkpoint epoch, lambda and limitations are retained.
+
+Usage from fidelity_v2 root
+  python ops/diagnose_gaussian.py --checkpoint /path/to/training/final.pt \
+    --manifest /path/to/cache/manifest.json --plan
+  python ops/diagnose_gaussian.py --checkpoint /path/to/training/final.pt \
+    --manifest /path/to/cache/manifest.json --cpu-readiness
+  Explicit future diagnostic: add --output /fresh/diagnostic/folder --device cpu.
+  GPU diagnostics require an explicit later --device cuda invocation with no
+  concurrent GPU workload. No such diagnostic was executed during preparation.
+
+Readiness and reproducibility update (2026-10-14)
+  The independent script now pins ROOT to its code.parent and verifies the
+  deterministic28/4 split and saved checkpoint/config identities. Its real bank
+  records dtype/shape/content SHA of CT, label, field, priors, start coordinates
+  and sampling stratum. --reference-bank requires an identical complete bank;
+  each patch is verified again before forward. CUDA uses the same nonblocking
+  segmentation-stage lock as the formal run and two GPU-occupancy checks.
+  CPU-readiness was executed on the server using immutable epoch070 weights:
+  headers/metadata and finite model parameters passed, source remained bc8dd9dd,
+  CUDA was not initialized, and the active GPU PID remained1943 before/after.
+  This is not a forward, field/gradient measurement, actual bank-content check,
+  or validation Dice/ASSD. The full readiness receipt is preserved locally.
+  Region gradient energy groups logits by coordinate; a3x3x3 convolution can
+  carry loss contributions from neighbouring voxels into that region. A common
+  logit direction leaves softmax unchanged locally but can still train shared
+  parameters, so it cannot establish that the whole-network signal is useless.
+
+Minimum next decision
+  Finish the unchanged 200-epoch run and internal-four Dice/ASSD trajectory.
+  Compare field/region errors with constant baselines and inspect gradient
+  common/margin decomposition before proposing a lambda change. If still
+  necessary, predeclare a separate same-architecture, same-init/budget/sampling/DS
+  lambda control. Never change a live/resumed run's objective or label a changed
+  foreground-normalized MSE as the unchanged historical loss.

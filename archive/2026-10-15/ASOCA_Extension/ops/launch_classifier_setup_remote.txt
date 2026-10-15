@@ -1,0 +1,20 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,time
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+status=r/'classifier_setup_status.json'
+if status.exists():raise RuntimeError('Classifier setup already has durable state; inspect before restarting')
+with (r/'logs/classifier_setup.log').open('a') as log:
+ p=subprocess.Popen(['/root/miniconda3/bin/python','-u',str(r/'ops/start_classifier_stage.py'),'--root',str(r)],
+                    cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+for _ in range(30):
+ if status.exists():
+  state=json.loads(status.read_text());print(json.dumps({k:state.get(k) for k in ['status','pid','phase','error']}));break
+ if p.poll() is not None:
+  print((r/'logs/classifier_setup.log').read_text(errors='replace')[-4000:]);raise RuntimeError('Setup controller exited during startup')
+ time.sleep(.5)
+else:raise RuntimeError('Setup did not create state')
+print('ENV', (r/'ENV_READY.json').read_text() if (r/'ENV_READY.json').exists() else 'installing')
+f=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014/packed_publish_status.json')
+print('DATA',f.read_text() if f.exists() else 'waiting')
+PY

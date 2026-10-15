@@ -1,0 +1,138 @@
+{
+  "captured_at_utc": "2026-10-14T11:46:06.859394+00:00",
+  "launch": {
+    "captured_at_utc": "2026-10-14T10:45:17.021462+00:00",
+    "parent_pid": 32758,
+    "argv": [
+      "/root/miniconda3/envs/gta-asoca311/bin/python",
+      "-B",
+      "-u",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py"
+    ],
+    "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+    "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+    "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/GAUSSIAN_REGION_BALANCE_FORMAL_20261014.log",
+    "role": "FORMAL_B_25000_UPDATE_RUN_LAUNCHED_NOT_COMPLETE",
+    "disk_free_bytes_before": 56538267648
+  },
+  "status": {
+    "status": "formal_training",
+    "controller_pid": 32758,
+    "child_pid": 32897,
+    "updated_at_utc": "2026-10-14T11:46:06.312072+00:00",
+    "gpu_lock_acquired": true,
+    "error": null,
+    "stage_wall_seconds": 3640.1617439836264
+  },
+  "parent_process": {
+    "pid": 32758,
+    "alive": true,
+    "cmdline": "/root/miniconda3/envs/gta-asoca311/bin/python -B -u /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py "
+  },
+  "child_process": {
+    "pid": 32897,
+    "alive": true,
+    "cmdline": "/root/miniconda3/envs/gta-asoca311/bin/python -u /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py --worker "
+  },
+  "epochs_completed": 51,
+  "latest_epoch": {
+    "epoch": 50,
+    "loss": 0.5318634901046753,
+    "seconds": 73.53300625830889,
+    "stage": "partial",
+    "iterations": 125,
+    "gaussian_lambda": 10.0,
+    "gaussian_lambda_configured": 10.0,
+    "classifier_lambda": 0.1,
+    "lr_by_group": {
+      "segmentation": 0.00023549339542298714,
+      "classifier": 2.3549339542298714e-05
+    },
+    "component_means": {
+      "classifier_gradient_norm": 2.9056989698410036,
+      "classifier_lambda": 0.1,
+      "gaussian": 0.002179164732573554,
+      "guidance_lambda": 0.1,
+      "generation_focal": 0.5418820561468601,
+      "location_focal": 0.33055769616086034,
+      "gaussian_weighted": 0.021791647294536233,
+      "segmentation": 0.319517624437809,
+      "segmentation_head_0": 0.3211857528090477,
+      "segmentation_gradient_norm": 3.8110170769691467,
+      "classifier_weight": 0.1,
+      "guidance_map": 0.0018924252805300058,
+      "guidance_weighted": 0.00018924253137083725,
+      "classification_weighted": 0.19036497522890566,
+      "classification": 1.9036497185230254,
+      "gaussian_lambda": 10.0,
+      "structure_focal": 0.6048295904174447,
+      "segmentation_head_2": 0.3619782117605209,
+      "segmentation_head_1": 0.29495101231336596,
+      "segmentation_weighted": 0.319517624437809,
+      "structure_correctness": 0.2479311674996643
+    },
+    "gradient_probe_count": 1,
+    "gpu_peak_GiB": 13.704875946044922
+  },
+  "actual_config_brief": {
+    "method": "gta",
+    "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "gaussian_weight": 10.0,
+    "gaussian_late_weight": null,
+    "epochs": 200,
+    "steps": 125,
+    "no_ds": false,
+    "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training"
+  },
+  "actual_theta0_brief": {
+    "state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+    "tensor_count": 327,
+    "model_state_and_RNG_unchanged": true,
+    "historical_main_theta0_verified": false,
+    "actual_config_binding": {
+      "status": "actual_config_bound_to_sealed_B_protocol",
+      "actual_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+      "actual_config_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+      "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+      "gaussian_reduction": {
+        "id": "per_patch_equal_fg_bg_present_mean_v1",
+        "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+        "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+        "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+        "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+        "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+        "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+        "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+        "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+        "target_unchanged": "t=.5+.5*cached_G",
+        "lambda_unchanged": 10.0,
+        "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+        "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+        "not_changed": [
+          "Gaussian field/support/normalization",
+          "classifier labels",
+          "sampler",
+          "architecture/parameter shapes",
+          "DS4/7,2/7,1/7",
+          "50 frozen /20 partial /130 joint",
+          "optimizer/lr/clip12",
+          "200x125 updates",
+          "prediction/evaluation interface"
+        ],
+        "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+      },
+      "actual_config_has_gaussian_reduction_field": false,
+      "binding": "Exact actual config bytes plus source/file SHA map bind the separate immutable loss protocol; no config/checkpoint edits.",
+      "allowed_actual_config_differences_from_A": [
+        "output",
+        "source_sha256",
+        "source_files_sha256"
+      ],
+      "same_25000_updates": true,
+      "training_started_by_auditor": false
+    }
+  },
+  "GPU": "32897, 18768 MiB",
+  "controller_log_tail": "",
+  "training_log_tail": "29901739616, \"components\": {\"segmentation\": 0.19460178911685944, \"segmentation_weighted\": 0.19460178911685944, \"gaussian_lambda\": 10.0, \"guidance_lambda\": 0.1, \"classifier_lambda\": 0.1, \"segmentation_head_0\": 0.17334258556365967, \"segmentation_head_1\": 0.19458776712417603, \"segmentation_head_2\": 0.279666543006897, \"generation_focal\": 0.5027859210968018, \"structure_focal\": 0.2577875256538391, \"location_focal\": 0.36265623569488525, \"structure_correctness\": 0.5489208698272705, \"classification\": 1.5265839099884033, \"classifier_weight\": 0.1, \"classification_weighted\": 0.1526583880186081, \"guidance_map\": 0.002567740622907877, \"guidance_weighted\": 0.0002567740739323199, \"gaussian\": 0.0012967311777174473, \"gaussian_weighted\": 0.012967311777174473}, \"segmentation_gradient_norm\": 0.8735268712043762, \"classifier_gradient_norm\": 2.4671454429626465}\n{\"epoch\": 51, \"step\": 75, \"stage\": \"partial\", \"loss\": 0.653895914554596, \"segmentation_lr\": 0.00023462841961440197, \"components\": {\"segmentation\": 0.5507377982139587, \"segmentation_weighted\": 0.5507377982139587, \"gaussian_lambda\": 10.0, \"guidance_lambda\": 0.1, \"classifier_lambda\": 0.1, \"segmentation_head_0\": 0.757350742816925, \"segmentation_head_1\": 0.26573309302330017, \"segmentation_head_2\": 0.2942952513694763, \"generation_focal\": 0.27712398767471313, \"structure_focal\": 0.16527092456817627, \"location_focal\": 0.14173059165477753, \"structure_correctness\": 0.5821447968482971, \"classification\": 0.9578334093093872, \"classifier_weight\": 0.1, \"classification_weighted\": 0.09578334540128708, \"guidance_map\": 0.0008816900081001222, \"guidance_weighted\": 8.81689993548207e-05, \"gaussian\": 0.0007286628824658692, \"gaussian_weighted\": 0.00728662870824337}, \"segmentation_gradient_norm\": 2.3030426502227783, \"classifier_gradient_norm\": 1.5108160972595215}\n"
+}

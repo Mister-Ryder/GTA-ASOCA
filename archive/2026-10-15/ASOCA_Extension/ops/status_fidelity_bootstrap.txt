@@ -1,0 +1,14 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json,subprocess
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+d=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+for p in [d/'publish_status.json',d/'DATA_READY.json',r/'ENV_READY.json',r/'bootstrap_pid.json']:
+ print('STATUS',str(p),p.read_text() if p.exists() else 'not ready')
+p=r/'logs/bootstrap.log'
+if p.exists():print('ENV_LOG_TAIL\n'+'\n'.join(p.read_text(errors='replace').splitlines()[-20:]))
+p=d/'publish.log'
+if p.exists():print('DATA_LOG_TAIL\n'+'\n'.join(p.read_text(errors='replace').splitlines()[-10:]))
+print('GPU',subprocess.getoutput('nvidia-smi --query-compute-apps=pid,process_name --format=csv,noheader'))
+print('DISK',subprocess.getoutput('df -h /root /root/autodl-tmp /root/autodl-fs'))
+PY

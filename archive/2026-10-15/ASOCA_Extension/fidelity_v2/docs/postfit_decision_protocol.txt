@@ -1,0 +1,78 @@
+GTA coronary development: decisions after the current fixed-budget runs
+2026-10-14. This records the next decision; it does not authorize a changed
+running objective, fivefold evaluation, or a claim of new model performance.
+
+Evidence to collect
+  GTA and common-recipe U-Net each use 25,000 segmentation updates on the same
+  internal28, with the same four reserved patients. Read the verified fixed-final
+  result and the 20-point internal-four trajectory. Retain every patient's Dice,
+  pooled physical-mm ASSD, empty-prediction/undefined-distance status, and the
+  recorded structural diagnostics. An undefined distance prevents a complete-
+  cohort ASSD mean; it must not disappear from a comparison.
+  Keep training losses, effective lambda, learning-rate groups and gradients
+  beside the validation observations. Epoch51 activates auxiliary losses and
+  partial classifier training; epoch71 expands the trainable classifier blocks
+  while keeping those loss coefficients. Interpret these changes through the
+  separate losses and stages. Compare segmentation loss separately; even its
+  magnitude is not directly matched to U-Net because GTA adds anatomy weights.
+
+Comparison and reporting
+  Compare fixed-final GTA and U-Net on identical patient identities and grids.
+  Record individual paired differences and cohort descriptive means, with clear
+  direction (Dice larger, ASSD smaller). Four patients are development evidence;
+  their patient standard deviation is not a fivefold standard deviation.
+  GTA-versus-U-Net includes architecture/capacity, airway-backbone initialization
+  and the independent 5,120-update classifier pretraining. It does not isolate
+  the effect of the prior. Preserve these compute and initialization differences.
+  The literature ASOCA values and the previously exposed original-eight results
+  remain separate reference columns with their own splits, recipes and budgets.
+  No pooling of internal-four and original-eight means, or substitution of old
+  patient variability for a literature fold variability, is allowed.
+
+When more training is a useful next experiment
+  Inspect several late checkpoints and all four patients. Continued late Dice
+  improvement together with reduced ASSD, after the full joint stage has had
+  time to train, supports testing a longer budget. A decreasing training loss
+  with a flat/worse validation trajectory alone does not support extending it.
+  If late checkpoint improvements trade Dice against ASSD or depend on one
+  patient, preserve that uncertainty rather than declaring convergence or gain.
+  Any longer run needs an explicit new budget, source/config identity, parent
+  weight/optimizer and patient provenance, and accounted additional updates.
+  The current strict resume policy does not permit silently changing 200 to400
+  epochs in the existing run directory or restarting its schedule unrecorded.
+
+When changing structural regularization is useful
+  Use the independent fixed training-patch diagnostic after resource and input
+  checks. Compare actual foreground/background/shell MSE with the constant0.5
+  and bank-optimal constant baselines; inspect Gaussian gradient energy in
+  common and margin coordinates. The bank's CT/label/field/prior contents must
+  match across checkpoint comparisons. This bank is not a validation/test set.
+  A weak all-logit norm is not a measured full-network effect. A large common-
+  mode energy can fit the auxiliary field without directly changing foreground
+  probability; it is a possible mechanism requiring measured diagnostics.
+  Increasing lambda scales a fixed derivative but does not necessarily improve
+  its useful direction, sparse branch supervision, optimizer update or metrics.
+  Change the late coefficient only as a separately recorded candidate justified
+  by these observations. A changed target normalization or region-weighted MSE
+  must be described as a changed loss, not as the unchanged historical recipe.
+
+Minimum attribution control
+  The current full GTA allocation can be compared with itself at Gaussian
+  lambda10 versus0, retaining the same source, initial tensors, seeds, sampler,
+  DS, anatomy weights, classifier checkpoint/budget and staged training. Keep
+  the Gaussian module allocated in both arms. This isolates the regularization
+  contribution conditional on the rest of this recipe; module-removal controls
+  and a U-Net comparison answer broader questions. The existing notes describe
+  how to verify identical initialization before any such run.
+
+Classifier role
+  Its fixed-final pretraining serves multitask stability and segmentation.
+  Classification accuracy and confusion tables remain descriptive analyses.
+  They do not select whether GTA is allowed to run and cannot replace Dice/ASSD.
+
+Current stopping point for an automatic evaluator
+  The current controllers finish their verified internal-four curves and stop.
+  They do not launch longer training, increase lambda, select on original eight,
+  or schedule fivefold studies. The active goal resumes scientific decisions
+  from the resulting evidence; completion of a controller is not completion of
+  the AEI research objective.

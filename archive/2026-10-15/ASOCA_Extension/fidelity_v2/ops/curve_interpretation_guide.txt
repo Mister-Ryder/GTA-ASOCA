@@ -1,0 +1,34 @@
+曲线解读与训练节奏（2026-10-14）
+
+plot_learning_curves.py只读取实测history/日志/validation，不执行训练。
+各run分别输出PNG、SVG、epoch_summary.csv、curve_manifest.json和curve_notes.txt。
+例：python ops/plot_learning_curves.py --run prior=/project/prior/training
+    --run gta=/project/gta/training --validation gta=/project/gta/validation_history.jsonl
+    --steps-log gta=/project/logs/gta.log --output /project/curves
+无matplotlib时可加--tables-only；源epoch默认0-based，图显示1-based。
+
+raw面板展示未乘全局系数的分项；weighted面板展示记录的加权贡献与总loss。
+若某项未被记录，明确missing，不按总loss猜分解。日志每25步抽样的均值
+标成sampled logs，不能冒充完整epoch平均。不同损失函数/采样/训练阶段
+的总loss没有直接同尺度排名含义；旧冷启动200epoch只有总loss，可单独
+画出实测总loss，其分类验证/内部4例轨迹仍为missing，不补造GT验证曲线。
+
+先判断内部4例Dice是否停滞，同时ASSD是否稳定或改善，再考虑延长预算。
+训练loss下降而内部Dice/ASSD变差提示过拟合或目标不匹配；仅训练loss
+仍下降不构成延长训练的证据。先固定方法与诊断节奏，再预先声明新增
+预算；不能在原8例上无限迭代epoch/正则并继续称其独立test。
+
+后期正则增大需看lambda曲线、raw与weighted Gaussian变化，以及共享
+输出梯度比/余弦。加权Gaussian压过分割梯度且验证变差时，应先诊断，
+不能只因原Gaussian loss很小就加大系数。共享main-logits导数不含DS
+分支；不同参数组梯度norm也不能直接证明某损失主导完整网络。
+
+分类器看positive balanced accuracy与训练majority baseline的差、各头
+混淆/缺失类别及非空样本支持。loss下降或总体accuracy高可能主要来自
+背景，不能替代正类学习证据。patch数不是独立患者数。
+
+轨迹中的定期checkpoint只在内部4例用于诊断；记录epoch/角色/N=4。
+内部4例若被donor或train32重训曝光，标diagnostic only，停止用其选择。
+原8例待方案冻结后仅一次development verification；未来正式验证另定。
+任一距离未定义就不提供完整4例ASSD均值，不删病例补一条漂亮曲线。
+尚无验证点时应报告证据缺失，不据此宣布训练已经收敛或应继续多久。

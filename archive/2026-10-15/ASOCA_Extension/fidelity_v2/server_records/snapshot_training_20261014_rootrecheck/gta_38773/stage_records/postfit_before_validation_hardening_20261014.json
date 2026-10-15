@@ -1,0 +1,8 @@
+{
+  "status": "interrupted",
+  "pid": 5344,
+  "role": "internal-four development only; no extra training or folds",
+  "phase": "stopped_for_inspection",
+  "updated_at": "2026-10-14T05:30:37.412305+00:00",
+  "error": "KeyboardInterrupt('Signal 15')"
+}

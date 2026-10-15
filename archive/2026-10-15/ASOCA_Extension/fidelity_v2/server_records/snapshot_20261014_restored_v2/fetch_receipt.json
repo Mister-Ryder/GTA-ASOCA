@@ -1,0 +1,47 @@
+{
+  "scope": "bounded text records only; no checkpoints/raw data/credentials",
+  "limit_bytes_total": 134217728,
+  "logs_tail_bytes": 20000,
+  "fetcher_sha256": "76ba0f87fc0a376781e474286f2492262f1a84cd1d8ebb154a950b3633dfcf00",
+  "status": "completed",
+  "sources": [
+    {
+      "port": 38773,
+      "remote_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+      "prefix": "fidelity",
+      "archive": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_20261014_restored_v2\\archives\\fidelity_records_716c0a4ec4a04446bdc90591240b2eb8.tar.gz",
+      "remote_python": "/root/miniconda3/envs/gta-asoca311/bin/python",
+      "remote_python_version": [
+        3,
+        11,
+        17
+      ],
+      "sha256": "d9c9f79cab0e25dad6d0e116fb1190e79eb4a6ac4a909b4d7708bc666dfcfc31",
+      "size_bytes": 330787,
+      "uncompressed_bytes": 1979354,
+      "file_count": 54,
+      "redacted_file_count": 0,
+      "remote_temporary_archive_removed": true,
+      "live_files_changed_during_capture": 0
+    },
+    {
+      "port": 17552,
+      "remote_root": "/root/autodl-tmp/ASOCA_GTAirway_20261013",
+      "prefix": "native_reference",
+      "archive": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_20261014_restored_v2\\archives\\native_records_1bec8290b42f4c778ef6e5fe6ec1c999.tar.gz",
+      "remote_python": "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python",
+      "remote_python_version": [
+        3,
+        11,
+        17
+      ],
+      "sha256": "704c4a81cd5db2698ca0bf955d3de5a8584de3f9e3480345d885d9f5ce1dd6df",
+      "size_bytes": 9000,
+      "uncompressed_bytes": 46937,
+      "file_count": 15,
+      "redacted_file_count": 0,
+      "remote_temporary_archive_removed": true,
+      "live_files_changed_during_capture": 0
+    }
+  ]
+}

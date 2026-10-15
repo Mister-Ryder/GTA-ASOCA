@@ -1,0 +1,33 @@
+局部先验候选：只读设计，2026-10-14
+
+状态：仅提出后续独立版本候选。当前 GTA200、既有先验缓存、冻结 code/、分类器 stage 和公开 release 全部不变；没有新训练或服务器操作。ASOCA 的人工分割标签仍是二值冠脉腔，以下三头七类是派生几何属性，不是新增心脏解剖标注。
+
+1. 当前粒度问题有源码依据，但尚未证明它导致当前 Dice/ASSD 结果。
+128³@0.5 mm 是64 mm立方输入。data.py:56–86 在整个块中选前景体素最多的 branch，再取该 branch 的众数 depth；structure 使用全块 branch_count/foreground_volume 复杂度；location 使用 CT 全卷 z 三等分、x 左右及块中心。每块只有一个三元组。Classifier（historical/func/AnatomicalClassifier.py:109–151）融合成256×8³，再全局 avg/max→512维→三个既有 MLP。这会丢掉块内少数细分支的属性异质性；小血管并不是因为标签为“多类别”而被分别监督。
+
+2. 最小单区域候选：保留128输入和所有参数形状，改变分类读出/监督的空间支持。
+可先由尺度审计在以下二者中预先选一个；不同时扫描两者并据内部四例反复择优。
+
+候选ROI     输入各轴索引       物理边长     fused8³名义窗口     avg/max后形状
+中央96³     [16:112]           48 mm        [1:7]³，6³         256+256=512
+中央64³     [32:96]            32 mm        [2:6]³，4³         256+256=512
+
+encoder、多尺度、SE、fusion、三个512→256→7 heads、guidance_head和分割骨干保持原参数形状。对 fused_feat 的中央窗口做 avg/max，再送原三头。label/branch_id/depth 使用同一输入ROI；调用同一 patch_priors 时 start_zyx 必须加16或32，full_shape仍为整卷CT，空ROI仍三头0。depth来自全卷预生成图，不能在ROI内重新定根/BFS。中央ROI与全块的中心相同，因此非空时 location 的1..6不变；变化主要是空类与局部generation/structure。它不等于LAD/LCX/RCA分类。
+
+这可以保持state_dict形状和conditional接口，但已经改变标签空间支持、特征读出、损失和条件输出的分布，不能声称数学方法完全相同。当前whole-patch classifier final80仅可作为显式跨粒度初始化来源；新版本必须声明是否重置三头/继续局部预训练，不把旧权重当作已验证的局部分类器。
+
+3. “对应ROI”只能称名义分箱对齐，不能称严格局部特征。
+四次stride2使deep步幅16，128→8。k3/p1编码器的deep名义感受野为61体素，deep采样中心为16q；32→8及16→8的 align_corners=False 插值分支中心分别为16q+6与16q+4。多尺度融合的同一bin因此没有统一精确输入中心。SE的全局池化（同文件:35–39）以及训练BN又引入整块上下文；中央窗口仍能读取ROI外信息。
+上述[2:6]/[1:7]是可实现的粗粒度局部读出，不是对中央mask逐点严格对齐的特征裁切。用坐标/ramp、padding边界及固定patch的ROI覆盖检查可审计这一约定。若要严格物理坐标对齐，需要另行设计每尺度重采样/坐标权重，会扩大改动，本轮候选不做。
+
+4. 多区域监督与当前conditional模块的兼容边界。
+现接口需要各头 preds[B] 与 probs[B,7]；Generation/Structure/Location guidance 分别在 AnatomicalFusionModules.py:106/112、208/217、297–319 把每例标量/置信度广播到整幅特征。直接传[B,K]或[B,K,7]不能兼容，也无法表示某个区域独有的条件图。
+若后续需要多个ROI，最小兼容方式是共享现有三头，增加训练期 local_logits[B,K,7] 的辅助损失并按K归一化；保留既有global或指定central输出[B,7]供条件模块。局部读出复用同一次encoder/SE/fusion的fused_feat，不能为取ROI特征再跑一次encoder而更新第二遍BN。当前forward没有返回fused_feat，独立新版本需显式增加训练输出键或独立读出接口，保留原输出/参数名。它增加区域监督任务但不新增分类参数，应称“全局上下文条件下的区域辅助监督”；不应被描述为已有空间条件引导。把局部预测拼成空间map、融合多ROI预测或逐ROI调用guidance，会改变条件融合规则和推理成本，需独立方法版本；不能以“参数数量不变”掩盖这些变化。
+
+5. 先验标签粒度与分割加权需分开归因。
+losses.py:101–105 的generation权重(1/1.2/1.5)与structure==3的1.3乘子是每块一个标量；Dice+CE在:56–67对整个块算损失后乘该标量，三个DS头也用同一权重(:109–112)。因此整块主导branch可能让细支达不到高代权重；即使得到高权重，它也同时放大块内粗支、背景和其他体素，不是细支的局部权重。复杂块的structure4..6也不会触发仅class3的乘子。这是另一个可能的细支稀释通路。
+首个局部分类候选宜保留原whole-patch priors_global 作为分割sample_weights，另以 priors_local 监督三头，从而只检验属性读出粒度；否则局部分类与分割重加权同时变化，难以解释。若另试ROI空间权重或按branch/半径的权重，应单独预声明并保持Gaussian目标/λ、sampler、DS和预算不变。分类准确率仍只用于解释学习情况；分割主指标是Dice和pooled ASSD。
+
+6. 新训练前的最小证据门槛。
+先在同一固定patch bank、同一中心比较128/96/64：每例前景率、branch数、主导branch占比、depth/半径分布、类覆盖/空类比例、局部分叉与structure类别一致性、原/局部标签变化率；报告患者层面统计与多数类基线。尤其检查裁小ROI后branch_count及log(volume)共同变化导致的structure阈值漂移，不先改阈值。训练mask可生成训练目标；内部四例的中心必须仍由图像确定，不能为获得阳性标签用GT选中心。
+结合当前固定预算GTA200的内部四例Dice/ASSD、细中心线诊断与Gaussian/梯度报告，判断是否值得建立独立候选。候选若获授权，冻结新源码、ROI约定、初始化、28/4患者隔离和附加预训练成本，再开展一次预声明比较。当前正在运行的GTA200不取消；原外部八例不作周期选择，不自动增加epochs/λ或运行五折。

@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "controller_pid": 32758,
+  "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "started_at_utc": "2026-10-14T10:45:17.167560+00:00",
+  "gpu_lock_acquired": false,
+  "children": [
+    {
+      "stage": "formal_training",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "-u",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py",
+        "--worker"
+      ],
+      "started_at_utc": "2026-10-14T10:45:26.150291+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/formal_training.log",
+      "pid": 32897,
+      "pgid": 32897,
+      "returncode": 0,
+      "wall_seconds": 14980.709649734199,
+      "completed_at_utc": "2026-10-14T14:55:06.859975+00:00"
+    },
+    {
+      "stage": "internal4_trajectory",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "-u",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/variants/gaussian_region_balance_v1/code/evaluate_trajectory.py",
+        "--training",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+        "--manifest",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+        "--raw-root",
+        "/autodl-fs/data/datasets/ASOCA_GTA_20261014/raw",
+        "--output",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory",
+        "--python",
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "--sw-batch-size",
+        "1"
+      ],
+      "started_at_utc": "2026-10-14T14:55:16.104565+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/internal4_trajectory.log",
+      "pid": 48364,
+      "pgid": 48364,
+      "returncode": 0,
+      "wall_seconds": 6340.340391293168,
+      "completed_at_utc": "2026-10-14T16:40:56.445033+00:00"
+    },
+    {
+      "stage": "plot_curves",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/plot_learning_curves.py",
+        "--run",
+        "development=/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+        "--validation",
+        "development=/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/validation_history.jsonl",
+        "--output",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves"
+      ],
+      "started_at_utc": "2026-10-14T16:40:56.447918+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/plot_curves.log",
+      "pid": 62350,
+      "pgid": 62350,
+      "returncode": 0,
+      "wall_seconds": 20.002634912729263,
+      "completed_at_utc": "2026-10-14T16:41:16.450647+00:00"
+    }
+  ],
+  "updated_at_utc": "2026-10-14T16:41:25.514549+00:00",
+  "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+  "child_pid": null,
+  "stage_wall_seconds": 0.0014448463916778564,
+  "completion_sha256": "89e03018a32dbea73af6bf5467e955b4a67c0d5f8b850c588d3d76d520483928",
+  "owned_child_exit_confirmed": true,
+  "locks_released_at_utc": "2026-10-14T16:41:25.514541+00:00"
+}

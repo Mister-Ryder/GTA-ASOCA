@@ -1,0 +1,27 @@
+{
+  "role": "FIGURE_OF_ACTUAL_VERIFIED_DEVELOPMENT_RECORDS_NOT_NEW_EXPERIMENT",
+  "created_at_utc": "2026-10-14T11:23:03.041114+00:00",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "n_recorded_points_per_run": 20,
+  "source_sha256": {
+    "gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\validation_curve.csv": "90a34f81aa81906d2b5183d6d3b0425113c8faebf3bf8d5e2064bc32907202b1",
+    "unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\validation_curve.csv": "b12dc0e038f4fe159f5365db34af4ea7f5d1b6f1d38b36ebe8c7208ee6c49506",
+    "gta_canonical_acceptance_20261014\\canonical_acceptance_and_pair.json": "e8584fb3e12b6fea0936655916dee64583710b6b4702c494d61291db93570619"
+  },
+  "checkpoint_selection": "fixed final",
+  "formal_final_test": false,
+  "source_files_unchanged": true,
+  "plotter_sha256": "45e86b90807e0e4aafffa7de94688f1ea86ac068c9d31b4c2b282aa0f6b3bf14",
+  "artifacts": {
+    "A_U_verified_trajectories.pdf": "b4c410b1c773e2a34c2076fee7af7c1246384e6686693c0a9d3663126cd4c94f",
+    "A_U_verified_trajectories.png": "c49316f07a6adb97a2248114900d0b145f57aad192c14a686185d9928ed5dcf7",
+    "A_U_verified_trajectories.svg": "84ee027f4ae7db8512ed312c8e4aef4dfe591063cd3b110060f01a7c0013a37b",
+    "figure_notes.txt": "04f8121d3848a53b3224af48f63680f66f220675e06a91f6a125f58836643fa4",
+    "plotted_measurements.csv": "4f34fa123654bebd39139148b204aada6e21ea62369dc46ffc2b3335e0bac7c7"
+  }
+}

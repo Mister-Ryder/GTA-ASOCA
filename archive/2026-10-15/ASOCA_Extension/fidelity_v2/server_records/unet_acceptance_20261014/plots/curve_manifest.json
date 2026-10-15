@@ -1,0 +1,126 @@
+{
+  "development_only": true,
+  "formal_final_test": false,
+  "epoch_display": "1-based; source epoch convention recorded below",
+  "source_epoch_base": 0,
+  "interpolated_validation": false,
+  "artifacts": [
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\plots\\unet_learning_curves.png",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\plots\\unet_learning_curves.svg"
+  ],
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+  "runs": [
+    {
+      "name": "unet",
+      "method": "unet",
+      "selection_role": "internal-four model development",
+      "n_training_cases": 28,
+      "selection_case_ids": [
+        "Diseased_10",
+        "Diseased_20",
+        "Normal_12",
+        "Normal_3"
+      ],
+      "n_recorded_epochs": 200,
+      "n_internal_dice_points": 20,
+      "n_internal_assd_points": 20,
+      "warnings": [
+        "No positive-balanced-accuracy/majority-baseline trajectory; classifier usefulness remains unverified by this history"
+      ],
+      "sources": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\plot_inputs\\validation_history_localpaths.jsonl",
+          "sha256": "dba501dc9e29dae7e88aefdca362eb478e3ff841fbd678d9ad743ff4e7142bed"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch010\\summary.json",
+          "sha256": "a933e67d2449d2a2bdcc8314c57bcb49c7df134775e4c50bee4c396da14875d6"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch020\\summary.json",
+          "sha256": "94459c40f85cde498532b061f71658aa3e48c7f1e72809c29f872d561960d644"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch030\\summary.json",
+          "sha256": "bbae9eefd730c47332dc375dfd11573f14f7a176669af86ff568d07505286317"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch040\\summary.json",
+          "sha256": "320bbf8d86b710a83b553b632552bfed2a73d30e4bab5e8fdfb1f7c1c2b328f1"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch050\\summary.json",
+          "sha256": "8fdcbdd718f553691c34774154db5bd505741ac840c82e7407e91020cd5b97c4"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch060\\summary.json",
+          "sha256": "54f7a160aab80bdd940ade6727cbc9d23293265f27acb9b57bf62801a0344abe"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch070\\summary.json",
+          "sha256": "83f7a5a163cdb1c1a0be38d6d07d65f04c087d935787dd089873323638829c28"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch080\\summary.json",
+          "sha256": "1f8b26a04abe0db3832225d7d68d6c651165fa6a1e5243b3e553ad2e87c0f05f"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch090\\summary.json",
+          "sha256": "808810935c6e9a6770c878d1188ebcf0d2675adc4a4b111ea9f9edd5132653a1"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch100\\summary.json",
+          "sha256": "a4f51b39b0e5e685d3d945c6c51374529329ff4b6afac50e25a3774ff2d8edbc"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch110\\summary.json",
+          "sha256": "0ba5753671baaf590251479377b3892c2854ce759453fce65474c9da7a3ca176"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch120\\summary.json",
+          "sha256": "2615ee4d3cfc887be0f8eff45ff5215fc714155dc5c01eeddb8d516c08b43e56"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch130\\summary.json",
+          "sha256": "8e94f7add359b40c4a6e178ee66dffa6b06699f7dc41ceb7e2d444f9346934ae"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch140\\summary.json",
+          "sha256": "c12702ecbd9d93ed0d78ba9fef0cd0315548db49727bbb53f0a5df1db23efd36"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch150\\summary.json",
+          "sha256": "5151f64cd11120167fc2da173550551f596658d8081591c020b03e4d7845b0f1"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch160\\summary.json",
+          "sha256": "bb900afb0b774702b98c3f381874421c58ed9ef12f33e94ff3c0d7e7fb12998a"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch170\\summary.json",
+          "sha256": "91271a9185aceeac852b8c738d65dd6985020bc9537689e9360df3f51dee728a"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch180\\summary.json",
+          "sha256": "b52bb17de6427281fcf8577964ac22d4566aacd9da526816834abf0709c9c7c9"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\epoch190\\summary.json",
+          "sha256": "62c3d20ff966154b7c99f1a12cfcf5206710c47ba40739f53d060133fa0c066c"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\summary.json",
+          "sha256": "a4c9218f433842c3989ec96790b00bbd98f0b39c088122ad8430498e5e0a3a45"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\config.json",
+          "sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\history.jsonl",
+          "sha256": "b3a3debbb3a2552208aa617487b47437226913c844534e13cde0073249fe7a53"
+        }
+      ]
+    }
+  ]
+}

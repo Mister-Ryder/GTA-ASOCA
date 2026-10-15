@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "pid": 1582,
+  "recipe": "run_main_smoke.sh",
+  "tag": "main_smoke128",
+  "role": "single-fold method development; classification accuracy diagnostic only",
+  "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+  "output_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results",
+  "started_at": "2026-10-14T04:27:52.719597+00:00",
+  "command": [
+    "bash",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/configs/run_main_smoke.sh"
+  ],
+  "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/logs/main_smoke128.log",
+  "updated_at": "2026-10-14T04:28:12.914996+00:00",
+  "training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_mechanical_smoke128/training",
+  "final_sha256": "5a68f4b9158bbccbdc1752d9a274355f06d9a2b8da79f27c6ee5aa397eb13cb7",
+  "segmentation_updates": 6,
+  "return_code": 0
+}

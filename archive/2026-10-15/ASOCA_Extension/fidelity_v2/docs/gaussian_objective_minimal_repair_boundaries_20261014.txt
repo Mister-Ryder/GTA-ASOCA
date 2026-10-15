@@ -1,0 +1,62 @@
+结构场目标的最小单因子候选：只作设计审查，未实施、未训练。
+
+三者共同保留当前GTA、Gaussian卷积head与缓存结构场G；本文件不改变λ、分类器、采样、DS、阶段或训练周期。现有fixed-final Dice/ASSD尚待完成，之后才选择是否做一个候选。B与C互为独立备选，不叠加两项改动；没有新增λ10重跑或五折方案。
+
+实测依据及范围
+
+依据server_records/classifier_scope_20261014/results/gaussian_epoch070_cpu_bank56/summary.json（SHA e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff）与gaussian_independent_review.json。checkpoint为epoch070（0-based69，partial阶段）；训练28患者，每人2块，总56个预先固定standard-sampler块：18foreground、38uniform_image_fov。单批eval-mode FP32 main-logits导数，非实际训练全参数梯度，DS sibling路径不在该共享输出偏导中，但main DS的4/7权重保留。
+
+56块总117,440,512体素中FG168,859，占0.1437826%；7/56块GT前景为空（12.5%）。Gaussian加权梯度在common方向的能量份额61.2451%，margin norm / segmentation margin norm为0.00646828=0.646828%；全norm比为1.0390%，margin cosine约0.00865。61.2%是平方范数能量份额，不是61.2%的梯度幅度，更不是“61.2%参数更新浪费”。各块norm比有差异，不能把pool后的0.647%当每个patch都相同。
+
+已有q对FG的条件MSE为0.00812689，相比常数q=.5的0.03189915降低约74.5%；全场MSE为3.862666e-5，相比常数降低约15.8%。BG贡献约69.75%的总平方误差。因此证据同时显示有非平凡FG场拟合、全场统计受巨大BG体量影响；不能据“小全场loss”断言结构场完全没学会，也不能据FG拟合断言分割收益。
+
+重要支持域：当前G是逐stamp乘GT mask后再按整例最大值归一（prepare_data.py:236–240），不是mask外延续halo的场。实测BG的G均值/平方均值均0，7个空GT块G也全部0。实际目标t=.5+.5G，所以当前BG和空块t=.5。前景内部累加Gaussian可平滑，但乘mask使GT界面处可能有目标跳变；“连续Gaussian场”不等于整个mask边界连续。三种候选均保留这一field及其支持域，不额外修场或修改BG目标。
+
+A：当前全场均匀MSE，作为已有参考
+
+令z=(z_bg,z_fg)为raw main logits，q=σ(K*z+b)，t=.5+.5G。每patch N=128³，L_A=(1/N)Σ_v(q_v−t_v)²；batch均值。训练以现有λ=10乘L_A。
+
+它按体素平均，FG的总权重质量随f=n_F/N变化；小FG块中多数项是t=.5背景。空块仍有效监督，不会被跳过。Gaussian卷积跨GT界面，损失在某区域的来源和导数落在哪些logits坐标是不同问题。已有分区gradient统计按logit位置分区，不能直接当FG-originating/BG-originating损失贡献。
+
+Gaussian接受raw logits，因此可以利用common=(z_bg+z_fg)/√2和margin=(z_fg−z_bg)/√2。common对当前softmax输出局部不敏感，但通过共享参数Jacobian可能影响以后/别处的margin；不能把common能量自动等同无用。A保留当前ASOCA结构场分支的数学形式和raw-logit输入，也保留历史v2该head接口。该等价仅针对分支形式；ASOCA浮点field、数据语义和DS/训练配方已有差异，不能称整方法历史数值完全等价。
+
+B：逐patch前景/背景各自归一MSE，只改变损失归一化
+
+预先固定α_F=α_B=.5。对存在的区域定义M_r=Σ_{v∈r}(q_v−t_v)²/n_r。每patch L_B=[Σ_{r:n_r>0}α_r M_r]/[Σ_{r:n_r>0}α_r]，再对batch取均值。分区仅由训练GT mask确定，只作loss监督，不作为网络输入；q仍从同一raw z计算，G/t不变。
+
+FG/BG都存在时L_B=.5M_F+.5M_B；FG为空时退化为完整M_B，与A该空块一致；BG为空时退化为M_F。不可直接mean(empty)产生NaN，也不可把空块loss置0或丢弃，否则同时改变训练样本分布。当前7个空块会全部保留，target仍.5。按每patch归一，不能无意改成把batch2的FG合并后再归一：后者会让两个patch的权重相互依赖。
+
+λ仍10不等于优化强度不变。在q处、残差相同且两区域存在时，FG像素导数相对A为1/(2f_i)，BG为1/[2(1−f_i)]。仅用本bank pooled f作量级说明，分别约347.75倍和0.50072倍；真实候选使用逐patch f_i，不能把这一数值当实测共享logits/参数梯度倍率。3×3×3卷积使加权残差跨界面传播，重算后margin强度和cosine可上升或下降。很小FG（如一个体素）可出现很大的局部导数；需核有限性、参数norm及既有clip12触发情况，但本文件不据此另调λ/clip。
+
+B使区域权重在GT界面有跳变，叠加已有target mask截断，可能强化边缘学习或放大边缘残差/标注敏感性。它没有改变head输入，不能数学保证common份额下降；更强的结构场loss也可能与seg梯度相反。FG内仍按体素平均，粗大分支仍可占更多FG体素，不能声称已实现等分支/等骨架或所有细枝平衡。
+
+B保持网络forward映射、learned module/参数shape、field和主推理接口；改动的是结构场loss的测度/归一化。它与A一般不数学相同：仅FG/BG各占一半或特殊残差分布时可数值相等。合理陈述为“同结构场辅助监督的区域归一化候选”，不能叫历史loss原样复现或已证实修复。
+
+C：Gaussian输入逐体素去通道同向均值，只改变该分支输入映射
+
+仅在Gaussian分支使用z'=Pz=z−mean_channel(z)，P=I−11ᵀ/2；channel维是2，操作逐voxel，不减空间均值、不改seg输出/DS/分类器输入，也不detach。q_C=σ(K*Pz+b)，仍使用L_A式全场MSE和同一t、λ10。主seg softmax仍直接用原raw z。
+
+对任意空间变化a(v)，P[z+a(v)·1]=Pz，故q_C不再利用common；链式法则∂L_C/∂z=P·∂L_C/∂z'，Gaussian common导数理论为0（数值误差除外）。其仍可在GT界面两侧传播margin梯度。空块保留全场target=.5，不因中心化跳过。
+
+C不能理解为“把旧梯度的61.2%删掉并把能量重新分给margin”：q、残差和sigmoid斜率也随输入改变。即便同checkpoint权重，原raw-logit训练的head对中心化输入可能分布不匹配；离线counterfactual loss上升不自动代表重新训练失败。当前0.647%margin比不能预先推算成更大的数。它也没有改变FG/BG体素质量，不能单独解决0.1438%的损失占比问题。
+
+C保留head K的[1,2,3,3,3]和bias等参数shape/总数，但辅助函数的可辨识输入自由度改变。用m=(z_fg−z_bg)/√2表示，K*Pz=(K_fg−K_bg)*m/√2；K_fg+K_bg方向不再影响q。它约束结构场必须从margin相关信息读出，可能加强与seg置信度耦合，也可能移除原head用于场拟合的common表示并增加任务冲突。参数shape相同不代表有效函数容量、输入语义或数学映射相同。
+
+对任意z与任意空间common shift，要与A函数等价，需要每个卷积offset都满足K_fg+K_bg=0（或只讨论恰好common=0的一组输入）；仅卷积权重总和为0只足以处理某些常量shift，不够。C应陈述为同GTA结构场分支的“margin-only输入约束候选”，不是原历史Gaussian映射等价。核心数据/结构先验/联合学习框架仍保留，但新增P算子必须在新版本方法说明与源码身份中披露。
+
+共同框架与单因子边界
+
+A/B/C共享CT输入、解剖先验模块、同Gaussian target、三维seg及DS、sampler和训练阶段；B只改Gaussian loss归一，C只改Gaussian分支输入。若同时B+C，就不能从一组结果分清区域平衡和投影各自作用。保留等module参数shape也不足以宣称目标和梯度相同。三者均是可讨论的设计，而非依据单次诊断已确认的bug修复。
+
+λ0控制已经用真实donor在服务器完成CPU预检并下载：327个state tensors及CPU RNG两次重建一致，state SHA d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79，仍未训练。原main没有更新前epoch0快照，历史实际初始tensor认证仍False。这个事实不能被B/C设计绕过；未来单因子候选应单独版本化源码/配置/初始state证据，不把新SOURCE SHA伪装成旧bc8d，也不据CPU重建宣称历史真实起点已核。
+
+选定一个候选前必要的解析核验（这里只列方案，不实现）
+
+1. 当前A复现：固定小体积q/t及同一56bank，重算全场MSE、empty policy和既有DS主输出偏导，确认当前参考值。
+2. B归一/空区：手算不等FG/BG计数下loss和q导数；FG/BG各半时与A相等；单FG体素、全空、全FG均有限并保留样本；batch1+batch2等于逐patch均值。仅改变区域体素复制次数时条件均值应保持，不能误以为和全场mean等价。
+3. C投影：任意逐voxel common shift下q_C及softmax不变；autograd/有限差分验证g_bg+g_fg≈0；bias/kernel/state shape不变；挑选非反对称K展示A与C确实可不同。不得detach Pz导致结构场对seg断梯度。
+4. 区域界面：小型平移/细管/GT边界例，显式分别求FG-originating和BG-originating loss的∂z，验证它们相加为总导数且可跨界面；区分loss来源分区和logit位置分区，不能套用347倍到旧FG位置梯度。
+5. 梯度尺度：同冻结bank、同checkpoint/权重/eval/FP32条件下记录λ-weighted全/FG/BG loss、shared main-logits total/common/margin norm与cosine、各patch的分布及空块分层；若以后训练，再记录真实参数gradient/clip比例。离线gauge或归一化counterfactual只证明局部数学效果，不是最终性能。
+6. 若最终选择一次训练：冻结其唯一改动与新SOURCE/目标协议，保持same25k/seed/internal28+4/DS/donor/stages，评价固定final原grid Dice+pooled ASSD，不按internal4选最佳checkpoint、不丢Null、不把4患者SD当fold SD或显著性。当前分类器/采样/λ/周期保持，不自动启动。
+
+结论范围：当前诊断支持审查“结构场被大量背景统计稀释”和“主要输出方向含common”两种不同假设；它没有证明B或C会改善最终分割。先等主结果，再选择一个可归因候选。本轮仅新增此docs文件，没有改frozen code/ops或启动任何训练。

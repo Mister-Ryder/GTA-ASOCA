@@ -1,0 +1,9 @@
+Actual canonical20/80 source-backed acceptance; fixed-final primary pixels rechecked on4development patients.
+All4 canonical/OLD-preview decoded masks equal: True
+Canonical retained even if devices differ; no averaging, voting, checkpoint/device selection or insertion of preview into canonical ledger.
+Common segmentation recipe; pretrained donors, extra5120 classifier updates, capacity/prior/auxiliary objectives differ. No module causal attribution or model winner.
+sample SD of4patients, not folds/seeds/significance; undefinedASSD prevents complete-four mean
+gta_canonical dice: mean=0.8318539004693745; SD=0.05262188083735396; defined=4/4
+gta_canonical assd_mm: mean=0.5678251259083507; SD=0.3231060045482814; defined=4/4
+unet dice: mean=0.818455511253775; SD=0.07676466971407239; defined=4/4
+unet assd_mm: mean=0.7492326552685586; SD=0.45591914607380335; defined=4/4

@@ -1,0 +1,64 @@
+These files are saved commands, not an automatic queue. No five-fold or external-method rerun is launched.
+
+Deploy fidelity_v2/code and fidelity_v2/configs unchanged to the new project root.
+Also deploy the existing ops/plot_learning_curves.py if internal trajectory plots are wanted.
+Do not replace classifier_stage/code: it has its own immutable source identity.
+Default project: /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014
+Default Python: /root/miniconda3/envs/gta-asoca311/bin/python
+Default manifest: PROJECT/dataset/cache/manifest.json (the controller's actual local-SSD cache).
+Default raw data: /root/autodl-fs/datasets/ASOCA_GTA_20261014/raw
+GTA_ROOT, GTA_PYTHON, GTA_MANIFEST and GTA_RAW_ROOT may override locations.
+OUTPUT_ROOT overrides the segmentation result root; default is shared storage:
+/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/results
+This keeps all periodic GTA weights away from the local SSD with only5 GiB free.
+CLS_CHECKPOINT overrides the actual classifier weight location. Otherwise commands read PROJECT/results/classifier80x64/training/final.pt
+(or classifier_smoke128 for smoke), so existing local classifier results or a controller-created symlink both work.
+All command files verify the complete frozen main source and require an idle GPU.
+GTA_RESUME=1 requests an exact resume; training checks every scientific parameter and source identity.
+
+First mechanical smoke:
+  bash PROJECT/configs/run_main_smoke.sh
+It uses the actual fixed-final classifier filename results/classifier_smoke128/training/final.pt.
+The frozen runner additionally saves best_selection.pt for classification diagnosis; best_classifier.pt does not exist.
+Both smoke and formal main initialization use fixed final.pt, never classification-BA selection.
+Budget: three epochs x two updates = six updates; B2, patch128, LR warmup0, backbone warmup0.
+Epoch indices0/1/2 are respectively classifier frozen/partial/joint. Every update has gradient telemetry.
+The smoke weights and all classifier_smoke128 artifacts are mechanical diagnostics only, never model-selection evidence.
+
+Before formal GTA:
+  Require completed classifier80x64 fixed-final weights with verified source, exact patient isolation
+  and finite parameters. The existing verifier filename verify_classifier_quality.py checks readiness
+  only; no classification-accuracy threshold or manual approval record is required.
+  Classification pretraining stabilizes multitask convergence; its prior features serve segmentation.
+  Confusion/balanced accuracy/support/baselines remain analytical references, not the main objective
+  or a startup performance gate. Main quality is judged by Dice and physical-mm ASSD.
+Then:
+  bash PROJECT/configs/run_gta200.sh
+Budget:200 x125 =25,000 segmentation optimizer updates, B2 =50,000 sampled segmentation patches.
+Classifier pretraining is separately80 x64 =5,120 updates, B2 =10,240 training patches, excluding validation patches.
+Historical BAS backbone/classifier warm-start costs are additional and not falsely reported as compute matched.
+Freeze50 / partial-until70 / then joint. Gaussian lambda fixed10; no late ramp is silently enabled.
+Checkpoint snapshots each10 epochs; component/lambda/LR/stage/time/GPU memory each epoch;
+segmentation versus weighted-Gaussian output gradients each250 updates.
+
+Common-recipe U-Net development calibration:
+  bash PROJECT/configs/run_unet200.sh
+Same internal28/4 patient split, patch128, B2,125 x200 updates, AdamW LR3e-4/WD1e-4,
+five-epoch LR warmup, polynomial decay, Dice+CE, standard sampler, image-only body FOV,
+intensity augmentation, normalized decoder-supervision weights1/.5/.25, fixed final endpoint.
+GTA retains its intentional priors/anatomy reweighting/Gaussian objectives; U-Net has no classifier pretraining.
+This is a bounded common-recipe diagnosis, not a reproduction of the published 3D U-Net result.
+
+Internal-four trajectory, after training completes:
+  GTA_TRAINING=OUTPUT_ROOT/gta_enhanced200x125/training bash PROJECT/configs/run_internal_trajectory.sh
+  GTA_TRAINING=OUTPUT_ROOT/unet_recipe200x125/training bash PROJECT/configs/run_internal_trajectory.sh
+No original-eight periodic evaluation is performed. Dice and physical-mm pooled ASSD are primary;
+clDice is auxiliary. Snapshots are diagnostics and do not replace fixed final selection.
+validation_history.jsonl and validation_curve.csv record the actual observations and extra inference cost.
+
+Comparability to old cold200 x125:
+Both segmentation schedules have exactly25,000 updates and B2 =50,000 sampled patches.
+This equality is based on updates, not on epoch names. Patch128 vs old96 changes voxel work by(128/96)^3,
+and new training28/internal4 differs from old training32/outer8. Pretraining and validation costs differ.
+Do not call total wall time/FLOPs matched or mix four-patient and eight-patient means as one comparison.
+The original-eight cohort is already exposed development data, not an independent final test.

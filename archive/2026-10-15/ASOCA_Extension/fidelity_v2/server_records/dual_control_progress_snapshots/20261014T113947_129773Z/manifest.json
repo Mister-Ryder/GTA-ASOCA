@@ -1,0 +1,13 @@
+{
+  "captured_at_utc": "2026-10-14T11:40:02.621010+00:00",
+  "observer_sha256": "94dc12685add18f1316e8a8cf7469a3237293ddff2f9da7909614dc2216bfec3",
+  "remote_mutations": false,
+  "password_saved": false,
+  "results": [
+    {
+      "port": 17552,
+      "status": "validated",
+      "packet_sha256": "9fee295bb3db5ecf5c2aaf3768feee0086af617cdc83fde5105e26a5321d64ca"
+    }
+  ]
+}

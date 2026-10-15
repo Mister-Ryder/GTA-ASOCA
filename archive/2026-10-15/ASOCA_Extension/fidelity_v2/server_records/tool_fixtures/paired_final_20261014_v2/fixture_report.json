@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "fixture_only": true,
+  "actual_model_inference": false,
+  "server_operations": false,
+  "fixture_scope": "Real original GT/SHA/grid and saved identity/empty NRRDs; synthetic training/completion/auxiliary metadata. These are not GTA/UNet experimental performance results.",
+  "tool_sha256": "857c6f90b6e5283547c7d88390792897176fa37a06589f8cb16e412b42abe2c8",
+  "fixture_script_sha256": "60a506fd1b2a8c8e9e5af78e13ef660f4926fde65d32167f118332f0466f0d03",
+  "tests": {
+    "real_original_label_bytes_NRRD_headers_and_relocated_fixed_final_records": "passed",
+    "missing_case_rejected": "gta: unexpected/missing patient JSON",
+    "wrong_GT_SHA_rejected": "Trajectory case metadata differs: Diseased_10",
+    "real_empty_prediction_kept_in_N4_with_no_complete_ASSD_mean": "passed",
+    "analytic_translation4mm_and_unequal_surface_counts_pooled2over3": "passed"
+  },
+  "fixture_files": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\tool_fixtures\\paired_final_20261014_v2",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "original_GT_sha256": {
+    "Diseased_10": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+    "Diseased_20": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+    "Normal_12": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+    "Normal_3": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "status": "STATIC_PLAN_ONLY_NOT_EXECUTED",
+  "recorded_date": "2026-10-14",
+  "role": "one additional baseline-only development evaluation of the already fixed and accepted U-Net final200",
+  "execution_authorized_by_this_plan": false,
+  "requires_future_ROOT_execution_decision": true,
+  "protocol_relationship": "Explicit prospective baseline-only scheduling supplement. Existing controllers stop after internal-four postfit. The GTA candidate outer-eight gate in gaussian_control_postfit_selection_20261014.txt is unchanged; the historical development verified_plan is not reactivated.",
+  "host": {
+    "port": 17552,
+    "role": "OLD only; NEW may continue the existing B run",
+    "device": "existing OLD CUDA GPU0 only; no automatic device fallback"
+  },
+  "scope": {
+    "model_method": "unet",
+    "training": false,
+    "optimizer_updates": false,
+    "classifier_forward": false,
+    "GTA_candidate_evaluation": false,
+    "new_candidate_or_fivefold_queue": false,
+    "checkpoint_selection": "fixed final only; no best/intermediate selection",
+    "evaluations": 1,
+    "patients": 8
+  },
+  "immutable_inputs": {
+    "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "main_source_freeze_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+    "training_config_sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd",
+    "training_complete_sha256": "8eb5bd82ce4db74e374f465b7ca3230adcea73c0158e4e74eda3f4af63c2ba41",
+    "U_global_complete_sha256": "3fc851db9f7afcb58de93730f527cdacf1526f9f79cbdeba45c65eb300102d18",
+    "fixed_final_sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c",
+    "checkpoint_epoch_zero_based": 199,
+    "segmentation_updates": 25000,
+    "classifier_pretraining_updates": 0,
+    "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "evaluate_py_sha256": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics_py_sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "existing_internal4_acceptance_sha256": "e8584fb3e12b6fea0936655916dee64583710b6b4702c494d61291db93570619"
+  },
+  "remote_inputs": {
+    "python": "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python",
+    "code": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/code",
+    "manifest": "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+    "raw_root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion",
+    "training": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training",
+    "checkpoint": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/final.pt"
+  },
+  "preflight_guards": [
+    "First prove OLD lambda0 CONTROL_COMPLETE plus completed STATUS with matching completion SHA, gpu_lock_acquired=false, child_pid=null and owned_child_exit_confirmed=true; verify its POSTFIT_VERIFIED closes all20 checkpoint/80 case evaluations. Training completion alone is insufficient.",
+    "Do not launch before lambda0 postfit exits and releases resources. Do not stop or modify lambda0 or B.",
+    "Acquire an independent baseline-only owner mutex and the existing OLD .segmentation_stage.lock nonblockingly immediately before inference; retain GPU mutex until owned evaluator exits and postchecks finish.",
+    "With the GPU mutex held, require two nvidia-smi idle observations separated by at least5 seconds. Refuse any pre-existing compute process; never kill or adopt foreign processes.",
+    "Recheck full frozen source identity, evaluator/metric bytes, actual immutable U final bytes, config, training/global completion and accepted internal4/20x4 evidence before and after inference.",
+    "Inspect checkpoint header on CPU: method=unet, epoch=199, epochs=200, steps=125, smoke=false, fixed final, exact source/filemap/config/manifest and train28 identities. Do not apply GTA327/classifier90 tensor-count assumptions to U-Net.",
+    "Require the manifest fold0 outer list to equal all eight planned IDs in order, disjoint from trained_case_ids and internal4. evaluate.py outer_development returns early and does not enforce this isolation itself.",
+    "Require a fresh output directory; no reuse, overwriting, retuning, postprocessing search or partial/smoke/geometry-only evaluation.",
+    "Use the existing U runtime after version/readiness checks. Frozen evaluate.py explicitly sets Torch CPU threads to8 and uses CUDA; do not claim CPU2 or a CPU fallback from environment variables."
+  ],
+  "execution_protection": {
+    "separate_owner_mutex": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/.unet_outer8_fixed_final_eval.lock",
+    "GPU_stage_mutex": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/.segmentation_stage.lock",
+    "proposed_owned_evaluator_deadline_seconds": 7200,
+    "deadline_is_unmeasured_safety_bound_not_runtime_estimate": true,
+    "cleanup": "supervise only the newly owned child PID/process group; stop it on timeout/cancellation and confirm exit before releasing the GPU mutex; never restart training"
+  },
+  "planned_output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/outer8_fixed_final_development_20261014",
+  "planned_argv": [
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python",
+    "-u",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/code/evaluate.py",
+    "--checkpoint",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/final.pt",
+    "--manifest",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+    "--raw-root",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion",
+    "--output",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/outer8_fixed_final_development_20261014",
+    "--fold",
+    "0",
+    "--split",
+    "outer_development",
+    "--sw-batch-size",
+    "1"
+  ],
+  "evaluation": {
+    "case_ids": [
+      "Diseased_1",
+      "Diseased_15",
+      "Diseased_18",
+      "Diseased_7",
+      "Normal_16",
+      "Normal_19",
+      "Normal_2",
+      "Normal_8"
+    ],
+    "split": "outer_development",
+    "role": "previously inspected outer development cases; not final independent test",
+    "formal_final_test": false,
+    "inference_patch_size": [
+      128,
+      128,
+      128
+    ],
+    "sw_batch_size": 1,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "surface_connectivity_neighbors": 6,
+    "ASSD": "pooled boundary-voxel distances in original-grid physical mm",
+    "undefined_distance_policy": "retain null and empty-prediction flags; no complete-eight ASSD mean/SD if any distance is undefined",
+    "extra_inference_cost_recorded": true
+  },
+  "selection_separation": [
+    "This is one fixed U baseline acquisition, not selection or validation of A, B or lambda0 on outer8.",
+    "Quarantine the newly computed U outer8 metrics, per-case errors and predictions from GTA selection until ROOT documents the A/B/lambda0 internal4 review and freezes the next GTA recipe/source/config/final checkpoint. The executor should report completion, counts and hashes only during that quarantine, with evaluator metric stdout redirected to its own result log.",
+    "Do not use U outer8 values to rank A/B/lambda0, change their recipe, budget, loss, checkpoint or next candidate decision; no outer8-derived threshold or tuning.",
+    "Every GTA outer8 launch still requires the unchanged internal4 result review and explicit frozen-candidate record. This baseline plan cannot launch it.",
+    "Previously exposed N8 remains development data even after quarantine. Do not pool N4 and N8 means, substitute old N8 results, or claim independent test, significance, fivefold or same-protocol literature superiority."
+  ],
+  "postflight_acceptance": [
+    "Standalone evaluate.py writes eight case JSONs, eight original-grid predictions, summary.json and case_metrics.jsonl, but no EVALUATION_COMPLETE marker. A separate baseline-only executor must write its own actual completion receipt only after all checks pass.",
+    "Verify exactly all eight IDs, checkpoint/source/evaluator/metric/manifest/GT/prediction hashes, epoch199, split=outer_development, geometry_only=false, fixed final, formal_final_test=false, no smoke, and original-grid metadata.",
+    "Recompute Dice and pooled physical-mm ASSD from saved predictions and original GT for all eight, retaining empty/undefined cases and checking overall/subgroups/null policy. Do not reuse verify_evaluation unchanged because that helper hardcodes internal_diagnostic and four cases.",
+    "Keep separate immutable result files, actual argv, start/end/runtime/GPU ownership and bytes/SHA inventory; retain source/weights/state-readonly checks and extra inference cost. Do not alter the accepted internal4 receipts or existing controllers."
+  ],
+  "source_references": [
+    "docs/postfit_decision_protocol.txt:19-30,73-78",
+    "docs/gaussian_control_postfit_selection_20261014.txt:5-9,21-23",
+    "docs/methodology_and_metric_protocol.txt:82-103",
+    "code/evaluate.py:116-119,145-173,187-190,244-245,276-292",
+    "server_records/unet_complete_trajectory_20261014/UNET_CALIBRATION_COMPLETE.json",
+    "server_records/gta_canonical_acceptance_20261014/canonical_acceptance_and_pair.json"
+  ]
+}

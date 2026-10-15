@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "method_label": "swinunetr",
+  "training_method": "swinunetr",
+  "fold": 0,
+  "smoke": false,
+  "protocol_identity": "fdf058c3d65b92f0665a7460778b9e41a4180554ff8d325e57013d6c72b3e71f",
+  "job_identity": "f2d9901cc770ad032c2c71c92adf7ce17e00924f8b8041e5ba42f56b4b9d31c5",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "completed_at": "2026-10-13T23:55:18.999594+00:00",
+  "case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "checkpoint_sha256": "67ae4650f3abf9e378a10c3eb41918bd79637c336a73ad2c6d540e6cd698d0ca",
+  "checkpoint_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/results/swinunetr/fold0/training/final.pt",
+  "n_cases": 8
+}

@@ -1,0 +1,5 @@
+{
+  "status": "superseded_by_sparse_archive",
+  "reason": "Sparse per-array network writes are slow; publish packed cache and materialize on local training disk",
+  "previous_pid": 105363
+}

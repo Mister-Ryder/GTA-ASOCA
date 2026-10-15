@@ -1,0 +1,144 @@
+{
+  "training_config_sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "split": "internal_diagnostic",
+  "smoke": false,
+  "checkpoints": [
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch010.pt",
+      "epoch": 9,
+      "name": "epoch010",
+      "checkpoint_sha256": "b6ebe209ea55f4398e84ecad7b717bb104ec9bbde4f4f8927801b9c1e5387ab0"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch020.pt",
+      "epoch": 19,
+      "name": "epoch020",
+      "checkpoint_sha256": "f2115e088d6395279816258758172e767e8b6e7dbdb8a4146b849203ad9d9617"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch030.pt",
+      "epoch": 29,
+      "name": "epoch030",
+      "checkpoint_sha256": "19bd9fd55cfd8603dabf9aa30bfbc678a9c360da8267201e4d36b4e09b2fd80a"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch040.pt",
+      "epoch": 39,
+      "name": "epoch040",
+      "checkpoint_sha256": "a3b693932eb20f76cf22ec3dca42b6c288ce30a357cf2e3e19a907455bb7695f"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch050.pt",
+      "epoch": 49,
+      "name": "epoch050",
+      "checkpoint_sha256": "6f87ab49efff323c5a69cd260223ee58ba2c0be1eeb03e8ce62a2b7c4ae11e21"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch060.pt",
+      "epoch": 59,
+      "name": "epoch060",
+      "checkpoint_sha256": "e611d274c31f986fb80978797cb8d0c30085270484d03040ba59684dd3a999e9"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch070.pt",
+      "epoch": 69,
+      "name": "epoch070",
+      "checkpoint_sha256": "336afe60a21fa22b931d0a9c0c20bbe6d03722b2a1b83180273e5e46a61e4ed4"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch080.pt",
+      "epoch": 79,
+      "name": "epoch080",
+      "checkpoint_sha256": "5d0f76251ee9164895a33021a47fd0d2919f6f8fa2807d4438d4cc5457198a40"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch090.pt",
+      "epoch": 89,
+      "name": "epoch090",
+      "checkpoint_sha256": "6849ee226080f43ae7d4804e4566701faa17e09de9c6bc1ffc08061db2b5ff0b"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch100.pt",
+      "epoch": 99,
+      "name": "epoch100",
+      "checkpoint_sha256": "c3314ff211051b99ee86356158ec214359d06efca16d241dbbcd72f807baab2d"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch110.pt",
+      "epoch": 109,
+      "name": "epoch110",
+      "checkpoint_sha256": "7af066ed1ba9097ae32bfd335c132784df8e546746c8e3bba66e27fb761e5607"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch120.pt",
+      "epoch": 119,
+      "name": "epoch120",
+      "checkpoint_sha256": "8317cb786de094e2ebc75033920dddf115bd28c21a43e6d8258931934a41f6fe"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch130.pt",
+      "epoch": 129,
+      "name": "epoch130",
+      "checkpoint_sha256": "607bbb82ab0c3e8c713a9615e1290b0fa0befa6dfba6f6c548f9823748e0993c"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch140.pt",
+      "epoch": 139,
+      "name": "epoch140",
+      "checkpoint_sha256": "f4e718861d0ba7e5363be8fb05f4b9213cbaab1aabf341a0dd9c70ed50123fda"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch150.pt",
+      "epoch": 149,
+      "name": "epoch150",
+      "checkpoint_sha256": "4bc37bebc7719ee87311140776ca123de9d465d4defa4bfd8bcd94ccfb38da9c"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch160.pt",
+      "epoch": 159,
+      "name": "epoch160",
+      "checkpoint_sha256": "d84bd81fcdf5c535273a37eaa753768a8143910e899ab511182dec62aa759c1c"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch170.pt",
+      "epoch": 169,
+      "name": "epoch170",
+      "checkpoint_sha256": "608c3b3c246b22c507ee46f041c3f10cb593a1656e78c1103b913384ea5f1f52"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch180.pt",
+      "epoch": 179,
+      "name": "epoch180",
+      "checkpoint_sha256": "ad0ef50548041aed28913ec1c1edeae716f6cd0b5e67f59816b2f703d79671ba"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/checkpoints/epoch190.pt",
+      "epoch": 189,
+      "name": "epoch190",
+      "checkpoint_sha256": "7c457a99e13d1f275f0c02eda34761e383996388c7cb7d500b796e5d1569565e"
+    },
+    {
+      "path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training/final.pt",
+      "epoch": 199,
+      "name": "final",
+      "checkpoint_sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c"
+    }
+  ],
+  "sw_batch_size": 1,
+  "checkpoint_selection": "fixed final remains unchanged; intermediate weights are trajectory diagnostics",
+  "formal_final_test": false,
+  "outer8_used_for_selection": false
+}

@@ -1,0 +1,45 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import ctypes,hashlib,json,os,subprocess,tempfile,time
+from pathlib import Path
+root=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+script=root/'ops/publish_fixed_final_mirror.py'
+expected='446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450'
+assert hashlib.sha256(script.read_bytes()).hexdigest()==expected
+assert not (root/'EARLY_FINAL_MIRROR_STATUS.json').exists(),'Inspect existing publisher state'
+assert not (root/'EARLY_FINAL_MIRROR_LAUNCH_20261014.json').exists(),'Inspect existing launcher receipt'
+python='/root/miniconda3/envs/gta-asoca311/bin/python'
+subprocess.run([python,str(script),'--plan'],check=True)
+shared_parent=Path('/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014')
+shared_parent.mkdir(parents=True,exist_ok=True)
+probe=Path(tempfile.mkdtemp(prefix='.NOT_MODEL_RESULTS_rename_probe_',dir=shared_parent))
+library=ctypes.CDLL(None,use_errno=True)
+rename=library.renameat2
+rename.argtypes=[ctypes.c_int,ctypes.c_char_p,ctypes.c_int,ctypes.c_char_p,ctypes.c_uint]
+rename.restype=ctypes.c_int
+try:
+    first=probe/'first'; target=probe/'target'; occupied=probe/'occupied'
+    first.mkdir()
+    assert rename(-100,os.fsencode(first),-100,os.fsencode(target),1)==0,'Shared no-replace rename unsupported'
+    occupied.mkdir()
+    rc=rename(-100,os.fsencode(target),-100,os.fsencode(occupied),1)
+    assert rc!=0 and ctypes.get_errno() in (17,39),'Shared no-replace rename did not refuse an existing empty directory'
+    assert target.is_dir() and occupied.is_dir()
+    print(json.dumps({'role':'NOT_MODEL_RESULTS_shared_filesystem_probe','atomic_fresh_rename':True,'refused_existing_empty_directory':True}))
+finally:
+    for member in probe.iterdir():
+        assert member.parent.resolve()==probe.resolve() and member.is_dir() and not any(member.iterdir())
+        member.rmdir()
+    probe.rmdir()
+env=dict(os.environ,OMP_NUM_THREADS='1',MKL_NUM_THREADS='1',PYTHONDONTWRITEBYTECODE='1',PYTHONUNBUFFERED='1')
+log=root/'logs/early_final_mirror.log'
+with log.open('x') as stream:
+    child=subprocess.Popen([python,'-u',str(script),'--wait-seconds','7200'],cwd=root,env=env,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+receipt={'pid':child.pid,'source_sha256':expected,'script':str(script),'role':'CPU-only fixed-final mirror; no training/GPU','log':str(log),'new_training':False,'canonical_trajectory_unchanged':True}
+(root/'EARLY_FINAL_MIRROR_LAUNCH_20261014.json').write_text(json.dumps(receipt,indent=2)+'\n')
+time.sleep(2)
+assert child.poll() is None,'Publisher exited; inspect own log, do not restart main'
+receipt['cmdline_observed']=Path(f'/proc/{child.pid}/cmdline').read_bytes().replace(b'\0',b' ').decode()
+print(json.dumps(receipt))
+if (root/'EARLY_FINAL_MIRROR_STATUS.json').exists():print((root/'EARLY_FINAL_MIRROR_STATUS.json').read_text())
+PY

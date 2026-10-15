@@ -1,0 +1,19 @@
+GTA Gaussian λ0 对照控制器：独立执行边界
+
+本次仅准备代码；没有连接服务器、读取服务器状态或启动训练。
+执行主体：ops/run_gaussian_lambda0_control.py；具体路径与依赖SHA见同目录计划JSON。
+
+精确启动参数（仅由ROOT审查后在OLD执行）：
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_gaussian_lambda0_control.py
+
+准备阶段只等待自己的控制器锁与新逻辑ROOT锁，不占GPU锁。实际final200训练28例56块shadow的五份产物、完整final4预览、U-Net完整轨迹与私有初始化字节都通过后，控制器复制冻结源码28文件及12项命令、冻结清单、原始main配置参考和两份初始化。main配置参考仅存configs/reference_main_actual_config.json，不创建历史main训练目录。缓存使用指向OLD实际缓存的符号链接。
+
+正式对照只改变gaussian_weight、gaussian_schedule.base和独立输出目录。Gaussian模块、先验分类器及融合、DS、主任务采样、随机种子、50/20/130阶段、200×125更新与80×64分类器初始化来源保持不变。CPU重构只证明同配方的两个重建起点一致；并未证明已完成main的实际历史θ0相同。
+
+OLD分割GPU互斥锁取得后连续两次确认空闲，才启动训练；不继续预训练分类器。训练子进程在模型第一次前向之前，以只读pre-forward hook保存加载初始化后的327个CPU状态张量、CPU/CUDA RNG和指纹。快照前后核查模型与RNG未变。DataLoader已可能消耗CPU RNG，实际快照RNG不强制等于CPU重构RNG；更不冒充未保存的历史main θ0。额外快照耗时包含在新对照训练耗时中。
+
+完成200轮后，独立CPU审计全部检查点、配置、有限历史及固定final身份，按原冻结程序顺序执行epoch010至190加final，四例×20点=80次完整体积推理；生成真实记录曲线并复用独立verify_postfit的80例预测、指标、ledger和曲线审计。verify_postfit只有硬编码main输出路径的preflight入口由控制器的严格λ0 preflight替换，其审计body和磁盘源码不改。source/helper/donor/cache/参考病例及main镜像前后核验通过才写CONTROL_COMPLETE。
+
+重复信号在Popen创建与清理期间只记录。只停止自己创建的子进程组，确认子进程退出后才释放GPU锁。失败会保留已有记录并停止；不自动重启、覆盖或改预算。必须另行审查才能续接失败运行。
+
+解释限制：OLD与NEW硬件及驱动不同；这是同训练配方条件对照，不能称为严格仅损失因果实验。固定final是唯一最终点，其余19点为开发轨迹；不择优、不平均两个设备或检查点、不使用原始外部八例，不做五折。分类准确率不作为门槛。完整训练+80次推理后才能形成新模型结果，代码plan与本地fixture均标记NOT_MODEL_RESULTS。

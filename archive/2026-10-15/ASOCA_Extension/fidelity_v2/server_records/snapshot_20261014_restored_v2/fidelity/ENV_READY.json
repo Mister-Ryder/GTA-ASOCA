@@ -1,0 +1,14 @@
+{
+  "status": "ready",
+  "torch": "2.7.1+cu128",
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA vGPU-32GB",
+  "capability": [
+    8,
+    9
+  ],
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "monai": "1.5.1",
+  "numpy": "1.26.4",
+  "cuda_forward_backward_finite": true
+}

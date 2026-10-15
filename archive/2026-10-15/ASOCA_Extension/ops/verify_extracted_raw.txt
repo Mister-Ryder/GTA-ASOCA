@@ -1,0 +1,26 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import json,hashlib,datetime
+s=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+manifest=json.loads((r/'dataset/cache/manifest.json').read_text())
+print('RAW_TOP',sorted(p.name for p in (s/'raw').iterdir()))
+raw=s/'raw/CompressedVersion' if (s/'raw/CompressedVersion').is_dir() else s/'raw'
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for b in iter(lambda:f.read(8*1024**2),b''):h.update(b)
+ return h.hexdigest()
+for case in manifest['cases']:
+ for kind in ['image','label']:
+  path=raw/case[kind+'_relative_path']
+  if not path.resolve().is_relative_to(raw.resolve()):raise RuntimeError('Unsafe raw relative path')
+  if sha(path)!=case['source_sha256'][kind]:raise RuntimeError('Raw case hash differs: '+case['case_id']+' '+kind)
+ready=json.loads((s/'RAW_ARCHIVE_READY.json').read_text())
+receipt={'status':'ready','raw_root':str(raw),'archive_sha256':ready['sha256'],
+ 'crc_verified':True,'case_count':40,'image_label_sha256_verified':80,'archive_layout':'direct group folders',
+ 'previous_layout_assumption_error_resolved':True,'verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+(s/'RAW_DIRECTORY_READY.json').write_text(json.dumps(receipt,indent=2)+'\n')
+(s/'raw_extract_status.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt,indent=2))
+PY

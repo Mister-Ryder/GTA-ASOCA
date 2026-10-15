@@ -1,0 +1,815 @@
+{
+  "role": "downloaded training snapshot only; no final-test or superiority claim",
+  "epoch_display": "1-based, source zero-based",
+  "training_records": {
+    "gta": {
+      "completed_epochs": 127,
+      "updates": 15875,
+      "planned_updates": 25000,
+      "stages": {
+        "frozen": 50,
+        "partial": 20,
+        "joint": 57
+      },
+      "training_complete_marker_captured": false,
+      "probe_rows": 64
+    },
+    "unet": {
+      "completed_epochs": 200,
+      "updates": 25000,
+      "training_complete_marker_captured": true,
+      "final_loss_own_recipe": 0.23556034380197524,
+      "effective_regularizers": {
+        "gaussian": 0.0,
+        "classifier": 0.0,
+        "guidance": 0.0
+      }
+    }
+  },
+  "capture_verification": [
+    {
+      "host": "gta_38773",
+      "capture_started_at_utc": "2026-10-14T07:13:46.137367+00:00",
+      "capture_finished_at_utc": "2026-10-14T07:13:53.951283+00:00",
+      "capture_manifest_sha256": "9638fec5922c2ba15671d0a193d8346839cf3321806cdd4b31564ce14f35c60f",
+      "captured_file_records_verified": 13,
+      "jsonl_with_incomplete_tail": false
+    },
+    {
+      "host": "unet_17552",
+      "capture_started_at_utc": "2026-10-14T07:13:46.137397+00:00",
+      "capture_finished_at_utc": "2026-10-14T07:13:52.611333+00:00",
+      "capture_manifest_sha256": "409f631f6fb483c4dc96c24036078e4eaa9554123e43501229e659c1f713ffe5",
+      "captured_file_records_verified": 10,
+      "jsonl_with_incomplete_tail": false
+    }
+  ],
+  "gta_boundary_epochs": {
+    "50": {
+      "epoch_1based": 50,
+      "stage": "frozen",
+      "total_loss": 0.3302437409758568,
+      "gaussian_lambda_effective": 10.0,
+      "classifier_lambda_effective": 0.0,
+      "guidance_lambda_effective": 0.0,
+      "lr_by_group": {
+        "segmentation": 0.00023691528627395412,
+        "classifier": 2.3691528627395412e-05
+      },
+      "components": {
+        "segmentation": 0.3297155499458313,
+        "classification": null,
+        "classification_weighted": null,
+        "guidance_weighted": null,
+        "gaussian": 5.281906246091239e-05,
+        "gaussian_weighted": 0.0005281906239688396,
+        "segmentation_gradient_norm": 1.213259254157543,
+        "classifier_gradient_norm": 0.0
+      }
+    },
+    "51": {
+      "epoch_1based": 51,
+      "stage": "partial",
+      "total_loss": 0.502230941414833,
+      "gaussian_lambda_effective": 10.0,
+      "classifier_lambda_effective": 0.1,
+      "guidance_lambda_effective": 0.1,
+      "lr_by_group": {
+        "segmentation": 0.00023549339542298714,
+        "classifier": 2.3549339542298714e-05
+      },
+      "components": {
+        "segmentation": 0.31137514269351957,
+        "classification": 1.9010907773971557,
+        "classification_weighted": 0.190109080940485,
+        "guidance_weighted": 0.0001896914890385233,
+        "gaussian": 5.570240017550532e-05,
+        "gaussian_weighted": 0.0005570240018423646,
+        "segmentation_gradient_norm": 1.1687360339164734,
+        "classifier_gradient_norm": 2.8940213346481323
+      }
+    },
+    "70": {
+      "epoch_1based": 70,
+      "stage": "partial",
+      "total_loss": 0.4424422143697739,
+      "gaussian_lambda_effective": 10.0,
+      "classifier_lambda_effective": 0.1,
+      "guidance_lambda_effective": 0.1,
+      "lr_by_group": {
+        "segmentation": 0.00020828748404630782,
+        "classifier": 2.0828748404630784e-05
+      },
+      "components": {
+        "segmentation": 0.2926318451166153,
+        "classification": 1.491632336616516,
+        "classification_weighted": 0.14916323652863503,
+        "guidance_weighted": 0.00019045823119813576,
+        "gaussian": 4.5667451558983885e-05,
+        "gaussian_weighted": 0.0004566745131742209,
+        "segmentation_gradient_norm": 1.1766324572563172,
+        "classifier_gradient_norm": 2.5032326617240908
+      }
+    },
+    "71": {
+      "epoch_1based": 71,
+      "stage": "joint",
+      "total_loss": 0.4628689017295837,
+      "gaussian_lambda_effective": 10.0,
+      "classifier_lambda_effective": 0.1,
+      "guidance_lambda_effective": 0.1,
+      "lr_by_group": {
+        "segmentation": 0.0002068450263908067,
+        "classifier": 2.0684502639080674e-05
+      },
+      "components": {
+        "segmentation": 0.3075028042793274,
+        "classification": 1.5474682538509368,
+        "classification_weighted": 0.15474682830274106,
+        "guidance_weighted": 0.0001858172506908886,
+        "gaussian": 4.334529043990187e-05,
+        "gaussian_weighted": 0.0004334529060870409,
+        "segmentation_gradient_norm": 1.2841439504623413,
+        "classifier_gradient_norm": 2.70015221118927
+      }
+    },
+    "127": {
+      "epoch_1based": 127,
+      "stage": "joint",
+      "total_loss": 0.4080907664299011,
+      "gaussian_lambda_effective": 10.0,
+      "classifier_lambda_effective": 0.1,
+      "guidance_lambda_effective": 0.1,
+      "lr_by_group": {
+        "segmentation": 0.00012391489430461355,
+        "classifier": 1.2391489430461356e-05
+      },
+      "components": {
+        "segmentation": 0.27903580290079116,
+        "classification": 1.2847865287065505,
+        "classification_weighted": 0.12847865480184556,
+        "guidance_weighted": 0.00021484788157977164,
+        "gaussian": 3.61462612345349e-05,
+        "gaussian_weighted": 0.0003614626120543107,
+        "segmentation_gradient_norm": 1.3542049195766448,
+        "classifier_gradient_norm": 2.7377031946182253
+      }
+    }
+  },
+  "gta_stage_transitions": {
+    "partial": {
+      "previous": {
+        "epoch_1based": 50,
+        "stage": "frozen",
+        "total_loss": 0.3302437409758568,
+        "gaussian_lambda_effective": 10.0,
+        "classifier_lambda_effective": 0.0,
+        "guidance_lambda_effective": 0.0,
+        "lr_by_group": {
+          "segmentation": 0.00023691528627395412,
+          "classifier": 2.3691528627395412e-05
+        },
+        "components": {
+          "segmentation": 0.3297155499458313,
+          "classification": null,
+          "classification_weighted": null,
+          "guidance_weighted": null,
+          "gaussian": 5.281906246091239e-05,
+          "gaussian_weighted": 0.0005281906239688396,
+          "segmentation_gradient_norm": 1.213259254157543,
+          "classifier_gradient_norm": 0.0
+        }
+      },
+      "first_new_stage": {
+        "epoch_1based": 51,
+        "stage": "partial",
+        "total_loss": 0.502230941414833,
+        "gaussian_lambda_effective": 10.0,
+        "classifier_lambda_effective": 0.1,
+        "guidance_lambda_effective": 0.1,
+        "lr_by_group": {
+          "segmentation": 0.00023549339542298714,
+          "classifier": 2.3549339542298714e-05
+        },
+        "components": {
+          "segmentation": 0.31137514269351957,
+          "classification": 1.9010907773971557,
+          "classification_weighted": 0.190109080940485,
+          "guidance_weighted": 0.0001896914890385233,
+          "gaussian": 5.570240017550532e-05,
+          "gaussian_weighted": 0.0005570240018423646,
+          "segmentation_gradient_norm": 1.1687360339164734,
+          "classifier_gradient_norm": 2.8940213346481323
+        }
+      },
+      "total_loss_change": 0.17198720043897625,
+      "segmentation_change": -0.01834040725231173
+    },
+    "joint": {
+      "previous": {
+        "epoch_1based": 70,
+        "stage": "partial",
+        "total_loss": 0.4424422143697739,
+        "gaussian_lambda_effective": 10.0,
+        "classifier_lambda_effective": 0.1,
+        "guidance_lambda_effective": 0.1,
+        "lr_by_group": {
+          "segmentation": 0.00020828748404630782,
+          "classifier": 2.0828748404630784e-05
+        },
+        "components": {
+          "segmentation": 0.2926318451166153,
+          "classification": 1.491632336616516,
+          "classification_weighted": 0.14916323652863503,
+          "guidance_weighted": 0.00019045823119813576,
+          "gaussian": 4.5667451558983885e-05,
+          "gaussian_weighted": 0.0004566745131742209,
+          "segmentation_gradient_norm": 1.1766324572563172,
+          "classifier_gradient_norm": 2.5032326617240908
+        }
+      },
+      "first_new_stage": {
+        "epoch_1based": 71,
+        "stage": "joint",
+        "total_loss": 0.4628689017295837,
+        "gaussian_lambda_effective": 10.0,
+        "classifier_lambda_effective": 0.1,
+        "guidance_lambda_effective": 0.1,
+        "lr_by_group": {
+          "segmentation": 0.0002068450263908067,
+          "classifier": 2.0684502639080674e-05
+        },
+        "components": {
+          "segmentation": 0.3075028042793274,
+          "classification": 1.5474682538509368,
+          "classification_weighted": 0.15474682830274106,
+          "guidance_weighted": 0.0001858172506908886,
+          "gaussian": 4.334529043990187e-05,
+          "gaussian_weighted": 0.0004334529060870409,
+          "segmentation_gradient_norm": 1.2841439504623413,
+          "classifier_gradient_norm": 2.70015221118927
+        }
+      },
+      "total_loss_change": 0.020426687359809848,
+      "segmentation_change": 0.014870959162712138
+    }
+  },
+  "gta_windows": {
+    "before_partial": {
+      "epochs_1based": [
+        46,
+        50
+      ],
+      "n_epochs": 5,
+      "stages": [
+        "frozen"
+      ],
+      "epoch_means": {
+        "segmentation": {
+          "n_observed": 5,
+          "mean": 0.3538123370051384,
+          "median": 0.3485941316485405,
+          "sd_observed": 0.019372249123074968
+        },
+        "classification": {
+          "n_observed": 0,
+          "mean": null,
+          "median": null,
+          "sd_observed": null
+        },
+        "classification_weighted": {
+          "n_observed": 0,
+          "mean": null,
+          "median": null,
+          "sd_observed": null
+        },
+        "guidance_weighted": {
+          "n_observed": 0,
+          "mean": null,
+          "median": null,
+          "sd_observed": null
+        },
+        "gaussian": {
+          "n_observed": 5,
+          "mean": 5.1353966625174503e-05,
+          "median": 5.281906246091239e-05,
+          "sd_observed": 2.937243918590025e-06
+        },
+        "gaussian_weighted": {
+          "n_observed": 5,
+          "mean": 0.0005135396657278762,
+          "median": 0.0005281906239688396,
+          "sd_observed": 2.937243909617116e-05
+        },
+        "segmentation_gradient_norm": {
+          "n_observed": 5,
+          "mean": 1.2682239699721336,
+          "median": 1.213259254157543,
+          "sd_observed": 0.10768382621579266
+        },
+        "classifier_gradient_norm": {
+          "n_observed": 5,
+          "mean": 0.0,
+          "median": 0.0,
+          "sd_observed": 0.0
+        }
+      },
+      "total_loss": {
+        "n_observed": 5,
+        "mean": 0.3543258764386177,
+        "median": 0.34905935180187225,
+        "sd_observed": 0.019380789495282748
+      },
+      "main_logits_probes": {
+        "n_probes": 2,
+        "observed_epochs_1based": [
+          47,
+          49
+        ],
+        "segmentation_norm": {
+          "n_observed": 2,
+          "mean": 0.0004449982079677284,
+          "median": 0.0004449982079677284,
+          "sd_observed": 5.471019020290261e-05
+        },
+        "gaussian_weighted_norm": {
+          "n_observed": 2,
+          "mean": 5.528798283194192e-06,
+          "median": 5.528798283194192e-06,
+          "sd_observed": 1.911804869243778e-06
+        },
+        "gaussian_to_segmentation_ratio": {
+          "n_observed": 2,
+          "mean": 0.012785039488339998,
+          "median": 0.012785039488339998,
+          "sd_observed": 0.0058680614093435885
+        },
+        "cosine": {
+          "n_observed": 2,
+          "mean": -0.0026699023001128808,
+          "median": -0.0026699023001128808,
+          "sd_observed": 0.004044726676072945
+        }
+      }
+    },
+    "after_partial": {
+      "epochs_1based": [
+        51,
+        55
+      ],
+      "n_epochs": 5,
+      "stages": [
+        "partial"
+      ],
+      "epoch_means": {
+        "segmentation": {
+          "n_observed": 5,
+          "mean": 0.3295632253527641,
+          "median": 0.3292406641244888,
+          "sd_observed": 0.020047332023576288
+        },
+        "classification": {
+          "n_observed": 5,
+          "mean": 1.7156212236881256,
+          "median": 1.6766164984703065,
+          "sd_observed": 0.12560522065522334
+        },
+        "classification_weighted": {
+          "n_observed": 5,
+          "mean": 0.17156212519109248,
+          "median": 0.16766165336966515,
+          "sd_observed": 0.01256052228204975
+        },
+        "guidance_weighted": {
+          "n_observed": 5,
+          "mean": 0.00018456211910815909,
+          "median": 0.000184923890104983,
+          "sd_observed": 6.4563927029815025e-06
+        },
+        "gaussian": {
+          "n_observed": 5,
+          "mean": 4.960468039789703e-05,
+          "median": 4.875976071343757e-05,
+          "sd_observed": 4.388437147068889e-06
+        },
+        "gaussian_weighted": {
+          "n_observed": 5,
+          "mean": 0.000496046803239733,
+          "median": 0.0004875976070761681,
+          "sd_observed": 4.3884371398667275e-05
+        },
+        "segmentation_gradient_norm": {
+          "n_observed": 5,
+          "mean": 1.2907316408395768,
+          "median": 1.3266933646202088,
+          "sd_observed": 0.264256557305435
+        },
+        "classifier_gradient_norm": {
+          "n_observed": 5,
+          "mean": 2.673186744880676,
+          "median": 2.7087705402374267,
+          "sd_observed": 0.17568407872008568
+        }
+      },
+      "total_loss": {
+        "n_observed": 5,
+        "mean": 0.50180596139431,
+        "median": 0.5029665015935898,
+        "sd_observed": 0.015469525273214237
+      },
+      "main_logits_probes": {
+        "n_probes": 3,
+        "observed_epochs_1based": [
+          51,
+          53,
+          55
+        ],
+        "segmentation_norm": {
+          "n_observed": 3,
+          "mean": 0.0001801085721429748,
+          "median": 0.00013984473480377346,
+          "sd_observed": 8.617203378089301e-05
+        },
+        "gaussian_weighted_norm": {
+          "n_observed": 3,
+          "mean": 7.537627576918264e-06,
+          "median": 6.955795470275916e-06,
+          "sd_observed": 1.1517719320935137e-06
+        },
+        "gaussian_to_segmentation_ratio": {
+          "n_observed": 3,
+          "mean": 0.04587303824034739,
+          "median": 0.048574155829668855,
+          "sd_observed": 0.012968526382564767
+        },
+        "cosine": {
+          "n_observed": 3,
+          "mean": -0.035754542176922165,
+          "median": -0.034554556012153625,
+          "sd_observed": 0.01818262884324801
+        }
+      }
+    },
+    "before_joint": {
+      "epochs_1based": [
+        66,
+        70
+      ],
+      "n_epochs": 5,
+      "stages": [
+        "partial"
+      ],
+      "epoch_means": {
+        "segmentation": {
+          "n_observed": 5,
+          "mean": 0.3176983236908913,
+          "median": 0.31228911167383194,
+          "sd_observed": 0.023111012785781017
+        },
+        "classification": {
+          "n_observed": 5,
+          "mean": 1.5045621712446213,
+          "median": 1.5117896143198013,
+          "sd_observed": 0.1025715601143051
+        },
+        "classification_weighted": {
+          "n_observed": 5,
+          "mean": 0.15045621985197066,
+          "median": 0.15117896381020546,
+          "sd_observed": 0.01025715638646075
+        },
+        "guidance_weighted": {
+          "n_observed": 5,
+          "mean": 0.0001871795895975083,
+          "median": 0.0001883626363123767,
+          "sd_observed": 3.5903472913709347e-06
+        },
+        "gaussian": {
+          "n_observed": 5,
+          "mean": 4.658414711884688e-05,
+          "median": 4.5667451558983885e-05,
+          "sd_observed": 2.7760768187243287e-06
+        },
+        "gaussian_weighted": {
+          "n_observed": 5,
+          "mean": 0.00046584147012326864,
+          "median": 0.0004566745131742209,
+          "sd_observed": 2.7760768513422048e-05
+        },
+        "segmentation_gradient_norm": {
+          "n_observed": 5,
+          "mean": 1.1764635773897172,
+          "median": 1.094542090535164,
+          "sd_observed": 0.25220988270928046
+        },
+        "classifier_gradient_norm": {
+          "n_observed": 5,
+          "mean": 2.4746621370315554,
+          "median": 2.460233422279358,
+          "sd_observed": 0.23906355982490354
+        }
+      },
+      "total_loss": {
+        "n_observed": 5,
+        "mean": 0.4688075645685196,
+        "median": 0.4613150143623352,
+        "sd_observed": 0.028620090777221077
+      },
+      "main_logits_probes": {
+        "n_probes": 2,
+        "observed_epochs_1based": [
+          67,
+          69
+        ],
+        "segmentation_norm": {
+          "n_observed": 2,
+          "mean": 0.00022605832873523468,
+          "median": 0.00022605832873523468,
+          "sd_observed": 0.00031248327785959667
+        },
+        "gaussian_weighted_norm": {
+          "n_observed": 2,
+          "mean": 4.481958171709266e-06,
+          "median": 4.481958171709266e-06,
+          "sd_observed": 1.3259554109805077e-06
+        },
+        "gaussian_to_segmentation_ratio": {
+          "n_observed": 2,
+          "mean": 0.3535975690200653,
+          "median": 0.3535975690200653,
+          "sd_observed": 0.48291683217500075
+        },
+        "cosine": {
+          "n_observed": 2,
+          "mean": 0.0320155315566808,
+          "median": 0.0320155315566808,
+          "sd_observed": 0.04581790322428243
+        }
+      }
+    },
+    "after_joint": {
+      "epochs_1based": [
+        71,
+        75
+      ],
+      "n_epochs": 5,
+      "stages": [
+        "joint"
+      ],
+      "epoch_means": {
+        "segmentation": {
+          "n_observed": 5,
+          "mean": 0.3328586510300636,
+          "median": 0.3290371860861778,
+          "sd_observed": 0.017937917529033294
+        },
+        "classification": {
+          "n_observed": 5,
+          "mean": 1.568241078221798,
+          "median": 1.5756418526172637,
+          "sd_observed": 0.03590049368750315
+        },
+        "classification_weighted": {
+          "n_observed": 5,
+          "mean": 0.15682411040514707,
+          "median": 0.15756418859958649,
+          "sd_observed": 0.0035900496667623295
+        },
+        "guidance_weighted": {
+          "n_observed": 5,
+          "mean": 0.00018747229048749433,
+          "median": 0.0001858642820152454,
+          "sd_observed": 4.319976484472749e-06
+        },
+        "gaussian": {
+          "n_observed": 5,
+          "mean": 4.427218130149413e-05,
+          "median": 4.4226547339349055e-05,
+          "sd_observed": 1.6974826440165017e-06
+        },
+        "gaussian_weighted": {
+          "n_observed": 5,
+          "mean": 0.0004427218143129721,
+          "median": 0.0004422654755180702,
+          "sd_observed": 1.6974826627893228e-05
+        },
+        "segmentation_gradient_norm": {
+          "n_observed": 5,
+          "mean": 1.2180122324466705,
+          "median": 1.2265362356901168,
+          "sd_observed": 0.15446868339928094
+        },
+        "classifier_gradient_norm": {
+          "n_observed": 5,
+          "mean": 2.7152257052898405,
+          "median": 2.70015221118927,
+          "sd_observed": 0.04968363889274859
+        }
+      },
+      "total_loss": {
+        "n_observed": 5,
+        "mean": 0.49031295614242554,
+        "median": 0.49020590901374816,
+        "sd_observed": 0.01772344797667738
+      },
+      "main_logits_probes": {
+        "n_probes": 3,
+        "observed_epochs_1based": [
+          71,
+          73,
+          75
+        ],
+        "segmentation_norm": {
+          "n_observed": 3,
+          "mean": 0.0004810660417812566,
+          "median": 0.0004013020661659539,
+          "sd_observed": 0.0002452696443932582
+        },
+        "gaussian_weighted_norm": {
+          "n_observed": 3,
+          "mean": 5.0427697715349495e-06,
+          "median": 5.029300609749043e-06,
+          "sd_observed": 6.353975408087899e-07
+        },
+        "gaussian_to_segmentation_ratio": {
+          "n_observed": 3,
+          "mean": 0.012537241278034888,
+          "median": 0.014165874770481254,
+          "sd_observed": 0.006052873468429796
+        },
+        "cosine": {
+          "n_observed": 3,
+          "mean": 0.017404278585066397,
+          "median": 0.012318460270762444,
+          "sd_observed": 0.014499718307716354
+        }
+      }
+    },
+    "latest10": {
+      "epochs_1based": [
+        118,
+        127
+      ],
+      "n_epochs": 10,
+      "stages": [
+        "joint"
+      ],
+      "epoch_means": {
+        "segmentation": {
+          "n_observed": 10,
+          "mean": 0.2794140621483326,
+          "median": 0.2843149729967117,
+          "sd_observed": 0.010195370825004942
+        },
+        "classification": {
+          "n_observed": 10,
+          "mean": 1.3870212440907954,
+          "median": 1.3971964758634567,
+          "sd_observed": 0.0891071014369789
+        },
+        "classification_weighted": {
+          "n_observed": 10,
+          "mean": 0.13870212674997748,
+          "median": 0.1397196501120925,
+          "sd_observed": 0.008910710230329215
+        },
+        "guidance_weighted": {
+          "n_observed": 10,
+          "mean": 0.00020344414768042044,
+          "median": 0.00020271135310758837,
+          "sd_observed": 8.788899195440727e-06
+        },
+        "gaussian": {
+          "n_observed": 10,
+          "mean": 3.3788618004109593e-05,
+          "median": 3.3602540846914056e-05,
+          "sd_observed": 1.6476180029147399e-06
+        },
+        "gaussian_weighted": {
+          "n_observed": 10,
+          "mean": 0.0003378861799777951,
+          "median": 0.00033602540820720604,
+          "sd_observed": 1.647617996127896e-05
+        },
+        "segmentation_gradient_norm": {
+          "n_observed": 10,
+          "mean": 1.0729083333939313,
+          "median": 1.0780950386524202,
+          "sd_observed": 0.17679684604196938
+        },
+        "classifier_gradient_norm": {
+          "n_observed": 10,
+          "mean": 2.6015209769010545,
+          "median": 2.5785937497615814,
+          "sd_observed": 0.10179127291947944
+        }
+      },
+      "total_loss": {
+        "n_observed": 10,
+        "mean": 0.41865751876831053,
+        "median": 0.4145153363347054,
+        "sd_observed": 0.013935371530723982
+      },
+      "main_logits_probes": {
+        "n_probes": 5,
+        "observed_epochs_1based": [
+          119,
+          121,
+          123,
+          125,
+          127
+        ],
+        "segmentation_norm": {
+          "n_observed": 5,
+          "mean": 0.0002674952949746512,
+          "median": 0.0002900406834669411,
+          "sd_observed": 0.00015316207329273913
+        },
+        "gaussian_weighted_norm": {
+          "n_observed": 5,
+          "mean": 4.3579362227319505e-06,
+          "median": 4.5803681132383645e-06,
+          "sd_observed": 6.961758716304045e-07
+        },
+        "gaussian_to_segmentation_ratio": {
+          "n_observed": 5,
+          "mean": 0.023264946737723606,
+          "median": 0.012196606747358596,
+          "sd_observed": 0.016729253127802695
+        },
+        "cosine": {
+          "n_observed": 5,
+          "mean": -0.0012052361737005413,
+          "median": -0.0006051947711966932,
+          "sd_observed": 0.0068595109446927096
+        }
+      }
+    }
+  },
+  "gradient_probe_scope": "weighted Gaussian vs segmentation derivative at main logits only; DS sibling terms, classifier losses and optimizer updates not represented; parameter-group norm includes all active objectives",
+  "validation_points": {
+    "gta": 0,
+    "unet": 0
+  },
+  "primary_metrics_pending_in_this_download": [
+    "dice",
+    "pooled_assd_mm"
+  ],
+  "overall_loss_between_methods_compared": false,
+  "visual_review": "Both original2550x2720 PNGs viewed; titles/axes/ticks/legends readable, no clipping. Coefficient0.1 shares axis with10: read exact effective values from this report. Validation panels intentionally empty.",
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+  "sources": [
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\gta_38773\\results\\gta_enhanced200x125\\training\\config.json",
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\gta_38773\\results\\gta_enhanced200x125\\training\\history.jsonl",
+      "sha256": "821b36f293df56b6bd633eb353aa8e50965d77730f3b844b2e3268291a5360ff"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\gta_38773\\results\\gta_enhanced200x125\\training\\gradient_probes.jsonl",
+      "sha256": "82a167d7fbad6bfc7911aba08f063c409110177e751af3c7c055bdac0e516240"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\unet_17552\\results\\unet_recipe200x125\\training\\config.json",
+      "sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\unet_17552\\results\\unet_recipe200x125\\training\\history.jsonl",
+      "sha256": "b3a3debbb3a2552208aa617487b47437226913c844534e13cde0073249fe7a53"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\unet_17552\\results\\unet_recipe200x125\\training\\TRAINING_COMPLETE.json",
+      "sha256": "8eb5bd82ce4db74e374f465b7ca3230adcea73c0158e4e74eda3f4af63c2ba41"
+    }
+  ],
+  "artifacts_sha256": {
+    "curve_manifest.json": "3dcc04bff801956c25333dc46ae27ce87d024383f326979c5a3422e76d3cdd56",
+    "curve_notes.txt": "8296bdcb994942fe61e8bbd4cd100f863043e597be6ec60b0089db7bc3751015",
+    "epoch_summary.csv": "93f6bdf121163e67f802c4d37e5fe93d84dd1e8042c58e007109dae53e42c738",
+    "gta_learning_curves.png": "ed943f8045c6507b2ff13845d248bac42977f7289c1b76b9bd29a382afd5fed0",
+    "gta_learning_curves.svg": "b54ca25cd473645260447f506ad05894e586365a0353135013f9fd59930556cb",
+    "unet_learning_curves.png": "7731b63abf1ecc9c044508e8f261b2796f4fa27656f55568cde3772fe00f7f66",
+    "unet_learning_curves.svg": "bf73818d584da04cd5d166dac51cd35d1880c296cb7bf470fac8779ea382d329"
+  },
+  "gradient_probe_max_ratio": {
+    "iteration": 8500,
+    "probe_space": "main logits; segmentation DS branches excluded from this shared-output derivative",
+    "segmentation_norm": 5.099283953313716e-06,
+    "gaussian_weighted_norm": 3.5443661090539536e-06,
+    "gaussian_lambda": 10.0,
+    "probe_derivative_scale_removed": 1024.0,
+    "gaussian_to_segmentation_ratio": 0.6950713358001342,
+    "cosine": 0.06441368162631989,
+    "epoch_1based": 69,
+    "stage": "partial"
+  },
+  "independent_capture_check": {
+    "all_29_files_including_system_status_verified": true,
+    "all_three_jsonl_finite_complete_no_duplicate": true,
+    "GTA_probe_schedule_and_hist_counts_match": true,
+    "final_checkpoint_not_downloaded": true,
+    "final_marker_weight_sha_independently_rechecked": false
+  }
+}

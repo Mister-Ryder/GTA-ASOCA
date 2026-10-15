@@ -1,0 +1,50 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,os,signal,time,shutil
+d=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+old=Path('/proc/105363')
+if old.exists():
+ argv=(old/'cmdline').read_bytes().decode().rstrip('\0').split('\0')
+ cwd=(old/'cwd').resolve()
+ if (d/'publish.py').resolve() not in [(cwd/a).resolve() for a in argv if a.endswith('.py')] or os.getpgid(105363)!=105363:
+  raise RuntimeError('Sparse directory publisher process identity differs')
+ os.killpg(105363,signal.SIGTERM)
+ time.sleep(1)
+(d/'publish_status.json').write_text(json.dumps({'status':'superseded_by_sparse_archive','reason':'Sparse per-array network writes are slow; publish packed cache and materialize on local training disk','previous_pid':105363},indent=2)+'\n')
+script=d/'pack_cache.py'
+program="""from pathlib import Path
+import subprocess,json,hashlib,datetime,shutil
+s=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+d=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+def sha(p):
+ h=hashlib.sha256()
+ with p.open('rb') as f:
+  for b in iter(lambda:f.read(8*1024**2),b''):h.update(b)
+ return h.hexdigest()
+def state(x):(d/'packed_publish_status.json').write_text(json.dumps(x,indent=2)+'\\n')
+try:
+ state({'status':'packing_sparse_cache','reason':'Use sequential archive writes; local sparse materialization avoids network small writes'})
+ archive=d/'cache_sparse.tar.gz';part=d/'cache_sparse.tar.gz.part'
+ subprocess.run(['tar','--sparse','--sparse-version=1.0','-I','gzip -1','-cf',str(part),'-C',str(s),'cache'],check=True)
+ part.replace(archive)
+ mh=sha(s/'cache/manifest.json')
+ if mh!='141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356':raise RuntimeError('Frozen manifest changed')
+ value={'status':'ready','cache_archive':str(archive),'archive_bytes':archive.stat().st_size,'cache_archive_sha256':sha(archive),'manifest_sha256':mh,'source_cache':str(s/'cache'),'case_count':40,'sparse_format':'GNU1.0; extract with GNUtar on local SSD','verified_at':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+ (d/'CACHE_ARCHIVE_READY.json').write_text(json.dumps(value,indent=2)+'\\n')
+ state({'status':'copying_original_raw_archive',**{'cache_archive_ready':True}})
+ raw=d/'CompressedVersion.zip';rp=d/'CompressedVersion.zip.part'
+ shutil.copyfile(s/'raw/CompressedVersion.zip',rp)
+ if sha(rp)!='08ed5cf3d70743517ec83d9f1b18fc5d5a520d99203b4a876df5b7d1600bdb38':raise RuntimeError('Raw archive checksum differs')
+ rp.replace(raw)
+ (d/'RAW_ARCHIVE_READY.json').write_text(json.dumps({'status':'ready','archive':str(raw),'sha256':'08ed5cf3d70743517ec83d9f1b18fc5d5a520d99203b4a876df5b7d1600bdb38'},indent=2)+'\\n')
+ state({'status':'ready','cache_archive_ready':True,'raw_archive_ready':True});print('PACKED_PUBLICATION_COMPLETE',flush=True)
+except Exception as e:
+ state({'status':'failed','error':repr(e)});raise
+"""
+script.write_text(program)
+if (d/'CACHE_ARCHIVE_READY.json').exists():raise RuntimeError('Archive already ready; inspect before repacking')
+with (d/'pack_cache.log').open('a') as log:
+ p=subprocess.Popen(['/root/miniconda3/bin/python','-u',str(script)],stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+(d/'packed_publish_pid.json').write_text(json.dumps({'pid':p.pid}))
+print(json.dumps({'packed_publish_pid':p.pid,'previous_partial_copy_preserved':True,'archive_first':True}))
+PY

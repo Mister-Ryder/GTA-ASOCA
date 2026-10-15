@@ -1,0 +1,63 @@
+统一GTA方法论：当前实现、实际诊断与下一步证据要求
+2026-10-14；方法开发记录。冻结A的200×125训练、20点/80次内部验证和固定final像素复核已完成；B正式试验已启动、结果未完成。本文件不是独立测试或方法优越性结论。
+
+拟验证的核心主张
+推荐共同核心为“细小分支管状结构的稀疏与结构信息利用”：把属性描述转换为可学习表征，按层次指导分割特征，并通过多尺度融合与结构场辅助监督支持精细重建。气道与冠状动脉共享这一计算问题，但帮助程度仍需实验证明。两任务分别训练、分别报告；不把气道改称心血管，不把ASOCA前景/背景二类管腔分割改称多类全心脏分割。
+
+当前保留的四项框架
+属性先验表征：同一CT输入的三头分支深度、几何复杂度、空间位置代理及空间特征。
+分层条件引导：位置作用于编码层，分支深度与结构作用于解码层；沿用历史类别/置信度调制接口。
+多尺度融合：保留分类器多尺度特征聚合、解码器融合与16通道引导图的最终融合。
+结构场约束：保留半径相关中心线Gaussian场及logits→Conv3d→sigmoid的预测路径。
+分类器独立预训练的设计目的是稳定辅助表示及多任务优化；尚未用匹配消融证明其稳定性收益。最终目标仍是分割，分类准确率不能替代Dice/ASSD或作为主训练成绩门槛。
+
+必须披露的当前实现边界
+ASOCA属性是从训练掩膜生成的几何代理。分支深度来自全卷骨架图的最粗根BFS，并非临床冠脉分段；位置为全CT Z三段×X两半，并非心脏解剖区域。结构复杂度仍使用气道版本的固定阈值。
+三个分类目标均概括整个128³输入。类别经全局avg/max池化预测，空间特征和引导图仍存在；不能把全局类别摘要等同于没有任何空间先验。
+实际激活的历史增强forward使用解码器融合。不能仅因存在encoder fusion模块就声称它在当前主forward参与融合；返回的seg-to-cls feedback也不能因计算了就声称有独立loss监督。
+当前分割直接深监督位于解码器的两个尺度，不是编码器与解码器都开启了分割深监督。
+类别argmax及softmax置信度在no_grad边界中计算；部分/全解冻时空间特征路径及显式分类/引导损失仍可训练，但不能声称分割损失经离散类别选择端到端优化分类概率。当前返回的enhanced_features未被objective使用；不声称存在持续反馈学习闭环或拓扑连通保证。
+Gaussian场使用float缓存、全卷最大值归一化和4σ局部累加，并在GT前景外置0；监督目标为.5+.5G，背景及空块目标均为.5。不能将它描述成跨越管壁的全局连续距离场。这与历史BAS缓存的量化/生成过程不是逐字节等价，须作为任务适配说明。
+
+真实先验尺度审计
+来源：server_records/label_scale_audit_20261014；完成marker核验28训练病例、56输入块、168同心ROI观察。实际采样bank与epoch070 Gaussian诊断逐字节描述一致，未读取内部4例或原8例GT，未运行网络、使用GPU或更新参数。
+128³、96³、64³分别对应64、48、32mm。三尺度保持输入块中心及全卷branch/depth定义不变。
+当前128³有49个非空块；35/49包含多个代数分箱，中心线体素加权的代数众数与当前体积主导分支标签在13/49块不同。主导分支占血管体积的中位数约51.78%，高于主导标签分箱的中心线份额中位数约32.47%。中心线体素权重只是长度代理，不是精确物理弧长。
+缩为中央96³使8/49原非空块变空；缩为中央64³使18/49变空。现证据不支持直接用更小中央窗口替换全部分类监督。
+结构tile标签的多样性使用相同但尺度相关的阈值；它是代理不一致，不能解释成临床形态异质。固定128前景体积的反事实分母改变中央64/96部分结构分箱，提示缩窗必须同时审查阈值的尺度效应。
+28例训练冠脉GT包围盒的ZYX中位长度为91.25/94.25/107.5mm，没有一例完整包围盒能放入64mm立方块。该测量只用于尺度报告，绝不用于推理CT裁剪。它说明当前不是整例冠脉只有一个类别，但不能证明每个采样块都具有足够可学习的结构信息。
+原2048分类预训练统计bank采用geometry采样；本56块采用主分割standard采样，两者频率不能混用。类别频率与标签差异也不能证明属性可由CT准确预测或能提高分割。
+
+真实结构场诊断
+来源：server_records/classifier_scope_20261014/results/gaussian_epoch070_cpu_bank56；独立复核报告docs/gaussian_epoch070_actual_review.txt。
+固定第70周期checkpoint，CPU eval-mode、batch1、28×2训练块，无增强或参数更新。全bank前景约0.1438%，前景场MSE比常数0.5降低约74.5%，表明已学到部分结构变化；全场模型平方误差约69.75%来自背景。
+λ=10加权Gaussian的logits梯度能量约61.25%处于共同平移方向；该方向局部不直接改变softmax。类别差异方向范数约为深监督主头分割梯度的0.647%。这不代表全网络有效梯度占比，也不能把共模能量全部认作无效更新。
+空块的相对梯度比例高于非空块。不能仅看小MSE就统一增大λ；前景/空块/背景与实际Dice/ASSD都要同时检查。
+
+当前实验支持与尚不支持的主张
+支持：数据及来源可追溯；四项框架在代码中有对应路径；分类器80×64固定末权重及主任务50冻结/20部分解冻/130全解冻阶段真实执行；主分割200×125=25000更新完成。预定canonical20点×4病例共80次原网格评价及曲线证据已闭合，固定final四例Dice/物理ASSD已由保存预测与原GT重新计算。
+固定final开发结果（患者mean±sample SD，非折间SD）：GTA Dice83.185390±5.262188%，ASSD0.567825±0.323106mm；共同分割配方U-Net Dice81.845551±7.676467%，ASSD0.749233±0.455919mm。四例均有定义的ASSD，未丢弃病例。GTA在D10/N12两指标较好，D20/N3两指标较差；不据四例均值指定模型胜者或声称统计显著。canonical final与OLD early preview的四例解码掩膜及原网格几何逐一完全一致，preview不进入或伪造canonical轨迹。
+尚未支持：属性指导或Gaussian独立带来增益；正式泛化优越性；达到文献90.15%；延长训练能提高验证性能；分类器更准确意味着分割更好。epoch140至200 Dice约82.84–83.24%平台波动，ASSD约0.534–0.657mm，不能作为延长训练的获益证据，仍固定final不选最优周期。
+共同配方U-Net与GTA的比较包含架构、容量、气道初始化及5120额外分类预训练更新，不是纯先验消融。内部4例是开发数据，原8例已有历史开发曝光，两者均不能改称独立盲测或与文献五折均值混排为同条件排名。
+
+新完成的辅助诊断
+最终分类器在同一standard训练bank的49非空块中，generation/structure/location预测0类计数分别为2/0/1；generation≥5、structure=3、location非0触发分别为7/10/48。该bank不含GT generation6或structure6，不能据缺席类别宣称无法学习。分类accuracy只作辅助分析，不作启动、选权重或方法成功门槛；不混用geometry采样2048预训练统计。
+实际初始train-mode AMP诊断完成28个B2批次/56块，没有参数更新、优化器或heldout读取；327状态及RNG按批重置并在末尾恢复。A/B所有28批梯度有限；B有5批总梯度范数提示clip12会作用，A无此提示。共享分割参数Gaussian/seg梯度范数比中位数A约0.610、B约3.245，同向余弦中位数约0.293/0.083。这是固定训练bank初始敏感度，不能与epoch070 eval/logits方向诊断混为同一量，也不是训练获益或稳定性保证。
+
+以上事实的实际来源（路径均相对fidelity_v2）
+server_records/gta_canonical_acceptance_20261014/canonical_acceptance_and_pair.json
+server_records/gta_canonical_acceptance_20261014/canonical_unet_paired_cases.csv
+server_records/gta_complete_trajectory_20261014/results/gta_enhanced200x125/internal4_trajectory/validation_curve.csv
+server_records/gta_complete_trajectory_20261014/collection_manifest.json
+server_records/classifier_final_cpu_actual_20261014/results/classifier_final_cpu_audit_20261014/summary.json
+server_records/classifier_final_cpu_actual_20261014/results/classifier_final_cpu_audit_20261014/AUDIT_COMPLETE.json
+server_records/initial_parameter_gradient_actual_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/summary.json
+server_records/initial_parameter_gradient_actual_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/DIAGNOSTIC_COMPLETE.json
+
+下一步顺序
+λ0匹配配方控制已在OLD独立启动，保留Gaussian模块、初始化来源、种子、患者、采样、DS、阶段和25000预算；结果未完成。OLD/NEW硬件与driver不同。历史A没有另存θ0张量；CPU重建或新运行的只读初始快照均不能补证历史A实际θ0已逐字节相同。
+B正式候选已于实际launch回执10:45:17UTC启动，结果待完成。仅把Gaussian全场MSE reduction改为按每patch前景/背景分区均值、对实际存在区域等权后再按batch取均值；空块按存在区域归一。λ10、模块/参数形状、Gaussian场/目标、分类器、DS、采样、初始化来源、阶段和25000预算均保留。它改变了数学目标及梯度力度，不能称旧loss不变或只换等价写法。B实际初始d84快照计划/诊断不能证明历史Aθ0；也不能把相同模块形状当数学等价。
+正式启动与决策来源：server_records/B_formal_launch_20261014/launch_receipt.json、B_TRAIN_DECISION_20261014.json、actual_evidence.json；λ0来源：server_records/lambda0_actual_launch_20261014/launch.json、ACTUAL_CONTROL_THETA0.json、actual_training_config.json。
+先完成并核验现有候选固定final及逐病例误差，再判断结构场目标修复和模块消融。局部分类监督、分支均衡聚合、后期权重或更长预算不得同时叠加而作单项归因。已曝光内部4和原8均维持开发身份；未来正式泛化评价须在候选/协议冻结后另定，不能自动把旧五折队列当当前授权。
+如改局部监督，优先保留128上下文和原条件接口；共享头的区域辅助监督须另存目标/配置并披露全局上下文影响。参数形状一致只证明兼容，不能证明数学等价。
+当前公开仓库记录了首版可复现配方；后续经验证的方案应版本化更新。原始数据、凭据、历史权重及私有实验材料继续留在受控实验目录。

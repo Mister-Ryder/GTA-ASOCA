@@ -1,0 +1,18 @@
+  File "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/start_classifier_stage.py", line 84
+    if not (R/'prior_audit/results/prior_audit.json').exists():
+    ^
+IndentationError: unexpected indent
+{"phase": "waiting_for_environment", "status": "running"}
+{"phase": "checking_transfer_and_cuda", "status": "running"}
+{"phase": "checking_transfer_and_cuda", "status": "running"}
+{"phase": "waiting_for_packed_cache", "status": "running"}
+{"phase": "verifying_cache_archive", "status": "running"}
+{"phase": "materializing_local_cache", "status": "running"}
+{"phase": "materializing_local_cache", "status": "running"}
+{"phase": "auditing_prior_labels", "status": "running"}
+{"phase": "auditing_prior_labels", "status": "running"}
+{"phase": "classifier_true_data_smoke", "status": "running"}
+{"phase": "classifier_true_data_smoke", "status": "running"}
+{"phase": "training_and_diagnosing_classifier", "status": "running"}
+{"phase": "training_and_diagnosing_classifier", "status": "running"}
+{"phase": "classifier_diagnostics_ready", "status": "completed"}

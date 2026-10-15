@@ -1,0 +1,12 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,shutil,json
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+shared=Path('/root/autodl-fs')
+print('SHARED_RESOLVED',str(shared.resolve()),'DISK',shutil.disk_usage(shared))
+for p in [r/'raw/CompressedVersion',r/'raw/CompressedVersion.zip',r/'cache',shared/'datasets']:
+ print('PATH',str(p),'EXISTS',p.exists())
+ if p.exists():print(subprocess.check_output(['du','-sh',str(p)],text=True).strip())
+ if p.is_dir() and p==shared/'datasets':print('DATASET_DIRS',[c.name for c in p.iterdir()])
+print('MANIFEST_SHA',subprocess.check_output(['sha256sum',str(r/'cache/manifest.json')],text=True).strip())
+PY

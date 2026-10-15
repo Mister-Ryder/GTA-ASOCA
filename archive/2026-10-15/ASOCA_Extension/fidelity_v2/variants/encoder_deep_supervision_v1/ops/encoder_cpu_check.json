@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "device": "cpu",
+  "torch": "2.0.0+cu117",
+  "batch": 2,
+  "synthetic_size": 32,
+  "optimizer_updates": 0,
+  "encoder_only_gradient_norms_head_fusion_firstencoder": [
+    0.41352352499961853,
+    0.003469273913651705,
+    0.0025786401238292456
+  ],
+  "baseline_needs_no_priors": true,
+  "full_frozen_classifier_has_no_gradient": true,
+  "eval_logits_equal_sealed_B": true,
+  "no_new_state_keys": true,
+  "seconds": 6.203000000008615,
+  "limits": "Synthetic wiring only; not CUDA/AMP, real-volume or segmentation performance validation."
+}

@@ -1,0 +1,23 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess, json, os, shutil, sys
+print('SERVER',json.dumps({'host':os.uname().nodename,'python':sys.version}))
+for command in [['nvidia-smi','--query-gpu=name,memory.total,memory.used,utilization.gpu','--format=csv,noheader'],['nvidia-smi','--query-compute-apps=pid,process_name','--format=csv,noheader']]:
+ p=subprocess.run(command,capture_output=True,text=True); print(p.stdout.strip(),p.stderr.strip())
+for folder in ['/root/autodl-tmp','/root/autodl-fs','/root/miniconda3/envs']:
+ p=Path(folder)
+ print('PATH',folder,'exists',p.exists(),'resolved',str(p.resolve()))
+ if p.exists():
+  print('DISK',shutil.disk_usage(p))
+  for child in sorted(p.iterdir())[:50]:print('ENTRY',str(child), 'DIR' if child.is_dir() else child.stat().st_size)
+print('POTENTIAL_SHARED_ASOCA')
+root=Path('/root/autodl-fs')
+if root.exists():
+ for current,dirs,files in os.walk(root):
+  depth=len(Path(current).relative_to(root).parts)
+  if depth>=3:dirs[:]=[]
+  for name in dirs+files:
+   if any(k in name.lower() for k in ['asoca','compressedversion','coronary','manifest','冠状']):print(str(Path(current)/name))
+print(subprocess.getoutput('free -h'))
+print(subprocess.getoutput('ps -eo pid,comm,%cpu,%mem,args --sort=-%cpu | head -12'))
+PY

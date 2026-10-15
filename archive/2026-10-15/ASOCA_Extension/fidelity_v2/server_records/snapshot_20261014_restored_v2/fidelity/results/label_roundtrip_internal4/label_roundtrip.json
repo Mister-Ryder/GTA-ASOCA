@@ -1,0 +1,841 @@
+{
+  "schema_version": 1,
+  "audit": "internal_four_gt_label_nearest_neighbor_roundtrip",
+  "note": "Measured nearest-neighbour label roundtrip on four internal development patients. Not model inference, independent test, or a mathematical performance ceiling. Failure/empty distances are retained; no complete-case replacement.",
+  "development_only": true,
+  "formal_final_test": false,
+  "mathematical_performance_ceiling": false,
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "internal_split": {
+    "seed": 20261014,
+    "train": [
+      "Diseased_11",
+      "Diseased_12",
+      "Diseased_13",
+      "Diseased_14",
+      "Diseased_16",
+      "Diseased_17",
+      "Diseased_19",
+      "Diseased_2",
+      "Diseased_3",
+      "Diseased_4",
+      "Diseased_5",
+      "Diseased_6",
+      "Diseased_8",
+      "Diseased_9",
+      "Normal_1",
+      "Normal_10",
+      "Normal_11",
+      "Normal_13",
+      "Normal_14",
+      "Normal_15",
+      "Normal_17",
+      "Normal_18",
+      "Normal_20",
+      "Normal_4",
+      "Normal_5",
+      "Normal_6",
+      "Normal_7",
+      "Normal_9"
+    ],
+    "val": [
+      "Diseased_10",
+      "Diseased_20",
+      "Normal_12",
+      "Normal_3"
+    ],
+    "original_train32": [
+      "Diseased_10",
+      "Diseased_11",
+      "Diseased_12",
+      "Diseased_13",
+      "Diseased_14",
+      "Diseased_16",
+      "Diseased_17",
+      "Diseased_19",
+      "Diseased_2",
+      "Diseased_20",
+      "Diseased_3",
+      "Diseased_4",
+      "Diseased_5",
+      "Diseased_6",
+      "Diseased_8",
+      "Diseased_9",
+      "Normal_1",
+      "Normal_10",
+      "Normal_11",
+      "Normal_12",
+      "Normal_13",
+      "Normal_14",
+      "Normal_15",
+      "Normal_17",
+      "Normal_18",
+      "Normal_20",
+      "Normal_3",
+      "Normal_4",
+      "Normal_5",
+      "Normal_6",
+      "Normal_7",
+      "Normal_9"
+    ],
+    "outer_development": [
+      "Diseased_1",
+      "Diseased_15",
+      "Diseased_18",
+      "Diseased_7",
+      "Normal_16",
+      "Normal_19",
+      "Normal_2",
+      "Normal_8"
+    ],
+    "selection_role": "four training-internal patients for development selection",
+    "outer_role": "eight previously exposed development patients; diagnostic only, never independent test"
+  },
+  "split_file_sha256": null,
+  "raw_root": "/autodl-fs/data/datasets/ASOCA_GTA_20261014/raw",
+  "cache_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache",
+  "expected_spacing_mm": 0.5,
+  "geometry_function_sources_sha256": {
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/label_roundtrip_sanity.py": "2fa0980a6698898c198d864be3dfb9337eda55d40482621dcaef9971409a4b19",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/prepare_data.py": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9"
+  },
+  "metric_protocol": {
+    "version": 2,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "assd_mm": {
+      "definition": "pooled_bidirectional_surface_voxel_distances",
+      "formula": "(sum(d_prediction_to_truth)+sum(d_truth_to_prediction))/(n_prediction_surface+n_truth_surface)",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "assd_directional_mean_mm": {
+      "definition": "equal_weight_mean_of_two_directional_surface_means",
+      "formula": "(mean(d_prediction_to_truth)+mean(d_truth_to_prediction))/2",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "surface_definition": "foreground boundary voxels removed by one 6-neighbour binary erosion, border_value=0",
+    "surface_connectivity_neighbors": 6,
+    "component_connectivity_neighbors": 26,
+    "surface_hd95_mm": "max of the two directional surface-distance 95th percentiles",
+    "asoca_foreground_hd95_mm": "max of the two directional ALL-foreground-voxel distance 95th percentiles",
+    "evaluation_grid": "original CT",
+    "spacing_axis_order": "z,y,x",
+    "empty_distance_policy": "null; cohort distance mean undefined if any required distance is undefined",
+    "cldice_role": "auxiliary skeleton overlap; ASSD is a boundary error, not connectivity"
+  },
+  "overall": {
+    "n_expected": 4,
+    "n_audited": 4,
+    "n_pipeline_verified": 4,
+    "pipeline_verified": true,
+    "dice": {
+      "mean": 0.9435492852081933,
+      "patient_sd": 0.02427805530411674,
+      "n_valid_verified_cases": 4,
+      "complete_four_case_mean": true
+    },
+    "assd_mm": {
+      "mean": 0.06414208406593812,
+      "patient_sd": 0.02504961122306155,
+      "n_valid_verified_cases": 4,
+      "complete_four_case_mean": true
+    },
+    "assd_directional_mean_mm": {
+      "mean": 0.06378882803017476,
+      "patient_sd": 0.024849617585485668,
+      "n_valid_verified_cases": 4,
+      "complete_four_case_mean": true
+    }
+  },
+  "cases": [
+    {
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "audit_completed": true,
+      "pipeline_verified": true,
+      "cache_matches_recomputed_raw_gt": true,
+      "cache_mismatched_voxels": 0,
+      "seconds": 35.40062906593084,
+      "metrics": {
+        "surface_hd95_mm": 0.3867189884,
+        "assd_mm": 0.07544955973370136,
+        "assd_directional_mean_mm": 0.07512374833567749,
+        "asd_prediction_to_truth_mm": 0.08526814766674191,
+        "asd_truth_to_prediction_mm": 0.06497934900461307,
+        "asoca_foreground_hd95_mm": 0.3867189883999913,
+        "metric_protocol_version": 2,
+        "assd_definition": "pooled_bidirectional_surface_voxel_distances",
+        "assd_directional_mean_definition": "equal_weight_mean_of_two_directional_surface_means",
+        "surface_connectivity_neighbors": 6,
+        "surface_area_weighted": false,
+        "prediction_surface_voxels": 13015,
+        "truth_surface_voxels": 12205,
+        "dice": 0.9279389600602863,
+        "empty_roundtrip": false,
+        "empty_raw_truth": false
+      },
+      "volumes": {
+        "raw": {
+          "foreground_voxels": 21371,
+          "voxel_volume_mm3": 0.0934697349931996,
+          "foreground_volume_mm3": 1997.5417065396687
+        },
+        "cache": {
+          "foreground_voxels": 16010,
+          "voxel_volume_mm3": 0.125,
+          "foreground_volume_mm3": 2001.25,
+          "volume_difference_mm3_vs_raw": 3.7082934603313333,
+          "relative_volume_difference_vs_raw": 0.0018564285532516821
+        },
+        "roundtrip": {
+          "foreground_voxels": 21093,
+          "voxel_volume_mm3": 0.0934697349931996,
+          "foreground_volume_mm3": 1971.5571202115593,
+          "volume_difference_mm3_vs_raw": -25.984586328109344,
+          "relative_volume_difference_vs_raw": -0.013008282251649359
+        }
+      },
+      "geometry": {
+        "raw_label": {
+          "size_xyz": [
+            512,
+            512,
+            224
+          ],
+          "spacing_xyz_mm": [
+            0.3867189884,
+            0.3867189884,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -111.80000305175781,
+            -224.375
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "raw_ct_header": {
+          "size_xyz": [
+            512,
+            512,
+            224
+          ],
+          "spacing_xyz_mm": [
+            0.3867189884,
+            0.3867189884,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -111.80000305175781,
+            -224.375
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "cache": {
+          "size_xyz": [
+            396,
+            396,
+            280
+          ],
+          "spacing_xyz_mm": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -111.80000305175781,
+            -224.375
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "roundtrip": {
+          "size_xyz": [
+            512,
+            512,
+            224
+          ],
+          "spacing_xyz_mm": [
+            0.3867189884,
+            0.3867189884,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -111.80000305175781,
+            -224.375
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "sha256": {
+        "raw_label": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+        "raw_image": "d09a67480ea55252bb07e46bab6377973f167208ef6429be92cb04ec3c7d6625",
+        "cache_label_npy": "4a50989ed39a184e5d3efceee9f7569f0cec3ef6abcaff7ce59cfd3f27b58b58",
+        "cache_case_json": "c4e2c6b5026f5ee59208ac9c1c8e70ceeb997aba18b506ee696319c3b3faf032"
+      },
+      "saved_roundtrip": null
+    },
+    {
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "audit_completed": true,
+      "pipeline_verified": true,
+      "cache_matches_recomputed_raw_gt": true,
+      "cache_mismatched_voxels": 0,
+      "seconds": 35.41768670082092,
+      "metrics": {
+        "surface_hd95_mm": 0.4707030058000001,
+        "assd_mm": 0.026901393035610118,
+        "assd_directional_mean_mm": 0.026841789231338828,
+        "asd_prediction_to_truth_mm": 0.031985387878327935,
+        "asd_truth_to_prediction_mm": 0.021698190584349724,
+        "asoca_foreground_hd95_mm": 0.0,
+        "metric_protocol_version": 2,
+        "assd_definition": "pooled_bidirectional_surface_voxel_distances",
+        "assd_directional_mean_definition": "equal_weight_mean_of_two_directional_surface_means",
+        "surface_connectivity_neighbors": 6,
+        "surface_area_weighted": false,
+        "prediction_surface_voxels": 17372,
+        "truth_surface_voxels": 16974,
+        "dice": 0.9795172863666014,
+        "empty_roundtrip": false,
+        "empty_raw_truth": false
+      },
+      "volumes": {
+        "raw": {
+          "foreground_voxels": 30631,
+          "voxel_volume_mm3": 0.13847582479322176,
+          "foreground_volume_mm3": 4241.652989241175
+        },
+        "cache": {
+          "foreground_voxels": 33561,
+          "voxel_volume_mm3": 0.125,
+          "foreground_volume_mm3": 4195.125,
+          "volume_difference_mm3_vs_raw": -46.52798924117542,
+          "relative_volume_difference_vs_raw": -0.010969305918987777
+        },
+        "roundtrip": {
+          "foreground_voxels": 30689,
+          "voxel_volume_mm3": 0.13847582479322176,
+          "foreground_volume_mm3": 4249.684587079183,
+          "volume_difference_mm3_vs_raw": 8.031597838007656,
+          "relative_volume_difference_vs_raw": 0.0018935065783032136
+        }
+      },
+      "geometry": {
+        "raw_label": {
+          "size_xyz": [
+            512,
+            512,
+            224
+          ],
+          "spacing_xyz_mm": [
+            0.4707030058000001,
+            0.4707030058000001,
+            0.6249999999999998
+          ],
+          "origin_xyz_mm": [
+            -88.6999969482422,
+            -165.99999999999997,
+            -207.87499999999997
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "raw_ct_header": {
+          "size_xyz": [
+            512,
+            512,
+            224
+          ],
+          "spacing_xyz_mm": [
+            0.4707030058,
+            0.4707030058,
+            0.6249999999999998
+          ],
+          "origin_xyz_mm": [
+            -88.6999969482422,
+            -165.99999999999997,
+            -207.875
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "cache": {
+          "size_xyz": [
+            482,
+            482,
+            280
+          ],
+          "spacing_xyz_mm": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "origin_xyz_mm": [
+            -88.6999969482422,
+            -165.99999999999997,
+            -207.875
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "roundtrip": {
+          "size_xyz": [
+            512,
+            512,
+            224
+          ],
+          "spacing_xyz_mm": [
+            0.4707030058000001,
+            0.4707030058000001,
+            0.6249999999999998
+          ],
+          "origin_xyz_mm": [
+            -88.6999969482422,
+            -165.99999999999997,
+            -207.87499999999997
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "sha256": {
+        "raw_label": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+        "raw_image": "7fdddea8ef4a2821cc6930e8605a49a5b9b39ccb64ba86dbb2f2ddd6d26cc6a4",
+        "cache_label_npy": "bf2c91e9e86ad8cf76110f01d98281c85250dd65b9a0b11a0b520d09b03ac4d3",
+        "cache_case_json": "52fee0a6cb6fd3fdf6f71b8646f9e051dde7da916a61458dcb637d26db25e235"
+      },
+      "saved_roundtrip": null
+    },
+    {
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "audit_completed": true,
+      "pipeline_verified": true,
+      "cache_matches_recomputed_raw_gt": true,
+      "cache_mismatched_voxels": 0,
+      "seconds": 31.42581468075514,
+      "metrics": {
+        "surface_hd95_mm": 0.369141,
+        "assd_mm": 0.08107449326555209,
+        "assd_directional_mean_mm": 0.08052910138143578,
+        "asd_prediction_to_truth_mm": 0.09332359098881642,
+        "asd_truth_to_prediction_mm": 0.06773461177405514,
+        "asoca_foreground_hd95_mm": 0.36914099999999905,
+        "metric_protocol_version": 2,
+        "assd_definition": "pooled_bidirectional_surface_voxel_distances",
+        "assd_directional_mean_definition": "equal_weight_mean_of_two_directional_surface_means",
+        "surface_connectivity_neighbors": 6,
+        "surface_area_weighted": false,
+        "prediction_surface_voxels": 14859,
+        "truth_surface_voxels": 13644,
+        "dice": 0.929929875795432,
+        "empty_roundtrip": false,
+        "empty_raw_truth": false
+      },
+      "volumes": {
+        "raw": {
+          "foreground_voxels": 27713,
+          "voxel_volume_mm3": 0.085165673675625,
+          "foreground_volume_mm3": 2360.1963145725954
+        },
+        "cache": {
+          "foreground_voxels": 18836,
+          "voxel_volume_mm3": 0.125,
+          "foreground_volume_mm3": 2354.5,
+          "volume_difference_mm3_vs_raw": -5.696314572595384,
+          "relative_volume_difference_vs_raw": -0.0024134918512602292
+        },
+        "roundtrip": {
+          "foreground_voxels": 27760,
+          "voxel_volume_mm3": 0.085165673675625,
+          "foreground_volume_mm3": 2364.19910123535,
+          "volume_difference_mm3_vs_raw": 4.0027866627547155,
+          "relative_volume_difference_vs_raw": 0.0016959549669831489
+        }
+      },
+      "geometry": {
+        "raw_label": {
+          "size_xyz": [
+            512,
+            512,
+            206
+          ],
+          "spacing_xyz_mm": [
+            0.369141,
+            0.369141,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -94.49999999999999,
+            -193.125
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "raw_ct_header": {
+          "size_xyz": [
+            512,
+            512,
+            206
+          ],
+          "spacing_xyz_mm": [
+            0.369141,
+            0.369141,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -94.49999999999999,
+            -193.125
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "cache": {
+          "size_xyz": [
+            378,
+            378,
+            257
+          ],
+          "spacing_xyz_mm": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -94.49999999999999,
+            -193.125
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "roundtrip": {
+          "size_xyz": [
+            512,
+            512,
+            206
+          ],
+          "spacing_xyz_mm": [
+            0.369141,
+            0.369141,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -75.69999694824219,
+            -94.49999999999999,
+            -193.125
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "sha256": {
+        "raw_label": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+        "raw_image": "41749867532d32f231cbab962a37db14e6436fad7dea87ff1f89b08d939722ec",
+        "cache_label_npy": "b8ea9bbec8d7530603483e6167efd665fd03457b2f26aae370bca8e9cf656cfa",
+        "cache_case_json": "10bcd4f0a32689d669f08804ad6cebc88e72002796ff6a8007fbdf0dc8bef5cb"
+      },
+      "saved_roundtrip": null
+    },
+    {
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "audit_completed": true,
+      "pipeline_verified": true,
+      "cache_matches_recomputed_raw_gt": true,
+      "cache_mismatched_voxels": 0,
+      "seconds": 33.49233894050121,
+      "metrics": {
+        "surface_hd95_mm": 0.382812,
+        "assd_mm": 0.07314289022888888,
+        "assd_directional_mean_mm": 0.07266067317224695,
+        "asd_prediction_to_truth_mm": 0.0852105092380254,
+        "asd_truth_to_prediction_mm": 0.060110837106468515,
+        "asoca_foreground_hd95_mm": 0.38281200000000126,
+        "metric_protocol_version": 2,
+        "assd_definition": "pooled_bidirectional_surface_voxel_distances",
+        "assd_directional_mean_definition": "equal_weight_mean_of_two_directional_surface_means",
+        "surface_connectivity_neighbors": 6,
+        "surface_area_weighted": false,
+        "prediction_surface_voxels": 21377,
+        "truth_surface_voxels": 19795,
+        "dice": 0.9368110186104535,
+        "empty_roundtrip": false,
+        "empty_raw_truth": false
+      },
+      "volumes": {
+        "raw": {
+          "foreground_voxels": 39275,
+          "voxel_volume_mm3": 0.09159064209,
+          "foreground_volume_mm3": 3597.22246808475
+        },
+        "cache": {
+          "foreground_voxels": 28696,
+          "voxel_volume_mm3": 0.125,
+          "foreground_volume_mm3": 3587.0,
+          "volume_difference_mm3_vs_raw": -10.222468084749835,
+          "relative_volume_difference_vs_raw": -0.0028417669953542044
+        },
+        "roundtrip": {
+          "foreground_voxels": 39283,
+          "voxel_volume_mm3": 0.09159064209,
+          "foreground_volume_mm3": 3597.95519322147,
+          "volume_difference_mm3_vs_raw": 0.7327251367200915,
+          "relative_volume_difference_vs_raw": 0.00020369191597711012
+        }
+      },
+      "geometry": {
+        "raw_label": {
+          "size_xyz": [
+            512,
+            512,
+            212
+          ],
+          "spacing_xyz_mm": [
+            0.382812,
+            0.382812,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -94.4000015258789,
+            -120.80000305175778,
+            -218.87500000000006
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "raw_ct_header": {
+          "size_xyz": [
+            512,
+            512,
+            212
+          ],
+          "spacing_xyz_mm": [
+            0.382812,
+            0.382812,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -94.4000015258789,
+            -120.80000305175778,
+            -218.87500000000006
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "cache": {
+          "size_xyz": [
+            392,
+            392,
+            265
+          ],
+          "spacing_xyz_mm": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "origin_xyz_mm": [
+            -94.4000015258789,
+            -120.80000305175778,
+            -218.87500000000006
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "roundtrip": {
+          "size_xyz": [
+            512,
+            512,
+            212
+          ],
+          "spacing_xyz_mm": [
+            0.382812,
+            0.382812,
+            0.625
+          ],
+          "origin_xyz_mm": [
+            -94.4000015258789,
+            -120.80000305175778,
+            -218.87500000000006
+          ],
+          "direction": [
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0,
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      },
+      "sha256": {
+        "raw_label": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+        "raw_image": "86c97a9dc8fe3807af1d5b6ef4ff52092d677938a41da7350de8fc12eae8ca66",
+        "cache_label_npy": "fec8b9ef9cef836c9fba5466cfaf52dd8de2bb7db02ba15794327efc81cc60bf",
+        "cache_case_json": "e6569a7497b287990ac86fd5a5f3cf3bcbf354fa82394d6b3c68d6a143e49db1"
+      },
+      "saved_roundtrip": null
+    }
+  ]
+}

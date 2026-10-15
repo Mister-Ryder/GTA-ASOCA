@@ -1,0 +1,21 @@
+局部标签尺度审查：已准备，尚未对服务器training28的真实缓存执行。
+
+当前128³输入在0.5mm网格上边长64mm，不等于完整心脏或完整冠脉树。脚本会只从训练28例的完整缓存GT测量冠脉树包围盒物理extent，再与32/48/64mm中央ROI比较；包围盒不参与CT裁剪、采样或先验输入。该extent由0.5mm最近邻GT测得，不假称原始标注网格的精确extent。
+
+预先固定同一128³ CT输入bank：seed20261013、bank_epoch0、每个训练病例2个既有采样器index，总56块。主训练standard sampler含训练GT前景采样，均匀负样本边界由CT本身确定；不读内部4/原8的GT。中央64/96/128³分别为32/48/64mm，位置同心；不根据标签挑选ROI、不在ROI内重新定根或重做骨架。可使用Gaussian工具的fixed_sampling_bank.json逐项核对CT/label/field/priors/start/sampling内容SHA。未提供reference时按同规则建立bank，不能声称已核对一个不存在的历史银行。
+
+当前generation是ROI内体素最多分支的全图depth众数；深度是从各连通分量最粗分支定根的几何代理，不是已验证的冠脉解剖分级。多数体素分支的标签可能隐藏少体积但较长的深层分支。审查将同时记录分支数、全图depth分布、主导分支体素份额、volume/equal-visible-branch/cached-centerline-voxel三种聚合及较高depth-bin份额。骨架体素计数不是精确弧长；高depth也不能自动等同细直径，所以另外报告cached radius≤1mm骨架份额。
+
+structure使用分支数与log(voxel volume)之比，阈值不随尺度归一。缩小ROI时，即使可见分支集合相同，分母变化也可能跨类。输出单列这一可精确归因的阈值效应，同时用同一128块体素体积作反事实分母；这个反事实只诊断，不是新训练标签。各ROI再固定划分2×2×2子块，记录非空子块structure proxy的直方图、熵与混合比例。子块标签本身也受尺度阈值和裁剪形状影响，因此proxy混合不能直接称真实解剖结构混合。
+
+class80的既有2048个geometry-sampler训练统计已核实：empty95，positive1953；structure5为1245/1953=63.75%，generation6为21/1953=1.08%。这是训练采样频率证据，不是分类准确率，也不能代表本轮standard sampler的bank频率。分类准确率和这些分布仅作诊断，不设主分割启动门槛。
+
+保持GTA框架的下一独立候选可以保留128³上下文、原编码器/SE/multi_scale_fusion/三head及guidance_map，只改变分类读出：fused8³中央[2:6]、[1:7]或全[0:8]分别avg+max，仍为512维，复用原三个7类head。SE全空间统计和卷积感受野仍引入外围信息，应称“128上下文中的中央局部读出”，不能称只看中央CT。generation/structure的监督ROI要与读出范围配套；location继续按全CT绝对中心六区，三种同心ROI中心相同，仅空ROI按现规则返回0。不得改成ROI自身相对位置分区。
+
+一组分类预测/置信度目前仍用于整块多尺度guidance；局部head不自动变成逐体素局部先验。anatomy_reweighting也把wholepatch generation/structure转为整块分割loss乘数，可能弱化少体积细枝表达，但是否发生及是否影响Dice/ASSD需要实测。审查同时输出实际whole128 loss乘数和未应用的局部反事实乘数，不能据此直接更改当前loss。
+
+局部ROI读出/监督改变会改变目标和特征分布。即使head维度不变，现有classifier80固定final的语义兼容也不能只凭tensor形状保证；应仅在下一独立、版本化候选中配套预训练/统计/初始化审计。当前活跃classifier stage、80-final、主网络、DS及Gaussian均不覆写，不自动启动新训练，也不承诺指标改善。
+
+执行工具：ops/diagnose_label_scales.py。--plan可读取本地下载的配置/manifest而不接触缓存GT；真实执行限定本ROOT/results和dataset/cache，只有NumPy/CPU，Linux主动nice+10并默认单线程。输出audit_plan、fixed bank、训练28树extent、逐ROI JSONL/CSV、summary与completion SHA。每病例默认只有2块，病例内变异和总体patch熵的样本稀疏；不作显著性或独立验证结论。
+
+源码定位：data.py:56–87定义wholepatch三标签；AnatomicalClassifier.py:51–58为4次下采样，124–143为fused8³及全局avg/max三head；model.py:158–184整块使用pred/confidence；losses.py:103–113给整块seg sampleweight。

@@ -1,0 +1,88 @@
+MICCAI2025 VFM 与当前 ASOCA 程序：实验和评分协议对照
+核查日期：2026-10-14（Asia/Shanghai）
+只读核查，未修改训练、服务器队列或已有结果。
+
+比较对象必须区分：
+A. VFM论文Table1：冠状动脉管腔分割的ASOCA五折报告值。
+B. 已得到GTA80.01%及U-Net78.70%的旧ASOCA运行：单折八例开发参考。
+C. 隔壁会话正在建立的fidelity_v2：预训练/阶段学习和内部诊断的新方案；其代码默认值不能冒充已经执行的配置，更不能把B的成绩署到C。
+
+一、论文明确公开的设定
+
+ASOCA使用40例公开标注，五折，每折32训练/8测试；不使用官方隐藏20例成绩作为Table1。
+Adam，初始学习率1e-4，600epochs，batch2。
+随机从完整体积裁剪160×160×128训练块。
+测试用同尺寸滑窗覆盖完整体积，步长半窗口，即80×80×64，50%重叠。
+最终正文损失：0.6Dice + 0.4weighted CE，再加Dirichlet evidential KL正则。
+作者回复：提出方法使用SAM-Med3D预训练ViT，除最后两个blocks外冻结；对照模型从头训练。
+主指标DSC（%）和ASSD（mm）。Table1：自家模型90.15±0.57%、0.66±0.09mm；3D-UNet84.78±0.85%、1.41±0.13mm。
+Table2是另一个CCTA119→ASOCA跨域实验，自家模型85.26±0.61%、0.83±0.11mm，不能与Table1混用。
+来源：原文§2.3、§3.1，PDF第6页；Table1第7页、Table2第8页。
+https://papers.miccai.org/miccai-2025/paper/0742_paper.pdf
+作者反馈第8项：https://papers.miccai.org/miccai-2025/0979-Paper0742.html
+
+原文没有给出：各折病例名单、seed、分层方式、独立验证和checkpoint选择；每epoch迭代数、学习率后续策略；HU处理、标准化、重采样spacing、ROI；除随机裁剪外的增强；滑窗融合与padding、阈值、TTA、集成及外部后处理；ASSD算子/库/边界采样/空预测政策；原网格或重采样网格评分；跨折统计及±含义。
+因此不能把论文600轮换算为确定的更新量，不能把±0.57称患者SD，也不能补写它采用了Gaussian融合或原始网格ASSD。
+作者回复对loss曾称动态权重，但最终PDF给固定γ0.6，本对照以最终正文为主。
+
+二、旧已执行版：支撑80.01%的真实配置
+
+fold0：32训练，8开发验证；分层正常/患病各4例验证。
+八例为 Diseased_1、Diseased_15、Diseased_18、Diseased_7、Normal_16、Normal_19、Normal_2、Normal_8。
+自建split seed20261013，论文未给病例名单，不能假定这就是作者同一折。
+已完成200×125=25,000优化更新；batch2，96³。AdamW，lr2e-4，weight_decay1e-5，poly学习率衰减。
+冷启动联合训练，没有先加载预训练分类器/骨干。这是旧适配流程与原GTA阶段机制的差异，隔壁已在修正。
+GTA和U-Net共同使用历史foreground power-Dice＋background squared-Dice；U-Net也不是常规Dice+CE配方。GTA另有属性、引导和Gaussian目标。
+主输出加两个解码器分割辅助头，损失相对权重1、0.5、0.25。
+
+实际输入网格：全CT先规范LPS定向，再重采样至0.5mm各向同性；CT线性、label最近邻。
+HU clip[-200,1000]，归一化(HU−400)/600。
+96³覆盖48×48×48mm。论文160×160×128体素数约为96³的3.70倍；因论文未披露spacing，不能推定其毫米覆盖范围。
+没有真值ROI输入裁剪。辅助结构计算局部bbox只为节省内存，存储的输入保留全CT视野。
+训练采样：GTA uniform/thin-centerline/junction各1/3；U-Net foreground1/3、uniform2/3；只有强度增强。
+
+已执行推理：完整image.npy，96³滑窗，overlap0.5；Gaussian加权融合raw logits，最后argmax得到二分类mask。
+无TTA、阈值搜索或最大连通块后处理。两通道argmax相当于融合后softmax前景概率>0.5，但不等于逐窗概率融合。
+预测mask用最近邻恢复至原CT size/spacing/origin/direction，之后再读取GT并评分。模型不接收测试真值。
+使用fixed final.pt，不用验证集挑best epoch。
+
+Dice每病例先算，再等权平均；±是八病例sample SD（ddof1）。
+ASSD主实现为两方向边界体素最近物理距离合并平均：
+  (sum(a)+sum(b))/(len(a)+len(b))。
+边界由前景减一次6邻域腐蚀产生，距离mm，不用surfel面积权重。此值不一定等于两方向平均值再等权平均。
+空预测距离null且明确保留；有未定义距离不报完整队列距离均值。本次GTA/U-Net八例均有效。
+
+已有参考：
+  GTA Dice80.00695±7.24139%，ASSD1.17734±0.82524mm。
+  U-Net Dice78.70210±7.50710%，ASSD1.27216±0.93601mm。
+我们的U-Net Dice较论文84.78%低，但ASSD点估计较其1.41mm低；在网格和ASSD实现未完全对齐前，不能把这些数字当同条件优劣证明。
+训练块、预处理、目标、初始化等是需检验的候选原因，没有单一因素的因果证据。
+
+来源文件：
+server_records/status_20261014_development/results/gta/fold0/training/config.json
+server_records/status_20261014_development/results/unet/fold0/training/config.json
+server_records/status_20261014_development/cache/manifest.json
+code/train.py（参数38–44，AdamW80，poly121，final149）
+code/losses.py（segmentation31–45，深监督89–93）
+code/evaluate.py（全卷滑窗84–92，恢复及评分93–104）
+code/metrics.py（Dice21，surface与ASSD30–36）
+code/aggregate_results.py（病例均值与SD111–121）
+
+三、新fidelity_v2开发准则
+
+原train32中分层留内部4：Diseased_10、Diseased_20、Normal_12、Normal_3；其余28训练。
+内部4用于诊断和方案选择；原8例已经反复曝光，只保留development verification角色，不恢复成独立最终test。
+默认评价split internal_diagnostic；原8必须显式outer_development，formal_final_test=false。
+代码支持Dice+CE、standard采样、影像body区域负样本、历史权重初始化及阶段冻结/解冻；实际采用哪项要以新run config为准。
+默认200×125、96³、batch2、lr3e-4；本地尚未读取到可证明这些已执行的新训练config。
+评价仍沿用全CT、50%重叠Gaussian logits融合、argmax、原网格评分及fixed final checkpoint。
+主ASSD仍pooled，同时加两方向ASD与directional mean诊断，便于核对指标定义。
+文件证据：fidelity_v2/code/classification_data.py:16–33；train.py:54–75,152–164；evaluate.py:96–108,180–204；metrics.py:21–41,55–81。
+详细协议：fidelity_v2/docs/methodology_and_metric_protocol.txt。
+
+四、当前比较结论
+
+相同点：同一官方冠脉二分类任务，公共40例来源，整卷滑窗，50%重叠，Dice和ASSD主指标。
+已确认差异：五折报告vs单折开发；预训练VFM vs旧冷启动；patch尺寸；optimizer、lr、loss；固定final checkpoint而作者选择方式未知；我们明确原网格pooled ASSD而作者实现未公开。
+实验建议仍遵照用户安排：先完成我们自己的方法开发，不逐篇复现。校准共同输入/训练/评分方案，记录内部诊断曲线；方法冻结后再做正式验证，并将文献reported成绩单列。
+不能凭600vs200判断更新量差三倍，也不能凭单折80.01vs五折90.15给GTA框架下最终结论。

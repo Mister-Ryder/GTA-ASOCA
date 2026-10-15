@@ -1,0 +1,147 @@
+{
+  "donor_READY_sha256": "de02c5681374a326d711cecc4156b9dcfe79078e2bd140787cf7ff57d5756e3f",
+  "donor_sizes_checked": true,
+  "donor_weight_bytes_downloaded_and_SHA_checked": false,
+  "remote_read_only": true,
+  "shadow_completion": "real_DIAGNOSTIC_COMPLETE_and5artifact_SHA_verified",
+  "port": 17552,
+  "captured_at_utc": "2026-10-14T10:08:29.872625+00:00",
+  "files": [
+    {
+      "remote_path": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/gaussian_control_donors_20261014/DONORS_READY.json",
+      "remote_bytes_at_start": 857,
+      "captured_bytes": 857,
+      "sha256": "de02c5681374a326d711cecc4156b9dcfe79078e2bd140787cf7ff57d5756e3f",
+      "remote_mtime_at_start": 1791972138,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/shared_donors/DONORS_READY.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_REGION_BALANCE_SHADOW_LAUNCH_20261014.json",
+      "remote_bytes_at_start": 1033,
+      "captured_bytes": 1033,
+      "sha256": "b0e00045cc68ed21c7dda221d96fb13c2c653a36ae2f60fa62ebde60d452c59d",
+      "remote_mtime_at_start": 1791972159,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/GAUSSIAN_REGION_BALANCE_SHADOW_LAUNCH_20261014.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/SHADOW_PLAN_EXECUTED_20261014.json",
+      "remote_bytes_at_start": 5170,
+      "captured_bytes": 5170,
+      "sha256": "0909cb8b3a83e28cb248e12d491340e741e1e29178b1985fb8ca3690a6b25c43",
+      "remote_mtime_at_start": 1791972157,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/SHADOW_PLAN_EXECUTED_20261014.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/SHADOW_RESOURCE_PREFLIGHT_20261014.json",
+      "remote_bytes_at_start": 659,
+      "captured_bytes": 659,
+      "sha256": "135bb2b8d0c3ae4343be43ff1b65bd883eec16ad7b5c456a3bdd2a0598a25e49",
+      "remote_mtime_at_start": 1791971122,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/SHADOW_RESOURCE_PREFLIGHT_20261014.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_torch_fixture_20261014.json",
+      "remote_bytes_at_start": 1203,
+      "captured_bytes": 1203,
+      "sha256": "f84c3dc006d4c5873889584ca57465087bb7e5bc30f18f83ccde8daa36925c2c",
+      "remote_mtime_at_start": 1791972159,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_torch_fixture_20261014.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_REGION_BALANCE_SHADOW_20261014.log",
+      "remote_bytes_at_start": 3878,
+      "captured_bytes": 3878,
+      "sha256": "e00faeb0eaae41f5cbe998ec5b1e272e38b10d16910e26c1ff504cf2b4326d43",
+      "remote_mtime_at_start": 1791972349,
+      "changed_during_capture": false,
+      "tail_bytes_requested": 20000,
+      "local_relative_path": "captures/20261014T100734_144566Z_023b4e/old_17552/GAUSSIAN_REGION_BALANCE_SHADOW_20261014.log.tail",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014/analytic_fixture.json",
+      "remote_bytes_at_start": 1203,
+      "captured_bytes": 1203,
+      "sha256": "f84c3dc006d4c5873889584ca57465087bb7e5bc30f18f83ccde8daa36925c2c",
+      "remote_mtime_at_start": 1791972170,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/analytic_fixture.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014/diagnostic_plan.json",
+      "remote_bytes_at_start": 36680,
+      "captured_bytes": 36680,
+      "sha256": "1a908579c374badf7590beec084a4ad58e0348fdb6f164b5061c381923c77871",
+      "remote_mtime_at_start": 1791972170,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/diagnostic_plan.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014/fixed_sampling_bank.json",
+      "remote_bytes_at_start": 81765,
+      "captured_bytes": 81765,
+      "sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+      "remote_mtime_at_start": 1791972170,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/fixed_sampling_bank.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014/patch_metrics.jsonl",
+      "remote_bytes_at_start": 921789,
+      "captured_bytes": 921789,
+      "sha256": "1d2aba21056914befde4d288fd9eb42799e54a7fcd85d33b38759afdf1004648",
+      "remote_mtime_at_start": 1791972349,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/patch_metrics.jsonl",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014/summary.json",
+      "remote_bytes_at_start": 19507,
+      "captured_bytes": 19507,
+      "sha256": "34e0f497cba2848d0bf817561c81f479b640e23463fa4d42468eff056566f415",
+      "remote_mtime_at_start": 1791972355,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/summary.json",
+      "action": "added"
+    },
+    {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014/DIAGNOSTIC_COMPLETE.json",
+      "remote_bytes_at_start": 637,
+      "captured_bytes": 637,
+      "sha256": "b2466fd5a05d91b423da544c07ad4953d9d8ffcd4924bdf419a139150737428c",
+      "remote_mtime_at_start": 1791972355,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/DIAGNOSTIC_COMPLETE.json",
+      "action": "added"
+    }
+  ],
+  "missing_paths": [
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_REGION_BALANCE_SHADOW_STATUS_20261014.json",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_REGION_BALANCE_SHADOW_LIVE_CHECK_20261014.json"
+  ]
+}

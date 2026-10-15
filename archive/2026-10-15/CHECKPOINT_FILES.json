@@ -1,0 +1,29 @@
+{
+  "release_url": "https://github.com/Mister-Ryder/GTA-ASOCA/releases/tag/experiment-archive-2026-10-15",
+  "files": [
+    {
+      "asset_member": "U_final.pt",
+      "source": "ASOCA_Extension/fidelity_v2/server_records/unet_complete_trajectory_20261014/results/unet_recipe200x125/training/final.pt",
+      "bytes": 22431933,
+      "sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c"
+    },
+    {
+      "asset_member": "GTA_A_final.pt",
+      "source": "ASOCA_Extension/fidelity_v2/server_records/gta_complete_trajectory_20261014/results/gta_enhanced200x125/training/final.pt",
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+    },
+    {
+      "asset_member": "GTA_B_final.pt",
+      "source": "ASOCA_Extension/fidelity_v2/server_records/gaussian_region_balance_complete_trajectory_20261014/results/gta_region_balance200x125_20261014/training/final.pt",
+      "bytes": 68670910,
+      "sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4"
+    },
+    {
+      "asset_member": "GTA_lambda0_final.pt",
+      "source": "ASOCA_Extension/fidelity_v2/server_records/gaussian_lambda0_complete_trajectory_20261014/results/gta_gaussian_lambda0_200x125_20261014/training/final.pt",
+      "bytes": 68670974,
+      "sha256": "e242a4cfe8d9622ac7a8b68adc9c7c4cd49e30574cddd27195ba896327bc091f"
+    }
+  ]
+}

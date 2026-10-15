@@ -1,0 +1,175 @@
+{
+  "captured_at_utc": "2026-10-14T07:01:02.386029+00:00",
+  "status": {
+    "status": "completed",
+    "pid": 9891,
+    "new_training": false,
+    "device": "cpu",
+    "threads": 2,
+    "role": "fixed training28 diagnostic; not validation or checkpoint selection",
+    "updated_at_utc": "2026-10-14T06:59:48.000064+00:00",
+    "phase": "cpu_diagnostic_ready",
+    "command": [
+      "/root/miniconda3/envs/gta-asoca311/bin/python",
+      "-u",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_gaussian.py",
+      "--checkpoint",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/checkpoints/epoch070.pt",
+      "--manifest",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+      "--device",
+      "cpu",
+      "--output",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_epoch070_cpu_bank56"
+    ],
+    "source_sha256": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+    "available_GiB": 67.92205810546875,
+    "effective_cpu_cores": 12.0,
+    "measured_existing_cpu_cores": 1.9119169002809155,
+    "wall_budget_seconds": 1800,
+    "completed_patches": 56,
+    "summary_sha256": "e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff",
+    "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_epoch070_cpu_bank56",
+    "note": "No GPU or model updates; interpret only this fixed training bank"
+  },
+  "processes": [
+    {
+      "role": "pid",
+      "pid": 9891,
+      "alive": false
+    }
+  ],
+  "observed_complete_patches": 56,
+  "summary": {
+    "regions": {
+      "all": {
+        "n_voxels": 117440512,
+        "mse": 3.862665835820332e-05,
+        "weighted_mse": 0.0003862665835820332,
+        "mse_constant05": 4.5865424447711314e-05,
+        "field_mean": 0.0004544614881336617,
+        "field_mean_squared": 0.00018346169779093202,
+        "mse_bank_optimal_constant": 4.581379063672841e-05
+      },
+      "foreground": {
+        "n_voxels": 168859,
+        "mse": 0.008126889480074215,
+        "weighted_mse": 0.08126889480074213,
+        "mse_constant05": 0.03189915213424534,
+        "field_mean": 0.3160754822111227,
+        "field_mean_squared": 0.12759660853698152,
+        "mse_bank_optimal_constant": 0.031827381701052336
+      },
+      "background": {
+        "n_voxels": 117271653,
+        "mse": 2.698039997543672e-05,
+        "weighted_mse": 0.00026980399975436723,
+        "mse_constant05": 0.0,
+        "field_mean": 0.0,
+        "field_mean_squared": 0.0,
+        "mse_bank_optimal_constant": 5.163381110300473e-08
+      },
+      "outside_0_1mm": {
+        "n_voxels": 309230,
+        "mse": 0.0041997906930415305,
+        "weighted_mse": 0.04199790693041531,
+        "mse_constant05": 0.0,
+        "field_mean": 0.0,
+        "field_mean_squared": 0.0,
+        "mse_bank_optimal_constant": 5.163381106800519e-08
+      },
+      "outside_1_3mm": {
+        "n_voxels": 1354219,
+        "mse": 0.00015375893551258804,
+        "weighted_mse": 0.0015375893551258805,
+        "mse_constant05": 0.0,
+        "field_mean": 0.0,
+        "field_mean_squared": 0.0,
+        "mse_bank_optimal_constant": 5.1633811043536514e-08
+      },
+      "background_gt3mm": {
+        "n_voxels": 115608204,
+        "mse": 1.4333857792829914e-05,
+        "weighted_mse": 0.00014333857792829912,
+        "mse_constant05": 0.0,
+        "field_mean": 0.0,
+        "field_mean_squared": 0.0,
+        "mse_bank_optimal_constant": 5.163381107320789e-08
+      }
+    },
+    "gradient_regions": {
+      "all": {
+        "segmentation_common_energy": 4.097976790161808e-18,
+        "segmentation_margin_energy": 2.7265477297955703e-05,
+        "gaussian_common_energy": 1.8027477076723507e-09,
+        "gaussian_margin_energy": 1.1407509757719654e-09,
+        "gaussian_common_fraction": 0.6124506587388301,
+        "gaussian_to_segmentation_norm_ratio": 0.010390235008147354,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.006468280903724048,
+        "full_cosine": 0.005387219822519492,
+        "margin_cosine": 0.00865368673869796
+      },
+      "foreground": {
+        "segmentation_common_energy": 3.320699485017623e-18,
+        "segmentation_margin_energy": 1.4750767114453705e-05,
+        "gaussian_common_energy": 4.2926505016154923e-10,
+        "gaussian_margin_energy": 2.68124646037765e-10,
+        "gaussian_common_fraction": 0.6155311047768407,
+        "gaussian_to_segmentation_norm_ratio": 0.0068759143781937735,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.004263448927731869,
+        "full_cosine": -0.0372627873973896,
+        "margin_cosine": -0.0600958860168281
+      },
+      "background": {
+        "segmentation_common_energy": 7.772773051441874e-19,
+        "segmentation_margin_energy": 1.2514710183502003e-05,
+        "gaussian_common_energy": 1.3734826575108015e-09,
+        "gaussian_margin_energy": 8.726263297342003e-10,
+        "gaussian_common_fraction": 0.6114942174713734,
+        "gaussian_to_segmentation_norm_ratio": 0.013396921557370581,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.008350332291986885,
+        "full_cosine": 0.03164496099335873,
+        "margin_cosine": 0.05076984294110773
+      },
+      "outside_0_1mm": {
+        "segmentation_common_energy": 6.107279346307744e-19,
+        "segmentation_margin_energy": 9.388003964136444e-06,
+        "gaussian_common_energy": 5.077086710437318e-10,
+        "gaussian_margin_energy": 4.1070374629495536e-10,
+        "gaussian_common_fraction": 0.5528112005660109,
+        "gaussian_to_segmentation_norm_ratio": 0.009890818701290506,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.006614205742544733,
+        "full_cosine": 0.039831684591331656,
+        "margin_cosine": 0.05956391175673489
+      },
+      "outside_1_3mm": {
+        "segmentation_common_energy": 3.1583277586470604e-20,
+        "segmentation_margin_energy": 5.276564156783215e-07,
+        "gaussian_common_energy": 1.8227925592805385e-10,
+        "gaussian_margin_energy": 1.0663953126148885e-10,
+        "gaussian_common_fraction": 0.6309013605559375,
+        "gaussian_to_segmentation_norm_ratio": 0.023399807251268674,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.01421619926427362,
+        "full_cosine": 0.02127992522525125,
+        "margin_cosine": 0.035026673630054746
+      },
+      "background_gt3mm": {
+        "segmentation_common_energy": 1.3496609292694218e-19,
+        "segmentation_margin_energy": 2.599049803687234e-06,
+        "gaussian_common_energy": 6.834947305390162e-10,
+        "gaussian_margin_energy": 3.552830521777561e-10,
+        "gaussian_common_fraction": 0.657979735330337,
+        "gaussian_to_segmentation_norm_ratio": 0.01999189791045338,
+        "gaussian_to_segmentation_margin_norm_ratio": 0.011691761422769302,
+        "full_cosine": 0.025870550502387603,
+        "margin_cosine": 0.0442363976519971
+      }
+    },
+    "correlations": {
+      "all.seg_probability_vs_field": 0.8000564672470017,
+      "all.gaussian_vs_field": 0.7033873108537065,
+      "foreground.seg_probability_vs_field": 0.28865518131295986,
+      "foreground.gaussian_vs_field": 0.41941913374081086
+    }
+  }
+}

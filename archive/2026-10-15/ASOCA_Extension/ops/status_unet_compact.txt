@@ -1,0 +1,22 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+t=r/'results/unet_recipe200x125/training'
+data=(t/'history.jsonl').read_bytes()
+rows=[json.loads(s) for s in data.splitlines(keepends=True) if s.endswith(b'\n')]
+state=json.loads((r/'unet_calibration_status.json').read_text())
+procs=[]
+for field in ['pid','child_pid']:
+ pid=state.get(field)
+ if not pid:continue
+ proc=Path('/proc')/str(pid)
+ try:procs.append({'field':field,'pid':pid,'alive':proc.exists(),'cmdline':(proc/'cmdline').read_bytes().replace(b'\0',b' ').decode(),'stat':(proc/'stat').read_text().split(') ')[1].split()[0]})
+ except FileNotFoundError:procs.append({'field':field,'pid':pid,'alive':False})
+trajectory=r/'results/unet_recipe200x125/internal4_trajectory'
+points=[json.loads(s) for s in (trajectory/'validation_history.jsonl').read_bytes().splitlines(keepends=True) if s.endswith(b'\n')] if (trajectory/'validation_history.jsonl').exists() else []
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'completed_epochs':len(rows),'latest_epoch':rows[-1] if rows else None,'state':state,'processes':procs,'internal4_completed_checkpoint_evaluations':len(points),'latest_internal4_result':points[-1] if points else None}
+(r/'LIVE_UNET_CHECK_20261014.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+print(subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True))
+PY

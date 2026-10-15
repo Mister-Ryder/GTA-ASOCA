@@ -1,0 +1,18 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,os,json,hashlib
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+repair=root/'repair_cldice'
+env=os.environ.copy()
+env.update(CUDA_VISIBLE_DEVICES='',OMP_NUM_THREADS='2',MKL_NUM_THREADS='2')
+command=[str(root/'env/bin/python'),str(repair/'code/test_official_cldice.py'),'--device','cpu']
+test=subprocess.run(command,capture_output=True,text=True,env=env)
+print(test.stdout)
+print(test.stderr)
+test.check_returncode()
+(repair/'tests_passed.json').write_text(json.dumps({'command':command,'return_code':test.returncode,'output':test.stdout,
+ 'loss_sha256':hashlib.sha256((repair/'code/losses.py').read_bytes()).hexdigest()},indent=2))
+log=open(repair/'recovery.log','a')
+p=subprocess.Popen([str(root/'env/bin/python'),'-u',str(repair/'recover.py')],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print('CLDICE_RECOVERY_PID='+str(p.pid))
+PY

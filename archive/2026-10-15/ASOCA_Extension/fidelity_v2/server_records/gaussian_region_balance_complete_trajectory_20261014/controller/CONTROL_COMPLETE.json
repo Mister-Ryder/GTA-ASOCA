@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "ROOT": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "decision": {
+    "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops_inputs/B_TRAIN_DECISION_20261014.json",
+    "sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+    "decision": {
+      "schema_version": 1,
+      "action": "authorize_one_B_formal_run",
+      "decision_author": "ROOT",
+      "created_at_utc": "2026-10-14T10:45:13.261108+00:00",
+      "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+      "evidence": {
+        "canonical": {
+          "postfit_receipt_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+          "postfit_status_sha256": "935d84eb4e75aaf9cbfa128ecdebc0d39650f1446e78140a30619b1dcaeecf94",
+          "trajectory_complete_sha256": "04b71545fbfc6b27bffae936ea660d1ac56d37221a031bde04d7726abb3fcf39",
+          "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+          "main_final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+          "held_out_GT_or_images_read": false
+        },
+        "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+        "B_READY_sha256": "1fd1e3dffb7606c76bcdb5e310a69481f10c706e65505f88336487721371b53f",
+        "B_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+        "B_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+        "ROOT_variant_review_sha256": "f8db27bd6523bef1c709a0df3aca5b80842961403e53153bbd39b8fe218d2e8b",
+        "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+        "initial_gradient_complete_sha256": "6b31ae47b4a1e82128f1a7e7b34772f63cb20f4398c0434f5c2f37dea69c7d1f",
+        "initial_gradient_artifacts_sha256": {
+          "diagnostic_plan.json": "666bc69e31ea1d8d2eb66b4c3ac461fae1f4f9f20bb1f0db0cf1b24f86332dd1",
+          "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+          "reconstructed_initial_state.json": "d014c1da3d2ec2d88ebd7e658d863dc2b671d9e9ce1dad4022ba85f7e6320eaf",
+          "batch_metrics.jsonl": "0e9a1188d5a79065dbb600e8c920fbb78456e2275272acfcdc29d3394a51d952",
+          "summary.json": "514889782e9b0ded70e02f7611eb689a0c846448d4f5118130e48b50e1cc344c"
+        },
+        "actual_CPU_fixture_sha256": "b656155de59b7cd93cc36ff507eb5b0cf9e64fdddf8ddfa6b5a5aff651d30e22",
+        "initial_gradient_controller_protocol_sha256": "ccd88eaefa23df1722e87ebed6485d1578b2a642b5998f5a62847e4350a4539c",
+        "initial_gradient_controller_status_sha256": "299ef36f2134f1ff6f7f8d9947509bc43ce185477f5272c712245d08cd283786",
+        "donors": {
+          "backbone": {
+            "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl",
+            "sha256": "29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3",
+            "bytes": 43313082
+          },
+          "classifier": {
+            "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+            "sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+            "bytes": 49148853
+          }
+        }
+      },
+      "canonical_review": {
+        "all20_checkpoints_reviewed": true,
+        "late_checkpoint_names": [
+          "epoch160",
+          "epoch170",
+          "epoch180",
+          "epoch190",
+          "final"
+        ],
+        "rationale": "All20 actual observations and individual final patients were reviewed; local CPU acceptance verified80case metadata/prediction SHA and4final raw-grid primary metrics; OLD and NEW final masks match exactly. Late Dice=.829948/.830684/.828404/.829990/.831854 and ASSD=.656950/.587544/.562398/.627177/.567825 fluctuate; epoch140 mean .832446/.534270 also exceeds final. This does not justify extending A or selecting a different endpoint. Retain fixed final and test one B loss-measure change at the same25000-update budget."
+      },
+      "gradient_review": {
+        "all28_batches_reviewed": true,
+        "nonfinite_batches": [],
+        "batches_implying_clip12": {
+          "totalA": [],
+          "totalB": [
+            8,
+            12,
+            19,
+            21,
+            23
+          ]
+        },
+        "proceed_with_fixed_lambda10_after_risk_review": true,
+        "rationale": "Independent13file/5artifact and all28ledger review passed. No nonfinite gradients. A total-norm median/max3.30274/3.89479; B8.61351/19.09710. B implies existing global clip12 on5/28 standalone batches, min multiplier.628368, which also scales the segmentation component. Shared Gaussian/seg norm median rises.61025->3.24517; B cosine remains positive but weaker (median.08345 vs A.29349), and Gaussian-head share median2.94percent shows the stronger gradient mostly reaches shared segmentation parameters. Accept this explicit optimization risk for one unchanged-lambda10 mechanism trial; no coefficient/cap/architecture/budget adjustment. These initial noaug frozen-stage batches are not natural training frequencies or proof of later stability or benefit. Preserve loss/LR/group-gradient telemetry and stop on actual nonfinite failure; judge outcome by fixed-final Dice/ASSD and complete curves. Do not compare these parameter gradients directly with the distinct final-model detached-logit probe."
+      },
+      "independent_numeric_review_sha256": "c33ee7e915a10e601ff2f46965e01fcf5db4c9b2715d080443a6f2732aac5ea8",
+      "local_canonical_acceptance_sha256": "e8584fb3e12b6fea0936655916dee64583710b6b4702c494d61291db93570619",
+      "historical_main_theta0_verified": false,
+      "new_classifier_pretraining": false,
+      "new_segmentation_updates": 25000
+    }
+  },
+  "records": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014",
+  "training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+  "Python": "/root/miniconda3/envs/gta-asoca311/bin/python",
+  "required_helper_sha256": {
+    "diagnose_initial_gaussian_parameter_gradients.py": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+    "verify_postfit.py": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51"
+  },
+  "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+  "allowed_config_changes": [
+    "output",
+    "source_sha256",
+    "source_files_sha256"
+  ],
+  "Gaussian_lambda": 10,
+  "epochs": 200,
+  "updates_per_epoch": 125,
+  "classifier_pretraining_updates_reused": 5120,
+  "internal4_checkpoint_evaluations": 20,
+  "case_inferences": 80,
+  "checkpoint_selection": "fixed final",
+  "historical_main_theta0_verified": false,
+  "no_decision_no_training": true,
+  "decision_contract": {
+    "schema_version": 1,
+    "action": "authorize_one_B_formal_run",
+    "decision_author": "ROOT",
+    "created_at_utc": "fresh ISO8601 timezone-aware, after actual diagnostic release, within six hours",
+    "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+    "evidence": "exact evidence JSON printed by --decision-evidence after actual completion",
+    "canonical_review": {
+      "all20_checkpoints_reviewed": true,
+      "late_checkpoint_names": [
+        "epoch160",
+        "epoch170",
+        "epoch180",
+        "epoch190",
+        "final"
+      ],
+      "rationale": "ROOT actual complete/late curve interpretation"
+    },
+    "gradient_review": {
+      "all28_batches_reviewed": true,
+      "nonfinite_batches": "exact actual summary list",
+      "batches_implying_clip12": "exact actual summary dict",
+      "proceed_with_fixed_lambda10_after_risk_review": true,
+      "rationale": "ROOT explicit nonfinite/clipping assessment, not merely gradient finite"
+    }
+  },
+  "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+  "evidence": {
+    "canonical": {
+      "postfit_receipt_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+      "postfit_status_sha256": "935d84eb4e75aaf9cbfa128ecdebc0d39650f1446e78140a30619b1dcaeecf94",
+      "trajectory_complete_sha256": "04b71545fbfc6b27bffae936ea660d1ac56d37221a031bde04d7726abb3fcf39",
+      "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+      "main_final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+      "held_out_GT_or_images_read": false
+    },
+    "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+    "B_READY_sha256": "1fd1e3dffb7606c76bcdb5e310a69481f10c706e65505f88336487721371b53f",
+    "B_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "B_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+    "ROOT_variant_review_sha256": "f8db27bd6523bef1c709a0df3aca5b80842961403e53153bbd39b8fe218d2e8b",
+    "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "initial_gradient_complete_sha256": "6b31ae47b4a1e82128f1a7e7b34772f63cb20f4398c0434f5c2f37dea69c7d1f",
+    "initial_gradient_artifacts_sha256": {
+      "diagnostic_plan.json": "666bc69e31ea1d8d2eb66b4c3ac461fae1f4f9f20bb1f0db0cf1b24f86332dd1",
+      "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+      "reconstructed_initial_state.json": "d014c1da3d2ec2d88ebd7e658d863dc2b671d9e9ce1dad4022ba85f7e6320eaf",
+      "batch_metrics.jsonl": "0e9a1188d5a79065dbb600e8c920fbb78456e2275272acfcdc29d3394a51d952",
+      "summary.json": "514889782e9b0ded70e02f7611eb689a0c846448d4f5118130e48b50e1cc344c"
+    },
+    "actual_CPU_fixture_sha256": "b656155de59b7cd93cc36ff507eb5b0cf9e64fdddf8ddfa6b5a5aff651d30e22",
+    "initial_gradient_controller_protocol_sha256": "ccd88eaefa23df1722e87ebed6485d1578b2a642b5998f5a62847e4350a4539c",
+    "initial_gradient_controller_status_sha256": "299ef36f2134f1ff6f7f8d9947509bc43ce185477f5272c712245d08cd283786",
+    "donors": {
+      "backbone": {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl",
+        "sha256": "29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3",
+        "bytes": 43313082
+      },
+      "classifier": {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+        "sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+        "bytes": 49148853
+      }
+    }
+  },
+  "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "runtime": {
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "python_executable": "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "packages": {
+      "torch": "2.7.1+cu128",
+      "monai": "1.5.1",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-image": "0.25.2",
+      "SimpleITK": "2.5.2",
+      "scikit-learn": "1.7.2",
+      "pandas": "2.3.3",
+      "tqdm": "4.67.1"
+    },
+    "torch_cuda_runtime": "12.8",
+    "torch_cudnn_version": 90701,
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": false,
+    "CUDA_context_initialized": false
+  },
+  "GPU_idle_observations": [
+    {
+      "captured_at_utc": "2026-10-14T10:45:22.387869+00:00",
+      "gpu": "NVIDIA vGPU-32GB, 580.76.05, 32760 MiB, 8.9",
+      "gpu_processes": "",
+      "all_compute_GPUs_idle": true
+    },
+    {
+      "captured_at_utc": "2026-10-14T10:45:25.729743+00:00",
+      "gpu": "NVIDIA vGPU-32GB, 580.76.05, 32760 MiB, 8.9",
+      "gpu_processes": "",
+      "all_compute_GPUs_idle": true
+    }
+  ],
+  "training_argv": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/variants/gaussian_region_balance_v1/code/train.py",
+    "--manifest",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+    "--output",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+    "--method",
+    "gta",
+    "--epochs",
+    "200",
+    "--fold",
+    "0",
+    "--patch-size",
+    "128",
+    "--steps",
+    "125",
+    "--batch-size",
+    "2",
+    "--workers",
+    "4",
+    "--seed",
+    "20261013",
+    "--split-seed",
+    "20261014",
+    "--lr",
+    "0.0003",
+    "--weight-decay",
+    "0.0001",
+    "--freeze-epochs",
+    "50",
+    "--warmup-epochs",
+    "5",
+    "--classifier-lr-scale",
+    "0.1",
+    "--partial-until",
+    "70",
+    "--classifier-weight",
+    "0.1",
+    "--gaussian-weight",
+    "10.0",
+    "--gaussian-ramp-start",
+    "150",
+    "--gaussian-ramp-end",
+    "200",
+    "--save-every",
+    "10",
+    "--gradient-probe-every",
+    "250",
+    "--guidance-weight",
+    "0.1",
+    "--seg-loss",
+    "dice_ce",
+    "--sampling",
+    "standard",
+    "--sampling-fov",
+    "image-body",
+    "--cohort",
+    "internal28",
+    "--backbone-warmup-epochs",
+    "0",
+    "--backbone-domain",
+    "airway",
+    "--backbone-init",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl",
+    "--classifier-domain",
+    "asoca",
+    "--classifier-init",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+    "--classifier-head-policy",
+    "load",
+    "--full-domain",
+    "airway",
+    "--semantic-head-policy",
+    "reinit",
+    "--device",
+    "cuda"
+  ],
+  "expected_B_config_sha256": "1dea54ff5597621d2753f1dca5be915ec27ca89b900940d2a831b12b8b0896ae",
+  "actual_theta0_capture": "readonly pre-first-forward all327state+CPU/CUDA RNG; historical main remains unknown",
+  "completed_at_utc": "2026-10-14T16:41:25.413107+00:00",
+  "children": [
+    {
+      "stage": "formal_training",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "-u",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py",
+        "--worker"
+      ],
+      "started_at_utc": "2026-10-14T10:45:26.150291+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/formal_training.log",
+      "pid": 32897,
+      "pgid": 32897,
+      "returncode": 0,
+      "wall_seconds": 14980.709649734199,
+      "completed_at_utc": "2026-10-14T14:55:06.859975+00:00"
+    },
+    {
+      "stage": "internal4_trajectory",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "-u",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/variants/gaussian_region_balance_v1/code/evaluate_trajectory.py",
+        "--training",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+        "--manifest",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+        "--raw-root",
+        "/autodl-fs/data/datasets/ASOCA_GTA_20261014/raw",
+        "--output",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory",
+        "--python",
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "--sw-batch-size",
+        "1"
+      ],
+      "started_at_utc": "2026-10-14T14:55:16.104565+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/internal4_trajectory.log",
+      "pid": 48364,
+      "pgid": 48364,
+      "returncode": 0,
+      "wall_seconds": 6340.340391293168,
+      "completed_at_utc": "2026-10-14T16:40:56.445033+00:00"
+    },
+    {
+      "stage": "plot_curves",
+      "argv": [
+        "/root/miniconda3/envs/gta-asoca311/bin/python",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/plot_learning_curves.py",
+        "--run",
+        "development=/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+        "--validation",
+        "development=/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/validation_history.jsonl",
+        "--output",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves"
+      ],
+      "started_at_utc": "2026-10-14T16:40:56.447918+00:00",
+      "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/plot_curves.log",
+      "pid": 62350,
+      "pgid": 62350,
+      "returncode": 0,
+      "wall_seconds": 20.002634912729263,
+      "completed_at_utc": "2026-10-14T16:41:16.450647+00:00"
+    }
+  ],
+  "actual_B_config_binding_sha256": "f50da773fe521927da5f98423f6a799303b88fbb4027e96c3c26d6809e704085",
+  "actual_B_theta0_receipt_sha256": "cd6cbaf752899e027a52c06c10ff249e8610882038fc6ba89c77b62dcf986b2c",
+  "training_complete_sha256": "92378e04cdcaf8640185260d85c88bd9dfe74d48408c0837c44293e4b11ec45a",
+  "fixed_final_sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4",
+  "B_postfit_verified_sha256": "1a9d591c9763591b96332e6f1f4bd537b893030d71a6811b537532dd1dd3af90",
+  "trajectory_complete_sha256": "c5693bcae3b4923af6f1b6dfa4166fa941fc37a5a2da7eac8ebb408100c1d3a6",
+  "verified_checkpoint_evaluations": 20,
+  "verified_case_evaluations": 80,
+  "A_canonical_unchanged": true
+}

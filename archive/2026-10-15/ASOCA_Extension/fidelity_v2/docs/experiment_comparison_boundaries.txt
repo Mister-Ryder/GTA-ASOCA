@@ -1,0 +1,90 @@
+GTA fidelity development: comparison boundaries and minimal attribution experiments
+
+The current PlainUNet3D and GTA backbone are different implementations. PlainUNet3D
+does not accept the historical SegAirwayModel backbone checkpoint. Consequently,
+the common Dice+CE / sampler / patch / optimizer recipe calibrates training practice,
+but GTA-versus-U-Net performance also includes the historical BAS backbone warm-start,
+5,120 independent coronary-classifier updates, conditional modules, fusion, anatomy
+reweighting and Gaussian regularization. That difference cannot all be attributed
+to anatomical priors. Historical BAS pretraining costs remain separate/unknown;
+25,000 segmentation updates alone do not make total compute matched.
+
+The calibration has one frozen outer fold. New runs train on the same internal28,
+with four reserved cases Diseased_10/Diseased_20/Normal_12/Normal_3. Their Dice and
+pooled physical-mm ASSD are development diagnostics; clDice is auxiliary. The
+original eight have already been inspected and are development data, not a blind
+test. Never combine four-case and eight-case means as if they were one comparison.
+The parent reports the existing native nnUNet100x250 result on the original eight:
+Dice81.4748%, ASSD2.48754mm. Preserve those original source-backed files and budget;
+this record does not remeasure them or claim reproduction of a1000-epoch pipeline.
+
+Minimum follow-up for Gaussian attribution (already expressible by frozen code):
+Use method=gta for both arms, identical BAS backbone checkpoint, identical completed
+ASOCA classifier fixed80-epoch final.pt checkpoint, seed, internal28/4, full architecture,
+decoder DS, freeze50/partial70/joint schedule, image-only FOV, standard sampler,
+segmentation objective, anatomy weights, optimizer and25,000 segmentation updates.
+Change only --gaussian-weight10 versus --gaussian-weight0; disable any late ramp.
+Keep the Gaussian module allocated in both arms. Verify identical shared tensors
+before the first update and record both source and initialization SHA256s.
+This tests the Gaussian regularization contribution conditional on the chosen prior
+and recipe. Prefer this to method=gta_no_gaussian for exact initialization matching:
+removing gau_final changes parameter creation order before randomly initialized DS.
+Gradient probes then distinguish scalar loss size from actual logits derivatives.
+
+Minimum follow-up for classifier-conditioning attribution:
+First keep the same SegAirwayModel backbone and its exact warm-start, the same
+fixed-final classifier checkpoint/pretraining budget, and the same full GTA network allocation.
+A separately versioned, audited conditioning-off switch should bypass all three
+guidance injections and replace the16-channel guidance map by zeros while retaining
+the22-channel final-fusion input. Preserve all common initial tensors, DS heads,
+sampling, anatomy weighting, Gaussian lambda and segmentation schedule. Define in
+advance whether independent classifier auxiliary training is retained in both arms
+(to test conditioning alone) or removed (to test the whole classifier subsystem).
+These are different estimands; neither should be labelled simply prior benefit.
+Such a switch is a future minimal training-path change, not implemented or launched
+by this controller, and must obtain a new source identity rather than edit frozen code.
+
+The currently supported gta_no_prior is a useful module-removal ablation, with the
+same BAS backbone initialization. It removes the classifier/guidance modules and
+changes final fusion from22 to6 input channels. It therefore measures that combined
+module removal and cannot provide exact whole-network initialization matching.
+Setting classifier_weight0 alone does not turn off conditioning: the classifier
+features, predictions and guidance map still enter segmentation. Do not substitute
+that flag for a conditioning-off experiment.
+
+For either follow-up, choose settings using internal diagnostics, retain fixed-final
+checkpoint reporting, show individual patient results and paired differences, and
+report selection history and extra pretraining/inference cost. Existing outer-eight
+results may be described only as previously exposed development diagnostics. These
+minimum recommendations do not authorize or schedule five-fold runs or new external
+method reproductions. The initial old-server plan comprised the U-Net smoke,
+common-recipe training and internal-four checkpoint trajectory; its later use is
+recorded in the dated continuation below.
+
+Classifier role correction: independent pretraining primarily stabilizes multitask
+convergence. Classification attributes are training-derived structural priors serving
+segmentation; classification scores are reference analyses. Main initialization uses
+fixed80-epoch final.pt. The BA-selected best_selection.pt is a diagnostic artifact
+and does not decide whether main training may start. Only completeness/source/patient
+isolation/finite-readiness checks precede GTA; Dice and ASSD judge its performance.
+
+2026-10-14 dual-server continuation, actual evidence through10:19:44 UTC
+The human explicitly requested using both servers concurrently. OLD has completed
+the accepted U-Net20/80 and an immutable GTA-final200 four-case preview, followed
+by the actual56-patch training-only A/B Gaussian diagnostic. It now runs the
+allocated-Gaussian lambda0 control (controller140646, worker140854, both live and
+GPU140854 observed at10:19:44 UTC). NEW continues canonical GTA20/80 evaluation
+(owned controller7223 live;17points complete at that observation). No fivefold,
+new classifier pretraining, or changed training budget was added.
+
+The OLD control's actual327-tensor state was captured before its first forward:
+d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79,
+matching the expected CPU reconstruction. The original main did not save its
+actual initial tensors; that historical equality remains unproven. The reported
+GPU names and drivers also differ between hosts despite matching Torch/CUDA and
+compute capability8.9. Consequently this is a conditional recipe control with
+residual hardware/numerical differences, not strict loss-only causal proof.
+Actual config differs only in Gaussian weight/base10->0 and the fresh output;
+11actual source/config/initial-state receipts are archived under
+server_records/lambda0_actual_launch_20261014. Treat all launch and intermediate
+history observations as incomplete training, not final model results.

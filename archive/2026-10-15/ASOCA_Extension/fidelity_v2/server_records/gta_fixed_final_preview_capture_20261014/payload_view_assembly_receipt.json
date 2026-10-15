@@ -1,0 +1,50 @@
+{
+  "role": "local payload byte view assembled from actual downloaded source blobs; not a claim each blob was downloaded again from shared storage",
+  "READY_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\shared_mirror\\READY.json",
+  "READY_sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d",
+  "files": [
+    {
+      "name": "final.pt",
+      "downloaded_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\final.pt",
+      "local_payload_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\final.pt",
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+    },
+    {
+      "name": "config.json",
+      "downloaded_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\config.json",
+      "local_payload_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\config.json",
+      "bytes": 24269,
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    {
+      "name": "history.jsonl",
+      "downloaded_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\history.jsonl",
+      "local_payload_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\history.jsonl",
+      "bytes": 220801,
+      "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+    },
+    {
+      "name": "TRAINING_COMPLETE.json",
+      "downloaded_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\TRAINING_COMPLETE.json",
+      "local_payload_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\TRAINING_COMPLETE.json",
+      "bytes": 996,
+      "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+    },
+    {
+      "name": "manifest.json",
+      "downloaded_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\classifier_scope_20261014\\dataset\\cache\\manifest.json",
+      "local_payload_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\manifest.json",
+      "bytes": 136829,
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+    },
+    {
+      "name": "input_runtime_audit.json",
+      "downloaded_source_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\early_fixed_final_preflight_20261014\\38773_EARLY_FINAL_INPUT_RUNTIME_AUDIT_20261014.json",
+      "local_payload_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\input_runtime_audit.json",
+      "bytes": 1686,
+      "sha256": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7"
+    }
+  ],
+  "training_or_inference_started": false
+}

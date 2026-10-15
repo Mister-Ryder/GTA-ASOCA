@@ -1,0 +1,45 @@
+AEI转投：方法主张、已有证据与剩余科学缺口
+更新：2026-10-14；内部方法开发备忘，不是最终文章或正式测试结论。
+所有证据路径相对fidelity_v2；详细实现边界见AEI_unified_GTA_evidence_map_20261014.txt。
+
+一、建议统一的研究问题
+“细小分支管状结构的稀疏与结构信息利用”。气道与冠脉共享细小前景、尺度变化和分支形态难以完整重建的问题；两种解剖任务分别训练与报告，用相同框架及可追溯的目标生成说明可迁移性。ASOCA是冠脉管腔前景/背景分割，不是多类全心脏或临床冠脉分段。不能为合并实验把气道改称心血管。
+
+二、当前可陈述的方法
+CT的三头几何代理分类器学习分支深度、结构复杂度与扫描位置表征；位置指导编码层，分支深度与结构指导不同解码尺度，结合分类器空间特征、多尺度融合及Gaussian结构场辅助监督完成分割。独立分类预训练用于稳定辅助表示及后续多任务优化；其准确率不是分割成功标准。类别0表示空前景；非空1–6是任务代理类别，不能冒充临床解剖标签。
+分支深度由全卷训练GT骨架图最粗根BFS生成；结构是whole-patch几何复杂度的固定阈值；位置是全CT Z三段×X两半。一个128³输入分别给三头单标签，仍保留空间特征，但体积主导标签会弱化块内细枝信息。当前whole-patch reweighting也不能称逐分支或逐体素类别均衡。
+直接分割深监督是解码器两尺度。增强主forward没有启用encoder fusion分割监督；历史base warm-up代码的双输出不等于当前主forward二者都激活。feedback enhanced_features被返回但objective未使用；prob/argmax调制处no_grad，不能宣称概率选择的连续端到端反馈学习。没有严格拓扑或连通性保证。
+场G在GT前景外置0，监督目标T=.5+.5G，背景/空块T=.5；它不是跨管壁的全局距离场。半径Gaussian目标缓存及任务代理生成属于必须披露的适配。
+实现定位：code/model.py:143、157、185、196、198、211；code/losses.py:151、156；code/data.py与code/prepare_data.py的目标生成。冻结A源码身份bc8dd9...，实际config b61358...，manifest141d97...，固定final2b24a0...。预训练稳定辅助任务是设计目的，尚非经匹配消融证明的收益。
+
+三、已闭合的证据表
+证据 | 可以支持 | 不能外推
+训练与评价闭合 | GTA200×125=25000更新、50/20/130阶段；20点×4=80次canonical评价；固定final原GT/保存预测Dice与ASSD重算；四例与OLD preview解码像素/几何完全一致 | preview代替canonical、最优周期选择、独立盲测或五折完成
+共同配方固定final N4 | GTA Dice83.185390±5.262188%，ASSD0.567825±0.323106mm；U-Net81.845551±7.676467%，0.749233±0.455919mm；均值±患者sample SD | 显著性、折间SD、模型胜者或某模块因果增益
+逐病例异质性 | D10 Dice+6.571970百分点/ASSD−0.944523mm；N12 +1.920849/−0.407404；D20 −2.765712/+0.510356；N3 −0.367752/+0.115941 | 只展示改善病例、用四例定位临床病因
+分类最终训练bank诊断 | standard56块/49非空；三头非空pred0=2/0/1；generation≥5=7、structure3=10、location非0=48；状态/RNG不变、CPU无参数更新 | 分类准确率作门槛；GT generation6/structure6在本bank缺席可证明学不会；混用geometry2048频率
+尺度/场诊断 | 训练28固定bank、不接触4/8 GT；体积主导与局部结构摘要不一致，场/分区梯度有实际测量 | 临床分支真值、结构先验带来最终性能因果改善
+初始参数梯度 | 28批/56块实际AMP、A/B有限，B5批提示clip12；共享参数梯度范数比中位数A0.610/B3.245、余弦0.293/0.083；无更新，末状态恢复 | 与epoch070的logits共模分解混算、把较强梯度当更有效或安全、补证未保存的历史Aθ0
+
+主指标：Dice与物理mm ASSD。ASSD为两方向6邻域表面体素距离拼接后均值，即(sum a+sum b)/(len a+len b)，不是连通性；非surfel面积加权。空表面产生undefined距离，病例必须保留，不能悄悄剔除后称完整均值。本N4两方法均4/4有定义。clDice/中心线召回仅为辅助；与论文同名指标的实现/切分不明时只作不同协议reported参考。
+
+四、候选与归因边界
+共同配方GTA与U-Net包含容量、初始化来源、5120次额外分类预训练及辅助目标差异，只能说明这两个完整配方在这四例上的观测。旧冷启动80.01% N8与当前83.19% N4不是同病例比较，不能作前后净提高。
+λ0控制已在OLD独立启动、结果待完成，硬件/driver与NEW不同，历史A未保存θ0；当前重构/新快照不能证明历史A实际初始状态一致。固定final与相同25000更新是必要可比条件，但不足以消除全部混杂。
+B候选已实际授权并启动，结果待完成：仅把Gaussian全场MSE改为每patch前景/背景等权的存在区域归一化，再batch均值。模块、参数形状、场/目标、λ10、标签、采样、DS、预训练来源和25000预算保留。空块不除以不存在的前景；GT界面离散，不新造跨界距离监督。B改变数学目标及梯度，不是“旧loss等价不变”。B首次forward前的真实327张量状态已保存并核得d84，与预期重构及λ0真实初态相同；配置89b06f...已独立绑定sealed B协议。它们仍不是未保存的历史Aθ0证据。不同时追加分类器、采样、λ或训练时长变化。
+
+五、投稿前仍缺什么
+1. 先核验B及λ0固定final、完整预算/有限历史、原网格像素和逐病例误差，不能提前宣称修复成功。当前epoch140–200平台波动，不是延长训练获益证据。
+2. 用匹配骨干/初始化/预算的独立消融识别属性指导、场目标及均衡的贡献；现有整体GTA-vs-U-Net不承担模块归因。切分、空块与失效病例完整报告。
+3. 固定下一候选和评价协议后，确定正式泛化评价。训练32内保留4已用于开发，原8也有历史曝光；两者均不追认盲测。是否新CV或官方评估另行决定，不自动恢复庞大五折。
+4. 气道与冠脉统一报告相同的框架、任务适配、预算、强基线与结构辅助指标。当前还有性能修复与跨任务消融缺口，不能保证90%、跨解剖泛化或AEI录用。
+
+六、实际来源索引
+canonical结果/逐例与身份闭合：server_records/gta_canonical_acceptance_20261014/canonical_acceptance_and_pair.json、canonical_unet_paired_cases.csv、canonical_preview_decoded_comparison.csv
+真实20点曲线：server_records/gta_complete_trajectory_20261014/results/gta_enhanced200x125/internal4_trajectory/validation_curve.csv；TRAJECTORY_COMPLETE.json；同capture根collection_manifest.json与POSTFIT_VERIFIED.json
+最终分类器：server_records/classifier_final_cpu_actual_20261014/results/classifier_final_cpu_audit_20261014/summary.json、AUDIT_COMPLETE.json、audit_plan.json；同capture根collection_manifest.json
+实际初始诊断：server_records/initial_parameter_gradient_actual_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/summary.json、DIAGNOSTIC_COMPLETE.json、reconstructed_initial_state.json、CONTROLLER_STATUS.json；同capture根collection_manifest.json
+尺度：server_records/label_scale_audit_20261014；epoch070场：server_records/classifier_scope_20261014/results/gaussian_epoch070_cpu_bank56；docs/gaussian_epoch070_actual_review.txt
+B实际启动/决策：server_records/B_formal_launch_20261014/launch_receipt.json、B_TRAIN_DECISION_20261014.json、actual_evidence.json；actual_startup/ACTUAL_B_THETA0.json、actual_training_config.json与capture_complete.json（launch为启动证据，非完成或性能证据）
+λ0实际启动/θ0：server_records/lambda0_actual_launch_20261014/launch.json、ACTUAL_CONTROL_THETA0.json、actual_training_config.json
+逐例错误补充：server_records/pixel_error_diagnosis_20261014/interpretation_notes.txt、per_case_error_metrics.csv

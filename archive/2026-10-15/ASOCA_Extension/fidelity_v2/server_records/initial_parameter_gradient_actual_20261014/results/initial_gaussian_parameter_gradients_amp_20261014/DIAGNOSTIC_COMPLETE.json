@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "n_batches": 28,
+  "n_patches": 56,
+  "artifacts_sha256": {
+    "diagnostic_plan.json": "666bc69e31ea1d8d2eb66b4c3ac461fae1f4f9f20bb1f0db0cf1b24f86332dd1",
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "reconstructed_initial_state.json": "d014c1da3d2ec2d88ebd7e658d863dc2b671d9e9ce1dad4022ba85f7e6320eaf",
+    "batch_metrics.jsonl": "0e9a1188d5a79065dbb600e8c920fbb78456e2275272acfcdc29d3394a51d952",
+    "summary.json": "514889782e9b0ded70e02f7611eb689a0c846448d4f5118130e48b50e1cc344c"
+  },
+  "parameter_updates": false,
+  "held_out_GT_read": false,
+  "buffer_state_restored_at_end": true,
+  "nonfinite_batches": []
+}

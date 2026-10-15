@@ -1,0 +1,103 @@
+{
+  "role": "NOT_MODEL_RESULTS",
+  "mode": "classifier_forward",
+  "commit": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+  "untrained": true,
+  "real_dataset_used": false,
+  "checkpoint_loaded": false,
+  "optimizer_created": false,
+  "parameter_updates": 0,
+  "CPU_limits": {
+    "torch_threads": 2,
+    "torch_interop_threads": 1,
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "nice": 10
+  },
+  "torch": "2.7.1+cu128",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.7.2",
+    "pandas": "2.3.3",
+    "tqdm": "4.67.1"
+  },
+  "started_at_utc": "2026-10-14T09:29:01.627934+00:00",
+  "input_shape": [
+    1,
+    1,
+    32,
+    32,
+    32
+  ],
+  "classifier_head_shapes": {
+    "generation": [
+      1,
+      7
+    ],
+    "structure": [
+      1,
+      7
+    ],
+    "location": [
+      1,
+      7
+    ]
+  },
+  "guidance_shape": [
+    1,
+    16,
+    2,
+    2,
+    2
+  ],
+  "classifier_spatial_shapes": [
+    [
+      1,
+      64,
+      8,
+      8,
+      8
+    ],
+    [
+      1,
+      128,
+      4,
+      4,
+      4
+    ],
+    [
+      1,
+      256,
+      2,
+      2,
+      2
+    ]
+  ],
+  "all_outputs_finite": true,
+  "all_parameter_gradients_none": true,
+  "model_state_SHA_before": "7aa1aba2ddde4409ac076dc3bf07175b8dd95390161567571a56edaf36b475da",
+  "model_state_SHA_after": "7aa1aba2ddde4409ac076dc3bf07175b8dd95390161567571a56edaf36b475da",
+  "state_unchanged": true,
+  "internal_module_origins": {
+    "checkpoint_utils": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/classifier_pretraining/code/checkpoint_utils.py",
+    "data": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/classifier_pretraining/code/data.py",
+    "classification_data": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/classifier_pretraining/code/classification_data.py",
+    "historical.func.AnatomicalClassifier": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/classifier_pretraining/code/historical/func/AnatomicalClassifier.py",
+    "losses": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/classifier_pretraining/code/losses.py",
+    "pretrain_classifier": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/classifier_pretraining/code/pretrain_classifier.py"
+  },
+  "status": "passed",
+  "CUDA_context_initialized": false,
+  "completed_at_utc": "2026-10-14T09:29:01.860224+00:00"
+}

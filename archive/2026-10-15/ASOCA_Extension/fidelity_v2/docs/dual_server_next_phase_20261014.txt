@@ -1,0 +1,40 @@
+2026-10-14 dual-server continuation decision
+
+Human steering: use both servers concurrently and continue the existing plan.
+NEW: preserve the owned canonical 20-checkpoint/internal-four trajectory. At
+10:02:18 UTC, 14 checkpoints were complete; epoch140 Dice=.8324458821363064,
+pooled physical ASSD=.5342704934847465 mm. This is an intermediate development
+observation, not a selected final result or a literature-matched comparison.
+
+OLD: the same immutable final200 checkpoint is used for 56 training-patch
+diagnostics, comparing the original all-voxel Gaussian MSE with per-patch equal
+foreground/background regional means. The target, module and lambda10 remain
+fixed. Empty/full patches renormalize over present regions. This diagnostic
+uses detached-logit gradients and no optimizer, parameter update or held-out
+GT. Actual Torch autograd passed five analytical fixtures before launching the
+bounded diagnostic at10:02:39 UTC, parent140178. Completion requires all56,
+unchanged model state and five artifact hashes; launch is not completion.
+
+After the diagnostic releases OLD, run one allocated-Gaussian lambda0 control:
+same fixed 25,000 updates, train28/internal4, model capacity, decoder DS,
+sampler, frozen/partial/joint stages, pretrained classifier and airway-backbone
+donor bytes. Do not remove the Gaussian module or re-pretrain the classifier.
+Both donors were actually published to private shared storage at10:02:18 UTC.
+Only lambda10->0 and the output directory should differ in the saved training
+configuration. Keep all existing experiments immutable and use a fresh output.
+
+The control is conditional on this recipe. The original main run did not save
+its actual initial tensor snapshot: CPU reconstruction equivalence cannot prove
+historical tensor identity. OLD and NEW have matching Torch/CUDA and capability
+8.9, but their reported device names and drivers differ. Record this residual
+numerical/hardware difference rather than claiming strict single-factor causal
+isolation. No main lambda10 rerun is currently planned. The fixed-final OLD
+preview must still be compared against canonical NEW saved pixels.
+
+One further candidate may change only the Gaussian reduction to the measured
+regional means, with the same architecture and budget. Its training requires
+review of the actual diagnostic and complete canonical trajectory. A distinct
+source identity and immutable loss-measure protocol must disclose this change.
+Prefer NEW for that candidate after its canonical evaluation is complete.
+No longer budget, increased lambda, extra encoder supervision, new labels,
+foundation model or fivefold evaluation is added in this phase.

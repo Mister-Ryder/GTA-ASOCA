@@ -1,0 +1,46 @@
+Execution verified on 2026-10-14 (Asia/Shanghai).
+
+The original ASOCA archive (4,112,788,493 bytes) was uploaded and verified by
+SHA256:08ed5cf3d70743517ec83d9f1b18fc5d5a520d99203b4a876df5b7d1600bdb38.
+All40 annotated cases were fully prepared; all5 frozen stratified splits remain
+32training+8heldout. No official hidden-test scores exist locally.
+
+Final code commit:eee5713328239dd32d47292c771773eaa293c7b4.
+Canonical archived GTAirway commit:0254c339c910ba17b7ddd682215e1b946c95565f.
+Remote code and local files were checked individually by SHA256.
+
+The fixed environment uses Python3.11,PyTorch2.7.1+cu128,MONAI1.5.1 and native
+nnUNetv2 2.6.4. A CUDA package namespace collision was repaired before final
+training. The complete final environment lock is retained in server_records.
+The historical numerical equivalence test passes with zero max absolute logit
+difference under deterministic FP32 convolution. Loss ratio and gradient tests,
+native nnU-Net entrypoint imports and96cubed,batch2 true-data smoke checks passed.
+
+Final formal process started as PID6375. The sequential queue is running with
+30jobs; the first GTAfold0 training run completed epoch0 and continued into
+epoch1. Its first epoch took57.5seconds and peak allocated GPU memory6.203GiB.
+GPU usage was9189MiB and100% at the check. Training losses are startup evidence,
+not heldout performance results. No mainstream-comparison scores are available
+yet. Approximate first training duration is3-4hours; the full queue takes days,
+and native nnU-Net timing remains unmeasured.
+
+AMP scaling is1024 with growth interval1,000,000,preventing growth within the
+25,000update budget. Initial startup runs were retained separately on the server
+under results_initial_amp_check and results_initial_amp_state; they are excluded
+from the formal comparison. Runtime fixes did not change the method architecture.
+
+Server root:/root/autodl-tmp/ASOCA_GTAirway_20261013
+Current status:results/queue_status.json
+Main log:logs/formal.log
+First training log:results/gta/fold0/training.log
+Future summaries:results/comparison/comparison.txt and comparison.csv
+Source,data split,training config,checkpoint and reference hashes are retained.
+Jobs continue in detached server processes and do not require an open SSH session.
+
+Paper framing:sparse branching tubular reconstruction with explicit geometric
+attribute guidance,imbalance-aware learning and cumulative Gaussian supervision.
+ASOCA remains background/coronary-lumen binary segmentation;branch-depth and
+scan-region labels are auxiliary geometric proxies. Standard segmentation DS is
+an optional training improvement;the fold0 DScontrols help distinguish its gain.
+Corresponding airway DScontrols remain necessary if the revised paper describes
+the DSconfiguration as its final shared method.

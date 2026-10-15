@@ -1,0 +1,115 @@
+['nvidia-cuda-nvrtc-cu12==12.8.61; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cuda-runtime-cu12==12.8.57; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cuda-cupti-cu12==12.8.57; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cudnn-cu12==9.7.1.26; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cublas-cu12==12.8.3.14; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cufft-cu12==11.3.3.41; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-curand-cu12==10.3.9.55; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cusolver-cu12==11.7.2.55; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cusparse-cu12==12.5.7.53; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cusparselt-cu12==0.6.3; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-nccl-cu12==2.26.2; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-nvtx-cu12==12.8.55; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-nvjitlink-cu12==12.8.61; platform_system == "Linux" and platform_machine == "x86_64"', 'nvidia-cufile-cu12==1.13.0.11; platform_system == "Linux" and platform_machine == "x86_64"']
+Looking in indexes: https://download.pytorch.org/whl/cu128
+Collecting nvidia-cuda-nvrtc-cu12==12.8.61
+  Using cached nvidia_cuda_nvrtc_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+Collecting nvidia-cuda-runtime-cu12==12.8.57
+  Using cached nvidia_cuda_runtime_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.57
+  Using cached nvidia_cuda_cupti_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+Collecting nvidia-cudnn-cu12==9.7.1.26
+  Using cached nvidia_cudnn_cu12-9.7.1.26-py3-none-manylinux_2_27_x86_64.whl (726.9 MB)
+Collecting nvidia-cublas-cu12==12.8.3.14
+  Using cached nvidia_cublas_cu12-12.8.3.14-py3-none-manylinux_2_27_x86_64.whl (609.6 MB)
+Collecting nvidia-cufft-cu12==11.3.3.41
+  Using cached nvidia_cufft_cu12-11.3.3.41-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+Collecting nvidia-curand-cu12==10.3.9.55
+  Using cached nvidia_curand_cu12-10.3.9.55-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+Collecting nvidia-cusolver-cu12==11.7.2.55
+  Using cached nvidia_cusolver_cu12-11.7.2.55-py3-none-manylinux_2_27_x86_64.whl (260.4 MB)
+Collecting nvidia-cusparse-cu12==12.5.7.53
+  Using cached nvidia_cusparse_cu12-12.5.7.53-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (292.1 MB)
+Collecting nvidia-cusparselt-cu12==0.6.3
+  Using cached nvidia_cusparselt_cu12-0.6.3-py3-none-manylinux2014_x86_64.whl (156.8 MB)
+Collecting nvidia-nccl-cu12==2.26.2
+  Using cached nvidia_nccl_cu12-2.26.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (201.3 MB)
+Collecting nvidia-nvtx-cu12==12.8.55
+  Using cached nvidia_nvtx_cu12-12.8.55-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.61
+  Using cached nvidia_nvjitlink_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.2 MB)
+Collecting nvidia-cufile-cu12==1.13.0.11
+  Using cached nvidia_cufile_cu12-1.13.0.11-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+Installing collected packages: nvidia-cusparselt-cu12, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-cusparse-cu12, nvidia-cusolver-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12
+  Attempting uninstall: nvidia-cusparselt-cu12
+    Found existing installation: nvidia-cusparselt-cu12 0.6.3
+    Uninstalling nvidia-cusparselt-cu12-0.6.3:
+      Successfully uninstalled nvidia-cusparselt-cu12-0.6.3
+  Attempting uninstall: nvidia-nvtx-cu12
+    Found existing installation: nvidia-nvtx-cu12 12.8.55
+    Uninstalling nvidia-nvtx-cu12-12.8.55:
+      Successfully uninstalled nvidia-nvtx-cu12-12.8.55
+  Attempting uninstall: nvidia-nvjitlink-cu12
+    Found existing installation: nvidia-nvjitlink-cu12 12.8.61
+    Uninstalling nvidia-nvjitlink-cu12-12.8.61:
+      Successfully uninstalled nvidia-nvjitlink-cu12-12.8.61
+  Attempting uninstall: nvidia-nccl-cu12
+    Found existing installation: nvidia-nccl-cu12 2.26.2
+    Uninstalling nvidia-nccl-cu12-2.26.2:
+      Successfully uninstalled nvidia-nccl-cu12-2.26.2
+  Attempting uninstall: nvidia-cusparse-cu12
+    Found existing installation: nvidia-cusparse-cu12 12.5.7.53
+    Uninstalling nvidia-cusparse-cu12-12.5.7.53:
+      Successfully uninstalled nvidia-cusparse-cu12-12.5.7.53
+  Attempting uninstall: nvidia-cusolver-cu12
+    Found existing installation: nvidia-cusolver-cu12 11.7.2.55
+    Uninstalling nvidia-cusolver-cu12-11.7.2.55:
+      Successfully uninstalled nvidia-cusolver-cu12-11.7.2.55
+  Attempting uninstall: nvidia-curand-cu12
+    Found existing installation: nvidia-curand-cu12 10.3.9.55
+    Uninstalling nvidia-curand-cu12-10.3.9.55:
+      Successfully uninstalled nvidia-curand-cu12-10.3.9.55
+  Attempting uninstall: nvidia-cufile-cu12
+    Found existing installation: nvidia-cufile-cu12 1.13.0.11
+    Uninstalling nvidia-cufile-cu12-1.13.0.11:
+      Successfully uninstalled nvidia-cufile-cu12-1.13.0.11
+  Attempting uninstall: nvidia-cufft-cu12
+    Found existing installation: nvidia-cufft-cu12 11.3.3.41
+    Uninstalling nvidia-cufft-cu12-11.3.3.41:
+      Successfully uninstalled nvidia-cufft-cu12-11.3.3.41
+  Attempting uninstall: nvidia-cudnn-cu12
+    Found existing installation: nvidia-cudnn-cu12 9.7.1.26
+    Uninstalling nvidia-cudnn-cu12-9.7.1.26:
+      Successfully uninstalled nvidia-cudnn-cu12-9.7.1.26
+  Attempting uninstall: nvidia-cuda-runtime-cu12
+    Found existing installation: nvidia-cuda-runtime-cu12 12.8.57
+    Uninstalling nvidia-cuda-runtime-cu12-12.8.57:
+      Successfully uninstalled nvidia-cuda-runtime-cu12-12.8.57
+  Attempting uninstall: nvidia-cuda-nvrtc-cu12
+    Found existing installation: nvidia-cuda-nvrtc-cu12 12.8.61
+    Uninstalling nvidia-cuda-nvrtc-cu12-12.8.61:
+      Successfully uninstalled nvidia-cuda-nvrtc-cu12-12.8.61
+  Attempting uninstall: nvidia-cuda-cupti-cu12
+    Found existing installation: nvidia-cuda-cupti-cu12 12.8.57
+    Uninstalling nvidia-cuda-cupti-cu12-12.8.57:
+      Successfully uninstalled nvidia-cuda-cupti-cu12-12.8.57
+  Attempting uninstall: nvidia-cublas-cu12
+    Found existing installation: nvidia-cublas-cu12 12.8.3.14
+    Uninstalling nvidia-cublas-cu12-12.8.3.14:
+      Successfully uninstalled nvidia-cublas-cu12-12.8.3.14
+
+Successfully installed nvidia-cublas-cu12-12.8.3.14 nvidia-cuda-cupti-cu12-12.8.57 nvidia-cuda-nvrtc-cu12-12.8.61 nvidia-cuda-runtime-cu12-12.8.57 nvidia-cudnn-cu12-9.7.1.26 nvidia-cufft-cu12-11.3.3.41 nvidia-cufile-cu12-1.13.0.11 nvidia-curand-cu12-10.3.9.55 nvidia-cusolver-cu12-11.7.2.55 nvidia-cusparse-cu12-12.5.7.53 nvidia-cusparselt-cu12-0.6.3 nvidia-nccl-cu12-2.26.2 nvidia-nvjitlink-cu12-12.8.61 nvidia-nvtx-cu12-12.8.55
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Repaired CUDA backward OK
+nnUNet_raw is not defined and nnU-Net can only be used on data for which preprocessed files are already present on your system. nnU-Net cannot be used for experiment planning and preprocessing like this. If this is not intended, please read documentation/setting_up_paths.md for information on how to set this up properly.
+nnUNet_preprocessed is not defined and nnU-Net can not be used for preprocessing or training. If this is not intended, please read documentation/setting_up_paths.md for information on how to set this up.
+nnUNet_results is not defined and nnU-Net cannot be used for training or inference. If this is not intended behavior, please read documentation/setting_up_paths.md for information on how to set this up.
+Native nnU-Net entrypoints OK
+{'loss_tests': True, 'perfect_squared_dice': 0.0, 'historical_perfect_foreground_power_dice_floor': 0.017882823944091797}
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ASOCA_GTAirway_20261013/code/model.py", line 361, in <module>
+    print(historical_equivalence_test(args.device, args.size, args.batch_size))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/autodl-tmp/ASOCA_GTAirway_20261013/code/model.py", line 271, in historical_equivalence_test
+    torch.testing.assert_close(new_output["logits"], captured["logits"], atol=1e-6, rtol=1e-5)
+  File "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages/torch/testing/_comparison.py", line 1519, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not close!
+
+Mismatched elements: 59704 / 131072 (45.6%)
+Greatest absolute difference: 0.0001417994499206543 at index (1, 1, 21, 16, 19) (up to 1e-06 allowed)
+Greatest relative difference: 1.1065037250518799 at index (1, 0, 10, 7, 14) (up to 1e-05 allowed)
+Traceback (most recent call last):
+  File "/root/autodl-tmp/ASOCA_GTAirway_20261013/ops/repair_runtime.py", line 16, in <module>
+    subprocess.run(["bash","/root/autodl-tmp/ASOCA_GTAirway_20261013/ops/smoke.sh"],check=True)
+  File "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['bash', '/root/autodl-tmp/ASOCA_GTAirway_20261013/ops/smoke.sh']' returned non-zero exit status 1.

@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "torch": "2.0.0+cu117",
+  "python": "3.9.13 (main, Aug 25 2022, 23:51:50) [MSC v.1916 64 bit (AMD64)]",
+  "validator_sha256": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51",
+  "controller_sha256": "b5be28d2e96cd7155f2a5d9a5e58f1a0fe5662f090f4c276b34856a94d1daba7",
+  "tests": {
+    "real_torch_serialization_preflight20": "passed",
+    "missing_middle_checkpoint_rejected_before_inference": "Missing mandatory trajectory checkpoint: epoch100",
+    "complete80_cases_and_real_plot_artifacts": "passed",
+    "undefined_assd_retained_without_excluding_case": {
+      "case_evaluations": 80,
+      "dice_points": 20,
+      "assd_points": 19
+    },
+    "missing_case_json_rejected": "Unexpected/missing per-case JSON patients: epoch050",
+    "stale_ledger_epoch_rejected": "Validation ledger differs from verified weights/summaries",
+    "fixture_scope": "real40-case manifest and original label SHA; tiny tensor payloads and synthetic metric metadata, no network inference/training"
+  }
+}

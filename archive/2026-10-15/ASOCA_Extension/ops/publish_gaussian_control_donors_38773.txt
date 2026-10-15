@@ -1,0 +1,41 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import ctypes,datetime,hashlib,json,os,shutil,subprocess,uuid
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+shared=Path('/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014')
+dest=shared/'gaussian_control_donors_20261014'
+config=r/'results/gta_enhanced200x125/training/config.json'
+def sha(p):
+    h=hashlib.sha256()
+    with p.open('rb') as f:
+        for b in iter(lambda:f.read(8*1024**2),b''):h.update(b)
+    return h.hexdigest()
+assert sha(config)=='b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b'
+spec={'airway_backbone_epoch599.pkl':(r/'initialization/airway_backbone_epoch599.pkl','29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3'),'classifier80_final.pt':(r/'results/classifier80x64/training/final.pt','308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4')}
+files={}
+for name,(source,expected) in spec.items():
+    assert source.is_file() and sha(source)==expected
+    files[name]={'bytes':source.stat().st_size,'sha256':expected,'recorded_main_path':str(source)}
+if dest.exists():
+    ready=json.loads((dest/'DONORS_READY.json').read_text())
+    assert ready['files']==files and ready['main_config_sha256']==sha(config)
+    for name,record in files.items():assert (dest/name).stat().st_size==record['bytes'] and sha(dest/name)==record['sha256']
+    print(json.dumps({'existing_verified':str(dest),'ready':ready},indent=2))
+else:
+    assert shutil.disk_usage(shared).free>sum(x['bytes'] for x in files.values())+256*1024**2
+    stage=shared/('.gaussian_control_donors_'+uuid.uuid4().hex);stage.mkdir()
+    for name,(source,expected) in spec.items():
+        with source.open('rb') as src,(stage/name).open('xb') as out:
+            shutil.copyfileobj(src,out,8*1024**2);out.flush();os.fsync(out.fileno())
+        assert sha(stage/name)==expected and sha(source)==expected
+    ready={'schema_version':1,'role':'PRIVATE_IMMUTABLE_GTA_CONTROL_DONORS','captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'main_config_sha256':sha(config),'files':files,'weights_public':False,'model_forward':False,'CUDA_context':False}
+    with (stage/'DONORS_READY.json').open('x') as f:json.dump(ready,f,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
+    lib=ctypes.CDLL(None,use_errno=True)
+    result=lib.renameat2(-100,os.fsencode(stage),-100,os.fsencode(dest),1)
+    if result:raise OSError(ctypes.get_errno(),'Fresh atomic directory publication failed; staging retained')
+    print(json.dumps({'published':str(dest),'ready':ready},indent=2))
+t=r/'results/gta_enhanced200x125/internal4_trajectory/validation_history.jsonl'
+rows=[json.loads(x) for x in t.read_text().splitlines() if x] if t.exists() else []
+print(json.dumps({'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'canonical_points_completed':len(rows),'latest':rows[-1] if rows else None,'postfit':json.loads((r/'POSTFIT_STATUS.json').read_text()),'GPU':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip()},indent=2))
+PY

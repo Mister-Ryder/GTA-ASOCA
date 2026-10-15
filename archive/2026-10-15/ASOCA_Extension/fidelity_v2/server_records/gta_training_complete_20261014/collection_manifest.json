@@ -1,0 +1,83 @@
+{
+  "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "server_port": 38773,
+  "read_only_server_access": true,
+  "files": [
+    {
+      "relative_path": "results/gta_enhanced200x125/training/config.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/config.json",
+      "bytes": 24269,
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/history.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/history.jsonl",
+      "bytes": 220801,
+      "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/initialization_audit.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/initialization_audit.json",
+      "bytes": 10097,
+      "sha256": "b63d8e051afd4e89ada6765e040174f72affad35f5401fa56c3a694da0646539"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/TRAINING_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/TRAINING_COMPLETE.json",
+      "bytes": 996,
+      "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/final.pt",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/final.pt",
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+    },
+    {
+      "relative_path": "stage_records/gta200.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/stage_records/gta200.json",
+      "bytes": 822,
+      "sha256": "528190c776d898e00f25a71a8899e1a2e34f26b44b29132cf0151ffc82de60d5"
+    },
+    {
+      "relative_path": "configs/main_source_freeze.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/configs/main_source_freeze.json",
+      "bytes": 10604,
+      "sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46"
+    },
+    {
+      "relative_path": "LIVE_MAIN_CHECK_20261014.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/LIVE_MAIN_CHECK_20261014.json",
+      "bytes": 3337,
+      "sha256": "f49fe65d63851521b1c596343130324d9c4cc8f80d544d5cd11d99de5df01deb"
+    },
+    {
+      "relative_path": "FIXED_FINAL_FOLLOWUP_CHECK_20261014.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/FIXED_FINAL_FOLLOWUP_CHECK_20261014.json",
+      "bytes": 8696,
+      "sha256": "f4024b1b47cb9887690d68899f2353bfb6aaf0043147f01d8f1c4bcab6455530"
+    },
+    {
+      "relative_path": "EARLY_FINAL_MIRROR_STATUS.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/EARLY_FINAL_MIRROR_STATUS.json",
+      "bytes": 2165,
+      "sha256": "5a3143134732e0b94126270f84193ab26c2bf4fb364f48ecc336427451e95201"
+    },
+    {
+      "relative_path": "EARLY_FINAL_MIRROR_LAUNCH_20261014.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/EARLY_FINAL_MIRROR_LAUNCH_20261014.json",
+      "bytes": 410,
+      "sha256": "0f48480649a31b480446baaec4bd5d9334e021655351f063c837e8c243cfa855"
+    },
+    {
+      "relative_path": "shared_mirror/READY.json",
+      "remote_path": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/READY.json",
+      "bytes": 3616,
+      "sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d"
+    }
+  ],
+  "status": "captured_actual_completed_training_pending_independent_review",
+  "captured_at_utc": "2026-10-14T08:58:56.841043+00:00",
+  "actual_final_weights_bytes_hash_verified": true,
+  "model_forward_or_training_started": false
+}

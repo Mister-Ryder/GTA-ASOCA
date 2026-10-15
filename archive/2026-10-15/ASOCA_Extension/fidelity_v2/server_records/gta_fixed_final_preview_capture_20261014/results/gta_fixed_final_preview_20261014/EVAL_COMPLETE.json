@@ -1,0 +1,186 @@
+{
+  "summary_sha256": "17a20a086e5531388c114442eff5a080128e4787f3b06877d04a1efd94e91ded",
+  "case_metrics_sha256": "bb4de01666fce40af8434676bba0bd917a177f20ac8bc33de41d20a15d00210a",
+  "predictions": {
+    "Diseased_10": {
+      "file_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+      "decoded_pixel_sha256": "639facf9eb48a1076f726c33fe7ee8f76e151999d6e6f3f531e2b48c04680fe7",
+      "dtype": "uint8",
+      "shape_zyx": [
+        224,
+        512,
+        512
+      ],
+      "size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "spacing_xyz_mm": [
+        0.3867189884,
+        0.3867189884,
+        0.625
+      ],
+      "origin_xyz_mm": [
+        -75.69999694824219,
+        -111.80000305175781,
+        -224.375
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "foreground_voxels": 18023
+    },
+    "Diseased_20": {
+      "file_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+      "decoded_pixel_sha256": "a5a0a24714a805887c8f727b34c81ba6a53937ec14622681cba6915f3de95e9c",
+      "dtype": "uint8",
+      "shape_zyx": [
+        224,
+        512,
+        512
+      ],
+      "size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "spacing_xyz_mm": [
+        0.4707030058000001,
+        0.4707030058000001,
+        0.6249999999999998
+      ],
+      "origin_xyz_mm": [
+        -88.6999969482422,
+        -165.99999999999997,
+        -207.87499999999997
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "foreground_voxels": 22738
+    },
+    "Normal_12": {
+      "file_sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+      "decoded_pixel_sha256": "99805ebddcc750c4804ba4e137e8e40d228b55f5418df3281e8fc4524c7bfc10",
+      "dtype": "uint8",
+      "shape_zyx": [
+        206,
+        512,
+        512
+      ],
+      "size_xyz": [
+        512,
+        512,
+        206
+      ],
+      "spacing_xyz_mm": [
+        0.369141,
+        0.369141,
+        0.625
+      ],
+      "origin_xyz_mm": [
+        -75.69999694824219,
+        -94.49999999999999,
+        -193.125
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "foreground_voxels": 29401
+    },
+    "Normal_3": {
+      "file_sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+      "decoded_pixel_sha256": "f65c48bc537362b4d5157362eba0b05b533bf205292d704e9accf4b2c8712f96",
+      "dtype": "uint8",
+      "shape_zyx": [
+        212,
+        512,
+        512
+      ],
+      "size_xyz": [
+        512,
+        512,
+        212
+      ],
+      "spacing_xyz_mm": [
+        0.382812,
+        0.382812,
+        0.625
+      ],
+      "origin_xyz_mm": [
+        -94.4000015258789,
+        -120.80000305175778,
+        -218.87500000000006
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "foreground_voxels": 40037
+    }
+  },
+  "n_cases": 4,
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "checkpoint_epoch": 199,
+  "checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9"
+  },
+  "primary_metrics": [
+    "dice",
+    "assd_mm"
+  ],
+  "schema_version": 1,
+  "status": "completed",
+  "role": "early fixed-final preview; not canonical trajectory",
+  "READY_sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d",
+  "protocol_sha256": "4f064930e1a60e63186c7fd52e77eceab36c5fd97876bacd71f2d02578239938",
+  "started_at_utc": "2026-10-14T08:53:17.672042+00:00",
+  "completed_at_utc": "2026-10-14T08:58:18.244417+00:00",
+  "wall_seconds": 300.5723999571055,
+  "parameter_updates": 0,
+  "extra_case_inferences": 4,
+  "formal_final_test": false,
+  "canonical_final_unchanged": true,
+  "canonical20_trajectory_unchanged": true
+}

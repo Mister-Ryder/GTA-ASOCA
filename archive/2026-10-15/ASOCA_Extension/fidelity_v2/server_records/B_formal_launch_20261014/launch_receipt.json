@@ -1,0 +1,15 @@
+{
+  "captured_at_utc": "2026-10-14T10:45:17.021462+00:00",
+  "parent_pid": 32758,
+  "argv": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-B",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py"
+  ],
+  "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+  "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/GAUSSIAN_REGION_BALANCE_FORMAL_20261014.log",
+  "role": "FORMAL_B_25000_UPDATE_RUN_LAUNCHED_NOT_COMPLETE",
+  "disk_free_bytes_before": 56538267648
+}

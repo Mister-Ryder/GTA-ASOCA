@@ -1,0 +1,4014 @@
+{
+  "schema_version": 1,
+  "dataset": "ASOCA",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "protocol_identity": "fdf058c3d65b92f0665a7460778b9e41a4180554ff8d325e57013d6c72b3e71f",
+  "methods": {
+    "gta": {
+      "method": "gta",
+      "comparison_type": "fivefold_cv",
+      "status": "incomplete",
+      "n_cases": 8,
+      "n_expected": 40,
+      "completed_folds": [
+        0
+      ],
+      "missing_case_ids": [
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_17",
+        "Normal_18",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_9"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 1,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 2,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 3,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 4,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8000695466714127,
+            "sd": 0.07241390930081658
+          },
+          "cldice": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8366735243369123,
+            "sd": 0.06724381103706105
+          },
+          "precision": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7417977395822286,
+            "sd": 0.11989748823976575
+          },
+          "recall": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8848695766235727,
+            "sd": 0.04065752179214823
+          },
+          "centerline_recall": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8799895067909111,
+            "sd": 0.058278341391016716
+          },
+          "centerline_precision": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8080582361454153,
+            "sd": 0.1143509242540468
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7874828633628115,
+            "sd": 0.10978854933351073
+          },
+          "surface_hd95_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 9.784989293049593,
+            "sd": 8.719722334293783
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 7.160980767604483,
+            "sd": 8.03107906165557
+          },
+          "assd_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.1773399152452733,
+            "sd": 0.8252449364354092
+          },
+          "prediction_components": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 13.5,
+            "sd": 4.0708019567928595
+          },
+          "truth_components": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8277329117836286,
+            "sd": 0.02625139400226261
+          },
+          "cldice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8673639615969216,
+            "sd": 0.027544227915178777
+          },
+          "precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7702383665892406,
+            "sd": 0.056386022028818594
+          },
+          "recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8982284200975342,
+            "sd": 0.03576920870870318
+          },
+          "centerline_recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8821461891561309,
+            "sd": 0.05460071644055234
+          },
+          "centerline_precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8576675799212872,
+            "sd": 0.06180743700972462
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8092771739562435,
+            "sd": 0.08214206065101849
+          },
+          "surface_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 6.480926908697796,
+            "sd": 8.387288579599504
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 3.7033886361333797,
+            "sd": 5.464954623389809
+          },
+          "assd_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8241779135468167,
+            "sd": 0.4599527235014549
+          },
+          "prediction_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 12.25,
+            "sd": 4.349329450233296
+          },
+          "truth_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7724061815591967,
+            "sd": 0.09749686936127404
+          },
+          "cldice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.805983087076903,
+            "sd": 0.08532454486938151
+          },
+          "precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7133571125752166,
+            "sd": 0.167947163562745
+          },
+          "recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8715107331496111,
+            "sd": 0.045844883688798244
+          },
+          "centerline_recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8778328244256915,
+            "sd": 0.07022257611565016
+          },
+          "centerline_precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7584488923695434,
+            "sd": 0.14187290487870818
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7656885527693794,
+            "sd": 0.1418130092473493
+          },
+          "surface_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 13.089051677401391,
+            "sd": 8.82912694891788
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 10.618572899075588,
+            "sd": 9.42073745121052
+          },
+          "assd_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.53050191694373,
+            "sd": 1.0222112822483544
+          },
+          "prediction_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 14.75,
+            "sd": 3.947573094109004
+          },
+          "truth_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        }
+      }
+    },
+    "unet": {
+      "method": "unet",
+      "comparison_type": "fivefold_cv",
+      "status": "incomplete",
+      "n_cases": 8,
+      "n_expected": 40,
+      "completed_folds": [
+        0
+      ],
+      "missing_case_ids": [
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_17",
+        "Normal_18",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_9"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 1,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 2,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 3,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 4,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7870210020881938,
+            "sd": 0.0750709841193832
+          },
+          "cldice": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.820752789394181,
+            "sd": 0.08011102945206866
+          },
+          "precision": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7175147410465462,
+            "sd": 0.1226468630414872
+          },
+          "recall": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.889500434931191,
+            "sd": 0.03499655031901525
+          },
+          "centerline_recall": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8768540586233806,
+            "sd": 0.04999977284131757
+          },
+          "centerline_precision": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7854402619333716,
+            "sd": 0.1389109033237541
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.782197405467692,
+            "sd": 0.09731281897902504
+          },
+          "surface_hd95_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 10.503744013625617,
+            "sd": 10.954950788130342
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 7.326990313405194,
+            "sd": 9.457556485588496
+          },
+          "assd_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.2721612723496647,
+            "sd": 0.9360073975546571
+          },
+          "prediction_components": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 21.25,
+            "sd": 9.315885051121782
+          },
+          "truth_components": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8052421490615531,
+            "sd": 0.03839137792098685
+          },
+          "cldice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8278710569836567,
+            "sd": 0.06756601611201349
+          },
+          "precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7324652516471917,
+            "sd": 0.07722234999003168
+          },
+          "recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.9007994549430144,
+            "sd": 0.030298088000559595
+          },
+          "centerline_recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8824583634641265,
+            "sd": 0.04371845680317696
+          },
+          "centerline_precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7918760932486503,
+            "sd": 0.12912076944621056
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.810241101228707,
+            "sd": 0.0628639921060541
+          },
+          "surface_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 9.345271338836184,
+            "sd": 12.128472397998374
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 5.987051222141212,
+            "sd": 10.58402709580267
+          },
+          "assd_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.1957552388196384,
+            "sd": 0.8689264277786529
+          },
+          "prediction_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 23.75,
+            "sd": 9.535023160258536
+          },
+          "truth_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7687998551148345,
+            "sd": 0.10387780212723442
+          },
+          "cldice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8136345218047051,
+            "sd": 0.10136334283415256
+          },
+          "precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7025642304459008,
+            "sd": 0.1689356435112814
+          },
+          "recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8782014149193674,
+            "sd": 0.039991851271352394
+          },
+          "centerline_recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8712497537826347,
+            "sd": 0.061953382290088885
+          },
+          "centerline_precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7790044306180928,
+            "sd": 0.16805335931449011
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7541537097066771,
+            "sd": 0.12667709300618174
+          },
+          "surface_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 11.66221668841505,
+            "sd": 11.373076800930749
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 8.666929404669176,
+            "sd": 9.586261695889682
+          },
+          "assd_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.3485673058796908,
+            "sd": 1.1285634632257726
+          },
+          "prediction_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 18.75,
+            "sd": 9.742518497116988
+          },
+          "truth_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        }
+      }
+    },
+    "unet_cldice": {
+      "method": "unet_cldice",
+      "comparison_type": "fivefold_cv",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 40,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_15",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_18",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_7",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_16",
+        "Normal_17",
+        "Normal_18",
+        "Normal_19",
+        "Normal_2",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_8",
+        "Normal_9"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 1,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 2,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 3,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 4,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    },
+    "swinunetr": {
+      "method": "swinunetr",
+      "comparison_type": "fivefold_cv",
+      "status": "incomplete",
+      "n_cases": 8,
+      "n_expected": 40,
+      "completed_folds": [
+        0
+      ],
+      "missing_case_ids": [
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_17",
+        "Normal_18",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_9"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 1,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 2,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 3,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 4,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7857259056055406,
+            "sd": 0.06864613215218099
+          },
+          "cldice": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8105636460110983,
+            "sd": 0.08878513718027671
+          },
+          "precision": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7180384177279109,
+            "sd": 0.11321521832849143
+          },
+          "recall": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.882694860864739,
+            "sd": 0.0374346342040933
+          },
+          "centerline_recall": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8690202516816377,
+            "sd": 0.051185908924649616
+          },
+          "centerline_precision": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7741272037802542,
+            "sd": 0.14476732921970883
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.768289898160723,
+            "sd": 0.10430048864073636
+          },
+          "surface_hd95_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 17.51161688140556,
+            "sd": 19.74271006573582
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 16.527290568025627,
+            "sd": 20.033939782482765
+          },
+          "assd_mm": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.5337625445573595,
+            "sd": 1.1467846340055066
+          },
+          "prediction_components": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 26.75,
+            "sd": 6.649382355849731
+          },
+          "truth_components": {
+            "n_cases": 8,
+            "n_valid": 8,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.808704344715983,
+            "sd": 0.03074830867556798
+          },
+          "cldice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8325844485544269,
+            "sd": 0.06524478054992602
+          },
+          "precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7380501495803187,
+            "sd": 0.06459353248972238
+          },
+          "recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.898798802146189,
+            "sd": 0.026311978608638528
+          },
+          "centerline_recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8845584430443436,
+            "sd": 0.0342825472936104
+          },
+          "centerline_precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7953063541301952,
+            "sd": 0.11888346230754246
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8131499312705485,
+            "sd": 0.04775971283630039
+          },
+          "surface_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 14.92202342964578,
+            "sd": 16.425637310134622
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 13.577981748581724,
+            "sd": 15.622847935955171
+          },
+          "assd_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.3123181987083092,
+            "sd": 0.9798027736484055
+          },
+          "prediction_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 29.0,
+            "sd": 7.831560082980487
+          },
+          "truth_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7627474664950982,
+            "sd": 0.0929616326687887
+          },
+          "cldice": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7885428434677698,
+            "sd": 0.11332789295462048
+          },
+          "precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.6980266858755031,
+            "sd": 0.15705951209208568
+          },
+          "recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8665909195832892,
+            "sd": 0.043427360088176596
+          },
+          "centerline_recall": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.8534820603189317,
+            "sd": 0.0655301931267545
+          },
+          "centerline_precision": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7529480534303132,
+            "sd": 0.18322551965524447
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 0.7234298650508977,
+            "sd": 0.1331763147602205
+          },
+          "surface_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 20.101210333165334,
+            "sd": 24.935714467957464
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 19.476599387469534,
+            "sd": 25.869568283135855
+          },
+          "assd_mm": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 1.75520689040641,
+            "sd": 1.4063503315701689
+          },
+          "prediction_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 24.5,
+            "sd": 5.32290647422377
+          },
+          "truth_components": {
+            "n_cases": 4,
+            "n_valid": 4,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": 2.0,
+            "sd": 0.0
+          }
+        }
+      }
+    },
+    "nnunet": {
+      "method": "nnunet",
+      "comparison_type": "fivefold_cv",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 40,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_15",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_18",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_7",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_16",
+        "Normal_17",
+        "Normal_18",
+        "Normal_19",
+        "Normal_2",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_8",
+        "Normal_9"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 1,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 2,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 3,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        },
+        {
+          "fold": 4,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    },
+    "gta_no_prior": {
+      "method": "gta_no_prior",
+      "comparison_type": "fold0_ablation",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 8,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    },
+    "gta_no_gaussian": {
+      "method": "gta_no_gaussian",
+      "comparison_type": "fold0_ablation",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 8,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    },
+    "gta_no_balance": {
+      "method": "gta_no_balance",
+      "comparison_type": "fold0_ablation",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 8,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    },
+    "gta_no_ds": {
+      "method": "gta_no_ds",
+      "comparison_type": "fold0_ablation",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 8,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    },
+    "unet_no_ds": {
+      "method": "unet_no_ds",
+      "comparison_type": "fold0_ablation",
+      "status": "incomplete",
+      "n_cases": 0,
+      "n_expected": 8,
+      "completed_folds": [],
+      "missing_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "empty_prediction_case_ids": [],
+      "issues": [
+        {
+          "fold": 0,
+          "status": "pending_or_unverified",
+          "observed_case_files": 0,
+          "reason": "No verified JOB_COMPLETE marker"
+        }
+      ],
+      "groups": {
+        "overall": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Normal": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        },
+        "Diseased": {
+          "dice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "cldice": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_recall": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "centerline_precision": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "thin_centerline_recall_radius_le_1mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "surface_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "asoca_foreground_hd95_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "assd_mm": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "prediction_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          },
+          "truth_components": {
+            "n_cases": 0,
+            "n_valid": 0,
+            "n_undefined": 0,
+            "undefined_case_ids": [],
+            "mean": null,
+            "sd": null
+          }
+        }
+      }
+    }
+  },
+  "paired_comparisons": [
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 8,
+      "paired_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "n_common": 8,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": 0.013048544583218843,
+      "ci95_low": 0.0033487620745272784,
+      "ci95_high": 0.02609520711059679,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 260263160,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "comparator": "unet",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 8,
+      "paired_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "n_common": 8,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": 0.015920734942731413,
+      "ci95_low": -0.006944512217069779,
+      "ci95_high": 0.044871826259376184,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 2539682397,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "comparator": "unet",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 2740491749,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "unet_cldice",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 1923073483,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "unet_cldice",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 8,
+      "paired_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "n_common": 8,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": 0.014343641065872048,
+      "ci95_low": 0.0037301040685945586,
+      "ci95_high": 0.02591469966769412,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 1488785402,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "comparator": "swinunetr",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 8,
+      "paired_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "n_common": 8,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": 0.026109878325813976,
+      "ci95_low": 0.0011284516152519214,
+      "ci95_high": 0.053301512543273276,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 432036216,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "comparator": "swinunetr",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3075318687,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "nnunet",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 977698731,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "nnunet",
+      "n_expected": 40,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 482362868,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_prior",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3078484184,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_prior",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3422825756,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_gaussian",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 2127568527,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_gaussian",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3791998856,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_balance",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 2359280465,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_balance",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 2907303888,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_ds",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3081626223,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "gta_no_ds",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "dice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3716164231,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "unet_no_ds",
+      "n_expected": 8,
+      "status": "incomplete"
+    },
+    {
+      "metric": "cldice",
+      "contrast": "gta minus comparator",
+      "n_paired": 0,
+      "paired_case_ids": [],
+      "n_common": 0,
+      "excluded_common_case_ids": [],
+      "gta_without_comparator_case_ids": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ],
+      "comparator_without_gta_case_ids": [],
+      "mean_difference": null,
+      "ci95_low": null,
+      "ci95_high": null,
+      "bootstrap_repetitions": 10000,
+      "bootstrap_seed": 3662947392,
+      "bootstrap_unit": "patient, paired, stratified by Normal/Diseased",
+      "reason": "At least two paired patients are required for a bootstrap interval",
+      "comparator": "unet_no_ds",
+      "n_expected": 8,
+      "status": "incomplete"
+    }
+  ],
+  "notes": [
+    "These are patient-level internal cross-validation results on 40 publicly annotated ASOCA cases, not official blind-test scores.",
+    "Only verified complete folds are aggregated. Incomplete method or paired results remain explicitly provisional.",
+    "Normal/Diseased are patient strata; native segmentation is binary coronary lumen versus background.",
+    "Standard deviations describe between-patient variation, not variation across independent random seeds.",
+    "Paired intervals are stratified patient bootstrap percentile intervals for GTA minus comparator; they are not multiplicity-adjusted hypothesis tests.",
+    "Undefined distance metrics are retained as missing with patient IDs; the mean is undefined if any cohort distance is undefined.",
+    "ASOCA foreground H95 uses all foreground voxels. Surface HD95 uses boundary voxels and is a different metric.",
+    "The fixed main budget is 25000 optimizer updates: custom 200 x 125; native nnU-Net 100 x 250. FOV, optimizer, automatic plans and batch sizes may differ; wall time is not matched.",
+    "Fold 0 ablations evaluate eight cases only and must not be merged with fivefold main-result means.",
+    "No clinical, hemodynamic, device-design or manual-correction benefit is established by these segmentation metrics."
+  ]
+}

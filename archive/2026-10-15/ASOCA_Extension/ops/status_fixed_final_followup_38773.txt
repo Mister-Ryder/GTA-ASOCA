@@ -1,0 +1,26 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import datetime,hashlib,json,subprocess
+from pathlib import Path
+root=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+def load(path):return json.loads(path.read_text()) if path.is_file() else None
+def identity(pid):
+    p=Path('/proc')/str(pid)
+    if not p.is_dir():return {'pid':pid,'alive':False}
+    return {'pid':pid,'alive':True,'state':(p/'stat').read_text().rsplit(')',1)[1].split()[0],'cmdline':(p/'cmdline').read_bytes().replace(b'\0',b' ').decode()}
+training=root/'results/gta_enhanced200x125/training'
+trajectory=root/'results/gta_enhanced200x125/internal4_trajectory'
+complete=load(training/'TRAINING_COMPLETE.json')
+publisher=load(root/'EARLY_FINAL_MIRROR_STATUS.json')
+postfit=load(root/'POSTFIT_STATUS.json')
+ledger_path=trajectory/'validation_history.jsonl'
+rows=[json.loads(x) for x in ledger_path.read_text().splitlines() if x] if ledger_path.is_file() else []
+shared=Path('/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014')
+ready=load(shared/'READY.json')
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'training_complete':complete,'actual_final_bytes_sha256':hashlib.sha256((training/'final.pt').read_bytes()).hexdigest() if complete else None,'publisher':publisher,'publisher_proc':identity(publisher['pid']) if publisher else None,'postfit':postfit,'postfit_proc':identity(postfit['pid']) if postfit else None,'trajectory_completed_checkpoints':len(rows),'trajectory_latest':rows[-1] if rows else None,'canonical_trajectory_complete':load(trajectory/'TRAJECTORY_COMPLETE.json'),'shared_READY':ready,'GPU_processes':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip()}
+(root/'FIXED_FINAL_FOLLOWUP_CHECK_20261014.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+for name in ('logs/postfit.log','logs/after_gta_training.log','logs/early_final_mirror.log'):
+    path=root/name
+    if path.is_file():print(json.dumps({'log':name,'tail':path.read_text(errors='replace').splitlines()[-8:]}))
+PY

@@ -1,0 +1,30 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import subprocess
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+(root/'manifests/environment_ready.txt').unlink(missing_ok=True)
+(root/'manifests/smoke_passed.txt').unlink(missing_ok=True)
+script='''from importlib import metadata
+from packaging.requirements import Requirement
+import subprocess,sys
+requirements=[str(Requirement(x)) for x in metadata.requires("torch") if Requirement(x).name.startswith("nvidia-")]
+print(requirements,flush=True)
+subprocess.run([sys.executable,"-m","pip","install","--force-reinstall","--no-deps","--index-url","https://download.pytorch.org/whl/cu128"]+requirements,check=True)
+import torch
+assert torch.__version__=="2.7.1+cu128"
+m=torch.nn.Conv3d(1,4,3,padding=1).cuda(); x=torch.randn(2,1,32,32,32,device="cuda"); m(x).sum().backward(); print("Repaired CUDA backward OK",flush=True)
+from nnunetv2.run.run_training import run_training_entry
+from nnunetv2.experiment_planning.plan_and_preprocess_entrypoints import plan_and_preprocess_entry
+from nnunetv2.training.nnUNetTrainer.variants.training_length.nnUNetTrainer_Xepochs import nnUNetTrainer_100epochs
+print("Native nnU-Net entrypoints OK",flush=True)
+from pathlib import Path
+Path("/root/autodl-tmp/ASOCA_GTAirway_20261013/manifests/environment_ready.txt").write_text("repaired fixed CUDA12.8 runtime\\n")
+subprocess.run(["bash","/root/autodl-tmp/ASOCA_GTAirway_20261013/ops/smoke.sh"],check=True)
+subprocess.run([sys.executable,"-m","pip","freeze"],stdout=open("/root/autodl-tmp/ASOCA_GTAirway_20261013/manifests/environment.lock.txt","w"),check=True)
+'''
+path=root/'ops/repair_runtime.py'
+path.write_text(script)
+log=open(root/'logs/repair_runtime.log','a')
+p=subprocess.Popen([str(root/'env/bin/python'),'-u',str(path)],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print('REPAIR_PID='+str(p.pid))
+PY

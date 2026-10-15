@@ -1,0 +1,44 @@
+{
+  "role": "NOT_MODEL_RESULTS",
+  "mode": "help",
+  "commit": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+  "untrained": true,
+  "real_dataset_used": false,
+  "checkpoint_loaded": false,
+  "optimizer_created": false,
+  "parameter_updates": 0,
+  "CPU_limits": {
+    "torch_threads": 2,
+    "torch_interop_threads": 1,
+    "OMP_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2",
+    "CUDA_VISIBLE_DEVICES": "",
+    "CPU_affinity": [
+      0,
+      1
+    ],
+    "nice": 10
+  },
+  "torch": "2.7.1+cu128",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.7.2",
+    "pandas": "2.3.3",
+    "tqdm": "4.67.1"
+  },
+  "started_at_utc": "2026-10-14T09:28:42.509086+00:00",
+  "entrypoint": "code/audit_priors.py",
+  "help_exit_code": 0,
+  "internal_module_origins": {
+    "data": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout/code/data.py"
+  },
+  "status": "passed",
+  "CUDA_context_initialized": false,
+  "completed_at_utc": "2026-10-14T09:28:43.048196+00:00"
+}

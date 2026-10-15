@@ -1,0 +1,6 @@
+U-Net单run验收：训练200×125与内部4例20点/80病例完整；fixed final保持不变，不作best epoch选择。
+80 prediction核对实际SHA与原CT几何header；末轮4例从保存像素重算Dice及6邻域surface pooled ASSD。
+final.pt已实际重hash；19个中间权重未下载，其SHA只作protocol/ledger/case元数据交叉核查。
+全部病例保留；任一病例ASSD未定义时完整四例cohort ASSD均值保持未定义，不删除病例或插值。
+最后5个计划点是观察曲线，不是模型选择。只有内部4例development结果，没有五折、盲测或方法胜负结论。
+没有加载模型、网络前向、优化器、训练或GPU工作。

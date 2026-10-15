@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "n_patches": 56,
+  "n_nonempty": 49,
+  "artifact_sha256": {
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "audit_plan.json": "79f480cbfa0edf8ae8d6a0691607e7943154b104ece994dad578deb999b3b0c5",
+    "patch_predictions.jsonl": "dc7ebf831979ecf2668f0a5a1cda89f2dba3935913200ef652287a79a1fc41ea",
+    "summary.json": "963c66f839f877655f49c9af3beb362ff39e23fd32a8484d801e4d5ee44306a7"
+  },
+  "states_RNG_eval_unchanged": true,
+  "CUDA_initialized": false,
+  "parameter_updates": false
+}

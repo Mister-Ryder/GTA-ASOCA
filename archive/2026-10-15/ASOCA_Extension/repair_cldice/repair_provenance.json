@@ -1,0 +1,104 @@
+{
+  "repair_id": "cldice-author-smooth1-batch-global-v1",
+  "author_commit": "47d31a6cc4a8101b1ffe8052994821961e57af9f",
+  "author_sources": {
+    "cldice_loss/pytorch/cldice.py": {
+      "url": "https://raw.githubusercontent.com/jocpae/clDice/47d31a6cc4a8101b1ffe8052994821961e57af9f/cldice_loss/pytorch/cldice.py",
+      "sha256": "57872404b6bc026388eb0ecee4bda4b57e9f4b3a3fbd33212c24951f4869860e"
+    },
+    "cldice_loss/pytorch/soft_skeleton.py": {
+      "url": "https://raw.githubusercontent.com/jocpae/clDice/47d31a6cc4a8101b1ffe8052994821961e57af9f/cldice_loss/pytorch/soft_skeleton.py",
+      "sha256": "65294ece70e96fc60e8eb0369a1ae481354c1b90ef1e6ece1824608bd1c60148"
+    },
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/jocpae/clDice/47d31a6cc4a8101b1ffe8052994821961e57af9f/LICENSE",
+      "sha256": "501feb9c6b3eeaab3b80f69c19915060132412780552e11e07952be18825b53d"
+    }
+  },
+  "changed_existing_code_files": [
+    "losses.py"
+  ],
+  "added_code_files": [
+    "test_official_cldice.py"
+  ],
+  "files": {
+    "aggregate_results.py": {
+      "repair_sha256": "4fe13e4030bf8db41f7abe12f805367b0616bf5b65cfe091f144035c5016eb34",
+      "frozen_original_sha256": "4fe13e4030bf8db41f7abe12f805367b0616bf5b65cfe091f144035c5016eb34"
+    },
+    "data.py": {
+      "repair_sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+      "frozen_original_sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6"
+    },
+    "evaluate.py": {
+      "repair_sha256": "1db72fc1b56ea5d00658af428b242141820bdc6579028cc1661455e8d76d321d",
+      "frozen_original_sha256": "1db72fc1b56ea5d00658af428b242141820bdc6579028cc1661455e8d76d321d"
+    },
+    "historical/__init__.py": {
+      "repair_sha256": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+      "frozen_original_sha256": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0"
+    },
+    "historical/func/__init__.py": {
+      "repair_sha256": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+      "frozen_original_sha256": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e"
+    },
+    "historical/func/AnatomicalClassifier.py": {
+      "repair_sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+      "frozen_original_sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222"
+    },
+    "historical/func/AnatomicalFusionModules.py": {
+      "repair_sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+      "frozen_original_sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01"
+    },
+    "historical/func/EnhancedAirwaySegmentation2gau.py": {
+      "repair_sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+      "frozen_original_sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc"
+    },
+    "historical/func/model_arch_model10.py": {
+      "repair_sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+      "frozen_original_sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003"
+    },
+    "losses.py": {
+      "repair_sha256": "b7cef5439ff6569eaeeb519debe4423b75bb0ab2668cfbb964edaf9e8253584a",
+      "frozen_original_sha256": "8330cc8f4ed8d3aa05a8e09d8c912817b9c9783c3692f26a11b751a081f37e4d"
+    },
+    "metrics.py": {
+      "repair_sha256": "6a99d83c9fe500d0e79ab6717736e771fdb59ca14d4fa3fb43eeac4ee751d1fa",
+      "frozen_original_sha256": "6a99d83c9fe500d0e79ab6717736e771fdb59ca14d4fa3fb43eeac4ee751d1fa"
+    },
+    "model.py": {
+      "repair_sha256": "e70922b14753ee20d775adcf72be40e16de9cc12d3cf84710485645f56f358c0",
+      "frozen_original_sha256": "e70922b14753ee20d775adcf72be40e16de9cc12d3cf84710485645f56f358c0"
+    },
+    "nnunet_runner.py": {
+      "repair_sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144",
+      "frozen_original_sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144"
+    },
+    "prepare_data.py": {
+      "repair_sha256": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b",
+      "frozen_original_sha256": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b"
+    },
+    "run_queue.py": {
+      "repair_sha256": "aeed60059bf819c1c685a8b5bdafe276379a5cdbfe794ff7b953655b82ba3c1e",
+      "frozen_original_sha256": "aeed60059bf819c1c685a8b5bdafe276379a5cdbfe794ff7b953655b82ba3c1e"
+    },
+    "swin_model.py": {
+      "repair_sha256": "4d0b821a53ad4d09335f284c14d6567f14c324735ca781b3fbc4c5fbcc619477",
+      "frozen_original_sha256": "4d0b821a53ad4d09335f284c14d6567f14c324735ca781b3fbc4c5fbcc619477"
+    },
+    "test_official_cldice.py": {
+      "repair_sha256": "30b24ff411f70d8eee98ca09976acb2c582000c5c33df70fa42a5b80d7ccdf1f",
+      "frozen_original_sha256": null
+    },
+    "train.py": {
+      "repair_sha256": "5bed22c9554179672df058f5d3366801d9783a87df354d8005914d79214e3acb",
+      "frozen_original_sha256": "5bed22c9554179672df058f5d3366801d9783a87df354d8005914d79214e3acb"
+    }
+  },
+  "train_byte_identical": true,
+  "amp_retry_added": false,
+  "restart_from_scratch_required": true,
+  "excluded_failed_run": "unet_cldice/fold0; saved epochs0..152, failure duringepoch153",
+  "tensor_test_status": "not executed locally; Python has no torch",
+  "syntax_status": "all repaired code Python files parsed"
+}

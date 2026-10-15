@@ -1,0 +1,18 @@
+{
+  "captured_at_utc": "2026-10-14T11:04:28.378926+00:00",
+  "observer_sha256": "94dc12685add18f1316e8a8cf7469a3237293ddff2f9da7909614dc2216bfec3",
+  "remote_mutations": false,
+  "password_saved": false,
+  "results": [
+    {
+      "port": 38773,
+      "status": "validated",
+      "packet_sha256": "76dd396aceee31f67c5a8eca10764f033b7d75c1ea55ca87d4edb46616375f73"
+    },
+    {
+      "port": 17552,
+      "status": "validated",
+      "packet_sha256": "636ea88146f14783debc70fa0c10a4104a66b246a222ba9a1e470dc9ad818a9d"
+    }
+  ]
+}

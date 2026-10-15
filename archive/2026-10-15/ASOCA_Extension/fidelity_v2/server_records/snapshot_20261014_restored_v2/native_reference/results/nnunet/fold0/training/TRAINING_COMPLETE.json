@@ -1,0 +1,15 @@
+{
+  "completed_epochs": 100,
+  "completed_optimizer_updates": 25000,
+  "checkpoint_sha256": "47f9c83c139952d24edc4007792cb0eea0ca36d357f554a598ecb4d7ec1242b3",
+  "history_sha256": "a7a9297f994d1fd667154457aea8f59dff59150a9854df367cf37a0782d3771f",
+  "epoch": 99,
+  "epochs": 100,
+  "method": "nnunet",
+  "fold": 0,
+  "smoke": false,
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "protocol_sha256": "a57f06f77e495a375b1b6c9c0fd2534a1505d3729e38bf58a019e69a70da7727",
+  "checkpoint_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/nnUNet_results/Dataset881_ASOCA_Fold0/nnUNetTrainer_100epochs__nnUNetPlans__3d_fullres/fold_all/checkpoint_final.pth",
+  "checkpoint_selection": "fixed final"
+}

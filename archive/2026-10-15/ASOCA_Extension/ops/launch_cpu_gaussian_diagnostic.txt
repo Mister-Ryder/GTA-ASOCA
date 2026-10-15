@@ -1,0 +1,20 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import hashlib,json,subprocess,time
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+script=r/'ops/start_cpu_gaussian_diagnostic.py'
+if hashlib.sha256(script.read_bytes()).hexdigest()!='52ebd10bc177e19ad47293c1f0dc56a22c3bb4ce11b74878dee448b035963245':raise RuntimeError('CPU controller source differs')
+status=r/'CPU_GAUSSIAN70_STATUS.json'
+if status.exists():raise RuntimeError('CPU diagnostic already has state; inspect before any retry')
+with (r/'logs/cpu_gaussian70_startup.log').open('a') as stream:
+ p=subprocess.Popen(['/root/miniconda3/envs/gta-asoca311/bin/python','-u',str(script)],cwd=r,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+for _ in range(30):
+ if status.exists():
+  state=json.loads(status.read_text())
+  if state['status']!='running':raise RuntimeError('CPU diagnostic startup needs inspection: '+json.dumps(state))
+  print(json.dumps(state));break
+ if p.poll() is not None:
+  print((r/'logs/cpu_gaussian70_startup.log').read_text()[-3000:]);raise RuntimeError('No CPU diagnostic started; inspect resource/source rejection')
+ time.sleep(.5)
+else:raise RuntimeError('CPU startup state not observed; inspect existing handle before any retry')
+PY

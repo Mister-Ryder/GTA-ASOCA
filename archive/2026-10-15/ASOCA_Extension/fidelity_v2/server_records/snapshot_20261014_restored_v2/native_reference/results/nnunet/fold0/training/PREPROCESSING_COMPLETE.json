@@ -1,0 +1,54 @@
+{
+  "protocol_sha256": "a57f06f77e495a375b1b6c9c0fd2534a1505d3729e38bf58a019e69a70da7727",
+  "patch_size": [
+    80,
+    192,
+    160
+  ],
+  "batch_size": 2,
+  "spacing": [
+    0.625,
+    0.3964845058,
+    0.3964845058
+  ],
+  "normalization_schemes": [
+    "CTNormalization"
+  ],
+  "data_identifier": "nnUNetPlans_3d_fullres",
+  "plans_sha256": "f0b0fe05d1d8bd487207a658968ea2acc95643ca17e8cd5500c33ffd238984bf",
+  "fingerprint_sha256": "80ebcb267f5868d941148d91579a2abe56517e36229ae44afa087830a1fc2a9e",
+  "preprocessed_training_case_ids": [
+    "Diseased_10",
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_20",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_12",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_3",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ]
+}

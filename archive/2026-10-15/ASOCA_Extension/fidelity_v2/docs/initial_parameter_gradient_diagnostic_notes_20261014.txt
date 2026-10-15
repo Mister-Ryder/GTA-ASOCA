@@ -1,0 +1,21 @@
+初始GTA参数梯度诊断（B候选，非训练结果）
+
+工具独立保存于ops/diagnose_initial_gaussian_parameter_gradients.py。本地仅做语法、计划、冻结源码与五项手算检查；本机没有匹配Torch，没有执行模型或连接服务器。
+
+执行主模式为main配方AMP；先自动运行2CPU线程的候选B实际Torch损失fixture和小参数梯度fixture，不创建CUDA context。CPU fixture通过后才等待NEW的POSTFIT_VERIFIED/POSTFIT_STATUS证明20检查点、80次推理和曲线完整完成。GPU短暂空闲而canonical尚未完成不构成启动条件。仅在取得NEW分割互斥锁、两次全GPU空闲及首次CUDA分配前再确认空闲后启动有独立硬截止的子进程。
+
+从实际main记录的两份初始化按原次序加载；构造随机种子、模型架构、327状态张量必须得到CPU重构指纹d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79。它是当前重构状态，并非未保存的历史main实际θ0。原A代码与sealed B的28文件不改。B仅losses.py不同，source231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a。
+
+原固定bank的56个样本字节、GT、Gaussian、先验、坐标及stratum逐项保持一致。按原bank顺序相邻配成28个B2/128批次，不增强。fixed_sampling_bank.json保留原A/BC8的bank来源元数据，实际运行的B源身份另记在diagnostic_plan；不把原bank源身份改写成B。只遍历训练28例缓存；不读internal4或原8例的图像、GT、预测数组。canonical完成门槛只核已存在回执、marker、配置和权重的指纹。
+
+每批重新装入初始CPU状态并复位CPU/CUDA RNG，设置frozen/train。仅操作诊断副本，BN buffers可以在前向中变化，随后重置；参数逐个验证未变，parameter.grad始终为None。分类器frozen且BN eval，所以其参数梯度为零是预期；条件特征和融合路径仍然启用，不能以分类器零梯度推断先验无效。
+
+同一次前向共享dropout/BN输出，计算含4/7、2/7、1/7深监督的S，以及λ10 A、λ10 B、direct(S+λ10A)、direct(S+λ10B)五组参数梯度。AMP用loss×1024求导后转FP32并除1024，含义与main初始GradScaler unscale一致；不创建optimizer或GradScaler，不step，不实际施加clipping，不适配scale。若梯度或范数非有限会明确记录；main在clip范数非有限时还会直接报错，不能说这样的B已经适合训练。
+
+按主干/融合/DS等非classifier且非gau_final参数、Gaussian head、classifier和trainer实际非classifier参数组分别报告FP64能量/点积/cosine、None与非零张量数；直接总梯度范数按逐张量FP32 norm再stack FP32 norm计算，给出min(1,12/(norm+1e-6))的implied clipping系数、Gaussian head能量占比及系数作用后的共享网络范数。后者是推定值，不是实际修改后的梯度。AMP独立反向与direct总损失的浮点舍入残差保留，不错误要求精确相等。
+
+输出每批记录、分布中位数/p90和5个最小正前景patch所属批次；这是B2批次参数梯度，不能解释成该单patch的孤立梯度。空前景/全前景保留，核验present-region归一后B=A。不要把平均cosine当pooled cosine。
+
+FP32仅为显式独立可选运行，关闭autocast但保留并记录实际TF32 flags；不声称完整IEEE FP32 kernel。OOM/截止失败保留日志并停止，绝不自动改变精度、patch或batch。当前只诊断initial frozen阶段；partial/joint的状态和额外任务不同，需要后续独立设计，不应在初态简单打开就冒充晚期训练。梯度/裁剪强弱不能证明Dice、ASSD、连通性或后续AdamW更新收益。
+
+精确CPU fixture命令与AMP排队命令保存在同名计划JSON；只由ROOT审查、部署和执行。

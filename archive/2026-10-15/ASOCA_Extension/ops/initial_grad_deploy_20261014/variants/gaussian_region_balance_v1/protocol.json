@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "variant_id": "gaussian_region_balance_v1",
+  "status": "prepared_not_training_authorized",
+  "role": "single-factor B loss-reduction candidate; separate copy; never modify frozen A",
+  "base_freeze_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+  "base_code_package_sha256": "0d14f942a7d87c81d272cca0a1b3b55c458aa0da0e0da01f6b15456107e7c48b",
+  "base_training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "base_actual_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+  "variant_training_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "training_source_hash_algorithm": "gta_fidelity_selected_python_path_and_bytes_v1",
+  "variant_code_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+  "variant_code_files": {
+    ".gitignore": {
+      "sha256": "9c906d45e9fa90685434bd29ce9764a076b348f41b04b7cbdbaa44b5a313d071",
+      "bytes": 56
+    },
+    "aggregate_results.py": {
+      "sha256": "a77d30f862e476bcf2a64ce3798d7ab1e4045d5e8e30e8cf3daa3e3d249aa010",
+      "bytes": 22137
+    },
+    "audit_priors.py": {
+      "sha256": "82958858f99f034f6222afcb96376b0abe504a25cebd2ff4b33f41cd21a01df0",
+      "bytes": 23589
+    },
+    "checkpoint_utils.py": {
+      "sha256": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+      "bytes": 5201
+    },
+    "classification_data.py": {
+      "sha256": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+      "bytes": 11495
+    },
+    "data.py": {
+      "sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+      "bytes": 10947
+    },
+    "evaluate.py": {
+      "sha256": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+      "bytes": 18550
+    },
+    "evaluate_trajectory.py": {
+      "sha256": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63",
+      "bytes": 12155
+    },
+    "losses.py": {
+      "sha256": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+      "bytes": 12656
+    },
+    "metrics.py": {
+      "sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+      "bytes": 7755
+    },
+    "model.py": {
+      "sha256": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+      "bytes": 21286
+    },
+    "nnunet_runner.py": {
+      "sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144",
+      "bytes": 31436
+    },
+    "prepare_data.py": {
+      "sha256": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b",
+      "bytes": 21995
+    },
+    "pretrain_classifier.py": {
+      "sha256": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2",
+      "bytes": 16627
+    },
+    "run_queue.py": {
+      "sha256": "aeed60059bf819c1c685a8b5bdafe276379a5cdbfe794ff7b953655b82ba3c1e",
+      "bytes": 29321
+    },
+    "swin_model.py": {
+      "sha256": "4d0b821a53ad4d09335f284c14d6567f14c324735ca781b3fbc4c5fbcc619477",
+      "bytes": 1153
+    },
+    "train.py": {
+      "sha256": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9",
+      "bytes": 25470
+    },
+    "verify_candidate.py": {
+      "sha256": "a98e6c9a01429bcd4020372a6ffa767c5bd92e782419242bd531e8ddbba74385",
+      "bytes": 12440
+    },
+    "historical/NaviAirway-MIT.txt": {
+      "sha256": "a8d637dcbcd086a0072c4394565c715f88d0327f3b927067c0e596579cfcfd1c",
+      "bytes": 1067
+    },
+    "historical/README.md": {
+      "sha256": "5442e7be522d030960422522177f0dca31ab6aeba14ad78d32b7a6ae416a9229",
+      "bytes": 3126
+    },
+    "historical/source_hashes.json": {
+      "sha256": "f792cc0ed802ab119ef173870390b2c015d8d2727eee94d499614876a4dbdd27",
+      "bytes": 931
+    },
+    "historical/THIRD_PARTY_NOTICES.md": {
+      "sha256": "511bb82ea8773e30f58c0ea5531d187708cde071fd17c213824f4bcc75f8be3b",
+      "bytes": 1152
+    },
+    "historical/__init__.py": {
+      "sha256": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+      "bytes": 81
+    },
+    "historical/func/AnatomicalClassifier.py": {
+      "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+      "bytes": 6864
+    },
+    "historical/func/AnatomicalFusionModules.py": {
+      "sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+      "bytes": 14098
+    },
+    "historical/func/EnhancedAirwaySegmentation2gau.py": {
+      "sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+      "bytes": 15437
+    },
+    "historical/func/model_arch_model10.py": {
+      "sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+      "bytes": 34321
+    },
+    "historical/func/__init__.py": {
+      "sha256": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+      "bytes": 70
+    }
+  },
+  "variant_training_dependency_files": {
+    "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+    "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+    "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+    "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+    "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+    "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+    "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+    "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+    "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+    "losses.py": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+    "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+    "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+  },
+  "only_changed_code_files": [
+    "losses.py"
+  ],
+  "unchanged_code_file_count": 27,
+  "gaussian_reduction": {
+    "id": "per_patch_equal_fg_bg_present_mean_v1",
+    "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+    "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+    "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+    "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+    "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+    "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+    "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+    "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+    "target_unchanged": "t=.5+.5*cached_G",
+    "lambda_unchanged": 10.0,
+    "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+    "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+    "not_changed": [
+      "Gaussian field/support/normalization",
+      "classifier labels",
+      "sampler",
+      "architecture/parameter shapes",
+      "DS4/7,2/7,1/7",
+      "50 frozen /20 partial /130 joint",
+      "optimizer/lr/clip12",
+      "200x125 updates",
+      "prediction/evaluation interface"
+    ],
+    "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+  },
+  "actual_config_binding": {
+    "trainer_unchanged": true,
+    "actual_config_gaussian_reduction_field_added": false,
+    "existing_trainer_recorded_fields": [
+      "source_sha256",
+      "source_files_sha256",
+      "source_hash_algorithm"
+    ],
+    "binding_rule": "check_variant --audit-config verifies exact candidate config SHA and exact key/value match to actual A config except new output and new source/file identities; emitted sidecar binds those bytes to this protocol SHA and gaussian_reduction.",
+    "allowed_config_differences": [
+      "output",
+      "source_sha256",
+      "source_files_sha256"
+    ],
+    "posthoc_config_or_checkpoint_edit_permitted": false
+  },
+  "same_recipe": {
+    "method": "gta",
+    "patch_size": 128,
+    "batch_size": 2,
+    "spacing_mm": 0.5,
+    "training_cases": 28,
+    "internal_cases": 4,
+    "epochs": 200,
+    "steps_per_epoch": 125,
+    "segmentation_updates": 25000,
+    "classifier_pretraining_updates": 5120,
+    "classifier_final_initialization": "same classifier80 final",
+    "backbone_initialization": "same Airway599 donor",
+    "device_policy": "NEW GPU only after all canonical work completed; same intended device class as A; no launch here",
+    "model_state_tensor_count_expected_from_unchanged_model": 327
+  },
+  "actual_shadow_evidence": {
+    "summary_relative_to_fidelity": "server_records/gaussian_region_balance_actual_20261014/records/old_17552/results/gaussian_region_balance_final200_shadow_20261014/summary.json",
+    "summary_sha256": "34e0f497cba2848d0bf817561c81f479b640e23463fa4d42468eff056566f415",
+    "scope": "immutable A final200;28x2 fixed training patches; eval B1 FP32 detached main logits; no model updates",
+    "n_patches": 56,
+    "mean_losses": {
+      "segmentation": 0.2606806049921683,
+      "A_FG": 0.00010341149496590723,
+      "A_BG": 0.00012111701386986949,
+      "B_FG": 0.033089270848514776,
+      "B_BG": 6.367715770595948e-05,
+      "A": 0.00022452851037866952,
+      "B": 0.03315294818113606
+    },
+    "A_all": {
+      "raw_additive_statistics": [
+        1.2493471903938154e-09,
+        4.052561388376399e-10,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        1.748104015090728e-10,
+        1.7481038762067488e-10
+      ],
+      "common_energy": 1.2493471903938154e-09,
+      "margin_energy": 4.052561388376399e-10,
+      "total_energy": 1.6546033292314553e-09,
+      "common_norm": 3.5346105731661805e-05,
+      "margin_norm": 2.0130974612214875e-05,
+      "total_norm": 4.067681562304817e-05,
+      "common_fraction": 0.7550735383653091,
+      "norm_ratio_to_segmentation": 0.00781374116293236,
+      "margin_norm_ratio_to_segmentation": 0.0038670240668567304,
+      "full_cosine_to_segmentation": 0.0008255291197888688,
+      "margin_cosine_to_segmentation": 0.0016680709094366905
+    },
+    "B_all": {
+      "raw_additive_statistics": [
+        0.00020031047630888864,
+        5.485566141189517e-05,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        -5.76008398358223e-07,
+        -5.76008392513993e-07
+      ],
+      "common_energy": 0.00020031047630888864,
+      "margin_energy": 5.485566141189517e-05,
+      "total_energy": 0.0002551661377207838,
+      "common_norm": 0.01415310836208388,
+      "margin_norm": 0.007406460788520734,
+      "total_norm": 0.01597392054947012,
+      "common_fraction": 0.7850198231556841,
+      "norm_ratio_to_segmentation": 3.0684820977009544,
+      "margin_norm_ratio_to_segmentation": 1.4227310237658277,
+      "full_cosine_to_segmentation": -0.0069267477035752575,
+      "margin_cosine_to_segmentation": -0.014939296854443477
+    },
+    "B_over_A_logit_norm": 392.7033201787563,
+    "q_derivative": {
+      "FG": {
+        "n_voxels": 168859,
+        "A_energy": 1.1045539316788994e-07,
+        "B_energy": 0.04263386613700966,
+        "norm_multiplier_B_over_A": 621.2750252657049
+      },
+      "BG": {
+        "n_voxels": 117271653,
+        "A_energy": 1.2936692770291352e-07,
+        "B_energy": 3.727223150211885e-08,
+        "norm_multiplier_B_over_A": 0.5367611383729414
+      }
+    },
+    "decision": "B is materially stronger, does not reduce common fraction, and does not prove a useful optimization direction or final segmentation benefit. Keep prepared only.",
+    "derived_review_relative_to_fidelity": "server_records/gaussian_region_balance_actual_20261014/derived_gradient_review.json",
+    "derived_review_sha256": "65d2a1984dd162253f3481e676cc1031a3278b443e76266698d2fd0553ea24b3",
+    "top5_B_gradient_energy_fraction": 0.5447991625444923,
+    "top5_foreground_voxels": [
+      120,
+      196,
+      243,
+      217,
+      305
+    ]
+  },
+  "training_gates": {
+    "training_authorized": false,
+    "actual_shadow_independent_review_required": true,
+    "canonical20_late_curve_review_required": true,
+    "independent_B_variant_review_required": true,
+    "actual_candidate_Torch_math_fixture_required": true,
+    "initial_model_parameter_gradient_and_stability_review_required": true,
+    "new_GPU_canonical_all_complete_required": true,
+    "root_launch_decision_required": true,
+    "no_automatic_lambda_or_architecture_adjustment": true
+  },
+  "training_started": false,
+  "optimizer_created_by_preparation": false,
+  "model_forward_executed_by_preparation": false,
+  "local_torch_available": false,
+  "initial_parameter_gradient_gate": {
+    "required_before_full_B": true,
+    "mode": "same initialization/recipe, actual batch2 parameter backward diagnostic, no optimizer updates, state/RNG preserved",
+    "report": [
+      "total and per-loss/per-group parameter gradient norms/cosines",
+      "Gaussian head gradients separately",
+      "global preclip norm and clip12 fraction over inspected batches",
+      "finite loss/gradients",
+      "tiny-FG batch distribution"
+    ],
+    "existing_telemetry": "Nonclassifier parameter group includes Gaussian head. Existing group norms can reconstruct global norm only at recorded steps, not exact full clip fraction or Gaussian-specific strength. Epoch1/51/71 evidence is subsequent review, not pre-approval.",
+    "executed": false
+  }
+}

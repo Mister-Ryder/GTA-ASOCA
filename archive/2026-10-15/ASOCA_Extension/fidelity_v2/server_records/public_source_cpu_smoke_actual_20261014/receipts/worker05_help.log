@@ -1,0 +1,20 @@
+usage: evaluate_trajectory.py [-h] --training TRAINING --manifest MANIFEST
+                              --raw-root RAW_ROOT --output OUTPUT
+                              [--python PYTHON]
+                              [--sw-batch-size SW_BATCH_SIZE] [--smoke]
+                              [--plan]
+
+Sequential internal-four evaluation of immutable periodic and final weights.
+Run after training completes. This runner never evaluates the original eight,
+never changes training weights, and never selects a new final checkpoint.
+
+options:
+  -h, --help            show this help message and exit
+  --training TRAINING
+  --manifest MANIFEST
+  --raw-root RAW_ROOT
+  --output OUTPUT
+  --python PYTHON
+  --sw-batch-size SW_BATCH_SIZE
+  --smoke
+  --plan

@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-14T10:38:05.518209+00:00",
+  "status": "completed_evidence_collected",
+  "kind": "initial",
+  "role": "read-only actual diagnostic evidence; not model performance or accuracy gate",
+  "remote_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "port": 38773,
+  "deployed_tool_sha256": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+  "collector_sha256": "97fc6bb8ad4dd80f0139e59270f032135af7fdd21463443fd0c704644de8e028",
+  "model_weights_downloaded": false,
+  "remote_commands_or_mutations": false,
+  "files": {
+    "results/initial_gaussian_parameter_gradients_amp_20261014/diagnostic_plan.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/diagnostic_plan.json",
+      "bytes": 8920,
+      "sha256": "666bc69e31ea1d8d2eb66b4c3ac461fae1f4f9f20bb1f0db0cf1b24f86332dd1",
+      "remote_mtime": 1791973934
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/fixed_sampling_bank.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/fixed_sampling_bank.json",
+      "bytes": 81765,
+      "sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+      "remote_mtime": 1791973934
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/reconstructed_initial_state.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/reconstructed_initial_state.json",
+      "bytes": 93511,
+      "sha256": "d014c1da3d2ec2d88ebd7e658d863dc2b671d9e9ce1dad4022ba85f7e6320eaf",
+      "remote_mtime": 1791973933
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/batch_metrics.jsonl": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/batch_metrics.jsonl",
+      "bytes": 188319,
+      "sha256": "0e9a1188d5a79065dbb600e8c920fbb78456e2275272acfcdc29d3394a51d952",
+      "remote_mtime": 1791974035
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/summary.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/summary.json",
+      "bytes": 56211,
+      "sha256": "514889782e9b0ded70e02f7611eb689a0c846448d4f5118130e48b50e1cc344c",
+      "remote_mtime": 1791974036
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/DIAGNOSTIC_COMPLETE.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/DIAGNOSTIC_COMPLETE.json",
+      "bytes": 707,
+      "sha256": "6b31ae47b4a1e82128f1a7e7b34772f63cb20f4398c0434f5c2f37dea69c7d1f",
+      "remote_mtime": 1791974036
+    },
+    "ops/diagnose_initial_gaussian_parameter_gradients.py": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_initial_gaussian_parameter_gradients.py",
+      "bytes": 34270,
+      "sha256": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+      "remote_mtime": 1791973454
+    },
+    "INITIAL_PARAMETER_GRADIENT_LAUNCH_20261014.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/INITIAL_PARAMETER_GRADIENT_LAUNCH_20261014.json",
+      "bytes": 1000,
+      "sha256": "97f5cbb32ad80b74af2a65ff8c09da7215b7a11084254eeadfdbd2ac0484dbfc",
+      "remote_mtime": 1791973546
+    },
+    "INITIAL_PARAMETER_GRADIENT_CONTROLLER_20261014.log": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/INITIAL_PARAMETER_GRADIENT_CONTROLLER_20261014.log",
+      "bytes": 4971,
+      "sha256": "b656155de59b7cd93cc36ff507eb5b0cf9e64fdddf8ddfa6b5a5aff651d30e22",
+      "remote_mtime": 1791973548
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/cpu_fixture.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/cpu_fixture.json",
+      "bytes": 4971,
+      "sha256": "b656155de59b7cd93cc36ff507eb5b0cf9e64fdddf8ddfa6b5a5aff651d30e22",
+      "remote_mtime": 1791973548
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/CONTROLLER_STATUS.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/CONTROLLER_STATUS.json",
+      "bytes": 459,
+      "sha256": "299ef36f2134f1ff6f7f8d9947509bc43ce185477f5272c712245d08cd283786",
+      "remote_mtime": 1791974038
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/CONTROLLER_PROTOCOL.json": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/CONTROLLER_PROTOCOL.json",
+      "bytes": 3895,
+      "sha256": "ccd88eaefa23df1722e87ebed6485d1578b2a642b5998f5a62847e4350a4539c",
+      "remote_mtime": 1791973928
+    },
+    "results/initial_gaussian_parameter_gradients_amp_20261014/worker.log": {
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014/worker.log",
+      "bytes": 6790,
+      "sha256": "d0cd103b334c660302dce57a3eef9bbfb1d97ad91339af9f911ade558ee0d27b",
+      "remote_mtime": 1791974035
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json,subprocess
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013').resolve()
+source=root/'results'
+if source.exists():
+    state_file=source/'queue_status.json'
+    if state_file.exists():
+        state=json.loads(state_file.read_text())
+        if any(j.get('status')=='completed' for j in state['jobs']): raise RuntimeError('Completed runs must not be reset')
+        for pid in [state.get('pid')]+[j.get('child_pid') for j in state['jobs']]:
+            if not pid: continue
+            proc=Path('/proc/'+str(pid)+'/cmdline')
+            if proc.exists() and str(root/'code') in proc.read_bytes().decode(errors='replace'):
+                raise RuntimeError('Owned code process still active:'+str(pid))
+    target=root/'results_initial_amp_state'
+    assert source.resolve().parent==root and not target.exists()
+    source.rename(target)
+log=open(root/'logs/formal.log','a')
+p=subprocess.Popen(['bash',str(root/'ops/formal.sh')],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print('FINAL_FORMAL_PID='+str(p.pid))
+PY

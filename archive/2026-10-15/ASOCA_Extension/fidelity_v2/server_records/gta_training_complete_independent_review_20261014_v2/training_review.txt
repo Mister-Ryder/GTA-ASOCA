@@ -1,0 +1,22 @@
+GTA真实200周期训练完成：独立记录复核（2026-10-14）
+
+复核12项capture文件的实际字节数与SHA全部对应collection_manifest，并复核共享READY实际字节及其六份训练证据：四份实际训练产物（config、history、TRAINING_COMPLETE、final.pt），以及此前独立下载的manifest与实际input_runtime_audit。全部对应。final.pt仅以流式SHA验证，未用Torch读取、没有新推理、服务器操作或模型修改。完整报告training_review.json保留每项实际哈希和六份证据的本地映射。
+
+训练事实：正式fold0，28例训练、4例内部诊断且不重叠；200×125=25,000分割更新、batch2共50,000训练块。额外分类器预训练为记录中的80×64=5,120更新。实际阶段为50 frozen、20 partial、130 joint；前50周期classifier梯度为0，后150周期平均梯度均为正且有限。解码器深监督为1/.5/.25归一化（4/7、2/7、1/7），encoder/backbone warmup为0。lambda_Gaussian在全部200周期始终为10，gaussian_late_weight=null，配置中150/200两个ramp边界没有导致后期升权。
+
+初始化记录：airway_backbone_epoch599.pkl固定SHA29b697...，118/118 tensors完整加载；ASOCA classifier80x64固定final.pt SHA308ebc...，90/90 tensors完整加载，source_epoch79。init_audit与config内记录精确一致，无missing/unexpected/shape mismatch。不是以分类准确率决定末权重；config中classification selection report是附带诊断。backbone文件的source_epoch为null，仅文件名含599，不能凭本次小记录单独证明历史训练周期。此次没有重读donor实际字节，来源证明是被冻结source绑定的训练审计记录。
+
+末期观察（均为实际epoch训练遥测，非验证性能）
+窗口          总loss均值    分割loss均值   分类加权loss    Gaussian加权loss
+161–180       0.380836      0.251488       0.128863        0.000289341
+181–200       0.375269      0.246111       0.128678        0.000283786
+181–190       0.378769      0.248893       0.129397        0.000284268
+191–200       0.371770      0.243330       0.127959        0.000283305
+
+末20分割loss范围0.226843–0.282887，总loss范围0.335304–0.426635，均不是单调下降；191–200总loss中位数0.374419，181–190中位数0.374252，不能只看mean或最后最低的一点就认定持续优化。末20平均segmentation梯度范数0.882729，classifier梯度范数2.618514，均保持有限非零；两者覆盖不同参数组，不能直接用大小比较任务的贡献或认定分类任务妨碍分割。
+
+每条epoch记录的LR是该epoch最后一个step，而非整个epoch平均LR。第181周期末segLR3.690905e-5，最后一周期末3.379645e-8，classifier LR为其0.1倍。全部200行LR与warmup5＋poly0.9配方复算一致；每行归一化DS分割loss与总loss组成也复算一致。第200周期总loss0.335304、分割loss0.226843、Gaussian加权loss0.000296419。末20Gaussian加权loss/分割loss的均值比约0.1153%，这是标量loss比例，不是有效梯度、结构信息利用或Dice收益。
+
+关于更多训练：现阶段只能证明训练完整执行且没有遥测非有限异常，不能证明训练周期不足，也不能证明已达最佳性能。末期LR已接近零，直接增加epoch数量不等于增加有效优化；现有strict-resume也不能把200随意改400继续当原协议。需要先看canonical内部4例晚期Dice/物理mm ASSD、逐病例趋势和同条件lambda0控制，再决定一份独立的延长方案，明确父checkpoint/optimizer/RNG状态、额外更新预算与实际LR策略，保留本次fixed-final200不变。小Gaussian loss与残余梯度本身都不能成为自动升lambda或延长训练的依据。分类器准确率仍是辅助分析，最终主任务是分割。
+
+本报告未读取早期预览两例指标、未计算不完整病例均值、未宣称canonical20/80评估完成，也未判定GTA和U-Net胜负。epoch161–200的可复用telemetry CSV随报告保存，完整实际history仍在原capture中。

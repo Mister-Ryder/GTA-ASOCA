@@ -1,0 +1,30 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import json,os,signal,time
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+p=r/'POSTFIT_STATUS.json'
+before=json.loads(p.read_text())
+pid=before['pid']
+if before['status']!='waiting' or before['phase']!='waiting_for_fixed_budget_training' or before.get('child_pid'):
+ raise RuntimeError('Postfit is no longer a passive waiter; inspect before changing it')
+proc=Path('/proc')/str(pid)
+if str(r/'ops/after_gta_training.py').encode() not in (proc/'cmdline').read_bytes():
+ raise RuntimeError('Postfit PID identity mismatch')
+if json.loads((r/'stage_records/gta200.json').read_text())['status']!='running':
+ raise RuntimeError('Main training state changed; inspect before changing waiter')
+os.kill(pid,signal.SIGTERM)
+deadline=time.monotonic()+30
+while proc.exists() and time.monotonic()<deadline:
+ try:
+  if (proc/'stat').read_text().split(') ')[1].split()[0]=='Z':break
+ except FileNotFoundError:break
+ time.sleep(.5)
+if proc.exists() and (proc/'stat').read_text().split(') ')[1].split()[0]!='Z':
+ raise RuntimeError('Passive waiter did not stop; do not launch a second one')
+after=json.loads(p.read_text())
+if after['status']!='interrupted':raise RuntimeError('Stopped waiter lacks interruption record')
+archive=r/'stage_records/postfit_before_validation_hardening_20261014.json'
+if archive.exists():raise RuntimeError('Previous state archive already exists')
+p.rename(archive)
+print(json.dumps({'stopped_passive_waiter_pid':pid,'archived_status':str(archive),'main_training_unchanged':True}))
+PY

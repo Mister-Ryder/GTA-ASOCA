@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "role": "ANALYTIC_FIXTURE_NOT_ACTUAL_MODEL_DIAGNOSTIC",
+  "status": "hand_verified_torch_unavailable",
+  "torch_available": false,
+  "cases": [
+    {
+      "name": "uneven_fg",
+      "hand_A": "21/400",
+      "hand_B": "23/600",
+      "hand_calculation_verified": true,
+      "actual_torch_autograd_verified": false
+    },
+    {
+      "name": "all_empty",
+      "hand_A": "21/400",
+      "hand_B": "21/400",
+      "hand_calculation_verified": true,
+      "actual_torch_autograd_verified": false
+    },
+    {
+      "name": "all_fg",
+      "hand_A": "21/400",
+      "hand_B": "21/400",
+      "hand_calculation_verified": true,
+      "actual_torch_autograd_verified": false
+    },
+    {
+      "name": "one_voxel",
+      "hand_A": "1/128",
+      "hand_B": "1/32",
+      "hand_calculation_verified": true,
+      "actual_torch_autograd_verified": false
+    },
+    {
+      "name": "batchavg",
+      "hand_A": "153/6400",
+      "hand_B": "57/1600",
+      "hand_calculation_verified": true,
+      "actual_torch_autograd_verified": false
+    }
+  ],
+  "empty_policy": "renormalize over present regions; all-empty/all-FG B equals A",
+  "batch_policy": "mean of per-patch losses; never pool batch region denominators"
+}

@@ -1,0 +1,5 @@
+method,metric,mean,sd,n_patients,n_defined,undefined_case_ids,reason
+gta_early_preview,dice,0.8318539004693745,0.05262188083735396,4,4,[],
+gta_early_preview,assd_mm,0.5678251259083507,0.3231060045482814,4,4,[],
+unet,dice,0.818455511253775,0.07676466971407239,4,4,[],
+unet,assd_mm,0.7492326552685586,0.45591914607380335,4,4,[],

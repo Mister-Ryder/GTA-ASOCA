@@ -1,0 +1,527 @@
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /root/autodl-tmp/ASOCA_GTAirway_20261013/env
+
+  added / updated specs:
+    - pip
+    - python=3.11
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _libgcc_mutex-0.1          |             main           3 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    _openmp_mutex-5.1          |           52_gnu           7 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    bzip2-1.0.8                |       h5eee18b_6         262 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    ca-certificates-2026.9.25  |       h06a4308_0         107 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    ld_impl_linux-64-2.44      |       h9e0c5a2_3         725 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libexpat-2.9.0             |       h7354ed3_0         131 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libffi-3.4.8               |       h06d3fd0_3         137 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libgcc-15.2.0              |       h69a1729_8         803 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libgcc-ng-15.2.0           |       h166f726_8          28 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libnsl-2.0.0               |       h5eee18b_0          31 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libstdcxx-15.2.0           |       h39759b7_8         3.7 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libuuid-1.41.5             |       h5eee18b_0          27 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libxcb-1.17.0              |       h9b100fa_0         430 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    libzlib-1.3.2              |       h47b2149_0          60 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    ncurses-6.6                |       hfaaeb4e_0         893 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    openssl-3.5.9              |       h1b28b03_0         5.7 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    packaging-26.3             |  py311h06a4308_0         380 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    pip-26.2.1                 |     pyhc872135_0         1.1 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    pthread-stubs-0.3          |       h47b2149_2           7 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    python-3.11.17             |       hd9cb797_0        29.6 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    readline-8.3               |       hc2a1206_0         471 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    setuptools-84.0.0          |  py311h06a4308_0         1.2 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    sqlite-3.53.4              |       h795bf6d_0         1.2 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    tk-8.6.15                  |       h54e0aa7_0         3.4 MB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    tzdata-2026c               |       he532380_0         117 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    wheel-0.47.0               |  py311h06a4308_0          75 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    xorg-libx11-1.8.13         |       h65de747_0         817 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    xorg-libxau-1.0.12         |       h9b100fa_0          13 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    xorg-libxdmcp-1.1.5        |       h9b100fa_0          19 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    xorg-xorgproto-2025.1      |       h47b2149_0         555 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    xz-5.8.4                   |       h140a991_0         652 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    zlib-1.3.2                 |       h47b2149_0          92 KB  https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+    ------------------------------------------------------------
+                                           Total:        52.8 MB
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      anaconda/pkgs/main/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      anaconda/pkgs/main/linux-64::_openmp_mutex-5.1-52_gnu
+  bzip2              anaconda/pkgs/main/linux-64::bzip2-1.0.8-h5eee18b_6
+  ca-certificates    anaconda/pkgs/main/linux-64::ca-certificates-2026.9.25-h06a4308_0
+  ld_impl_linux-64   anaconda/pkgs/main/linux-64::ld_impl_linux-64-2.44-h9e0c5a2_3
+  libexpat           anaconda/pkgs/main/linux-64::libexpat-2.9.0-h7354ed3_0
+  libffi             anaconda/pkgs/main/linux-64::libffi-3.4.8-h06d3fd0_3
+  libgcc             anaconda/pkgs/main/linux-64::libgcc-15.2.0-h69a1729_8
+  libgcc-ng          anaconda/pkgs/main/linux-64::libgcc-ng-15.2.0-h166f726_8
+  libnsl             anaconda/pkgs/main/linux-64::libnsl-2.0.0-h5eee18b_0
+  libstdcxx          anaconda/pkgs/main/linux-64::libstdcxx-15.2.0-h39759b7_8
+  libuuid            anaconda/pkgs/main/linux-64::libuuid-1.41.5-h5eee18b_0
+  libxcb             anaconda/pkgs/main/linux-64::libxcb-1.17.0-h9b100fa_0
+  libzlib            anaconda/pkgs/main/linux-64::libzlib-1.3.2-h47b2149_0
+  ncurses            anaconda/pkgs/main/linux-64::ncurses-6.6-hfaaeb4e_0
+  openssl            anaconda/pkgs/main/linux-64::openssl-3.5.9-h1b28b03_0
+  packaging          anaconda/pkgs/main/linux-64::packaging-26.3-py311h06a4308_0
+  pip                anaconda/pkgs/main/noarch::pip-26.2.1-pyhc872135_0
+  pthread-stubs      anaconda/pkgs/main/linux-64::pthread-stubs-0.3-h47b2149_2
+  python             anaconda/pkgs/main/linux-64::python-3.11.17-hd9cb797_0
+  readline           anaconda/pkgs/main/linux-64::readline-8.3-hc2a1206_0
+  setuptools         anaconda/pkgs/main/linux-64::setuptools-84.0.0-py311h06a4308_0
+  sqlite             anaconda/pkgs/main/linux-64::sqlite-3.53.4-h795bf6d_0
+  tk                 anaconda/pkgs/main/linux-64::tk-8.6.15-h54e0aa7_0
+  tzdata             anaconda/pkgs/main/noarch::tzdata-2026c-he532380_0
+  wheel              anaconda/pkgs/main/linux-64::wheel-0.47.0-py311h06a4308_0
+  xorg-libx11        anaconda/pkgs/main/linux-64::xorg-libx11-1.8.13-h65de747_0
+  xorg-libxau        anaconda/pkgs/main/linux-64::xorg-libxau-1.0.12-h9b100fa_0
+  xorg-libxdmcp      anaconda/pkgs/main/linux-64::xorg-libxdmcp-1.1.5-h9b100fa_0
+  xorg-xorgproto     anaconda/pkgs/main/linux-64::xorg-xorgproto-2025.1-h47b2149_0
+  xz                 anaconda/pkgs/main/linux-64::xz-5.8.4-h140a991_0
+  zlib               anaconda/pkgs/main/linux-64::zlib-1.3.2-h47b2149_0
+
+
+
+Downloading and Extracting Packages
+readline-8.3         | 471 KB    |            |   0% readline-8.3         | 471 KB    | 3          |   3% readline-8.3         | 471 KB    | ##         |  20% readline-8.3         | 471 KB    | ######4    |  65% readline-8.3         | 471 KB    | ########## | 100% readline-8.3         | 471 KB    | ########## | 100% 
+_libgcc_mutex-0.1    | 3 KB      |            |   0% _libgcc_mutex-0.1    | 3 KB      | ########## | 100% _libgcc_mutex-0.1    | 3 KB      | ########## | 100% 
+libexpat-2.9.0       | 131 KB    |            |   0% libexpat-2.9.0       | 131 KB    | ########## | 100% libexpat-2.9.0       | 131 KB    | ########## | 100% 
+libstdcxx-15.2.0     | 3.7 MB    |            |   0% libstdcxx-15.2.0     | 3.7 MB    | 5          |   5% libstdcxx-15.2.0     | 3.7 MB    | ##6        |  27% libstdcxx-15.2.0     | 3.7 MB    | #######    |  70% libstdcxx-15.2.0     | 3.7 MB    | ########## | 100% libstdcxx-15.2.0     | 3.7 MB    | ########## | 100% 
+xorg-libx11-1.8.13   | 817 KB    |            |   0% xorg-libx11-1.8.13   | 817 KB    | #########7 |  98% xorg-libx11-1.8.13   | 817 KB    | ########## | 100% 
+ca-certificates-2026 | 107 KB    |            |   0% ca-certificates-2026 | 107 KB    | #4         |  15% ca-certificates-2026 | 107 KB    | ########## | 100% 
+xz-5.8.4             | 652 KB    |            |   0% xz-5.8.4             | 652 KB    | 2          |   2% xz-5.8.4             | 652 KB    | ########## | 100% xz-5.8.4             | 652 KB    | ########## | 100% 
+xorg-xorgproto-2025. | 555 KB    |            |   0% xorg-xorgproto-2025. | 555 KB    | 2          |   3% xorg-xorgproto-2025. | 555 KB    | ########## | 100% xorg-xorgproto-2025. | 555 KB    | ########## | 100% 
+libgcc-15.2.0        | 803 KB    |            |   0% libgcc-15.2.0        | 803 KB    | ####1      |  42% libgcc-15.2.0        | 803 KB    | ########## | 100% 
+zlib-1.3.2           | 92 KB     |            |   0% zlib-1.3.2           | 92 KB     | ########## | 100% zlib-1.3.2           | 92 KB     | ########## | 100% 
+_openmp_mutex-5.1    | 7 KB      |            |   0% _openmp_mutex-5.1    | 7 KB      | ########## | 100% _openmp_mutex-5.1    | 7 KB      | ########## | 100% 
+xorg-libxau-1.0.12   | 13 KB     |            |   0% xorg-libxau-1.0.12   | 13 KB     | ########## | 100% xorg-libxau-1.0.12   | 13 KB     | ########## | 100% 
+openssl-3.5.9        | 5.7 MB    |            |   0% openssl-3.5.9        | 5.7 MB    |            |   0% openssl-3.5.9        | 5.7 MB    | ####5      |  46% openssl-3.5.9        | 5.7 MB    | #########1 |  92% openssl-3.5.9        | 5.7 MB    | ########## | 100% 
+ncurses-6.6          | 893 KB    |            |   0% ncurses-6.6          | 893 KB    | 1          |   2% ncurses-6.6          | 893 KB    | ########## | 100% ncurses-6.6          | 893 KB    | ########## | 100% 
+libzlib-1.3.2        | 60 KB     |            |   0% libzlib-1.3.2        | 60 KB     | ########## | 100% libzlib-1.3.2        | 60 KB     | ########## | 100% 
+ld_impl_linux-64-2.4 | 725 KB    |            |   0% ld_impl_linux-64-2.4 | 725 KB    | ########## | 100% ld_impl_linux-64-2.4 | 725 KB    | ########## | 100% 
+pthread-stubs-0.3    | 7 KB      |            |   0% pthread-stubs-0.3    | 7 KB      | ########## | 100% pthread-stubs-0.3    | 7 KB      | ########## | 100% 
+libxcb-1.17.0        | 430 KB    |            |   0% libxcb-1.17.0        | 430 KB    | ########## | 100% libxcb-1.17.0        | 430 KB    | ########## | 100% 
+setuptools-84.0.0    | 1.2 MB    |            |   0% setuptools-84.0.0    | 1.2 MB    | 1          |   1% setuptools-84.0.0    | 1.2 MB    | ########## | 100% setuptools-84.0.0    | 1.2 MB    | ########## | 100% 
+wheel-0.47.0         | 75 KB     |            |   0% wheel-0.47.0         | 75 KB     | ##1        |  21% wheel-0.47.0         | 75 KB     | ########## | 100% 
+bzip2-1.0.8          | 262 KB    |            |   0% bzip2-1.0.8          | 262 KB    | 6          |   6% bzip2-1.0.8          | 262 KB    | ########## | 100% 
+libuuid-1.41.5       | 27 KB     |            |   0% libuuid-1.41.5       | 27 KB     | ########## | 100% libuuid-1.41.5       | 27 KB     | ########## | 100% 
+python-3.11.17       | 29.6 MB   |            |   0% python-3.11.17       | 29.6 MB   | 1          |   1% python-3.11.17       | 29.6 MB   | 5          |   5% python-3.11.17       | 29.6 MB   | #5         |  15% python-3.11.17       | 29.6 MB   | ##         |  20% python-3.11.17       | 29.6 MB   | ##8        |  28% python-3.11.17       | 29.6 MB   | ###3       |  33% python-3.11.17       | 29.6 MB   | ####2      |  43% python-3.11.17       | 29.6 MB   | ####8      |  48% python-3.11.17       | 29.6 MB   | #####3     |  53% python-3.11.17       | 29.6 MB   | ######2    |  63% python-3.11.17       | 29.6 MB   | ######8    |  68% python-3.11.17       | 29.6 MB   | #######6   |  76% python-3.11.17       | 29.6 MB   | ########2  |  82% python-3.11.17       | 29.6 MB   | ########9  |  90% python-3.11.17       | 29.6 MB   | #########8 |  98% python-3.11.17       | 29.6 MB   | ########## | 100% 
+packaging-26.3       | 380 KB    |            |   0% packaging-26.3       | 380 KB    | #########6 |  97% packaging-26.3       | 380 KB    | ########## | 100% 
+tk-8.6.15            | 3.4 MB    |            |   0% tk-8.6.15            | 3.4 MB    | #3         |  13% tk-8.6.15            | 3.4 MB    | ####1      |  41% tk-8.6.15            | 3.4 MB    | ########## | 100% tk-8.6.15            | 3.4 MB    | ########## | 100% 
+libffi-3.4.8         | 137 KB    |            |   0% libffi-3.4.8         | 137 KB    | ########## | 100% libffi-3.4.8         | 137 KB    | ########## | 100% 
+libnsl-2.0.0         | 31 KB     |            |   0% libnsl-2.0.0         | 31 KB     | ########## | 100% libnsl-2.0.0         | 31 KB     | ########## | 100% 
+sqlite-3.53.4        | 1.2 MB    |            |   0% sqlite-3.53.4        | 1.2 MB    | ########3  |  83% sqlite-3.53.4        | 1.2 MB    | ########## | 100% 
+tzdata-2026c         | 117 KB    |            |   0% tzdata-2026c         | 117 KB    | ########## | 100% tzdata-2026c         | 117 KB    | ########## | 100% 
+xorg-libxdmcp-1.1.5  | 19 KB     |            |   0% xorg-libxdmcp-1.1.5  | 19 KB     | ########## | 100% xorg-libxdmcp-1.1.5  | 19 KB     | ########## | 100% 
+libgcc-ng-15.2.0     | 28 KB     |            |   0% libgcc-ng-15.2.0     | 28 KB     | ########## | 100% libgcc-ng-15.2.0     | 28 KB     | ########## | 100% 
+pip-26.2.1           | 1.1 MB    |            |   0% pip-26.2.1           | 1.1 MB    | ##1        |  22% pip-26.2.1           | 1.1 MB    | ########## | 100% pip-26.2.1           | 1.1 MB    | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+
+
+==> WARNING: A newer version of conda exists. <==
+  current version: 4.10.3
+  latest version: 26.9.2
+
+Please update conda by running
+
+    $ conda update -n base -c defaults conda
+
+
+#
+# To activate this environment, use
+#
+#     $ conda activate /root/autodl-tmp/ASOCA_GTAirway_20261013/env
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Requirement already satisfied: pip in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (26.2.1)
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://download.pytorch.org/whl/cu128
+Collecting torch==2.7.1
+  Downloading torch-2.7.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting filelock (from torch==2.7.1)
+  Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+Collecting typing-extensions>=4.10.0 (from torch==2.7.1)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting sympy>=1.13.3 (from torch==2.7.1)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch==2.7.1)
+  Downloading networkx-3.6.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting jinja2 (from torch==2.7.1)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch==2.7.1)
+  Downloading fsspec-2026.7.0-py3-none-any.whl.metadata (10 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.61 (from torch==2.7.1)
+  Downloading nvidia_cuda_nvrtc_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 88.0/88.0 MB 15.8 MB/s  0:00:05
+Collecting nvidia-cuda-runtime-cu12==12.8.57 (from torch==2.7.1)
+  Downloading nvidia_cuda_runtime_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 954.8/954.8 kB 27.6 MB/s  0:00:00
+Collecting nvidia-cuda-cupti-cu12==12.8.57 (from torch==2.7.1)
+  Downloading nvidia_cuda_cupti_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.2/10.2 MB 33.7 MB/s  0:00:00
+Collecting nvidia-cudnn-cu12==9.7.1.26 (from torch==2.7.1)
+  Downloading nvidia_cudnn_cu12-9.7.1.26-py3-none-manylinux_2_27_x86_64.whl (726.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 726.9/726.9 MB 15.5 MB/s  0:00:45
+Collecting nvidia-cublas-cu12==12.8.3.14 (from torch==2.7.1)
+  Downloading nvidia_cublas_cu12-12.8.3.14-py3-none-manylinux_2_27_x86_64.whl (609.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 609.6/609.6 MB 15.8 MB/s  0:00:37
+Collecting nvidia-cufft-cu12==11.3.3.41 (from torch==2.7.1)
+  Downloading nvidia_cufft_cu12-11.3.3.41-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 193.1/193.1 MB 16.5 MB/s  0:00:11
+Collecting nvidia-curand-cu12==10.3.9.55 (from torch==2.7.1)
+  Downloading nvidia_curand_cu12-10.3.9.55-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.6/63.6 MB 16.8 MB/s  0:00:03
+Collecting nvidia-cusolver-cu12==11.7.2.55 (from torch==2.7.1)
+  Downloading nvidia_cusolver_cu12-11.7.2.55-py3-none-manylinux_2_27_x86_64.whl (260.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 260.4/260.4 MB 16.4 MB/s  0:00:15
+Collecting nvidia-cusparse-cu12==12.5.7.53 (from torch==2.7.1)
+  Downloading nvidia_cusparse_cu12-12.5.7.53-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (292.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 292.1/292.1 MB 15.9 MB/s  0:00:18
+Collecting nvidia-cusparselt-cu12==0.6.3 (from torch==2.7.1)
+  Downloading nvidia_cusparselt_cu12-0.6.3-py3-none-manylinux2014_x86_64.whl (156.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 156.8/156.8 MB 17.1 MB/s  0:00:09
+Collecting nvidia-nccl-cu12==2.26.2 (from torch==2.7.1)
+  Downloading nvidia_nccl_cu12-2.26.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (201.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 201.3/201.3 MB 17.0 MB/s  0:00:11
+Collecting nvidia-nvtx-cu12==12.8.55 (from torch==2.7.1)
+  Downloading nvidia_nvtx_cu12-12.8.55-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.61 (from torch==2.7.1)
+  Downloading nvidia_nvjitlink_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 39.2/39.2 MB 18.0 MB/s  0:00:02
+Collecting nvidia-cufile-cu12==1.13.0.11 (from torch==2.7.1)
+  Downloading nvidia_cufile_cu12-1.13.0.11-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 30.2 MB/s  0:00:00
+Collecting triton==3.3.1 (from torch==2.7.1)
+  Downloading triton-3.3.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.5 kB)
+Requirement already satisfied: setuptools>=40.8.0 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from triton==3.3.1->torch==2.7.1) (84.0.0)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.7.1)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.7.1)
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading torch-2.7.1%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl (1039.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.0/1.0 GB 4.9 MB/s  0:03:34
+Downloading triton-3.3.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (155.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.7/155.7 MB 4.0 MB/s  0:00:37
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 56.9 kB/s  0:01:21
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 92.3 kB/s  0:00:04
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+Downloading fsspec-2026.7.0-py3-none-any.whl (206 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading networkx-3.6.1-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 59.9 kB/s  0:00:35
+Installing collected packages: nvidia-cusparselt-cu12, mpmath, typing-extensions, triton, sympy, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, networkx, MarkupSafe, fsspec, filelock, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, jinja2, nvidia-cusolver-cu12, torch
+
+Successfully installed MarkupSafe-3.0.3 filelock-3.32.3 fsspec-2026.7.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.6.1 nvidia-cublas-cu12-12.8.3.14 nvidia-cuda-cupti-cu12-12.8.57 nvidia-cuda-nvrtc-cu12-12.8.61 nvidia-cuda-runtime-cu12-12.8.57 nvidia-cudnn-cu12-9.7.1.26 nvidia-cufft-cu12-11.3.3.41 nvidia-cufile-cu12-1.13.0.11 nvidia-curand-cu12-10.3.9.55 nvidia-cusolver-cu12-11.7.2.55 nvidia-cusparse-cu12-12.5.7.53 nvidia-cusparselt-cu12-0.6.3 nvidia-nccl-cu12-2.26.2 nvidia-nvjitlink-cu12-12.8.61 nvidia-nvtx-cu12-12.8.55 sympy-1.14.0 torch-2.7.1+cu128 triton-3.3.1 typing-extensions-4.16.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+Looking in indexes: https://pypi.tuna.tsinghua.edu.cn/simple
+Collecting numpy==1.26.4
+  Downloading numpy-1.26.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (18.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 18.3/18.3 MB 18.7 MB/s  0:00:00
+Collecting scipy==1.14.1
+  Downloading scipy-1.14.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (41.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 41.2/41.2 MB 17.3 MB/s  0:00:02
+Collecting SimpleITK==2.5.2
+  Downloading simpleitk-2.5.2-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (52.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 52.6/52.6 MB 16.8 MB/s  0:00:03
+Collecting scikit-image==0.25.2
+  Downloading scikit_image-0.25.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (14.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 14.8/14.8 MB 17.8 MB/s  0:00:00
+Collecting monai==1.5.1
+  Downloading monai-1.5.1-py3-none-any.whl (2.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 14.8 MB/s  0:00:00
+Collecting nnunetv2==2.6.4
+  Downloading nnunetv2-2.6.4.tar.gz (212 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting einops==0.8.1
+  Downloading einops-0.8.1-py3-none-any.whl (64 kB)
+Requirement already satisfied: networkx>=3.0 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from scikit-image==0.25.2) (3.6.1)
+Collecting pillow>=10.1 (from scikit-image==0.25.2)
+  Downloading pillow-12.3.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 11.5 MB/s  0:00:00
+Collecting imageio!=2.35.0,>=2.33 (from scikit-image==0.25.2)
+  Downloading imageio-2.38.1-py3-none-any.whl (328 kB)
+Collecting tifffile>=2022.8.12 (from scikit-image==0.25.2)
+  Downloading tifffile-2026.3.3-py3-none-any.whl (243 kB)
+Requirement already satisfied: packaging>=21 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from scikit-image==0.25.2) (26.3)
+Collecting lazy-loader>=0.4 (from scikit-image==0.25.2)
+  Downloading lazy_loader-0.6-py3-none-any.whl (8.8 kB)
+Requirement already satisfied: torch>=2.4.1 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from monai==1.5.1) (2.7.1+cu128)
+Collecting acvl-utils<0.3,>=0.2.3 (from nnunetv2==2.6.4)
+  Downloading acvl_utils-0.2.6.tar.gz (34 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting dynamic-network-architectures<0.5,>=0.4.1 (from nnunetv2==2.6.4)
+  Downloading dynamic_network_architectures-0.4.4-py3-none-any.whl (53 kB)
+Collecting tqdm (from nnunetv2==2.6.4)
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+Collecting batchgenerators>=0.25.1 (from nnunetv2==2.6.4)
+  Downloading batchgenerators-0.25.5-py3-none-any.whl (106 kB)
+Collecting scikit-learn (from nnunetv2==2.6.4)
+  Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 13.6 MB/s  0:00:00
+Collecting pandas (from nnunetv2==2.6.4)
+  Downloading pandas-3.0.6-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.1/11.1 MB 16.1 MB/s  0:00:00
+Collecting graphviz (from nnunetv2==2.6.4)
+  Downloading graphviz-0.21-py3-none-any.whl (47 kB)
+Collecting requests (from nnunetv2==2.6.4)
+  Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Collecting nibabel (from nnunetv2==2.6.4)
+  Downloading nibabel-5.4.2-py3-none-any.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 11.6 MB/s  0:00:00
+Collecting matplotlib (from nnunetv2==2.6.4)
+  Downloading matplotlib-3.11.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 11.3 MB/s  0:00:00
+Collecting seaborn (from nnunetv2==2.6.4)
+  Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+Collecting imagecodecs (from nnunetv2==2.6.4)
+  Downloading imagecodecs-2026.3.6-cp311-abi3-manylinux_2_28_x86_64.whl (26.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.5/26.5 MB 12.8 MB/s  0:00:02
+Collecting yacs (from nnunetv2==2.6.4)
+  Downloading yacs-0.1.8-py3-none-any.whl (14 kB)
+Collecting batchgeneratorsv2>=0.3.0 (from nnunetv2==2.6.4)
+  Downloading batchgeneratorsv2-0.3.6-py3-none-any.whl (79 kB)
+Collecting blosc2>=3.0.0b1 (from nnunetv2==2.6.4)
+  Downloading blosc2-4.14.1-cp311-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 9.4 MB/s  0:00:00
+Collecting connected-components-3d (from acvl-utils<0.3,>=0.2.3->nnunetv2==2.6.4)
+  Downloading connected_components_3d-4.1.0-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (5.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.0/5.0 MB 13.1 MB/s  0:00:00
+Collecting timm<1.0.23 (from dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading timm-1.0.22-py3-none-any.whl (2.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.5/2.5 MB 11.9 MB/s  0:00:00
+Collecting torchvision (from timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading torchvision-0.29.1-cp311-cp311-manylinux_2_28_x86_64.whl (7.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 12.0 MB/s  0:00:00
+Collecting pyyaml (from timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 16.4 MB/s  0:00:00
+Collecting huggingface_hub (from timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading huggingface_hub-2.2.0-py3-none-any.whl (839 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 839.9/839.9 kB 19.1 MB/s  0:00:00
+Collecting safetensors (from timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+Collecting future (from batchgenerators>=0.25.1->nnunetv2==2.6.4)
+  Downloading future-1.0.0-py3-none-any.whl (491 kB)
+Collecting unittest2 (from batchgenerators>=0.25.1->nnunetv2==2.6.4)
+  Downloading unittest2-1.1.0-py2.py3-none-any.whl (96 kB)
+Collecting threadpoolctl (from batchgenerators>=0.25.1->nnunetv2==2.6.4)
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Collecting ndindex (from blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading ndindex-1.10.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (516 kB)
+Collecting msgpack (from blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading msgpack-1.2.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (477 kB)
+Collecting numexpr>=2.14.1 (from blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading numexpr-2.14.2-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (443 kB)
+Collecting pydantic (from blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading pydantic-2.14.1-py3-none-any.whl (488 kB)
+Collecting httpx[http2] (from blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Collecting rich (from blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Requirement already satisfied: filelock in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (3.32.3)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (4.16.0)
+Requirement already satisfied: sympy>=1.13.3 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (1.14.0)
+Requirement already satisfied: jinja2 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (3.1.6)
+Requirement already satisfied: fsspec in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (2026.7.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.61 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.8.61)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.57 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.8.57)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.57 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.8.57)
+Requirement already satisfied: nvidia-cudnn-cu12==9.7.1.26 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (9.7.1.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.3.14 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.8.3.14)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.41 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (11.3.3.41)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.55 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (10.3.9.55)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.2.55 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (11.7.2.55)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.7.53 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.5.7.53)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.3 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (0.6.3)
+Requirement already satisfied: nvidia-nccl-cu12==2.26.2 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (2.26.2)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.55 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.8.55)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.61 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (12.8.61)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.0.11 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (1.13.0.11)
+Requirement already satisfied: triton==3.3.1 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from torch>=2.4.1->monai==1.5.1) (3.3.1)
+Requirement already satisfied: setuptools>=40.8.0 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from triton==3.3.1->torch>=2.4.1->monai==1.5.1) (84.0.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from sympy>=1.13.3->torch>=2.4.1->monai==1.5.1) (1.3.0)
+Collecting anyio (from httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+Collecting certifi (from httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Collecting httpcore==1.* (from httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Collecting idna (from httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading idna-3.20-py3-none-any.whl (69 kB)
+Collecting h2<5,>=3 (from httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading h2-4.4.1-py3-none-any.whl (62 kB)
+Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading hyperframe-6.1.0-py3-none-any.whl (13 kB)
+Collecting hpack<5,>=4.2 (from h2<5,>=3->httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading hpack-4.2.0-py3-none-any.whl (34 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx[http2]->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Collecting click<9.0.0,>=8.4.2 (from huggingface_hub->timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading click-8.5.0-py3-none-any.whl (125 kB)
+Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface_hub->timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 10.0 MB/s  0:00:00
+Collecting httpx2<3,>=2.0.0 (from huggingface_hub->timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading httpx2-2.13.1-py3-none-any.whl (95 kB)
+Collecting httpcore2==2.13.1 (from httpx2<3,>=2.0.0->huggingface_hub->timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading httpcore2-2.13.1-py3-none-any.whl (83 kB)
+Collecting truststore>=0.10 (from httpx2<3,>=2.0.0->huggingface_hub->timm<1.0.23->dynamic-network-architectures<0.5,>=0.4.1->nnunetv2==2.6.4)
+  Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+INFO: pip is looking at multiple versions of imagecodecs to determine which version is compatible with other requirements. This could take a while.
+Collecting imagecodecs (from nnunetv2==2.6.4)
+  Downloading imagecodecs-2026.1.14-cp311-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (24.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.7/24.7 MB 11.2 MB/s  0:00:02
+Requirement already satisfied: MarkupSafe>=2.0 in ./autodl-tmp/ASOCA_GTAirway_20261013/env/lib/python3.11/site-packages (from jinja2->torch>=2.4.1->monai==1.5.1) (3.0.3)
+Collecting contourpy>=1.0.1 (from matplotlib->nnunetv2==2.6.4)
+  Downloading contourpy-1.3.3-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (355 kB)
+Collecting cycler>=0.10 (from matplotlib->nnunetv2==2.6.4)
+  Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting fonttools>=4.28.2 (from matplotlib->nnunetv2==2.6.4)
+  Downloading fonttools-4.66.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 9.0 MB/s  0:00:00
+Collecting kiwisolver>=1.3.1 (from matplotlib->nnunetv2==2.6.4)
+  Downloading kiwisolver-1.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 6.9 MB/s  0:00:00
+Collecting pyparsing>=3 (from matplotlib->nnunetv2==2.6.4)
+  Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Collecting python-dateutil>=2.7 (from matplotlib->nnunetv2==2.6.4)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib->nnunetv2==2.6.4)
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting importlib-resources>=5.12 (from nibabel->nnunetv2==2.6.4)
+  Downloading importlib_resources-7.1.0-py3-none-any.whl (37 kB)
+Collecting annotated-types>=0.6.0 (from pydantic->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.50.1 (from pydantic->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading pydantic_core-2.50.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 9.8 MB/s  0:00:00
+Collecting typing-inspection>=0.4.4 (from pydantic->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Collecting charset_normalizer<4,>=2 (from requests->nnunetv2==2.6.4)
+  Downloading charset_normalizer-3.5.2-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (269 kB)
+Collecting urllib3<3,>=1.26 (from requests->nnunetv2==2.6.4)
+  Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 12.9 MB/s  0:00:00
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->blosc2>=3.0.0b1->nnunetv2==2.6.4)
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting joblib>=1.4.0 (from scikit-learn->nnunetv2==2.6.4)
+  Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn->nnunetv2==2.6.4)
+  Downloading narwhals-2.27.1-py3-none-any.whl (483 kB)
+Collecting cloudpickle>=3.0 (from joblib>=1.4.0->scikit-learn->nnunetv2==2.6.4)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting torch>=2.4.1 (from monai==1.5.1)
+  Downloading torch-2.14.1-cp311-cp311-manylinux_2_28_x86_64.whl (554.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 554.6/554.6 MB 13.3 MB/s  0:00:45
+Collecting cuda-toolkit==13.0.3 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading cuda_toolkit-13.0.3.0-py2.py3-none-any.whl (2.5 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch>=2.4.1->monai==1.5.1)
+  Downloading cuda_bindings-13.4.3-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (7.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 11.6 MB/s  0:00:00
+Collecting nvidia-cudnn-cu13==9.24.0.43 (from torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cudnn_cu13-9.24.0.43-py3-none-manylinux_2_27_x86_64.whl (553.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 553.1/553.1 MB 14.8 MB/s  0:00:39
+Collecting nvidia-cusparselt-cu13==0.8.1 (from torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 170.1/170.1 MB 16.4 MB/s  0:00:10
+Collecting nvidia-nccl-cu13==2.30.7 (from torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.0/216.0 MB 14.3 MB/s  0:00:15
+Collecting nvidia-nvshmem-cu13==3.4.5 (from torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (60.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 60.4/60.4 MB 13.3 MB/s  0:00:04
+Collecting triton~=3.8.0 (from torch>=2.4.1->monai==1.5.1)
+  Downloading triton-3.8.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (247.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 247.9/247.9 MB 11.2 MB/s  0:00:22
+Collecting nvidia-cublas==13.1.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl (423.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 423.1/423.1 MB 14.1 MB/s  0:00:29
+Collecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (90.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.2/90.2 MB 12.8 MB/s  0:00:07
+Collecting nvidia-cuda-runtime==13.0.96.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 2.5 MB/s  0:00:00
+Collecting nvidia-cufft==12.0.0.61.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (214.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 214.1/214.1 MB 16.6 MB/s  0:00:12
+Collecting nvidia-nvjitlink<14,>=13.0.88 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_nvjitlink-13.4.92-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (42.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.5/42.5 MB 17.7 MB/s  0:00:02
+Collecting nvidia-cufile==1.15.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 15.4 MB/s  0:00:00
+Collecting nvidia-cuda-cupti==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl (10.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.7/10.7 MB 11.7 MB/s  0:00:00
+Collecting nvidia-curand==10.4.0.35.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl (59.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.5/59.5 MB 13.1 MB/s  0:00:04
+Collecting nvidia-cusolver==12.0.4.66.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl (200.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 200.9/200.9 MB 14.4 MB/s  0:00:13
+Collecting nvidia-cusparse==12.6.3.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (145.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 145.9/145.9 MB 15.4 MB/s  0:00:09
+Collecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch>=2.4.1->monai==1.5.1)
+  Downloading nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (148 kB)
+Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch>=2.4.1->monai==1.5.1)
+  Downloading cuda_pathfinder-1.8.3-py3-none-any.whl (62 kB)
+Collecting argparse (from unittest2->batchgenerators>=0.25.1->nnunetv2==2.6.4)
+  Downloading argparse-1.4.0-py2.py3-none-any.whl (23 kB)
+Collecting traceback2 (from unittest2->batchgenerators>=0.25.1->nnunetv2==2.6.4)
+  Downloading traceback2-1.4.0-py2.py3-none-any.whl (16 kB)
+Collecting linecache2 (from traceback2->unittest2->batchgenerators>=0.25.1->nnunetv2==2.6.4)
+  Downloading linecache2-1.0.0-py2.py3-none-any.whl (12 kB)
+Building wheels for collected packages: nnunetv2, acvl-utils
+  Building wheel for nnunetv2 (pyproject.toml): started
+  Building wheel for nnunetv2 (pyproject.toml): finished with status 'done'
+  Created wheel for nnunetv2: filename=nnunetv2-2.6.4-py3-none-any.whl size=287031 sha256=f2aac951f0cd18553f9ed3fa028df027307d148a68520d21f117ebf4df974848
+  Stored in directory: /root/.cache/pip/wheels/8c/3f/f2/a392f66e78142598a6e8cd9a25575b845ddf52e3e26d99eccd
+  Building wheel for acvl-utils (pyproject.toml): started
+  Building wheel for acvl-utils (pyproject.toml): finished with status 'done'
+  Created wheel for acvl-utils: filename=acvl_utils-0.2.6-py3-none-any.whl size=32246 sha256=d739e31278921e23393ccd90e4bf7c9c97a462a8b72309d30f353ffd7e296b63
+  Stored in directory: /root/.cache/pip/wheels/80/84/11/96c4df7f1c8b2ab2fe2088dcb4818277a6faa040402ac3d3c6
+Successfully built nnunetv2 acvl-utils
+Installing collected packages: SimpleITK, nvidia-cusparselt-cu13, linecache2, cuda-toolkit, argparse, urllib3, typing-inspection, truststore, triton, traceback2, tqdm, threadpoolctl, six, safetensors, pyyaml, pyparsing, pygments, pydantic-core, pillow, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, ndindex, narwhals, msgpack, mdurl, lazy-loader, kiwisolver, importlib-resources, idna, hyperframe, hpack, hf-xet, h11, graphviz, future, fonttools, einops, cycler, cuda-pathfinder, cloudpickle, click, charset_normalizer, certifi, annotated-types, yacs, unittest2, tifffile, scipy, requests, python-dateutil, pydantic, nvidia-cusparse, nvidia-cufft, nvidia-cublas, numexpr, nibabel, markdown-it-py, joblib, imageio, imagecodecs, httpcore2, httpcore, h2, cuda-bindings, contourpy, connected-components-3d, anyio, scikit-learn, scikit-image, rich, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, httpx2, httpx, seaborn, huggingface_hub, batchgenerators, torch, blosc2, torchvision, monai, batchgeneratorsv2, acvl-utils, timm, dynamic-network-architectures, nnunetv2
+  Attempting uninstall: triton
+    Found existing installation: triton 3.3.1
+    Uninstalling triton-3.3.1:
+      Successfully uninstalled triton-3.3.1
+  Attempting uninstall: torch
+    Found existing installation: torch 2.7.1+cu128
+    Uninstalling torch-2.7.1+cu128:
+      Successfully uninstalled torch-2.7.1+cu128
+
+Successfully installed SimpleITK-2.5.2 acvl-utils-0.2.6 annotated-types-0.8.0 anyio-4.15.1 argparse-1.4.0 batchgenerators-0.25.5 batchgeneratorsv2-0.3.6 blosc2-4.14.1 certifi-2026.7.22 charset_normalizer-3.5.2 click-8.5.0 cloudpickle-3.1.2 connected-components-3d-4.1.0 contourpy-1.3.3 cuda-bindings-13.4.3 cuda-pathfinder-1.8.3 cuda-toolkit-13.0.3.0 cycler-0.12.1 dynamic-network-architectures-0.4.4 einops-0.8.1 fonttools-4.66.1 future-1.0.0 graphviz-0.21 h11-0.16.0 h2-4.4.1 hf-xet-1.7.0 hpack-4.2.0 httpcore-1.0.9 httpcore2-2.13.1 httpx-0.28.1 httpx2-2.13.1 huggingface_hub-2.2.0 hyperframe-6.1.0 idna-3.20 imagecodecs-2026.1.14 imageio-2.38.1 importlib-resources-7.1.0 joblib-1.6.0 kiwisolver-1.5.1 lazy-loader-0.6 linecache2-1.0.0 markdown-it-py-4.2.0 matplotlib-3.11.2 mdurl-0.1.2 monai-1.5.1 msgpack-1.2.3 narwhals-2.27.1 ndindex-1.10.1 nibabel-5.4.2 nnunetv2-2.6.4 numexpr-2.14.2 numpy-1.26.4 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.24.0.43 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.4.92 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 pandas-3.0.6 pillow-12.3.0 pydantic-2.14.1 pydantic-core-2.50.1 pygments-2.21.0 pyparsing-3.3.3 python-dateutil-2.9.0.post0 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 safetensors-0.8.0 scikit-image-0.25.2 scikit-learn-1.9.1 scipy-1.14.1 seaborn-0.13.2 six-1.17.0 threadpoolctl-3.7.0 tifffile-2026.3.3 timm-1.0.22 torch-2.14.1 torchvision-0.29.1 tqdm-4.70.1 traceback2-1.4.0 triton-3.8.0 truststore-0.10.5 typing-inspection-0.4.4 unittest2-1.1.0 urllib3-2.8.0 yacs-0.1.8
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2.14.1+cu130 13.0 NVIDIA GeForce RTX 4080
+CUDA backward OK

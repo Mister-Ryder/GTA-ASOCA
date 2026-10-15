@@ -1,0 +1,39 @@
+GTA 冠脉延展：实现优先级只读审查
+2026-10-14；只写本报告，不修改冻结源码、公开仓库、训练配置或服务器。
+
+结论
+当前代码不是“核心先验全部没有工作”：三层条件引导、分类器多尺度聚合、解码器融合、16通道引导图融合与 Gaussian 辅助监督确实进入主任务计算图。没有发现足以据此否定本次 GTA200 的新断路错误。优先纠正方法表述；在已有 faithful_first 和保留同架构的 lambda0 控制之外，第三槽建议只审查/选择逐 patch 前景与背景各自归一的 Gaussian MSE（已有设计文件中的 B）。这是有实测动机的优化候选，尚不是已证实的 bug 修复或性能保证；本报告不是执行授权。
+
+源码定位约定
+F = ASOCA_Extension/fidelity_v2/code/。
+B = E:/01-投稿备份/投稿备份2411-NeurIPS 2025/ICME-GTAirway-main-BAS/ICME-GTAirway-main-BAS/。
+N = E:/01-投稿备份/投稿备份2410-/NaviAirway-main-2/。
+行号以此次只读审查的本地源文件为准。F/historical/func 下的 AnatomicalClassifier.py、AnatomicalFusionModules.py、model_arch_model10.py、EnhancedAirwaySegmentation2gau.py 分别与 B/func 同名文件逐字节 SHA256 相等，确认这些结论不是凭文件名推测。
+
+1. 多尺度融合与编码器监督：存在、调用、训练必须分开
+F/model.py:164-185 真正运行四级 encoder、三级 decoder 和位置/代数/结构引导；:187 调用 base_model.fusion_module_decoder；:189-196 拼接 guidance_map 后形成最终分割 logits，并由同一 logits 预测 Gaussian。F/historical/func/AnatomicalClassifier.py:124-143 真实调用多尺度融合、guidance_head 和全局三分类头。故解码器及分类器多尺度融合是活跃路径。
+F/model.py 的普通 forward 不调用 base_model.fusion_module_encoder、base_model.final_conv、base_model.final_conv2；encoder fusion 只在 :130-142 的 backbone_supervised 可选预热调用。实际训练 config 的 backbone_warmup_epochs=0，train.py:242-247 因此走增强 forward。不能将已分配/已加载的 encoder fusion 权重算作本次主分割融合贡献。
+历史 B/func/model_arch_model10.py:492-495 定义 encoder/decoder 两个融合；:516、528、530-546 真实运行并返回两个分割输出，B/train_skeleton_model10.py:226-268 对两者有分割监督。但 B/func/EnhancedAirwaySegmentation.py:130-175 与 EnhancedAirwaySegmentation2gau.py:177-234 都重新运行 encoder/decoder 并只调用 decoder fusion，绕过这一骨干 encoder head。当前 F/model.py:213-215 的两个 decoder DS head 是适配训练选项，losses.py:106-112 的归一权重为 4/7、2/7、1/7；它们不是“历史增强模型本来启用的编码器 DS”。未来若打开 encoder DS，应披露新增监督路径和权重，不能把它描述成无条件恢复旧增强训练。
+N/func/model_arch.py:239-282 是四级 encoder/三级 decoder 的普通单输出网络，N/train.py:102-107 用最终分割损失；该目录没有三头属性/增强融合/Gaussian 源码。它可以核对早期骨干与分割基础配方，不能用来证明当前 GTA 增强模块原本的损失连接。
+
+2. 反馈分支：计算了，未真正形成 seg-to-cls 学习回路
+F/model.py:198-210 生成 enhanced_features 与三项 uncertainty_estimates，但返回的 enhanced_features 不再送回 classifier 或任何 head。F/losses.py:152-153 明确保持历史“不使用 enhanced_features 的损失”行为。对应 seg_to_cls_feedback 卷积参数在正式 objective 下没有通往 loss 的路径；非冻结训练时其 BatchNorm 仍会执行并更新统计，不能把这些统计更新当作有效参数学习。
+只有 uncertainty_estimator.structure 在 losses.py:127-135 被 correctness MSE 消费；generation/location uncertainty 没有监督路径。结构 uncertainty 在正式 forward 中也未回流至引导的置信度门控，它只是辅助正确性预测。StructureGuidanceModule 的 confidence_gate 虽在 AnatomicalFusionModules.py:151-154 定义，实际 :218 为注释，因而同样不应计作有效学习门控。
+历史 B/train_enhanced_airway_DDP_gau.py:266-319 仅借 enhanced_features 的键存在来进入分类损失分支，真正消费的是三头 logits 和 structure uncertainty；没有使用 enhanced feature 的值。故闲置反馈是历史实现边界，不是 ASOCA 包装新引入的断路。F/model.py:361-365 的 synthetic_backward_test 人工给 enhanced_features 加平方损失，不能用其合成梯度检查来证明正式训练反馈被监督；本次没有运行该测试。
+
+3. 三头条件、梯度和常数空类
+F/model.py:151-160 在 frozen 阶段不建立分类器梯度；partial/joint 阶段允许 classifier 特征梯度，但在 no_grad 中生成 softmax 概率与 argmax。最终分割/decoder DS/Gaussian 可沿 cls encoder_features 与 guidance_map 训练解冻的分类器共享特征及 guidance_head；不能沿条件概率回到三分类 MLP head。三分类 head 的直接训练信号是 losses.py:123-140 的 focal 分类损失。argmax 本身不可微，即使只移除 no_grad，也不会使类别选择可微。
+GenerationGuidanceModule:106-116 用 gen>=5 的全块标量增强，max probability 经 uncertainty_gate 混合；StructureGuidanceModule:208-219 用 struct==3 的标量和 max probability 调节形态残差；LocationGuidanceModule:303-322 只对 argmax 选中的一个 region_conv 计算该样本，并用最大概率混合。三者都是全 patch 条件广播，不是逐区域属性分类图。现有 uncertainty_estimator 与这里的 softmax 置信度是两套不同量，不能合并叙述成统一校准机制。
+没有源码硬编码输出三头0。若 location 预测0，:312-315 返回 fused，该样本 region_conv 路径被跳过；随后置信度混合两端同为 fused，uncertainty_gate 对该样本的作用取消。若 generation/structure 预测0，类别专属增益不触发，但基础分类特征融合、generation enhance 或 morphology、guidance_map 仍工作，不能等同关闭全部先验。若三头长期塌缩0，应查看最终模型在固定训练 bank 的非空预测分布及置信度，而非整体 accuracy；当前记录未提供最终三头分布，本次没有运行网络来补测。
+实际 config 的分类器初始化评估 n=512 中有427非空块，三头非空 accuracy 约 .461/.419/.698，证明初始化不是常数0预测，却不能证明200周期末未塌缩。history 的 epoch0 classifier_gradient_norm=0；epoch50 partial=2.8940；epoch199 joint=2.2903，表明解冻阶段真实有分类器梯度，但总norm不能证明三类条件分支分别有效。
+历史最早 EnhancedAirwaySegmentation.py:113-115 的概率不在 no_grad；v2 2gau.py:158-167 切断概率梯度。当前沿用 v2 的后者。另一个历史问题——2gau.py:145-148 只有 joint_training 才开分类器梯度，可能使 partial 解冻参数没有梯度——已被当前 model.py:151-153 的非 frozen 策略修正，不能再次把它当成未修缺陷。
+
+4. 唯一优先优化候选：Gaussian 的区域归一化（B）
+改动位置为 F/losses.py:156-158，全场 F.mse_loss 换成逐 patch 区域均值。q=现有 sigmoid(gau_final(raw logits))，t=.5+.5G 均不变。非空 FG/BG 都存在时固定 L=.5*mean_FG((q-t)^2)+.5*mean_BG((q-t)^2)；只有某一区域存在时退化为该区域均值，然后对 batch 的 patch loss 取均值。空 patch 保留目标 .5 与原背景 MSE，不能跳过、置0或用 batch 合并分母。保持 lambda10、same25k预算、初始化、三头、采样、DS和50/70阶段，不叠加 common 去均值、局部标签或更长周期。
+证据：docs/gaussian_epoch070_actual_review.txt 独立复核的28×2训练块，FG仅0.1437826%，BG贡献69.7487%总平方误差；FG MSE比常数.5降低约74.5%，说明场不是完全没学会。当前全场平均的前景权重质量随 foreground fraction 变小，这一稀释由损失公式和实际计数同时支持。B直接改变该测度，forward/参数/目标场完全保留，比启用历史闲置支路更容易归因。
+边界：B不保证 common 能量下降，也不是细分支等权。固定 lambda10不代表梯度尺度不变；用 pooled foreground fraction 仅作量级演示，前景区域各体素的 q 导数相对旧均匀平均可约放大347.75倍，真实需按每块比例且卷积跨界面传播，不能套用到旧 logit 坐标范数。必须先作离线数学/空区/真实 bank 梯度审查，并核已有 clip12影响；如需另调lambda，不可在同一候选中静默叠加。B细节已在 docs/gaussian_objective_minimal_repair_boundaries_20261014.txt 明确，本文不实现。
+为什么不是盲目增lambda/延长：epoch070 Gaussian logit common能量约61.25%，margin norm仅约DS主头的0.647%，空块的相对比例较高；统一增lambda会同时放大背景与空块，不修正区域质量。共模对softmax局部不敏感，但不能认定61%参数更新无用，所以不优先将common投影当成确定修复。训练loss下降与辅助项存在都不能证明额外周期改善内部Dice/ASSD。
+为何不优先改条件/反馈/encoder DS：来源证明其连接边界，尚无对应反事实分割诊断。移除概率no_grad只恢复置信度路径，硬选类仍不可微，也可能通过降低置信度规避条件增强；新增反馈loss或encoder DS则增加监督函数。实际35/49非空patch代数混合支持审查代理尺度，但中央缩窗会使部分patch变空且结构阈值随尺度变化，直接改全局标签/接口不是最小单因子修正。
+
+实验与论文边界
+首阶段总数仍不超过3：已有 faithful_first；已准备未训练的同架构lambda0；以上B为唯一建议的修复槽。先取得当前固定final与内部4例20点轨迹的独立指标复核，再判断lambda0结果及是否值得用第三槽。已报告 GTA preview Dice .8318539004693745、ASSD .5678251259083507 与共同配方 U-Net .8184555112537751/.7492326552685586 的差异，不能归因到单模块，也不是五折/外部盲测或与文献同条件排名；本文未独立像素复算 preview。最终只需分割，三头 accuracy 不是主任务门槛。没有证据保证90%。

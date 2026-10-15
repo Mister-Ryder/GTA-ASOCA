@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "pid": 9891,
+  "new_training": false,
+  "device": "cpu",
+  "threads": 2,
+  "role": "fixed training28 diagnostic; not validation or checkpoint selection",
+  "updated_at_utc": "2026-10-14T06:59:48.000064+00:00",
+  "phase": "cpu_diagnostic_ready",
+  "command": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_gaussian.py",
+    "--checkpoint",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/checkpoints/epoch070.pt",
+    "--manifest",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+    "--device",
+    "cpu",
+    "--output",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_epoch070_cpu_bank56"
+  ],
+  "source_sha256": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+  "available_GiB": 67.92205810546875,
+  "effective_cpu_cores": 12.0,
+  "measured_existing_cpu_cores": 1.9119169002809155,
+  "wall_budget_seconds": 1800,
+  "completed_patches": 56,
+  "summary_sha256": "e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff",
+  "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_epoch070_cpu_bank56",
+  "note": "No GPU or model updates; interpret only this fixed training bank"
+}

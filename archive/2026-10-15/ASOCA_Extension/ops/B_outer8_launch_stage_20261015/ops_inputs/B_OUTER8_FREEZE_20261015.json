@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "status": "frozen_B_for_outer8",
+  "decision_author": "ROOT",
+  "decision_at_utc": "2026-10-15T06:51:52.266998+00:00",
+  "human_authorization": "User selected: first verify current B on the other eight cases, in this conversation on 2026-10-15.",
+  "case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "checkpoint_sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4",
+  "config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+  "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "acceptance_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops_inputs/B_INTERNAL4_ACCEPTANCE_20261015.json",
+  "acceptance_sha256": "de25e44f148398002465c62113362da5bbf13507bd35b12543aff3333cf9b1b0",
+  "lambda0_acceptance_sha256": "79c6e5fcb84ed585d29a70a300bf258c821c8152b88bbb27771331ffccc7aebc",
+  "checkpoint_epoch_zero_based": 199,
+  "checkpoint_selection": "fixed final",
+  "training_epochs": 200,
+  "segmentation_updates": 25000,
+  "additional_training": false,
+  "framework_changed": false,
+  "source_or_recipe_or_weights_changed_for_outer8": false,
+  "selection_basis": "Explicit internal4 descriptive tradeoff: retain B for further development evaluation because ASSD improved on three of four patients; Dice decreased on three of four. No joint-metric win or equivalence claim.",
+  "internal4_statistics": {
+    "A": {
+      "dice": {
+        "mean": 0.8318539004693745,
+        "sd": 0.05262188083735396,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.5678251259083507,
+        "sd": 0.3231060045482814,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    },
+    "B": {
+      "dice": {
+        "mean": 0.8312722410529477,
+        "sd": 0.05156351999518903,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.4821341086271393,
+        "sd": 0.2684128164897742,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    },
+    "U": {
+      "dice": {
+        "mean": 0.818455511253775,
+        "sd": 0.07676466971407239,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.7492326552685586,
+        "sd": 0.45591914607380335,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    }
+  },
+  "lambda0_internal4_statistics": {
+    "dice": {
+      "mean": 0.8312417096001634,
+      "sd": 0.053998388267958594,
+      "n_patients": 4,
+      "n_defined": 4,
+      "undefined_case_ids": [],
+      "reason": null
+    },
+    "assd_mm": {
+      "mean": 0.5991766320314929,
+      "sd": 0.3778809569560848,
+      "n_patients": 4,
+      "n_defined": 4,
+      "undefined_case_ids": [],
+      "reason": null
+    }
+  },
+  "B_minus_A_dice_percentage_points": -0.05816594164267386,
+  "B_minus_A_assd_mm": -0.08569101728121137,
+  "evaluation_role": "previously inspected outer development cases; not final independent test",
+  "formal_final_test": false,
+  "thresholds_or_postprocessing_retuned": false,
+  "primary_metrics": [
+    "dice",
+    "assd_mm"
+  ],
+  "inference_patch_size": [
+    128,
+    128,
+    128
+  ],
+  "inference_sw_batch_size": 1,
+  "new_U8_outcomes_observed_before_this_freeze": false,
+  "unseal_U8_after_this_freeze": true,
+  "public_final_method_frozen": false,
+  "goal_complete": false,
+  "limitations": [
+    "Internal4 is development only; outer8 previously exposed development, not a blind test.",
+    "Different initialization/capacity/objectives and extra classifier-pretrain budget limit A/B vs cold U attribution.",
+    "lambda0 OLD hardware/driver differs; historic A actual theta0 was unsaved.",
+    "ASSD measures surface position error, not connectivity."
+  ]
+}

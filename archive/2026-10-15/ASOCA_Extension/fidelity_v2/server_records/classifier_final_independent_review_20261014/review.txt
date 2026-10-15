@@ -1,0 +1,14 @@
+CPU classifier actual evidence independent review: PASS
+2026-10-14; local stdlib only; no Torch, SSH or model execution.
+
+The8 captured files pass byte size/SHA checks; AUDIT_COMPLETE binds the4 actual artifacts. Original56-bank bytes/dictionary match SHA6d58425c... and all56 ledger sample identities;28patients x2,49 nonempty. Saved priors were independently repacked as little-endian int64 and rehashed. Main327 finite/header epoch199 and donor epoch79/90 loaded tensor provenance match main2b24/configb613 and donor308/sourceBC8 records. Original3 state keys and Python/NumPy/TorchCPU RNG hashes match before/after.
+
+All3-head7x7 confusion matrices, GT/pred counts, frequencies, pred0 fractions, accuracy-only values, confidence min/max/mean/variance and conditional triggers were recomputed for both models in all56/nonempty49; every summary field matches.
+
+On49 nonempty patches, main200 predicted0 counts generation/structure/location=2/0/1; conditional generation>=5/structure==3/location!=0 counts=7/10/48. Donor80 predicted0 counts=2/4/2. The final classifier has not collapsed to constant0 on this fixed bank.
+main200 nonempty49 triggers={'generation_ge5': 7, 'structure_eq3': 10, 'location_nonzero': 48}; accuracy(analysis only)=[0.4897959183673469, 0.5306122448979592, 0.7755102040816326]; mean maximum-probability=[0.41968064679175004, 0.40265926901175053, 0.6254507309320022]
+classifier80_fixedfinal nonempty49 triggers={'generation_ge5': 6, 'structure_eq3': 4, 'location_nonzero': 47}; accuracy(analysis only)=[0.46938775510204084, 0.5102040816326531, 0.7551020408163265]; mean maximum-probability=[0.41609213181904386, 0.43343365344465995, 0.5919998975432649]
+
+Generation6 and structure6 have no GT observations in this bank; recall is undefined and cannot be called zero. Frequencies here use the standard56 bank and must not be merged with the earlier geometry512 pretraining bank. Confidence is maximum softmax probability, not demonstrated calibration. There is no segmentation-causality claim or classifier-accuracy gate.
+
+Limit: no weights/rawCT/label/guidance tensors were downloaded. This independently verifies collected bytes, recorded provenance consistency, probability-ledger arithmetic and summary reconstruction; it does not rerun CNN tensors or rehash raw voxel inputs. The audit source b321 records CPU2/interop1/affinity[0,1]/nice10, no CUDA, unchanged state/RNG/eval modes and no parameter gradients.

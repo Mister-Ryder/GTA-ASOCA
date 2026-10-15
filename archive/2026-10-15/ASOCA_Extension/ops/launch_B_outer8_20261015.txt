@@ -1,0 +1,14 @@
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import datetime,json,pathlib,subprocess,time
+r=pathlib.Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+receipt=r/'ops_inputs/B_OUTER8_LAUNCH_20261015.json'
+assert not receipt.exists() and not (r/'B_OUTER8_FIXED_FINAL_STATUS_20261015.json').exists()
+command=['/root/miniconda3/envs/gta-asoca311/bin/python','-B','-u',str(r/'ops/run_B_outer8_fixed_final_20261015.py'),'--run','--freeze-sha256','7b934628d0183227109358c373dcfd3acaa95295be95fdb8009848d7b506a07f']
+with (r/'logs/B_outer8_launcher_20261015.log').open('xb') as log:
+ child=subprocess.Popen(command,cwd=r,stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True,umask=0o077)
+value=dict(status='spawned_fixed_B_outer8',at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),pid=child.pid,argv=command,training=False)
+with receipt.open('x',encoding='utf-8')as f:json.dump(value,f,indent=2)
+time.sleep(1)
+proc=pathlib.Path('/proc')/str(child.pid)/'cmdline'
+print(json.dumps(dict(value,process_alive=proc.exists())))
+PY

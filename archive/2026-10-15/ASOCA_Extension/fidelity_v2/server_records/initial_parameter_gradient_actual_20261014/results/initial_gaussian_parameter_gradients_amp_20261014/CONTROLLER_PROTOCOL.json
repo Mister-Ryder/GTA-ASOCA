@@ -1,0 +1,90 @@
+{
+  "role": "INITIAL_TRAINMODE_PARAMETER_GRADIENT_DIAGNOSTIC_NOT_MODEL_RESULTS",
+  "status": "actual_diagnostic_authorized",
+  "root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "B_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "precision": "amp",
+  "batch_size": 2,
+  "patch_size": [
+    128,
+    128,
+    128
+  ],
+  "stage": "frozen",
+  "augmentation": false,
+  "bank_patches": 56,
+  "standalone_batches": 28,
+  "paired_by": "adjacent samples in original fixed bank order",
+  "reset_before_each_batch": "all327 initial CPU state tensors and identical CPU/CUDA RNG; set frozen/train",
+  "expected_reconstructed_initial_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+  "historical_main_theta0_verified": false,
+  "losses": [
+    "segmentation",
+    "A",
+    "B",
+    "totalA",
+    "totalB"
+  ],
+  "Gaussian_lambda": 10,
+  "DS_weights": [
+    0.5714285714285714,
+    0.2857142857142857,
+    0.14285714285714285
+  ],
+  "AMP_derivative_scale": 1024,
+  "optimizer_created": false,
+  "parameter_updates": false,
+  "parameter_grad_populated": false,
+  "held_out_GT_read": false,
+  "new_validation_or_performance_claim": false,
+  "BN_policy": "Diagnostic copy buffers may update during train-mode forward; restored before each batch/end. Parameters never update.",
+  "clip_policy": "Report implied multiplier min(1,12/(direct-combined FP32 global L2 norm+1e-6)); no clipping applied.",
+  "FP32_policy": "Explicit separate run. Failure/OOM stops with retained logs; never silently lower precision/batch/patch.",
+  "later_stages": "Not assessed: initial frozen stage only; partial/joint need their own trained state and auxiliary objectives.",
+  "helpers": {
+    "run_early_fixed_final_eval.py": "2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42",
+    "prepare_gaussian_control.py": "0145556d123356956bd80546fb7f2eda0c44bd8761dac2c6ae1f6ae44c894a17",
+    "diagnose_gaussian.py": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+    "shadow_gaussian_region_balance.py": "a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137"
+  },
+  "max_wait_seconds": 7200,
+  "diagnostic_deadline_seconds": 2400,
+  "command": [
+    "/root/miniconda3/envs/gta-asoca311/bin/python",
+    "-u",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_initial_gaussian_parameter_gradients.py",
+    "--worker",
+    "--precision",
+    "amp",
+    "--reference-bank",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops_inputs/gaussian_epoch070_fixed_sampling_bank.json",
+    "--output",
+    "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/initial_gaussian_parameter_gradients_amp_20261014",
+    "--deadline",
+    "2400"
+  ],
+  "script_sha256": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+  "canonical": {
+    "postfit_receipt_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+    "postfit_status_sha256": "935d84eb4e75aaf9cbfa128ecdebc0d39650f1446e78140a30619b1dcaeecf94",
+    "trajectory_complete_sha256": "04b71545fbfc6b27bffae936ea660d1ac56d37221a031bde04d7726abb3fcf39",
+    "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "main_final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "held_out_GT_or_images_read": false
+  },
+  "GPU_idle_observations": [
+    {
+      "captured_at_utc": "2026-10-14T10:32:04.569875+00:00",
+      "gpu": "NVIDIA vGPU-32GB, 580.76.05, 32760 MiB, 8.9",
+      "gpu_processes": "",
+      "all_compute_GPUs_idle": true
+    },
+    {
+      "captured_at_utc": "2026-10-14T10:32:07.920923+00:00",
+      "gpu": "NVIDIA vGPU-32GB, 580.76.05, 32760 MiB, 8.9",
+      "gpu_processes": "",
+      "all_compute_GPUs_idle": true
+    }
+  ],
+  "actual_cpu_fixture_sha256": "b656155de59b7cd93cc36ff507eb5b0cf9e64fdddf8ddfa6b5a5aff651d30e22"
+}

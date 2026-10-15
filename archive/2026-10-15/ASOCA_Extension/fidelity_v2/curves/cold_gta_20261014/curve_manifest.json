@@ -1,0 +1,38 @@
+{
+  "development_only": true,
+  "formal_final_test": false,
+  "epoch_display": "1-based; source epoch convention recorded below",
+  "source_epoch_base": 0,
+  "interpolated_validation": false,
+  "artifacts": [
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\curves\\cold_gta_20261014\\cold_gta_learning_curves.png",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\curves\\cold_gta_20261014\\cold_gta_learning_curves.svg"
+  ],
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+  "runs": [
+    {
+      "name": "cold_gta",
+      "method": "gta",
+      "selection_role": "selection role unrecorded; do not infer independent validation",
+      "n_training_cases": null,
+      "selection_case_ids": [],
+      "n_recorded_epochs": 200,
+      "n_internal_dice_points": 0,
+      "n_internal_assd_points": 0,
+      "warnings": [
+        "No positive-balanced-accuracy/majority-baseline trajectory; classifier usefulness remains unverified by this history",
+        "No usable internal-four Dice/ASSD trajectory; training loss cannot establish validation improvement"
+      ],
+      "sources": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\server_records\\status_20261014\\results\\gta\\fold0\\training\\config.json",
+          "sha256": "5e3615aef198327e86ee14d285a5bc0dc89907a4d494cc446381aca9cc18590d"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\server_records\\status_20261014\\results\\gta\\fold0\\training\\history.jsonl",
+          "sha256": "969cb8599f380ed6347488c73ab29335ccc20854bf30be7a543f0fed3cba28c1"
+        }
+      ]
+    }
+  ]
+}

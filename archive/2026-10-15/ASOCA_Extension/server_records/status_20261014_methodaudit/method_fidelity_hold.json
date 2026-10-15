@@ -1,0 +1,18 @@
+{
+  "changed_at": "2026-10-14T02:48:48.729173+00:00",
+  "reason": "User requests method-fidelity audit. Missing pretrained/staged initialization confirmed; review before further ablations.",
+  "controller_pid": 102978,
+  "controller_state": "T",
+  "signal": "SIGSTOP to waiting controller only",
+  "pending_jobs": [
+    "gta_no_ds/fold0",
+    "gta_no_prior/fold0",
+    "gta_no_gaussian/fold0",
+    "gta_no_balance/fold0"
+  ],
+  "native_reference_runner": 54628,
+  "native_reference_action": "Preserved to finish existing training and evaluation",
+  "native_runner_exists": true,
+  "active_training_code": "Preserved with original hashes; no checkpoint or output overwritten",
+  "next_priority": "Validate prior-label semantics and classifier quality; restore GTA initialization and staging in a new recorded configuration"
+}

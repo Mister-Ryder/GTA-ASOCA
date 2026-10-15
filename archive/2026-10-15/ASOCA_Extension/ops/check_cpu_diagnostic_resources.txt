@@ -1,0 +1,16 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import json,os
+from pathlib import Path
+mem={s.split(':')[0]:int(s.split()[1])*1024 for s in Path('/proc/meminfo').read_text().splitlines() if s.startswith(('MemAvailable:','MemTotal:'))}
+limits={}
+for name in ['cpu.max','memory.max','memory.current']:
+ p=Path('/sys/fs/cgroup')/name
+ if p.exists():limits[name]=p.read_text().strip()
+quota_cores=None
+if limits.get('cpu.max') and not limits['cpu.max'].startswith('max'):
+ a,b=map(int,limits['cpu.max'].split());quota_cores=a/b
+available=mem['MemAvailable']
+if limits.get('memory.max','max')!='max' and 'memory.current' in limits:
+ available=min(available,int(limits['memory.max'])-int(limits['memory.current']))
+print(json.dumps({'memory_available_GiB':available/2**30,'affinity_cpus':len(os.sched_getaffinity(0)),'quota_cores':quota_cores,'load_average':os.getloadavg(),'cgroup':limits}))
+PY

@@ -1,0 +1,11 @@
+verified_actual_completed_control20_80_and_fixed_final4
+four internal development patients; no independent test/significance
+Dice and pooled physical-mm ASSD; undefined distances remain null; no complete-four mean when any undefined; patient sample SD, not fold/seed SD
+A/U differ in initialization/pretraining/capacity/objectives; lambda0 OLD hardware/driver differs; B changes loss reduction. Historical A theta0 was unsaved. No module-causal or winner claim.
+Other control not checked: B
+A dice: mean=0.8318539004693745; patientSD=0.05262188083735396; defined=4/4
+A assd_mm: mean=0.5678251259083507; patientSD=0.3231060045482814; defined=4/4
+lambda0 dice: mean=0.8312417096001634; patientSD=0.053998388267958594; defined=4/4
+lambda0 assd_mm: mean=0.5991766320314929; patientSD=0.3778809569560848; defined=4/4
+U dice: mean=0.818455511253775; patientSD=0.07676466971407239; defined=4/4
+U assd_mm: mean=0.7492326552685586; patientSD=0.45591914607380335; defined=4/4

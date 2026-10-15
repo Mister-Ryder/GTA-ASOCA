@@ -1,0 +1,15 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python - <<'PY'
+import datetime,hashlib,json,subprocess
+from pathlib import Path
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+state=json.loads((root/'EARLY_FIXED_FINAL_STATUS.json').read_text())
+assert state['status']=='completed' and state['owned_child_exit_confirmed'] and not state['gpu_lock_acquired']
+def process(pid):
+    folder=Path('/proc')/str(pid)
+    if not folder.is_dir():return {'pid':pid,'alive':False}
+    return {'pid':pid,'alive':True,'state':(folder/'stat').read_text().rsplit(')',1)[1].split()[0],'cmdline':(folder/'cmdline').read_bytes().replace(b'\0',b' ').decode()}
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scope':'read-only resource/input readiness; not model results','completed_preview_controller':process(state['controller_pid']),'GPU_processes':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip(),'GPU_hardware':subprocess.check_output(['nvidia-smi','--query-gpu=name,driver_version,memory.total,compute_cap','--format=csv,noheader'],text=True).strip(),'meminfo':{row.split(':')[0]:row.split(':',1)[1].strip() for row in Path('/proc/meminfo').read_text().splitlines() if row.startswith(('MemTotal:','MemAvailable:'))},'cgroup_memory_max':Path('/sys/fs/cgroup/memory.max').read_text().strip() if Path('/sys/fs/cgroup/memory.max').is_file() else None,'cgroup_memory_current':Path('/sys/fs/cgroup/memory.current').read_text().strip() if Path('/sys/fs/cgroup/memory.current').is_file() else None,'cpu_max':Path('/sys/fs/cgroup/cpu.max').read_text().strip() if Path('/sys/fs/cgroup/cpu.max').is_file() else None,'manifest_sha256':hashlib.sha256((root.parent/'cache/manifest.json').read_bytes()).hexdigest(),'formal_final_shared_bytes':(Path('/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/final.pt')).stat().st_size,'training_started':False}
+(root/'SHADOW_RESOURCE_PREFLIGHT_20261014.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+PY

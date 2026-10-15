@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "role": "PRIVATE_ACTUAL_BINARY_MASK_PROJECTIONS_NOT_NEW_METRICS",
+  "created_at_utc": "2026-10-14T11:42:42.793174+00:00",
+  "source_script": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\plot_paired_qualitative_D10_D20.py",
+  "source_script_sha256": "c4504b2fe73505d20d4bcb06b077816574882f30252adc13f8a4192d86c721d6",
+  "reader_sha256": "857c6f90b6e5283547c7d88390792897176fa37a06589f8cb16e412b42abe2c8",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20"
+  ],
+  "checkpoint_selection": "fixed final",
+  "source_inputs": {
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\manifest.json": {
+      "bytes": 136829,
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_canonical_acceptance_20261014\\canonical_acceptance_and_pair.json": {
+      "bytes": 42072,
+      "sha256": "e8584fb3e12b6fea0936655916dee64583710b6b4702c494d61291db93570619"
+    },
+    "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd": {
+      "bytes": 122777,
+      "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10.json": {
+      "bytes": 2272,
+      "sha256": "61e1a565fa5f01f70d4db727b9176623ba73f376942b699e6c859ef226b2ed04"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd": {
+      "bytes": 66498,
+      "sha256": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10.json": {
+      "bytes": 2291,
+      "sha256": "1842da2e4ca60b60b1342b0452993f554d18a5c7d481ef97e4782fb1d576191d"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd": {
+      "bytes": 67358,
+      "sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c"
+    },
+    "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd": {
+      "bytes": 126485,
+      "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20.json": {
+      "bytes": 2291,
+      "sha256": "3c864d9a02c4993b645ba917a0af7f742b7d3cac03c4983a8947bfc252e80250"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd": {
+      "bytes": 71621,
+      "sha256": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20.json": {
+      "bytes": 2285,
+      "sha256": "fa5f1e37c8984af0f4d2d2918204dc89773a9be8e5f2d5866fa193612aa72f64"
+    },
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd": {
+      "bytes": 70846,
+      "sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc"
+    }
+  },
+  "formal_final_test": false,
+  "visualization": "binary maximum occupancy along original physical axes; nearest display; no smoothing/resampling/filtering",
+  "CPU_threads_limit": 2,
+  "model_GPU_SSH_or_public_upload": false,
+  "artifacts": {
+    "case_geometry_and_projection_audit.json": {
+      "bytes": 9312,
+      "sha256": "bdbc93f0c009778f2db2ed195b046cf0535033c81b5e9ba062409e863b46109c"
+    },
+    "Diseased_10_GT_U_A_projections.png": {
+      "bytes": 301236,
+      "sha256": "2cce2798581a067b739fa10baa7241dbc7f131a4f99fb37d6a54e01d2ee8f460"
+    },
+    "Diseased_10_GT_U_A_projections.svg": {
+      "bytes": 91896,
+      "sha256": "4f1a41a1f642c226e1b3ae8f056234540c7487f31c0ac5862c84729c469330f8"
+    },
+    "Diseased_20_GT_U_A_projections.png": {
+      "bytes": 295649,
+      "sha256": "58e351582c520f263cd227fd5ffa4f760b1105aa1c44e8eee8dc45b1150e3f52"
+    },
+    "Diseased_20_GT_U_A_projections.svg": {
+      "bytes": 85232,
+      "sha256": "04b23b642e749a15fba97b1d8cf6dc1900ea1cee3badc3d225cd0db8d23322a3"
+    },
+    "figure_caption.txt": {
+      "bytes": 1310,
+      "sha256": "75ebf44200de0891ffe530734c282dcf83ae1e3bf6045d4e324575c7bd7237a4"
+    }
+  }
+}

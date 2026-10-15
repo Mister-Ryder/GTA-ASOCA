@@ -1,0 +1,91 @@
+usage: train.py [-h] --manifest MANIFEST --output OUTPUT
+                [--method {gta,gta_no_prior,gta_no_gaussian,gta_no_balance,unet}]
+                [--fold FOLD] [--epochs EPOCHS] [--steps STEPS]
+                [--patch-size PATCH_SIZE] [--batch-size BATCH_SIZE]
+                [--workers WORKERS] [--seed SEED] [--split-seed SPLIT_SEED]
+                [--lr LR] [--weight-decay WEIGHT_DECAY]
+                [--warmup-epochs WARMUP_EPOCHS]
+                [--freeze-epochs FREEZE_EPOCHS]
+                [--partial-until PARTIAL_UNTIL]
+                [--classifier-lr-scale CLASSIFIER_LR_SCALE]
+                [--classifier-weight CLASSIFIER_WEIGHT]
+                [--gaussian-weight GAUSSIAN_WEIGHT]
+                [--gaussian-late-weight GAUSSIAN_LATE_WEIGHT]
+                [--gaussian-ramp-start GAUSSIAN_RAMP_START]
+                [--gaussian-ramp-end GAUSSIAN_RAMP_END]
+                [--save-every SAVE_EVERY]
+                [--gradient-probe-every GRADIENT_PROBE_EVERY]
+                [--guidance-weight GUIDANCE_WEIGHT]
+                [--seg-loss {dice_ce,historical}]
+                [--sampling {standard,geometry}]
+                [--sampling-fov {full,image-body}]
+                [--disable-anatomy-reweighting]
+                [--cohort {internal28,train32}]
+                [--backbone-warmup-epochs BACKBONE_WARMUP_EPOCHS]
+                [--backbone-init BACKBONE_INIT]
+                [--backbone-domain {airway,asoca}]
+                [--classifier-init CLASSIFIER_INIT]
+                [--classifier-domain {airway,asoca}]
+                [--classifier-head-policy {reinit,load}]
+                [--full-init FULL_INIT] [--full-domain {airway,asoca}]
+                [--semantic-head-policy {reinit,load}]
+                [--allow-selection-overlap] [--allow-untrained-classifier]
+                [--no-ds] [--resume] [--smoke] [--device {cpu,cuda}] [--plan]
+
+GTA v2 transfer/staging and shared-recipe U-Net diagnostics, internal28 only.
+Enhanced inference architecture is unchanged. Historical encoder/decoder
+double supervision is optional backbone warm-up. Four internal patients are
+reserved for development selection; the original eight are diagnostic, never a
+blind test.
+
+options:
+  -h, --help            show this help message and exit
+  --manifest MANIFEST
+  --output OUTPUT
+  --method {gta,gta_no_prior,gta_no_gaussian,gta_no_balance,unet}
+  --fold FOLD
+  --epochs EPOCHS
+  --steps STEPS
+  --patch-size PATCH_SIZE
+  --batch-size BATCH_SIZE
+  --workers WORKERS
+  --seed SEED
+  --split-seed SPLIT_SEED
+  --lr LR
+  --weight-decay WEIGHT_DECAY
+  --warmup-epochs WARMUP_EPOCHS
+  --freeze-epochs FREEZE_EPOCHS
+  --partial-until PARTIAL_UNTIL
+  --classifier-lr-scale CLASSIFIER_LR_SCALE
+  --classifier-weight CLASSIFIER_WEIGHT
+  --gaussian-weight GAUSSIAN_WEIGHT
+  --gaussian-late-weight GAUSSIAN_LATE_WEIGHT
+  --gaussian-ramp-start GAUSSIAN_RAMP_START
+  --gaussian-ramp-end GAUSSIAN_RAMP_END
+  --save-every SAVE_EVERY
+  --gradient-probe-every GRADIENT_PROBE_EVERY
+  --guidance-weight GUIDANCE_WEIGHT
+  --seg-loss {dice_ce,historical}
+  --sampling {standard,geometry}
+  --sampling-fov {full,image-body}
+  --disable-anatomy-reweighting
+  --cohort {internal28,train32}
+  --backbone-warmup-epochs BACKBONE_WARMUP_EPOCHS
+  --backbone-init BACKBONE_INIT
+  --backbone-domain {airway,asoca}
+  --classifier-init CLASSIFIER_INIT
+  --classifier-domain {airway,asoca}
+  --classifier-head-policy {reinit,load}
+  --full-init FULL_INIT
+  --full-domain {airway,asoca}
+  --semantic-head-policy {reinit,load}
+  --allow-selection-overlap
+                        Explicit diagnostic transfer; invalidates internal
+                        selection
+  --allow-untrained-classifier
+                        Explicit from-scratch negative control/smoke
+  --no-ds
+  --resume
+  --smoke
+  --device {cpu,cuda}
+  --plan

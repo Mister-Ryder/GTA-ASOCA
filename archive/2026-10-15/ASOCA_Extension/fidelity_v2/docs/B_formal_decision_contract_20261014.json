@@ -1,0 +1,30 @@
+{
+  "role": "CONTRACT_DESCRIPTION_NOT_AN_ACTUAL_DECISION",
+  "contract": {
+    "schema_version": 1,
+    "action": "authorize_one_B_formal_run",
+    "decision_author": "ROOT",
+    "created_at_utc": "fresh ISO8601 timezone-aware, after actual diagnostic release, within six hours",
+    "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+    "evidence": "exact evidence JSON printed by --decision-evidence after actual completion",
+    "canonical_review": {
+      "all20_checkpoints_reviewed": true,
+      "late_checkpoint_names": [
+        "epoch160",
+        "epoch170",
+        "epoch180",
+        "epoch190",
+        "final"
+      ],
+      "rationale": "ROOT actual complete/late curve interpretation"
+    },
+    "gradient_review": {
+      "all28_batches_reviewed": true,
+      "nonfinite_batches": "exact actual summary list",
+      "batches_implying_clip12": "exact actual summary dict",
+      "proceed_with_fixed_lambda10_after_risk_review": true,
+      "rationale": "ROOT explicit nonfinite/clipping assessment, not merely gradient finite"
+    }
+  },
+  "ROOT_review_file": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops_inputs/region_balance_v1_root_review_20261014.txt"
+}

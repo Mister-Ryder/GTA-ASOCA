@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "role": "PRIVATE_IMMUTABLE_GTA_CONTROL_DONORS",
+  "captured_at_utc": "2026-10-14T10:02:18.064874+00:00",
+  "main_config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+  "files": {
+    "airway_backbone_epoch599.pkl": {
+      "bytes": 43313082,
+      "sha256": "29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3",
+      "recorded_main_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl"
+    },
+    "classifier80_final.pt": {
+      "bytes": 49148853,
+      "sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+      "recorded_main_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt"
+    }
+  },
+  "weights_public": false,
+  "model_forward": false,
+  "CUDA_context": false
+}

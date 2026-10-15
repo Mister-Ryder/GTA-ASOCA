@@ -1,0 +1,1180 @@
+{
+  "schema_version": 1,
+  "status": "verified_actual_completed_control20_80_and_fixed_final4",
+  "kind": "B",
+  "verified_at_utc": "2026-10-15T06:49:37.379580+00:00",
+  "role": "four internal development patients; no independent test/significance",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "run_labels": [
+    "A",
+    "B",
+    "U"
+  ],
+  "checkpoint_selection": "fixed final",
+  "formal_final_test": false,
+  "control_completion": {
+    "verified_checkpoint_evaluations": 20,
+    "verified_case_evaluations": 80,
+    "local_final_pixel_recalculations": 4,
+    "local_periodic_checkpoint_tensor_bytes_checked": false,
+    "actual_server_periodic_tensor_audit_receipt_retained": true,
+    "actual_postfit_sha256": "1a9d591c9763591b96332e6f1f4bd537b893030d71a6811b537532dd1dd3af90"
+  },
+  "canonical_A_completion": {
+    "actual_postfit_verified_sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+    "actual_POSTFIT_STATUS_completed": true,
+    "verified_checkpoint_evaluations": 20,
+    "verified_case_metadata_and_prediction_SHA": 80,
+    "local_fixed_final_primary_pixel_recalculations": 4,
+    "local_periodic_checkpoint_tensor_bytes_checked": false,
+    "actual_server_periodic_tensor_audit_receipt_retained": true,
+    "curve_source_and_artifact_SHA_verified": true
+  },
+  "sealed_B_source": {
+    "inspection": {
+      "status": "source_inspection_passed_not_training",
+      "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+      "code_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+      "source_files_sha256": {
+        "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+        "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+        "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+        "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+        "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+        "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+        "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+        "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+        "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+        "losses.py": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+        "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+        "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+      },
+      "protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+      "changed_code_files": [
+        "losses.py"
+      ],
+      "gaussian_reduction": {
+        "id": "per_patch_equal_fg_bg_present_mean_v1",
+        "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+        "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+        "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+        "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+        "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+        "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+        "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+        "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+        "target_unchanged": "t=.5+.5*cached_G",
+        "lambda_unchanged": 10.0,
+        "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+        "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+        "not_changed": [
+          "Gaussian field/support/normalization",
+          "classifier labels",
+          "sampler",
+          "architecture/parameter shapes",
+          "DS4/7,2/7,1/7",
+          "50 frozen /20 partial /130 joint",
+          "optimizer/lr/clip12",
+          "200x125 updates",
+          "prediction/evaluation interface"
+        ],
+        "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+      },
+      "actual_model_forward_executed": false,
+      "training_started": false
+    },
+    "actual_binding": {
+      "status": "actual_config_bound_to_sealed_B_protocol",
+      "actual_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+      "actual_config_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+      "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+      "gaussian_reduction": {
+        "id": "per_patch_equal_fg_bg_present_mean_v1",
+        "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+        "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+        "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+        "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+        "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+        "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+        "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+        "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+        "target_unchanged": "t=.5+.5*cached_G",
+        "lambda_unchanged": 10.0,
+        "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+        "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+        "not_changed": [
+          "Gaussian field/support/normalization",
+          "classifier labels",
+          "sampler",
+          "architecture/parameter shapes",
+          "DS4/7,2/7,1/7",
+          "50 frozen /20 partial /130 joint",
+          "optimizer/lr/clip12",
+          "200x125 updates",
+          "prediction/evaluation interface"
+        ],
+        "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+      },
+      "actual_config_has_gaussian_reduction_field": false,
+      "binding": "Exact actual config bytes plus source/file SHA map bind the separate immutable loss protocol; no config/checkpoint edits.",
+      "allowed_actual_config_differences_from_A": [
+        "output",
+        "source_sha256",
+        "source_files_sha256"
+      ],
+      "same_25000_updates": true,
+      "training_started_by_auditor": false
+    }
+  },
+  "control_collection_manifest": {
+    "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\collection_manifest.json",
+    "sha256": "57d62fe7981682ad9864c09131a2ea42bac3f256288553827ae7ce7673fd46c1"
+  },
+  "control_collection_bytes_checked": 253,
+  "patient_statistics": {
+    "A": {
+      "dice": {
+        "mean": 0.8318539004693745,
+        "sd": 0.05262188083735396,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.5678251259083507,
+        "sd": 0.3231060045482814,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    },
+    "B": {
+      "dice": {
+        "mean": 0.8312722410529477,
+        "sd": 0.05156351999518903,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.4821341086271393,
+        "sd": 0.2684128164897742,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    },
+    "U": {
+      "dice": {
+        "mean": 0.818455511253775,
+        "sd": 0.07676466971407239,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      },
+      "assd_mm": {
+        "mean": 0.7492326552685586,
+        "sd": 0.45591914607380335,
+        "n_patients": 4,
+        "n_defined": 4,
+        "undefined_case_ids": [],
+        "reason": null
+      }
+    }
+  },
+  "per_case": [
+    {
+      "run_label": "A",
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "dice": 0.778544956084683,
+      "assd_mm": 0.40105120364364777,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "B",
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "dice": 0.7740516482947782,
+      "assd_mm": 0.38799797940211284,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "U",
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "dice": 0.712825254259675,
+      "assd_mm": 1.3455745965646293,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "A",
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "dice": 0.798590942307332,
+      "assd_mm": 1.052244664395905,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "B",
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "dice": 0.8073177928592505,
+      "assd_mm": 0.8560337392699907,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "U",
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "dice": 0.8262480606005294,
+      "assd_mm": 0.5418889670719269,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "A",
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "dice": 0.8576531148229856,
+      "assd_mm": 0.4205624076888011,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "B",
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "dice": 0.8514430487394362,
+      "assd_mm": 0.4612900981202471,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "U",
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "dice": 0.8384446224919453,
+      "assd_mm": 0.8279659085981665,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "A",
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "dice": 0.8926265886624974,
+      "assd_mm": 0.39744222790504896,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "B",
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "dice": 0.8922764743183259,
+      "assd_mm": 0.2232146177162065,
+      "empty_prediction": false
+    },
+    {
+      "run_label": "U",
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "dice": 0.8963041076629507,
+      "assd_mm": 0.28150114883951166,
+      "empty_prediction": false
+    }
+  ],
+  "paired_case_differences": [
+    {
+      "left_run": "B",
+      "right_run": "A",
+      "case_id": "Diseased_10",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "left_dice": 0.7740516482947782,
+      "right_dice": 0.778544956084683,
+      "dice_left_minus_right": -0.004493307789904755,
+      "left_assd_mm": 0.38799797940211284,
+      "right_assd_mm": 0.40105120364364777,
+      "assd_left_minus_right_mm": -0.013053224241534933
+    },
+    {
+      "left_run": "B",
+      "right_run": "U",
+      "case_id": "Diseased_10",
+      "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "left_dice": 0.7740516482947782,
+      "right_dice": 0.712825254259675,
+      "dice_left_minus_right": 0.061226394035103215,
+      "left_assd_mm": 0.38799797940211284,
+      "right_assd_mm": 1.3455745965646293,
+      "assd_left_minus_right_mm": -0.9575766171625164
+    },
+    {
+      "left_run": "B",
+      "right_run": "A",
+      "case_id": "Diseased_20",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "left_dice": 0.8073177928592505,
+      "right_dice": 0.798590942307332,
+      "dice_left_minus_right": 0.008726850551918575,
+      "left_assd_mm": 0.8560337392699907,
+      "right_assd_mm": 1.052244664395905,
+      "assd_left_minus_right_mm": -0.1962109251259142
+    },
+    {
+      "left_run": "B",
+      "right_run": "U",
+      "case_id": "Diseased_20",
+      "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "left_dice": 0.8073177928592505,
+      "right_dice": 0.8262480606005294,
+      "dice_left_minus_right": -0.018930267741278817,
+      "left_assd_mm": 0.8560337392699907,
+      "right_assd_mm": 0.5418889670719269,
+      "assd_left_minus_right_mm": 0.3141447721980638
+    },
+    {
+      "left_run": "B",
+      "right_run": "A",
+      "case_id": "Normal_12",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "left_dice": 0.8514430487394362,
+      "right_dice": 0.8576531148229856,
+      "dice_left_minus_right": -0.006210066083549348,
+      "left_assd_mm": 0.4612900981202471,
+      "right_assd_mm": 0.4205624076888011,
+      "assd_left_minus_right_mm": 0.04072769043144603
+    },
+    {
+      "left_run": "B",
+      "right_run": "U",
+      "case_id": "Normal_12",
+      "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "left_dice": 0.8514430487394362,
+      "right_dice": 0.8384446224919453,
+      "dice_left_minus_right": 0.012998426247490924,
+      "left_assd_mm": 0.4612900981202471,
+      "right_assd_mm": 0.8279659085981665,
+      "assd_left_minus_right_mm": -0.3666758104779194
+    },
+    {
+      "left_run": "B",
+      "right_run": "A",
+      "case_id": "Normal_3",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "left_dice": 0.8922764743183259,
+      "right_dice": 0.8926265886624974,
+      "dice_left_minus_right": -0.0003501143441715371,
+      "left_assd_mm": 0.2232146177162065,
+      "right_assd_mm": 0.39744222790504896,
+      "assd_left_minus_right_mm": -0.17422761018884247
+    },
+    {
+      "left_run": "B",
+      "right_run": "U",
+      "case_id": "Normal_3",
+      "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+      "left_dice": 0.8922764743183259,
+      "right_dice": 0.8963041076629507,
+      "dice_left_minus_right": -0.004027633344624748,
+      "left_assd_mm": 0.2232146177162065,
+      "right_assd_mm": 0.28150114883951166,
+      "assd_left_minus_right_mm": -0.058286531123305174
+    }
+  ],
+  "audits": {
+    "A": {
+      "method": "gta",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training",
+      "final_checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+      "weights_bytes_checked": true,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": false,
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.778544956084683,
+            "assd_mm": 0.40105120364364777,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.798590942307332,
+            "assd_mm": 1.0522446643959051,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8576531148229856,
+            "assd_mm": 0.42056240768880115,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8926265886624974,
+            "assd_mm": 0.39744222790504896,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\config.json",
+          "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\TRAINING_COMPLETE.json",
+          "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\history.jsonl",
+          "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\summary.json",
+          "sha256": "69eceed68698b56bd3d8ea45eeed7fa6bf4fd44e7dcad6c5f39fca15054ed701"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "a1195b08d5d73327370f0c65cdd50684e0034cbfbc8d89061d5016a707178107"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "f19190b55d6364ccf45314d45847f6732b5f27e57cd46e5b7cd1af697e4e4618"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "cbe4ff290ac409761663b033258f3b303b909abca1a9ef421ab9f030f1f0af9a"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "1bf12cc622f1008ede7cc9a2903456351d6c38be9286b63de0955703a4535e1b"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "1842da2e4ca60b60b1342b0452993f554d18a5c7d481ef97e4782fb1d576191d"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "fa5f1e37c8984af0f4d2d2918204dc89773a9be8e5f2d5866fa193612aa72f64"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "055837df77b9065d71427aa9a919c4eef303abe95d1a67d2ce80ff3bdeb1b289"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "80cebac9ec5b39f76e753c4cf3eae1abfda7b3499abac48a780bf3a5be0dbe8c"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\training\\final.pt",
+          "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+        }
+      ]
+    },
+    "B": {
+      "method": "gta",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training",
+      "final_checkpoint_sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4",
+      "weights_bytes_checked": true,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": false,
+      "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "06d2bd52f3fe9b9d4d2bc999a26fb0e87276fc774d99dd5ed49cf672763ebe83",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.7740516482947782,
+            "assd_mm": 0.38799797940211284,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "db8dcc92c02f33b73d3fe861a12de811bd31edce067de50c8c4844cc1e1d0595",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8073177928592505,
+            "assd_mm": 0.8560337392699907,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "2af22b580614c7a8329f9870e4e07be0f507ed2b6594cf059133a164c155f45f",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8514430487394362,
+            "assd_mm": 0.4612900981202471,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "90c3989eb829d57bb389ebe15ff161d15050dc32d4dcd062d79f47126ec97b8f",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8922764743183259,
+            "assd_mm": 0.2232146177162065,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\training\\config.json",
+          "sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\training\\TRAINING_COMPLETE.json",
+          "sha256": "92378e04cdcaf8640185260d85c88bd9dfe74d48408c0837c44293e4b11ec45a"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\training\\history.jsonl",
+          "sha256": "ce9b99f4796fa6237ce4019bd6af260e7c9e9af81e6a8721a1345200c2e65aac"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\summary.json",
+          "sha256": "fd93f264ee923cdbb4e44cb5578de80ec4313bf8a581534a7e6f38bb1eb96cd3"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "51a9c332043733eaabb5a4a0bea64a1caf6d4afa8aa3f294c04cd9642f768a6f"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "82ae8f7a22fcc9390eceede5a15777299ccdb196e79f90a6c580c8fd2370ce35"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "36bda52ed175836fd5f225f265125daf1fea43a6303d63ad7127f3053f4f3935"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "01d11ea90a4536a0125e5976772a4812eaca52ed04beb7ddfdbd7d6f86d52fbd"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "ef4f03e3fdaea8afaee631e20528edb727c5031ae91c2b06ea52a4d0bec7736c"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "06d2bd52f3fe9b9d4d2bc999a26fb0e87276fc774d99dd5ed49cf672763ebe83"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "a7272b257bc2f569f79ef2531511d08c3d6daf29bb3c94f37b4ee373af3dbb70"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "db8dcc92c02f33b73d3fe861a12de811bd31edce067de50c8c4844cc1e1d0595"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "8ab7e67203178375becce6d83b93e8b3c0a89134e8fe319bb80229ac9e9b230b"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "2af22b580614c7a8329f9870e4e07be0f507ed2b6594cf059133a164c155f45f"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "4125a983d0eaf6fbc276cfefb4ac1f8028774a34db38b38f7dd6ab804f1eb23f"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "90c3989eb829d57bb389ebe15ff161d15050dc32d4dcd062d79f47126ec97b8f"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014\\results\\gta_region_balance200x125_20261014\\training\\final.pt",
+          "sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4"
+        }
+      ]
+    },
+    "U": {
+      "method": "unet",
+      "local_training": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training",
+      "local_evaluation": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final",
+      "recorded_remote_training": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training",
+      "final_checkpoint_sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c",
+      "weights_bytes_checked": true,
+      "model_loaded": false,
+      "pixel_primary_metrics_recomputed": true,
+      "full_20point_trajectory_completion_checked": true,
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "pixel_audits": [
+        {
+          "case_id": "Diseased_10",
+          "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+          "prediction_sha256": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.3867189884,
+              0.3867189884,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -111.80000305175781,
+              -224.375
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.712825254259675,
+            "assd_mm": 1.345574596564629,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Diseased_20",
+          "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+          "prediction_sha256": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              224
+            ],
+            "spacing_xyz_mm": [
+              0.4707030058000001,
+              0.4707030058000001,
+              0.6249999999999998
+            ],
+            "origin_xyz_mm": [
+              -88.6999969482422,
+              -165.99999999999997,
+              -207.87499999999997
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8262480606005294,
+            "assd_mm": 0.541888967071927,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_12",
+          "label_sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+          "prediction_sha256": "b5736058a41bfe52bf83d50f18c0761481bea5744b8809e859af4c0b3e8dd5ab",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              206
+            ],
+            "spacing_xyz_mm": [
+              0.369141,
+              0.369141,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -75.69999694824219,
+              -94.49999999999999,
+              -193.125
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8384446224919453,
+            "assd_mm": 0.8279659085981665,
+            "empty_prediction": false
+          }
+        },
+        {
+          "case_id": "Normal_3",
+          "label_sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+          "prediction_sha256": "eee1f64a455792ee8339d460adfbf9d40b9a35cbea951f08141a4ca5e6973b58",
+          "original_grid": {
+            "size_xyz": [
+              512,
+              512,
+              212
+            ],
+            "spacing_xyz_mm": [
+              0.382812,
+              0.382812,
+              0.625
+            ],
+            "origin_xyz_mm": [
+              -94.4000015258789,
+              -120.80000305175778,
+              -218.87500000000006
+            ],
+            "direction": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "recomputed_primary_metrics": {
+            "dice": 0.8963041076629507,
+            "assd_mm": 0.2815011488395116,
+            "empty_prediction": false
+          }
+        }
+      ],
+      "inputs": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\config.json",
+          "sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\TRAINING_COMPLETE.json",
+          "sha256": "8eb5bd82ce4db74e374f465b7ca3230adcea73c0158e4e74eda3f4af63c2ba41"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\history.jsonl",
+          "sha256": "b3a3debbb3a2552208aa617487b47437226913c844534e13cde0073249fe7a53"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\summary.json",
+          "sha256": "a4c9218f433842c3989ec96790b00bbd98f0b39c088122ad8430498e5e0a3a45"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\case_metrics.jsonl",
+          "sha256": "d5823afdb4fb288646bd0b2af178f119ec3e170b005ffde37b31e7237314c6ee"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\EVALUATION_COMPLETE.json",
+          "sha256": "4d4f1da96ed941acff2f8bc661b5cb0deb72bbd366985307ab3cab5382d71fe4"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\trajectory_protocol.json",
+          "sha256": "44f2b4ed14de1eb11ad033b25b330307b10544d8190c9f2f916306e0fc788629"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\validation_history.jsonl",
+          "sha256": "b1c2cfbedac2c5679f7b6d2dab483bb0da0c75157abd1aeaecdf308e076a2ed3"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10.json",
+          "sha256": "61e1a565fa5f01f70d4db727b9176623ba73f376942b699e6c859ef226b2ed04"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+          "sha256": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20.json",
+          "sha256": "3c864d9a02c4993b645ba917a0af7f742b7d3cac03c4983a8947bfc252e80250"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+          "sha256": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_12.json",
+          "sha256": "bd5e8dfa0ec8806984f66ad1b7d5a684c2e047b79546d1e7fb0e3970585eb039"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_12_prediction.nrrd",
+          "sha256": "b5736058a41bfe52bf83d50f18c0761481bea5744b8809e859af4c0b3e8dd5ab"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_3.json",
+          "sha256": "ee218ca234f5825bdefc7373eb7b53d9db92e3f5548a5e8239e0aed5f9b3962e"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_3_prediction.nrrd",
+          "sha256": "eee1f64a455792ee8339d460adfbf9d40b9a35cbea951f08141a4ca5e6973b58"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd",
+          "sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd",
+          "sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd",
+          "sha256": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+        },
+        {
+          "path": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd",
+          "sha256": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\training\\final.pt",
+          "sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c"
+        }
+      ],
+      "saved80_case_metadata_and_prediction_bytes_verified": true,
+      "primary_pixel_metrics_recomputed_case_evaluations": 4,
+      "actual_global_completion_sha256": "3fc851db9f7afcb58de93730f527cdacf1526f9f79cbdeba45c65eb300102d18"
+    }
+  },
+  "metric_policy": "Dice and pooled physical-mm ASSD; undefined distances remain null; no complete-four mean when any undefined; patient sample SD, not fold/seed SD",
+  "attribution_boundary": "A/U differ in initialization/pretraining/capacity/objectives; lambda0 OLD hardware/driver differs; B changes loss reduction. Historical A theta0 was unsaved. No module-causal or winner claim.",
+  "other_control_not_checked": "lambda0",
+  "model_forward_Torch_GPU_SSH_used": false,
+  "helper_sha256": {
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\compare_fixed_finals.py": "857c6f90b6e5283547c7d88390792897176fa37a06589f8cb16e412b42abe2c8",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\compare_preview_fixed_final.py": "d4f5c101eccc8d0c47d13b1f492645d491e72f8b7fc4507916de071b3d1d460d",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\verify_canonical_and_preview.py": "7f75c7abc9bd3bfda0ceaca5bf2de8539890fe4d7cb3502906a540b3d49ac026",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\verify_postfit.py": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\ops\\collect_completed_gaussian_control.py": "b824932b176c1e9016e494f9f6404391431fdc135fdfee8fc9b7c6799a064b93",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\ops\\collect_gta_completed_trajectory.py": "0b1f86a83e75aa139597365afb197c5990c4a591c336790e3de75cf4273854de"
+  },
+  "tool_sha256": "c4965b707e2a32b240170fd2d01c2c34ef6164f5590e7cd54ccffae6184f7210"
+}

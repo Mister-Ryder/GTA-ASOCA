@@ -1,0 +1,13 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,time
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+if (r/'POSTFIT_STATUS.json').exists():raise RuntimeError('Postfit already has state; inspect before restarting')
+with (r/'logs/postfit_startup.log').open('a') as log:
+ p=subprocess.Popen(['/root/miniconda3/envs/gta-asoca311/bin/python','-u',str(r/'ops/after_gta_training.py')],
+                    cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+for _ in range(10):
+ if (r/'POSTFIT_STATUS.json').exists():print((r/'POSTFIT_STATUS.json').read_text());break
+ if p.poll() is not None:print((r/'logs/postfit_startup.log').read_text()[-2000:]);raise RuntimeError('Postfit controller exited during startup')
+ time.sleep(.5)
+PY

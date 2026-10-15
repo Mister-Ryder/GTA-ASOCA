@@ -1,0 +1,496 @@
+{
+  "status": "active",
+  "candidate": "faithful_GTA_first_recipe",
+  "current_phase": "Awaiting human methodological discussion/selection; goal incomplete; no new experiments dispatched.",
+  "completed": [
+    "shared data verified",
+    "80x64 classifier pretraining complete",
+    "100GB local storage verified after restart",
+    "three-stage actual CUDA gradients verified",
+    "four-case label roundtrip pipeline verified",
+    "native single-fold reference verified and archived in local records",
+    "GTA canonical20/80, fixed-final raw-pixel primary metrics and OLDpreview exact agreement independently accepted",
+    "Actual classifier56 CPU audit and initial AMP28-batch parameter-gradient diagnostic independently recalculated",
+    "Both Gaussian controls actual formaltraining with initial-state/config/source receipts"
+  ],
+  "next_required_gate": "Discuss existing eight-case results and unified-method priorities with user. Do not launch new training, data-only32 reruns, fivefold, repeat metric recomputation, or extra diagnostic chains before this discussion.",
+  "main_server_stage_controller_pid": null,
+  "baseline_server_controller_pid": null,
+  "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "public_repository": {
+    "url": "https://github.com/Mister-Ryder/GTA-ASOCA",
+    "status": "public_reference_A_source_and_verified_internal4_aggregate_documentation_published",
+    "commit": "7d211392d02e7f3175b3cac827ca31e85e5a7951",
+    "file_count": 48,
+    "all_downloaded_blobs_match": true,
+    "verification_receipt": "ASOCA_Extension/fidelity_v2/server_records/public_reference_A_update_20261014/anonymous_public_verified.json",
+    "runtime_source_unchanged_by_documentation_update": true,
+    "previous_source_smoke_commit": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+    "new_commit_smoke_rerun": false
+  },
+  "independent_publication_test_done": true,
+  "goal_complete": false,
+  "postfit_controller_pid": null,
+  "postfit_status": "completed_and_independently_accepted20_80",
+  "postfit_protocol_sha256": "abc4074c2034552ce886206a7383acdba90de8d1598e414de56319704b30c2d8",
+  "postfit_auxiliary_sources": {
+    "after_gta_training.py": "b5be28d2e96cd7155f2a5d9a5e58f1a0fe5662f090f4c276b34856a94d1daba7",
+    "verify_postfit.py": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51"
+  },
+  "latest_downloaded_training_records": "ASOCA_Extension/fidelity_v2/server_records/gta_complete_trajectory_20261014",
+  "diagnostic_followup": "Actual final200 shadow56, classifier56 and initial AMP28 parameter-gradient diagnostics complete and independently reviewed. B formal run is an explicitly risk-reviewed unchanged-budget single candidate; no diagnostic substitutes for its pending validation performance.",
+  "latest_main_verified_utc": "2026-10-14T18:36:09.461536+08:00",
+  "latest_main_completed_epochs": 200,
+  "latest_main_stage": "training_and_canonical_postfit_complete_verified",
+  "postfit_owned_process_alive_verified": false,
+  "previous_goal_turn_classification": "PROGRESS: static original-versus-ASOCA label/condition comparison yielded factual distinctions and revised discussion priority; no training.",
+  "latest_baseline_verified_utc": "2026-10-14T15:49:47.68518+08:00",
+  "latest_baseline_completed_epochs": 200,
+  "latest_baseline_live_handles": {
+    "status": "completed; historical PIDs are not live-handle claims"
+  },
+  "postfit_decision_protocol": "ASOCA_Extension/fidelity_v2/docs/postfit_decision_protocol.txt",
+  "current_goal_turn_progress": "PROGRESS: source comparison identified structure==3 as inherited simple-bifurcation specificity, not new transfer bug or disabled morphology; generation>=5 is depth-only, not radius; clarified detached condition probabilities versus differentiable classifier features. Changes next discussion priority away from assuming augmentation or stronger regularization is established.",
+  "gaussian_diagnostic_source_sha256": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+  "gaussian_cpu_readiness_receipt": "ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_cpu_ready_epoch070_20261014.json",
+  "gaussian_actual_forward_or_gradient_diagnostic_done": true,
+  "joint_classifier_gradient_norm_mean": 2.625446942090988,
+  "joint_gpu_peak_GiB": 14.448869705200195,
+  "latest_baseline_stage": "completed_verified",
+  "gaussian_cpu_diagnostic_completed_patches": 56,
+  "gaussian_cpu_diagnostic_completed_at_utc": "2026-10-14T14:59:48.000064+08:00",
+  "gaussian_cpu_diagnostic_summary_sha256": "e510bd8fdecff959c010c2d16f819eee7a96121e4b8b6e1fda79d4d4da0dc8ff",
+  "gaussian_cpu_diagnostic_scope": "immutable epoch070, fixed training28 bank56, two-thread CPU, no model updates",
+  "current_classifier_scope_receipt": "ASOCA_Extension/fidelity_v2/server_records/current_classifier_label_scope_20261014.json",
+  "user_latest_steering": "Explicit human reply: first discuss improvement direction; do not start training. Rotation candidate not selected. No training, upload, diagnostic GPU action, threshold remapping or fivefold automatically.",
+  "baseline_internal4_completed_checkpoints": 20,
+  "latest_baseline_checkpoint_observed": "final",
+  "latest_baseline_checkpoint_dice": 0.818455511253775,
+  "latest_baseline_checkpoint_assd_mm": 0.7492326552685586,
+  "latest_baseline_metrics_role": "fixed-final internal4 development; no superiority or fivefold claim",
+  "label_scale_audit": "ASOCA_Extension/fidelity_v2/server_records/label_scale_audit_20261014",
+  "label_scale_audit_complete": true,
+  "label_scale_inputs": 56,
+  "label_scale_roi_observations": 168,
+  "label_scale_Gaussian_bank_exact_match": true,
+  "label_scale_independent_review": "ASOCA_Extension/fidelity_v2/server_records/snapshot_training_20261014_joint/plots/label_scale_readonly_review.txt",
+  "unified_method_evidence_map": "ASOCA_Extension/fidelity_v2/docs/AEI_unified_GTA_evidence_map_20261014.txt",
+  "gaussian_lambda0_cpu_preflight": "ASOCA_Extension/fidelity_v2/server_records/gaussian_lambda0_cpu_preflight_20261014",
+  "gaussian_lambda0_cpu_reconstruction_done": true,
+  "gaussian_lambda0_reconstructed_states_equal": true,
+  "gaussian_lambda0_reconstructed_tensor_count": 327,
+  "gaussian_lambda0_reconstructed_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+  "actual_historical_main_epoch0_initial_state_verified": false,
+  "gaussian_lambda0_training_started": true,
+  "gaussian_lambda0_launch_decision": "Actual formal25000-update lambda0 run on OLD after56patch diagnostic/source/runtime/donors guards; actual327 initial state and RNG captured. Reuses classifier80 fixed donor; no new pretraining.",
+  "baseline_acceptance_receipt": "ASOCA_Extension\\fidelity_v2\\server_records\\unet_acceptance_20261014\\SINGLE_RUN_VERIFIED.json",
+  "baseline_final_checkpoint_sha256": "a730d5747f3f0f05abf35c4b80578a62ced33ae904221411f6265c7a2c3b875c",
+  "early_final_runtime_preflight": "ASOCA_Extension\\fidelity_v2\\server_records\\early_fixed_final_preflight_20261014",
+  "early_final_cached_CT_cross_server_actual_bytes_equal": true,
+  "early_final_isolated_environment_ready": true,
+  "early_final_mirror_publisher_pid": 17636,
+  "early_final_mirror_publisher_source_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+  "early_final_mirror_launch_verified_utc": "2026-10-14T16:40:04.539286+08:00",
+  "shared_atomic_no_replace_actual_probe_passed": true,
+  "early_fixed_final_inference_started": true,
+  "early_fixed_final_guard_state": "2d7a reviewed guard actual completed4; source/data/header and saved pixels verified; weights unchanged",
+  "early_fixed_final_interrupted_attempt_archive": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/early_preview_controller_attempts/81785_waiting_stop_20261014",
+  "early_fixed_final_active_controller_pid": null,
+  "main_and_canonical_postfit_untouched": true,
+  "main_final_checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "latest_main_fixed_final_metrics_role": "canonical fixed-final internal4 development, independently recomputed; OLD preview decoded pixels and geometry exactly match all4",
+  "latest_main_fixed_final_dice": 0.8318539004693745,
+  "latest_main_fixed_final_assd_mm": 0.5678251259083507,
+  "paired_fixed_final_receipt": "ASOCA_Extension/fidelity_v2/server_records/gta_unet_preview_pair_verified_20261014/paired_comparison.json",
+  "early_fixed_final_completed_case_inferences": 4,
+  "early_final_mirror_publisher_status": "completed; actual shared READY bytes+6payload equality verified",
+  "canonical_internal4_completed_checkpoints": 20,
+  "canonical_internal4_last_checkpoint": "final",
+  "canonical_final_agreement_verified": true,
+  "independent_publication_test_scope": "Fresh anonymous48file public checkout, actual6CLI help and2 untrained32cube CPU forwards on existing matching environment; not fresh dependency install/privatewarmstart or clinical reproduction",
+  "independent_public_source_execution_smoke_receipt": "ASOCA_Extension\\fidelity_v2\\server_records\\public_source_cpu_smoke_actual_20261014\\receipts\\PUBLIC_SOURCE_CPU_SMOKE_COMPLETE.json",
+  "independent_public_source_execution_smoke_receipt_sha256": "7d70e2b5ade9d94123c75d075c82eb7c57b9c25042a6938f217a51c4dac9dddc",
+  "independent_public_source_execution_smoke_CUDA_context_initialized": false,
+  "latest_full_training_curves": "ASOCA_Extension/fidelity_v2/server_records/gta_complete_trajectory_20261014/results/gta_enhanced200x125/learning_curves",
+  "implementation_priority_review": "ASOCA_Extension/fidelity_v2/docs/implementation_priority_review_20261014.txt",
+  "latest_canonical_observed_gpu_pid": null,
+  "current_goal_turn_classification": "NO_PROGRESS: revalidated explicit human hold and completed discussion artifacts; no new experimental direction selected and no substantive independent preparation remains.",
+  "dual_server_policy": {
+    "human_request": "Use both servers concurrently; continue planned work",
+    "new": "B producer completed; await control performance acceptance and scientific phase decision before next training",
+    "old": "Fixed frozen U baseline8 acquisition after actual lambda0 completion, outcomes quarantined",
+    "lambda0_hardware_caveat": "same declared recipe/runtime/compute8.9 but reportedGPU/driver differ; not strict solelyloss causal proof",
+    "no_additional_candidate_without_phase_review": true
+  },
+  "gaussian_region_balance_shadow": {
+    "status": "actual56_completed_downloaded_and5artifact_SHA_verified",
+    "parent_pid": 140178,
+    "source_sha256": "a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137",
+    "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014",
+    "actual_torch_fixture_cases": 5,
+    "record_root": "ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_actual_20261014",
+    "actual_state_unchanged": true,
+    "actual_no_optimizer": true,
+    "A_total_logit_norm_ratio_to_segmentation": 0.00781374116293236,
+    "B_total_logit_norm_ratio_to_segmentation": 3.0684820977009544,
+    "B_margin_norm_ratio_to_segmentation": 1.4227310237658277
+  },
+  "latest_main_gaussian_shadow_decision": "Actual initial AMP28 parameter-gradient evidence reviewed: all finite, B clip12 implied5/28 and weaker positive shared-gradient cosine; one unchanged-budget B formal trial authorized with known clipping risk. This is not demonstrated performance or whole-run stability.",
+  "gaussian_lambda0_control": {
+    "status": "producer_completed_released_actual_observed_pending_capture_and_CPU_acceptance",
+    "controller_pid": 140646,
+    "child_pid": 140854,
+    "controller_sha256": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040",
+    "launch_utc": "2026-10-14T18:14:14.065076+08:00",
+    "training_started_utc": "2026-10-14T18:15:10.755882+08:00",
+    "records": "ASOCA_Extension\\fidelity_v2\\server_records\\lambda0_actual_launch_20261014",
+    "actual_initial_model_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+    "actual_initial_model_matches_expected_CPU_rebuild": true,
+    "actual_historical_main_initial_state_verified": false,
+    "formal_training_complete": true,
+    "completed_epochs_at_last_check": 200,
+    "owned_parent_and_child_alive_verified": false,
+    "observed_GPU_pid": null,
+    "last_verified_utc": "2026-10-15T14:30:33.709622+08:00",
+    "latest_epoch_loss": 0.3358506358861923,
+    "latest_epoch_stage": "joint",
+    "latest_epoch_gaussian_weighted": 0.0,
+    "latest_epoch_segmentation_optimizer_group_gradient_norm": 1.23591119492054,
+    "progress_packet": "ASOCA_Extension/fidelity_v2/server_records/dual_control_progress_snapshots/20261014T113947_129773Z/17552.json",
+    "latest_epoch_classifier_gradient_norm": 2.8481100902557372,
+    "partial_stage_actual_gradient_verified": true,
+    "joint_stage_actual_gradient_verified": true
+  },
+  "historical_completed_stage_controller_pids": {
+    "main": 1921,
+    "baseline": 108861,
+    "canonical_postfit": 7223
+  },
+  "latest_lambda0_verified_utc": "2026-10-15T14:30:33.709622+08:00",
+  "region_balance_candidate": {
+    "status": "producer_completed_released_actual_observed_pending_capture_and_CPU_acceptance",
+    "training_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "only_code_delta": "losses.py",
+    "code_package_files": 28,
+    "unchanged_files": 27,
+    "protocol": "ASOCA_Extension/fidelity_v2/variants/gaussian_region_balance_v1/protocol.json",
+    "actual_candidate_torch_fixture_done": true,
+    "actual_initial_parameter_gradient_diagnostic_done": true,
+    "controller_pid": 32758,
+    "child_pid": 32897,
+    "observed_GPU_pid": null,
+    "owned_parent_and_child_alive_verified": false,
+    "completed_epochs_at_last_check": 200,
+    "last_verified_utc": "2026-10-15T14:30:16.702741+08:00",
+    "latest_epoch_loss": 0.35583756589889526,
+    "latest_epoch_stage": "partial",
+    "latest_epoch_gaussian_weighted": 0.021791647294536233,
+    "latest_epoch_segmentation_optimizer_group_gradient_norm": 3.8110170769691467,
+    "formal_training_complete": true,
+    "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+    "actual_initial_model_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+    "actual_historical_main_initial_state_verified": false,
+    "actual_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+    "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+    "records": "ASOCA_Extension/fidelity_v2/server_records/B_formal_launch_20261014",
+    "actual_startup_receipt": "ASOCA_Extension/fidelity_v2/server_records/B_formal_launch_20261014/actual_startup/capture_complete.json",
+    "progress_packet": "ASOCA_Extension/fidelity_v2/server_records/dual_control_progress_snapshots/20261014T114448_812572Z/38773.json",
+    "latest_epoch_classifier_gradient_norm": 2.9056989698410036,
+    "partial_stage_actual_gradient_verified": true
+  },
+  "canonical_internal4_completed_case_inferences": 80,
+  "canonical_complete_capture_files": 240,
+  "canonical_acceptance_receipt": "ASOCA_Extension/fidelity_v2/server_records/gta_canonical_acceptance_20261014/canonical_acceptance_and_pair.json",
+  "latest_B_verified_utc": "2026-10-15T14:30:16.702741+08:00",
+  "updated_at_utc": "2026-10-15T07:52:14.876349+00:00",
+  "classifier_final_cpu_audit": {
+    "status": "actual56_complete_independently_recalculated",
+    "record_root": "ASOCA_Extension/fidelity_v2/server_records/classifier_final_cpu_actual_20261014",
+    "independent_review": "ASOCA_Extension/fidelity_v2/server_records/classifier_final_independent_review_20261014/review.json",
+    "nonempty_patches": 49,
+    "main200_predicted_empty_generation_structure_location": [
+      2,
+      0,
+      1
+    ],
+    "main200_condition_trigger_counts_generation5plus_structure3_location_non0": [
+      7,
+      10,
+      48
+    ],
+    "accuracy_role": "analysis_only_not_segmentation_success_or_selection"
+  },
+  "initial_parameter_gradient_audit": {
+    "status": "actual28_B2_AMP_batches_complete_independently_recalculated",
+    "record_root": "ASOCA_Extension/fidelity_v2/server_records/initial_parameter_gradient_actual_20261014",
+    "independent_review": "ASOCA_Extension/fidelity_v2/server_records/initial_parameter_gradient_independent_review_20261014/review.json",
+    "A_clip12_implied_batches": 0,
+    "B_clip12_implied_batches": 5,
+    "batches": 28,
+    "all_gradient_values_finite": true,
+    "optimizer_updates": 0,
+    "state_restored_between_batches": true,
+    "historical_A_theta0_verified": false
+  },
+  "independent_full_trajectory_comparison": "ASOCA_Extension/fidelity_v2/server_records/trajectory_comparative_review_20261014/review.json",
+  "longer_A_training_decision": "Do not extend A directly: complete20-point internal4 trajectory late160-200 Dice82.840363-83.185390%,ASSD0.562398-0.656950mm shows no sustained dual-metric improvement; D20 worsens160-to200. This does not prove convergence or future extension failure. Fixedfinal200 retained.",
+  "latest_dual_server_progress_receipt": "ASOCA_Extension/fidelity_v2/server_records/dual_control_progress_snapshots/20261015T062955_404096Z/manifest.json",
+  "completed_control_collection_helper": {
+    "path": "ASOCA_Extension/ops/collect_completed_gaussian_control.py",
+    "source_sha256": "b824932b176c1e9016e494f9f6404391431fdc135fdfee8fc9b7c6799a064b93",
+    "status": "Actual B253 and lambda0250 file captures completed; no repeated collection required",
+    "default_wait_seconds": 0,
+    "kind_ports": {
+      "B": 38773,
+      "lambda0": 17552
+    },
+    "actual_completion_contract": "own CONTROL_COMPLETE plus STATUS completed/released plus own POSTFIT_VERIFIED20/80; controls do not produce main POSTFIT_STATUS",
+    "captured_status": "pending independent CPU acceptance, never equate capture with final pixel verification"
+  },
+  "control_CPU_acceptance_preparation": {
+    "status": "actual completed for B and lambda0",
+    "path": "ASOCA_Extension/fidelity_v2/ops/verify_completed_gaussian_control.py",
+    "sha256": "c4965b707e2a32b240170fd2d01c2c34ef6164f5590e7cd54ccffae6184f7210",
+    "actual_acceptance_performed": true,
+    "future_actual_command": "python -B ASOCA_Extension/fidelity_v2/ops/verify_completed_gaussian_control.py --kind B --raw-root 'E:/00-Data/冠状动脉-ASOCA/CompressedVersion'",
+    "lambda0_command": "same command with --kind lambda0",
+    "requires": "genuinely completed captures, fixedfinal control+A+U12 patient pixel recalculations, full control20/80 metadata+allSHA/GT/grid/curves, full sealed B28 source, independent run labels, null distance completeness"
+  },
+  "gaussian_control_postfit_selection": {
+    "path": "ASOCA_Extension/fidelity_v2/docs/gaussian_control_postfit_selection_20261014.txt",
+    "sha256": "a4793d03d6260c47bd5921a5b8b1ecb4044b6652221cbe0def96b60a98df7bff",
+    "recorded_before_control_validation_results": true,
+    "fixed_final_only": true,
+    "no_structural_regularization_success_claim_from_lambda0": true,
+    "no_automatic_extra_candidate_or_fivefold": true
+  },
+  "next_meaningful_stage_observations": "Actual completed control20/80 byte capture/CPU pixels; OLD U8 owned process or terminal receipt, no outcomes before GTA freeze.",
+  "public_documentation_update": {
+    "commit": "7d211392d02e7f3175b3cac827ca31e85e5a7951",
+    "parent": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+    "only_changed_files": [
+      "README.md",
+      "PUBLIC_RELEASE_NOTES.md",
+      "configs/scientific_settings.json",
+      "PUBLIC_SOURCE_PROVENANCE.json"
+    ],
+    "aggregate_internal4_A_U_only": true,
+    "B_code_or_results_published": false,
+    "public_package_sha256_excluding_manifest": "d2e113c5dbdeed308e18f996807ff8187913bba0e7fc6bd4718e8cd6381ba960",
+    "anonymous_all48_bytes_verified": true,
+    "publication_transport": "existing authenticated Git non-force fast-forward; GitHub connector contents write403, no permission prompt required or bypassed",
+    "independent_local_content_source_hash_and_secret_review_passed": true
+  },
+  "verified_A_U_comparison_figure": {
+    "directory": "ASOCA_Extension/fidelity_v2/server_records/trajectory_comparison_figure_20261014",
+    "formats": [
+      "PNG",
+      "SVG",
+      "PDF"
+    ],
+    "n_actual_points": 40,
+    "source": 2,
+    "source_and_artifact_SHA_verified": true,
+    "visual_reviewed": true,
+    "independent_review_passed": true,
+    "role": "internal4 descriptive development; no extra measurements, no CIs; log full ASSD and linear late ASSD; different initialization/pretraining disclosed"
+  },
+  "qualitative_actual_saved_prediction_diagnostic": {
+    "directory": "ASOCA_Extension/fidelity_v2/server_records/paired_qualitative_D10_D20_20261014",
+    "manifest_sha256": "b7cbb409dec4a42f5abe7363562d710145877f0f4fc0663163e8c02e24fb1eb8",
+    "cases": [
+      "Diseased_10",
+      "Diseased_20"
+    ],
+    "full_native_foreground_preserved": true,
+    "binary_occupancy_projections_only": true,
+    "metrics": "previously accepted full3D pixels; no new2D metrics or causal/topology/clinical claim",
+    "published_to_GitHub": false,
+    "root_visual_reviewed_both": true,
+    "independent_visual_review_passed": true
+  },
+  "unet_outer8_baseline_only": {
+    "ROOT_launch_command": "ASOCA_Extension/ops/launch_unet_outer8_baseline_only_20261015.txt",
+    "actual_verified_utc": "2026-10-15T14:37:28.412247+08:00",
+    "plan_sha256": "27ae698cf9faa357b84408058455ea6c15bcc2dca11c185a649f643f9b4b93e3",
+    "controller_pid": null,
+    "controller_sha256": "7410b8d02e1c1447f696a3efe3e602e1fad938356e89b61373851b76bcd5895c",
+    "GTA_outer8_authorized": false,
+    "new_outer8_outcomes_observed": true,
+    "original_U_environment": true,
+    "evaluator_pid": null,
+    "status": "actual completed8; direct evaluator output read after Bfreeze",
+    "production_dependency_ready_passed_before_launch": true,
+    "observed_GPU_pid": null,
+    "automatic_unseal": false,
+    "dice": 0.7988390564127386,
+    "assd_mm": 1.1786915457085883,
+    "report": "ASOCA_Extension/fidelity_v2/server_records/outer8_U_report_20261015"
+  },
+  "collector_actual_sessions": {
+    "status": "both completed exit0; no active collection handles"
+  },
+  "latest_control_server_reported_metrics": {
+    "checkpoint": "fixed200final",
+    "role": "Now confirmed by completed CPU acceptance; no further repeat needed",
+    "new_recipe_frozen": true,
+    "case_count": 4,
+    "new_training_launched": false,
+    "B_vs_A": {
+      "ASSD_improved_cases": 3,
+      "Dice_improved_cases": 1,
+      "dice_delta_percentage_points": -0.05816594164268,
+      "assd_delta_mm": -0.08569101728121
+    },
+    "lambda0": {
+      "dice": 0.8312417096001634,
+      "assd_mm": 0.5991766320314929
+    },
+    "B": {
+      "dice": 0.8312722410529477,
+      "assd_mm": 0.4821341086271393
+    }
+  },
+  "human_stage_report_request": "Report stage analysis in current conversation for discussion of next steps; no new GTA launch.",
+  "phase_recommendation_pending_acceptance": "If pixel acceptance preserves reported metrics, consider explicitly freezing B for exposed8 development with disclosed Dice/ASSD tradeoff; no automatic winner or new training. Maintain running inference/transfers.",
+  "exploration_workflow_user_instruction": "2026-10-15: Stop repetitive checks/recalculations of already produced results. Configure accurately upfront, reuse established evaluator outputs. Only investigate errors/protocol changes; focus on exploration/performance.",
+  "control_CPU_acceptance_receipts": {
+    "B": "ASOCA_Extension/fidelity_v2/server_records/B_fixed_final4_acceptance_20261014/acceptance.json",
+    "lambda0": "ASOCA_Extension/fidelity_v2/server_records/lambda0_fixed_final4_acceptance_20261014/acceptance.json"
+  },
+  "B_outer8": {
+    "status": "complete_eight_case_evaluator_output_read",
+    "controller_pid": null,
+    "launch_utc": "2026-10-15T06:56:50.317613+00:00",
+    "freeze_sha256": "7b934628d0183227109358c373dcfd3acaa95295be95fdb8009848d7b506a07f",
+    "final_sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4",
+    "controller_source_sha256": "7536b82b207c9a19e659b28f52e097036ba1ab3b27e2394e4ad9ac958ab3ef59",
+    "training": false,
+    "no_repeated_pixel_audit": true,
+    "evaluator_pid": null,
+    "observed_GPU_pid": null,
+    "last_live_verified_utc": "2026-10-15T07:06:30.444626+00:00",
+    "dice": 0.802043671586355,
+    "assd_mm": 1.1221418915487624,
+    "result_report": "ASOCA_Extension/fidelity_v2/server_records/outer8_B_report_20261015"
+  },
+  "single_fold_next_phase": {
+    "current_legacy_recipe": "28train/4internal/8outerdevelopment",
+    "direction_communicated": "32/8 remains prospective split, but +4 cases alone is not an improvement hypothesis; USER stopped blind U32/B32 and proposedC32 long training. Decide only afterB8+fullreview.",
+    "new32_training_started": false,
+    "current_B8_task": "finish as28-trained reference before new32 phase",
+    "core_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "no_independent_test_claim_for_repeatedly_tuned8": true
+  },
+  "new_training_or_diagnostics_on_hold_until_review": true,
+  "prepared_unexecuted_files": [
+    "ops/run_train32_fixed_final8_20261015.py",
+    "ops_inputs/train32_unet_recipe_20261015.json",
+    "ops_inputs/train32_B_recipe_20261015.json"
+  ],
+  "C_logit_centering_status": "Proposed hypothesis only; no code variant, training, or new diagnostic executed. Need review actual trainedB rather than infer success from older A/initial probes.",
+  "outer8_pair": {
+    "U_dice": 0.7988390564127386,
+    "B_dice": 0.802043671586355,
+    "U_assd_mm": 1.1786915457085883,
+    "B_assd_mm": 1.1221418915487624,
+    "dice_delta_pp": 0.32046151736164763,
+    "assd_delta_mm": -0.056549654159825824,
+    "Dice_improved_cases": 2,
+    "ASSD_improved_cases": 4,
+    "n_cases": 8,
+    "role": "previously exposed development; same28trained; coldU vs pretrainedGTA not module-only attribution"
+  },
+  "retrospective": "ASOCA_Extension/fidelity_v2/docs/stage_retrospective_20261015.txt",
+  "actual_completed_training_count": {
+    "segmentation": 8,
+    "classifier_pretraining": 1,
+    "new32_training": 0,
+    "C_or_new_diagnostic": 0
+  },
+  "key_updated_inference": "D1 commonprecision~.52 withrecall~.89 indicates major falsepositive issue; not simply thinbranchrecall. ActualB late40epoch mainlogit Gaussian/seg normmedian.972,cosmedian-.00854,19/20negative; not fullparameter proof and not universalweakregularization. OldA/initialshadow cannot substitute fortrainedBdiagnosis.",
+  "postretrospective_short_analysis": {
+    "existing_predictions": 4,
+    "cases": [
+      "Diseased_1",
+      "Normal_16"
+    ],
+    "CPU_seconds": 7.3,
+    "output": "ASOCA_Extension/fidelity_v2/server_records/outer8_falsepositive_components_20261015",
+    "new_Dice_ASSD_computation": false,
+    "model_forward": false,
+    "B_FP_fraction_in_largest_two_components": [
+      0.8067,
+      0.885
+    ],
+    "result": "Simple island removal cannot eliminate main FP;26connected isnotclinicalanatomical proof."
+  },
+  "new_static_recipe_finding": {
+    "fact": "BothGTAandPlainUNetCohortDataset useintensityaugmentationonly; spatialaugmentation disabledbecausepositionlabel concern",
+    "evidence": [
+      "code/data.py:109-114",
+      "code/classification_data.py:101-116",
+      "code/train.py:218-220"
+    ],
+    "qualification": "Possible sharedgeneralizationconstraint, not proved cause. LocationlabelispatchcenterfullCTcoordinatebin, notcontentorientation. Cubic isotropic exact90rotation preservescurrent scalarattributes ifallimage/label/Gfield permutedtogether; arbitraryaffine/cropsdonot necessarily preserve labels. No code changed or run."
+  },
+  "context_rotation_probe": {
+    "local": "ASOCA_Extension/fidelity_v2/server_records/context_rotation_probe_20261015",
+    "protocol": "ops_inputs/context_rotation_protocol_20261015.json",
+    "U_seconds": 4.272846207022667,
+    "B_seconds": 6.791562892496586,
+    "model_updates": 0,
+    "samples_per_model": 4,
+    "new_whole8_metrics": false,
+    "source": "ops/probe_context_rotation_20261015.py",
+    "outputs": [
+      "U.json",
+      "B.json",
+      "notes.txt"
+    ],
+    "limits": "selectedlocalpatches, not population or retrainingeffect; exactcaseGTusedonlydiagnosis"
+  },
+  "rotation_consistent_preparation": {
+    "status": "local_code_prepared_semantics_passed_not_trained",
+    "directory": "ASOCA_Extension/fidelity_v2/variants/rotation_consistent_v1",
+    "base": "sealed gaussian_region_balance_v1",
+    "modified_code_files": [
+      "classification_data.py",
+      "train.py",
+      "pretrain_classifier.py"
+    ],
+    "default": "none",
+    "optional_mode": "xy90",
+    "semantic_check": "ASOCA_Extension/fidelity_v2/variants/rotation_consistent_v1/ops/semantic_validation.txt",
+    "check_scope": "synthetic patch_priors and actual dataset wrapper; no real images, model, GPU, training or performance evidence",
+    "uploaded": false,
+    "training_started": false,
+    "scientific_status": "candidate preparation only, not selected method; orientation-sensitive existing classifier donor needs consideration before any augmented GTA training",
+    "proposal": "ASOCA_Extension/fidelity_v2/variants/rotation_consistent_v1/experiment_proposal_20261015.json",
+    "scientific_review": "Frozen classifier eval policy makes consistent prior pretraining preferable to main-training-only augmentation. Same original donor and 80x64 budget, fixed final; no guarantee of efficacy and no module-only causal claim.",
+    "user_decision": "not selected; user requested discussion first and no training"
+  },
+  "method_condition_semantics_review": {
+    "structure": "original and ASOCA:3 simple bifurcation,4-6 more complex multibranch;==3 extra0.1 morphology and1.3 sample weight is historical specificity; all retain basefusion/morphology",
+    "generation": "dominant branch depth>=6 triggers classes5/6; no radius in target; not proof of thinness",
+    "location": "adapted fullCT patch-center geometry proxy; learned category experts do not hardcode clinical side",
+    "gradient": "class decision probs/argmax detached; trainable classifier feature paths still can receive segmentation gradients",
+    "status": "static facts and discussion only; no efficacy claim or code change",
+    "original_metadata": "E:/01-投稿备份/投稿备份2411-NeurIPS 2025/ICME-GTAirway-main-BAS/ICME-GTAirway-main-BAS/dataset_pre/AirwayMetadataGenerator.py:287"
+  },
+  "blocked_audit": {
+    "condition": "Human requested full retrospective and discussion before selecting further experiments, then explicitly chose no training. No further direction has been selected.",
+    "consecutive_goal_turns": 3,
+    "turn_evidence": [
+      "Continuation after retrospective: exact optional experiment proposal prepared and human decision requested; no experiment selected.",
+      "Following continuation with human reply: human chose discussion/no training; original-source semantic review completed and reported.",
+      "Current continuation: same hold remains authoritative; discussion and candidate artifacts exist, no new human direction, no necessary independent work remains before the experimental choice."
+    ],
+    "impasse": "Competitive performance and final method require an experimental direction; launching training or substituting new investigations now would bypass the requested discussion. Further status or document rewrites would be busywork.",
+    "objective_complete": false,
+    "resume": "Continue when human gives the next methodological direction or authorizes the selected experiment; preserve all checkpoints, results and candidate code."
+  }
+}

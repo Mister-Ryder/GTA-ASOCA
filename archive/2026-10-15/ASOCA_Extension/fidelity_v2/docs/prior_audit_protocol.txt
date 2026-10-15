@@ -1,0 +1,120 @@
+Training-only prior audit before selecting GTA fidelity-v2 label definitions
+2026-10-14
+
+Purpose and ownership
+  code/audit_priors.py reads the existing complete cache and frozen training
+  split. It changes no image, label, auxiliary cache, model, trainer or loss.
+  It needs numpy/scipy only; torch, GPU access and external services are unused.
+  Findings concern the three auxiliary seven-way patch labels. They are not
+  semantic coronary segmentation subclasses or evidence of clinical benefit.
+  For the AEI experiment, Dice and ASSD are the primary segmentation endpoints.
+  ASSD is a boundary-distance measure, not a connectivity metric. clDice and
+  skeleton measurements are diagnostic and do not replace those endpoints.
+
+Run on the server using its existing experiment Python environment
+  python fidelity_v2/code/audit_priors.py --manifest cache/manifest.json
+    --output fidelity_v2/docs/prior_audit_fold0 --fold 0 --samples 384
+    --sampling balanced --seed 20261013 --epoch 0 --patch-size 96
+
+Optional matched two-policy descriptive audit, still384 patches TOTAL
+  python fidelity_v2/code/audit_priors.py --manifest cache/manifest.json
+    --output fidelity_v2/docs/prior_audit_fold0_two_policies --samples 384
+    --sampling both --fold 0 --seed 20261013 --patch-size 96
+  This divides the budget into192 geometric-balanced and192 conventional
+  foreground/uniform patches. Their rates are reported separately; pooling
+  does not describe either training sampler's population distribution.
+
+Population, grain and leakage control
+  Only the32 training patients in the frozen fold are read. The8 development
+  validation patient IDs are recorded as excluded. No held-out arrays are read.
+  The sampler is the copied, unmodified PatchDataset with augment=False and
+  return_tensors=False. Index, epoch, seed and sampling policy fix each patch.
+  Patch and centreline observations overlap and are not independent patients.
+  Duplicate case/start combinations and absent sampled cases are explicit.
+  Full-volume centreline geometry is also profiled across all32 training cases.
+  The default cap20,000 points per case usually retains all centreline points;
+  a deterministic cap is recorded if needed.
+
+Checks and inspectable outputs
+  prior_audit.json: complete protocol/provenance, summaries, denominators and
+  limitations. audit_identity.json prevents mixing different audit settings.
+  patch_prior_audit.csv: one row per sampled patch, all three class targets,
+  sampling stratum, foreground support, branch count, dominant graph depth,
+  physical radius, skeleton/junction support, padding and image-only HU stats.
+  head_distribution.csv: all seven classes, including unused classes, with
+  patch counts, fractions and the number of supporting patients.
+  case_prior_distribution.csv: each case/head/class distribution and its
+  observed majority class; this exposes case-specific class imbalance.
+  case_geometry_audit.csv: physical FOV, graph depth/roots, within-case radius
+  correlation and the existing thin-sampling cutoff.
+  train_centerline_depth_radius.csv: sampled physical radius/depth observations.
+  hu_loco_predictions.csv: training-cohort leave-one-case-out proxy predictions.
+
+Generation/order versus calibre
+  Current index0 means empty; index1 corresponds to raw depth0, index2 depth1,
+  index3 depths2..3, index4 depths4..5, index5 depths6..8, index6 depths>=9.
+  Thus the existing guidance rule head_class>=5 is raw_depth>=6; it is NOT the
+  same as raw_depth>=5. Both are separately compared with radius<=1mm by default.
+  Radius is physical EDT radius at the centreline, not the median of foreground
+  wall voxels. Patch-local dominant-branch radius and whole-branch centreline
+  median radius are kept distinct. The latter supports branch-level comparisons
+  even when a patch cuts the vessel wall without its centreline.
+  Correlations are descriptive, with pooled and per-patient results. No p-value
+  treats thousands of correlated voxels as thousands of independent patients.
+  Roots were selected using maximum radius, so any order-radius association is
+  partly built into the label generator and is not independent anatomical truth.
+
+Structure/bifurcation validity
+  Current structure3 derives from branch-ID count and volume complexity; several
+  branches can lie in a patch without a local junction. Audit uses the unchanged
+ 26-neighbour skeleton with a one-voxel halo, so degrees see outside-patch
+  neighbours. It counts junction-cluster portions intersecting the patch.
+  Results show the fraction of each structure class with zero or one junction,
+  and distinguish structure==3 from structure>=3. A cluster touching a patch
+  boundary can be partial. These are geometric junctions, not annotated clinical
+  coronary bifurcation identities.
+
+Location/FOV sensitivity and image-only probes
+  The label is 0empty plus z-tertile x x-half, based on patch centre and total
+  scan array shape. It is not a named coronary location or a registered atlas.
+  Adding20mm before/after z/x changes only the hypothetical FOV and its index
+  origin; image content and patient/world location are held fixed. The resulting
+  flip rate proves coordinate-definition sensitivity, not an observed scanner
+  intervention. Vessel-centroid versus patch-centre labels are also compared.
+  Majority and nearest-centroid probes use exactly the same whole-patch HU
+  moments/histogram for all three heads. Foreground-only HU statistics, masks,
+  global coordinates, case ID, FOV and prior maps are excluded from input features.
+  Scaling and centroids are estimated only on other training patients in each
+  leave-one-case-out iteration. Accuracy, observed-class balanced accuracy,
+  nonempty accuracy and full confusion matrices are recorded.
+  A useful HU proxy or a weak proxy does not prove that a neural classifier can
+  or cannot learn these labels. Only later classifier validation can assess that.
+
+Minimal repair recommendations, conditional on the actual audit
+  First retain the three-head/seven-class architecture and perform its original
+  classifier-pretraining/segmentation-staging workflow using meaningful targets.
+  Do not silently call graph-depth categories calibre or scan regions anatomy.
+  If depth>=6 does not reliably identify narrow branches, avoid using its index
+  as an unverified thin-vessel boost. A subsequent version can define six scale
+  strata from existing training-only physical radii while preserving0empty and
+  the same7-output head; thresholds and version must be recorded before testing.
+  If structure3 often contains no junction, the smallest target correction is
+  to use existing local skeleton junction evidence for that category and retain
+  the tube/cross-section and complexity family. Do not rewrite cache blindly.
+  If location labels show substantial FOV flips or weak cross-patient diagnostic
+  support, retain the head but call it scan-relative spatial context; do not
+  claim a reliable anatomical region expert. Target registration/conditioning
+  choices require a separate train-only decision, not an arbitrary new backbone.
+  Do not create empty or vanishingly rare bins merely to keep seven indices;
+  inspect supporting patient counts as well as patch counts before revisions.
+  All target-definition changes must be versioned and retrained from scratch.
+  Their effect is judged on Dice/ASSD under the fixed development protocol,
+  not by maximizing a proxy classifier score or a topology diagnostic alone.
+
+Verification and current evidence limits
+  The script compiles and its CLI imports/runs locally without torch. Actual
+  cache arrays are on the server; root coordinates execution and evidence export.
+  The locally archived manifest shows training maximum depths4..14:24 of32
+  cases reach raw depth>=6 and7 reach depth>=9. This is only possible class
+  support; it does not establish the dominant-patch frequencies or thinness.
+  No numerical patch-audit findings are claimed before the script runs.

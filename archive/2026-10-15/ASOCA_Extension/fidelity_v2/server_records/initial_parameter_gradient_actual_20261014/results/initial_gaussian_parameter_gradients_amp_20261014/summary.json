@@ -1,0 +1,1805 @@
+{
+  "role": "ACTUAL_INITIAL_TRAINMODE_PARAMETER_DIAGNOSTIC_NOT_MODEL_RESULTS",
+  "precision": "amp",
+  "n_batches": 28,
+  "n_patches": 56,
+  "initial_state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+  "historical_main_theta0_verified": false,
+  "parameter_updates": false,
+  "optimizer_created": false,
+  "parameter_grad_populated": false,
+  "held_out_GT_read": false,
+  "diagnostic_copy_buffers_may_change_during_forward": true,
+  "diagnostic_copy_restored_to_initial_at_end": true,
+  "nonfinite_batches": [],
+  "batches_implying_clip12": {
+    "totalA": [],
+    "totalB": [
+      8,
+      12,
+      19,
+      21,
+      23
+    ]
+  },
+  "top5_small_positive_FG_patches": [
+    {
+      "batch": 23,
+      "patch_in_batch": 1,
+      "case_id": "Normal_9",
+      "index": 80,
+      "foreground_voxels": 120
+    },
+    {
+      "batch": 3,
+      "patch_in_batch": 1,
+      "case_id": "Normal_1",
+      "index": 8,
+      "foreground_voxels": 196
+    },
+    {
+      "batch": 21,
+      "patch_in_batch": 0,
+      "case_id": "Diseased_12",
+      "index": 63,
+      "foreground_voxels": 217
+    },
+    {
+      "batch": 13,
+      "patch_in_batch": 1,
+      "case_id": "Diseased_19",
+      "index": 41,
+      "foreground_voxels": 243
+    },
+    {
+      "batch": 5,
+      "patch_in_batch": 1,
+      "case_id": "Diseased_16",
+      "index": 12,
+      "foreground_voxels": 305
+    }
+  ],
+  "top5_batch_observations": [
+    {
+      "batch": 23,
+      "samples": [
+        {
+          "index": 75,
+          "case_id": "Normal_4"
+        },
+        {
+          "index": 80,
+          "case_id": "Normal_9"
+        }
+      ],
+      "foreground_voxels": [
+        4108,
+        120
+      ],
+      "losses": {
+        "segmentation": 1.8526207208633423,
+        "A": 0.0508614256978035,
+        "B": 0.256776362657547,
+        "totalA": 1.90348219871521,
+        "totalB": 2.1093971729278564
+      },
+      "parameter_group_metrics": {
+        "segmentation_network": {
+          "finite": true,
+          "energy": {
+            "segmentation": 4.8768188442247515,
+            "A": 2.3754635986113604,
+            "B": 147.62553300022518,
+            "totalA": 9.152918395322795,
+            "totalB": 154.55167734331303
+          },
+          "norms": {
+            "segmentation": 2.2083520652796174,
+            "A": 1.5412539046540517,
+            "B": 12.150124814182988,
+            "totalA": 3.0253790498585125,
+            "totalB": 12.431881488467988
+          },
+          "gaussian_dot_seg": {
+            "A": 0.9497222178797923,
+            "B": 1.0347897139340838
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 54,
+              "nonzero": 148
+            },
+            "A": {
+              "unused_None": 58,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 58,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 54,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 54,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.27903205428138284,
+          "A_over_seg_norm": 0.6979203764137586,
+          "A_direct_vs_sum_relative_residual": 0.0009675140299841498,
+          "cos_B_seg": 0.03856586281139029,
+          "B_over_seg_norm": 5.501896642845561,
+          "B_direct_vs_sum_relative_residual": 0.00026806442980082475
+        },
+        "classifier": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0,
+            "B": 0,
+            "totalA": 0,
+            "totalB": 0
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.0,
+            "B": 0.0,
+            "totalA": 0.0,
+            "totalB": 0.0
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 0
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "Gaussian_head": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0.4635304370895028,
+            "B": 2.376457292586565,
+            "totalA": 0.4635304370895028,
+            "totalB": 2.376457292586565
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.6808306963478533,
+            "B": 1.541576236384878,
+            "totalA": 0.6808306963478533,
+            "totalB": 1.541576236384878
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 2,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 2
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "main_segmentation_optimizer_group": {
+          "finite": true,
+          "energy": {
+            "segmentation": 4.8768188442247515,
+            "A": 2.838994035700863,
+            "B": 150.00199029281174,
+            "totalA": 9.616448832412297,
+            "totalB": 156.9281346358996
+          },
+          "norms": {
+            "segmentation": 2.2083520652796174,
+            "A": 1.6849314632058074,
+            "B": 12.247529967010154,
+            "totalA": 3.101039959821914,
+            "totalB": 12.527096017669043
+          },
+          "gaussian_dot_seg": {
+            "A": 0.9497222178797923,
+            "B": 1.0347897139340838
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "A": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "B": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "totalA": {
+              "unused_None": 54,
+              "nonzero": 150
+            },
+            "totalB": {
+              "unused_None": 54,
+              "nonzero": 150
+            }
+          },
+          "cos_A_seg": 0.2552384192331345,
+          "A_over_seg_norm": 0.7629813604890326,
+          "A_direct_vs_sum_relative_residual": 0.0009371732763775407,
+          "cos_B_seg": 0.03825914678202163,
+          "B_over_seg_norm": 5.546004262440552,
+          "B_direct_vs_sum_relative_residual": 0.0002661508350472838
+        },
+        "all_trainable": {
+          "finite": true,
+          "energy": {
+            "segmentation": 4.8768188442247515,
+            "A": 2.838994035700863,
+            "B": 150.00199029281174,
+            "totalA": 9.616448832412297,
+            "totalB": 156.9281346358996
+          },
+          "norms": {
+            "segmentation": 2.2083520652796174,
+            "A": 1.6849314632058074,
+            "B": 12.247529967010154,
+            "totalA": 3.101039959821914,
+            "totalB": 12.527096017669043
+          },
+          "gaussian_dot_seg": {
+            "A": 0.9497222178797923,
+            "B": 1.0347897139340838
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "A": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "B": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "totalA": {
+              "unused_None": 54,
+              "nonzero": 150
+            },
+            "totalB": {
+              "unused_None": 54,
+              "nonzero": 150
+            }
+          },
+          "cos_A_seg": 0.2552384192331345,
+          "A_over_seg_norm": 0.7629813604890326,
+          "A_direct_vs_sum_relative_residual": 0.0009371732763775407,
+          "cos_B_seg": 0.03825914678202163,
+          "B_over_seg_norm": 5.546004262440552,
+          "B_direct_vs_sum_relative_residual": 0.0002661508350472838
+        }
+      },
+      "FP32_global_direct_norms": {
+        "segmentation": 2.2083520889282227,
+        "A": 1.6849315166473389,
+        "B": 12.247529983520508,
+        "totalA": 3.1010401248931885,
+        "totalB": 12.527095794677734
+      },
+      "nonfinite_parameter_names": {
+        "segmentation": [],
+        "A": [],
+        "B": [],
+        "totalA": [],
+        "totalB": []
+      },
+      "nonfinite_global_norm_objectives": [],
+      "implied_clip12_factors": {
+        "totalA": 1.0,
+        "totalB": 0.9579234675586066
+      },
+      "clip_applied": false,
+      "AMP_derivative_scale_removed": 1024.0,
+      "BN_or_other_buffers_changed_in_diagnostic_copy": [
+        "location_guidance.transform.1.running_mean",
+        "location_guidance.transform.1.running_var",
+        "location_guidance.transform.1.num_batches_tracked",
+        "location_guidance.fusion.1.running_mean",
+        "location_guidance.fusion.1.running_var",
+        "location_guidance.fusion.1.num_batches_tracked",
+        "structure_guidance.transform.1.running_mean",
+        "structure_guidance.transform.1.running_var",
+        "structure_guidance.transform.1.num_batches_tracked",
+        "structure_guidance.fusion.1.running_mean",
+        "structure_guidance.fusion.1.running_var",
+        "structure_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.transform.1.running_mean",
+        "generation_guidance.transform.1.running_var",
+        "generation_guidance.transform.1.num_batches_tracked",
+        "generation_guidance.fusion.1.running_mean",
+        "generation_guidance.fusion.1.running_var",
+        "generation_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.generation_enhance.1.running_mean",
+        "generation_guidance.generation_enhance.1.running_var",
+        "generation_guidance.generation_enhance.1.num_batches_tracked",
+        "anatomical_output_fusion.1.running_mean",
+        "anatomical_output_fusion.1.running_var",
+        "anatomical_output_fusion.1.num_batches_tracked"
+      ],
+      "one_region_patch_checks": [],
+      "peak_GPU_GiB": 15.048965454101562,
+      "Gaussian_head_energy_share_and_clipped_shared_norm": {
+        "A": {
+          "Gaussian_head_direct_total_energy_share": 0.04820183054758954,
+          "shared_segmentation_direct_total_norm": 3.0253790498585125,
+          "implied_clipped_shared_segmentation_norm": 3.0253790498585125
+        },
+        "B": {
+          "Gaussian_head_direct_total_energy_share": 0.015143602503785296,
+          "shared_segmentation_direct_total_norm": 12.431881488467988,
+          "implied_clipped_shared_segmentation_norm": 11.908791023710906
+        }
+      }
+    },
+    {
+      "batch": 3,
+      "samples": [
+        {
+          "index": 7,
+          "case_id": "Normal_9"
+        },
+        {
+          "index": 8,
+          "case_id": "Normal_1"
+        }
+      ],
+      "foreground_voxels": [
+        3092,
+        196
+      ],
+      "losses": {
+        "segmentation": 2.3131160736083984,
+        "A": 0.04903235286474228,
+        "B": 0.23328793048858643,
+        "totalA": 2.3621485233306885,
+        "totalB": 2.5464038848876953
+      },
+      "parameter_group_metrics": {
+        "segmentation_network": {
+          "finite": true,
+          "energy": {
+            "segmentation": 6.845233223232464,
+            "A": 2.058856864274921,
+            "B": 65.69954289713087,
+            "totalA": 10.479018545329687,
+            "totalB": 77.40797643710928
+          },
+          "norms": {
+            "segmentation": 2.616339661288737,
+            "A": 1.434871723979158,
+            "B": 8.105525454721048,
+            "totalA": 3.237131221518474,
+            "totalB": 8.798180291236893
+          },
+          "gaussian_dot_seg": {
+            "A": 0.7875436304146544,
+            "B": 2.4399214114741357
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 54,
+              "nonzero": 148
+            },
+            "A": {
+              "unused_None": 58,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 58,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 54,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 54,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.20978161341650886,
+          "A_over_seg_norm": 0.5484271576850154,
+          "A_direct_vs_sum_relative_residual": 0.0008165405964536214,
+          "cos_B_seg": 0.11505368669203904,
+          "B_over_seg_norm": 3.098040202749703,
+          "B_direct_vs_sum_relative_residual": 0.0003695293469551928
+        },
+        "classifier": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0,
+            "B": 0,
+            "totalA": 0,
+            "totalB": 0
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.0,
+            "B": 0.0,
+            "totalA": 0.0,
+            "totalB": 0.0
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 0
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "Gaussian_head": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0.4264668393880129,
+            "B": 3.0028670761385,
+            "totalA": 0.4264668393880129,
+            "totalB": 3.0028670761385
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.6530442859316762,
+            "B": 1.7328782635079996,
+            "totalA": 0.6530442859316762,
+            "totalB": 1.7328782635079996
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 2,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 2
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "main_segmentation_optimizer_group": {
+          "finite": true,
+          "energy": {
+            "segmentation": 6.845233223232464,
+            "A": 2.485323703662934,
+            "B": 68.70240997326937,
+            "totalA": 10.9054853847177,
+            "totalB": 80.41084351324778
+          },
+          "norms": {
+            "segmentation": 2.616339661288737,
+            "A": 1.5764909462673529,
+            "B": 8.288691692497036,
+            "totalA": 3.3023454369156626,
+            "totalB": 8.967209349248392
+          },
+          "gaussian_dot_seg": {
+            "A": 0.7875436304146544,
+            "B": 2.4399214114741357
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "A": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "B": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "totalA": {
+              "unused_None": 54,
+              "nonzero": 150
+            },
+            "totalB": {
+              "unused_None": 54,
+              "nonzero": 150
+            }
+          },
+          "cos_A_seg": 0.19093652647658652,
+          "A_over_seg_norm": 0.6025559179463789,
+          "A_direct_vs_sum_relative_residual": 0.0007940077169625862,
+          "cos_B_seg": 0.1125111924462084,
+          "B_over_seg_norm": 3.168048787829885,
+          "B_direct_vs_sum_relative_residual": 0.0003629801862642613
+        },
+        "all_trainable": {
+          "finite": true,
+          "energy": {
+            "segmentation": 6.845233223232464,
+            "A": 2.485323703662934,
+            "B": 68.70240997326937,
+            "totalA": 10.9054853847177,
+            "totalB": 80.41084351324778
+          },
+          "norms": {
+            "segmentation": 2.616339661288737,
+            "A": 1.5764909462673529,
+            "B": 8.288691692497036,
+            "totalA": 3.3023454369156626,
+            "totalB": 8.967209349248392
+          },
+          "gaussian_dot_seg": {
+            "A": 0.7875436304146544,
+            "B": 2.4399214114741357
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "A": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "B": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "totalA": {
+              "unused_None": 54,
+              "nonzero": 150
+            },
+            "totalB": {
+              "unused_None": 54,
+              "nonzero": 150
+            }
+          },
+          "cos_A_seg": 0.19093652647658652,
+          "A_over_seg_norm": 0.6025559179463789,
+          "A_direct_vs_sum_relative_residual": 0.0007940077169625862,
+          "cos_B_seg": 0.1125111924462084,
+          "B_over_seg_norm": 3.168048787829885,
+          "B_direct_vs_sum_relative_residual": 0.0003629801862642613
+        }
+      },
+      "FP32_global_direct_norms": {
+        "segmentation": 2.616339683532715,
+        "A": 1.576490879058838,
+        "B": 8.288691520690918,
+        "totalA": 3.3023455142974854,
+        "totalB": 8.967208862304688
+      },
+      "nonfinite_parameter_names": {
+        "segmentation": [],
+        "A": [],
+        "B": [],
+        "totalA": [],
+        "totalB": []
+      },
+      "nonfinite_global_norm_objectives": [],
+      "implied_clip12_factors": {
+        "totalA": 1.0,
+        "totalB": 1.0
+      },
+      "clip_applied": false,
+      "AMP_derivative_scale_removed": 1024.0,
+      "BN_or_other_buffers_changed_in_diagnostic_copy": [
+        "location_guidance.transform.1.running_mean",
+        "location_guidance.transform.1.running_var",
+        "location_guidance.transform.1.num_batches_tracked",
+        "location_guidance.fusion.1.running_mean",
+        "location_guidance.fusion.1.running_var",
+        "location_guidance.fusion.1.num_batches_tracked",
+        "structure_guidance.transform.1.running_mean",
+        "structure_guidance.transform.1.running_var",
+        "structure_guidance.transform.1.num_batches_tracked",
+        "structure_guidance.fusion.1.running_mean",
+        "structure_guidance.fusion.1.running_var",
+        "structure_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.transform.1.running_mean",
+        "generation_guidance.transform.1.running_var",
+        "generation_guidance.transform.1.num_batches_tracked",
+        "generation_guidance.fusion.1.running_mean",
+        "generation_guidance.fusion.1.running_var",
+        "generation_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.generation_enhance.1.running_mean",
+        "generation_guidance.generation_enhance.1.running_var",
+        "generation_guidance.generation_enhance.1.num_batches_tracked",
+        "anatomical_output_fusion.1.running_mean",
+        "anatomical_output_fusion.1.running_var",
+        "anatomical_output_fusion.1.num_batches_tracked"
+      ],
+      "one_region_patch_checks": [],
+      "peak_GPU_GiB": 15.048964500427246,
+      "Gaussian_head_energy_share_and_clipped_shared_norm": {
+        "A": {
+          "Gaussian_head_direct_total_energy_share": 0.039105718300777165,
+          "shared_segmentation_direct_total_norm": 3.237131221518474,
+          "implied_clipped_shared_segmentation_norm": 3.237131221518474
+        },
+        "B": {
+          "Gaussian_head_direct_total_energy_share": 0.03734405641005089,
+          "shared_segmentation_direct_total_norm": 8.798180291236893,
+          "implied_clipped_shared_segmentation_norm": 8.798180291236893
+        }
+      }
+    },
+    {
+      "batch": 21,
+      "samples": [
+        {
+          "index": 63,
+          "case_id": "Diseased_12"
+        },
+        {
+          "index": 66,
+          "case_id": "Normal_10"
+        }
+      ],
+      "foreground_voxels": [
+        217,
+        749
+      ],
+      "losses": {
+        "segmentation": 2.515575885772705,
+        "A": 0.047239381819963455,
+        "B": 0.23440761864185333,
+        "totalA": 2.5628151893615723,
+        "totalB": 2.749983549118042
+      },
+      "parameter_group_metrics": {
+        "segmentation_network": {
+          "finite": true,
+          "energy": {
+            "segmentation": 8.911047797775229,
+            "A": 1.7778284632324444,
+            "B": 128.7916982828519,
+            "totalA": 13.426984653792912,
+            "totalB": 143.43020789038027
+          },
+          "norms": {
+            "segmentation": 2.9851378188913205,
+            "A": 1.3333523402433598,
+            "B": 11.348643015041574,
+            "totalA": 3.6642850126311015,
+            "totalB": 11.9762351300557
+          },
+          "gaussian_dot_seg": {
+            "A": 1.3694748327226256,
+            "B": 2.849067429220118
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 142
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 142
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 146
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 146
+            }
+          },
+          "cos_A_seg": 0.344068363164175,
+          "A_over_seg_norm": 0.4466635784134639,
+          "A_direct_vs_sum_relative_residual": 0.0008224867546544573,
+          "cos_B_seg": 0.08409969219654921,
+          "B_over_seg_norm": 3.8017149302863538,
+          "B_direct_vs_sum_relative_residual": 0.00023797512950897667
+        },
+        "classifier": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0,
+            "B": 0,
+            "totalA": 0,
+            "totalB": 0
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.0,
+            "B": 0.0,
+            "totalA": 0.0,
+            "totalB": 0.0
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 0
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "Gaussian_head": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0.4146207235753536,
+            "B": 3.264800843782723,
+            "totalA": 0.4146207235753536,
+            "totalB": 3.264800843782723
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.6439104934502571,
+            "B": 1.8068759901506033,
+            "totalA": 0.6439104934502571,
+            "totalB": 1.8068759901506033
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 2,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 2
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "main_segmentation_optimizer_group": {
+          "finite": true,
+          "energy": {
+            "segmentation": 8.911047797775229,
+            "A": 2.192449186807798,
+            "B": 132.05649912663463,
+            "totalA": 13.841605377368266,
+            "totalB": 146.695008734163
+          },
+          "norms": {
+            "segmentation": 2.9851378188913205,
+            "A": 1.4806921310008363,
+            "B": 11.491583838907266,
+            "totalA": 3.720430805346105,
+            "totalB": 12.111771494466158
+          },
+          "gaussian_dot_seg": {
+            "A": 1.3694748327226256,
+            "B": 2.849067429220118
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.3098310226843475,
+          "A_over_seg_norm": 0.4960213634460485,
+          "A_direct_vs_sum_relative_residual": 0.0008020422315475974,
+          "cos_B_seg": 0.08305359798900185,
+          "B_over_seg_norm": 3.8495990926057937,
+          "B_direct_vs_sum_relative_residual": 0.00023548267367231836
+        },
+        "all_trainable": {
+          "finite": true,
+          "energy": {
+            "segmentation": 8.911047797775229,
+            "A": 2.192449186807798,
+            "B": 132.05649912663463,
+            "totalA": 13.841605377368266,
+            "totalB": 146.695008734163
+          },
+          "norms": {
+            "segmentation": 2.9851378188913205,
+            "A": 1.4806921310008363,
+            "B": 11.491583838907266,
+            "totalA": 3.720430805346105,
+            "totalB": 12.111771494466158
+          },
+          "gaussian_dot_seg": {
+            "A": 1.3694748327226256,
+            "B": 2.849067429220118
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.3098310226843475,
+          "A_over_seg_norm": 0.4960213634460485,
+          "A_direct_vs_sum_relative_residual": 0.0008020422315475974,
+          "cos_B_seg": 0.08305359798900185,
+          "B_over_seg_norm": 3.8495990926057937,
+          "B_direct_vs_sum_relative_residual": 0.00023548267367231836
+        }
+      },
+      "FP32_global_direct_norms": {
+        "segmentation": 2.985137701034546,
+        "A": 1.4806921482086182,
+        "B": 11.491583824157715,
+        "totalA": 3.720430612564087,
+        "totalB": 12.111770629882812
+      },
+      "nonfinite_parameter_names": {
+        "segmentation": [],
+        "A": [],
+        "B": [],
+        "totalA": [],
+        "totalB": []
+      },
+      "nonfinite_global_norm_objectives": [],
+      "implied_clip12_factors": {
+        "totalA": 1.0,
+        "totalB": 0.990771653124053
+      },
+      "clip_applied": false,
+      "AMP_derivative_scale_removed": 1024.0,
+      "BN_or_other_buffers_changed_in_diagnostic_copy": [
+        "location_guidance.transform.1.running_mean",
+        "location_guidance.transform.1.running_var",
+        "location_guidance.transform.1.num_batches_tracked",
+        "location_guidance.fusion.1.running_mean",
+        "location_guidance.fusion.1.running_var",
+        "location_guidance.fusion.1.num_batches_tracked",
+        "structure_guidance.transform.1.running_mean",
+        "structure_guidance.transform.1.running_var",
+        "structure_guidance.transform.1.num_batches_tracked",
+        "structure_guidance.fusion.1.running_mean",
+        "structure_guidance.fusion.1.running_var",
+        "structure_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.transform.1.running_mean",
+        "generation_guidance.transform.1.running_var",
+        "generation_guidance.transform.1.num_batches_tracked",
+        "generation_guidance.fusion.1.running_mean",
+        "generation_guidance.fusion.1.running_var",
+        "generation_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.generation_enhance.1.running_mean",
+        "generation_guidance.generation_enhance.1.running_var",
+        "generation_guidance.generation_enhance.1.num_batches_tracked",
+        "anatomical_output_fusion.1.running_mean",
+        "anatomical_output_fusion.1.running_var",
+        "anatomical_output_fusion.1.num_batches_tracked"
+      ],
+      "one_region_patch_checks": [],
+      "peak_GPU_GiB": 15.04875898361206,
+      "Gaussian_head_energy_share_and_clipped_shared_norm": {
+        "A": {
+          "Gaussian_head_direct_total_energy_share": 0.029954670160823958,
+          "shared_segmentation_direct_total_norm": 3.6642850126311015,
+          "implied_clipped_shared_segmentation_norm": 3.6642850126311015
+        },
+        "B": {
+          "Gaussian_head_direct_total_energy_share": 0.022255705030149408,
+          "shared_segmentation_direct_total_norm": 11.9762351300557,
+          "implied_clipped_shared_segmentation_norm": 11.865714278007644
+        }
+      }
+    },
+    {
+      "batch": 13,
+      "samples": [
+        {
+          "index": 36,
+          "case_id": "Normal_17"
+        },
+        {
+          "index": 41,
+          "case_id": "Diseased_19"
+        }
+      ],
+      "foreground_voxels": [
+        522,
+        243
+      ],
+      "losses": {
+        "segmentation": 2.224269390106201,
+        "A": 0.04859049618244171,
+        "B": 0.1438460648059845,
+        "totalA": 2.272859811782837,
+        "totalB": 2.3681154251098633
+      },
+      "parameter_group_metrics": {
+        "segmentation_network": {
+          "finite": true,
+          "energy": {
+            "segmentation": 6.487948831716736,
+            "A": 2.111467088584016,
+            "B": 60.26200458381644,
+            "totalA": 10.944007019729256,
+            "totalB": 71.34063505421341
+          },
+          "norms": {
+            "segmentation": 2.547145231767662,
+            "A": 1.4530888095997492,
+            "B": 7.762860592836667,
+            "totalA": 3.3081727614695784,
+            "totalB": 8.44633855905702
+          },
+          "gaussian_dot_seg": {
+            "A": 1.1732151884441313,
+            "B": 2.2954300291127585
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 142
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 142
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 146
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 146
+            }
+          },
+          "cos_A_seg": 0.3169799630502879,
+          "A_over_seg_norm": 0.5704774079926875,
+          "A_direct_vs_sum_relative_residual": 0.0009643768486777743,
+          "cos_B_seg": 0.11608833001768329,
+          "B_over_seg_norm": 3.0476709753410547,
+          "B_direct_vs_sum_relative_residual": 0.0003067957092497209
+        },
+        "classifier": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0,
+            "B": 0,
+            "totalA": 0,
+            "totalB": 0
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.0,
+            "B": 0.0,
+            "totalA": 0.0,
+            "totalB": 0.0
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 0
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "Gaussian_head": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0.4273112958762795,
+            "B": 1.4787107706069946,
+            "totalA": 0.4273112958762795,
+            "totalB": 1.4787107706069946
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.6536905199528898,
+            "B": 1.2160225206002537,
+            "totalA": 0.6536905199528898,
+            "totalB": 1.2160225206002537
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 2,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 2
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "main_segmentation_optimizer_group": {
+          "finite": true,
+          "energy": {
+            "segmentation": 6.487948831716736,
+            "A": 2.5387783844602954,
+            "B": 61.740715354423436,
+            "totalA": 11.371318315605535,
+            "totalB": 72.8193458248204
+          },
+          "norms": {
+            "segmentation": 2.547145231767662,
+            "A": 1.593354444077116,
+            "B": 7.857526032691425,
+            "totalA": 3.3721385374277753,
+            "totalB": 8.533425210595121
+          },
+          "gaussian_dot_seg": {
+            "A": 1.1732151884441313,
+            "B": 2.2954300291127585
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.2890756911545182,
+          "A_over_seg_norm": 0.6255451884741426,
+          "A_direct_vs_sum_relative_residual": 0.0009381602203235825,
+          "cos_B_seg": 0.11468972786512202,
+          "B_over_seg_norm": 3.084836284438511,
+          "B_direct_vs_sum_relative_residual": 0.0003038513393200429
+        },
+        "all_trainable": {
+          "finite": true,
+          "energy": {
+            "segmentation": 6.487948831716736,
+            "A": 2.5387783844602954,
+            "B": 61.740715354423436,
+            "totalA": 11.371318315605535,
+            "totalB": 72.8193458248204
+          },
+          "norms": {
+            "segmentation": 2.547145231767662,
+            "A": 1.593354444077116,
+            "B": 7.857526032691425,
+            "totalA": 3.3721385374277753,
+            "totalB": 8.533425210595121
+          },
+          "gaussian_dot_seg": {
+            "A": 1.1732151884441313,
+            "B": 2.2954300291127585
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.2890756911545182,
+          "A_over_seg_norm": 0.6255451884741426,
+          "A_direct_vs_sum_relative_residual": 0.0009381602203235825,
+          "cos_B_seg": 0.11468972786512202,
+          "B_over_seg_norm": 3.084836284438511,
+          "B_direct_vs_sum_relative_residual": 0.0003038513393200429
+        }
+      },
+      "FP32_global_direct_norms": {
+        "segmentation": 2.547145366668701,
+        "A": 1.5933544635772705,
+        "B": 7.857525825500488,
+        "totalA": 3.372138500213623,
+        "totalB": 8.533425331115723
+      },
+      "nonfinite_parameter_names": {
+        "segmentation": [],
+        "A": [],
+        "B": [],
+        "totalA": [],
+        "totalB": []
+      },
+      "nonfinite_global_norm_objectives": [],
+      "implied_clip12_factors": {
+        "totalA": 1.0,
+        "totalB": 1.0
+      },
+      "clip_applied": false,
+      "AMP_derivative_scale_removed": 1024.0,
+      "BN_or_other_buffers_changed_in_diagnostic_copy": [
+        "location_guidance.transform.1.running_mean",
+        "location_guidance.transform.1.running_var",
+        "location_guidance.transform.1.num_batches_tracked",
+        "location_guidance.fusion.1.running_mean",
+        "location_guidance.fusion.1.running_var",
+        "location_guidance.fusion.1.num_batches_tracked",
+        "structure_guidance.transform.1.running_mean",
+        "structure_guidance.transform.1.running_var",
+        "structure_guidance.transform.1.num_batches_tracked",
+        "structure_guidance.fusion.1.running_mean",
+        "structure_guidance.fusion.1.running_var",
+        "structure_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.transform.1.running_mean",
+        "generation_guidance.transform.1.running_var",
+        "generation_guidance.transform.1.num_batches_tracked",
+        "generation_guidance.fusion.1.running_mean",
+        "generation_guidance.fusion.1.running_var",
+        "generation_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.generation_enhance.1.running_mean",
+        "generation_guidance.generation_enhance.1.running_var",
+        "generation_guidance.generation_enhance.1.num_batches_tracked",
+        "anatomical_output_fusion.1.running_mean",
+        "anatomical_output_fusion.1.running_var",
+        "anatomical_output_fusion.1.num_batches_tracked"
+      ],
+      "one_region_patch_checks": [],
+      "peak_GPU_GiB": 15.017508506774902,
+      "Gaussian_head_energy_share_and_clipped_shared_norm": {
+        "A": {
+          "Gaussian_head_direct_total_energy_share": 0.03757799087286606,
+          "shared_segmentation_direct_total_norm": 3.3081727614695784,
+          "implied_clipped_shared_segmentation_norm": 3.3081727614695784
+        },
+        "B": {
+          "Gaussian_head_direct_total_energy_share": 0.020306564881320006,
+          "shared_segmentation_direct_total_norm": 8.44633855905702,
+          "implied_clipped_shared_segmentation_norm": 8.44633855905702
+        }
+      }
+    },
+    {
+      "batch": 5,
+      "samples": [
+        {
+          "index": 11,
+          "case_id": "Diseased_11"
+        },
+        {
+          "index": 12,
+          "case_id": "Diseased_16"
+        }
+      ],
+      "foreground_voxels": [
+        0,
+        305
+      ],
+      "losses": {
+        "segmentation": 2.039357900619507,
+        "A": 0.05113295465707779,
+        "B": 0.13011088967323303,
+        "totalA": 2.0904908180236816,
+        "totalB": 2.169468879699707
+      },
+      "parameter_group_metrics": {
+        "segmentation_network": {
+          "finite": true,
+          "energy": {
+            "segmentation": 5.772558459384495,
+            "A": 2.2422496954074473,
+            "B": 26.293668856985178,
+            "totalA": 9.461787058613481,
+            "totalB": 36.03991134756795
+          },
+          "norms": {
+            "segmentation": 2.4026149211607954,
+            "A": 1.4974143365840489,
+            "B": 5.127735256132592,
+            "totalA": 3.0760017975634346,
+            "totalB": 6.003325024315105
+          },
+          "gaussian_dot_seg": {
+            "A": 0.7242356744844141,
+            "B": 1.9765632311681824
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 56,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 142
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 142
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 146
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 146
+            }
+          },
+          "cos_A_seg": 0.20130462677652994,
+          "A_over_seg_norm": 0.6232435848939915,
+          "A_direct_vs_sum_relative_residual": 0.0006651315223849072,
+          "cos_B_seg": 0.1604356757081365,
+          "B_over_seg_norm": 2.134231004298927,
+          "B_direct_vs_sum_relative_residual": 0.0005707919741244927
+        },
+        "classifier": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0,
+            "B": 0,
+            "totalA": 0,
+            "totalB": 0
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.0,
+            "B": 0.0,
+            "totalA": 0.0,
+            "totalB": 0.0
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 0
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 0
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "Gaussian_head": {
+          "finite": true,
+          "energy": {
+            "segmentation": 0,
+            "A": 0.45027375780045986,
+            "B": 1.0893352180719376,
+            "totalA": 0.45027375780045986,
+            "totalB": 1.0893352180719376
+          },
+          "norms": {
+            "segmentation": 0.0,
+            "A": 0.6710244092434043,
+            "B": 1.0437122295306966,
+            "totalA": 0.6710244092434043,
+            "totalB": 1.0437122295306966
+          },
+          "gaussian_dot_seg": {
+            "A": 0,
+            "B": 0
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 2,
+              "nonzero": 0
+            },
+            "A": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "B": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalA": {
+              "unused_None": 0,
+              "nonzero": 2
+            },
+            "totalB": {
+              "unused_None": 0,
+              "nonzero": 2
+            }
+          },
+          "cos_A_seg": null,
+          "A_over_seg_norm": null,
+          "A_direct_vs_sum_relative_residual": 0.0,
+          "cos_B_seg": null,
+          "B_over_seg_norm": null,
+          "B_direct_vs_sum_relative_residual": 0.0
+        },
+        "main_segmentation_optimizer_group": {
+          "finite": true,
+          "energy": {
+            "segmentation": 5.772558459384495,
+            "A": 2.692523453207907,
+            "B": 27.383004075057116,
+            "totalA": 9.912060816413941,
+            "totalB": 37.12924656563989
+          },
+          "norms": {
+            "segmentation": 2.4026149211607954,
+            "A": 1.6408910546431494,
+            "B": 5.232877227210391,
+            "totalA": 3.148342550678681,
+            "totalB": 6.0933772709097775
+          },
+          "gaussian_dot_seg": {
+            "A": 0.7242356744844141,
+            "B": 1.9765632311681824
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.18370289319508273,
+          "A_over_seg_norm": 0.6829604861732782,
+          "A_direct_vs_sum_relative_residual": 0.0006451718412777662,
+          "cos_B_seg": 0.15721211007823072,
+          "B_over_seg_norm": 2.177992478579209,
+          "B_direct_vs_sum_relative_residual": 0.0005626765722337526
+        },
+        "all_trainable": {
+          "finite": true,
+          "energy": {
+            "segmentation": 5.772558459384495,
+            "A": 2.692523453207907,
+            "B": 27.383004075057116,
+            "totalA": 9.912060816413941,
+            "totalB": 37.12924656563989
+          },
+          "norms": {
+            "segmentation": 2.4026149211607954,
+            "A": 1.6408910546431494,
+            "B": 5.232877227210391,
+            "totalA": 3.148342550678681,
+            "totalB": 6.0933772709097775
+          },
+          "gaussian_dot_seg": {
+            "A": 0.7242356744844141,
+            "B": 1.9765632311681824
+          },
+          "tensor_counts": {
+            "segmentation": {
+              "unused_None": 58,
+              "nonzero": 146
+            },
+            "A": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "B": {
+              "unused_None": 60,
+              "nonzero": 144
+            },
+            "totalA": {
+              "unused_None": 56,
+              "nonzero": 148
+            },
+            "totalB": {
+              "unused_None": 56,
+              "nonzero": 148
+            }
+          },
+          "cos_A_seg": 0.18370289319508273,
+          "A_over_seg_norm": 0.6829604861732782,
+          "A_direct_vs_sum_relative_residual": 0.0006451718412777662,
+          "cos_B_seg": 0.15721211007823072,
+          "B_over_seg_norm": 2.177992478579209,
+          "B_direct_vs_sum_relative_residual": 0.0005626765722337526
+        }
+      },
+      "FP32_global_direct_norms": {
+        "segmentation": 2.4026148319244385,
+        "A": 1.6408910751342773,
+        "B": 5.232876777648926,
+        "totalA": 3.1483426094055176,
+        "totalB": 6.093377590179443
+      },
+      "nonfinite_parameter_names": {
+        "segmentation": [],
+        "A": [],
+        "B": [],
+        "totalA": [],
+        "totalB": []
+      },
+      "nonfinite_global_norm_objectives": [],
+      "implied_clip12_factors": {
+        "totalA": 1.0,
+        "totalB": 1.0
+      },
+      "clip_applied": false,
+      "AMP_derivative_scale_removed": 1024.0,
+      "BN_or_other_buffers_changed_in_diagnostic_copy": [
+        "location_guidance.transform.1.running_mean",
+        "location_guidance.transform.1.running_var",
+        "location_guidance.transform.1.num_batches_tracked",
+        "location_guidance.fusion.1.running_mean",
+        "location_guidance.fusion.1.running_var",
+        "location_guidance.fusion.1.num_batches_tracked",
+        "structure_guidance.transform.1.running_mean",
+        "structure_guidance.transform.1.running_var",
+        "structure_guidance.transform.1.num_batches_tracked",
+        "structure_guidance.fusion.1.running_mean",
+        "structure_guidance.fusion.1.running_var",
+        "structure_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.transform.1.running_mean",
+        "generation_guidance.transform.1.running_var",
+        "generation_guidance.transform.1.num_batches_tracked",
+        "generation_guidance.fusion.1.running_mean",
+        "generation_guidance.fusion.1.running_var",
+        "generation_guidance.fusion.1.num_batches_tracked",
+        "generation_guidance.generation_enhance.1.running_mean",
+        "generation_guidance.generation_enhance.1.running_var",
+        "generation_guidance.generation_enhance.1.num_batches_tracked",
+        "anatomical_output_fusion.1.running_mean",
+        "anatomical_output_fusion.1.running_var",
+        "anatomical_output_fusion.1.num_batches_tracked"
+      ],
+      "one_region_patch_checks": [
+        {
+          "patch_in_batch": 0,
+          "foreground_voxels": 0,
+          "A_equals_B_when_one_region_present": true
+        }
+      ],
+      "peak_GPU_GiB": 15.017509460449219,
+      "Gaussian_head_energy_share_and_clipped_shared_norm": {
+        "A": {
+          "Gaussian_head_direct_total_energy_share": 0.04542685584160522,
+          "shared_segmentation_direct_total_norm": 3.0760017975634346,
+          "implied_clipped_shared_segmentation_norm": 3.0760017975634346
+        },
+        "B": {
+          "Gaussian_head_direct_total_energy_share": 0.029339006816260827,
+          "shared_segmentation_direct_total_norm": 6.003325024315105,
+          "implied_clipped_shared_segmentation_norm": 6.003325024315105
+        }
+      }
+    }
+  ],
+  "empty_patch_count": 7,
+  "wall_seconds": 101.71334985643625,
+  "limitations": [
+    "No optimizer/GradScaler update or training trajectory; clipping factors are implied, not applied.",
+    "Only initial frozen stage; classification/guidance auxiliary losses inactive, frozen classifier gradients zero by design while its prior features remain active.",
+    "Nonfinite scaled gradients flag AMP overflow. Main also raises if clip_norm is nonfinite before scaler.step; this tool neither steps nor adapts scale.",
+    "FP32 mode disables autocast but retains/records actual runtime TF32 flags; it is not an asserted full IEEE FP32-kernel run.",
+    "No augmentation; stratified train28 bank is not natural sampler frequency or independent validation.",
+    "Each batch resets initial weights/buffers/RNG, so this is standalone minibatch sensitivity, not28 updates.",
+    "A/B share one forward/dropout/BN outcome; AMP separate backward rounding is reported via direct-vs-sum residual.",
+    "Small-FG patch entries reference their B2 batch gradients, not an isolated per-patch parameter gradient.",
+    "Gradient magnitude/clipping cannot establish Dice/ASSD, connectivity or benefit."
+  ],
+  "per_batch_distribution_not_pooled_cosine": {
+    "A": {
+      "direct_total_global_norm": {
+        "n_finite": 28,
+        "min": 2.973040819168091,
+        "median": 3.3027384281158447,
+        "p90": 3.6776122093200683,
+        "max": 3.8947861194610596
+      },
+      "implied_clip12_factor": {
+        "n_finite": 28,
+        "min": 1.0,
+        "median": 1.0,
+        "p90": 1.0,
+        "max": 1.0
+      },
+      "shared_gaussian_over_segmentation_norm": {
+        "n_finite": 28,
+        "min": 0.4466635784134639,
+        "median": 0.6102501978937092,
+        "p90": 0.6996374702010331,
+        "max": 0.7104526694200793
+      },
+      "shared_cosine_with_segmentation": {
+        "n_finite": 28,
+        "min": 0.1969822164009282,
+        "median": 0.2934892209852846,
+        "p90": 0.3482491290868615,
+        "max": 0.39173204963862085
+      }
+    },
+    "B": {
+      "direct_total_global_norm": {
+        "n_finite": 28,
+        "min": 3.922861099243164,
+        "median": 8.613512992858887,
+        "p90": 12.525918197631835,
+        "max": 19.097095489501953
+      },
+      "implied_clip12_factor": {
+        "n_finite": 28,
+        "min": 0.6283677734254856,
+        "median": 1.0,
+        "p90": 1.0,
+        "max": 1.0
+      },
+      "shared_gaussian_over_segmentation_norm": {
+        "n_finite": 28,
+        "min": 0.9367829510339247,
+        "median": 3.245172010737194,
+        "p90": 5.071417059419636,
+        "max": 6.9438743737747926
+      },
+      "shared_cosine_with_segmentation": {
+        "n_finite": 28,
+        "min": 0.01245583461208095,
+        "median": 0.08345257302675047,
+        "p90": 0.15561729488472412,
+        "max": 0.2132957306309588
+      }
+    }
+  }
+}

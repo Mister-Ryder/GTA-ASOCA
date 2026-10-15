@@ -1,0 +1,299 @@
+{
+  "protocol_version": "asoca-native-nnunet-training-only-planning-v1",
+  "nnunetv2": "2.6.4",
+  "method": "nnunet",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "fold": 0,
+  "epochs": 100,
+  "initial_seed": 20261013,
+  "dataset_name": "Dataset881_ASOCA_Fold0",
+  "trainer": "nnUNetTrainer_100epochs",
+  "configuration": "3d_fullres",
+  "plans_identifier": "nnUNetPlans",
+  "native_training_fold": "all",
+  "train_case_ids": [
+    "Diseased_10",
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_20",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_12",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_3",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "heldout_case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "source_sha256": {
+    "Diseased_1": {
+      "image": "de8b59df8aa61510c341ffe273c49fcdb7c6f9854fdede2d64c0d2ef66045ff1",
+      "label": "a25a33b35df711d522d73dd0bdd20e5397b6a04b1eb63ff61adab254168c7614"
+    },
+    "Diseased_10": {
+      "image": "d09a67480ea55252bb07e46bab6377973f167208ef6429be92cb04ec3c7d6625",
+      "label": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+    },
+    "Diseased_11": {
+      "image": "23873ca744f9fd6694de0a9ce18d9f2aa7b9250bf1557b6a6f57fd7eed29a576",
+      "label": "cf7e3b1ac92c004006a66fc34e3acd90801683345b0f1e230e2a17c056b22aa3"
+    },
+    "Diseased_12": {
+      "image": "65d8d932abd341f137f89d5dbb6dc473a18cf51a68ea8b9acd9e753793a8941b",
+      "label": "81271cb8961feedf97c4299740cd7ae294ab4c83ee2cdc5d1e16ab0a73bc427f"
+    },
+    "Diseased_13": {
+      "image": "411c481acd43cf50369669fab5238d28223fa8a5f2114e56e273aaff645d080e",
+      "label": "20eaf5ed8f27603c40602b1894074c00e717d6c0558fb0ed4f5931094a6ba7ff"
+    },
+    "Diseased_14": {
+      "image": "8914023e28054b7f230e156d0b02d28ad844d526a25bcd768b599e8ecc709578",
+      "label": "af52172e40dc0d161f6dbdb975c1a61d2b293996ca02586524e69ecd6c33b2a3"
+    },
+    "Diseased_15": {
+      "image": "9807f2fcb91c24863df5cad14046f8de8a1ef2c4cc16858606fde882f7134a75",
+      "label": "e40950a1eeb9bcecc9794dfdcc6e4689a9b82026a3e2de29129a3f96afd2bff9"
+    },
+    "Diseased_16": {
+      "image": "c5c8e255c3451c2b400245b2eaf12dcc8fb185c5f7139d635876a0c2d7d26a5c",
+      "label": "de3854c9b7dc1c911c5f8ab31ceac46506e081f03699754e21107e545755744a"
+    },
+    "Diseased_17": {
+      "image": "0fdfe6cbd7cfea5ec547485f363d2bed1cc80f49587003c0429604365e843e64",
+      "label": "6c594b940a35a2f39b85ecb07c848fe0a57cce93cefbda445c6660139f7c5886"
+    },
+    "Diseased_18": {
+      "image": "9af69e6f5b004b684ed37acc41659d31e753dd690c0856ff7d5d8a0b92b30cf8",
+      "label": "c78139628285cc2066841902d059fc634a080c0c371433d3d492945076b7312e"
+    },
+    "Diseased_19": {
+      "image": "373273906a113e7fff58696518c426903770a97acec2fd6ca9875b4a64f1dec8",
+      "label": "d75290e15a45de5f5d75cf1cc35425073632bb0613e97f37b94135a8a6fecd03"
+    },
+    "Diseased_2": {
+      "image": "4ef7c09c4e0fbdca1888b305a5ae38230b9e0482f251626bd2d03aec4a65317f",
+      "label": "406e210fbc169ed694d8c7af0c02810c7334ef4c3a7019f4d4da2053ed3af190"
+    },
+    "Diseased_20": {
+      "image": "7fdddea8ef4a2821cc6930e8605a49a5b9b39ccb64ba86dbb2f2ddd6d26cc6a4",
+      "label": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+    },
+    "Diseased_3": {
+      "image": "386de942db7c233e35dbadc98ba180028882eb90f5b04960d1eb60a3d3598b2b",
+      "label": "41c49ed871d8dc29b8bc78bc8dbe769ca4143b40e0ed9644e26b27970b06b99a"
+    },
+    "Diseased_4": {
+      "image": "fabccd474a03d605204fba8bcf39c66c78d83c4962195a2aeef0d938b738df83",
+      "label": "1cd7e0ae7e33e3c34bff9d20dff865c72fb6ecd115c653f87a645dfd224aeaf2"
+    },
+    "Diseased_5": {
+      "image": "eead7749a9fe029aad5190e0571ce633a7bf213fa87abea42c6bd87a0e32ab17",
+      "label": "1a7932d0bfb494701d48e508d0325f625ec3a03c19b6a8d4af50ad7d681db428"
+    },
+    "Diseased_6": {
+      "image": "1c5a3cfa2df22738ea1ccbaea6ebb91c324a97d76514f2a695618864d28b45db",
+      "label": "97ae589a49c74bc46ed95727cb54ca3affd2195c9bf4c434d8c4f70649a8919d"
+    },
+    "Diseased_7": {
+      "image": "a9bfdb7af3ba63f38cde88d6ef0b574034e0deec584ca1ec43c1376559684aa1",
+      "label": "fd949347b5b8768aedc41ead62a6766933e823f6d0a5573f5051914113dd2af0"
+    },
+    "Diseased_8": {
+      "image": "2ece49db4beb5da671686d48a85c5c60bbb0b46a972bbf57ef8b900505373fe3",
+      "label": "765ab134dd5764a3bb797d4034ea0b3da2b6163020394ee193811d212d343dc3"
+    },
+    "Diseased_9": {
+      "image": "69f23316074ed9cb8c9413043c65a1c474c8cb4bd8a22d01ab506bfbe43a6732",
+      "label": "b2a93e0a1d8862a496e5d353b2ea8c2d103710381171c80fff4d6aba4c6d222a"
+    },
+    "Normal_1": {
+      "image": "4f63104ecd48662d2e270315aff47c24c5275d613d860c320b6760e91e56514f",
+      "label": "44da2b029a6d9d6d5d9a44c4814d8a78d78a553513ae3f401015ba1236027023"
+    },
+    "Normal_10": {
+      "image": "eb05db21a6b76ba286e9bc4ed19daa144e27147cba5bef583015bda1164a547a",
+      "label": "f777132de80ddfe02dfdf9d1196916af839f1139fb8e76fefb5b7cbd472158d1"
+    },
+    "Normal_11": {
+      "image": "7a85e9082f31a41011263990dda5ac66d438fc50c9d84359114cc8b4f971dab1",
+      "label": "e058dd221ae07b27fb9c6c27332e866e57fc7d05bc2dfb83802b4572326c2e08"
+    },
+    "Normal_12": {
+      "image": "41749867532d32f231cbab962a37db14e6436fad7dea87ff1f89b08d939722ec",
+      "label": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+    },
+    "Normal_13": {
+      "image": "bfc8b0fa503cb32655b1a788bda5320fedc89a2a2a2f33f49ca34615ed4092fb",
+      "label": "76edaee6b9aa6c667a29a9a7ab22f253fb5cdd78a3b58e94bc6c94a0803b5af3"
+    },
+    "Normal_14": {
+      "image": "8066ec13176a615cd8b83ce4b93a5506d6d918c0029c4c30705bce6b53399957",
+      "label": "a2f571ad0faf39f0363d71a3878e8cfc7bbb0303a12d571428b9df4dc8ba9099"
+    },
+    "Normal_15": {
+      "image": "53bb63ffa6a100661313ae3273c364c0bbad821612c3733c2b55d83295e3e978",
+      "label": "aab9212d1f96b3c8fa11c37a738b4fd5e3d802f469971421ac838a973a7c06e6"
+    },
+    "Normal_16": {
+      "image": "f7fe259e3b5c64e54629a6173d35eb1c90199091b3bf38fbeb9bcf76b37d1874",
+      "label": "5f34b1b99b76a49b2cde56c4607c1e34af0018bf25163baaca767e4c20934d3d"
+    },
+    "Normal_17": {
+      "image": "4a27495716e69ca5ca3b61d4c83f4cd4333df1f98608140ff30507e82d17020d",
+      "label": "f48ed6d30048f9db4d774569c345f44e671333b89e8b7c4c0a5bd03711b1b524"
+    },
+    "Normal_18": {
+      "image": "feb4f145e709768db23be55f239091977c0585f551d6c5e7239fb500409cdb88",
+      "label": "1819e8a9dc45abda5a2948acace153bbd4e0a2661aaa2da8952e972d8efb7ca2"
+    },
+    "Normal_19": {
+      "image": "e338cb93d76182078ff6d5acd0bfaa43d1c6885393f0cf0b7441380d378d37b4",
+      "label": "46725c391e1f9ba29b6470e17eff124cdea0de14bee6326f6f8b233cf67bad2b"
+    },
+    "Normal_2": {
+      "image": "1735b5589fdcaf26e7d050de9b5bead3677150c0fb0243b0fc6a6ef4324d00b5",
+      "label": "e5152c168a7503e343ea7d7f00c0e5a8685ee32d147b6c75e4f16ae6e5ebb51e"
+    },
+    "Normal_20": {
+      "image": "360a483293a3b34189c833c4c6a3bf62ed44b10c7994465ee7f913cd61650d69",
+      "label": "af1e15dbeb2b053c6d4d4fc2f315f6d5db643bc085a245ae84de8500bd27083f"
+    },
+    "Normal_3": {
+      "image": "86c97a9dc8fe3807af1d5b6ef4ff52092d677938a41da7350de8fc12eae8ca66",
+      "label": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+    },
+    "Normal_4": {
+      "image": "43851349c09f7f3163b9db65e0984ecb7d0b5b7f1ec5240cf0e267a09e6e39f6",
+      "label": "cf26e8a0e8cbea2dd8d07c2afe0e657f4efa3071636d6bceff902d1f086d03c5"
+    },
+    "Normal_5": {
+      "image": "cc9b8544b8cfe16b85d3064c1788d30741afc6c9e65baca959088c35775654e3",
+      "label": "5e4d19e5d35c7506c0752ba7bd774aea1e3f926d675411145e855dbf2f11ab1a"
+    },
+    "Normal_6": {
+      "image": "f759658d685e14248bf6901a0092bee2237385a4797ec3ce5263d0845daedc25",
+      "label": "18b4fa51098abb385a9ab530947fe0269323544c3628029a9c8261c865f3d736"
+    },
+    "Normal_7": {
+      "image": "1e25a419d3449022960be58dee1d08461e234b3e622507baa2a4c081dfdc2554",
+      "label": "5da20309dad9422f3b72476cce1e745152b139c766e996122497f362a6f50cbe"
+    },
+    "Normal_8": {
+      "image": "dfe03811e0a718bfd341ccdf42f21637e5b96551f4cbfe0201ea882e6ddc3b14",
+      "label": "ee8cbebf6b8bf9dbccff80569a2b32b9a16493384db9fb78e77b6909e18e5fbc"
+    },
+    "Normal_9": {
+      "image": "28d9c8ef28122420c9d7a6577b901c6c70b91532653ec74e86b303809d2b1f2b",
+      "label": "66947f9ce7c1315e333fc3128da0e38db29b4be8f04714e629130bf36a115d4a"
+    }
+  },
+  "publication_result": true,
+  "smoke": false,
+  "checkpoint_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/nnUNet_results/Dataset881_ASOCA_Fold0/nnUNetTrainer_100epochs__nnUNetPlans__3d_fullres/fold_all/checkpoint_final.pth",
+  "iterations_per_epoch": 250,
+  "planned_optimizer_updates": 25000,
+  "native_internal_validation": "same 32 training cases, monitoring only; never reported as holdout performance",
+  "independent_evaluation_case_count": 8,
+  "checkpoint_selection": "fixed final",
+  "planning_statistics_cases": "32 frozen training cases only",
+  "normalization": "native CT foreground statistics estimated only from training cases",
+  "optimizer": "native SGD/Nesterov momentum0.99, initial_lr0.01, weight_decay3e-5, polynomial schedule",
+  "augmentation": "unmodified native spatial and intensity augmentation",
+  "deep_supervision": "native enabled",
+  "inference_mirroring_tta": true,
+  "exact_compute_matched": false,
+  "comparison_scope": "same patients and default 25,000 optimizer updates at epochs100; native spacing, normalization, patch/batch, optimizer, augmentation and inference TTA differ",
+  "default_1000_epoch_nnunet": false,
+  "randomness": "recorded initial seed; native asynchronous augmentation is not bitwise deterministic",
+  "native_environment": {
+    "nnUNet_raw": "/root/autodl-tmp/ASOCA_GTAirway_20261013/nnUNet_raw",
+    "nnUNet_preprocessed": "/root/autodl-tmp/ASOCA_GTAirway_20261013/nnUNet_preprocessed",
+    "nnUNet_results": "/root/autodl-tmp/ASOCA_GTAirway_20261013/nnUNet_results",
+    "nnUNet_n_proc_DA": "2",
+    "nnUNet_compile": "false"
+  },
+  "runner_sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144",
+  "native_plan": {
+    "patch_size": [
+      80,
+      192,
+      160
+    ],
+    "batch_size": 2,
+    "spacing": [
+      0.625,
+      0.3964845058,
+      0.3964845058
+    ],
+    "normalization_schemes": [
+      "CTNormalization"
+    ],
+    "data_identifier": "nnUNetPlans_3d_fullres",
+    "plans_sha256": "f0b0fe05d1d8bd487207a658968ea2acc95643ca17e8cd5500c33ffd238984bf",
+    "fingerprint_sha256": "80ebcb267f5868d941148d91579a2abe56517e36229ae44afa087830a1fc2a9e",
+    "preprocessed_training_case_ids": [
+      "Diseased_10",
+      "Diseased_11",
+      "Diseased_12",
+      "Diseased_13",
+      "Diseased_14",
+      "Diseased_16",
+      "Diseased_17",
+      "Diseased_19",
+      "Diseased_2",
+      "Diseased_20",
+      "Diseased_3",
+      "Diseased_4",
+      "Diseased_5",
+      "Diseased_6",
+      "Diseased_8",
+      "Diseased_9",
+      "Normal_1",
+      "Normal_10",
+      "Normal_11",
+      "Normal_12",
+      "Normal_13",
+      "Normal_14",
+      "Normal_15",
+      "Normal_17",
+      "Normal_18",
+      "Normal_20",
+      "Normal_3",
+      "Normal_4",
+      "Normal_5",
+      "Normal_6",
+      "Normal_7",
+      "Normal_9"
+    ]
+  }
+}

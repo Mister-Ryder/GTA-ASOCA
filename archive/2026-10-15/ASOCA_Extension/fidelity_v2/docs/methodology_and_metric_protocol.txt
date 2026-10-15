@@ -1,0 +1,119 @@
+GTAirway ASOCA fidelity_v2：共同训练方案与指标记录
+日期：2026-10-14（Asia/Shanghai）
+
+一、当前问题与比较边界
+
+先校准共同数据/训练方案，再判断GTA结构属性、阶段训练等带来的效果。
+当前核心架构保留。历史权重是否兼容、属性分类器是否可靠，需要记录
+初始化来源、冻结/解冻阶段和分类器验证；不能把随机联合训练称预训练。
+最新任务目标仍是分割：分类accuracy/positive balanced accuracy仅作
+辅助诊断，不作为启动门槛。主初始化固定classifier80×64的final.pt，
+不据分类BA选best_selection作为主初始化。预训练用于稳定分类、结构
+与分割相关的多任务表示；下游验证围绕Dice和ASSD，启动只核完成、
+源码/患者隔离与有限权重，不另设accuracy阈值。
+文献3D-U-Net84.78%与当前冷启动78.70%提示共同方案值得检查，不能
+把84.78%当保证达成的目标，也不能据此证明某一个实现环节是差距原因。
+VFM使用预训练、600epochs及160×160×128输入，当前旧跑25,000更新、
+96³输入；600/200不能推出三倍updates。文献是不同条件的reported结果。
+
+二、已有8例结果：原数值重汇总，不重训
+
+相同fold0八例：Diseased_1、15、18、7；Normal_16、19、2、8。
+正常4+患病4；均值±患者sample SD（ddof=1），不是折间SD或训练seedSD。
+  方法          Dice百分比             ASSD pooled mm
+  GTA           80.00695±7.24139        1.17734±0.82524
+  U-Net         78.70210±7.50710        1.27216±0.93601
+  Swin UNETR    78.57259±6.86461        1.53376±1.14678
+所有ASSD均有8个有效值，没有空预测。已有指标文件保持不变。
+独立冻结参考：docs/cold_start_fold0_reference.json，包含逐病例Dice/ASSD、
+manifest/label/checkpoint/source哈希，以及原CSV哈希。
+此8例已反复用于开发比较，不是最终独立test；不与作者完整五折数字
+组成同条件排名。新候选即使超过冷启动，也只是开发门槛通过。
+
+三、主指标与精确定义
+
+共同main：Dice↑与assd_mm↓；clDice/中心线指标作为结构辅助。
+ASSD衡量预测与真值边界的空间距离，单位mm，不是连通性评分。
+
+边界为前景mask减去一次6邻域二值腐蚀的结果（border_value=0）。
+令a为预测边界各体素到真值边界的最近物理距离，b为反方向距离。
+  保留主字段assd_mm： (sum(a)+sum(b))/(len(a)+len(b))。
+  新诊断assd_directional_mean_mm：(mean(a)+mean(b))/2。
+  同时记录asd_prediction_to_truth_mm、asd_truth_to_prediction_mm和
+  两方向边界体素数量。两方向点数不同时，两个ASSD定义可能不同。
+二者均按边界体素中心采样，不是按surfel面积加权；面积加权又是另一
+种实现。不能因为指标都叫ASSD，就假定与论文数值严格同定义。
+
+库实现核验（2026-10-14，使用作者官方源码）：
+  MedPy当前master assd拼接两方向表面距离后mean，为pooled。
+  MedPy0.4旧文档先各自asd再平均，为directional mean，说明版本有变化。
+  MONAI1.5.2 surface_distance.py:165–166为torch.cat(distances).mean()，
+  是pooled；不能把当前MONAI笼统称为directional mean。
+当前文献PDF没有交代可核实的ASSD实现，因此本项目只标明自身公式，
+不声称与作者ASSD数值完全一致。
+  https://raw.githubusercontent.com/loli/medpy/master/medpy/metric/binary.py
+  https://loli.github.io/medpy/_modules/medpy/metric/binary.html#assd
+  https://raw.githubusercontent.com/Project-MONAI/MONAI/1.5.2/monai/metrics/surface_distance.py
+
+四、其他几何约定与缺失政策
+
+预测在original CT网格评价，保持size、spacing、origin、direction。
+SimpleITK metadata轴序x,y,z；数组轴序z,y,x，距离计算使用反转spacing。
+surface-HD95为两个方向边界距离95%分位数的max。
+ASOCA foreground-HD95为全部前景体素距离的两个方向95%分位数max，
+不能与surface-HD95替代。组件计数采用26邻域，与6邻域边界定义不同。
+
+任一mask为空时，距离返回null，不用0或偷偷排除；Dice/空预测状态
+完整保留。一个病例距离未定义，就不提供该完整队列距离均值或完整
+配对距离差CI，仍记录有效数量、未定义病例。新diagnostic未被旧文件
+记录也要显式注明；不能从一个pooled标量推算directional值。
+若已有原空间prediction，fidelity_v2 evaluator可只补新增距离字段，
+核验旧值仍能从像素重现后保留原assd_mm等值，不重新运行模型。
+旧checkpoint仅允许显式--geometry-only且每例已有metrics/prediction，
+不声称可用新v2 live模型兼容旧权重；训练源码核验状态标false。
+新推理及新源码结果reuse必须核验当前train.source_hash与checkpoint
+source_sha256、source_hash_algorithm，并逐文件比对source_files_sha256
+（若保存）；推理/复用前及写summary前再次检查，防止只转写声明哈希。
+
+五、开发与最终验证隔离
+
+冻结原fold0 train32（16正常+16患病），内部按seed20261014分层预留
+diagnostic4（2+2），development train28（14+14）。名单应写入internal_split.json
+及训练config.internal_split，所有共同方案使用同一名单。
+模型/分类器诊断、epoch或方法选择仅在这内部4例进行；这4例也不能
+称独立最终test。原8例停止反复调参，方案冻结后最多作一次明确记录的
+development verification；其历史曝光不会因重新隔离而恢复独立性。
+未来fresh CV或组织者官方test的正式验证，须在方法冻结后另行确定。
+
+新evaluate默认--split internal_diagnostic。原8例必须显式指定
+--split outer_development，结果带evaluation_role与formal_final_test=false。
+定期checkpoint仅用于内部4例轨迹，checkpoint_selection记录其实际
+periodic诊断角色与epoch；不能统称fixed final。原8例非smoke评价只接受
+冻结最终checkpoint。完整manifest的smoke也默认内部4例，不能绕过
+原8例需要显式--split outer_development的选择。
+输出逐病例JSON、原空间prediction、summary.json和case_metrics.jsonl，
+记录指标协议version2、训练/评估/metrics源码哈希、checkpoint、label
+和manifest身份。旧五折aggregate保持严格OOF定义，内部4例不冒充外折；
+其main字段为Dice+pooled ASSD，clDice辅助，未完成五折仍incomplete。
+若后来明确用train32重训，或初始化ASOCA donor见过内部4例，须记录
+internal_selection_valid=false；这4例仅作已曝光诊断，不能继续用于选择。
+
+六、候选开发门槛
+
+verify_candidate.py仅读取一次原8例development verification ledger，
+核验固定N8、manifest/标签、checkpoint、源码及保存预测身份后，与
+冻结冷启动GTA reference比较，并保存逐病例配对差值。
+新训练须声明source_hash_algorithm=gta_fidelity_selected_python_path_and_bytes_v1，
+并保存internal_split、trained_case_ids和outer8_used_for_selection=false。
+校验器检查身份和原网格metadata，不重新计算像素级指标或运行模型；
+case_metrics.jsonl来自同一冻结evaluator及保存预测。
+开发门槛为Dice上升且pooled ASSD不恶化；空距离或元数据不完整不通过。
+pass只表示development_gate_passed，不代表统计显著、泛化、临床成功
+或已满足文献成绩。没有合格新候选时只报告尚未验证，不填造结果。
+
+七、局部检验
+
+metrics.py包含解析几何检查：相同立方体距离0；各向异性z平移产生
+已知4mm距离；表面点数1对2时pooled=2/3mm、directional=1/2mm；
+交换对称性、空预测、非法spacing。不是复制距离实现求期望值。
+只修改fidelity_v2独立拷贝；原code、原结果和服务器运行未由本分工修改。

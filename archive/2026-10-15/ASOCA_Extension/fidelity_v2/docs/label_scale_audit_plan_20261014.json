@@ -1,0 +1,397 @@
+{
+  "schema_version": 1,
+  "role": "training28 label-scale diagnosis only; no network forward/training/selection",
+  "root": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "training_patients": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "excluded_internal4": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "outer8_read": false,
+  "validation_GT_read": false,
+  "input_size_vox": 128,
+  "input_side_mm": 64.0,
+  "roi_sizes_vox": [
+    64,
+    96,
+    128
+  ],
+  "roi_sides_mm": [
+    32.0,
+    48.0,
+    64.0
+  ],
+  "same_center": true,
+  "seed": 20261013,
+  "bank_epoch": 0,
+  "patches_per_case": 2,
+  "bank": [
+    {
+      "index": 0,
+      "case_id": "Diseased_6"
+    },
+    {
+      "index": 1,
+      "case_id": "Normal_7"
+    },
+    {
+      "index": 2,
+      "case_id": "Diseased_2"
+    },
+    {
+      "index": 3,
+      "case_id": "Normal_7"
+    },
+    {
+      "index": 4,
+      "case_id": "Diseased_16"
+    },
+    {
+      "index": 5,
+      "case_id": "Normal_5"
+    },
+    {
+      "index": 7,
+      "case_id": "Normal_9"
+    },
+    {
+      "index": 8,
+      "case_id": "Normal_1"
+    },
+    {
+      "index": 9,
+      "case_id": "Normal_20"
+    },
+    {
+      "index": 10,
+      "case_id": "Diseased_11"
+    },
+    {
+      "index": 11,
+      "case_id": "Diseased_11"
+    },
+    {
+      "index": 12,
+      "case_id": "Diseased_16"
+    },
+    {
+      "index": 15,
+      "case_id": "Normal_6"
+    },
+    {
+      "index": 16,
+      "case_id": "Normal_18"
+    },
+    {
+      "index": 18,
+      "case_id": "Diseased_4"
+    },
+    {
+      "index": 19,
+      "case_id": "Diseased_9"
+    },
+    {
+      "index": 20,
+      "case_id": "Normal_15"
+    },
+    {
+      "index": 21,
+      "case_id": "Diseased_9"
+    },
+    {
+      "index": 22,
+      "case_id": "Normal_4"
+    },
+    {
+      "index": 23,
+      "case_id": "Diseased_17"
+    },
+    {
+      "index": 26,
+      "case_id": "Diseased_13"
+    },
+    {
+      "index": 29,
+      "case_id": "Diseased_14"
+    },
+    {
+      "index": 31,
+      "case_id": "Normal_11"
+    },
+    {
+      "index": 32,
+      "case_id": "Normal_1"
+    },
+    {
+      "index": 33,
+      "case_id": "Diseased_4"
+    },
+    {
+      "index": 35,
+      "case_id": "Diseased_19"
+    },
+    {
+      "index": 36,
+      "case_id": "Normal_17"
+    },
+    {
+      "index": 41,
+      "case_id": "Diseased_19"
+    },
+    {
+      "index": 42,
+      "case_id": "Normal_6"
+    },
+    {
+      "index": 43,
+      "case_id": "Normal_5"
+    },
+    {
+      "index": 45,
+      "case_id": "Normal_13"
+    },
+    {
+      "index": 46,
+      "case_id": "Normal_20"
+    },
+    {
+      "index": 49,
+      "case_id": "Diseased_17"
+    },
+    {
+      "index": 50,
+      "case_id": "Diseased_13"
+    },
+    {
+      "index": 53,
+      "case_id": "Normal_14"
+    },
+    {
+      "index": 54,
+      "case_id": "Normal_18"
+    },
+    {
+      "index": 55,
+      "case_id": "Normal_11"
+    },
+    {
+      "index": 56,
+      "case_id": "Normal_17"
+    },
+    {
+      "index": 57,
+      "case_id": "Normal_13"
+    },
+    {
+      "index": 58,
+      "case_id": "Diseased_6"
+    },
+    {
+      "index": 61,
+      "case_id": "Normal_15"
+    },
+    {
+      "index": 62,
+      "case_id": "Normal_10"
+    },
+    {
+      "index": 63,
+      "case_id": "Diseased_12"
+    },
+    {
+      "index": 66,
+      "case_id": "Normal_10"
+    },
+    {
+      "index": 69,
+      "case_id": "Diseased_3"
+    },
+    {
+      "index": 74,
+      "case_id": "Diseased_12"
+    },
+    {
+      "index": 75,
+      "case_id": "Normal_4"
+    },
+    {
+      "index": 80,
+      "case_id": "Normal_9"
+    },
+    {
+      "index": 85,
+      "case_id": "Diseased_3"
+    },
+    {
+      "index": 92,
+      "case_id": "Diseased_2"
+    },
+    {
+      "index": 103,
+      "case_id": "Diseased_5"
+    },
+    {
+      "index": 105,
+      "case_id": "Diseased_5"
+    },
+    {
+      "index": 122,
+      "case_id": "Normal_14"
+    },
+    {
+      "index": 147,
+      "case_id": "Diseased_8"
+    },
+    {
+      "index": 172,
+      "case_id": "Diseased_8"
+    },
+    {
+      "index": 194,
+      "case_id": "Diseased_14"
+    }
+  ],
+  "sampling": "standard",
+  "sampling_fov": "image-body",
+  "augmentation": false,
+  "bank_population": "patient-stratified original train-time sampler indices; not natural patch frequency",
+  "tree_bbox_role": "full cached training GT physical extent for scale context only; never sampler/image ROI",
+  "aggregation": "current dominant-volume branch vs volume/equal-visible-branch/cached-centerline-voxel mode",
+  "local_mixture_definition": "at least2 distinct positive structure proxy labels across fixed2x2x2 subtiles",
+  "scale_sensitivity": "same branch set but changed structure isolates old log(volume) threshold; fixed128-volume counterfactual also reported",
+  "fused_readout_candidate_only": {
+    "64": "central fused[2:6]^3 avg+max",
+    "96": "central fused[1:7]^3 avg+max",
+    "128": "fused[0:8]^3 avg+max",
+    "head_input_dim": 512,
+    "heads_unchanged": 3,
+    "classes_per_head": 7,
+    "active_network_changed": false
+  },
+  "classification_accuracy_gate": false,
+  "parameter_updates": false,
+  "GPU_used": false,
+  "classifier_pretraining_frequency_evidence": {
+    "file": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_20261014_restored_v2\\fidelity\\results\\classifier80x64\\training\\attribute_statistics.json",
+    "sha256": "8af11f03ba0cdefb88b7f26e501f837c2745db491e712590c3314f15d7aba5d3",
+    "n_fixed_pretraining_patches": 2048,
+    "heads": {
+      "generation": {
+        "counts": [
+          95,
+          453,
+          314,
+          637,
+          378,
+          150,
+          21
+        ],
+        "positive_patches": 1953,
+        "positive_fractions": [
+          0.23195084485407066,
+          0.16077828981054787,
+          0.32616487455197135,
+          0.1935483870967742,
+          0.07680491551459294,
+          0.010752688172043012
+        ]
+      },
+      "structure": {
+        "counts": [
+          95,
+          53,
+          63,
+          221,
+          335,
+          1245,
+          36
+        ],
+        "positive_patches": 1953,
+        "positive_fractions": [
+          0.02713773681515617,
+          0.03225806451612903,
+          0.11315924219150025,
+          0.1715309779825909,
+          0.6374807987711214,
+          0.018433179723502304
+        ]
+      },
+      "location": {
+        "counts": [
+          95,
+          219,
+          159,
+          365,
+          557,
+          156,
+          497
+        ],
+        "positive_patches": 1953,
+        "positive_fractions": [
+          0.11213517665130568,
+          0.08141321044546851,
+          0.18689196108550948,
+          0.28520225294418844,
+          0.07987711213517665,
+          0.25448028673835127
+        ]
+      }
+    },
+    "interpretation": "Pretraining geometry-sampler frequency evidence; not accuracy and not this standard-sampler bank prevalence"
+  },
+  "inputs": [
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_rootrecheck\\gta_38773\\results\\gta_enhanced200x125\\training\\config.json",
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\server_records\\cache\\manifest.json",
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\diagnose_label_scales.py",
+      "sha256": "7bc4201138cbc0f375242042c26238fb40dfa3cad17bdc39614376b269a55536"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\ops\\diagnose_gaussian.py",
+      "sha256": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361"
+    },
+    {
+      "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_20261014_restored_v2\\fidelity\\results\\classifier80x64\\training\\attribute_statistics.json",
+      "sha256": "8af11f03ba0cdefb88b7f26e501f837c2745db491e712590c3314f15d7aba5d3"
+    }
+  ]
+}

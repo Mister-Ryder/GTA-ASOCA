@@ -1,0 +1,22 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import ast,datetime,hashlib,json,os,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+tool=r/'ops/diagnose_initial_gaussian_parameter_gradients.py'
+expected='18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e'
+assert hashlib.sha256(tool.read_bytes()).hexdigest()==expected
+ast.parse(tool.read_text())
+ref=r/'ops_inputs/gaussian_epoch070_fixed_sampling_bank.json'
+assert hashlib.sha256(ref.read_bytes()).hexdigest()=='6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14'
+out=r/'results/initial_gaussian_parameter_gradients_amp_20261014'
+assert not out.exists()
+command=[str(r.parent.parent/'miniconda3/envs/gta-asoca311/bin/python')]
+command=['/root/miniconda3/envs/gta-asoca311/bin/python','-B','-u',str(tool),'--diagnose','--precision','amp','--reference-bank',str(ref),'--output',str(out)]
+log=r/'INITIAL_PARAMETER_GRADIENT_CONTROLLER_20261014.log'
+with log.open('xb') as f:
+    proc=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
+receipt={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'parent_pid':proc.pid,'argv':command,'tool_sha256':expected,'log':str(log),'output':str(out),'role':'NO_UPDATE_PARAMETER_DIAGNOSTIC_QUEUED_REQUIRES_ACTUAL_CPU_FIXTURE_CANONICAL20_IDLE_BEFORE_CUDA'}
+with (r/'INITIAL_PARAMETER_GRADIENT_LAUNCH_20261014.json').open('x') as f:json.dump(receipt,f,indent=2);f.write('\n')
+print(json.dumps(receipt,indent=2))
+PY

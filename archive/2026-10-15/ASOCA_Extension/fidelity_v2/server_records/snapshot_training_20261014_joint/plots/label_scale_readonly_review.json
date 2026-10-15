@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "role": "read-only recomputation of downloaded training28 scale audit; no CT/GT traversal, training or GPU work",
+  "artifact_hashes_verified": 7,
+  "complete_rows": 168,
+  "training_cases": 28,
+  "input_patches": 56,
+  "patches_per_patient": 2,
+  "bank_exactly_equal_to_gaussian56": true,
+  "128_prior_and_start_byte_hashes_match_actual_bank": true,
+  "all_roi_summary_fields_recomputed_from_rows": true,
+  "central_roi_indices_consistent": true,
+  "critical_counts": {
+    "whole_positive_patches": 49,
+    "mixed_generation_bins": 35,
+    "centerline_mode_disagrees_with_current_gen": 13,
+    "equal_branch_mode_disagrees_with_current_gen": 23,
+    "central64_empty_among_wholepositive": 18,
+    "central96_empty_among_wholepositive": 8,
+    "bbox_medians_mm_zyx": [
+      91.25,
+      94.25,
+      107.5
+    ],
+    "same_branch_set_denominator_only_changes": {
+      "64": 0,
+      "96": 1
+    }
+  },
+  "collection_manifest_sha256": "4974b83ae14ca1a7c5093e0058fed093282505dfcdaa1338f8d7d521045d1230",
+  "tool_sha256": "7bc4201138cbc0f375242042c26238fb40dfa3cad17bdc39614376b269a55536",
+  "sources": {
+    "audit_plan.json": "e45cae8bcac96a5332b245a140dd14a3fda86af4b27f6e08ccef5a7a67849138",
+    "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+    "training_tree_extents.json": "fb7f8d26ebc4bb7b44210f42541ff9079786085aabb41e37d940327b50ca986a",
+    "roi_patch_metrics.jsonl": "8041da10d2a34bc63ed6c507039d869733735bcc29ec6db83b7c162120cc149d",
+    "roi_patch_metrics.csv": "08e0900c1a28c0cbbc4302d37f554a932a4b16028dfad0ac673e73ea9fb45bb3",
+    "summary.json": "ca3182d572649667eabc6651e5672470ff712cb844f8cc56003e76c3afe94705",
+    "LABEL_SCALE_AUDIT_COMPLETE.json": "c8a481aa8759aa4ad829ce366a30ba41016bff9aaa30a57bcd3283d3b639c1bb"
+  },
+  "limitations": [
+    "Rows contain cached geometric depth/branch proxies, not manually annotated coronary generation or anatomical type.",
+    "Tile structure labels depend on ROI size and volume thresholds; they do not prove clinical structure heterogeneity.",
+    "Current GT cache inputs were not reread locally; scope is downloaded row/bank/metadata identity and summary arithmetic verification.",
+    "Two fixed patches per training patient are not a natural patch-frequency sample and do not validate segmentation performance.",
+    "Central ROI emptiness argues against replacing global targets blindly; local sample/support and readout need predeclared separate version."
+  ]
+}

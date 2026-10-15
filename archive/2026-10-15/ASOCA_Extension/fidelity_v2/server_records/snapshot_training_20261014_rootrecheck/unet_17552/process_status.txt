@@ -1,0 +1,24 @@
+   PID   PPID   PGID ELAPSED STAT COMMAND
+     1      0      1   50163 Ss   bash
+   850      1      1   50161 Sl   supervisord
+   869    850    869   50161 Sl   autopanel
+   870    850    870   50161 S    sshd
+   871    850    871   50161 S    jupyter-lab
+   872    850    872   50161 Sl   tensorboard
+   874    850    874   50161 Sl   proxy
+   875    850    875   50161 Sl   proxy
+   946    872    872   50161 Sl   server
+  6375      1   6375   45061 Ss   bash
+  6398   6375   6375   45061 Tl   python
+ 54628   6398  54628   20212 Zs   python <defunct>
+102978      1 102978   13191 Tsl  python
+108860      1 108860    3470 Ss   bash
+108861 108860 108860    3470 Sl   python
+109006 108861 109006    3459 Rsl  python
+115661 109006 109006      12 Sl   pt_data_worker
+115669 109006 109006      12 Rl   pt_data_worker
+115677 109006 109006      12 Sl   pt_data_worker
+115685 109006 109006      12 Sl   pt_data_worker
+115708    870 115708       6 Ss   sshd
+115721 115708 115721       5 Ss   sftp-server
+115728 115708 115728       0 Rs   ps

@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "fixture_only": true,
+  "Torch_or_donor_model_loading_performed": false,
+  "server_operations": false,
+  "checks": {
+    "method_change_rejected": true,
+    "no_ds_change_rejected": true,
+    "classifier_weight_change_rejected": true,
+    "steps_change_rejected": true,
+    "sampling_change_rejected": true,
+    "freeze_epochs_change_rejected": true,
+    "gaussian_late_weight_change_rejected": true,
+    "seed_change_rejected": true,
+    "explicit_path_rebase_keeps_donor_hashes": true,
+    "frozen_cli_uses_retained_gta_and_zero_weight": true
+  },
+  "tool_sha256": "0145556d123356956bd80546fb7f2eda0c44bd8761dac2c6ae1f6ae44c894a17"
+}

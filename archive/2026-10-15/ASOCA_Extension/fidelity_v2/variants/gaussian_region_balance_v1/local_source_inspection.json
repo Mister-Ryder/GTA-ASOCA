@@ -1,0 +1,104 @@
+{
+  "status": "source_inspection_passed_not_training",
+  "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "code_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+  "source_files_sha256": {
+    "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+    "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+    "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+    "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+    "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+    "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+    "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+    "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+    "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+    "losses.py": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+    "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+    "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+  },
+  "protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+  "changed_code_files": [
+    "losses.py"
+  ],
+  "gaussian_reduction": {
+    "id": "per_patch_equal_fg_bg_present_mean_v1",
+    "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+    "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+    "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+    "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+    "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+    "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+    "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+    "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+    "target_unchanged": "t=.5+.5*cached_G",
+    "lambda_unchanged": 10.0,
+    "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+    "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+    "not_changed": [
+      "Gaussian field/support/normalization",
+      "classifier labels",
+      "sampler",
+      "architecture/parameter shapes",
+      "DS4/7,2/7,1/7",
+      "50 frozen /20 partial /130 joint",
+      "optimizer/lr/clip12",
+      "200x125 updates",
+      "prediction/evaluation interface"
+    ],
+    "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+  },
+  "actual_model_forward_executed": false,
+  "training_started": false,
+  "source_inspection": {
+    "status": "source_inspection_passed_not_training",
+    "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "code_package_sha256": "52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff",
+    "source_files_sha256": {
+      "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+      "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+      "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+      "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+      "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+      "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+      "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+      "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+      "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+      "losses.py": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+      "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+      "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+    },
+    "protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+    "changed_code_files": [
+      "losses.py"
+    ],
+    "gaussian_reduction": {
+      "id": "per_patch_equal_fg_bg_present_mean_v1",
+      "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+      "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+      "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+      "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+      "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+      "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+      "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+      "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+      "target_unchanged": "t=.5+.5*cached_G",
+      "lambda_unchanged": 10.0,
+      "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+      "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+      "not_changed": [
+        "Gaussian field/support/normalization",
+        "classifier labels",
+        "sampler",
+        "architecture/parameter shapes",
+        "DS4/7,2/7,1/7",
+        "50 frozen /20 partial /130 joint",
+        "optimizer/lr/clip12",
+        "200x125 updates",
+        "prediction/evaluation interface"
+      ],
+      "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+    },
+    "actual_model_forward_executed": false,
+    "training_started": false
+  }
+}

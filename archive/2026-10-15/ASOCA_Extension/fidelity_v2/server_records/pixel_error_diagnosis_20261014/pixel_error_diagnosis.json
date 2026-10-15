@@ -1,0 +1,2540 @@
+{
+  "schema_version": 1,
+  "role": "four development patients; old-server GTA early preview; canonical agreement pending",
+  "recorded_at_utc": "2026-10-14T09:49:32.700496+00:00",
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "source_pair_sha256": "132c8992724d9e916d6015749d8054c90c96648393601d92c8b48847922ae834",
+  "source_pair_tool_sha256": "d4f5c101eccc8d0c47d13b1f492645d491e72f8b7fc4507916de071b3d1d460d",
+  "tool_sha256": "a15a6b91ecb43d576cfc0528667d4aae412df11c25970c1700e3a9e4994e09f2",
+  "frozen_metrics_sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+  "CPU_threads_max_requested": 2,
+  "GPU_used": false,
+  "model_or_forward_used": false,
+  "centerline_definition": "Lee GT skeleton voxel coverage, no distance tolerance; anisotropic physical EDT radius<=1mm versus>1mm; not mm-weighted skeleton length or clinical branch truth",
+  "FN_regions_definition": "26-neighbour connected regions of GT-positive/prediction-negative voxels; geometric boxes and EDT-radius proxies only, no distal/proximal/trunk anatomical attribution",
+  "surface_definition": {
+    "version": 2,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "assd_mm": {
+      "definition": "pooled_bidirectional_surface_voxel_distances",
+      "formula": "(sum(d_prediction_to_truth)+sum(d_truth_to_prediction))/(n_prediction_surface+n_truth_surface)",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "assd_directional_mean_mm": {
+      "definition": "equal_weight_mean_of_two_directional_surface_means",
+      "formula": "(mean(d_prediction_to_truth)+mean(d_truth_to_prediction))/2",
+      "unit": "mm",
+      "surface_area_weighted": false
+    },
+    "surface_definition": "foreground boundary voxels removed by one 6-neighbour binary erosion, border_value=0",
+    "surface_connectivity_neighbors": 6,
+    "component_connectivity_neighbors": 26,
+    "surface_hd95_mm": "max of the two directional surface-distance 95th percentiles",
+    "asoca_foreground_hd95_mm": "max of the two directional ALL-foreground-voxel distance 95th percentiles",
+    "evaluation_grid": "original CT",
+    "spacing_axis_order": "z,y,x",
+    "empty_distance_policy": "null; cohort distance mean undefined if any required distance is undefined",
+    "cldice_role": "auxiliary skeleton overlap; ASSD is a boundary error, not connectivity"
+  },
+  "surface_recalculation": "exact Euclidean nearest6-neighbour-surface voxel using KDTree workers=2; reproduced frozen EDT row distances",
+  "causal_boundary": "Error accounting does not identify the cause in Gaussian loss/classifier/initialization. No significance test/model winner from4 cases.",
+  "cases": [
+    {
+      "case_id": "Diseased_10",
+      "original_grid": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -111.80000305175781,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "GT_bbox": {
+        "bbox_zyx_min_inclusive": [
+          45,
+          130,
+          130
+        ],
+        "bbox_zyx_max_inclusive": [
+          195,
+          374,
+          405
+        ],
+        "bbox_size_zyx_voxels": [
+          151,
+          245,
+          276
+        ],
+        "bbox_extent_zyx_mm": [
+          94.375,
+          94.746152158,
+          106.7344407984
+        ],
+        "world_outer_bbox_xyz_min_mm": [
+          -25.619887950442184,
+          -61.71989405395781,
+          -196.5625
+        ],
+        "world_outer_bbox_xyz_max_mm": [
+          81.11455284795781,
+          33.0262581040422,
+          -102.1875
+        ]
+      },
+      "GT_skeleton_crop": {
+        "offset_zyx": [
+          43,
+          128,
+          128
+        ],
+        "shape_zyx": [
+          155,
+          249,
+          280
+        ],
+        "background_margin_voxels": 2,
+        "both_model_full_grid_frozen_skeleton_metrics_reproduced": true
+      },
+      "methods": [
+        {
+          "case_id": "Diseased_10",
+          "method": "gta_preview",
+          "GT_voxels": 21371,
+          "prediction_voxels": 18023,
+          "TP_voxels": 15335,
+          "FP_voxels": 2688,
+          "FN_voxels": 6036,
+          "TP_volume_mm3": 1433.3583861207157,
+          "FP_volume_mm3": 251.2466476617205,
+          "FN_volume_mm3": 564.1833204189527,
+          "precision": 0.8508572379737003,
+          "recall": 0.7175611810397268,
+          "dice": 0.778544956084683,
+          "GT_skeleton_voxels": 785,
+          "GT_skeleton_radius_le1mm_voxels": 475,
+          "GT_skeleton_radius_gt1mm_voxels": 310,
+          "covered_GT_skeleton_radius_le1mm_voxels": 345,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 305,
+          "centerline_recall": 0.8280254777070064,
+          "centerline_recall_radius_le1mm": 0.7263157894736842,
+          "centerline_recall_radius_gt1mm": 0.9838709677419355,
+          "prediction_components_26_recorded": 21,
+          "prediction_surface_voxels": 10899,
+          "truth_surface_voxels": 12205,
+          "asd_prediction_to_truth_mm": 0.42248568835345235,
+          "asd_truth_to_prediction_mm": 0.3819103229511301,
+          "assd_mm": 0.401051203643647,
+          "prediction_to_truth_surface_p95_mm": 0.7734379767999826,
+          "truth_to_prediction_surface_p95_mm": 1.3084538876051857,
+          "FN_components_26": 243,
+          "largest_FN_voxels": 1077,
+          "top5_FN_fraction": 0.5014910536779325
+        },
+        {
+          "case_id": "Diseased_10",
+          "method": "unet",
+          "GT_voxels": 21371,
+          "prediction_voxels": 16484,
+          "TP_voxels": 13492,
+          "FP_voxels": 2992,
+          "FN_voxels": 7879,
+          "TP_volume_mm3": 1261.0936645282488,
+          "FP_volume_mm3": 279.6614470996532,
+          "FN_volume_mm3": 736.4480420114196,
+          "precision": 0.8184906576073768,
+          "recall": 0.631322820644799,
+          "dice": 0.712825254259675,
+          "GT_skeleton_voxels": 785,
+          "GT_skeleton_radius_le1mm_voxels": 475,
+          "GT_skeleton_radius_gt1mm_voxels": 310,
+          "covered_GT_skeleton_radius_le1mm_voxels": 297,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 257,
+          "centerline_recall": 0.7057324840764331,
+          "centerline_recall_radius_le1mm": 0.6252631578947369,
+          "centerline_recall_radius_gt1mm": 0.8290322580645161,
+          "prediction_components_26_recorded": 18,
+          "prediction_surface_voxels": 9731,
+          "truth_surface_voxels": 12205,
+          "asd_prediction_to_truth_mm": 0.34993363368322206,
+          "asd_truth_to_prediction_mm": 2.139395342963561,
+          "assd_mm": 1.3455745965646286,
+          "prediction_to_truth_surface_p95_mm": 1.3644057871389401,
+          "truth_to_prediction_surface_p95_mm": 17.415030044587073,
+          "FN_components_26": 202,
+          "largest_FN_voxels": 2164,
+          "top5_FN_fraction": 0.614671912679274
+        }
+      ],
+      "transitions": {
+        "case_id": "Diseased_10",
+        "GT_newly_recovered_by_GTA_voxels": 3221,
+        "GT_newly_missed_by_GTA_voxels": 1378,
+        "FP_newly_added_by_GTA_voxels": 1158,
+        "FP_removed_by_GTA_voxels": 1462,
+        "GT_skeleton_newly_recovered_radius_le1mm": 83,
+        "GT_skeleton_newly_missed_radius_le1mm": 35,
+        "GT_skeleton_newly_recovered_radius_gt1mm": 48,
+        "GT_skeleton_newly_missed_radius_gt1mm": 0,
+        "TP_GTA_minus_UNet": 1843,
+        "FP_GTA_minus_UNet": -304
+      },
+      "largest_FN_regions": {
+        "gta_preview": [
+          {
+            "case_id": "Diseased_10",
+            "method": "gta_preview",
+            "rank": 1,
+            "component_id": 67,
+            "FN_voxels": 1077,
+            "FN_volume_mm3": 100.66690458767597,
+            "fraction_of_case_FN": 0.17842942345924453,
+            "missed_GT_skeleton_voxels": 53,
+            "missed_GT_skeleton_radius_le1mm": 53,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              102,
+              130,
+              377
+            ],
+            "bbox_zyx_max_inclusive": [
+              155,
+              218,
+              400
+            ],
+            "bbox_size_zyx_voxels": [
+              54,
+              89,
+              24
+            ],
+            "bbox_extent_zyx_mm": [
+              33.75,
+              34.4179899676,
+              9.281255721600001
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              69.8997021843578,
+              -61.71989405395781,
+              -160.9375
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              79.18095790595783,
+              -27.30190408635781,
+              -127.1875
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.7349670577577742,
+            "GT_EDT_radius_max_mm": 0.9943999718204327
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "gta_preview",
+            "rank": 2,
+            "component_id": 65,
+            "FN_voxels": 646,
+            "FN_volume_mm3": 60.381448805606944,
+            "fraction_of_case_FN": 0.10702451954937045,
+            "missed_GT_skeleton_voxels": 11,
+            "missed_GT_skeleton_radius_le1mm": 11,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              99,
+              324,
+              364
+            ],
+            "bbox_zyx_max_inclusive": [
+              149,
+              344,
+              405
+            ],
+            "bbox_size_zyx_voxels": [
+              51,
+              21,
+              42
+            ],
+            "bbox_extent_zyx_mm": [
+              31.875,
+              8.1210987564,
+              16.2421975128
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              64.8723553351578,
+              13.303589695642188,
+              -162.8125
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              81.11455284795781,
+              21.424688452042204,
+              -130.9375
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.5469032382224837,
+            "GT_EDT_radius_max_mm": 0.8304987368914168
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "gta_preview",
+            "rank": 3,
+            "component_id": 123,
+            "FN_voxels": 529,
+            "FN_volume_mm3": 49.44548981140259,
+            "fraction_of_case_FN": 0.08764082173624917,
+            "missed_GT_skeleton_voxels": 27,
+            "missed_GT_skeleton_radius_le1mm": 22,
+            "missed_GT_skeleton_radius_gt1mm": 5,
+            "bbox_zyx_min_inclusive": [
+              153,
+              220,
+              359
+            ],
+            "bbox_zyx_max_inclusive": [
+              170,
+              241,
+              384
+            ],
+            "bbox_size_zyx_voxels": [
+              18,
+              22,
+              26
+            ],
+            "bbox_extent_zyx_mm": [
+              11.25,
+              8.5078177448,
+              10.054693698400001
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              62.93876039315782,
+              -26.915185097957803,
+              -129.0625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              72.99345409155782,
+              -18.40736735315781,
+              -117.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.8304987368914168,
+            "GT_EDT_radius_max_mm": 1.317797095118241
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "gta_preview",
+            "rank": 4,
+            "component_id": 78,
+            "FN_voxels": 477,
+            "FN_volume_mm3": 44.58506359175621,
+            "fraction_of_case_FN": 0.07902584493041749,
+            "missed_GT_skeleton_voxels": 11,
+            "missed_GT_skeleton_radius_le1mm": 11,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              108,
+              330,
+              278
+            ],
+            "bbox_zyx_max_inclusive": [
+              154,
+              374,
+              307
+            ],
+            "bbox_size_zyx_voxels": [
+              47,
+              45,
+              30
+            ],
+            "bbox_extent_zyx_mm": [
+              29.375,
+              17.402354478,
+              11.601569652
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              31.614522332757815,
+              15.623903626042193,
+              -157.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              43.216091984757824,
+              33.0262581040422,
+              -127.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.5469032382224837,
+            "GT_EDT_radius_max_mm": 0.7349670577577742
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "gta_preview",
+            "rank": 5,
+            "component_id": 132,
+            "FN_voxels": 298,
+            "FN_volume_mm3": 27.853981027973482,
+            "fraction_of_case_FN": 0.04937044400265076,
+            "missed_GT_skeleton_voxels": 0,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              156,
+              285,
+              292
+            ],
+            "bbox_zyx_max_inclusive": [
+              174,
+              324,
+              302
+            ],
+            "bbox_size_zyx_voxels": [
+              19,
+              40,
+              11
+            ],
+            "bbox_extent_zyx_mm": [
+              11.875,
+              15.468759536,
+              4.2539088724
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              37.02858817035782,
+              -1.778450851957814,
+              -127.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              41.282497042757825,
+              13.690308684042193,
+              -115.3125
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.5469032382224837,
+            "GT_EDT_radius_max_mm": 0.7734379768
+          }
+        ],
+        "unet": [
+          {
+            "case_id": "Diseased_10",
+            "method": "unet",
+            "rank": 1,
+            "component_id": 1,
+            "FN_voxels": 2164,
+            "FN_volume_mm3": 202.26850652528395,
+            "fraction_of_case_FN": 0.2746541439268943,
+            "missed_GT_skeleton_voxels": 87,
+            "missed_GT_skeleton_radius_le1mm": 46,
+            "missed_GT_skeleton_radius_gt1mm": 41,
+            "bbox_zyx_min_inclusive": [
+              45,
+              206,
+              131
+            ],
+            "bbox_zyx_max_inclusive": [
+              69,
+              282,
+              206
+            ],
+            "bbox_size_zyx_voxels": [
+              25,
+              77,
+              76
+            ],
+            "bbox_extent_zyx_mm": [
+              15.625,
+              29.777362106800002,
+              29.3906431184
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              -25.233168962042186,
+              -32.32925093555781,
+              -196.5625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              4.1574741563578215,
+              -2.5518888287578108,
+              -180.9375
+            ],
+            "GT_EDT_radius_median_mm": 0.5469032382224837,
+            "GT_EDT_radius_p90_mm": 0.8304987368914168,
+            "GT_EDT_radius_max_mm": 1.2597768087692973
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "unet",
+            "rank": 2,
+            "component_id": 3,
+            "FN_voxels": 889,
+            "FN_volume_mm3": 83.09459440895445,
+            "fraction_of_case_FN": 0.112831577611372,
+            "missed_GT_skeleton_voxels": 8,
+            "missed_GT_skeleton_radius_le1mm": 7,
+            "missed_GT_skeleton_radius_gt1mm": 1,
+            "bbox_zyx_min_inclusive": [
+              80,
+              185,
+              132
+            ],
+            "bbox_zyx_max_inclusive": [
+              148,
+              200,
+              181
+            ],
+            "bbox_size_zyx_voxels": [
+              69,
+              16,
+              50
+            ],
+            "bbox_extent_zyx_mm": [
+              43.125,
+              6.1875038144,
+              19.335949420000002
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              -24.846449973642187,
+              -40.45034969195781,
+              -174.6875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              -5.5105005536421885,
+              -34.26284587755781,
+              -131.5625
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.7349670577577742,
+            "GT_EDT_radius_max_mm": 1.0669502706057095
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "unet",
+            "rank": 3,
+            "component_id": 133,
+            "FN_voxels": 648,
+            "FN_volume_mm3": 60.56838827559334,
+            "fraction_of_case_FN": 0.0822439395862419,
+            "missed_GT_skeleton_voxels": 11,
+            "missed_GT_skeleton_radius_le1mm": 6,
+            "missed_GT_skeleton_radius_gt1mm": 5,
+            "bbox_zyx_min_inclusive": [
+              170,
+              236,
+              316
+            ],
+            "bbox_zyx_max_inclusive": [
+              182,
+              264,
+              360
+            ],
+            "bbox_size_zyx_voxels": [
+              13,
+              29,
+              45
+            ],
+            "bbox_extent_zyx_mm": [
+              8.125,
+              11.2148506636,
+              17.402354478
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              46.30984389195781,
+              -20.727681283557814,
+              -118.4375
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              63.71219836995783,
+              -9.51283061995781,
+              -110.3125
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.7734379768,
+            "GT_EDT_radius_max_mm": 1.2229128177802346
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "unet",
+            "rank": 4,
+            "component_id": 25,
+            "FN_voxels": 572,
+            "FN_volume_mm3": 53.46468841611017,
+            "fraction_of_case_FN": 0.07259804543723823,
+            "missed_GT_skeleton_voxels": 27,
+            "missed_GT_skeleton_radius_le1mm": 27,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              126,
+              162,
+              377
+            ],
+            "bbox_zyx_max_inclusive": [
+              152,
+              203,
+              400
+            ],
+            "bbox_size_zyx_voxels": [
+              27,
+              42,
+              24
+            ],
+            "bbox_extent_zyx_mm": [
+              16.875,
+              16.2421975128,
+              9.281255721600001
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              69.8997021843578,
+              -49.34488642515781,
+              -145.9375
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              79.18095790595783,
+              -33.102688912357806,
+              -129.0625
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.7349670577577742,
+            "GT_EDT_radius_max_mm": 0.9943999718204327
+          },
+          {
+            "case_id": "Diseased_10",
+            "method": "unet",
+            "rank": 5,
+            "component_id": 70,
+            "FN_voxels": 570,
+            "FN_volume_mm3": 53.27774894612377,
+            "fraction_of_case_FN": 0.0723442061175276,
+            "missed_GT_skeleton_voxels": 26,
+            "missed_GT_skeleton_radius_le1mm": 21,
+            "missed_GT_skeleton_radius_gt1mm": 5,
+            "bbox_zyx_min_inclusive": [
+              153,
+              222,
+              359
+            ],
+            "bbox_zyx_max_inclusive": [
+              170,
+              241,
+              382
+            ],
+            "bbox_size_zyx_voxels": [
+              18,
+              20,
+              24
+            ],
+            "bbox_extent_zyx_mm": [
+              11.25,
+              7.734379768,
+              9.281255721600001
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              62.93876039315782,
+              -26.141747121157806,
+              -129.0625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              72.22001611475781,
+              -18.40736735315781,
+              -117.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.3867189884,
+            "GT_EDT_radius_p90_mm": 0.8304987368914168,
+            "GT_EDT_radius_max_mm": 1.317797095118241
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "Diseased_20",
+      "original_grid": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4707030058000001,
+          0.4707030058000001,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -88.6999969482422,
+          -165.99999999999997,
+          -207.87499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "GT_bbox": {
+        "bbox_zyx_min_inclusive": [
+          46,
+          170,
+          158
+        ],
+        "bbox_zyx_max_inclusive": [
+          182,
+          410,
+          411
+        ],
+        "bbox_size_zyx_voxels": [
+          137,
+          241,
+          254
+        ],
+        "bbox_extent_zyx_mm": [
+          85.62499999999997,
+          113.43942439780002,
+          119.55856347320002
+        ],
+        "world_outer_bbox_xyz_min_mm": [
+          -14.564273534742185,
+          -86.21584051689996,
+          -179.43749999999997
+        ],
+        "world_outer_bbox_xyz_max_mm": [
+          104.99428993845784,
+          27.223583880900065,
+          -93.81250000000001
+        ]
+      },
+      "GT_skeleton_crop": {
+        "offset_zyx": [
+          44,
+          168,
+          156
+        ],
+        "shape_zyx": [
+          141,
+          245,
+          258
+        ],
+        "background_margin_voxels": 2,
+        "both_model_full_grid_frozen_skeleton_metrics_reproduced": true
+      },
+      "methods": [
+        {
+          "case_id": "Diseased_20",
+          "method": "gta_preview",
+          "GT_voxels": 30631,
+          "prediction_voxels": 22738,
+          "TP_voxels": 21310,
+          "FP_voxels": 1428,
+          "FN_voxels": 9321,
+          "TP_volume_mm3": 2950.919826343556,
+          "FP_volume_mm3": 197.74347780472067,
+          "FN_volume_mm3": 1290.73316289762,
+          "precision": 0.9371976427126396,
+          "recall": 0.6957004342006464,
+          "dice": 0.798590942307332,
+          "GT_skeleton_voxels": 1246,
+          "GT_skeleton_radius_le1mm_voxels": 644,
+          "GT_skeleton_radius_gt1mm_voxels": 602,
+          "covered_GT_skeleton_radius_le1mm_voxels": 336,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 585,
+          "centerline_recall": 0.7391653290529695,
+          "centerline_recall_radius_le1mm": 0.5217391304347826,
+          "centerline_recall_radius_gt1mm": 0.9717607973421927,
+          "prediction_components_26_recorded": 23,
+          "prediction_surface_voxels": 12946,
+          "truth_surface_voxels": 16974,
+          "asd_prediction_to_truth_mm": 0.39948632272431656,
+          "asd_truth_to_prediction_mm": 1.5501007673345382,
+          "assd_mm": 1.0522446643959043,
+          "prediction_to_truth_surface_p95_mm": 0.625,
+          "truth_to_prediction_surface_p95_mm": 7.908729347052564,
+          "FN_components_26": 347,
+          "largest_FN_voxels": 1354,
+          "top5_FN_fraction": 0.5341701534170153
+        },
+        {
+          "case_id": "Diseased_20",
+          "method": "unet",
+          "GT_voxels": 30631,
+          "prediction_voxels": 24154,
+          "TP_voxels": 22633,
+          "FP_voxels": 1521,
+          "FN_voxels": 7998,
+          "TP_volume_mm3": 3134.123342544988,
+          "FP_volume_mm3": 210.6217295104903,
+          "FN_volume_mm3": 1107.5296466961877,
+          "precision": 0.9370290635091496,
+          "recall": 0.7388919721850413,
+          "dice": 0.8262480606005294,
+          "GT_skeleton_voxels": 1246,
+          "GT_skeleton_radius_le1mm_voxels": 644,
+          "GT_skeleton_radius_gt1mm_voxels": 602,
+          "covered_GT_skeleton_radius_le1mm_voxels": 380,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 600,
+          "centerline_recall": 0.7865168539325843,
+          "centerline_recall_radius_le1mm": 0.5900621118012422,
+          "centerline_recall_radius_gt1mm": 0.9966777408637874,
+          "prediction_components_26_recorded": 16,
+          "prediction_surface_voxels": 13737,
+          "truth_surface_voxels": 16974,
+          "asd_prediction_to_truth_mm": 0.27179759683070864,
+          "asd_truth_to_prediction_mm": 0.760472986926033,
+          "assd_mm": 0.5418889670719264,
+          "prediction_to_truth_surface_p95_mm": 0.625,
+          "truth_to_prediction_surface_p95_mm": 3.8077234904762176,
+          "FN_components_26": 354,
+          "largest_FN_voxels": 1164,
+          "top5_FN_fraction": 0.39822455613903474
+        }
+      ],
+      "transitions": {
+        "case_id": "Diseased_20",
+        "GT_newly_recovered_by_GTA_voxels": 998,
+        "GT_newly_missed_by_GTA_voxels": 2321,
+        "FP_newly_added_by_GTA_voxels": 568,
+        "FP_removed_by_GTA_voxels": 661,
+        "GT_skeleton_newly_recovered_radius_le1mm": 36,
+        "GT_skeleton_newly_missed_radius_le1mm": 80,
+        "GT_skeleton_newly_recovered_radius_gt1mm": 0,
+        "GT_skeleton_newly_missed_radius_gt1mm": 15,
+        "TP_GTA_minus_UNet": -1323,
+        "FP_GTA_minus_UNet": -93
+      },
+      "largest_FN_regions": {
+        "gta_preview": [
+          {
+            "case_id": "Diseased_20",
+            "method": "gta_preview",
+            "rank": 1,
+            "component_id": 105,
+            "FN_voxels": 1354,
+            "FN_volume_mm3": 187.49626677002226,
+            "fraction_of_case_FN": 0.1452633837571076,
+            "missed_GT_skeleton_voxels": 37,
+            "missed_GT_skeleton_radius_le1mm": 31,
+            "missed_GT_skeleton_radius_gt1mm": 6,
+            "bbox_zyx_min_inclusive": [
+              87,
+              340,
+              306
+            ],
+            "bbox_zyx_max_inclusive": [
+              160,
+              391,
+              388
+            ],
+            "bbox_size_zyx_voxels": [
+              74,
+              52,
+              83
+            ],
+            "bbox_extent_zyx_mm": [
+              46.249999999999986,
+              24.476556301600002,
+              39.068349481400006
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              55.09977132365783,
+              -6.196329530899959,
+              -153.8125
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              94.16812080505782,
+              18.280226770700068,
+              -107.56250000000001
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.6656745746521417,
+            "GT_EDT_radius_max_mm": 1.2241044066360411
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "gta_preview",
+            "rank": 2,
+            "component_id": 272,
+            "FN_voxels": 1308,
+            "FN_volume_mm3": 181.12637882953408,
+            "fraction_of_case_FN": 0.14032829095590602,
+            "missed_GT_skeleton_voxels": 5,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 5,
+            "bbox_zyx_min_inclusive": [
+              167,
+              300,
+              245
+            ],
+            "bbox_zyx_max_inclusive": [
+              182,
+              325,
+              281
+            ],
+            "bbox_size_zyx_voxels": [
+              16,
+              26,
+              37
+            ],
+            "bbox_extent_zyx_mm": [
+              9.999999999999996,
+              12.238278150800001,
+              17.4160112146
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              26.38688796985781,
+              -25.024449762899962,
+              -103.81250000000001
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              43.802899184457814,
+              -12.786171612099935,
+              -93.81250000000001
+            ],
+            "GT_EDT_radius_median_mm": 0.6249999999999998,
+            "GT_EDT_radius_p90_mm": 1.8085690906622875,
+            "GT_EDT_radius_max_mm": 2.657180105808877
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "gta_preview",
+            "rank": 3,
+            "component_id": 11,
+            "FN_voxels": 1011,
+            "FN_volume_mm3": 139.9990588659472,
+            "fraction_of_case_FN": 0.10846475700032185,
+            "missed_GT_skeleton_voxels": 70,
+            "missed_GT_skeleton_radius_le1mm": 64,
+            "missed_GT_skeleton_radius_gt1mm": 6,
+            "bbox_zyx_min_inclusive": [
+              56,
+              170,
+              367
+            ],
+            "bbox_zyx_max_inclusive": [
+              130,
+              181,
+              397
+            ],
+            "bbox_size_zyx_voxels": [
+              75,
+              12,
+              31
+            ],
+            "bbox_extent_zyx_mm": [
+              46.874999999999986,
+              5.648436069600001,
+              14.591793179800002
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              83.81265467745781,
+              -86.21584051689996,
+              -173.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              98.40444785725784,
+              -80.56740444729996,
+              -126.3125
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.7824233634479192,
+            "GT_EDT_radius_max_mm": 1.129986848895428
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "gta_preview",
+            "rank": 4,
+            "component_id": 110,
+            "FN_voxels": 748,
+            "FN_volume_mm3": 103.57991694532988,
+            "fraction_of_case_FN": 0.08024890033258233,
+            "missed_GT_skeleton_voxels": 78,
+            "missed_GT_skeleton_radius_le1mm": 78,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              91,
+              356,
+              246
+            ],
+            "bbox_zyx_max_inclusive": [
+              158,
+              410,
+              298
+            ],
+            "bbox_size_zyx_voxels": [
+              68,
+              55,
+              53
+            ],
+            "bbox_extent_zyx_mm": [
+              42.499999999999986,
+              25.888665319000005,
+              24.947259307400003
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              26.857590975657814,
+              1.3349185619000536,
+              -151.3125
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              51.80485028305783,
+              27.223583880900065,
+              -108.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.6249999999999998,
+            "GT_EDT_radius_max_mm": 0.9130978257220359
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "gta_preview",
+            "rank": 5,
+            "component_id": 122,
+            "FN_voxels": 558,
+            "FN_volume_mm3": 77.26951023461774,
+            "fraction_of_case_FN": 0.05986482137109752,
+            "missed_GT_skeleton_voxels": 25,
+            "missed_GT_skeleton_radius_le1mm": 25,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              105,
+              319,
+              339
+            ],
+            "bbox_zyx_max_inclusive": [
+              142,
+              384,
+              411
+            ],
+            "bbox_size_zyx_voxels": [
+              38,
+              66,
+              73
+            ],
+            "bbox_extent_zyx_mm": [
+              23.749999999999993,
+              31.066398382800006,
+              34.361319423400005
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              70.63297051505783,
+              -16.081092652699937,
+              -142.5625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              104.99428993845784,
+              14.985305730100066,
+              -118.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.6249999999999998,
+            "GT_EDT_radius_max_mm": 0.9130978257220359
+          }
+        ],
+        "unet": [
+          {
+            "case_id": "Diseased_20",
+            "method": "unet",
+            "rank": 1,
+            "component_id": 279,
+            "FN_voxels": 1164,
+            "FN_volume_mm3": 161.18586005931013,
+            "fraction_of_case_FN": 0.145536384096024,
+            "missed_GT_skeleton_voxels": 1,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 1,
+            "bbox_zyx_min_inclusive": [
+              164,
+              279,
+              245
+            ],
+            "bbox_zyx_max_inclusive": [
+              182,
+              345,
+              315
+            ],
+            "bbox_size_zyx_voxels": [
+              19,
+              67,
+              71
+            ],
+            "bbox_extent_zyx_mm": [
+              11.874999999999996,
+              31.537101388600004,
+              33.4199134118
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              26.38688796985781,
+              -34.90921288469994,
+              -105.68750000000001
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              59.80680138165782,
+              -3.372111496099933,
+              -93.81250000000001
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 1.2499999999999996,
+            "GT_EDT_radius_max_mm": 2.259973697790856
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "unet",
+            "rank": 2,
+            "component_id": 15,
+            "FN_voxels": 766,
+            "FN_volume_mm3": 106.07248179160787,
+            "fraction_of_case_FN": 0.09577394348587147,
+            "missed_GT_skeleton_voxels": 33,
+            "missed_GT_skeleton_radius_le1mm": 32,
+            "missed_GT_skeleton_radius_gt1mm": 1,
+            "bbox_zyx_min_inclusive": [
+              56,
+              170,
+              367
+            ],
+            "bbox_zyx_max_inclusive": [
+              130,
+              181,
+              397
+            ],
+            "bbox_size_zyx_voxels": [
+              75,
+              12,
+              31
+            ],
+            "bbox_extent_zyx_mm": [
+              46.874999999999986,
+              5.648436069600001,
+              14.591793179800002
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              83.81265467745781,
+              -86.21584051689996,
+              -173.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              98.40444785725784,
+              -80.56740444729996,
+              -126.3125
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.6656745746521417,
+            "GT_EDT_radius_max_mm": 1.0525239181822779
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "unet",
+            "rank": 3,
+            "component_id": 96,
+            "FN_voxels": 463,
+            "FN_volume_mm3": 64.11430687926168,
+            "fraction_of_case_FN": 0.057889472368092026,
+            "missed_GT_skeleton_voxels": 53,
+            "missed_GT_skeleton_radius_le1mm": 53,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              91,
+              395,
+              246
+            ],
+            "bbox_zyx_max_inclusive": [
+              134,
+              410,
+              293
+            ],
+            "bbox_size_zyx_voxels": [
+              44,
+              16,
+              48
+            ],
+            "bbox_extent_zyx_mm": [
+              27.49999999999999,
+              7.531248092800001,
+              22.593744278400003
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              26.857590975657814,
+              19.692335788100053,
+              -151.3125
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              49.45133525405781,
+              27.223583880900065,
+              -123.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.6249999999999998,
+            "GT_EDT_radius_max_mm": 0.9130978257220359
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "unet",
+            "rank": 4,
+            "component_id": 178,
+            "FN_voxels": 397,
+            "FN_volume_mm3": 54.97490244290904,
+            "fraction_of_case_FN": 0.04963740935233808,
+            "missed_GT_skeleton_voxels": 43,
+            "missed_GT_skeleton_radius_le1mm": 43,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              136,
+              349,
+              290
+            ],
+            "bbox_zyx_max_inclusive": [
+              165,
+              400,
+              305
+            ],
+            "bbox_size_zyx_voxels": [
+              30,
+              52,
+              16
+            ],
+            "bbox_extent_zyx_mm": [
+              18.749999999999993,
+              24.476556301600002,
+              7.531248092800001
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              47.56852323085782,
+              -1.9600024786999484,
+              -123.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              55.09977132365783,
+              22.51655382290005,
+              -104.43750000000001
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.6249999999999998,
+            "GT_EDT_radius_max_mm": 0.9130978257220359
+          },
+          {
+            "case_id": "Diseased_20",
+            "method": "unet",
+            "rank": 5,
+            "component_id": 115,
+            "FN_voxels": 395,
+            "FN_volume_mm3": 54.6979507933226,
+            "fraction_of_case_FN": 0.04938734683670918,
+            "missed_GT_skeleton_voxels": 0,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              106,
+              207,
+              162
+            ],
+            "bbox_zyx_max_inclusive": [
+              138,
+              222,
+              181
+            ],
+            "bbox_size_zyx_voxels": [
+              33,
+              16,
+              20
+            ],
+            "bbox_extent_zyx_mm": [
+              20.624999999999993,
+              7.531248092800001,
+              9.414060116000002
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              -12.681461511542196,
+              -68.79982930229995,
+              -141.9375
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              -3.267401395542194,
+              -61.268581209499956,
+              -121.3125
+            ],
+            "GT_EDT_radius_median_mm": 0.4707030058000001,
+            "GT_EDT_radius_p90_mm": 0.4707030058000001,
+            "GT_EDT_radius_max_mm": 0.9414060116000001
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "Normal_12",
+      "original_grid": {
+        "size_xyz": [
+          512,
+          512,
+          206
+        ],
+        "spacing_xyz_mm": [
+          0.369141,
+          0.369141,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -94.49999999999999,
+          -193.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "GT_bbox": {
+        "bbox_zyx_min_inclusive": [
+          47,
+          134,
+          125
+        ],
+        "bbox_zyx_max_inclusive": [
+          184,
+          360,
+          400
+        ],
+        "bbox_size_zyx_voxels": [
+          138,
+          227,
+          276
+        ],
+        "bbox_extent_zyx_mm": [
+          86.25,
+          83.795007,
+          101.882916
+        ],
+        "world_outer_bbox_xyz_min_mm": [
+          -29.741942448242185,
+          -45.219676499999984,
+          -164.0625
+        ],
+        "world_outer_bbox_xyz_max_mm": [
+          72.14097355175781,
+          38.57533050000002,
+          -77.8125
+        ]
+      },
+      "GT_skeleton_crop": {
+        "offset_zyx": [
+          45,
+          132,
+          123
+        ],
+        "shape_zyx": [
+          142,
+          231,
+          280
+        ],
+        "background_margin_voxels": 2,
+        "both_model_full_grid_frozen_skeleton_metrics_reproduced": true
+      },
+      "methods": [
+        {
+          "case_id": "Normal_12",
+          "method": "gta_preview",
+          "GT_voxels": 27713,
+          "prediction_voxels": 29401,
+          "TP_voxels": 24492,
+          "FP_voxels": 4909,
+          "FN_voxels": 3221,
+          "TP_volume_mm3": 2085.8776796634074,
+          "FP_volume_mm3": 418.0782920736431,
+          "FN_volume_mm3": 274.3186349091881,
+          "precision": 0.8330328900377538,
+          "recall": 0.8837729585393137,
+          "dice": 0.8576531148229856,
+          "GT_skeleton_voxels": 804,
+          "GT_skeleton_radius_le1mm_voxels": 385,
+          "GT_skeleton_radius_gt1mm_voxels": 419,
+          "covered_GT_skeleton_radius_le1mm_voxels": 339,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 419,
+          "centerline_recall": 0.9427860696517413,
+          "centerline_recall_radius_le1mm": 0.8805194805194805,
+          "centerline_recall_radius_gt1mm": 1.0,
+          "prediction_components_26_recorded": 13,
+          "prediction_surface_voxels": 15508,
+          "truth_surface_voxels": 13644,
+          "asd_prediction_to_truth_mm": 0.649331669744002,
+          "asd_truth_to_prediction_mm": 0.1605394147283737,
+          "assd_mm": 0.4205624076888006,
+          "prediction_to_truth_surface_p95_mm": 2.684004264909059,
+          "truth_to_prediction_surface_p95_mm": 0.5220442086279754,
+          "FN_components_26": 492,
+          "largest_FN_voxels": 395,
+          "top5_FN_fraction": 0.30673703818689846
+        },
+        {
+          "case_id": "Normal_12",
+          "method": "unet",
+          "GT_voxels": 27713,
+          "prediction_voxels": 30948,
+          "TP_voxels": 24592,
+          "FP_voxels": 6356,
+          "FN_voxels": 3121,
+          "TP_volume_mm3": 2094.39424703097,
+          "FP_volume_mm3": 541.3130218822724,
+          "FN_volume_mm3": 265.8020675416256,
+          "precision": 0.7946232389815174,
+          "recall": 0.8873813733626817,
+          "dice": 0.8384446224919453,
+          "GT_skeleton_voxels": 804,
+          "GT_skeleton_radius_le1mm_voxels": 385,
+          "GT_skeleton_radius_gt1mm_voxels": 419,
+          "covered_GT_skeleton_radius_le1mm_voxels": 315,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 416,
+          "centerline_recall": 0.9092039800995025,
+          "centerline_recall_radius_le1mm": 0.8181818181818182,
+          "centerline_recall_radius_gt1mm": 0.9928400954653938,
+          "prediction_components_26_recorded": 16,
+          "prediction_surface_voxels": 16204,
+          "truth_surface_voxels": 13644,
+          "asd_prediction_to_truth_mm": 1.3132027471260175,
+          "asd_truth_to_prediction_mm": 0.2516849256382345,
+          "assd_mm": 0.827965908598166,
+          "prediction_to_truth_surface_p95_mm": 3.378192070046121,
+          "truth_to_prediction_surface_p95_mm": 0.625,
+          "FN_components_26": 457,
+          "largest_FN_voxels": 287,
+          "top5_FN_fraction": 0.32617750720922783
+        }
+      ],
+      "transitions": {
+        "case_id": "Normal_12",
+        "GT_newly_recovered_by_GTA_voxels": 1028,
+        "GT_newly_missed_by_GTA_voxels": 1128,
+        "FP_newly_added_by_GTA_voxels": 1369,
+        "FP_removed_by_GTA_voxels": 2816,
+        "GT_skeleton_newly_recovered_radius_le1mm": 31,
+        "GT_skeleton_newly_missed_radius_le1mm": 7,
+        "GT_skeleton_newly_recovered_radius_gt1mm": 3,
+        "GT_skeleton_newly_missed_radius_gt1mm": 0,
+        "TP_GTA_minus_UNet": -100,
+        "FP_GTA_minus_UNet": -1447
+      },
+      "largest_FN_regions": {
+        "gta_preview": [
+          {
+            "case_id": "Normal_12",
+            "method": "gta_preview",
+            "rank": 1,
+            "component_id": 93,
+            "FN_voxels": 395,
+            "FN_volume_mm3": 33.64044110187187,
+            "fraction_of_case_FN": 0.12263272275690779,
+            "missed_GT_skeleton_voxels": 3,
+            "missed_GT_skeleton_radius_le1mm": 3,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              86,
+              171,
+              131
+            ],
+            "bbox_zyx_max_inclusive": [
+              123,
+              189,
+              154
+            ],
+            "bbox_size_zyx_voxels": [
+              38,
+              19,
+              24
+            ],
+            "bbox_extent_zyx_mm": [
+              23.75,
+              7.013679,
+              8.859384
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              -27.52709644824219,
+              -31.561459499999984,
+              -139.6875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              -18.667712448242185,
+              -24.547780499999988,
+              -115.9375
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.369141,
+            "GT_EDT_radius_max_mm": 0.738282
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "gta_preview",
+            "rank": 2,
+            "component_id": 342,
+            "FN_voxels": 249,
+            "FN_volume_mm3": 21.206252745230625,
+            "fraction_of_case_FN": 0.0773051847252406,
+            "missed_GT_skeleton_voxels": 0,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              153,
+              243,
+              288
+            ],
+            "bbox_zyx_max_inclusive": [
+              158,
+              259,
+              308
+            ],
+            "bbox_size_zyx_voxels": [
+              6,
+              17,
+              21
+            ],
+            "bbox_extent_zyx_mm": [
+              3.75,
+              6.275397,
+              7.751961
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              30.428040551757817,
+              -4.983307499999981,
+              -97.8125
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              38.18000155175781,
+              1.2920895000000172,
+              -94.0625
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.738282,
+            "GT_EDT_radius_max_mm": 1.1673263377522156
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "gta_preview",
+            "rank": 3,
+            "component_id": 322,
+            "FN_voxels": 198,
+            "FN_volume_mm3": 16.86280338777375,
+            "fraction_of_case_FN": 0.061471592673082893,
+            "missed_GT_skeleton_voxels": 4,
+            "missed_GT_skeleton_radius_le1mm": 4,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              151,
+              216,
+              314
+            ],
+            "bbox_zyx_max_inclusive": [
+              162,
+              237,
+              328
+            ],
+            "bbox_size_zyx_voxels": [
+              12,
+              22,
+              15
+            ],
+            "bbox_extent_zyx_mm": [
+              7.5,
+              8.121102,
+              5.537115
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              40.02570655175781,
+              -14.950114499999984,
+              -99.0625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              45.56282155175781,
+              -6.82901249999999,
+              -91.5625
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.625,
+            "GT_EDT_radius_max_mm": 0.7258719431697301
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "gta_preview",
+            "rank": 4,
+            "component_id": 487,
+            "FN_voxels": 74,
+            "FN_volume_mm3": 6.30225985199625,
+            "fraction_of_case_FN": 0.022974231605091586,
+            "missed_GT_skeleton_voxels": 0,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              181,
+              280,
+              242
+            ],
+            "bbox_zyx_max_inclusive": [
+              184,
+              292,
+              257
+            ],
+            "bbox_size_zyx_voxels": [
+              4,
+              13,
+              16
+            ],
+            "bbox_extent_zyx_mm": [
+              2.5,
+              4.798833,
+              5.906256
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              13.447554551757818,
+              8.674909500000012,
+              -80.3125
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              19.353810551757817,
+              13.473742500000014,
+              -77.8125
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.5941132625883904,
+            "GT_EDT_radius_max_mm": 0.7258719431697301
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "gta_preview",
+            "rank": 5,
+            "component_id": 244,
+            "FN_voxels": 72,
+            "FN_volume_mm3": 6.131928504645,
+            "fraction_of_case_FN": 0.022353306426575598,
+            "missed_GT_skeleton_voxels": 4,
+            "missed_GT_skeleton_radius_le1mm": 4,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              138,
+              183,
+              354
+            ],
+            "bbox_zyx_max_inclusive": [
+              141,
+              196,
+              361
+            ],
+            "bbox_size_zyx_voxels": [
+              4,
+              14,
+              8
+            ],
+            "bbox_extent_zyx_mm": [
+              2.5,
+              5.167974,
+              2.953128
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              54.79134655175781,
+              -27.13176749999998,
+              -107.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              57.744474551757804,
+              -21.96379349999998,
+              -104.6875
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.5220442086279667,
+            "GT_EDT_radius_max_mm": 0.625
+          }
+        ],
+        "unet": [
+          {
+            "case_id": "Normal_12",
+            "method": "unet",
+            "rank": 1,
+            "component_id": 188,
+            "FN_voxels": 287,
+            "FN_volume_mm3": 24.442548344904374,
+            "fraction_of_case_FN": 0.09195770586350528,
+            "missed_GT_skeleton_voxels": 3,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 3,
+            "bbox_zyx_min_inclusive": [
+              131,
+              303,
+              359
+            ],
+            "bbox_zyx_max_inclusive": [
+              143,
+              317,
+              369
+            ],
+            "bbox_size_zyx_voxels": [
+              13,
+              15,
+              11
+            ],
+            "bbox_extent_zyx_mm": [
+              8.125,
+              5.537115,
+              4.060551
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              56.63705155175782,
+              17.16515250000002,
+              -111.5625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              60.697602551757825,
+              22.70226750000002,
+              -103.4375
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.8821779341829009,
+            "GT_EDT_radius_max_mm": 1.324113204680778
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "unet",
+            "rank": 2,
+            "component_id": 73,
+            "FN_voxels": 275,
+            "FN_volume_mm3": 23.420560260796876,
+            "fraction_of_case_FN": 0.0881127843639859,
+            "missed_GT_skeleton_voxels": 16,
+            "missed_GT_skeleton_radius_le1mm": 16,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              86,
+              170,
+              134
+            ],
+            "bbox_zyx_max_inclusive": [
+              109,
+              179,
+              140
+            ],
+            "bbox_size_zyx_voxels": [
+              24,
+              10,
+              7
+            ],
+            "bbox_extent_zyx_mm": [
+              15.0,
+              3.69141,
+              2.583987
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              -26.419673448242186,
+              -31.930600499999983,
+              -139.6875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              -23.835686448242186,
+              -28.239190499999992,
+              -124.6875
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.5220442086279667,
+            "GT_EDT_radius_max_mm": 0.8254243692822498
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "unet",
+            "rank": 3,
+            "component_id": 48,
+            "FN_voxels": 172,
+            "FN_volume_mm3": 14.6484958722075,
+            "fraction_of_case_FN": 0.05511054149311118,
+            "missed_GT_skeleton_voxels": 13,
+            "missed_GT_skeleton_radius_le1mm": 13,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              66,
+              288,
+              387
+            ],
+            "bbox_zyx_max_inclusive": [
+              75,
+              303,
+              396
+            ],
+            "bbox_size_zyx_voxels": [
+              10,
+              16,
+              10
+            ],
+            "bbox_extent_zyx_mm": [
+              6.25,
+              5.906256,
+              3.69141
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              66.97299955175782,
+              11.62803750000002,
+              -152.1875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              70.66440955175781,
+              17.534293500000018,
+              -145.9375
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.7258719431697301,
+            "GT_EDT_radius_max_mm": 0.9673082815338655
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "unet",
+            "rank": 4,
+            "component_id": 87,
+            "FN_voxels": 162,
+            "FN_volume_mm3": 13.79683913545125,
+            "fraction_of_case_FN": 0.051906440243511695,
+            "missed_GT_skeleton_voxels": 26,
+            "missed_GT_skeleton_radius_le1mm": 26,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              94,
+              146,
+              361
+            ],
+            "bbox_zyx_max_inclusive": [
+              110,
+              160,
+              384
+            ],
+            "bbox_size_zyx_voxels": [
+              17,
+              15,
+              24
+            ],
+            "bbox_extent_zyx_mm": [
+              10.625,
+              5.537115,
+              8.859384
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              57.37533355175782,
+              -40.78998449999999,
+              -134.6875
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              66.23471755175783,
+              -35.25286949999999,
+              -124.0625
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.5220442086279667,
+            "GT_EDT_radius_max_mm": 0.7258719431697301
+          },
+          {
+            "case_id": "Normal_12",
+            "method": "unet",
+            "rank": 5,
+            "component_id": 392,
+            "FN_voxels": 122,
+            "FN_volume_mm3": 10.39021218842625,
+            "fraction_of_case_FN": 0.039090035245113744,
+            "missed_GT_skeleton_voxels": 0,
+            "missed_GT_skeleton_radius_le1mm": 0,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              163,
+              266,
+              291
+            ],
+            "bbox_zyx_max_inclusive": [
+              171,
+              276,
+              302
+            ],
+            "bbox_size_zyx_voxels": [
+              9,
+              11,
+              12
+            ],
+            "bbox_extent_zyx_mm": [
+              5.625,
+              4.060551,
+              4.429692
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              31.535463551757815,
+              3.5069355000000115,
+              -91.5625
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              35.96515555175782,
+              7.567486500000015,
+              -85.9375
+            ],
+            "GT_EDT_radius_median_mm": 0.369141,
+            "GT_EDT_radius_p90_mm": 0.7258719431697301,
+            "GT_EDT_radius_max_mm": 1.0440884172559335
+          }
+        ]
+      }
+    },
+    {
+      "case_id": "Normal_3",
+      "original_grid": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.382812,
+          0.382812,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -94.4000015258789,
+          -120.80000305175778,
+          -218.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "GT_bbox": {
+        "bbox_zyx_min_inclusive": [
+          25,
+          104,
+          147
+        ],
+        "bbox_zyx_max_inclusive": [
+          177,
+          370,
+          420
+        ],
+        "bbox_size_zyx_voxels": [
+          153,
+          267,
+          274
+        ],
+        "bbox_extent_zyx_mm": [
+          95.625,
+          102.210804,
+          104.89048799999999
+        ],
+        "world_outer_bbox_xyz_min_mm": [
+          -38.318043525878906,
+          -81.1789610517578,
+          -203.56250000000006
+        ],
+        "world_outer_bbox_xyz_max_mm": [
+          66.57244447412108,
+          21.0318429482422,
+          -107.93750000000006
+        ]
+      },
+      "GT_skeleton_crop": {
+        "offset_zyx": [
+          23,
+          102,
+          145
+        ],
+        "shape_zyx": [
+          157,
+          271,
+          278
+        ],
+        "background_margin_voxels": 2,
+        "both_model_full_grid_frozen_skeleton_metrics_reproduced": true
+      },
+      "methods": [
+        {
+          "case_id": "Normal_3",
+          "method": "gta_preview",
+          "GT_voxels": 39275,
+          "prediction_voxels": 40037,
+          "TP_voxels": 35398,
+          "FP_voxels": 4639,
+          "FN_voxels": 3877,
+          "TP_volume_mm3": 3242.1255487018198,
+          "FP_volume_mm3": 424.88898865551,
+          "FN_volume_mm3": 355.09691938292997,
+          "precision": 0.8841321777355946,
+          "recall": 0.9012858052196053,
+          "dice": 0.8926265886624974,
+          "GT_skeleton_voxels": 1403,
+          "GT_skeleton_radius_le1mm_voxels": 925,
+          "GT_skeleton_radius_gt1mm_voxels": 478,
+          "covered_GT_skeleton_radius_le1mm_voxels": 755,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 478,
+          "centerline_recall": 0.8788310762651461,
+          "centerline_recall_radius_le1mm": 0.8162162162162162,
+          "centerline_recall_radius_gt1mm": 1.0,
+          "prediction_components_26_recorded": 12,
+          "prediction_surface_voxels": 20511,
+          "truth_surface_voxels": 19795,
+          "asd_prediction_to_truth_mm": 0.40606822141173,
+          "asd_truth_to_prediction_mm": 0.3885042257421018,
+          "assd_mm": 0.39744222790504885,
+          "prediction_to_truth_surface_p95_mm": 0.38281200000000126,
+          "truth_to_prediction_surface_p95_mm": 0.625,
+          "FN_components_26": 705,
+          "largest_FN_voxels": 377,
+          "top5_FN_fraction": 0.26876450864070156
+        },
+        {
+          "case_id": "Normal_3",
+          "method": "unet",
+          "GT_voxels": 39275,
+          "prediction_voxels": 40381,
+          "TP_voxels": 35698,
+          "FP_voxels": 4683,
+          "FN_voxels": 3577,
+          "TP_volume_mm3": 3269.60274132882,
+          "FP_volume_mm3": 428.91897690747,
+          "FN_volume_mm3": 327.61972675593,
+          "precision": 0.8840296178896015,
+          "recall": 0.908924252068746,
+          "dice": 0.8963041076629507,
+          "GT_skeleton_voxels": 1403,
+          "GT_skeleton_radius_le1mm_voxels": 925,
+          "GT_skeleton_radius_gt1mm_voxels": 478,
+          "covered_GT_skeleton_radius_le1mm_voxels": 765,
+          "covered_GT_skeleton_radius_gt1mm_voxels": 478,
+          "centerline_recall": 0.8859586600142552,
+          "centerline_recall_radius_le1mm": 0.827027027027027,
+          "centerline_recall_radius_gt1mm": 1.0,
+          "prediction_components_26_recorded": 7,
+          "prediction_surface_voxels": 20716,
+          "truth_surface_voxels": 19795,
+          "asd_prediction_to_truth_mm": 0.2621708868660562,
+          "asd_truth_to_prediction_mm": 0.30173078799293906,
+          "assd_mm": 0.2815011488395115,
+          "prediction_to_truth_surface_p95_mm": 0.38281200000000126,
+          "truth_to_prediction_surface_p95_mm": 0.541377922239171,
+          "FN_components_26": 721,
+          "largest_FN_voxels": 323,
+          "top5_FN_fraction": 0.262510483645513
+        }
+      ],
+      "transitions": {
+        "case_id": "Normal_3",
+        "GT_newly_recovered_by_GTA_voxels": 821,
+        "GT_newly_missed_by_GTA_voxels": 1121,
+        "FP_newly_added_by_GTA_voxels": 1330,
+        "FP_removed_by_GTA_voxels": 1374,
+        "GT_skeleton_newly_recovered_radius_le1mm": 32,
+        "GT_skeleton_newly_missed_radius_le1mm": 42,
+        "GT_skeleton_newly_recovered_radius_gt1mm": 0,
+        "GT_skeleton_newly_missed_radius_gt1mm": 0,
+        "TP_GTA_minus_UNet": -300,
+        "FP_GTA_minus_UNet": -44
+      },
+      "largest_FN_regions": {
+        "gta_preview": [
+          {
+            "case_id": "Normal_3",
+            "method": "gta_preview",
+            "rank": 1,
+            "component_id": 57,
+            "FN_voxels": 377,
+            "FN_volume_mm3": 34.52967206793,
+            "fraction_of_case_FN": 0.09724013412432293,
+            "missed_GT_skeleton_voxels": 41,
+            "missed_GT_skeleton_radius_le1mm": 41,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              43,
+              259,
+              344
+            ],
+            "bbox_zyx_max_inclusive": [
+              47,
+              287,
+              388
+            ],
+            "bbox_size_zyx_voxels": [
+              5,
+              29,
+              45
+            ],
+            "bbox_extent_zyx_mm": [
+              3.125,
+              11.101548,
+              17.22654
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              37.0959204741211,
+              -21.843101051757785,
+              -192.31250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              54.3224604741211,
+              -10.74155305175779,
+              -189.18750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.625,
+            "GT_EDT_radius_max_mm": 0.8268706396335523
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "gta_preview",
+            "rank": 2,
+            "component_id": 475,
+            "FN_voxels": 341,
+            "FN_volume_mm3": 31.232408952689998,
+            "fraction_of_case_FN": 0.08795460407531597,
+            "missed_GT_skeleton_voxels": 37,
+            "missed_GT_skeleton_radius_le1mm": 37,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              141,
+              204,
+              340
+            ],
+            "bbox_zyx_max_inclusive": [
+              163,
+              236,
+              378
+            ],
+            "bbox_size_zyx_voxels": [
+              23,
+              33,
+              39
+            ],
+            "bbox_extent_zyx_mm": [
+              14.375,
+              12.632795999999999,
+              14.929668
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              35.564672474121096,
+              -42.89776105175778,
+              -131.06250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              50.49434047412109,
+              -30.264965051757784,
+              -116.68750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.625,
+            "GT_EDT_radius_max_mm": 0.765624
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "gta_preview",
+            "rank": 3,
+            "component_id": 520,
+            "FN_voxels": 177,
+            "FN_volume_mm3": 16.21154364993,
+            "fraction_of_case_FN": 0.04565385607428424,
+            "missed_GT_skeleton_voxels": 27,
+            "missed_GT_skeleton_radius_le1mm": 27,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              148,
+              340,
+              317
+            ],
+            "bbox_zyx_max_inclusive": [
+              152,
+              370,
+              329
+            ],
+            "bbox_size_zyx_voxels": [
+              5,
+              31,
+              13
+            ],
+            "bbox_extent_zyx_mm": [
+              3.125,
+              11.867172,
+              4.9765559999999995
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              26.759996474121095,
+              9.164670948242218,
+              -126.68750000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              31.736552474121083,
+              21.0318429482422,
+              -123.56250000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.625,
+            "GT_EDT_radius_max_mm": 0.7329188408984995
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "gta_preview",
+            "rank": 4,
+            "component_id": 120,
+            "FN_voxels": 80,
+            "FN_volume_mm3": 7.3272513672,
+            "fraction_of_case_FN": 0.020634511220015476,
+            "missed_GT_skeleton_voxels": 4,
+            "missed_GT_skeleton_radius_le1mm": 4,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              47,
+              258,
+              211
+            ],
+            "bbox_zyx_max_inclusive": [
+              51,
+              272,
+              227
+            ],
+            "bbox_size_zyx_voxels": [
+              5,
+              15,
+              17
+            ],
+            "bbox_extent_zyx_mm": [
+              3.125,
+              5.742179999999999,
+              6.507804
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              -13.81807552587891,
+              -22.225913051757786,
+              -189.81250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              -7.310271525878903,
+              -16.48373305175778,
+              -186.68750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.5413779222391693,
+            "GT_EDT_radius_max_mm": 0.625
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "gta_preview",
+            "rank": 5,
+            "component_id": 350,
+            "FN_voxels": 67,
+            "FN_volume_mm3": 6.136573020029999,
+            "fraction_of_case_FN": 0.01728140314676296,
+            "missed_GT_skeleton_voxels": 2,
+            "missed_GT_skeleton_radius_le1mm": 2,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              102,
+              143,
+              374
+            ],
+            "bbox_zyx_max_inclusive": [
+              110,
+              150,
+              392
+            ],
+            "bbox_size_zyx_voxels": [
+              9,
+              8,
+              19
+            ],
+            "bbox_extent_zyx_mm": [
+              5.625,
+              3.062496,
+              7.273428
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              48.58028047412108,
+              -66.24929305175779,
+              -155.43750000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              55.85370847412108,
+              -63.186797051757786,
+              -149.81250000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.5748267533435014,
+            "GT_EDT_radius_max_mm": 0.625
+          }
+        ],
+        "unet": [
+          {
+            "case_id": "Normal_3",
+            "method": "unet",
+            "rank": 1,
+            "component_id": 491,
+            "FN_voxels": 323,
+            "FN_volume_mm3": 29.583777395069998,
+            "fraction_of_case_FN": 0.09029913335197093,
+            "missed_GT_skeleton_voxels": 32,
+            "missed_GT_skeleton_radius_le1mm": 32,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              141,
+              204,
+              340
+            ],
+            "bbox_zyx_max_inclusive": [
+              163,
+              236,
+              378
+            ],
+            "bbox_size_zyx_voxels": [
+              23,
+              33,
+              39
+            ],
+            "bbox_extent_zyx_mm": [
+              14.375,
+              12.632795999999999,
+              14.929668
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              35.564672474121096,
+              -42.89776105175778,
+              -131.06250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              50.49434047412109,
+              -30.264965051757784,
+              -116.68750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.625,
+            "GT_EDT_radius_max_mm": 0.765624
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "unet",
+            "rank": 2,
+            "component_id": 458,
+            "FN_voxels": 211,
+            "FN_volume_mm3": 19.32562548099,
+            "fraction_of_case_FN": 0.05898797875314509,
+            "missed_GT_skeleton_voxels": 14,
+            "missed_GT_skeleton_radius_le1mm": 14,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              135,
+              202,
+              298
+            ],
+            "bbox_zyx_max_inclusive": [
+              155,
+              219,
+              310
+            ],
+            "bbox_size_zyx_voxels": [
+              21,
+              18,
+              13
+            ],
+            "bbox_extent_zyx_mm": [
+              13.125,
+              6.890616,
+              4.9765559999999995
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              19.486568474121086,
+              -43.663385051757786,
+              -134.81250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              24.463124474121088,
+              -36.77276905175779,
+              -121.68750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.5413779222391693,
+            "GT_EDT_radius_max_mm": 0.765624
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "unet",
+            "rank": 3,
+            "component_id": 542,
+            "FN_voxels": 184,
+            "FN_volume_mm3": 16.85267814456,
+            "fraction_of_case_FN": 0.051439753983785294,
+            "missed_GT_skeleton_voxels": 28,
+            "missed_GT_skeleton_radius_le1mm": 28,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              148,
+              338,
+              317
+            ],
+            "bbox_zyx_max_inclusive": [
+              153,
+              370,
+              329
+            ],
+            "bbox_size_zyx_voxels": [
+              6,
+              33,
+              13
+            ],
+            "bbox_extent_zyx_mm": [
+              3.75,
+              12.632795999999999,
+              4.9765559999999995
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              26.759996474121095,
+              8.399046948242216,
+              -126.68750000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              31.736552474121083,
+              21.0318429482422,
+              -122.93750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.625,
+            "GT_EDT_radius_max_mm": 0.7329188408984995
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "unet",
+            "rank": 4,
+            "component_id": 93,
+            "FN_voxels": 144,
+            "FN_volume_mm3": 13.18905246096,
+            "fraction_of_case_FN": 0.04025719876991893,
+            "missed_GT_skeleton_voxels": 17,
+            "missed_GT_skeleton_radius_le1mm": 17,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              45,
+              259,
+              367
+            ],
+            "bbox_zyx_max_inclusive": [
+              47,
+              279,
+              388
+            ],
+            "bbox_size_zyx_voxels": [
+              3,
+              21,
+              22
+            ],
+            "bbox_extent_zyx_mm": [
+              1.875,
+              8.039052,
+              8.421864
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              45.9005964741211,
+              -21.843101051757785,
+              -191.06250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              54.3224604741211,
+              -13.804049051757787,
+              -189.18750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.5999133766717522,
+            "GT_EDT_radius_max_mm": 0.625
+          },
+          {
+            "case_id": "Normal_3",
+            "method": "unet",
+            "rank": 5,
+            "component_id": 548,
+            "FN_voxels": 77,
+            "FN_volume_mm3": 7.052479440929999,
+            "fraction_of_case_FN": 0.021526418786692758,
+            "missed_GT_skeleton_voxels": 10,
+            "missed_GT_skeleton_radius_le1mm": 10,
+            "missed_GT_skeleton_radius_gt1mm": 0,
+            "bbox_zyx_min_inclusive": [
+              149,
+              241,
+              364
+            ],
+            "bbox_zyx_max_inclusive": [
+              157,
+              249,
+              379
+            ],
+            "bbox_size_zyx_voxels": [
+              9,
+              9,
+              16
+            ],
+            "bbox_extent_zyx_mm": [
+              5.625,
+              3.445308,
+              6.124992
+            ],
+            "world_outer_bbox_xyz_min_mm": [
+              44.7521604741211,
+              -28.733717051757793,
+              -126.06250000000006
+            ],
+            "world_outer_bbox_xyz_max_mm": [
+              50.87715247412109,
+              -25.28840905175778,
+              -120.43750000000006
+            ],
+            "GT_EDT_radius_median_mm": 0.382812,
+            "GT_EDT_radius_p90_mm": 0.5413779222391693,
+            "GT_EDT_radius_max_mm": 0.625
+          }
+        ]
+      }
+    }
+  ],
+  "source_inputs_sha256": {
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_unet_preview_pair_verified_20261014\\paired_comparison.json": "132c8992724d9e916d6015749d8054c90c96648393601d92c8b48847922ae834",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\mirror_view\\manifest.json": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_10.nrrd": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Diseased_10.json": "9e7ed640e34708a47383698d2f913026df9716eaf9fe5c81c7599d7b91ad7e83",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Diseased_10_prediction.nrrd": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10.json": "61e1a565fa5f01f70d4db727b9176623ba73f376942b699e6c859ef226b2ed04",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524",
+    "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_20.nrrd": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Diseased_20.json": "698b7245b9525e7baa631439dabb8890826a3d8305938756d98bcd111eb0b92f",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Diseased_20_prediction.nrrd": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20.json": "3c864d9a02c4993b645ba917a0af7f742b7d3cac03c4983a8947bfc252e80250",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6",
+    "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_12.nrrd": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Normal_12.json": "498f64be28fc945232c9db65ad70304fe4b1e112c8dd6d2dcc9ea299eca2c707",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Normal_12_prediction.nrrd": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_12.json": "bd5e8dfa0ec8806984f66ad1b7d5a684c2e047b79546d1e7fb0e3970585eb039",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_12_prediction.nrrd": "b5736058a41bfe52bf83d50f18c0761481bea5744b8809e859af4c0b3e8dd5ab",
+    "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_3.nrrd": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Normal_3.json": "2fb3740b69d46d53f6512f6c8e8322a92f1ac976629090a1fac57fd9383b0242",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_fixed_final_preview_capture_20261014\\results\\gta_fixed_final_preview_20261014\\Normal_3_prediction.nrrd": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_3.json": "ee218ca234f5825bdefc7373eb7b53d9db92e3f5548a5e8239e0aed5f9b3962e",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Normal_3_prediction.nrrd": "eee1f64a455792ee8339d460adfbf9d40b9a35cbea951f08141a4ca5e6973b58"
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-14T10:39:04.617282+00:00",
+  "status": "completed_evidence_collected",
+  "kind": "classifier",
+  "role": "read-only actual diagnostic evidence; not model performance or accuracy gate",
+  "remote_root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+  "port": 17552,
+  "deployed_tool_sha256": "b321207067fb81536e0c70b45e83cd48280a9a6e2fce93589b9fa10da6aaaf3d",
+  "collector_sha256": "97fc6bb8ad4dd80f0139e59270f032135af7fdd21463443fd0c704644de8e028",
+  "model_weights_downloaded": false,
+  "remote_commands_or_mutations": false,
+  "files": {
+    "results/classifier_final_cpu_audit_20261014/fixed_sampling_bank.json": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014/fixed_sampling_bank.json",
+      "bytes": 81765,
+      "sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+      "remote_mtime": 1791973823
+    },
+    "results/classifier_final_cpu_audit_20261014/audit_plan.json": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014/audit_plan.json",
+      "bytes": 55678,
+      "sha256": "79f480cbfa0edf8ae8d6a0691607e7943154b104ece994dad578deb999b3b0c5",
+      "remote_mtime": 1791973823
+    },
+    "results/classifier_final_cpu_audit_20261014/patch_predictions.jsonl": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014/patch_predictions.jsonl",
+      "bytes": 152932,
+      "sha256": "dc7ebf831979ecf2668f0a5a1cda89f2dba3935913200ef652287a79a1fc41ea",
+      "remote_mtime": 1791973931
+    },
+    "results/classifier_final_cpu_audit_20261014/summary.json": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014/summary.json",
+      "bytes": 31313,
+      "sha256": "963c66f839f877655f49c9af3beb362ff39e23fd32a8484d801e4d5ee44306a7",
+      "remote_mtime": 1791973937
+    },
+    "results/classifier_final_cpu_audit_20261014/AUDIT_COMPLETE.json": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014/AUDIT_COMPLETE.json",
+      "bytes": 568,
+      "sha256": "60f99068b81fd375cdd64906cfeb52dc59cbcbdfea3563f641de09acd4bfe591",
+      "remote_mtime": 1791973937
+    },
+    "ops/audit_final_classifier_cpu.py": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/audit_final_classifier_cpu.py",
+      "bytes": 20187,
+      "sha256": "b321207067fb81536e0c70b45e83cd48280a9a6e2fce93589b9fa10da6aaaf3d",
+      "remote_mtime": 1791973749
+    },
+    "CLASSIFIER_FINAL_CPU_AUDIT_LAUNCH_20261014.json": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/CLASSIFIER_FINAL_CPU_AUDIT_LAUNCH_20261014.json",
+      "bytes": 1192,
+      "sha256": "99bac1dd2c1d3ba4bc39a845290595c565fa3f03c92b0ea6f5cdc1491068a61f",
+      "remote_mtime": 1791973814
+    },
+    "CLASSIFIER_FINAL_CPU_AUDIT_20261014.log": {
+      "remote_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/CLASSIFIER_FINAL_CPU_AUDIT_20261014.log",
+      "bytes": 4423,
+      "sha256": "642013aa1e8a521e34e75437bd452178123545b48cb51e11b766d095440e8f54",
+      "remote_mtime": 1791973931
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "deferred_by_user",
+  "pid": 102181,
+  "reason": "Method remains undecided; no automatic external-method retraining or fivefold extension",
+  "training": "fresh initialization for every fold; no resume across changed objectives",
+  "folds": [],
+  "stopped_at": "2026-10-14T01:41:36.994366+00:00"
+}

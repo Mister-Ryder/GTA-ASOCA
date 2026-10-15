@@ -1,0 +1,3717 @@
+{
+  "summary": {
+    "source": "E:\\00-Data\\冠状动脉-ASOCA\\CompressedVersion",
+    "reader_ascii_junction": "E:\\00-Data\\ASOCA_AUDIT_ASCII",
+    "audit_date": "2026-10-13",
+    "annotated_case_count": 40,
+    "annotated_group_counts": {
+      "Normal": 20,
+      "Diseased": 20
+    },
+    "blind_unlabeled_case_count": 20,
+    "blind_group_counts": {
+      "Normal": 10,
+      "Diseased": 10
+    },
+    "all_annotation_labels": [
+      0,
+      1
+    ],
+    "labels_identical_across_cases": true,
+    "all_pair_geometries_match": true,
+    "annotated_size_xyz_min": [
+      512,
+      512,
+      168
+    ],
+    "annotated_size_xyz_max": [
+      512,
+      512,
+      224
+    ],
+    "annotated_spacing_xyz_mm_min": [
+      0.306641,
+      0.306641,
+      0.6249999999999996
+    ],
+    "annotated_spacing_xyz_mm_max": [
+      0.49414100000000005,
+      0.49414100000000005,
+      0.6250000000000002
+    ],
+    "annotated_foreground_fraction_min": 0.00024824483054024834,
+    "annotated_foreground_fraction_max": 0.001007751004779758,
+    "annotated_foreground_fraction_mean": 0.0005553310215151883,
+    "file_count": 181,
+    "total_source_bytes": 4209955876,
+    "all_ctca_bytes": 4060090098,
+    "all_annotation_bytes": 4863474,
+    "annotated_training_pair_bytes": 2711866928,
+    "errors": [],
+    "scope": "Label and geometry integrity only. Blind images read at header level; no test annotations or performance-based tuning used."
+  },
+  "annotated_cases": [
+    {
+      "case_id": "Normal_1",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_1.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_1.nrrd",
+      "labels": {
+        "0": 53441272,
+        "1": 36104
+      },
+      "foreground_fraction": 0.0006751266180300245,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          204
+        ],
+        "spacing_xyz_mm": [
+          0.41601600000000005,
+          0.41601600000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -116.80000305175783,
+          -120.00000000000003,
+          -196.875
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 64141839
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          204
+        ],
+        "spacing_xyz_mm": [
+          0.41601600000000005,
+          0.41601600000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -116.80000305175783,
+          -120.00000000000003,
+          -196.875
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 117916
+      }
+    },
+    {
+      "case_id": "Normal_10",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_10.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_10.nrrd",
+      "labels": {
+        "0": 54747605,
+        "1": 40491
+      },
+      "foreground_fraction": 0.0007390474018297697,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          209
+        ],
+        "spacing_xyz_mm": [
+          0.43554700000000013,
+          0.43554700000000013,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -90.5,
+          -130.10000610351565,
+          -260.0
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 66739460
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          209
+        ],
+        "spacing_xyz_mm": [
+          0.4355470000000001,
+          0.4355470000000001,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -90.50000000000001,
+          -130.10000610351568,
+          -260.0
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 121085
+      }
+    },
+    {
+      "case_id": "Normal_11",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_11.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_11.nrrd",
+      "labels": {
+        "0": 55519142,
+        "1": 55386
+      },
+      "foreground_fraction": 0.0009966076544995577,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.306641,
+          0.306641,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -60.400001525878906,
+          -96.0999984741211,
+          -219.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 63704605
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.306641,
+          0.306641,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -60.400001525878906,
+          -96.0999984741211,
+          -219.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 127087
+      }
+    },
+    {
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_12.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_12.nrrd",
+      "labels": {
+        "0": 53973951,
+        "1": 27713
+      },
+      "foreground_fraction": 0.0005131878899139108,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          206
+        ],
+        "spacing_xyz_mm": [
+          0.369141,
+          0.369141,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -94.49999999999999,
+          -193.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 64026639
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          206
+        ],
+        "spacing_xyz_mm": [
+          0.369141,
+          0.369141,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -94.49999999999999,
+          -193.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 115494
+      }
+    },
+    {
+      "case_id": "Normal_13",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_13.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_13.nrrd",
+      "labels": {
+        "0": 52114085,
+        "1": 52571
+      },
+      "foreground_fraction": 0.001007751004779758,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          199
+        ],
+        "spacing_xyz_mm": [
+          0.333984,
+          0.333984,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -62.400001525878906,
+          -105.69999694824219,
+          -224.50000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 60277881
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          199
+        ],
+        "spacing_xyz_mm": [
+          0.333984,
+          0.333984,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -62.400001525878906,
+          -105.69999694824219,
+          -224.50000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 119519
+      }
+    },
+    {
+      "case_id": "Normal_14",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_14.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_14.nrrd",
+      "labels": {
+        "0": 56575240,
+        "1": 47864
+      },
+      "foreground_fraction": 0.0008453086570457175,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          216
+        ],
+        "spacing_xyz_mm": [
+          0.36523400000000006,
+          0.36523400000000006,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.09999847412112,
+          -108.0,
+          -221.37499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 67651328
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          216
+        ],
+        "spacing_xyz_mm": [
+          0.36523400000000006,
+          0.36523400000000006,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.09999847412115,
+          -108.0,
+          -221.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 127574
+      }
+    },
+    {
+      "case_id": "Normal_15",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_15.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_15.nrrd",
+      "labels": {
+        "0": 54234270,
+        "1": 29538
+      },
+      "foreground_fraction": 0.0005443407141644021,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.3847659999999999,
+          0.3847659999999999,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -87.09999847412108,
+          -105.6999969482422,
+          -210.75000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 63276311
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.38476599999999994,
+          0.38476599999999994,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -87.09999847412108,
+          -105.69999694824222,
+          -210.75000000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 115789
+      }
+    },
+    {
+      "case_id": "Normal_16",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_16.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_16.nrrd",
+      "labels": {
+        "0": 54225090,
+        "1": 38718
+      },
+      "foreground_fraction": 0.0007135142450747283,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.349609,
+          0.349609,
+          0.6249999999999996
+        ],
+        "origin_xyz_mm": [
+          -69.30000305175781,
+          -110.19999694824217,
+          -211.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 63738694
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.349609,
+          0.349609,
+          0.6249999999999996
+        ],
+        "origin_xyz_mm": [
+          -69.30000305175781,
+          -110.19999694824217,
+          -211.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 117882
+      }
+    },
+    {
+      "case_id": "Normal_17",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_17.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_17.nrrd",
+      "labels": {
+        "0": 58693909,
+        "1": 26347
+      },
+      "foreground_fraction": 0.00044868673597063335,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.359375,
+          0.359375,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -92.30000305175783,
+          -105.19999694824217,
+          -227.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73397029
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.359375,
+          0.359375,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -92.30000305175783,
+          -105.19999694824217,
+          -227.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 124679
+      }
+    },
+    {
+      "case_id": "Normal_18",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_18.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_18.nrrd",
+      "labels": {
+        "0": 43999290,
+        "1": 40902
+      },
+      "foreground_fraction": 0.0009287425449916295,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          168
+        ],
+        "spacing_xyz_mm": [
+          0.349609,
+          0.349609,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -80.00000000000001,
+          -111.49999999999999,
+          -172.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 50029154
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          168
+        ],
+        "spacing_xyz_mm": [
+          0.349609,
+          0.349609,
+          0.6249999999999996
+        ],
+        "origin_xyz_mm": [
+          -80.0,
+          -111.49999999999996,
+          -172.3749999999999
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 99841
+      }
+    },
+    {
+      "case_id": "Normal_19",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_19.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_19.nrrd",
+      "labels": {
+        "0": 58696330,
+        "1": 23926
+      },
+      "foreground_fraction": 0.0004074573516845703,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.38476601240000013,
+          0.38476601240000013,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -92.59999847412111,
+          -119.90000152587889,
+          -217.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 69520355
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.38476601240000013,
+          0.38476601240000013,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -92.59999847412114,
+          -119.90000152587889,
+          -217.37499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 124511
+      }
+    },
+    {
+      "case_id": "Normal_2",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_2.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_2.nrrd",
+      "labels": {
+        "0": 47951202,
+        "1": 21150
+      },
+      "foreground_fraction": 0.00044087894627305326,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          183
+        ],
+        "spacing_xyz_mm": [
+          0.404297,
+          0.404297,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -104.5,
+          -153.0,
+          -175.74999999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 57163798
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          183
+        ],
+        "spacing_xyz_mm": [
+          0.404297,
+          0.404297,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -104.5,
+          -153.0,
+          -175.74999999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 102914
+      }
+    },
+    {
+      "case_id": "Normal_20",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_20.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_20.nrrd",
+      "labels": {
+        "0": 58695510,
+        "1": 24746
+      },
+      "foreground_fraction": 0.000421421868460519,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4199219942000001,
+          0.4199219942000001,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -80.90000152587893,
+          -129.6000061035156,
+          -220.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73368930
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.41992199420000004,
+          0.41992199420000004,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -80.90000152587895,
+          -129.6000061035156,
+          -220.625
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 124138
+      }
+    },
+    {
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_3.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_3.nrrd",
+      "labels": {
+        "0": 55535253,
+        "1": 39275
+      },
+      "foreground_fraction": 0.0007067086561670843,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.382812,
+          0.382812,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -94.4000015258789,
+          -120.80000305175778,
+          -218.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 66350135
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.382812,
+          0.382812,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -94.4000015258789,
+          -120.80000305175778,
+          -218.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 122561
+      }
+    },
+    {
+      "case_id": "Normal_4",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_4.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_4.nrrd",
+      "labels": {
+        "0": 55286957,
+        "1": 25427
+      },
+      "foreground_fraction": 0.00045969813920875295,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          211
+        ],
+        "spacing_xyz_mm": [
+          0.380859,
+          0.380859,
+          0.6250000000000002
+        ],
+        "origin_xyz_mm": [
+          -102.69999694824219,
+          -98.5,
+          -211.49999999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 67283062
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          211
+        ],
+        "spacing_xyz_mm": [
+          0.380859,
+          0.380859,
+          0.6250000000000002
+        ],
+        "origin_xyz_mm": [
+          -102.69999694824219,
+          -98.5,
+          -211.49999999999991
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 117957
+      }
+    },
+    {
+      "case_id": "Normal_5",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_5.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_5.nrrd",
+      "labels": {
+        "0": 52658621,
+        "1": 32323
+      },
+      "foreground_fraction": 0.0006134450732178949,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          201
+        ],
+        "spacing_xyz_mm": [
+          0.35156199999999993,
+          0.35156199999999993,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -87.40000152587892,
+          -113.90000152587885,
+          -200.99999999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 60737581
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          201
+        ],
+        "spacing_xyz_mm": [
+          0.35156199999999993,
+          0.35156199999999993,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -87.40000152587892,
+          -113.90000152587885,
+          -200.99999999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 115573
+      }
+    },
+    {
+      "case_id": "Normal_6",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_6.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_6.nrrd",
+      "labels": {
+        "0": 56849435,
+        "1": 35813
+      },
+      "foreground_fraction": 0.000629565682828701,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          217
+        ],
+        "spacing_xyz_mm": [
+          0.3945310000000001,
+          0.3945310000000001,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.0999984741211,
+          -127.69999694824222,
+          -197.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 68314277
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          217
+        ],
+        "spacing_xyz_mm": [
+          0.3945310000000001,
+          0.3945310000000001,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.0999984741211,
+          -127.69999694824222,
+          -197.75000000000014
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 121705
+      }
+    },
+    {
+      "case_id": "Normal_7",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_7.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_7.nrrd",
+      "labels": {
+        "0": 52919806,
+        "1": 33282
+      },
+      "foreground_fraction": 0.0006285185861115408,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          202
+        ],
+        "spacing_xyz_mm": [
+          0.400391,
+          0.400391,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -79.19999694824219,
+          -121.5999984741211,
+          -216.62499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 62631511
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          202
+        ],
+        "spacing_xyz_mm": [
+          0.40039099999999994,
+          0.40039099999999994,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -79.19999694824219,
+          -121.5999984741211,
+          -216.62499999999991
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 116120
+      }
+    },
+    {
+      "case_id": "Normal_8",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_8.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_8.nrrd",
+      "labels": {
+        "0": 58683323,
+        "1": 36933
+      },
+      "foreground_fraction": 0.0006289652415684291,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.404297,
+          0.404297,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -84.5999984741211,
+          -110.99999999999999,
+          -243.87499999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 69635581
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.404297,
+          0.404297,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -84.5999984741211,
+          -110.99999999999999,
+          -243.87499999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 128404
+      }
+    },
+    {
+      "case_id": "Normal_9",
+      "group": "Normal",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Normal/CTCA/Normal_9.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_9.nrrd",
+      "labels": {
+        "0": 58690321,
+        "1": 29935
+      },
+      "foreground_fraction": 0.0005097900118146624,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3789060000000001,
+          0.3789060000000001,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175786,
+          -128.80000305175787,
+          -244.37500000000014
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 68036529
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3789060000000001,
+          0.3789060000000001,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175787,
+          -128.80000305175787,
+          -244.37500000000023
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 126347
+      }
+    },
+    {
+      "case_id": "Diseased_1",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_1.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_1.nrrd",
+      "labels": {
+        "0": 58699874,
+        "1": 20382
+      },
+      "foreground_fraction": 0.0003471033913748605,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -89.19999694824222,
+          -164.30000305175778,
+          -185.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 71358401
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -89.19999694824222,
+          -164.30000305175778,
+          -185.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 122214
+      }
+    },
+    {
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_10.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_10.nrrd",
+      "labels": {
+        "0": 58698885,
+        "1": 21371
+      },
+      "foreground_fraction": 0.00036394596099853516,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -111.80000305175781,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 71908405
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -111.80000305175781,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 122777
+      }
+    },
+    {
+      "case_id": "Diseased_11",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_11.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_11.nrrd",
+      "labels": {
+        "0": 58699054,
+        "1": 21202
+      },
+      "foreground_fraction": 0.00036106790815080913,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.49414100000000005,
+          0.49414100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -117.0999984741211,
+          -159.80000305175778,
+          -225.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 67852440
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.49414100000000005,
+          0.49414100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -117.09999847412108,
+          -159.80000305175776,
+          -225.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 124471
+      }
+    },
+    {
+      "case_id": "Diseased_12",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_12.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_12.nrrd",
+      "labels": {
+        "0": 58686143,
+        "1": 34113
+      },
+      "foreground_fraction": 0.0005809409277779716,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3515619934,
+          0.3515619934,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -66.0,
+          -112.09999847412107,
+          -242.8749999999998
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73016333
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3515619934,
+          0.3515619934,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -66.0,
+          -112.09999847412107,
+          -242.87499999999977
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125010
+      }
+    },
+    {
+      "case_id": "Diseased_13",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_13.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_13.nrrd",
+      "labels": {
+        "0": 58690493,
+        "1": 29763
+      },
+      "foreground_fraction": 0.0005068608692714147,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.4000015258789,
+          -132.3000030517578,
+          -212.12499999999997
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73738307
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.4000015258789,
+          -132.3000030517578,
+          -212.12499999999997
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 126157
+      }
+    },
+    {
+      "case_id": "Diseased_14",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_14.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_14.nrrd",
+      "labels": {
+        "0": 58689130,
+        "1": 31126
+      },
+      "foreground_fraction": 0.0005300726209368024,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4284380078,
+          0.4284380078,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -93.8550033569336,
+          -124.32900238037112,
+          -201.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 74226728
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4284380078,
+          0.4284380078,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -93.8550033569336,
+          -124.32900238037112,
+          -201.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 126822
+      }
+    },
+    {
+      "case_id": "Diseased_15",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_15.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_15.nrrd",
+      "labels": {
+        "0": 58699459,
+        "1": 20797
+      },
+      "foreground_fraction": 0.0003541707992553711,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.45898399999999995,
+          0.45898399999999995,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175781,
+          -173.39999389648438,
+          -209.375
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 65456287
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.45898399999999995,
+          0.45898399999999995,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175781,
+          -173.39999389648438,
+          -209.375
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 123714
+      }
+    },
+    {
+      "case_id": "Diseased_16",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_16.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_16.nrrd",
+      "labels": {
+        "0": 58689479,
+        "1": 30777
+      },
+      "foreground_fraction": 0.0005241291863577706,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.46875,
+          0.46875,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -83.9000015258789,
+          -147.1999969482422,
+          -175.87499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 71281688
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.46875,
+          0.46875,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -83.9000015258789,
+          -147.1999969482422,
+          -175.87499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125032
+      }
+    },
+    {
+      "case_id": "Diseased_17",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_17.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_17.nrrd",
+      "labels": {
+        "0": 58690718,
+        "1": 29538
+      },
+      "foreground_fraction": 0.0005030291421072823,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -82.0999984741211,
+          -124.59999847412114,
+          -231.37500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72895716
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -82.09999847412111,
+          -124.59999847412115,
+          -231.37500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 129633
+      }
+    },
+    {
+      "case_id": "Diseased_18",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_18.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_18.nrrd",
+      "labels": {
+        "0": 58683842,
+        "1": 36414
+      },
+      "foreground_fraction": 0.0006201267242431641,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.457031,
+          0.457031,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -102.80000305175781,
+          -162.10000610351562,
+          -208.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 67258101
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.457031,
+          0.457031,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -102.80000305175781,
+          -162.10000610351562,
+          -208.37499999999991
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 127643
+      }
+    },
+    {
+      "case_id": "Diseased_19",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_19.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_19.nrrd",
+      "labels": {
+        "0": 44012024,
+        "1": 28168
+      },
+      "foreground_fraction": 0.0006395975748697916,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          168
+        ],
+        "spacing_xyz_mm": [
+          0.43164100000000005,
+          0.43164100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -88.50000000000001,
+          -147.50000000000003,
+          -186.87500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 50586265
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          168
+        ],
+        "spacing_xyz_mm": [
+          0.43164100000000005,
+          0.43164100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -88.50000000000001,
+          -147.50000000000006,
+          -186.87500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 95891
+      }
+    },
+    {
+      "case_id": "Diseased_2",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_2.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_2.nrrd",
+      "labels": {
+        "0": 58705679,
+        "1": 14577
+      },
+      "foreground_fraction": 0.00024824483054024834,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4375,
+          0.4375,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -84.40000152587888,
+          -134.0,
+          -214.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72159621
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.43750000000000006,
+          0.43750000000000006,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -84.40000152587888,
+          -134.00000000000003,
+          -214.37500000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 121078
+      }
+    },
+    {
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_20.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_20.nrrd",
+      "labels": {
+        "0": 58689625,
+        "1": 30631
+      },
+      "foreground_fraction": 0.0005216428211757115,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4707030058,
+          0.4707030058,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -88.6999969482422,
+          -165.99999999999997,
+          -207.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72420684
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4707030058000001,
+          0.4707030058000001,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -88.6999969482422,
+          -165.99999999999997,
+          -207.87499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 126485
+      }
+    },
+    {
+      "case_id": "Diseased_3",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_3.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_3.nrrd",
+      "labels": {
+        "0": 58694139,
+        "1": 26117
+      },
+      "foreground_fraction": 0.00044476985931396484,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4414060116,
+          0.4414060116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -87.9000015258789,
+          -171.5,
+          -218.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72128233
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4414060116,
+          0.4414060116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -87.9000015258789,
+          -171.5,
+          -218.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125264
+      }
+    },
+    {
+      "case_id": "Diseased_4",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_4.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_4.nrrd",
+      "labels": {
+        "0": 58697551,
+        "1": 22705
+      },
+      "foreground_fraction": 0.0003866638456072126,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4882810115999999,
+          0.4882810115999999,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -97.30000305175781,
+          -122.59999847412107,
+          -210.87499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73190208
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4882810115999999,
+          0.4882810115999999,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -97.30000305175781,
+          -122.59999847412107,
+          -210.87499999999991
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 124557
+      }
+    },
+    {
+      "case_id": "Diseased_5",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_5.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_5.nrrd",
+      "labels": {
+        "0": 58686817,
+        "1": 33439
+      },
+      "foreground_fraction": 0.000569462776184082,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.44531199999999993,
+          0.44531199999999993,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -92.3000030517578,
+          -167.39999389648438,
+          -212.87500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 67763093
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.445312,
+          0.445312,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -92.30000305175778,
+          -167.39999389648438,
+          -212.87500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 127439
+      }
+    },
+    {
+      "case_id": "Diseased_6",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_6.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_6.nrrd",
+      "labels": {
+        "0": 58694492,
+        "1": 25764
+      },
+      "foreground_fraction": 0.000438758305140904,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4414060116,
+          0.4414060116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -97.0999984741211,
+          -155.3000030517578,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73106049
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4414060116,
+          0.4414060116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -97.0999984741211,
+          -155.3000030517578,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125336
+      }
+    },
+    {
+      "case_id": "Diseased_7",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_7.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_7.nrrd",
+      "labels": {
+        "0": 58690921,
+        "1": 29335
+      },
+      "foreground_fraction": 0.0004995720727103097,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -95.90000152587888,
+          -111.09999847412112,
+          -225.125
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 74174324
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -95.90000152587886,
+          -111.09999847412112,
+          -225.12500000000006
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125300
+      }
+    },
+    {
+      "case_id": "Diseased_8",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_8.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_8.nrrd",
+      "labels": {
+        "0": 58693007,
+        "1": 27249
+      },
+      "foreground_fraction": 0.0004640477044241769,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.398438,
+          0.398438,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -85.6999969482422,
+          -131.6999969482422,
+          -235.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 69303111
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.398438,
+          0.398438,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -85.6999969482422,
+          -131.6999969482422,
+          -235.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125590
+      }
+    },
+    {
+      "case_id": "Diseased_9",
+      "group": "Diseased",
+      "original_partition": "challenge_training",
+      "image_relative_path": "Diseased/CTCA/Diseased_9.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_9.nrrd",
+      "labels": {
+        "0": 58693816,
+        "1": 26440
+      },
+      "foreground_fraction": 0.00045027051653180806,
+      "geometry_matches": true,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4648439884,
+          0.4648439884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -103.30000305175781,
+          -154.89999389648438,
+          -232.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73154761
+      },
+      "annotation_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4648439884,
+          0.4648439884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -103.30000305175781,
+          -154.89999389648438,
+          -232.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "16-bit signed integer",
+        "file_bytes": 125965
+      }
+    }
+  ],
+  "blind_test_cases": [
+    {
+      "case_id": "Normal_blind_0",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/0.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          185
+        ],
+        "spacing_xyz_mm": [
+          0.322266,
+          0.322266,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -78.69999694824219,
+          -90.80000305175783,
+          -206.99999999999997
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 56387576
+      }
+    },
+    {
+      "case_id": "Normal_blind_1",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/1.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          182
+        ],
+        "spacing_xyz_mm": [
+          0.410156,
+          0.410156,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -93.5999984741211,
+          -112.00000000000003,
+          -175.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 57665677
+      }
+    },
+    {
+      "case_id": "Normal_blind_2",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/2.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          191
+        ],
+        "spacing_xyz_mm": [
+          0.44531199999999993,
+          0.44531199999999993,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -75.90000152587888,
+          -144.80000305175776,
+          -221.74999999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 60146589
+      }
+    },
+    {
+      "case_id": "Normal_blind_3",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/3.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          185
+        ],
+        "spacing_xyz_mm": [
+          0.369141,
+          0.369141,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -77.4000015258789,
+          -122.0,
+          -221.00000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 57457755
+      }
+    },
+    {
+      "case_id": "Normal_blind_4",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/4.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          173
+        ],
+        "spacing_xyz_mm": [
+          0.263672,
+          0.263672,
+          0.6250000000000002
+        ],
+        "origin_xyz_mm": [
+          -48.400001525878906,
+          -96.50000000000001,
+          -162.75
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 53143327
+      }
+    },
+    {
+      "case_id": "Normal_blind_5",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/5.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          177
+        ],
+        "spacing_xyz_mm": [
+          0.296875,
+          0.296875,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -51.70000076293947,
+          -88.90000152587893,
+          -206.00000000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 53874493
+      }
+    },
+    {
+      "case_id": "Normal_blind_6",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/6.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.390625,
+          0.390625,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -85.49999999999999,
+          -108.30000305175781,
+          -217.75
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 65044649
+      }
+    },
+    {
+      "case_id": "Normal_blind_7",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/7.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          334
+        ],
+        "spacing_xyz_mm": [
+          0.3847659999999999,
+          0.3847659999999999,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -68.49999999999999,
+          -109.3000030517578,
+          -216.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 103460906
+      }
+    },
+    {
+      "case_id": "Normal_blind_8",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/8.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          196
+        ],
+        "spacing_xyz_mm": [
+          0.390625,
+          0.390625,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -77.19999694824217,
+          -120.19999694824216,
+          -203.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 61618052
+      }
+    },
+    {
+      "case_id": "Normal_blind_9",
+      "group": "Normal",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Normal/Testset_Normal/9.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          197
+        ],
+        "spacing_xyz_mm": [
+          0.390625,
+          0.390625,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -74.0999984741211,
+          -100.0,
+          -198.5
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 62631099
+      }
+    },
+    {
+      "case_id": "Diseased_blind_10",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/10.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4121089876000001,
+          0.4121089876000001,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -91.40000152587893,
+          -149.10000610351562,
+          -235.12500000000006
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 70647627
+      }
+    },
+    {
+      "case_id": "Diseased_blind_11",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/11.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.44531199340000005,
+          0.44531199340000005,
+          0.6250000000000002
+        ],
+        "origin_xyz_mm": [
+          -93.80000305175781,
+          -125.19999694824217,
+          -220.625
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73657098
+      }
+    },
+    {
+      "case_id": "Diseased_blind_12",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/12.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.45507800579999996,
+          0.45507800579999996,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -108.00000000000001,
+          -125.1999969482422,
+          -206.62500000000006
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72339495
+      }
+    },
+    {
+      "case_id": "Diseased_blind_13",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/13.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.371094,
+          0.371094,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -90.69999694824219,
+          -106.59999847412112,
+          -242.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 68206523
+      }
+    },
+    {
+      "case_id": "Diseased_blind_14",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/14.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3691410124,
+          0.3691410124,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -94.6999969482422,
+          -120.59999847412111,
+          -243.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73218535
+      }
+    },
+    {
+      "case_id": "Diseased_blind_15",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/15.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -85.5,
+          -105.9000015258789,
+          -199.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 74965410
+      }
+    },
+    {
+      "case_id": "Diseased_blind_16",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/16.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4082030058,
+          0.4082030058,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -64.4000015258789,
+          -117.0999984741211,
+          -184.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72686331
+      }
+    },
+    {
+      "case_id": "Diseased_blind_17",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/17.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4140619934,
+          0.4140619934,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -89.59999847412111,
+          -135.10000610351562,
+          -205.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 70466368
+      }
+    },
+    {
+      "case_id": "Diseased_blind_18",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/18.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4140619934,
+          0.4140619934,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -78.80000305175778,
+          -105.99999999999999,
+          -188.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 72048968
+      }
+    },
+    {
+      "case_id": "Diseased_blind_19",
+      "group": "Diseased",
+      "original_partition": "challenge_blind_test_unlabeled",
+      "image_relative_path": "Diseased/Testset_Disease/19.nrrd",
+      "label_relative_path": null,
+      "image_header": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4062499999999999,
+          0.4062499999999999,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -83.69999694824217,
+          -111.49999999999999,
+          -219.87499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "pixel_type": "32-bit signed integer",
+        "file_bytes": 73420166
+      }
+    }
+  ]
+}

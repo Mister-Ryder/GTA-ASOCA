@@ -1,0 +1,29 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -B - <<'PY'
+import hashlib,json,os,subprocess,datetime
+from pathlib import Path
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+p=r/'early_final_env311/bin/python'; tool=r/'ops/shadow_gaussian_region_balance.py'
+ref=r/'ops_inputs/gaussian_region_balance_shadow_20261014/fixed_sampling_bank.json'
+out=r/'results/gaussian_region_balance_final200_shadow_20261014'
+assert hashlib.sha256(tool.read_bytes()).hexdigest()=='a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137'
+assert hashlib.sha256(ref.read_bytes()).hexdigest()=='6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14'
+assert not out.exists()
+base=[str(p),'-B','-u',str(tool)]
+args=['--reference-bank',str(ref),'--output',str(out),'--device','cuda','--deadline','1800']
+plan=subprocess.run(base+['--plan']+args,capture_output=True,text=True,timeout=120)
+assert plan.returncode==0,(plan.stdout,plan.stderr)
+planpath=r/'SHADOW_PLAN_EXECUTED_20261014.json'
+with planpath.open('x') as f:f.write(plan.stdout)
+fixture=r/'results/gaussian_region_balance_torch_fixture_20261014.json'
+subprocess.run(base+['--fixture','--output',str(fixture)],check=True,timeout=120)
+assert json.loads(fixture.read_text())['status']=='passed'
+assert not subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip()
+log=r/'GAUSSIAN_REGION_BALANCE_SHADOW_20261014.log'
+command=base+['--diagnose']+args
+with log.open('xb') as stream:
+    proc=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
+receipt={'time_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'parent_pid':proc.pid,'argv':command,'tool_sha256':hashlib.sha256(tool.read_bytes()).hexdigest(),'log':str(log),'output':str(out),'role':'OFFLINE_DIAGNOSTIC_NOT_TRAINING'}
+with (r/'GAUSSIAN_REGION_BALANCE_SHADOW_LAUNCH_20261014.json').open('x') as f:json.dump(receipt,f,indent=2)
+print(json.dumps(receipt,indent=2))
+PY

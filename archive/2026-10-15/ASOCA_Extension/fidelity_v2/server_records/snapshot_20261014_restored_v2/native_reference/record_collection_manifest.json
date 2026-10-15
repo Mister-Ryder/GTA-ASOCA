@@ -1,0 +1,154 @@
+{
+  "mode": "native",
+  "root": "/root/autodl-tmp/ASOCA_GTAirway_20261013",
+  "prefix": "native_reference",
+  "started_at_utc": "2026-10-14T04:29:10.548484+00:00",
+  "limit_bytes": 132238374,
+  "logs_tail_bytes": 20000,
+  "scope": "allowlisted text records only; no weights/raw arrays/credentials",
+  "missing_paths": [],
+  "skipped": [],
+  "files": [
+    {
+      "path": "native_reference/results/nnunet/fold0/EXPERIMENT_COMPLETE.json",
+      "bytes": 523,
+      "sha256": "b061380733afd7d90a82ee88d096be6764a20f6d0454365d7261dbc45e3702f7",
+      "captured_before_redaction_sha256": "b061380733afd7d90a82ee88d096be6764a20f6d0454365d7261dbc45e3702f7",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 523,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/JOB_COMPLETE.json",
+      "bytes": 1154,
+      "sha256": "02c005d9de7c8ef0430e76251e2daef85874edb4c5eeb6c3903381493583458e",
+      "captured_before_redaction_sha256": "02c005d9de7c8ef0430e76251e2daef85874edb4c5eeb6c3903381493583458e",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1154,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Diseased_1.json",
+      "bytes": 1358,
+      "sha256": "09d41a4c0d50162e3ce3ea61d527e220f088d945fceb9be384da6936331e5832",
+      "captured_before_redaction_sha256": "09d41a4c0d50162e3ce3ea61d527e220f088d945fceb9be384da6936331e5832",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1358,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Diseased_15.json",
+      "bytes": 1373,
+      "sha256": "5edf373064f6f8130a6eee588be014f367c2dc27b74f4e627083f69867dbda86",
+      "captured_before_redaction_sha256": "5edf373064f6f8130a6eee588be014f367c2dc27b74f4e627083f69867dbda86",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1373,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Diseased_18.json",
+      "bytes": 1363,
+      "sha256": "4fdfdd285f2468c8248bc8583cd96b6f0ee32bf7f04c1a8424c8aca89c6f15f8",
+      "captured_before_redaction_sha256": "4fdfdd285f2468c8248bc8583cd96b6f0ee32bf7f04c1a8424c8aca89c6f15f8",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1363,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Diseased_7.json",
+      "bytes": 1373,
+      "sha256": "6e94a589e57e407c7893a255491bf59daf6216c5a1be71d56ecb3c65c6a7c253",
+      "captured_before_redaction_sha256": "6e94a589e57e407c7893a255491bf59daf6216c5a1be71d56ecb3c65c6a7c253",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1373,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Normal_16.json",
+      "bytes": 1373,
+      "sha256": "8bca0b2117dc1d78d9ac352f66b6aa5cf295f1c407f665d69cf9e2e408c6d5a2",
+      "captured_before_redaction_sha256": "8bca0b2117dc1d78d9ac352f66b6aa5cf295f1c407f665d69cf9e2e408c6d5a2",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1373,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Normal_19.json",
+      "bytes": 1371,
+      "sha256": "070ed0fbf34db5f72add02cfbaa6b4a8e1e5786de4d16a7a2839645e6b20983b",
+      "captured_before_redaction_sha256": "070ed0fbf34db5f72add02cfbaa6b4a8e1e5786de4d16a7a2839645e6b20983b",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1371,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Normal_2.json",
+      "bytes": 1369,
+      "sha256": "926e7427c93daf2f270b924d0dde82de43d68f5dd0117be7dcada66f1310ad89",
+      "captured_before_redaction_sha256": "926e7427c93daf2f270b924d0dde82de43d68f5dd0117be7dcada66f1310ad89",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1369,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/Normal_8.json",
+      "bytes": 1371,
+      "sha256": "b025a7aa5446f6707cde60f6bd4199ad4c6d47512c4b59f2a6b618a2c778717d",
+      "captured_before_redaction_sha256": "b025a7aa5446f6707cde60f6bd4199ad4c6d47512c4b59f2a6b618a2c778717d",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1371,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/evaluation/summary.json",
+      "bytes": 5836,
+      "sha256": "8c8c0ceae66083a575e26194345221e61afc33920075961a2c7dd3933ba46b81",
+      "captured_before_redaction_sha256": "8c8c0ceae66083a575e26194345221e61afc33920075961a2c7dd3933ba46b81",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 5836,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/native_runner.log",
+      "bytes": 20000,
+      "sha256": "9f794d760ffee1944e2259a40c846ca784594e0334ba156e825b9c8a48fa49e7",
+      "captured_before_redaction_sha256": "9f794d760ffee1944e2259a40c846ca784594e0334ba156e825b9c8a48fa49e7",
+      "redacted": false,
+      "tail_only": true,
+      "source_bytes_at_capture": 148197,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/training/PREPROCESSING_COMPLETE.json",
+      "bytes": 1109,
+      "sha256": "dc8d9b0a8f3c44b4e6dd5556b0409aabe374fff4ea22e1654f02e7b2ad91f534",
+      "captured_before_redaction_sha256": "dc8d9b0a8f3c44b4e6dd5556b0409aabe374fff4ea22e1654f02e7b2ad91f534",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 1109,
+      "source_changed_during_capture": false
+    },
+    {
+      "path": "native_reference/results/nnunet/fold0/training/TRAINING_COMPLETE.json",
+      "bytes": 734,
+      "sha256": "f648436f7a6059044eebc19786e034ed2a5b295c6b35742103c4a30c70475cb5",
+      "captured_before_redaction_sha256": "f648436f7a6059044eebc19786e034ed2a5b295c6b35742103c4a30c70475cb5",
+      "redacted": false,
+      "tail_only": false,
+      "source_bytes_at_capture": 734,
+      "source_changed_during_capture": false
+    }
+  ],
+  "finished_at_utc": "2026-10-14T04:29:10.556888+00:00"
+}

@@ -1,0 +1,28 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python - <<'PY'
+import datetime,hashlib,json,os,subprocess,time
+from pathlib import Path
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+helper=root/'ops/public_source_cpu_smoke.py'
+assert hashlib.sha256(helper.read_bytes()).hexdigest()=='fb3cf09ee7ae2459c83b19c40517b821832d37ef5f69764be3841c5936f19bc3'
+work=root/'public_source_cpu_smoke_20261014'
+assert not work.exists(),'Inspect prior isolated smoke state instead of replacing it'
+work.mkdir()
+checkout=work/'checkout'
+env={k:v for k,v in os.environ.items() if not k.startswith(('GTA_','ASOCA_','GIT_')) and k not in ('PYTHONPATH','PYTHONHOME','GH_TOKEN','GITHUB_TOKEN','CLS_CHECKPOINT','OUTPUT_ROOT')}
+env.update(GIT_TERMINAL_PROMPT='0',GIT_ASKPASS='/bin/false',GIT_CONFIG_NOSYSTEM='1',GIT_CONFIG_GLOBAL='/dev/null',CUDA_VISIBLE_DEVICES='',OMP_NUM_THREADS='2',MKL_NUM_THREADS='2',OPENBLAS_NUM_THREADS='2',PYTHONDONTWRITEBYTECODE='1',PYTHONUNBUFFERED='1')
+command=['git','-c','credential.helper=','-c','http.extraHeader=','clone','--no-checkout','https://github.com/Mister-Ryder/GTA-ASOCA.git',str(checkout)]
+started=time.monotonic()
+with (work/'anonymous_clone.log').open('x') as stream:
+    clone=subprocess.run(command,env=env,stdout=stream,stderr=subprocess.STDOUT,timeout=90)
+receipt={'role':'NOT_MODEL_RESULTS_fresh_anonymous_public_clone','command':command,'return_code':clone.returncode,'wall_seconds':time.monotonic()-started,'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'global_system_Git_configuration_disabled':True,'credential_helper_and_extra_header_disabled':True,'terminal_askpass_disabled':True,'private_data_or_weights_copied':False}
+(work/'ANONYMOUS_CLONE_RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
+assert clone.returncode==0,'Anonymous clone failed; retain isolated log without touching experiments'
+subprocess.run(['git','-C',str(checkout),'checkout','--detach','7a7e7faafef9ee99f5b714d6e808d239b79d95a0'],env=env,check=True,timeout=30)
+command=[str(root/'early_final_env311/bin/python'),str(helper),'--checkout',str(checkout),'--output',str(work/'receipts'),'--timeout-seconds','300']
+print(json.dumps({'status':'running_source_only_CPU_smoke','command':command,'role':'NOT_MODEL_RESULTS'}),flush=True)
+completed=subprocess.run(command,env=env,check=False)
+assert completed.returncode==0,'CPU smoke failed; inspect receipts/logs and preserve source'
+final=json.loads((work/'receipts/PUBLIC_SOURCE_CPU_SMOKE_COMPLETE.json').read_text())
+print(json.dumps({'status':final['status'],'role':final['role'],'source_file_count':final['source_identity']['source_file_count'],'workers':len(final['worker_records']),'CUDA_context_initialized':final['CUDA_context_initialized'],'private_warmstart_reproduction':final['private_warmstart_reproduction'],'receipt':str(work/'receipts/PUBLIC_SOURCE_CPU_SMOKE_COMPLETE.json')}))
+PY

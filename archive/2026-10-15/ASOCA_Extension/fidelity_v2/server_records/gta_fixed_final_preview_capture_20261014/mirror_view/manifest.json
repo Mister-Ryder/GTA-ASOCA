@@ -1,0 +1,5676 @@
+{
+  "schema_version": 1,
+  "dataset": "ASOCA",
+  "label_semantics": {
+    "0": "background",
+    "1": "coronary artery"
+  },
+  "raw_root_at_preparation": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion",
+  "split_seed": 20261013,
+  "folds": [
+    {
+      "fold": 0,
+      "train": [
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_17",
+        "Normal_18",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_9"
+      ],
+      "val": [
+        "Diseased_1",
+        "Diseased_15",
+        "Diseased_18",
+        "Diseased_7",
+        "Normal_16",
+        "Normal_19",
+        "Normal_2",
+        "Normal_8"
+      ]
+    },
+    {
+      "fold": 1,
+      "train": [
+        "Diseased_1",
+        "Diseased_10",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_15",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_18",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_4",
+        "Diseased_6",
+        "Diseased_7",
+        "Diseased_8",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_15",
+        "Normal_16",
+        "Normal_18",
+        "Normal_19",
+        "Normal_2",
+        "Normal_20",
+        "Normal_4",
+        "Normal_5",
+        "Normal_6",
+        "Normal_8",
+        "Normal_9"
+      ],
+      "val": [
+        "Diseased_11",
+        "Diseased_3",
+        "Diseased_5",
+        "Diseased_9",
+        "Normal_14",
+        "Normal_17",
+        "Normal_3",
+        "Normal_7"
+      ]
+    },
+    {
+      "fold": 2,
+      "train": [
+        "Diseased_1",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_14",
+        "Diseased_15",
+        "Diseased_16",
+        "Diseased_18",
+        "Diseased_19",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_7",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_10",
+        "Normal_13",
+        "Normal_14",
+        "Normal_15",
+        "Normal_16",
+        "Normal_17",
+        "Normal_18",
+        "Normal_19",
+        "Normal_2",
+        "Normal_20",
+        "Normal_3",
+        "Normal_5",
+        "Normal_6",
+        "Normal_7",
+        "Normal_8",
+        "Normal_9"
+      ],
+      "val": [
+        "Diseased_10",
+        "Diseased_13",
+        "Diseased_17",
+        "Diseased_4",
+        "Normal_1",
+        "Normal_11",
+        "Normal_12",
+        "Normal_4"
+      ]
+    },
+    {
+      "fold": 3,
+      "train": [
+        "Diseased_1",
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_13",
+        "Diseased_14",
+        "Diseased_15",
+        "Diseased_17",
+        "Diseased_18",
+        "Diseased_19",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_6",
+        "Diseased_7",
+        "Diseased_8",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_11",
+        "Normal_12",
+        "Normal_13",
+        "Normal_14",
+        "Normal_16",
+        "Normal_17",
+        "Normal_18",
+        "Normal_19",
+        "Normal_2",
+        "Normal_3",
+        "Normal_4",
+        "Normal_5",
+        "Normal_7",
+        "Normal_8",
+        "Normal_9"
+      ],
+      "val": [
+        "Diseased_12",
+        "Diseased_16",
+        "Diseased_2",
+        "Diseased_20",
+        "Normal_10",
+        "Normal_15",
+        "Normal_20",
+        "Normal_6"
+      ]
+    },
+    {
+      "fold": 4,
+      "train": [
+        "Diseased_1",
+        "Diseased_10",
+        "Diseased_11",
+        "Diseased_12",
+        "Diseased_13",
+        "Diseased_15",
+        "Diseased_16",
+        "Diseased_17",
+        "Diseased_18",
+        "Diseased_2",
+        "Diseased_20",
+        "Diseased_3",
+        "Diseased_4",
+        "Diseased_5",
+        "Diseased_7",
+        "Diseased_9",
+        "Normal_1",
+        "Normal_10",
+        "Normal_11",
+        "Normal_12",
+        "Normal_14",
+        "Normal_15",
+        "Normal_16",
+        "Normal_17",
+        "Normal_19",
+        "Normal_2",
+        "Normal_20",
+        "Normal_3",
+        "Normal_4",
+        "Normal_6",
+        "Normal_7",
+        "Normal_8"
+      ],
+      "val": [
+        "Diseased_14",
+        "Diseased_19",
+        "Diseased_6",
+        "Diseased_8",
+        "Normal_13",
+        "Normal_18",
+        "Normal_5",
+        "Normal_9"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "Diseased_1",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_1.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_1.nrrd",
+      "cache_subdir": "cases/Diseased_1",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        396,
+        396
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -89.19999694824222,
+          -164.30000305175778,
+          -185.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_1.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_1.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          396,
+          396,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -89.19999694824222,
+          -164.30000305175778,
+          -185.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        396,
+        396,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -89.19999694824222,
+        -164.30000305175778,
+        -185.125
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 15195,
+      "foreground_fraction": 0.0003460607153788972,
+      "source_sha256": {
+        "image": "de8b59df8aa61510c341ffe273c49fcdb7c6f9854fdede2d64c0d2ef66045ff1",
+        "label": "a25a33b35df711d522d73dd0bdd20e5397b6a04b1eb63ff61adab254168c7614"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 645,
+        "junction_voxels": 34,
+        "branch_count": 15,
+        "graph_roots": [
+          11,
+          15
+        ],
+        "maximum_graph_depth": 4,
+        "thin_radius_cutoff_mm": 0.8660254037844386,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.2163733949971201,
+          "original_sum_maximum": 9.871376991271973,
+          "stamp_seconds": 0.047
+        }
+      },
+      "preparation_seconds": 7.964
+    },
+    {
+      "case_id": "Diseased_10",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_10.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_10.nrrd",
+      "cache_subdir": "cases/Diseased_10",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        396,
+        396
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3867189884,
+          0.3867189884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -111.80000305175781,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_10.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_10.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          396,
+          396,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -111.80000305175781,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        396,
+        396,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -75.69999694824219,
+        -111.80000305175781,
+        -224.375
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 16010,
+      "foreground_fraction": 0.00036462205022811083,
+      "source_sha256": {
+        "image": "d09a67480ea55252bb07e46bab6377973f167208ef6429be92cb04ec3c7d6625",
+        "label": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 719,
+        "junction_voxels": 22,
+        "branch_count": 29,
+        "graph_roots": [
+          29,
+          5
+        ],
+        "maximum_graph_depth": 9,
+        "thin_radius_cutoff_mm": 0.8660254037844386,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.24119762946190598,
+          "original_sum_maximum": 8.598877906799316,
+          "stamp_seconds": 0.055
+        }
+      },
+      "preparation_seconds": 8.39
+    },
+    {
+      "case_id": "Diseased_11",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_11.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_11.nrrd",
+      "cache_subdir": "cases/Diseased_11",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        506,
+        506
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.49414100000000005,
+          0.49414100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -117.0999984741211,
+          -159.80000305175778,
+          -225.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_11.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_11.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          506,
+          506,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -117.0999984741211,
+          -159.80000305175778,
+          -225.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        506,
+        506,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -117.0999984741211,
+        -159.80000305175778,
+        -225.125
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 25918,
+      "foreground_fraction": 0.00036152840114001824,
+      "source_sha256": {
+        "image": "23873ca744f9fd6694de0a9ce18d9f2aa7b9250bf1557b6a6f57fd7eed29a576",
+        "label": "cf7e3b1ac92c004006a66fc34e3acd90801683345b0f1e230e2a17c056b22aa3"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1104,
+        "junction_voxels": 25,
+        "branch_count": 27,
+        "graph_roots": [
+          27,
+          17
+        ],
+        "maximum_graph_depth": 5,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.370350741204373,
+          "original_sum_maximum": 10.575804710388184,
+          "stamp_seconds": 0.094
+        }
+      },
+      "preparation_seconds": 10.063
+    },
+    {
+      "case_id": "Diseased_12",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_12.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_12.nrrd",
+      "cache_subdir": "cases/Diseased_12",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        360,
+        360
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3515619934,
+          0.3515619934,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -66.0,
+          -112.09999847412107,
+          -242.8749999999998
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_12.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_12.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          360,
+          360,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -66.0,
+          -112.09999847412107,
+          -242.8749999999998
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        360,
+        360,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -66.0,
+        -112.09999847412107,
+        -242.8749999999998
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 21246,
+      "foreground_fraction": 0.0005854828042328043,
+      "source_sha256": {
+        "image": "65d8d932abd341f137f89d5dbb6dc473a18cf51a68ea8b9acd9e753793a8941b",
+        "label": "81271cb8961feedf97c4299740cd7ae294ab4c83ee2cdc5d1e16ab0a73bc427f"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 801,
+        "junction_voxels": 107,
+        "branch_count": 31,
+        "graph_roots": [
+          22,
+          12
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 1.0,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.26870556494991193,
+          "original_sum_maximum": 14.10249137878418,
+          "stamp_seconds": 0.055
+        }
+      },
+      "preparation_seconds": 7.344
+    },
+    {
+      "case_id": "Diseased_13",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_13.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_13.nrrd",
+      "cache_subdir": "cases/Diseased_13",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        404,
+        404
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.4000015258789,
+          -132.3000030517578,
+          -212.12499999999997
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_13.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_13.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          404,
+          404,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -75.4000015258789,
+          -132.3000030517578,
+          -212.12499999999997
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        404,
+        404,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -75.4000015258789,
+        -132.3000030517578,
+        -212.12499999999997
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 22975,
+      "foreground_fraction": 0.0005027299494447323,
+      "source_sha256": {
+        "image": "411c481acd43cf50369669fab5238d28223fa8a5f2114e56e273aaff645d080e",
+        "label": "20eaf5ed8f27603c40602b1894074c00e717d6c0558fb0ed4f5931094a6ba7ff"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1154,
+        "junction_voxels": 154,
+        "branch_count": 39,
+        "graph_roots": [
+          38,
+          12
+        ],
+        "maximum_graph_depth": 9,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3871238725994986,
+          "original_sum_maximum": 50.24577331542969,
+          "stamp_seconds": 0.078
+        }
+      },
+      "preparation_seconds": 8.814
+    },
+    {
+      "case_id": "Diseased_14",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_14.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_14.nrrd",
+      "cache_subdir": "cases/Diseased_14",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        439,
+        439
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4284380078,
+          0.4284380078,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -93.8550033569336,
+          -124.32900238037112,
+          -201.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_14.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_14.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          439,
+          439,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -93.8550033569336,
+          -124.32900238037112,
+          -201.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        439,
+        439,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -93.8550033569336,
+        -124.32900238037112,
+        -201.37500000000003
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 28297,
+      "foreground_fraction": 0.0005243886980957668,
+      "source_sha256": {
+        "image": "8914023e28054b7f230e156d0b02d28ad844d526a25bcd768b599e8ecc709578",
+        "label": "af52172e40dc0d161f6dbdb975c1a61d2b293996ca02586524e69ecd6c33b2a3"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1395,
+        "junction_voxels": 234,
+        "branch_count": 87,
+        "graph_roots": [
+          52,
+          38,
+          11,
+          54
+        ],
+        "maximum_graph_depth": 14,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.467970365924004,
+          "original_sum_maximum": 24.298385620117188,
+          "stamp_seconds": 0.112
+        }
+      },
+      "preparation_seconds": 9.6
+    },
+    {
+      "case_id": "Diseased_15",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_15.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_15.nrrd",
+      "cache_subdir": "cases/Diseased_15",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        470,
+        470
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.45898399999999995,
+          0.45898399999999995,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175781,
+          -173.39999389648438,
+          -209.375
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_15.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_15.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          470,
+          470,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175781,
+          -173.39999389648438,
+          -209.375
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        470,
+        470,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -88.30000305175781,
+        -173.39999389648438,
+        -209.375
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 21855,
+      "foreground_fraction": 0.0003533434650455927,
+      "source_sha256": {
+        "image": "9807f2fcb91c24863df5cad14046f8de8a1ef2c4cc16858606fde882f7134a75",
+        "label": "e40950a1eeb9bcecc9794dfdcc6e4689a9b82026a3e2de29129a3f96afd2bff9"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1042,
+        "junction_voxels": 26,
+        "branch_count": 26,
+        "graph_roots": [
+          5,
+          14,
+          2
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3495520582744173,
+          "original_sum_maximum": 8.132396697998047,
+          "stamp_seconds": 0.071
+        }
+      },
+      "preparation_seconds": 9.38
+    },
+    {
+      "case_id": "Diseased_16",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_16.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_16.nrrd",
+      "cache_subdir": "cases/Diseased_16",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        480,
+        480
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.46875,
+          0.46875,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -83.9000015258789,
+          -147.1999969482422,
+          -175.87499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_16.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_16.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          480,
+          480,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -83.9000015258789,
+          -147.1999969482422,
+          -175.87499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        480,
+        480,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -83.9000015258789,
+        -147.1999969482422,
+        -175.87499999999994
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 33724,
+      "foreground_fraction": 0.0005227554563492063,
+      "source_sha256": {
+        "image": "c5c8e255c3451c2b400245b2eaf12dcc8fb185c5f7139d635876a0c2d7d26a5c",
+        "label": "de3854c9b7dc1c911c5f8ab31ceac46506e081f03699754e21107e545755744a"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1129,
+        "junction_voxels": 37,
+        "branch_count": 29,
+        "graph_roots": [
+          10,
+          21
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3787373069019358,
+          "original_sum_maximum": 10.543959617614746,
+          "stamp_seconds": 0.111
+        }
+      },
+      "preparation_seconds": 11.881
+    },
+    {
+      "case_id": "Diseased_17",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_17.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_17.nrrd",
+      "cache_subdir": "cases/Diseased_17",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        404,
+        404
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -82.0999984741211,
+          -124.59999847412114,
+          -231.37500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_17.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_17.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          404,
+          404,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -82.0999984741211,
+          -124.59999847412114,
+          -231.37500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        404,
+        404,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -82.0999984741211,
+        -124.59999847412114,
+        -231.37500000000003
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 22913,
+      "foreground_fraction": 0.0005013732897334995,
+      "source_sha256": {
+        "image": "0fdfe6cbd7cfea5ec547485f363d2bed1cc80f49587003c0429604365e843e64",
+        "label": "6c594b940a35a2f39b85ecb07c848fe0a57cce93cefbda445c6660139f7c5886"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1589,
+        "junction_voxels": 28,
+        "branch_count": 35,
+        "graph_roots": [
+          22,
+          35,
+          16
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.5,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.5330501157370913,
+          "original_sum_maximum": 8.768399238586426,
+          "stamp_seconds": 0.085
+        }
+      },
+      "preparation_seconds": 8.267
+    },
+    {
+      "case_id": "Diseased_18",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_18.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_18.nrrd",
+      "cache_subdir": "cases/Diseased_18",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        468,
+        468
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.457031,
+          0.457031,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -102.80000305175781,
+          -162.10000610351562,
+          -208.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_18.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_18.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          468,
+          468,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -102.80000305175781,
+          -162.10000610351562,
+          -208.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        468,
+        468,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -102.80000305175781,
+        -162.10000610351562,
+        -208.37499999999994
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 38037,
+      "foreground_fraction": 0.0006202353558122789,
+      "source_sha256": {
+        "image": "9af69e6f5b004b684ed37acc41659d31e753dd690c0856ff7d5d8a0b92b30cf8",
+        "label": "c78139628285cc2066841902d059fc634a080c0c371433d3d492945076b7312e"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1310,
+        "junction_voxels": 65,
+        "branch_count": 37,
+        "graph_roots": [
+          35,
+          18
+        ],
+        "maximum_graph_depth": 8,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.4394560425522905,
+          "original_sum_maximum": 12.32719612121582,
+          "stamp_seconds": 0.124
+        }
+      },
+      "preparation_seconds": 10.548
+    },
+    {
+      "case_id": "Diseased_19",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_19.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_19.nrrd",
+      "cache_subdir": "cases/Diseased_19",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        210,
+        442,
+        442
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          168
+        ],
+        "spacing_xyz_mm": [
+          0.43164100000000005,
+          0.43164100000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -88.50000000000001,
+          -147.50000000000003,
+          -186.87500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_19.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_19.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          442,
+          442,
+          210
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -88.50000000000001,
+          -147.50000000000003,
+          -186.87500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        442,
+        442,
+        210
+      ],
+      "resampled_origin_xyz_mm": [
+        -88.50000000000001,
+        -147.50000000000003,
+        -186.87500000000003
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 26058,
+      "foreground_fraction": 0.0006351513804268661,
+      "source_sha256": {
+        "image": "373273906a113e7fff58696518c426903770a97acec2fd6ca9875b4a64f1dec8",
+        "label": "d75290e15a45de5f5d75cf1cc35425073632bb0613e97f37b94135a8a6fecd03"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1081,
+        "junction_voxels": 20,
+        "branch_count": 29,
+        "graph_roots": [
+          14,
+          25,
+          15
+        ],
+        "maximum_graph_depth": 5,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.36263510076261524,
+          "original_sum_maximum": 12.45258903503418,
+          "stamp_seconds": 0.079
+        }
+      },
+      "preparation_seconds": 7.532
+    },
+    {
+      "case_id": "Diseased_2",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_2.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_2.nrrd",
+      "cache_subdir": "cases/Diseased_2",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        448,
+        448
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4375,
+          0.4375,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -84.40000152587888,
+          -134.0,
+          -214.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_2.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_2.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          448,
+          448,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -84.40000152587888,
+          -134.0,
+          -214.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        448,
+        448,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -84.40000152587888,
+        -134.0,
+        -214.37500000000003
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 14005,
+      "foreground_fraction": 0.00024921205926567056,
+      "source_sha256": {
+        "image": "4ef7c09c4e0fbdca1888b305a5ae38230b9e0482f251626bd2d03aec4a65317f",
+        "label": "406e210fbc169ed694d8c7af0c02810c7334ef4c3a7019f4d4da2053ed3af190"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 779,
+        "junction_voxels": 10,
+        "branch_count": 17,
+        "graph_roots": [
+          14,
+          1
+        ],
+        "maximum_graph_depth": 4,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.2613253871360567,
+          "original_sum_maximum": 7.79856538772583,
+          "stamp_seconds": 0.046
+        }
+      },
+      "preparation_seconds": 7.807
+    },
+    {
+      "case_id": "Diseased_20",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_20.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_20.nrrd",
+      "cache_subdir": "cases/Diseased_20",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        482,
+        482
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4707030058,
+          0.4707030058,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -88.6999969482422,
+          -165.99999999999997,
+          -207.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_20.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_20.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          482,
+          482,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -88.6999969482422,
+          -165.99999999999997,
+          -207.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        482,
+        482,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -88.6999969482422,
+        -165.99999999999997,
+        -207.875
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 33561,
+      "foreground_fraction": 0.0005159205001881609,
+      "source_sha256": {
+        "image": "7fdddea8ef4a2821cc6930e8605a49a5b9b39ccb64ba86dbb2f2ddd6d26cc6a4",
+        "label": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1273,
+        "junction_voxels": 30,
+        "branch_count": 32,
+        "graph_roots": [
+          27,
+          12
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.42704392531989754,
+          "original_sum_maximum": 9.301420211791992,
+          "stamp_seconds": 0.112
+        }
+      },
+      "preparation_seconds": 10.078
+    },
+    {
+      "case_id": "Diseased_3",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_3.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_3.nrrd",
+      "cache_subdir": "cases/Diseased_3",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        452,
+        452
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4414060116,
+          0.4414060116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -87.9000015258789,
+          -171.5,
+          -218.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_3.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_3.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          452,
+          452,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -87.9000015258789,
+          -171.5,
+          -218.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        452,
+        452,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -87.9000015258789,
+        -171.5,
+        -218.62499999999997
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 25506,
+      "foreground_fraction": 0.0004458691809404473,
+      "source_sha256": {
+        "image": "386de942db7c233e35dbadc98ba180028882eb90f5b04960d1eb60a3d3598b2b",
+        "label": "41c49ed871d8dc29b8bc78bc8dbe769ca4143b40e0ed9644e26b27970b06b99a"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1179,
+        "junction_voxels": 57,
+        "branch_count": 47,
+        "graph_roots": [
+          36,
+          7
+        ],
+        "maximum_graph_depth": 8,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3955104382970614,
+          "original_sum_maximum": 11.598469734191895,
+          "stamp_seconds": 0.093
+        }
+      },
+      "preparation_seconds": 9.259
+    },
+    {
+      "case_id": "Diseased_4",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_4.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_4.nrrd",
+      "cache_subdir": "cases/Diseased_4",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        500,
+        500
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4882810115999999,
+          0.4882810115999999,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -97.30000305175781,
+          -122.59999847412107,
+          -210.87499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_4.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_4.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          500,
+          500,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -97.30000305175781,
+          -122.59999847412107,
+          -210.87499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        500,
+        500,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -97.30000305175781,
+        -122.59999847412107,
+        -210.87499999999997
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 26690,
+      "foreground_fraction": 0.00038128571428571427,
+      "source_sha256": {
+        "image": "fabccd474a03d605204fba8bcf39c66c78d83c4962195a2aeef0d938b738df83",
+        "label": "1cd7e0ae7e33e3c34bff9d20dff865c72fb6ecd115c653f87a645dfd224aeaf2"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1050,
+        "junction_voxels": 26,
+        "branch_count": 31,
+        "graph_roots": [
+          24,
+          29,
+          22
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3522357592976374,
+          "original_sum_maximum": 10.389864921569824,
+          "stamp_seconds": 0.076
+        }
+      },
+      "preparation_seconds": 9.518
+    },
+    {
+      "case_id": "Diseased_5",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_5.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_5.nrrd",
+      "cache_subdir": "cases/Diseased_5",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        456,
+        456
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.44531199999999993,
+          0.44531199999999993,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -92.3000030517578,
+          -167.39999389648438,
+          -212.87500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_5.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_5.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          456,
+          456,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -92.3000030517578,
+          -167.39999389648438,
+          -212.87500000000003
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        456,
+        456,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -92.3000030517578,
+        -167.39999389648438,
+        -212.87500000000003
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 32947,
+      "foreground_fraction": 0.0005658849701006903,
+      "source_sha256": {
+        "image": "eead7749a9fe029aad5190e0571ce633a7bf213fa87abea42c6bd87a0e32ab17",
+        "label": "1a7932d0bfb494701d48e508d0325f625ec3a03c19b6a8d4af50ad7d681db428"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1273,
+        "junction_voxels": 96,
+        "branch_count": 54,
+        "graph_roots": [
+          40,
+          30
+        ],
+        "maximum_graph_depth": 9,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.42704392531989754,
+          "original_sum_maximum": 21.053743362426758,
+          "stamp_seconds": 0.115
+        }
+      },
+      "preparation_seconds": 9.848
+    },
+    {
+      "case_id": "Diseased_6",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_6.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_6.nrrd",
+      "cache_subdir": "cases/Diseased_6",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        452,
+        452
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4414060116,
+          0.4414060116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -97.0999984741211,
+          -155.3000030517578,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_6.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_6.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          452,
+          452,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -97.0999984741211,
+          -155.3000030517578,
+          -224.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        452,
+        452,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -97.0999984741211,
+        -155.3000030517578,
+        -224.375
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 25134,
+      "foreground_fraction": 0.00043936626651600415,
+      "source_sha256": {
+        "image": "1c5a3cfa2df22738ea1ccbaea6ebb91c324a97d76514f2a695618864d28b45db",
+        "label": "97ae589a49c74bc46ed95727cb54ca3affd2195c9bf4c434d8c4f70649a8919d"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1141,
+        "junction_voxels": 24,
+        "branch_count": 39,
+        "graph_roots": [
+          26,
+          39,
+          21
+        ],
+        "maximum_graph_depth": 9,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.38276285843676594,
+          "original_sum_maximum": 8.610987663269043,
+          "stamp_seconds": 0.093
+        }
+      },
+      "preparation_seconds": 9.382
+    },
+    {
+      "case_id": "Diseased_7",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_7.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_7.nrrd",
+      "cache_subdir": "cases/Diseased_7",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        404,
+        404
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3945310116,
+          0.3945310116,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -95.90000152587888,
+          -111.09999847412112,
+          -225.125
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_7.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_7.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          404,
+          404,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -95.90000152587888,
+          -111.09999847412112,
+          -225.125
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        404,
+        404,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -95.90000152587888,
+        -111.09999847412112,
+        -225.125
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 22802,
+      "foreground_fraction": 0.0004989444312182279,
+      "source_sha256": {
+        "image": "a9bfdb7af3ba63f38cde88d6ef0b574034e0deec584ca1ec43c1376559684aa1",
+        "label": "fd949347b5b8768aedc41ead62a6766933e823f6d0a5573f5051914113dd2af0"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 997,
+        "junction_voxels": 27,
+        "branch_count": 30,
+        "graph_roots": [
+          29,
+          8
+        ],
+        "maximum_graph_depth": 5,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.33445624001880425,
+          "original_sum_maximum": 9.956844329833984,
+          "stamp_seconds": 0.069
+        }
+      },
+      "preparation_seconds": 8.608
+    },
+    {
+      "case_id": "Diseased_8",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_8.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_8.nrrd",
+      "cache_subdir": "cases/Diseased_8",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        408,
+        408
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.398438,
+          0.398438,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -85.6999969482422,
+          -131.6999969482422,
+          -235.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_8.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_8.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          408,
+          408,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -85.6999969482422,
+          -131.6999969482422,
+          -235.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        408,
+        408,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -85.6999969482422,
+        -131.6999969482422,
+        -235.375
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 21658,
+      "foreground_fraction": 0.00046466503267973854,
+      "source_sha256": {
+        "image": "2ece49db4beb5da671686d48a85c5c60bbb0b46a972bbf57ef8b900505373fe3",
+        "label": "765ab134dd5764a3bb797d4034ea0b3da2b6163020394ee193811d212d343dc3"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1117,
+        "junction_voxels": 34,
+        "branch_count": 43,
+        "graph_roots": [
+          43,
+          8
+        ],
+        "maximum_graph_depth": 9,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.37471175536710566,
+          "original_sum_maximum": 9.962209701538086,
+          "stamp_seconds": 0.072
+        }
+      },
+      "preparation_seconds": 8.748
+    },
+    {
+      "case_id": "Diseased_9",
+      "group": "Diseased",
+      "image_relative_path": "Diseased/CTCA/Diseased_9.nrrd",
+      "label_relative_path": "Diseased/Annotations/Diseased_9.nrrd",
+      "cache_subdir": "cases/Diseased_9",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        476,
+        476
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4648439884,
+          0.4648439884,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -103.30000305175781,
+          -154.89999389648438,
+          -232.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/CTCA/Diseased_9.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Diseased/Annotations/Diseased_9.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          476,
+          476,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -103.30000305175781,
+          -154.89999389648438,
+          -232.875
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        476,
+        476,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -103.30000305175781,
+        -154.89999389648438,
+        -232.875
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 28531,
+      "foreground_fraction": 0.00044972295640945456,
+      "source_sha256": {
+        "image": "69f23316074ed9cb8c9413043c65a1c474c8cb4bd8a22d01ab506bfbe43a6732",
+        "label": "b2a93e0a1d8862a496e5d353b2ea8c2d103710381171c80fff4d6aba4c6d222a"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1185,
+        "junction_voxels": 25,
+        "branch_count": 37,
+        "graph_roots": [
+          20,
+          27
+        ],
+        "maximum_graph_depth": 5,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3975232140644765,
+          "original_sum_maximum": 8.4445161819458,
+          "stamp_seconds": 0.105
+        }
+      },
+      "preparation_seconds": 10.407
+    },
+    {
+      "case_id": "Normal_1",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_1.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_1.nrrd",
+      "cache_subdir": "cases/Normal_1",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        255,
+        426,
+        426
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          204
+        ],
+        "spacing_xyz_mm": [
+          0.41601600000000005,
+          0.41601600000000005,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -116.80000305175783,
+          -120.00000000000003,
+          -196.875
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_1.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_1.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          426,
+          426,
+          255
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -116.80000305175783,
+          -120.00000000000003,
+          -196.875
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        426,
+        426,
+        255
+      ],
+      "resampled_origin_xyz_mm": [
+        -116.80000305175783,
+        -120.00000000000003,
+        -196.875
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 31381,
+      "foreground_fraction": 0.000678121322367912,
+      "source_sha256": {
+        "image": "4f63104ecd48662d2e270315aff47c24c5275d613d860c320b6760e91e56514f",
+        "label": "44da2b029a6d9d6d5d9a44c4814d8a78d78a553513ae3f401015ba1236027023"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1240,
+        "junction_voxels": 35,
+        "branch_count": 46,
+        "graph_roots": [
+          20,
+          43
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.4159736585991146,
+          "original_sum_maximum": 10.142904281616211,
+          "stamp_seconds": 0.126
+        }
+      },
+      "preparation_seconds": 10.596
+    },
+    {
+      "case_id": "Normal_10",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_10.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_10.nrrd",
+      "cache_subdir": "cases/Normal_10",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        261,
+        446,
+        446
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          209
+        ],
+        "spacing_xyz_mm": [
+          0.43554700000000013,
+          0.43554700000000013,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -90.5,
+          -130.10000610351565,
+          -260.0
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_10.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_10.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          446,
+          446,
+          261
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -90.5,
+          -130.10000610351565,
+          -260.0
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        446,
+        446,
+        261
+      ],
+      "resampled_origin_xyz_mm": [
+        -90.5,
+        -130.10000610351565,
+        -260.0
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 38463,
+      "foreground_fraction": 0.0007408545119143459,
+      "source_sha256": {
+        "image": "eb05db21a6b76ba286e9bc4ed19daa144e27147cba5bef583015bda1164a547a",
+        "label": "f777132de80ddfe02dfdf9d1196916af839f1139fb8e76fefb5b7cbd472158d1"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1236,
+        "junction_voxels": 30,
+        "branch_count": 34,
+        "graph_roots": [
+          19,
+          33
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.8660254037844386,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.4146318080875046,
+          "original_sum_maximum": 10.8097562789917,
+          "stamp_seconds": 0.133
+        }
+      },
+      "preparation_seconds": 11.408
+    },
+    {
+      "case_id": "Normal_11",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_11.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_11.nrrd",
+      "cache_subdir": "cases/Normal_11",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        265,
+        314,
+        314
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.306641,
+          0.306641,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -60.400001525878906,
+          -96.0999984741211,
+          -219.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_11.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_11.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          314,
+          314,
+          265
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -60.400001525878906,
+          -96.0999984741211,
+          -219.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        314,
+        314,
+        265
+      ],
+      "resampled_origin_xyz_mm": [
+        -60.400001525878906,
+        -96.0999984741211,
+        -219.87500000000006
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 25916,
+      "foreground_fraction": 0.000991888376963511,
+      "source_sha256": {
+        "image": "7a85e9082f31a41011263990dda5ac66d438fc50c9d84359114cc8b4f971dab1",
+        "label": "e058dd221ae07b27fb9c6c27332e866e57fc7d05bc2dfb83802b4572326c2e08"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1431,
+        "junction_voxels": 51,
+        "branch_count": 49,
+        "graph_roots": [
+          33,
+          48,
+          23
+        ],
+        "maximum_graph_depth": 8,
+        "thin_radius_cutoff_mm": 0.5,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.4800470205284944,
+          "original_sum_maximum": 11.250327110290527,
+          "stamp_seconds": 0.093
+        }
+      },
+      "preparation_seconds": 7.798
+    },
+    {
+      "case_id": "Normal_12",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_12.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_12.nrrd",
+      "cache_subdir": "cases/Normal_12",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        257,
+        378,
+        378
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          206
+        ],
+        "spacing_xyz_mm": [
+          0.369141,
+          0.369141,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -94.49999999999999,
+          -193.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_12.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_12.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          378,
+          378,
+          257
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -75.69999694824219,
+          -94.49999999999999,
+          -193.125
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        378,
+        378,
+        257
+      ],
+      "resampled_origin_xyz_mm": [
+        -75.69999694824219,
+        -94.49999999999999,
+        -193.125
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 18836,
+      "foreground_fraction": 0.000512946367639304,
+      "source_sha256": {
+        "image": "41749867532d32f231cbab962a37db14e6436fad7dea87ff1f89b08d939722ec",
+        "label": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 718,
+        "junction_voxels": 24,
+        "branch_count": 27,
+        "graph_roots": [
+          27,
+          8
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.8660254037844386,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.24086216683400347,
+          "original_sum_maximum": 8.923197746276855,
+          "stamp_seconds": 0.054
+        }
+      },
+      "preparation_seconds": 7.267
+    },
+    {
+      "case_id": "Normal_13",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_13.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_13.nrrd",
+      "cache_subdir": "cases/Normal_13",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        249,
+        342,
+        342
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          199
+        ],
+        "spacing_xyz_mm": [
+          0.333984,
+          0.333984,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -62.400001525878906,
+          -105.69999694824219,
+          -224.50000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_13.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_13.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          342,
+          342,
+          249
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -62.400001525878906,
+          -105.69999694824219,
+          -224.50000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        342,
+        342,
+        249
+      ],
+      "resampled_origin_xyz_mm": [
+        -62.400001525878906,
+        -105.69999694824219,
+        -224.50000000000003
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 29301,
+      "foreground_fraction": 0.0010060762182823838,
+      "source_sha256": {
+        "image": "bfc8b0fa503cb32655b1a788bda5320fedc89a2a2a2f33f49ca34615ed4092fb",
+        "label": "76edaee6b9aa6c667a29a9a7ab22f253fb5cdd78a3b58e94bc6c94a0803b5af3"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1362,
+        "junction_voxels": 51,
+        "branch_count": 51,
+        "graph_roots": [
+          51,
+          39
+        ],
+        "maximum_graph_depth": 8,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.45690009920322106,
+          "original_sum_maximum": 13.79946517944336,
+          "stamp_seconds": 0.085
+        }
+      },
+      "preparation_seconds": 7.525
+    },
+    {
+      "case_id": "Normal_14",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_14.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_14.nrrd",
+      "cache_subdir": "cases/Normal_14",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        270,
+        374,
+        374
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          216
+        ],
+        "spacing_xyz_mm": [
+          0.36523400000000006,
+          0.36523400000000006,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.09999847412112,
+          -108.0,
+          -221.37499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_14.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_14.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          374,
+          374,
+          270
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -75.09999847412112,
+          -108.0,
+          -221.37499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        374,
+        374,
+        270
+      ],
+      "resampled_origin_xyz_mm": [
+        -75.09999847412112,
+        -108.0,
+        -221.37499999999997
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 31911,
+      "foreground_fraction": 0.0008449547376883017,
+      "source_sha256": {
+        "image": "8066ec13176a615cd8b83ce4b93a5506d6d918c0029c4c30705bce6b53399957",
+        "label": "a2f571ad0faf39f0363d71a3878e8cfc7bbb0303a12d571428b9df4dc8ba9099"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1394,
+        "junction_voxels": 50,
+        "branch_count": 55,
+        "graph_roots": [
+          42,
+          55,
+          19,
+          30
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.46763490329610147,
+          "original_sum_maximum": 9.982596397399902,
+          "stamp_seconds": 0.089
+        }
+      },
+      "preparation_seconds": 8.093
+    },
+    {
+      "case_id": "Normal_15",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_15.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_15.nrrd",
+      "cache_subdir": "cases/Normal_15",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        259,
+        394,
+        394
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.3847659999999999,
+          0.3847659999999999,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -87.09999847412108,
+          -105.6999969482422,
+          -210.75000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_15.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_15.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          394,
+          394,
+          259
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -87.09999847412108,
+          -105.6999969482422,
+          -210.75000000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        394,
+        394,
+        259
+      ],
+      "resampled_origin_xyz_mm": [
+        -87.09999847412108,
+        -105.6999969482422,
+        -210.75000000000003
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 21876,
+      "foreground_fraction": 0.0005440962177801571,
+      "source_sha256": {
+        "image": "53bb63ffa6a100661313ae3273c364c0bbad821612c3733c2b55d83295e3e978",
+        "label": "aab9212d1f96b3c8fa11c37a738b4fd5e3d802f469971421ac838a973a7c06e6"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 818,
+        "junction_voxels": 25,
+        "branch_count": 32,
+        "graph_roots": [
+          10,
+          32,
+          11,
+          13
+        ],
+        "maximum_graph_depth": 4,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.27440842962425466,
+          "original_sum_maximum": 10.705913543701172,
+          "stamp_seconds": 0.061
+        }
+      },
+      "preparation_seconds": 7.439
+    },
+    {
+      "case_id": "Normal_16",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_16.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_16.nrrd",
+      "cache_subdir": "cases/Normal_16",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        258,
+        358,
+        358
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          207
+        ],
+        "spacing_xyz_mm": [
+          0.349609,
+          0.349609,
+          0.6249999999999996
+        ],
+        "origin_xyz_mm": [
+          -69.30000305175781,
+          -110.19999694824217,
+          -211.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_16.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_16.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          358,
+          358,
+          258
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -69.30000305175781,
+          -110.19999694824217,
+          -211.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        358,
+        358,
+        258
+      ],
+      "resampled_origin_xyz_mm": [
+        -69.30000305175781,
+        -110.19999694824217,
+        -211.75000000000009
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 23569,
+      "foreground_fraction": 0.0007127798225577743,
+      "source_sha256": {
+        "image": "f7fe259e3b5c64e54629a6173d35eb1c90199091b3bf38fbeb9bcf76b37d1874",
+        "label": "5f34b1b99b76a49b2cde56c4607c1e34af0018bf25163baaca767e4c20934d3d"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 886,
+        "junction_voxels": 15,
+        "branch_count": 23,
+        "graph_roots": [
+          6,
+          23
+        ],
+        "maximum_graph_depth": 3,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.29721988832162544,
+          "original_sum_maximum": 12.79704475402832,
+          "stamp_seconds": 0.066
+        }
+      },
+      "preparation_seconds": 7.501
+    },
+    {
+      "case_id": "Normal_17",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_17.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_17.nrrd",
+      "cache_subdir": "cases/Normal_17",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        368,
+        368
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.359375,
+          0.359375,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -92.30000305175783,
+          -105.19999694824217,
+          -227.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_17.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_17.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          368,
+          368,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -92.30000305175783,
+          -105.19999694824217,
+          -227.375
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        368,
+        368,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -92.30000305175783,
+        -105.19999694824217,
+        -227.375
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 16997,
+      "foreground_fraction": 0.0004482482531055901,
+      "source_sha256": {
+        "image": "4a27495716e69ca5ca3b61d4c83f4cd4333df1f98608140ff30507e82d17020d",
+        "label": "f48ed6d30048f9db4d774569c345f44e671333b89e8b7c4c0a5bd03711b1b524"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 884,
+        "junction_voxels": 17,
+        "branch_count": 20,
+        "graph_roots": [
+          20,
+          10
+        ],
+        "maximum_graph_depth": 4,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.2965489630658204,
+          "original_sum_maximum": 11.674854278564453,
+          "stamp_seconds": 0.055
+        }
+      },
+      "preparation_seconds": 7.652
+    },
+    {
+      "case_id": "Normal_18",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_18.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_18.nrrd",
+      "cache_subdir": "cases/Normal_18",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        210,
+        358,
+        358
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          168
+        ],
+        "spacing_xyz_mm": [
+          0.349609,
+          0.349609,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -80.00000000000001,
+          -111.49999999999999,
+          -172.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_18.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_18.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          358,
+          358,
+          210
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -80.00000000000001,
+          -111.49999999999999,
+          -172.37499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        358,
+        358,
+        210
+      ],
+      "resampled_origin_xyz_mm": [
+        -80.00000000000001,
+        -111.49999999999999,
+        -172.37499999999994
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 25097,
+      "foreground_fraction": 0.0009324734231884445,
+      "source_sha256": {
+        "image": "feb4f145e709768db23be55f239091977c0585f551d6c5e7239fb500409cdb88",
+        "label": "1819e8a9dc45abda5a2948acace153bbd4e0a2661aaa2da8952e972d8efb7ca2"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1321,
+        "junction_voxels": 48,
+        "branch_count": 56,
+        "graph_roots": [
+          54,
+          26
+        ],
+        "maximum_graph_depth": 10,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.4431461314592181,
+          "original_sum_maximum": 10.735174179077148,
+          "stamp_seconds": 0.072
+        }
+      },
+      "preparation_seconds": 5.673
+    },
+    {
+      "case_id": "Normal_19",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_19.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_19.nrrd",
+      "cache_subdir": "cases/Normal_19",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        394,
+        394
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.38476601240000013,
+          0.38476601240000013,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -92.59999847412111,
+          -119.90000152587889,
+          -217.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_19.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_19.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          394,
+          394,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -92.59999847412111,
+          -119.90000152587889,
+          -217.37500000000003
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        394,
+        394,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -92.59999847412111,
+        -119.90000152587889,
+        -217.37500000000003
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 17737,
+      "foreground_fraction": 0.00040806532358105447,
+      "source_sha256": {
+        "image": "e338cb93d76182078ff6d5acd0bfaa43d1c6885393f0cf0b7441380d378d37b4",
+        "label": "46725c391e1f9ba29b6470e17eff124cdea0de14bee6326f6f8b233cf67bad2b"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 960,
+        "junction_voxels": 22,
+        "branch_count": 33,
+        "graph_roots": [
+          21,
+          24
+        ],
+        "maximum_graph_depth": 4,
+        "thin_radius_cutoff_mm": 0.5,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3220441227864113,
+          "original_sum_maximum": 7.749256610870361,
+          "stamp_seconds": 0.061
+        }
+      },
+      "preparation_seconds": 8.037
+    },
+    {
+      "case_id": "Normal_2",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_2.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_2.nrrd",
+      "cache_subdir": "cases/Normal_2",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        229,
+        414,
+        414
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          183
+        ],
+        "spacing_xyz_mm": [
+          0.404297,
+          0.404297,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -104.5,
+          -153.0,
+          -175.74999999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_2.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_2.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          414,
+          414,
+          229
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -104.5,
+          -153.0,
+          -175.74999999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        414,
+        414,
+        229
+      ],
+      "resampled_origin_xyz_mm": [
+        -104.5,
+        -153.0,
+        -175.74999999999994
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 17330,
+      "foreground_fraction": 0.0004415322171765765,
+      "source_sha256": {
+        "image": "1735b5589fdcaf26e7d050de9b5bead3677150c0fb0243b0fc6a6ef4324d00b5",
+        "label": "e5152c168a7503e343ea7d7f00c0e5a8685ee32d147b6c75e4f16ae6e5ebb51e"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 998,
+        "junction_voxels": 113,
+        "branch_count": 32,
+        "graph_roots": [
+          27,
+          3
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.33479170264670677,
+          "original_sum_maximum": 21.796239852905273,
+          "stamp_seconds": 0.063
+        }
+      },
+      "preparation_seconds": 9.074
+    },
+    {
+      "case_id": "Normal_20",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_20.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_20.nrrd",
+      "cache_subdir": "cases/Normal_20",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        430,
+        430
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.4199219942000001,
+          0.4199219942000001,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -80.90000152587893,
+          -129.6000061035156,
+          -220.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_20.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_20.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          430,
+          430,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -80.90000152587893,
+          -129.6000061035156,
+          -220.62499999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        430,
+        430,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -80.90000152587893,
+        -129.6000061035156,
+        -220.62499999999997
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 21873,
+      "foreground_fraction": 0.00042248705864173685,
+      "source_sha256": {
+        "image": "360a483293a3b34189c833c4c6a3bf62ed44b10c7994465ee7f913cd61650d69",
+        "label": "af1e15dbeb2b053c6d4d4fc2f315f6d5db643bc085a245ae84de8500bd27083f"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 973,
+        "junction_voxels": 40,
+        "branch_count": 44,
+        "graph_roots": [
+          41,
+          25
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.32640513694914397,
+          "original_sum_maximum": 11.363536834716797,
+          "stamp_seconds": 0.068
+        }
+      },
+      "preparation_seconds": 8.871
+    },
+    {
+      "case_id": "Normal_3",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_3.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_3.nrrd",
+      "cache_subdir": "cases/Normal_3",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        265,
+        392,
+        392
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          212
+        ],
+        "spacing_xyz_mm": [
+          0.382812,
+          0.382812,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -94.4000015258789,
+          -120.80000305175778,
+          -218.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_3.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_3.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          392,
+          392,
+          265
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -94.4000015258789,
+          -120.80000305175778,
+          -218.87500000000006
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        392,
+        392,
+        265
+      ],
+      "resampled_origin_xyz_mm": [
+        -94.4000015258789,
+        -120.80000305175778,
+        -218.87500000000006
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 28696,
+      "foreground_fraction": 0.0007046985139839532,
+      "source_sha256": {
+        "image": "86c97a9dc8fe3807af1d5b6ef4ff52092d677938a41da7350de8fc12eae8ca66",
+        "label": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1234,
+        "junction_voxels": 28,
+        "branch_count": 34,
+        "graph_roots": [
+          18,
+          32
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.4139608828316996,
+          "original_sum_maximum": 10.414276123046875,
+          "stamp_seconds": 0.103
+        }
+      },
+      "preparation_seconds": 8.495
+    },
+    {
+      "case_id": "Normal_4",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_4.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_4.nrrd",
+      "cache_subdir": "cases/Normal_4",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        264,
+        390,
+        390
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          211
+        ],
+        "spacing_xyz_mm": [
+          0.380859,
+          0.380859,
+          0.6250000000000002
+        ],
+        "origin_xyz_mm": [
+          -102.69999694824219,
+          -98.5,
+          -211.49999999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_4.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_4.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          390,
+          390,
+          264
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -102.69999694824219,
+          -98.5,
+          -211.49999999999997
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        390,
+        390,
+        264
+      ],
+      "resampled_origin_xyz_mm": [
+        -102.69999694824219,
+        -98.5,
+        -211.49999999999997
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 18401,
+      "foreground_fraction": 0.0004582561313330544,
+      "source_sha256": {
+        "image": "43851349c09f7f3163b9db65e0984ecb7d0b5b7f1ec5240cf0e267a09e6e39f6",
+        "label": "cf26e8a0e8cbea2dd8d07c2afe0e657f4efa3071636d6bceff902d1f086d03c5"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 983,
+        "junction_voxels": 22,
+        "branch_count": 29,
+        "graph_roots": [
+          9,
+          26
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3297597632281691,
+          "original_sum_maximum": 7.796817302703857,
+          "stamp_seconds": 0.064
+        }
+      },
+      "preparation_seconds": 8.687
+    },
+    {
+      "case_id": "Normal_5",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_5.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_5.nrrd",
+      "cache_subdir": "cases/Normal_5",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        251,
+        360,
+        360
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          201
+        ],
+        "spacing_xyz_mm": [
+          0.35156199999999993,
+          0.35156199999999993,
+          0.6249999999999999
+        ],
+        "origin_xyz_mm": [
+          -87.40000152587892,
+          -113.90000152587885,
+          -200.99999999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_5.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_5.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          360,
+          360,
+          251
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -87.40000152587892,
+          -113.90000152587885,
+          -200.99999999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        360,
+        360,
+        251
+      ],
+      "resampled_origin_xyz_mm": [
+        -87.40000152587892,
+        -113.90000152587885,
+        -200.99999999999994
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 19812,
+      "foreground_fraction": 0.00060904530028036,
+      "source_sha256": {
+        "image": "cc9b8544b8cfe16b85d3064c1788d30741afc6c9e65baca959088c35775654e3",
+        "label": "5e4d19e5d35c7506c0752ba7bd774aea1e3f926d675411145e855dbf2f11ab1a"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1001,
+        "junction_voxels": 21,
+        "branch_count": 27,
+        "graph_roots": [
+          24,
+          14
+        ],
+        "maximum_graph_depth": 7,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3357980905304143,
+          "original_sum_maximum": 10.046161651611328,
+          "stamp_seconds": 0.066
+        }
+      },
+      "preparation_seconds": 8.549
+    },
+    {
+      "case_id": "Normal_6",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_6.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_6.nrrd",
+      "cache_subdir": "cases/Normal_6",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        271,
+        404,
+        404
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          217
+        ],
+        "spacing_xyz_mm": [
+          0.3945310000000001,
+          0.3945310000000001,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -75.0999984741211,
+          -127.69999694824222,
+          -197.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_6.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_6.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          404,
+          404,
+          271
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -75.0999984741211,
+          -127.69999694824222,
+          -197.75000000000009
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        404,
+        404,
+        271
+      ],
+      "resampled_origin_xyz_mm": [
+        -75.0999984741211,
+        -127.69999694824222,
+        -197.75000000000009
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 27681,
+      "foreground_fraction": 0.0006258204553420889,
+      "source_sha256": {
+        "image": "f759658d685e14248bf6901a0092bee2237385a4797ec3ce5263d0845daedc25",
+        "label": "18b4fa51098abb385a9ab530947fe0269323544c3628029a9c8261c865f3d736"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 879,
+        "junction_voxels": 148,
+        "branch_count": 23,
+        "graph_roots": [
+          20,
+          4
+        ],
+        "maximum_graph_depth": 5,
+        "thin_radius_cutoff_mm": 1.0,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.2948716499263079,
+          "original_sum_maximum": 32.33092498779297,
+          "stamp_seconds": 0.076
+        }
+      },
+      "preparation_seconds": 7.947
+    },
+    {
+      "case_id": "Normal_7",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_7.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_7.nrrd",
+      "cache_subdir": "cases/Normal_7",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        252,
+        410,
+        410
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          202
+        ],
+        "spacing_xyz_mm": [
+          0.400391,
+          0.400391,
+          0.6249999999999998
+        ],
+        "origin_xyz_mm": [
+          -79.19999694824219,
+          -121.5999984741211,
+          -216.62499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_7.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_7.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          410,
+          410,
+          252
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -79.19999694824219,
+          -121.5999984741211,
+          -216.62499999999994
+        ],
+        "direction": [
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        410,
+        410,
+        252
+      ],
+      "resampled_origin_xyz_mm": [
+        -79.19999694824219,
+        -121.5999984741211,
+        -216.62499999999994
+      ],
+      "resampled_direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 26745,
+      "foreground_fraction": 0.0006313560522364806,
+      "source_sha256": {
+        "image": "1e25a419d3449022960be58dee1d08461e234b3e622507baa2a4c081dfdc2554",
+        "label": "5da20309dad9422f3b72476cce1e745152b139c766e996122497f362a6f50cbe"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1151,
+        "junction_voxels": 21,
+        "branch_count": 32,
+        "graph_roots": [
+          22,
+          10
+        ],
+        "maximum_graph_depth": 6,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.3861174847157911,
+          "original_sum_maximum": 10.147804260253906,
+          "stamp_seconds": 0.075
+        }
+      },
+      "preparation_seconds": 7.628
+    },
+    {
+      "case_id": "Normal_8",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_8.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_8.nrrd",
+      "cache_subdir": "cases/Normal_8",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        414,
+        414
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.404297,
+          0.404297,
+          0.625
+        ],
+        "origin_xyz_mm": [
+          -84.5999984741211,
+          -110.99999999999999,
+          -243.87499999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_8.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_8.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          414,
+          414,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -84.5999984741211,
+          -110.99999999999999,
+          -243.87499999999994
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        414,
+        414,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -84.5999984741211,
+        -110.99999999999999,
+        -243.87499999999994
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 30405,
+      "foreground_fraction": 0.0006335578759964393,
+      "source_sha256": {
+        "image": "dfe03811e0a718bfd341ccdf42f21637e5b96551f4cbfe0201ea882e6ddc3b14",
+        "label": "ee8cbebf6b8bf9dbccff80569a2b32b9a16493384db9fb78e77b6909e18e5fbc"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 1216,
+        "junction_voxels": 40,
+        "branch_count": 49,
+        "graph_roots": [
+          33,
+          49
+        ],
+        "maximum_graph_depth": 11,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.40792255552945433,
+          "original_sum_maximum": 9.249994277954102,
+          "stamp_seconds": 0.102
+        }
+      },
+      "preparation_seconds": 9.115
+    },
+    {
+      "case_id": "Normal_9",
+      "group": "Normal",
+      "image_relative_path": "Normal/CTCA/Normal_9.nrrd",
+      "label_relative_path": "Normal/Annotations/Normal_9.nrrd",
+      "cache_subdir": "cases/Normal_9",
+      "preprocessing_version": "asoca-fixed-fov-cumulative-gaussian-v1",
+      "shape_zyx": [
+        280,
+        388,
+        388
+      ],
+      "spacing_xyz_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "spacing_zyx_mm": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "original_geometry": {
+        "size_xyz": [
+          512,
+          512,
+          224
+        ],
+        "spacing_xyz_mm": [
+          0.3789060000000001,
+          0.3789060000000001,
+          0.6250000000000001
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175786,
+          -128.80000305175787,
+          -244.37500000000014
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "image_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/CTCA/Normal_9.nrrd",
+      "label_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion/Normal/Annotations/Normal_9.nrrd",
+      "resampled_geometry": {
+        "size_xyz": [
+          388,
+          388,
+          280
+        ],
+        "spacing_xyz_mm": [
+          0.5,
+          0.5,
+          0.5
+        ],
+        "origin_xyz_mm": [
+          -88.30000305175786,
+          -128.80000305175787,
+          -244.37500000000014
+        ],
+        "direction": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          0.9999999999999999,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      },
+      "resampled_size_xyz": [
+        388,
+        388,
+        280
+      ],
+      "resampled_origin_xyz_mm": [
+        -88.30000305175786,
+        -128.80000305175787,
+        -244.37500000000014
+      ],
+      "resampled_direction": [
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        0.9999999999999999,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "original_label_values": [
+        0,
+        1
+      ],
+      "foreground_voxels": 21480,
+      "foreground_fraction": 0.0005095804928412007,
+      "source_sha256": {
+        "image": "28d9c8ef28122420c9d7a6577b901c6c70b91532653ec74e86b303809d2b1f2b",
+        "label": "66947f9ce7c1315e333fc3128da0e38db29b4be8f04714e629130bf36a115d4a"
+      },
+      "auxiliary": {
+        "skeleton_voxels": 943,
+        "junction_voxels": 16,
+        "branch_count": 27,
+        "graph_roots": [
+          17,
+          24,
+          6
+        ],
+        "maximum_graph_depth": 5,
+        "thin_radius_cutoff_mm": 0.7071067811865476,
+        "gaussian": {
+          "definition": "sum_s exp(-||x-s||^2/(2*r_s^2))*mask(x)",
+          "normalization": "divide by per-volume positive maximum",
+          "truncate_sigma": 4.0,
+          "maximum_omitted_single_point_contribution": 0.0003354626279025118,
+          "conservative_unnormalized_sum_error_bound": 0.31634125811206865,
+          "original_sum_maximum": 9.902496337890625,
+          "stamp_seconds": 0.087
+        }
+      },
+      "preparation_seconds": 8.879
+    }
+  ],
+  "planned_case_ids": [
+    "Normal_1",
+    "Normal_2",
+    "Normal_3",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_8",
+    "Normal_9",
+    "Normal_10",
+    "Normal_11",
+    "Normal_12",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_16",
+    "Normal_17",
+    "Normal_18",
+    "Normal_19",
+    "Normal_20",
+    "Diseased_1",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_7",
+    "Diseased_8",
+    "Diseased_9",
+    "Diseased_10",
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_15",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_18",
+    "Diseased_19",
+    "Diseased_20"
+  ],
+  "hidden_test_cases_used": false,
+  "pilot_only": false,
+  "preprocessing": {
+    "version": "asoca-fixed-fov-cumulative-gaussian-v1",
+    "spacing_xyz_mm": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "spacing_selection": "fixed a priori, no validation labels or image statistics",
+    "image_interpolation": "linear",
+    "label_interpolation": "nearest",
+    "orientation": "canonical LPS before isotropic resampling",
+    "ct_window_hu": [
+      -200,
+      1000
+    ],
+    "ct_normalization": "(clip(HU,-200,1000)-400)/600",
+    "input_fov": "entire resampled CT; no mask-derived image crop",
+    "auxiliary_use": "training targets and training patch sampling only; never inference inputs",
+    "topology": "26-neighbour Lee skeleton; cluster junctions; BFS from maximum-radius branch per graph component",
+    "generation_bins": [
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7,
+        8
+      ],
+      [
+        9,
+        255
+      ]
+    ],
+    "structure_bins": "original GTAirway 0..6 bounding-box/branch-complexity rule",
+    "location_bins": "0 empty; 1..6 image-z tertile crossed with image-x half; geometric, not anatomy",
+    "gaussian": "cumulative radius-aware sum, 4-sigma cube support, positive-volume maximum normalization",
+    "float_storage": "image/gaussian/radius float16; labels/skeleton/depth uint8; branch_id uint16"
+  },
+  "complete": true
+}

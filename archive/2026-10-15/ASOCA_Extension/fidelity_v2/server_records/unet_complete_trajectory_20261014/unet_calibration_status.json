@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "pid": 108861,
+  "host": "autodl-container-3f0844a3d0-ea523ad7",
+  "started_at": "2026-10-14T04:34:21.392041+00:00",
+  "role": "one common-recipe U-Net development calibration; no external-method reproduction",
+  "completed_stages": [
+    "smoke",
+    "formal",
+    "internal4_trajectory"
+  ],
+  "outer8_used_for_selection": false,
+  "phase": "complete",
+  "updated_at": "2026-10-14T07:42:33.138159+00:00",
+  "command": [
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python",
+    "-u",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/code/evaluate_trajectory.py",
+    "--training",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training",
+    "--manifest",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+    "--raw-root",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion",
+    "--output",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/internal4_trajectory",
+    "--sw-batch-size",
+    "1"
+  ],
+  "logfile": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/logs/unet_calibration_internal4_trajectory.log"
+}

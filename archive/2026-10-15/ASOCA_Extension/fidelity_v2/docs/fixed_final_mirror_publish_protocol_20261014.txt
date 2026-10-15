@@ -1,0 +1,55 @@
+固定 final 提前推理镜像发布器：执行前契约（2026-10-14）
+
+本次仅新增独立 ops/publish_fixed_final_mirror.py 与本地解析/复制 fixture。
+未部署、未连接服务器、未等待真实训练、未生成生产 READY 或推理结果。
+
+固定来源为 /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014；主训练 PID 1943。
+固定目标为 /root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014。
+用途仅为独立 early fixed-final inference mirror；不会代替 canonical 20×4=80 次轨迹，也不增加训练。
+
+等待只检查已确认主进程的 script/参数、boot_id 与 starttime_ticks，以及 TRAINING_COMPLETE。
+最多等 7200 秒；重试保留原 deadline。进程消失、PID 身份改变或超时即失败。
+SIGINT/SIGTERM 只终止发布器自身。没有向主训练、postfit 或其他进程发送信号的路径。
+发布器只有标准库依赖，不导入 Torch、不加载模型、不查询 GPU、不运行推理/训练。
+
+完成守卫固定 config b61358…、manifest 141d97…、training source bc8dd9…、
+main_source_freeze 9b2940…及 verify_postfit helper 698b34…的完整 SHA。
+纯标准库 source_guard 核验冻结 28 个代码文件、12 个命令文件和训练源码组合；
+另固定 evaluate.py / metrics.py / evaluate_trajectory.py 三份 SHA。
+核验 train28/internal4 与 outer8 隔离、DS/128³/200×125/25k、smoke=False、fixed final、epoch199。
+history 必须恰好 200 个连续 epoch、每轮 125 次、最后换行完整，全部已记录数值有限。
+marker/history 被语义核验的字节 SHA 与 READY.files 绑定，不能后来换成未经核验的字节。
+实际 final.pt 与 config 前后重复核验。checkpoint epoch 来自冻结 producer 的真实完成标记，
+发布器没有反序列化权重；READY 明确 checkpoint_payload_deserialized=False。
+
+输入审计原样复制真实 ROOT/EARLY_FINAL_INPUT_RUNTIME_AUDIT_20261014.json。
+按实际审计 schema 核 manifest_sha256/training_source_sha256/evaluation_sources 与 sys.version；
+重新完整哈希 internal4 实际 cache image.npy，并核同审计的 bytes/SHA。
+只读 importlib.metadata 核固定九包的实际版本：
+torch、monai、numpy、scipy、scikit-image、SimpleITK、scikit-learn、pandas、tqdm。
+GPU 信息仍为原审计采集时刻的记录，不声称本发布器重新读取了 GPU 状态。
+raw_GT_source_sha256 来源于固定 manifest；本发布器不读取或复制原始 GT。
+旧端推理守卫应另行核其本地原 GT、实际 CT、环境与字节镜像。
+
+READY schema_version=1、status=fixed_final_payload_ready、
+role='early fixed-final inference mirror; no new training'。
+files 仅六个固定文件名（每个仅 bytes/sha256）：
+final.pt、config.json、history.jsonl、TRAINING_COMPLETE.json、manifest.json、input_runtime_audit.json。
+其他共同身份字段包括固定 internal4 IDs、checkpoint SHA/epoch、CT bytes/SHA、九包版本、
+GT source SHA、source_freeze SHA、三 evaluator SHA、source_guard_full_package_verified=True。
+
+取得来源与目标两把 nonblocking flock。复制到新建同级临时目录，逐文件复制前后核实际大小/SHA，
+写 READY 后再次核 source guard 与全部来源文件，再以不覆盖既有目标的原子 rename 发布。
+Linux 要求 renameat2(RENAME_NOREPLACE)；若共享文件系统不支持，保留临时目录并失败，不采用覆盖回退。
+已有目标仅允许原协议、原字节完全相同的重试核验；绝不覆盖。
+状态写 ROOT/EARLY_FINAL_MIRROR_STATUS.json，记录 helper/publisher SHA、阶段及失败原因。
+失败临时目录保留供检查；发布器没有清理其他实验目录的路径。
+
+部署后供 root 审查的只读 plan 参数：
+/root/miniconda3/envs/gta-asoca311/bin/python ROOT/ops/publish_fixed_final_mirror.py --root ROOT --plan
+实际发布须由 root 明确部署/启动；本轮没有执行该动作。
+
+本地 fixture 使用真实冻结源码/config/manifest，合成 marker/history 与小文本 checkpoint/CT，
+全部标 NOT_MODEL_RESULTS；仅检验解析拒绝与字节复制，不是模型性能或实际完成证据。
+fixture 仅创建 NOT_MODEL_RESULTS_READY.json，绝不创建生产 READY.json。
+报告：server_records/tool_fixtures/fixed_final_mirror_20261014/NOT_MODEL_RESULTS_fixture_report.json。

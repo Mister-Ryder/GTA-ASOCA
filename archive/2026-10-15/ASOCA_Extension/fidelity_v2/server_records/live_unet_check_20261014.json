@@ -1,0 +1,113 @@
+{
+  "captured_at_utc": "2026-10-14T06:00:27.383790+00:00",
+  "completed_epochs": 170,
+  "latest_epoch": {
+    "epoch": 169,
+    "loss": 0.25520270311832427,
+    "seconds": 30.00212499499321,
+    "stage": "segmentation_only",
+    "iterations": 125,
+    "gaussian_lambda": 0.0,
+    "gaussian_lambda_configured": 10.0,
+    "classifier_lambda": 0.0,
+    "lr_by_group": {
+      "segmentation": 5.5667722100072785e-05
+    },
+    "component_means": {
+      "guidance_lambda": 0.0,
+      "classifier_gradient_norm": 0.0,
+      "gaussian_lambda": 0.0,
+      "classifier_lambda": 0.0,
+      "segmentation_head_0": 0.25318515491485594,
+      "segmentation_head_2": 0.23968162417411804,
+      "segmentation_gradient_norm": 0.767523017635569,
+      "segmentation": 0.25520270311832427,
+      "segmentation_head_1": 0.2669983024597168,
+      "segmentation_weighted": 0.25520270311832427
+    },
+    "gradient_probe_count": 0,
+    "gpu_peak_GiB": 8.29847240447998
+  },
+  "state": {
+    "status": "running",
+    "pid": 108861,
+    "host": "autodl-container-3f0844a3d0-ea523ad7",
+    "started_at": "2026-10-14T04:34:21.392041+00:00",
+    "role": "one common-recipe U-Net development calibration; no external-method reproduction",
+    "completed_stages": [
+      "smoke"
+    ],
+    "outer8_used_for_selection": false,
+    "phase": "formal",
+    "updated_at": "2026-10-14T04:34:31.838686+00:00",
+    "command": [
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python",
+      "-u",
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/code/train.py",
+      "--manifest",
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+      "--output",
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training",
+      "--method",
+      "unet",
+      "--fold",
+      "0",
+      "--patch-size",
+      "128",
+      "--batch-size",
+      "2",
+      "--seed",
+      "20261013",
+      "--split-seed",
+      "20261014",
+      "--cohort",
+      "internal28",
+      "--lr",
+      "0.0003",
+      "--weight-decay",
+      "0.0001",
+      "--backbone-warmup-epochs",
+      "0",
+      "--seg-loss",
+      "dice_ce",
+      "--sampling",
+      "standard",
+      "--sampling-fov",
+      "image-body",
+      "--device",
+      "cuda",
+      "--epochs",
+      "200",
+      "--steps",
+      "125",
+      "--workers",
+      "4",
+      "--warmup-epochs",
+      "5",
+      "--save-every",
+      "10",
+      "--gradient-probe-every",
+      "250"
+    ],
+    "logfile": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/logs/unet_calibration_formal.log",
+    "child_pid": 109006
+  },
+  "processes": [
+    {
+      "field": "pid",
+      "pid": 108861,
+      "alive": true,
+      "cmdline": "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/start_unet_calibration.py --root /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2 --python /root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python --manifest /root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json --raw-root /root/autodl-tmp/ASOCA_GTAirway_20261013/raw/CompressedVersion --output-root /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results ",
+      "stat": "S"
+    },
+    {
+      "field": "child_pid",
+      "pid": 109006,
+      "alive": true,
+      "cmdline": "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/code/train.py --manifest /root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json --output /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/unet_recipe200x125/training --method unet --fold 0 --patch-size 128 --batch-size 2 --seed 20261013 --split-seed 20261014 --cohort internal28 --lr 0.0003 --weight-decay 0.0001 --backbone-warmup-epochs 0 --seg-loss dice_ce --sampling standard --sampling-fov image-body --device cuda --epochs 200 --steps 125 --workers 4 --warmup-epochs 5 --save-every 10 --gradient-probe-every 250 ",
+      "stat": "R"
+    }
+  ],
+  "internal4_completed_checkpoint_evaluations": 0,
+  "latest_internal4_result": null
+}

@@ -1,0 +1,29 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import contextlib,datetime,hashlib,io,json,os,runpy,subprocess,sys
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+script=r/'ops/diagnose_gaussian.py'
+expected='62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361'
+if hashlib.sha256(script.read_bytes()).hexdigest()!=expected:raise RuntimeError('Diagnostic source differs from reviewed version')
+checkpoint=r/'results/gta_enhanced200x125/training/checkpoints/epoch070.pt'
+if not checkpoint.is_file():raise RuntimeError('Immutable epoch070 is not yet saved; do not use changing latest.pt')
+os.environ['CUDA_VISIBLE_DEVICES']=''
+os.environ['OMP_NUM_THREADS']='2'
+os.environ['MKL_NUM_THREADS']='2'
+os.environ['OPENBLAS_NUM_THREADS']='2'
+sys.dont_write_bytecode=True
+import torch
+torch.set_num_threads(2)
+if torch.cuda.is_initialized():raise RuntimeError('Readiness process already initialized CUDA')
+before=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip()
+sys.argv=[str(script),'--checkpoint',str(checkpoint),'--manifest',str(r/'dataset/cache/manifest.json'),'--cpu-readiness']
+stream=io.StringIO()
+with contextlib.redirect_stdout(stream):runpy.run_path(str(script),run_name='__main__')
+plan=json.loads(stream.getvalue())
+if torch.cuda.is_initialized():raise RuntimeError('CPU readiness unexpectedly initialized CUDA')
+after=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip()
+receipt={'status':'passed_header_and_parameter_readiness','verified_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'cuda_initialized':False,'gpu_pids_before':before,'gpu_pids_after':after,'cpu_threads':2,'readiness_plan':plan,'no_forward_no_optimizer_no_training':True,'scope':'Cache headers and metadata, parameter format and finiteness; no full cache-content or actual bank-patch certification'}
+p=r/'GAUSSIAN_DIAGNOSTIC_CPU_READY.json'
+tmp=p.with_suffix('.tmp');tmp.write_text(json.dumps(receipt,indent=2)+'\n');tmp.replace(p)
+print(json.dumps({'status':receipt['status'],'checkpoint_epoch_zero_based':plan['checkpoint_epoch'],'cuda_initialized':False,'gpu_pids_before':before,'gpu_pids_after':after,'planned_training_patients':len(plan['training_patients']),'planned_bank_size':plan['bank_size'],'source_sha256':plan['source_sha256'],'diagnostic_script_sha256':plan['diagnostic_script_sha256']}))
+PY

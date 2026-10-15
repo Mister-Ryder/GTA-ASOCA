@@ -1,0 +1,8 @@
+GTA observed learning curves; development only, no final-test or comparative superiority claim.
+Lines connect recorded observations for readability; no unmeasured validation values are inserted.
+Loss scale alone does not measure gradient size. N patches is not N independent patients.
+
+Run cold_gta: gta; training N=None; selection role unrecorded; do not infer independent validation
+Recorded epochs 200; internal4 Dice points 0; ASSD points 0.
+- No positive-balanced-accuracy/majority-baseline trajectory; classifier usefulness remains unverified by this history
+- No usable internal-four Dice/ASSD trajectory; training loss cannot establish validation improvement

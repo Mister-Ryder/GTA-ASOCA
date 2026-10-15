@@ -1,0 +1,19 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import subprocess,json,time
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+py='/root/miniconda3/envs/gta-asoca311/bin/python'
+smoke=json.loads((r/'GTA_STAGED_CUDA_SMOKE.json').read_text())
+boot=Path('/proc/sys/kernel/random/boot_id').read_text().strip()
+frozen=json.loads((r/'configs/main_source_freeze.json').read_text())
+if smoke['status']!='passed' or smoke['boot_id']!=boot or smoke['training_source_sha256']!=frozen['training_source_sha256']:raise RuntimeError('Staged CUDA validation is missing or belongs to another source/boot')
+if (r/'stage_records/gta200.json').exists():raise RuntimeError('Formal GTA has state; inspect before continuation')
+with (r/'logs/gta200_controller.log').open('a') as log:
+ p=subprocess.Popen([py,'-u',str(r/'ops/run_saved_stage.py'),'--root',str(r),'--recipe','run_gta200.sh','--tag','gta200'],
+                    cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+for _ in range(10):
+ status=r/'stage_records/gta200.json'
+ if status.exists():print(status.read_text());break
+ if p.poll() is not None:print((r/'logs/gta200_controller.log').read_text()[-2500:]);raise RuntimeError('Formal GTA controller exited during startup')
+ time.sleep(.5)
+PY

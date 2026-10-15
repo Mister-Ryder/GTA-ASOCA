@@ -1,0 +1,9 @@
+{
+  "pid": 17636,
+  "source_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+  "script": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/publish_fixed_final_mirror.py",
+  "role": "CPU-only fixed-final mirror; no training/GPU",
+  "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/logs/early_final_mirror.log",
+  "new_training": false,
+  "canonical_trajectory_unchanged": true
+}

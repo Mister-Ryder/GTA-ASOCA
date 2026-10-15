@@ -1,0 +1,1937 @@
+{
+  "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+  "port": 38773,
+  "read_only_server_access": true,
+  "started_at_utc": "2026-10-14T10:26:29.868897+00:00",
+  "files": [
+    {
+      "relative_path": "results/gta_enhanced200x125/training/config.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/config.json",
+      "bytes": 24269,
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+      "source_mtime_epoch": 1791952553,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/history.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/history.jsonl",
+      "bytes": 220801,
+      "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10",
+      "source_mtime_epoch": 1791967633,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/initialization_audit.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/initialization_audit.json",
+      "bytes": 10097,
+      "sha256": "b63d8e051afd4e89ada6765e040174f72affad35f5401fa56c3a694da0646539",
+      "source_mtime_epoch": 1791952553,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/TRAINING_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/TRAINING_COMPLETE.json",
+      "bytes": 996,
+      "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4",
+      "source_mtime_epoch": 1791967634,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/final.pt",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/final.pt",
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+      "transfer": "local_hardlink_from_actual_downloaded_training; no network weight download",
+      "reused_source": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\final.pt"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/trajectory_protocol.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/trajectory_protocol.json",
+      "bytes": 6430,
+      "sha256": "cbe4ff290ac409761663b033258f3b303b909abca1a9ef421ab9f030f1f0af9a",
+      "source_mtime_epoch": 1791967658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/trajectory_status.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/trajectory_status.json",
+      "bytes": 62,
+      "sha256": "7fceb55d5f130cb25f16b3dd227d23a7ccbafdfaf3b4cb6c943a979b4cc6b8d3",
+      "source_mtime_epoch": 1791973899,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/validation_history.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/validation_history.jsonl",
+      "bytes": 58722,
+      "sha256": "1bf12cc622f1008ede7cc9a2903456351d6c38be9286b63de0955703a4535e1b",
+      "source_mtime_epoch": 1791973899,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/validation_curve.csv",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/validation_curve.csv",
+      "bytes": 1942,
+      "sha256": "90a34f81aa81906d2b5183d6d3b0425113c8faebf3bf8d5e2064bc32907202b1",
+      "source_mtime_epoch": 1791973899,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/TRAJECTORY_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/TRAJECTORY_COMPLETE.json",
+      "bytes": 6506,
+      "sha256": "04b71545fbfc6b27bffae936ea660d1ac56d37221a031bde04d7726abb3fcf39",
+      "source_mtime_epoch": 1791973899,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "POSTFIT_STATUS.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/POSTFIT_STATUS.json",
+      "bytes": 1481,
+      "sha256": "935d84eb4e75aaf9cbfa128ecdebc0d39650f1446e78140a30619b1dcaeecf94",
+      "source_mtime_epoch": 1791973921,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "POSTFIT_PROTOCOL.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/POSTFIT_PROTOCOL.json",
+      "bytes": 1543,
+      "sha256": "abc4074c2034552ce886206a7383acdba90de8d1598e414de56319704b30c2d8",
+      "source_mtime_epoch": 1791957195,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "POSTFIT_VERIFIED.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/POSTFIT_VERIFIED.json",
+      "bytes": 35407,
+      "sha256": "fad65ac28dbd4d014cbc2f630e637dc89c9e4b6fff907342f4c16ee1b01eb2f3",
+      "source_mtime_epoch": 1791973921,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "configs/main_source_freeze.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/configs/main_source_freeze.json",
+      "bytes": 10604,
+      "sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+      "source_mtime_epoch": 1791951711,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/summary.json",
+      "bytes": 10300,
+      "sha256": "24e47991944c9e7f7f272f83080dcf885f6c7d48a1a02202f4b1866eff8218aa",
+      "source_mtime_epoch": 1791967971,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/case_metrics.jsonl",
+      "bytes": 8834,
+      "sha256": "e56498368a4eea1718655845ebf8439ede428cfb0d939c04a6a890edab1b2c5c",
+      "source_mtime_epoch": 1791967971,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "325ce0a7647e6f301f233ba3e9e4357aeb5fe4d1df66cfaba34eacc32ea722f6",
+      "source_mtime_epoch": 1791967972,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_10.json",
+      "bytes": 2323,
+      "sha256": "9e8bd20b1975ab90aa952b6f48cdf59bbaba2089287fee3035711f2cb4e63b40",
+      "source_mtime_epoch": 1791967740,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_10_prediction.nrrd",
+      "bytes": 76013,
+      "sha256": "fdc949cfd3532e9e0b18a01bb4eac86d8a3bf7a50d3a0896a5091604e665bf28",
+      "source_mtime_epoch": 1791967740,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_20.json",
+      "bytes": 2326,
+      "sha256": "d74d505a1ecc3524cdaa4ff49f1ac3fd490fbe86c83f09e158d8bdd222222770",
+      "source_mtime_epoch": 1791967829,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Diseased_20_prediction.nrrd",
+      "bytes": 84154,
+      "sha256": "9585711936a5128846add1a9b6a2fa93b9aac9d410d1fa62bb56630e00aa5a4a",
+      "source_mtime_epoch": 1791967829,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_12.json",
+      "bytes": 2323,
+      "sha256": "fcc1d24adacd6f4210a3525483381fc621e333b2933246963c0b0ea55d5cae44",
+      "source_mtime_epoch": 1791967894,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_12_prediction.nrrd",
+      "bytes": 74725,
+      "sha256": "6737752fbb8f1ad96657d66b1ae82a9c916bec34afd973f5a4acc689655b6056",
+      "source_mtime_epoch": 1791967894,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_3.json",
+      "bytes": 2322,
+      "sha256": "42351921e249e8df9c502adcb296029e8858c3f79f2fe8c95298dadafb736abc",
+      "source_mtime_epoch": 1791967971,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch010/Normal_3_prediction.nrrd",
+      "bytes": 84977,
+      "sha256": "a3aef428a05ed2a344b86eabdb51cb0256b01e117b34824a44a9f554a7e7ced5",
+      "source_mtime_epoch": 1791967971,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/summary.json",
+      "bytes": 10290,
+      "sha256": "ec6393ff75257f658472546ddb2cf8680065f825043bffafb95afcb9ced0b442",
+      "source_mtime_epoch": 1791968291,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/case_metrics.jsonl",
+      "bytes": 8836,
+      "sha256": "c047e284ae0d3b79e83132d27f70f47e69c58b4d92e625c65115795e50efaebd",
+      "source_mtime_epoch": 1791968291,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "ef5c6bdc07260d5fd44f87186aebc71b707c91d0c860e0b189656d8049b7cffd",
+      "source_mtime_epoch": 1791968292,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_10.json",
+      "bytes": 2327,
+      "sha256": "6a09fffc100d58ecd3538bac739ca879cbd6441ed533bb8d113a7b09edc7e269",
+      "source_mtime_epoch": 1791968056,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_10_prediction.nrrd",
+      "bytes": 69521,
+      "sha256": "353f22b4a8576e8724a89901c779dac853a695ef9e260fa90fcf85b392f57740",
+      "source_mtime_epoch": 1791968056,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_20.json",
+      "bytes": 2327,
+      "sha256": "0d85fbb3447c0ff0a90415fd2d16aefda740dc4401b72bdc58368fcab8b5c820",
+      "source_mtime_epoch": 1791968147,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Diseased_20_prediction.nrrd",
+      "bytes": 77406,
+      "sha256": "89bfa0ef6eaf2a419917de1144f1e313dec4e806b75f7d5fb4175dcaa0fe78ea",
+      "source_mtime_epoch": 1791968147,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_12.json",
+      "bytes": 2319,
+      "sha256": "5a708ba18afc7acea103ab7483c796914e1ad9813ec7031584c0cf8490018953",
+      "source_mtime_epoch": 1791968214,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_12_prediction.nrrd",
+      "bytes": 69631,
+      "sha256": "be0666d750ba0ac957db635c0e9d16f9a33ac8acfad3aef46f6850b0f9afccfb",
+      "source_mtime_epoch": 1791968214,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_3.json",
+      "bytes": 2323,
+      "sha256": "60b0a3b55d3b741c3ebbc13ca5f7713ab1cb1cb9b156c1b94aa38b561e6de512",
+      "source_mtime_epoch": 1791968291,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch020/Normal_3_prediction.nrrd",
+      "bytes": 76473,
+      "sha256": "ddb711c46861971f57bb9904208c005d54c9ede0fab2382549e7b1fa9bb93ad0",
+      "source_mtime_epoch": 1791968291,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/summary.json",
+      "bytes": 10301,
+      "sha256": "fbd0420a4e4c8d2b4583a6181b9b3bf4592af37cf0ffbac00ac5f36bcdd1facf",
+      "source_mtime_epoch": 1791968604,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/case_metrics.jsonl",
+      "bytes": 8851,
+      "sha256": "a5cdd45f504d75ace5778d36940e4758a7354a7f4cd123ebc162d8ee91c504db",
+      "source_mtime_epoch": 1791968604,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "4c278d708fb64e77fba827c24328ab95b693b55aa0be83e4bf45c90e7fa0139e",
+      "source_mtime_epoch": 1791968606,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_10.json",
+      "bytes": 2329,
+      "sha256": "794f2c456664ba42f31e3224a824ecb65016d18519548ea6c9c1670f19a99332",
+      "source_mtime_epoch": 1791968377,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_10_prediction.nrrd",
+      "bytes": 66380,
+      "sha256": "6ca62c4225ecbb6ea2ae96e038612c6968ca789f06e81d2faf993d6ad28f70a1",
+      "source_mtime_epoch": 1791968377,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_20.json",
+      "bytes": 2328,
+      "sha256": "acf17b2063c3983042a7e9d73ac547fe1bcda3f8d737ca0fb1ab9724543d4178",
+      "source_mtime_epoch": 1791968464,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Diseased_20_prediction.nrrd",
+      "bytes": 70536,
+      "sha256": "a5cf109114bb5cb39ba135201e7ebf5b27a0bdd36546bb3d7db81cb9084be906",
+      "source_mtime_epoch": 1791968464,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_12.json",
+      "bytes": 2327,
+      "sha256": "3632ee29c20c2fcf84fc78ad14eca2350579df36c8e5ecf8e418b2e0ec8f8d64",
+      "source_mtime_epoch": 1791968530,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_12_prediction.nrrd",
+      "bytes": 65651,
+      "sha256": "b8d41b1b69aebcd6dc9616f63deffb1b95ddee2214d7ec7cb2486ddf2e06b485",
+      "source_mtime_epoch": 1791968530,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_3.json",
+      "bytes": 2327,
+      "sha256": "b62aaa106b77aff923992bc3d6cd4110d521364506fef7fdb3c13d6fad107c98",
+      "source_mtime_epoch": 1791968604,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch030/Normal_3_prediction.nrrd",
+      "bytes": 70537,
+      "sha256": "6dcc018d3ba108b519f538807633196532e62b73f5a20c03e2e0bfb2d3e0e186",
+      "source_mtime_epoch": 1791968604,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/summary.json",
+      "bytes": 10302,
+      "sha256": "3aede9b45e1d9eeebfe3d3ffb350df51e5992b1892e7959afed1ffa9dd75d10a",
+      "source_mtime_epoch": 1791968919,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/case_metrics.jsonl",
+      "bytes": 8853,
+      "sha256": "b96d048f09a284d646b92edb4cce13d31197b37e06d50724d857c4cc62a487b9",
+      "source_mtime_epoch": 1791968919,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "34fdc8e7628b829a8cc836d0c08f6140bb365c41bfa966680e4b3d6e2d3413f8",
+      "source_mtime_epoch": 1791968921,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_10.json",
+      "bytes": 2332,
+      "sha256": "2e90bcfc3db8c9f19ead6ebee1f7554afb94a099d4909e311a0a8178c5b1632d",
+      "source_mtime_epoch": 1791968688,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_10_prediction.nrrd",
+      "bytes": 67173,
+      "sha256": "68c8bbb1557930ef38fa9d0a9aa6529c61a104cc7d9fd0db5e82ff134efcf4b0",
+      "source_mtime_epoch": 1791968688,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_20.json",
+      "bytes": 2328,
+      "sha256": "82b3ca578decd7d29c5020e2cbfd32931b30e05c9409fce3766a2d352a75e9ba",
+      "source_mtime_epoch": 1791968777,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Diseased_20_prediction.nrrd",
+      "bytes": 71460,
+      "sha256": "8b7fe51049f19546d459a4154f38b962c611cfa937aa5f4d356c1b9af8f766ab",
+      "source_mtime_epoch": 1791968777,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "84fa1a9f8aea9349ede75f2ebd83048ac489f0576a311bb974cee8be8032a454",
+      "source_mtime_epoch": 1791968844,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_12_prediction.nrrd",
+      "bytes": 66992,
+      "sha256": "d2962b823b08922d070da6290682e3778103063e5a0ccd790d4ef1ff3ef4b4f3",
+      "source_mtime_epoch": 1791968844,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_3.json",
+      "bytes": 2325,
+      "sha256": "90bbf57cc6046950f341bad62a32eac7928e566e30b5c85abb5e9cf5610b0413",
+      "source_mtime_epoch": 1791968919,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch040/Normal_3_prediction.nrrd",
+      "bytes": 71795,
+      "sha256": "a2a8b31404bc447677f9c33719433744305c4bb715eebb3cfb89ea18e2c966d1",
+      "source_mtime_epoch": 1791968919,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/summary.json",
+      "bytes": 10328,
+      "sha256": "3f083359afb7b6726e050e4f22ec4b8a19fab9b13e07251ec5a0672f0937eed9",
+      "source_mtime_epoch": 1791969237,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/case_metrics.jsonl",
+      "bytes": 8812,
+      "sha256": "478821f71f58551a3759edd1e5d0f5af102d30216639199b09f1c328bc43317c",
+      "source_mtime_epoch": 1791969237,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "3ad0b71342bffc00ab37230b74fe7892efa4753affec0605cba31e25c15893fc",
+      "source_mtime_epoch": 1791969239,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_10.json",
+      "bytes": 2318,
+      "sha256": "86da8a45694f5225ef577cbacbf126bf96c38113fb5907be14eb81b80d3f38e7",
+      "source_mtime_epoch": 1791969004,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_10_prediction.nrrd",
+      "bytes": 67086,
+      "sha256": "75af91d40909f460b2949729be20288593c4802bf77621818ab81f28c40d7597",
+      "source_mtime_epoch": 1791969004,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "faa158630fbf7238c32e56704e7b34b9c3b59fc162377d2c9eec6ed9ccb3a839",
+      "source_mtime_epoch": 1791969093,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Diseased_20_prediction.nrrd",
+      "bytes": 71598,
+      "sha256": "8ce66b08663763c35d7b7974987b2a3ed1ed230e4dee5b82f844fc2224a84fb7",
+      "source_mtime_epoch": 1791969093,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_12.json",
+      "bytes": 2324,
+      "sha256": "5f4f4e4ed34b79af6359590ac64361c420f3bfe44187bce058093633d81667db",
+      "source_mtime_epoch": 1791969160,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_12_prediction.nrrd",
+      "bytes": 66883,
+      "sha256": "91d1836e308ceea5d7d6e41ec53a9f019e328c88079cbb74cdd704f1a54dc078",
+      "source_mtime_epoch": 1791969160,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_3.json",
+      "bytes": 2301,
+      "sha256": "a5a37176a9d9c2c9a28dd9aa590425de37cfaba9f15e3d7be85fbecdf02e1ffd",
+      "source_mtime_epoch": 1791969237,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch050/Normal_3_prediction.nrrd",
+      "bytes": 71890,
+      "sha256": "6f40e0c70c8bd90e6142d63202efdc4975d1d5544afb8fe159f8b1a0aa677d49",
+      "source_mtime_epoch": 1791969237,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/summary.json",
+      "bytes": 10286,
+      "sha256": "ea0ed7128af8c9609a3cbefee42716c1a6fc16bf88f830b79bed66a20c91612c",
+      "source_mtime_epoch": 1791969553,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/case_metrics.jsonl",
+      "bytes": 8845,
+      "sha256": "0a3667e16386212fe4b2509027c24d714d69df3301beff0dd1a51e56c3b2fe1a",
+      "source_mtime_epoch": 1791969553,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "55c082c6f5cbb439176382e8a728d5857ef90b248e7a9441c46e188f183a8059",
+      "source_mtime_epoch": 1791969555,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_10.json",
+      "bytes": 2331,
+      "sha256": "e1cf08f694f61253736cc1e1b839915808e55ad343557be32890488cd1ea638d",
+      "source_mtime_epoch": 1791969322,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_10_prediction.nrrd",
+      "bytes": 66765,
+      "sha256": "dd145ac16f6e08a5234faf385b7bca5c04f369fa1af40cf876c03a7f50520868",
+      "source_mtime_epoch": 1791969322,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_20.json",
+      "bytes": 2327,
+      "sha256": "2582430f2e4c1910b10ed7d700a40178dc3613d1cb0fa624bdcdf36a8d95469a",
+      "source_mtime_epoch": 1791969410,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Diseased_20_prediction.nrrd",
+      "bytes": 72025,
+      "sha256": "4f62d32711c18bab356ed7d32afed1fc59a58cedccb8aaceb65438f012b46a81",
+      "source_mtime_epoch": 1791969410,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_12.json",
+      "bytes": 2325,
+      "sha256": "9d606591c6413ff3431a57a09c91092999c944cb993272556d5e669f337f1745",
+      "source_mtime_epoch": 1791969478,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_12_prediction.nrrd",
+      "bytes": 66887,
+      "sha256": "8069a5fd32b5ad8a233418bfbe51e1a912e9ded75c56a499444b11c709155804",
+      "source_mtime_epoch": 1791969478,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_3.json",
+      "bytes": 2322,
+      "sha256": "7e5c17cc10ecc1971e7ae4fb35b4b350c9481d6c74c66a1e0c02f5e2a2a1565c",
+      "source_mtime_epoch": 1791969553,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch060/Normal_3_prediction.nrrd",
+      "bytes": 73841,
+      "sha256": "90f1ea60f96204dea0df408bb7199c1714327b6709211cfffb70fcc3bf87733f",
+      "source_mtime_epoch": 1791969553,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/summary.json",
+      "bytes": 10278,
+      "sha256": "9c7f1de3b5a9f92a265f6604d25d2ab2ed00cff37846467dbee1eb2fab7adcd5",
+      "source_mtime_epoch": 1791969864,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/case_metrics.jsonl",
+      "bytes": 8830,
+      "sha256": "fc9fe37f80ad78c198ec3508cf74b9e202d2698ed277fe5210fe6f924b912528",
+      "source_mtime_epoch": 1791969864,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "0c2d1b1e7854692cb418477795d651c8d6a36d1cb62e25116606d9076305540b",
+      "source_mtime_epoch": 1791969866,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_10.json",
+      "bytes": 2321,
+      "sha256": "bf278a42a4b997fe8f6c9cf393705c3932e98a2491d30a6d9cdbb1f3d5a320f1",
+      "source_mtime_epoch": 1791969636,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_10_prediction.nrrd",
+      "bytes": 67512,
+      "sha256": "5bcf3e5e4d081f666e15081ca918be0fd2637438f84776a5888631f0a52acbbe",
+      "source_mtime_epoch": 1791969636,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "398473565be61d244a8f995a62b9dbd43e820b1f1c5d806782378c7ddad49f19",
+      "source_mtime_epoch": 1791969724,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Diseased_20_prediction.nrrd",
+      "bytes": 72384,
+      "sha256": "0877d3511308647f6b19738c8c9dbb3a794690996069effcad1f554ea67f2c01",
+      "source_mtime_epoch": 1791969724,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_12.json",
+      "bytes": 2326,
+      "sha256": "0e1d3e87339ef54a6731df23c1529add515b76232fad378520e1f38999aaa099",
+      "source_mtime_epoch": 1791969790,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_12_prediction.nrrd",
+      "bytes": 69185,
+      "sha256": "49c6e54607d5c8fada904829c6508bfb51991414b69fe5fb05156c311e0f1dbb",
+      "source_mtime_epoch": 1791969790,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_3.json",
+      "bytes": 2314,
+      "sha256": "fc52104d86b94bada1a901207d98326359d4ca8b9031cdb17811308eade4af6d",
+      "source_mtime_epoch": 1791969864,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch070/Normal_3_prediction.nrrd",
+      "bytes": 73467,
+      "sha256": "b5b29c4c3f147d9c35ab7b7b2e6f4c8950898e2c02eeacfa6bfd7ede9fc88ca3",
+      "source_mtime_epoch": 1791969864,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/summary.json",
+      "bytes": 10319,
+      "sha256": "e4edd32628dd20a4f7209f8479708fa8b873c39fb1e3a67aae24c5088a797198",
+      "source_mtime_epoch": 1791970180,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/case_metrics.jsonl",
+      "bytes": 8850,
+      "sha256": "168a40373692025630f647d779e3d0f0774a624727b9d593778caa7e38d3de3e",
+      "source_mtime_epoch": 1791970180,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "0e9f83c5c8a1d585191990ebec96045a2aaf4015e7a8797c343be2f79a26b5e8",
+      "source_mtime_epoch": 1791970181,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_10.json",
+      "bytes": 2331,
+      "sha256": "e5c7ba50fb770eee4fd1dc93e787a3536fff9c9358f7f0ce136fac7ba0aa3a3f",
+      "source_mtime_epoch": 1791969951,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_10_prediction.nrrd",
+      "bytes": 69546,
+      "sha256": "07617261e47841feeb05b6fad26380e62cc3e9a19f78ea0db66e7f5deab75cba",
+      "source_mtime_epoch": 1791969951,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_20.json",
+      "bytes": 2330,
+      "sha256": "ee586fdc8be2f44fbd3d96f773dac7f71a11cc2e8ef177c1f34c7e911f98550b",
+      "source_mtime_epoch": 1791970038,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Diseased_20_prediction.nrrd",
+      "bytes": 73204,
+      "sha256": "253e728fd008af027f078ad533335de0df9374d825c464732613f050da2b33e4",
+      "source_mtime_epoch": 1791970038,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_12.json",
+      "bytes": 2324,
+      "sha256": "170e54dcdf5341441e76d80dc0d6ebb7f87d303296b2cac1e6d05990a5575a18",
+      "source_mtime_epoch": 1791970105,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_12_prediction.nrrd",
+      "bytes": 68493,
+      "sha256": "414d0fc76a127ced636e596c258c94fd217f21b7c412eda398d2d174c7c00bff",
+      "source_mtime_epoch": 1791970105,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_3.json",
+      "bytes": 2325,
+      "sha256": "db9abb261513c1ae326eb3f7dab75e6066595cb8cfd9a66c249dff81b9ea40f6",
+      "source_mtime_epoch": 1791970180,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch080/Normal_3_prediction.nrrd",
+      "bytes": 73159,
+      "sha256": "b78a7ce918df66e6042118177ff5538725b61bfefd50e9b18d535f84d347c99a",
+      "source_mtime_epoch": 1791970180,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/summary.json",
+      "bytes": 10300,
+      "sha256": "a9c9195d8c69f0e1ca5710e6890af79df8109627fd63a1a3c88da64842963e9e",
+      "source_mtime_epoch": 1791970493,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/case_metrics.jsonl",
+      "bytes": 8840,
+      "sha256": "f07230ea495366c9777a921d746df693dac4e570044e80cc37a9f87f7f2a7772",
+      "source_mtime_epoch": 1791970493,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "46b830cd301c6b7f3b1514cb33c0ed853bd527136e08e2cdbb44583f62ceccc0",
+      "source_mtime_epoch": 1791970495,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_10.json",
+      "bytes": 2326,
+      "sha256": "032eef51fbc91fffd1e603840f622ea39cc9c77f95ded42387fa243d5eb674d0",
+      "source_mtime_epoch": 1791970264,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_10_prediction.nrrd",
+      "bytes": 66710,
+      "sha256": "6125bd02d5865d6474028a13fd2df591a54a6ffcc8b9bc65f161acc20562f37f",
+      "source_mtime_epoch": 1791970264,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_20.json",
+      "bytes": 2327,
+      "sha256": "01f42463a1a8f8f185e2be14e30469feb53eb8388b7294d3f4a1baeeb6e2692c",
+      "source_mtime_epoch": 1791970350,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Diseased_20_prediction.nrrd",
+      "bytes": 70922,
+      "sha256": "7a9e6f24affd7f039212dbfe2ebc7cda50d499d8063a9570b56a6d3a10a623f6",
+      "source_mtime_epoch": 1791970350,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_12.json",
+      "bytes": 2326,
+      "sha256": "41da7f30e74046cce52a0a42b5ff55f8adbbe00fc610f58bb1c54ff7fe10f483",
+      "source_mtime_epoch": 1791970417,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_12_prediction.nrrd",
+      "bytes": 66467,
+      "sha256": "577137301d8ac962a60ae86027d7d9319bb5e983f6d3b034cacc731ee768aaef",
+      "source_mtime_epoch": 1791970417,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_3.json",
+      "bytes": 2321,
+      "sha256": "803376c329a00460a5152c79de3563b90818697c1fe85f28375ed8bd947b7e37",
+      "source_mtime_epoch": 1791970493,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch090/Normal_3_prediction.nrrd",
+      "bytes": 71774,
+      "sha256": "84474e60d4220f17b141bc7479eed08c3d5dc1577f959f9edce65a1b7a4a8488",
+      "source_mtime_epoch": 1791970493,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/summary.json",
+      "bytes": 10315,
+      "sha256": "482d64c3b8696382ba51f2a5ef3765e510bd6e19fd14a009ad7d61a670be568e",
+      "source_mtime_epoch": 1791970811,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/case_metrics.jsonl",
+      "bytes": 8844,
+      "sha256": "31f812cd1ed0d2ce2d584920e93638754b241055a4557ed8d2351299ae80d681",
+      "source_mtime_epoch": 1791970811,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "61bb57399f3cf5b3d4cc641bf67790051e836832b360480c65356a8f42016db0",
+      "source_mtime_epoch": 1791970812,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_10.json",
+      "bytes": 2331,
+      "sha256": "773ccc2b71d81e9ea5f2e56afc74eb0f334892f156c16ccb1b26aed536cb24b2",
+      "source_mtime_epoch": 1791970580,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_10_prediction.nrrd",
+      "bytes": 66776,
+      "sha256": "0cf294d456aa2295a74c600e9f613913f225a4cac6b5ba5f2a7a2e492b4cb8f3",
+      "source_mtime_epoch": 1791970580,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_20.json",
+      "bytes": 2327,
+      "sha256": "0511e8e4e2c78f53db8b732f90aa99573411b62f0693394bd604ee09c191751a",
+      "source_mtime_epoch": 1791970668,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Diseased_20_prediction.nrrd",
+      "bytes": 70725,
+      "sha256": "39e3e178f7753ce555e83d22127769cd4a6824f6a99a467c40c7a8eeec938ffa",
+      "source_mtime_epoch": 1791970668,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_12.json",
+      "bytes": 2323,
+      "sha256": "ade62e8c1ef163ba556ca9c27a26a775d75eb3db815971e4523e220d9e834a2e",
+      "source_mtime_epoch": 1791970735,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_12_prediction.nrrd",
+      "bytes": 66860,
+      "sha256": "923bc5966622df307674c2e57601ca477b989ac5b497464f79575112d18c46cf",
+      "source_mtime_epoch": 1791970735,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_3.json",
+      "bytes": 2323,
+      "sha256": "5d97ae88d23f8523980067acc6698e2830565aa39c9b796e64413967d1952438",
+      "source_mtime_epoch": 1791970811,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch100/Normal_3_prediction.nrrd",
+      "bytes": 71814,
+      "sha256": "89cb3a3201861046bb9fdb07f866281afc5053156128a75a46a8d1dc00ebc20a",
+      "source_mtime_epoch": 1791970811,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/summary.json",
+      "bytes": 10322,
+      "sha256": "d8243b3da5850154a7f5080a90ae16d53ec565a3039f4b173e6d33f43c9dc010",
+      "source_mtime_epoch": 1791971119,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/case_metrics.jsonl",
+      "bytes": 8832,
+      "sha256": "3941060a0a3ba3594c14167da23c125aa73c6cd825d8e0ca9c68c96b74d44220",
+      "source_mtime_epoch": 1791971119,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "fc3de94e4be0b41927b3dbbeb2e655c16696fc8240685370533fa8be33b4b5ba",
+      "source_mtime_epoch": 1791971120,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_10.json",
+      "bytes": 2331,
+      "sha256": "599e6dec0ae6d2298cb1bae0cff81d1e6c488c95d58e6c324366422dcd851a59",
+      "source_mtime_epoch": 1791970894,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_10_prediction.nrrd",
+      "bytes": 66148,
+      "sha256": "fe3f3409fd367a97a0f591c6dbb37cbb23029a109a627f9317a15ecd912c2788",
+      "source_mtime_epoch": 1791970894,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_20.json",
+      "bytes": 2331,
+      "sha256": "86b2515a2017b3d75b7c14bbebe1348d5ad5a21e0db96cbc86975d7edb754e80",
+      "source_mtime_epoch": 1791970981,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Diseased_20_prediction.nrrd",
+      "bytes": 70987,
+      "sha256": "84130c7c5b69d9b0b88cadadb69213fc8870080298071fb73409fa279cce947f",
+      "source_mtime_epoch": 1791970981,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_12.json",
+      "bytes": 2313,
+      "sha256": "240cbecfe5df907d373d45089936593d35eaf37fdf817083558af0e1112794dc",
+      "source_mtime_epoch": 1791971045,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_12_prediction.nrrd",
+      "bytes": 66336,
+      "sha256": "dce99c8f0be8beefd1ecedb85df71862a58ebf15e2e62ae96060a34749c85a50",
+      "source_mtime_epoch": 1791971045,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_3.json",
+      "bytes": 2317,
+      "sha256": "b078349aebaba2e4fdcc64712bab6bee6317724d5708f7c8c9a90128f1d7050e",
+      "source_mtime_epoch": 1791971119,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch110/Normal_3_prediction.nrrd",
+      "bytes": 71413,
+      "sha256": "a2f6b5f2af693e4c32429e825784271f7086983540e7870ba1980243b010ad75",
+      "source_mtime_epoch": 1791971119,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/summary.json",
+      "bytes": 10317,
+      "sha256": "2d6ed3100167777f62d6f977730feab7d55f0869818c684df405ea3b3171d9c9",
+      "source_mtime_epoch": 1791971422,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/case_metrics.jsonl",
+      "bytes": 8844,
+      "sha256": "60a4ce7c9dd43b5b342e07d95256ff449d41e8df348b9b8d536f5c16cae52e18",
+      "source_mtime_epoch": 1791971422,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "5a4dfd94fda47529e43c2d06135a5463fb738ed8df88d3969bc2a625325d414c",
+      "source_mtime_epoch": 1791971423,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_10.json",
+      "bytes": 2330,
+      "sha256": "155985f1fc6c25193cdc3e365bdb6cb6102fc831bba4acbced28dc00b47a97fd",
+      "source_mtime_epoch": 1791971201,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_10_prediction.nrrd",
+      "bytes": 66954,
+      "sha256": "1b9bf6d4b1d229068d287cef81d64371fe47a072d98317f28214f218fb5ab7ac",
+      "source_mtime_epoch": 1791971201,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_20.json",
+      "bytes": 2331,
+      "sha256": "a852c69c1f6a68529b45c211ea64b5f6df2e42500b49ce292c18239f06c59138",
+      "source_mtime_epoch": 1791971287,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Diseased_20_prediction.nrrd",
+      "bytes": 71162,
+      "sha256": "52536bc991ba528909a0fbc1fd8ebe33e7cf343d3b1148b161a560b0cec30950",
+      "source_mtime_epoch": 1791971287,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_12.json",
+      "bytes": 2316,
+      "sha256": "049b20434b5f0d210151f50aba3619112f116a5ea890317bc4cfb427adcb31ff",
+      "source_mtime_epoch": 1791971348,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_12_prediction.nrrd",
+      "bytes": 66353,
+      "sha256": "41b2ebe7f64418f15c2e084a4380716ca2bcb9bda88deb1026d0e46142a8d203",
+      "source_mtime_epoch": 1791971348,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_3.json",
+      "bytes": 2327,
+      "sha256": "c3bf581873198090c1f61d51f41b58df9dbeb0ded34c5e06caa2ade5bcc2ccf0",
+      "source_mtime_epoch": 1791971422,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch120/Normal_3_prediction.nrrd",
+      "bytes": 73048,
+      "sha256": "91bfa1534e83726260b47e9f23eee75a429b0558dafc70561b698ca41919c0fd",
+      "source_mtime_epoch": 1791971422,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/summary.json",
+      "bytes": 10318,
+      "sha256": "1c7f89d7da082d2724603906a1c17e754b70e90e869f23eddf3882fcc82edba4",
+      "source_mtime_epoch": 1791971732,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/case_metrics.jsonl",
+      "bytes": 8841,
+      "sha256": "57927a4aa471001bb24ed06ce98615c7ba27bab2e7273aecf623291fc5459960",
+      "source_mtime_epoch": 1791971732,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "87958f229e7f76a91aa26aebdb39655d6f718b49b6d1d22c53a3fa0f20ce125f",
+      "source_mtime_epoch": 1791971733,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_10.json",
+      "bytes": 2330,
+      "sha256": "5c7bbfd9eb613644be79033fea3f6f21dcf7c5223bb8fe4cd6c41c4f8d60f88a",
+      "source_mtime_epoch": 1791971505,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_10_prediction.nrrd",
+      "bytes": 67714,
+      "sha256": "141b3fe272474833a549bb024f44293ee204a583ff3fafddff417a6552208673",
+      "source_mtime_epoch": 1791971505,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_20.json",
+      "bytes": 2326,
+      "sha256": "0d279a15071febae41db5086b6c1e1343e64651d13adf9af082ca2d585c34a4a",
+      "source_mtime_epoch": 1791971591,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Diseased_20_prediction.nrrd",
+      "bytes": 72539,
+      "sha256": "88c6ec12a2ca77a9d326bd144d877f58675cd8a574c3afc8f1021f29b9d35694",
+      "source_mtime_epoch": 1791971591,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "881658a77048eba561293a1684aa1154f82d1cd2f25f843d496c23c1bd86b182",
+      "source_mtime_epoch": 1791971658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_12_prediction.nrrd",
+      "bytes": 68039,
+      "sha256": "66f1aca8b0d6773243c339308d180f1bb40a52adbfba238cc815ec6892c62c30",
+      "source_mtime_epoch": 1791971658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_3.json",
+      "bytes": 2317,
+      "sha256": "7bb76cb2bc7ae9a51a3bc7b263094c000fb233041927e2128b33e9d0d6621ef8",
+      "source_mtime_epoch": 1791971732,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch130/Normal_3_prediction.nrrd",
+      "bytes": 73921,
+      "sha256": "0d90bad43a4b3aeb45e70d61ff3d3453a2dbf6463b6274883e8a7e8c835ca1d6",
+      "source_mtime_epoch": 1791971732,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/summary.json",
+      "bytes": 10308,
+      "sha256": "3c6b179caf103525e8d7701a3b86fa3426847e3a79b605503dd35dd713e0b123",
+      "source_mtime_epoch": 1791972043,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/case_metrics.jsonl",
+      "bytes": 8854,
+      "sha256": "da0856ab4afe93822bf75121fcd42470b6f58454f8261d8f9a40144c91fc6437",
+      "source_mtime_epoch": 1791972043,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "0889991f6b2dd2f705bece913408c4683a7db777d70ec4a143ca4cacc25355d3",
+      "source_mtime_epoch": 1791972045,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_10.json",
+      "bytes": 2336,
+      "sha256": "a0c17c7c31766a19d7b41e4ff5cbfca3d5813148c7455eec23f2e287ae575c18",
+      "source_mtime_epoch": 1791971816,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_10_prediction.nrrd",
+      "bytes": 67507,
+      "sha256": "5dd56ccc7a8f8a1aea349b25510e5a3a54f44969fc518c25c820ca2715a68143",
+      "source_mtime_epoch": 1791971816,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_20.json",
+      "bytes": 2331,
+      "sha256": "8b20e5702bc88ee84df68c1dd2e4588512b1d4cc9a2c0a65930ec5734fda4672",
+      "source_mtime_epoch": 1791971904,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Diseased_20_prediction.nrrd",
+      "bytes": 71596,
+      "sha256": "543ed6e69d0b83183edf5350de43a6c8851e6dda22e0a504d6a3eeeef8039c61",
+      "source_mtime_epoch": 1791971904,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_12.json",
+      "bytes": 2331,
+      "sha256": "4e9e751d91a6dd87f9243ef252d86550debc8f06442405f7ba8efcfa9d0dd66e",
+      "source_mtime_epoch": 1791971968,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_12_prediction.nrrd",
+      "bytes": 67186,
+      "sha256": "d8924d1944f5bef79ac9851b522dce48cdcd93b926048ed2dd111b9091c1fcd6",
+      "source_mtime_epoch": 1791971968,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_3.json",
+      "bytes": 2316,
+      "sha256": "04a49acc7b9bc6bb63c06910e27c6f79aac0ee6c2d2648048708a7091395f104",
+      "source_mtime_epoch": 1791972043,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch140/Normal_3_prediction.nrrd",
+      "bytes": 72692,
+      "sha256": "7a89e3c4866a46099012321f6e9687b10a5476c3d1e3777866efcb76f5ecd109",
+      "source_mtime_epoch": 1791972043,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/summary.json",
+      "bytes": 10304,
+      "sha256": "be28d9d81eef9b3c369be52fd685b000e1dbc306736e7ef0a0271d1eb9ddba16",
+      "source_mtime_epoch": 1791972350,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/case_metrics.jsonl",
+      "bytes": 8835,
+      "sha256": "212ba639672734cd0b619263ce4a3f9f290327becf10e49d329a7547c57c5114",
+      "source_mtime_epoch": 1791972350,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "ead6ff3fceae1789496539d6b25c1b6a2ab335de491b5e291be6e23bca6ac87a",
+      "source_mtime_epoch": 1791972351,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "8348cee6820ce70e639d6482916befa7516ba440dc67b6064596989def60f68c",
+      "source_mtime_epoch": 1791972125,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_10_prediction.nrrd",
+      "bytes": 67370,
+      "sha256": "28f58b5335304ce0f1eacecfda2ebe3ab0a364218a78ba1c149dd9a93ebc24dd",
+      "source_mtime_epoch": 1791972125,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "80066ef74366fe337044b18efb54a09bcc067e24e89d4c22eeb9cc7329ecb311",
+      "source_mtime_epoch": 1791972212,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Diseased_20_prediction.nrrd",
+      "bytes": 70920,
+      "sha256": "780fbe3934b1599a6cbfabfdfac1e08dead27fe6988de494f48c3c66ee9818ce",
+      "source_mtime_epoch": 1791972212,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_12.json",
+      "bytes": 2316,
+      "sha256": "bed064dc23577407d3ef9e50b25a36da3ecbc5beeb561a5aa3b8b5c4e6204881",
+      "source_mtime_epoch": 1791972276,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_12_prediction.nrrd",
+      "bytes": 66792,
+      "sha256": "f30c1869ccb8f7ab667adf9fce81a4818473a6cd5db0fba2793ceed9eb5b169a",
+      "source_mtime_epoch": 1791972276,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_3.json",
+      "bytes": 2317,
+      "sha256": "67c7ec5bedcbbac211883ed7fedd729cee48969cebaab1a5a182b4d32afa68bf",
+      "source_mtime_epoch": 1791972350,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch150/Normal_3_prediction.nrrd",
+      "bytes": 72712,
+      "sha256": "6268739d6ffb0861f368b95e3a2fae7c204db3aa8c52239aab60766fff38ae52",
+      "source_mtime_epoch": 1791972350,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/summary.json",
+      "bytes": 10327,
+      "sha256": "57d88ef6e3dce718cc876599bff3c8033f7503f552227d034d7c39e30324be8c",
+      "source_mtime_epoch": 1791972658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/case_metrics.jsonl",
+      "bytes": 8845,
+      "sha256": "739f9d2ade5836596596a64932f477a13cb32ec36e2c625191181ba255bc006f",
+      "source_mtime_epoch": 1791972658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "3904d777c22e868f4ffd6f509efabcda49b0c670bfa473d0a6969b9bfb066c95",
+      "source_mtime_epoch": 1791972660,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_10.json",
+      "bytes": 2334,
+      "sha256": "fc875caa6ae631e220629b38bca2a75fa476b70a9b248c2ab760b1464c78c2cc",
+      "source_mtime_epoch": 1791972432,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_10_prediction.nrrd",
+      "bytes": 67501,
+      "sha256": "45e217c987ef58ec4affe7aafdfd33513555cff3caa4a62ce9a4c5261807d9fc",
+      "source_mtime_epoch": 1791972432,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_20.json",
+      "bytes": 2333,
+      "sha256": "8900d4a720c8714f29839429ca6e49acf73ee44390b5ba96f681cd31aec056db",
+      "source_mtime_epoch": 1791972518,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Diseased_20_prediction.nrrd",
+      "bytes": 71886,
+      "sha256": "2c40e4df81329eb6b1724b557de3a6f4eaab4538885ed5c62bf0445e288f5883",
+      "source_mtime_epoch": 1791972518,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "3a6fd46519a8f3219c9a29c1adf3b0f0402b61d0277c7c3452436194b729d409",
+      "source_mtime_epoch": 1791972584,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_12_prediction.nrrd",
+      "bytes": 67384,
+      "sha256": "a7d58d96c05b29a06d39f9f282346015885b213a805d8830a367f6a854a93842",
+      "source_mtime_epoch": 1791972584,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_3.json",
+      "bytes": 2310,
+      "sha256": "916bba11f15edf0483ff6b9f54a481b50860f7e933c9a94ca0486d4f83662295",
+      "source_mtime_epoch": 1791972658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch160/Normal_3_prediction.nrrd",
+      "bytes": 73218,
+      "sha256": "056f16da5ea8c7aab5798b987a637bb38f6f1998abf7c6f7e497e086d757a5fa",
+      "source_mtime_epoch": 1791972658,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/summary.json",
+      "bytes": 10307,
+      "sha256": "ff0f5717dbb6273f5dc4d2983e79dd489d1d0084d78646b55fb6fdbfef52bf6b",
+      "source_mtime_epoch": 1791972963,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/case_metrics.jsonl",
+      "bytes": 8836,
+      "sha256": "7038257b65ab54b7fcda810a2083ff35e5aaab657f4387c4a78e10d90fb1a411",
+      "source_mtime_epoch": 1791972963,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "c1848b8869968fb1476ea2a3cd4e0f9213ba641ae16f0fefd21d1cc5d96b9318",
+      "source_mtime_epoch": 1791972965,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_10.json",
+      "bytes": 2335,
+      "sha256": "fbbcbb7e8c6f485a33f0e588ad07e04ef6c5859df9f8c46783c6fbde3b5ac11f",
+      "source_mtime_epoch": 1791972743,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_10_prediction.nrrd",
+      "bytes": 67876,
+      "sha256": "c21e3eac62f5a48e1260d2d7c0dcb28d5474733b75be95b2317ecbebcae25717",
+      "source_mtime_epoch": 1791972743,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "2622a2592eff92a4f1aed01ea0a089e547808d64051084f266795d82b7209900",
+      "source_mtime_epoch": 1791972829,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Diseased_20_prediction.nrrd",
+      "bytes": 71786,
+      "sha256": "cfedca4fa7c8b303f6e36567fb4c1f305be22b1bb282857f6806b6d57469b6d2",
+      "source_mtime_epoch": 1791972829,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_12.json",
+      "bytes": 2315,
+      "sha256": "404ab20834cd5b3c5e4b0ddc6e33181025aa0f93b9eaef4dc98f9d2cc1c3cef9",
+      "source_mtime_epoch": 1791972892,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_12_prediction.nrrd",
+      "bytes": 67215,
+      "sha256": "3fb6332c81bbe0f722616e137c0f1a2863ffdb7c8ee771a5a17ea4a05d1675b0",
+      "source_mtime_epoch": 1791972892,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_3.json",
+      "bytes": 2317,
+      "sha256": "0dd85aa3decb7ca99adeb069c1819c6b34fd92fef3b84d9daa2fb68f63a593d7",
+      "source_mtime_epoch": 1791972963,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch170/Normal_3_prediction.nrrd",
+      "bytes": 72978,
+      "sha256": "bb5c1a23c6662848ac78eba52e9b2b5b3f78302856db10345a8913eceeabcd12",
+      "source_mtime_epoch": 1791972963,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/summary.json",
+      "bytes": 10345,
+      "sha256": "8ae613d3e3a62df604363dcfb84768a31ef30fff958a1045e62d069f519c1772",
+      "source_mtime_epoch": 1791973273,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/case_metrics.jsonl",
+      "bytes": 8853,
+      "sha256": "a1adf711f2cf4a77a1509a9d561ea35d98422499fbb62609779abfd8f298ba97",
+      "source_mtime_epoch": 1791973273,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "f5876e8fdcdc9f2f3140bddda214bf9bb61e1096f350d7a5a634331e7b7ff6d1",
+      "source_mtime_epoch": 1791973274,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_10.json",
+      "bytes": 2321,
+      "sha256": "91276afb6a8370baf13cd246de1b825f6922b1a9c85c29fa1b1ed2a46a4bd1cd",
+      "source_mtime_epoch": 1791973047,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_10_prediction.nrrd",
+      "bytes": 67343,
+      "sha256": "d30422eaa950aa5541bce6008ed848bf2501c21fce0d9c610691e6f17efb2615",
+      "source_mtime_epoch": 1791973047,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_20.json",
+      "bytes": 2332,
+      "sha256": "b7fd0c6a95d23e6563498863cc8f408814b2419e380eb1d2c7a8b09c6a02c374",
+      "source_mtime_epoch": 1791973135,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Diseased_20_prediction.nrrd",
+      "bytes": 70811,
+      "sha256": "4945008f2bf3fdcaebf22413c33dd569224bea0230798e8d6d97a1257bb8bb22",
+      "source_mtime_epoch": 1791973135,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_12.json",
+      "bytes": 2331,
+      "sha256": "0f3f843f305f84147a5eafc977871d8226699dee8d5325a01f5c5a7ee4280b56",
+      "source_mtime_epoch": 1791973199,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_12_prediction.nrrd",
+      "bytes": 67050,
+      "sha256": "a5ef5e9d4eb6969d4300ba53fdf4b2837f2955a19a46eb4290ee2ecece921285",
+      "source_mtime_epoch": 1791973199,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_3.json",
+      "bytes": 2329,
+      "sha256": "eedacb19e0a4fadeb3217b0aaf4ed01f322301a4e87046835b12a743a4f6d1c2",
+      "source_mtime_epoch": 1791973273,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch180/Normal_3_prediction.nrrd",
+      "bytes": 72680,
+      "sha256": "e1e38e9e371ae2108e8cc597c206ffa26caf0bd1965234f9c6550b105be9e69d",
+      "source_mtime_epoch": 1791973273,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/summary.json",
+      "bytes": 10319,
+      "sha256": "c458bb51362605455c509c852d8ff253e7b0b5a20899c21736e5277d5931de4c",
+      "source_mtime_epoch": 1791973583,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/case_metrics.jsonl",
+      "bytes": 8843,
+      "sha256": "d57cc3744f52273f91f19a761c7e1e920c747078092720269d32461227de2666",
+      "source_mtime_epoch": 1791973583,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "3654a82ee6005f9150dec88aab6a27b99a3b435ba95526aaf7780201f72285a7",
+      "source_mtime_epoch": 1791973585,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_10.json",
+      "bytes": 2315,
+      "sha256": "c3e813d9991aab8e6797c911d0d78803ef683d1e29d5f67d90c2cf61ac52c03f",
+      "source_mtime_epoch": 1791973357,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_10_prediction.nrrd",
+      "bytes": 67074,
+      "sha256": "a99948dac123da291b7ca7abc6bfc6e40e4e268f05fb35a444b1e99b162745cc",
+      "source_mtime_epoch": 1791973357,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_20.json",
+      "bytes": 2330,
+      "sha256": "3af1b2a5c05b09049aca46d1951f4d985eaa97b282a52ccfe5a0b34da7ba65ab",
+      "source_mtime_epoch": 1791973443,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Diseased_20_prediction.nrrd",
+      "bytes": 70287,
+      "sha256": "6615c4b648e8082ff6a1da1efad28c580c634202b3b4537aa2b8dc9176924d9a",
+      "source_mtime_epoch": 1791973443,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "48ef0170defc6630a3ce2f2018399322df8376218e2bbbc5dbfcb452f30ea0a9",
+      "source_mtime_epoch": 1791973507,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_12_prediction.nrrd",
+      "bytes": 66354,
+      "sha256": "84ac0c43785e7975c55494cdb7b1d4103ded073983b91a62d2209201c116b5c2",
+      "source_mtime_epoch": 1791973507,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_3.json",
+      "bytes": 2330,
+      "sha256": "0d44e0d4b036177ce7ad2e48e12217d6877ba2f2788313140a001ecb8ff9d634",
+      "source_mtime_epoch": 1791973583,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/epoch190/Normal_3_prediction.nrrd",
+      "bytes": 71769,
+      "sha256": "7670164534d017c04fee274b7f53791585eb9864c23a29bc15e8efcef1c66b98",
+      "source_mtime_epoch": 1791973583,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/summary.json",
+      "bytes": 10285,
+      "sha256": "69eceed68698b56bd3d8ea45eeed7fa6bf4fd44e7dcad6c5f39fca15054ed701",
+      "source_mtime_epoch": 1791973897,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/case_metrics.jsonl",
+      "bytes": 8676,
+      "sha256": "a1195b08d5d73327370f0c65cdd50684e0034cbfbc8d89061d5016a707178107",
+      "source_mtime_epoch": 1791973897,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "f19190b55d6364ccf45314d45847f6732b5f27e57cd46e5b7cd1af697e4e4618",
+      "source_mtime_epoch": 1791973899,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Diseased_10.json",
+      "bytes": 2291,
+      "sha256": "1842da2e4ca60b60b1342b0452993f554d18a5c7d481ef97e4782fb1d576191d",
+      "source_mtime_epoch": 1791973666,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Diseased_10_prediction.nrrd",
+      "bytes": 67358,
+      "sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+      "source_mtime_epoch": 1791973666,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Diseased_20.json",
+      "bytes": 2285,
+      "sha256": "fa5f1e37c8984af0f4d2d2918204dc89773a9be8e5f2d5866fa193612aa72f64",
+      "source_mtime_epoch": 1791973754,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Diseased_20_prediction.nrrd",
+      "bytes": 70846,
+      "sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+      "source_mtime_epoch": 1791973754,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Normal_12.json",
+      "bytes": 2286,
+      "sha256": "055837df77b9065d71427aa9a919c4eef303abe95d1a67d2ce80ff3bdeb1b289",
+      "source_mtime_epoch": 1791973820,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Normal_12_prediction.nrrd",
+      "bytes": 66748,
+      "sha256": "5acc422d115c4478a8cf475a32d888fa29963f7609e7f0af0a3f7b4f617b803e",
+      "source_mtime_epoch": 1791973820,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Normal_3.json",
+      "bytes": 2274,
+      "sha256": "80cebac9ec5b39f76e753c4cf3eae1abfda7b3499abac48a780bf3a5be0dbe8c",
+      "source_mtime_epoch": 1791973897,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/internal4_trajectory/final/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/internal4_trajectory/final/Normal_3_prediction.nrrd",
+      "bytes": 72911,
+      "sha256": "51259b9e3779f0d5e9300c7df12ee87c1a686b33a0eb08db0d76669824c27811",
+      "source_mtime_epoch": 1791973897,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/learning_curves/development_learning_curves.png",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/learning_curves/development_learning_curves.png",
+      "bytes": 653607,
+      "sha256": "7d4eae643737abfd8f45382f699e998bd595db4faffd0c9a3d02e260abd6a4dd",
+      "source_mtime_epoch": 1791973902,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/learning_curves/development_learning_curves.svg",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/learning_curves/development_learning_curves.svg",
+      "bytes": 624713,
+      "sha256": "cd1aa713f8a35802d77ac9b916ca63a8b09e3bca8fb096913a418e3448f6610c",
+      "source_mtime_epoch": 1791973903,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/learning_curves/epoch_summary.csv",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/learning_curves/epoch_summary.csv",
+      "bytes": 1224378,
+      "sha256": "01a507d60dba38fa4b9ed2028e324e2d455eb499a11fd2cb8ce3101924f2e36c",
+      "source_mtime_epoch": 1791973900,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/learning_curves/curve_notes.txt",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/learning_curves/curve_notes.txt",
+      "bytes": 638,
+      "sha256": "4a54a7d2dc97b7c189dc6d3700e571260df2a05f6e37330d6613de032253b14e",
+      "source_mtime_epoch": 1791973903,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/learning_curves/curve_manifest.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/learning_curves/curve_manifest.json",
+      "bytes": 7074,
+      "sha256": "bf3e7fc8a1ba3cbe0474c51a5f2873ba2c869ea12a1e70beb013ab36989fa430",
+      "source_mtime_epoch": 1791973903,
+      "transfer": "actual_remote_SFTP_bytes"
+    },
+    {
+      "relative_path": "results/gta_enhanced200x125/training/gradient_probes.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/gradient_probes.jsonl",
+      "bytes": 36907,
+      "sha256": "079b65d01f948fd370f066949aa4f6bcb82de7258c9598e35b8c87a67a5aafca",
+      "source_mtime_epoch": 1791967480,
+      "transfer": "actual_remote_SFTP_bytes"
+    }
+  ],
+  "status": "captured_completed_canonical_pending_independent_CPU_acceptance",
+  "ended_at_utc": "2026-10-14T10:34:48.041408+00:00",
+  "core_files": 234,
+  "curve_files": 5,
+  "total_files": 240,
+  "actual_final_weights_bytes_hash_verified": true,
+  "network_weight_download": false,
+  "model_or_inference_or_training_started": false,
+  "collector_sha256": "0b1f86a83e75aa139597365afb197c5990c4a591c336790e3de75cf4273854de"
+}

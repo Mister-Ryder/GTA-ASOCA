@@ -1,0 +1,27 @@
+{
+  "role": "NOT_MODEL_RESULTS",
+  "training_started": false,
+  "GPU_used": false,
+  "model_loaded": false,
+  "server_access": false,
+  "checks": {
+    "real_frozen_package_config_manifest_guard": "passed; no weights or data arrays read",
+    "plan_creates_no_READY_state_or_copy": "passed",
+    "synthetic_complete200x125_parser": "passed; NOT_MODEL_RESULTS text checkpoint",
+    "missing_epoch_rejected": "History lacks the complete finite200x125 run",
+    "nonfinite_component_rejected": "Nonfinite numeric training telemetry",
+    "unfinished_final_line_rejected": "History has an unfinished final line",
+    "wrong_actual_checkpoint_hash_rejected": "Training completion/final identity differs",
+    "runtime_fixed9_names_and_actual_CT_bytes_parser": "passed; fixture text CT and mocked version metadata",
+    "unrelated9_package_names_rejected": "Expected the fixed9 audited runtime package names",
+    "changed_installed_runtime_version_rejected": "Installed runtime package versions differ from prior input audit",
+    "changed_actual_cached_CT_rejected": "Actual internal4 CT bytes differ from prior input-runtime audit",
+    "six_file_copy_actual_bytes_match": "passed; NOT_MODEL_RESULTS_READY.json only",
+    "existing_target_never_overwritten": "Fresh mirror required; existing destination will not be overwritten",
+    "source_mutation_rejected_before_copy": "Source file changed before copying: final.pt",
+    "empty_target_race_never_replaced": "passed"
+  },
+  "publisher_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+  "fixture_sha256": "c99389638136f609d89c8b5076f223090f344bd94fe4368269e704aa1c30d587",
+  "production_READY_created": false
+}

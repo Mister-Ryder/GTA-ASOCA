@@ -1,0 +1,221 @@
+{
+  "captured_at_utc": "2026-10-14T08:52:49.149461+00:00",
+  "training_complete": {
+    "epoch": 199,
+    "smoke": false,
+    "development_run": true,
+    "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "trained_case_ids": [
+      "Diseased_11",
+      "Diseased_12",
+      "Diseased_13",
+      "Diseased_14",
+      "Diseased_16",
+      "Diseased_17",
+      "Diseased_19",
+      "Diseased_2",
+      "Diseased_3",
+      "Diseased_4",
+      "Diseased_5",
+      "Diseased_6",
+      "Diseased_8",
+      "Diseased_9",
+      "Normal_1",
+      "Normal_10",
+      "Normal_11",
+      "Normal_13",
+      "Normal_14",
+      "Normal_15",
+      "Normal_17",
+      "Normal_18",
+      "Normal_20",
+      "Normal_4",
+      "Normal_5",
+      "Normal_6",
+      "Normal_7",
+      "Normal_9"
+    ],
+    "internal_selection_valid": true,
+    "final_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "classifier_pretraining_updates": 5120,
+    "segmentation_updates": 25000,
+    "checkpoint_selection": "fixed final"
+  },
+  "actual_final_bytes_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "publisher": {
+    "protocol": {
+      "schema_version": 1,
+      "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+      "destination": "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014",
+      "main_pid": 1943,
+      "config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+      "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+      "source_freeze_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+      "evaluation_sources": {
+        "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+        "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+        "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+      },
+      "source_guard_helper_sha256": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51",
+      "publisher_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+      "wait_seconds": 7200,
+      "role": "early fixed-final inference mirror; no new training",
+      "GPU_used": false,
+      "model_loaded": false,
+      "training_started": false
+    },
+    "pid": 17636,
+    "started_at": "2026-10-14T08:40:04.539286+00:00",
+    "deadline_unix": 1791974404.5392783,
+    "confirmed_main_process": {
+      "pid": 1943,
+      "starttime_ticks": "3481571793",
+      "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+      "script": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/train.py"
+    },
+    "status": "completed",
+    "main_or_postfit_signals_sent": false,
+    "phase": "fixed_final_mirror_published",
+    "updated_at": "2026-10-14T08:47:38.260939+00:00",
+    "remaining_seconds": 6779.725195407867,
+    "temporary_directory": "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/.early_final_mirror_20261014.pending.b41dc4296ff5471da7376e93ff7aad05",
+    "READY": "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/READY.json",
+    "READY_sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d"
+  },
+  "publisher_proc": {
+    "pid": 17636,
+    "alive": false
+  },
+  "postfit": {
+    "status": "running",
+    "pid": 7223,
+    "role": "internal-four method development; classifier accuracy diagnostic only",
+    "started_at": "2026-10-14T05:53:15.453880+00:00",
+    "protocol_sha256": "abc4074c2034552ce886206a7383acdba90de8d1598e414de56319704b30c2d8",
+    "new_training": false,
+    "outer8_used_for_selection": false,
+    "phase": "internal_four_trajectory",
+    "updated_at": "2026-10-14T08:47:31.654406+00:00",
+    "command": [
+      "/root/miniconda3/envs/gta-asoca311/bin/python",
+      "-u",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_saved_stage.py",
+      "--root",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+      "--recipe",
+      "run_internal_trajectory.sh",
+      "--tag",
+      "gta200_internal4",
+      "--training",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training"
+    ],
+    "child_pid": 18176
+  },
+  "postfit_proc": {
+    "pid": 7223,
+    "alive": true,
+    "state": "S",
+    "cmdline": "/root/miniconda3/envs/gta-asoca311/bin/python -u /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/after_gta_training.py "
+  },
+  "trajectory_completed_checkpoints": 0,
+  "trajectory_latest": null,
+  "canonical_trajectory_complete": null,
+  "shared_READY": {
+    "schema_version": 1,
+    "status": "fixed_final_payload_ready",
+    "role": "early fixed-final inference mirror; no new training",
+    "source_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+    "files": {
+      "final.pt": {
+        "bytes": 68670910,
+        "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+      },
+      "config.json": {
+        "bytes": 24269,
+        "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+      },
+      "history.jsonl": {
+        "bytes": 220801,
+        "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+      },
+      "TRAINING_COMPLETE.json": {
+        "bytes": 996,
+        "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+      },
+      "manifest.json": {
+        "bytes": 136829,
+        "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+      },
+      "input_runtime_audit.json": {
+        "bytes": 1686,
+        "sha256": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7"
+      }
+    },
+    "config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "evaluation_sources": {
+      "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+      "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+      "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+    },
+    "case_ids": [
+      "Diseased_10",
+      "Diseased_20",
+      "Normal_12",
+      "Normal_3"
+    ],
+    "checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "checkpoint_epoch": 199,
+    "cache_CT_inputs": {
+      "Diseased_10": {
+        "bytes": 87817088,
+        "sha256": "a1bd28a693cca4a6c522f081eedf93e02190f1ee2bfb1bc05e23d5cbe425e82c"
+      },
+      "Diseased_20": {
+        "bytes": 130101568,
+        "sha256": "e323458226308c017157313aeee0df6f310fa63819786cc7c6ffcf5007ec8a0e"
+      },
+      "Normal_12": {
+        "bytes": 73442504,
+        "sha256": "35758699a03988d17e6eebedb494d57cef17be442616efc25a394c771bf8d849"
+      },
+      "Normal_3": {
+        "bytes": 81442048,
+        "sha256": "41ac6043bc416f8f5dd32ff82c55c25f7fb00b1dc783f6f20abed045f0f02d7e"
+      }
+    },
+    "packages": {
+      "torch": "2.7.1+cu128",
+      "monai": "1.5.1",
+      "numpy": "1.26.4",
+      "scipy": "1.15.3",
+      "scikit-image": "0.25.2",
+      "SimpleITK": "2.5.2",
+      "scikit-learn": "1.7.2",
+      "pandas": "2.3.3",
+      "tqdm": "4.67.1"
+    },
+    "raw_GT_source_sha256": {
+      "Diseased_10": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+      "Diseased_20": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+      "Normal_12": "80f7aadbd1f198beca1f6ba8b844cd488665a6059879c1d80522c2b300cacefa",
+      "Normal_3": "f4cd9ccd929049652d58a22d9ee4a2d0db4f36d2f149746fc1723d07e7ec6f17"
+    },
+    "source_freeze_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+    "source_guard_full_package_verified": true,
+    "publisher_sha256": "446567f4a964b9c392395cfdb203e6c95e43cffca1d6a576269721dfaf593450",
+    "source_guard_helper_sha256": "698b349799cff927c9c8be2bf6330e0b2cbf4c1b9198ed8f4a303c6075b78e51",
+    "training_updates": 25000,
+    "diagnostic_only": true,
+    "formal_final_test": false,
+    "new_training": false,
+    "canonical80_case_evaluation_unchanged": true,
+    "captured_at_utc": "2026-10-14T08:47:36.071773+00:00",
+    "model_loaded": false,
+    "checkpoint_payload_deserialized": false
+  },
+  "GPU_processes": "18193, 4522 MiB"
+}

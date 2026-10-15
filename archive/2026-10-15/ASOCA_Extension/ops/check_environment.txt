@@ -1,0 +1,4 @@
+ls -l /root/autodl-tmp/ASOCA_GTAirway_20261013/ops /root/autodl-tmp/ASOCA_GTAirway_20261013/logs
+cat /root/autodl-tmp/ASOCA_GTAirway_20261013/logs/bootstrap.log
+ps -ef | head -30
+df -h /root/autodl-tmp

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-10-14T04:29:32.935238+00:00",
+  "role": "single old-server bounded U-Net development calibration only; no actual launch from local generation",
+  "source_files": {
+    "ops/start_unet_calibration.py": {
+      "sha256": "54fd789b35ad14c56ed74b7fb3f14b1f8a794d1be995fba968da99d1c94bd807",
+      "bytes": 18199
+    },
+    "ops/start_unet_calibration_17552.sh": {
+      "sha256": "8b7f3cfcd2e94ba173fbf1301e9a6de9efbf4b9ce3e3dd863597bc406a1da0f6",
+      "bytes": 521
+    },
+    "ops/unet_calibration_17552_commands.txt": {
+      "sha256": "e38590930bd5efd65caeb6c1b987c60f5cc62713b67058b7bbeeba408bcb8c65",
+      "bytes": 2393
+    },
+    "docs/experiment_comparison_boundaries.txt": {
+      "sha256": "c3a80a7546fe03a2ad14fb2eaba2dcece6dac8ed86a3ec25adc7e48353d2afc8",
+      "bytes": 5000
+    },
+    "docs/checkpoint_and_restart_notes.txt": {
+      "sha256": "0ff8e0de4d80e743c9bc878ecf3afe5b3e97dc57490e2dfebd3dcadfc96b4002",
+      "bytes": 3003
+    }
+  },
+  "main_freeze_manifest_sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+  "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "code_package_sha256": "0d14f942a7d87c81d272cca0a1b3b55c458aa0da0e0da01f6b15456107e7c48b",
+  "protocol": {
+    "server_port": 17552,
+    "root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+    "smoke_epochs": 2,
+    "smoke_steps": 2,
+    "formal_epochs": 200,
+    "formal_steps": 125,
+    "formal_updates": 25000,
+    "train28_internal4": true,
+    "trajectory_checkpoints": 20,
+    "patients_per_checkpoint": 4,
+    "original8_evaluated": false,
+    "new_external_method_reproduction": false,
+    "fivefold": false,
+    "automatic_launch": false,
+    "classification_accuracy_gate": false,
+    "main_classifier_initialization": "fixed80-epoch final.pt"
+  },
+  "validation": {
+    "python_syntax": "passed",
+    "shell_syntax": "passed",
+    "frozen_code_and_commands": "passed",
+    "trajectory_integrity": "valid20-checkpoint ledger accepted; modified epoch, checkpoint SHA and overall metrics each rejected",
+    "gpu_smoke_executed_by_this_agent": false
+  }
+}

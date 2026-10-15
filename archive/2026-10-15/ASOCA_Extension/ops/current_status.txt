@@ -1,0 +1,5 @@
+tail -12 /root/autodl-tmp/ASOCA_GTAirway_20261013/logs/bootstrap_pinned.log
+tail -25 /root/autodl-tmp/ASOCA_GTAirway_20261013/logs/smoke.log
+ls -l /root/autodl-tmp/ASOCA_GTAirway_20261013/manifests
+nvidia-smi --query-gpu=name,memory.used,utilization.gpu --format=csv,noheader
+df -h /root/autodl-tmp /

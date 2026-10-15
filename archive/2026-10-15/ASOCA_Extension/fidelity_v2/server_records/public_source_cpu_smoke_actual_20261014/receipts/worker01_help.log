@@ -1,0 +1,27 @@
+usage: audit_priors.py [-h] --manifest MANIFEST --output OUTPUT [--fold FOLD]
+                       [--samples SAMPLES]
+                       [--sampling {balanced,conventional,both}] [--seed SEED]
+                       [--epoch EPOCH] [--patch-size PATCH_SIZE]
+                       [--thin-radius-mm THIN_RADIUS_MM]
+                       [--fov-pad-mm FOV_PAD_MM]
+                       [--max-centerline-points-per-case MAX_CENTERLINE_POINTS_PER_CASE]
+
+Read-only, deterministic ASOCA prior-label audit; numpy/scipy only, no torch.
+Training cases only. Auxiliary labels stay unchanged. Image-only HU centroid
+baselines use leave-one-patient-out folds inside the 32 training cases. They
+are descriptive probes, not evidence that a neural classifier can learn these
+labels.
+
+options:
+  -h, --help            show this help message and exit
+  --manifest MANIFEST
+  --output OUTPUT
+  --fold FOLD
+  --samples SAMPLES     TOTAL patches; split equally if sampling=both
+  --sampling {balanced,conventional,both}
+  --seed SEED
+  --epoch EPOCH
+  --patch-size PATCH_SIZE
+  --thin-radius-mm THIN_RADIUS_MM
+  --fov-pad-mm FOV_PAD_MM
+  --max-centerline-points-per-case MAX_CENTERLINE_POINTS_PER_CASE

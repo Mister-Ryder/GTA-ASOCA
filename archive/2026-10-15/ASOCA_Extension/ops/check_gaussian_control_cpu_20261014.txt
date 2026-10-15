@@ -1,0 +1,20 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import hashlib,json,os,time
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+p=r/'ops/prepare_gaussian_control.py'
+assert hashlib.sha256(p.read_bytes()).hexdigest()=='0145556d123356956bd80546fb7f2eda0c44bd8761dac2c6ae1f6ae44c894a17'
+c=Path('/sys/fs/cgroup')
+maximum=(c/'memory.max').read_text().strip()
+available=next(int(s.split()[1])*1024 for s in Path('/proc/meminfo').read_text().splitlines() if s.startswith('MemAvailable:'))
+if maximum!='max':available=min(available,int(maximum)-int((c/'memory.current').read_text()))
+quota,period=(c/'cpu.max').read_text().split()
+cores=len(os.sched_getaffinity(0)) if quota=='max' else int(quota)/int(period)
+def usage():return int(dict(s.split() for s in (c/'cpu.stat').read_text().splitlines())['usage_usec'])
+t,u=time.monotonic(),usage();time.sleep(1)
+used=(usage()-u)/(1e6*(time.monotonic()-t))
+assert available>=8*2**30 and cores-used>=9,'Insufficient current spare CPU/RAM; no reconstruction started'
+print(json.dumps({'reviewed_source_verified':True,'available_GiB':available/2**30,'effective_cpu_cores':cores,'measured_used_cores':used,'training_started':False}),flush=True)
+PY
+timeout --signal=TERM --kill-after=10s 300s env CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /root/miniconda3/envs/gta-asoca311/bin/python -u /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/prepare_gaussian_control.py --main-config /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/config.json --manifest /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json --candidate-output /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_lambda0_200x125/training --proposal-output /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_lambda0_cpu_preflight_20261014 --cpu-check

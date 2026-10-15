@@ -1,0 +1,504 @@
+{
+  "schema_version": 1,
+  "role": "ACTUAL_FINAL200_TRAIN28_OFFLINE_AB_DIAGNOSTIC_NOT_MODEL_RESULTS",
+  "n_patches": 56,
+  "mean_lambda10_losses": {
+    "segmentation": 0.2606806049921683,
+    "A_FG": 0.00010341149496590723,
+    "A_BG": 0.00012111701386986949,
+    "B_FG": 0.033089270848514776,
+    "B_BG": 6.367715770595948e-05,
+    "A": 0.00022452851037866952,
+    "B": 0.03315294818113606
+  },
+  "aggregated_gradient_by_loss_origin_and_logit_coordinate": {
+    "segmentation.all": {
+      "raw_additive_statistics": [
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        2.7100409440078353e-05,
+        2.710040944007441e-05
+      ],
+      "common_energy": 3.9405800464419365e-18,
+      "margin_energy": 2.710040944007441e-05,
+      "total_energy": 2.710040944007835e-05,
+      "common_norm": 1.985089430338577e-09,
+      "margin_norm": 0.005205805359411204,
+      "total_norm": 0.005205805359411582,
+      "common_fraction": 1.454066609272064e-13,
+      "norm_ratio_to_segmentation": 1.0,
+      "margin_norm_ratio_to_segmentation": 1.0,
+      "full_cosine_to_segmentation": 1.0,
+      "margin_cosine_to_segmentation": 1.0
+    },
+    "segmentation.FG_coordinates": {
+      "raw_additive_statistics": [
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        1.854302290717211e-05,
+        1.854302290716861e-05
+      ],
+      "common_energy": 3.511138010339294e-18,
+      "margin_energy": 1.854302290716861e-05,
+      "total_energy": 1.854302290717212e-05,
+      "common_norm": 1.873803087397204e-09,
+      "margin_norm": 0.0043061610405520844,
+      "total_norm": 0.004306161040552492,
+      "common_fraction": 1.8935089644856377e-13,
+      "norm_ratio_to_segmentation": 1.0,
+      "margin_norm_ratio_to_segmentation": 1.0,
+      "full_cosine_to_segmentation": 0.9999999999999994,
+      "margin_cosine_to_segmentation": 1.0
+    },
+    "segmentation.BG_coordinates": {
+      "raw_additive_statistics": [
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        8.557386532906234e-06,
+        8.557386532905805e-06
+      ],
+      "common_energy": 4.294420361026437e-19,
+      "margin_energy": 8.557386532905805e-06,
+      "total_energy": 8.557386532906234e-06,
+      "common_norm": 6.553182708445139e-10,
+      "margin_norm": 0.002925301101238265,
+      "total_norm": 0.002925301101238338,
+      "common_fraction": 5.0183783851679995e-14,
+      "norm_ratio_to_segmentation": 1.0,
+      "margin_norm_ratio_to_segmentation": 1.0,
+      "full_cosine_to_segmentation": 1.0,
+      "margin_cosine_to_segmentation": 1.0
+    },
+    "A_FG.all": {
+      "raw_additive_statistics": [
+        4.681347151627236e-10,
+        8.673748915167788e-11,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        -1.3391216612822892e-10,
+        -1.339120209736535e-10
+      ],
+      "common_energy": 4.681347151627236e-10,
+      "margin_energy": 8.673748915167788e-11,
+      "total_energy": 5.548722043144014e-10,
+      "common_norm": 2.1636421034050978e-05,
+      "margin_norm": 9.313296363354807e-06,
+      "total_norm": 2.355572551025337e-05,
+      "common_fraction": 0.843680241184814,
+      "norm_ratio_to_segmentation": 0.004524895551015358,
+      "margin_norm_ratio_to_segmentation": 0.0017890212407803462,
+      "full_cosine_to_segmentation": -0.0010920326518953107,
+      "margin_cosine_to_segmentation": -0.002762028878870942
+    },
+    "A_FG.FG_coordinates": {
+      "raw_additive_statistics": [
+        3.238100443820396e-10,
+        5.388344749944003e-11,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        -5.222601680439094e-10,
+        -5.222600342709155e-10
+      ],
+      "common_energy": 3.238100443820396e-10,
+      "margin_energy": 5.388344749944003e-11,
+      "total_energy": 3.7769349188147964e-10,
+      "common_norm": 1.7994722681443013e-05,
+      "margin_norm": 7.340534551341614e-06,
+      "total_norm": 1.943433795840444e-05,
+      "common_fraction": 0.8573355150203418,
+      "norm_ratio_to_segmentation": 0.004513147041038429,
+      "margin_norm_ratio_to_segmentation": 0.001704658623357128,
+      "full_cosine_to_segmentation": -0.0062406077486747945,
+      "margin_cosine_to_segmentation": -0.016522236649092605
+    },
+    "A_FG.BG_coordinates": {
+      "raw_additive_statistics": [
+        1.4432467078068393e-10,
+        3.285404165223783e-11,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        3.883480019156805e-10,
+        3.8834801329726195e-10
+      ],
+      "common_energy": 1.4432467078068393e-10,
+      "margin_energy": 3.285404165223783e-11,
+      "total_energy": 1.7717871243292176e-10,
+      "common_norm": 1.2013520332553815e-05,
+      "margin_norm": 5.73184452442997e-06,
+      "total_norm": 1.3310849425672344e-05,
+      "common_fraction": 0.8145711682791686,
+      "norm_ratio_to_segmentation": 0.004550249346994604,
+      "margin_norm_ratio_to_segmentation": 0.0019594032634807097,
+      "full_cosine_to_segmentation": 0.009973434267914576,
+      "margin_cosine_to_segmentation": 0.02316093626091434
+    },
+    "A_BG.all": {
+      "raw_additive_statistics": [
+        7.759601003251787e-10,
+        2.503818535724476e-10,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        3.087225901303511e-10,
+        3.0872243108739164e-10
+      ],
+      "common_energy": 7.759601003251787e-10,
+      "margin_energy": 2.503818535724476e-10,
+      "total_energy": 1.0263419538976262e-09,
+      "common_norm": 2.785606038773571e-05,
+      "margin_norm": 1.5823458963590976e-05,
+      "total_norm": 3.2036572130888574e-05,
+      "common_fraction": 0.7560444132468717,
+      "norm_ratio_to_segmentation": 0.0061540088265055115,
+      "margin_norm_ratio_to_segmentation": 0.003039579444702994,
+      "full_cosine_to_segmentation": 0.0018511194416138326,
+      "margin_cosine_to_segmentation": 0.0037478209473373494
+    },
+    "A_BG.FG_coordinates": {
+      "raw_additive_statistics": [
+        1.1549429514618864e-10,
+        3.659272671722452e-11,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        -1.817089794160605e-09,
+        -1.8170898369715955e-09
+      ],
+      "common_energy": 1.1549429514618864e-10,
+      "margin_energy": 3.659272671722452e-11,
+      "total_energy": 1.5208702186341316e-10,
+      "common_norm": 1.0746827213005178e-05,
+      "margin_norm": 6.049192236755624e-06,
+      "total_norm": 1.2332356703542642e-05,
+      "common_fraction": 0.7593961255281345,
+      "norm_ratio_to_segmentation": 0.0028638865540338383,
+      "margin_norm_ratio_to_segmentation": 0.0014047761288509706,
+      "full_cosine_to_segmentation": -0.03421685141314847,
+      "margin_cosine_to_segmentation": -0.0697571527446154
+    },
+    "A_BG.BG_coordinates": {
+      "raw_additive_statistics": [
+        6.604658051789901e-10,
+        2.137891268552232e-10,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        2.1258123842909556e-09,
+        2.1258122680589865e-09
+      ],
+      "common_energy": 6.604658051789901e-10,
+      "margin_energy": 2.137891268552232e-10,
+      "total_energy": 8.742549320342133e-10,
+      "common_norm": 2.5699529279327085e-05,
+      "margin_norm": 1.4621529566198716e-05,
+      "total_norm": 2.956780228617293e-05,
+      "common_fraction": 0.7554613431144399,
+      "norm_ratio_to_segmentation": 0.010107609870880059,
+      "margin_norm_ratio_to_segmentation": 0.004998298999036201,
+      "full_cosine_to_segmentation": 0.0245773646241866,
+      "margin_cosine_to_segmentation": 0.04970058808825016
+    },
+    "B_FG.all": {
+      "raw_additive_statistics": [
+        0.00020031018694152946,
+        5.484109595057528e-05,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        -5.761639008669863e-07,
+        -5.761638949307403e-07
+      ],
+      "common_energy": 0.00020031018694152946,
+      "margin_energy": 5.484109595057528e-05,
+      "total_energy": 0.0002551512828921047,
+      "common_norm": 0.014153098139330817,
+      "margin_norm": 0.007405477428942396,
+      "total_norm": 0.01597345557141925,
+      "common_fraction": 0.785064392665563,
+      "norm_ratio_to_segmentation": 3.068392778562268,
+      "margin_norm_ratio_to_segmentation": 1.4225421270417962,
+      "full_cosine_to_segmentation": -0.0069288193758998825,
+      "margin_cosine_to_segmentation": -0.014945314246785465
+    },
+    "B_FG.FG_coordinates": {
+      "raw_additive_statistics": [
+        0.00011027893810945748,
+        3.276294852025933e-05,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        -9.004814659776314e-07,
+        -9.004814361589329e-07
+      ],
+      "common_energy": 0.00011027893810945748,
+      "margin_energy": 3.276294852025933e-05,
+      "total_energy": 0.0001430418866297168,
+      "common_norm": 0.010501377914800394,
+      "margin_norm": 0.005723892776796166,
+      "total_norm": 0.01196001198284169,
+      "common_fraction": 0.7709555620930069,
+      "norm_ratio_to_segmentation": 2.7774186497463615,
+      "margin_norm_ratio_to_segmentation": 1.329233329383872,
+      "full_cosine_to_segmentation": -0.01748448707077969,
+      "margin_cosine_to_segmentation": -0.036533645214922035
+    },
+    "B_FG.BG_coordinates": {
+      "raw_additive_statistics": [
+        9.003124883207199e-05,
+        2.2078147430315953e-05,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        3.243175651106458e-07,
+        3.243175412281926e-07
+      ],
+      "common_energy": 9.003124883207199e-05,
+      "margin_energy": 2.2078147430315953e-05,
+      "total_energy": 0.00011210939626238794,
+      "common_norm": 0.009488479795629645,
+      "margin_norm": 0.004698738919147983,
+      "total_norm": 0.010588172470374099,
+      "common_fraction": 0.8030660393653102,
+      "norm_ratio_to_segmentation": 3.6195154289901694,
+      "margin_norm_ratio_to_segmentation": 1.606241120669264,
+      "full_cosine_to_segmentation": 0.010470776491054334,
+      "margin_cosine_to_segmentation": 0.02359492219713008
+    },
+    "B_BG.all": {
+      "raw_additive_statistics": [
+        2.2431432690953316e-10,
+        7.088527865651362e-11,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        1.5556168313829837e-10,
+        1.555615911487401e-10
+      ],
+      "common_energy": 2.2431432690953316e-10,
+      "margin_energy": 7.088527865651362e-11,
+      "total_energy": 2.951996055660468e-10,
+      "common_norm": 1.497712679086123e-05,
+      "margin_norm": 8.419339561777612e-06,
+      "total_norm": 1.718137379740185e-05,
+      "common_fraction": 0.7598733964410598,
+      "norm_ratio_to_segmentation": 0.0033004257000004084,
+      "margin_norm_ratio_to_segmentation": 0.001617298185487648,
+      "full_cosine_to_segmentation": 0.001739229210623351,
+      "margin_cosine_to_segmentation": 0.003549248643227422
+    },
+    "B_BG.FG_coordinates": {
+      "raw_additive_statistics": [
+        2.90170539074171e-11,
+        9.19206351277054e-12,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        -9.098023301570712e-10,
+        -9.09802351627626e-10
+      ],
+      "common_energy": 2.90170539074171e-11,
+      "margin_energy": 9.19206351277054e-12,
+      "total_energy": 3.820911742018764e-11,
+      "common_norm": 5.386747989967333e-06,
+      "margin_norm": 3.0318416041690797e-06,
+      "total_norm": 6.181352394111473e-06,
+      "common_fraction": 0.7594274839775821,
+      "norm_ratio_to_segmentation": 0.0014354670751743155,
+      "margin_norm_ratio_to_segmentation": 0.0007040706503118549,
+      "full_cosine_to_segmentation": -0.034180095695362296,
+      "margin_cosine_to_segmentation": -0.0696867610276822
+    },
+    "B_BG.BG_coordinates": {
+      "raw_additive_statistics": [
+        1.9529727300211601e-10,
+        6.169321514374305e-11,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        1.0653640132953695e-09,
+        1.0653639427763663e-09
+      ],
+      "common_energy": 1.9529727300211601e-10,
+      "margin_energy": 6.169321514374305e-11,
+      "total_energy": 2.5699048814585906e-10,
+      "common_norm": 1.3974880071117463e-05,
+      "margin_norm": 7.85450285783531e-06,
+      "total_norm": 1.603092287255662e-05,
+      "common_fraction": 0.7599396943098996,
+      "norm_ratio_to_segmentation": 0.005480093268269175,
+      "margin_norm_ratio_to_segmentation": 0.0026850237243990164,
+      "full_cosine_to_segmentation": 0.022717938705196627,
+      "margin_cosine_to_segmentation": 0.046366970092398166
+    },
+    "A.all": {
+      "raw_additive_statistics": [
+        1.2493471903938154e-09,
+        4.052561388376399e-10,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        1.748104015090728e-10,
+        1.7481038762067488e-10
+      ],
+      "common_energy": 1.2493471903938154e-09,
+      "margin_energy": 4.052561388376399e-10,
+      "total_energy": 1.6546033292314553e-09,
+      "common_norm": 3.5346105731661805e-05,
+      "margin_norm": 2.0130974612214875e-05,
+      "total_norm": 4.067681562304817e-05,
+      "common_fraction": 0.7550735383653091,
+      "norm_ratio_to_segmentation": 0.00781374116293236,
+      "margin_norm_ratio_to_segmentation": 0.0038670240668567304,
+      "full_cosine_to_segmentation": 0.0008255291197888688,
+      "margin_cosine_to_segmentation": 0.0016680709094366905
+    },
+    "A.FG_coordinates": {
+      "raw_additive_statistics": [
+        4.4562047712960896e-10,
+        1.2377371912485085e-10,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        -2.3393499864659667e-09,
+        -2.3393498955039695e-09
+      ],
+      "common_energy": 4.4562047712960896e-10,
+      "margin_energy": 1.2377371912485085e-10,
+      "total_energy": 5.693941962544598e-10,
+      "common_norm": 2.110972470520658e-05,
+      "margin_norm": 1.1125363774944659e-05,
+      "total_norm": 2.386198223648781e-05,
+      "common_fraction": 0.7826220921480258,
+      "norm_ratio_to_segmentation": 0.005541358535310667,
+      "margin_norm_ratio_to_segmentation": 0.0025835921300143244,
+      "full_cosine_to_segmentation": -0.022766612480168112,
+      "margin_cosine_to_segmentation": -0.04883044657709093
+    },
+    "A.BG_coordinates": {
+      "raw_additive_statistics": [
+        8.037267132642068e-10,
+        2.81482419712789e-10,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        2.5141603879750393e-09,
+        2.514160283124645e-09
+      ],
+      "common_energy": 8.037267132642068e-10,
+      "margin_energy": 2.81482419712789e-10,
+      "total_energy": 1.0852091329769958e-09,
+      "common_norm": 2.835007430791332e-05,
+      "margin_norm": 1.677743781728274e-05,
+      "total_norm": 3.294251254802821e-05,
+      "common_fraction": 0.7406191938869761,
+      "norm_ratio_to_segmentation": 0.011261238213763016,
+      "margin_norm_ratio_to_segmentation": 0.005735285783121927,
+      "full_cosine_to_segmentation": 0.026089495725976283,
+      "margin_cosine_to_segmentation": 0.05122674354941051
+    },
+    "B.all": {
+      "raw_additive_statistics": [
+        0.00020031047630888864,
+        5.485566141189517e-05,
+        3.9405800464419365e-18,
+        2.710040944007441e-05,
+        -5.76008398358223e-07,
+        -5.76008392513993e-07
+      ],
+      "common_energy": 0.00020031047630888864,
+      "margin_energy": 5.485566141189517e-05,
+      "total_energy": 0.0002551661377207838,
+      "common_norm": 0.01415310836208388,
+      "margin_norm": 0.007406460788520734,
+      "total_norm": 0.01597392054947012,
+      "common_fraction": 0.7850198231556841,
+      "norm_ratio_to_segmentation": 3.0684820977009544,
+      "margin_norm_ratio_to_segmentation": 1.4227310237658277,
+      "full_cosine_to_segmentation": -0.0069267477035752575,
+      "margin_cosine_to_segmentation": -0.014939296854443477
+    },
+    "B.FG_coordinates": {
+      "raw_additive_statistics": [
+        0.00011027937930726446,
+        3.2769707298570953e-05,
+        3.511138010339294e-18,
+        1.854302290716861e-05,
+        -9.013912821128417e-07,
+        -9.013912523156408e-07
+      ],
+      "common_energy": 0.00011027937930726446,
+      "margin_energy": 3.2769707298570953e-05,
+      "total_energy": 0.00014304908660583542,
+      "common_norm": 0.01050139892144206,
+      "margin_norm": 0.005724483146850112,
+      "total_norm": 0.011960312981098589,
+      "common_fraction": 0.7709198424393562,
+      "norm_ratio_to_segmentation": 2.777488549189059,
+      "margin_norm_ratio_to_segmentation": 1.329370428309896,
+      "full_cosine_to_segmentation": -0.017501712340924045,
+      "margin_cosine_to_segmentation": -0.036566786033450246
+    },
+    "B.BG_coordinates": {
+      "raw_additive_statistics": [
+        9.003109700162415e-05,
+        2.208595411332422e-05,
+        4.294420361026437e-19,
+        8.557386532905805e-06,
+        3.253828837546192e-07,
+        3.253828598016469e-07
+      ],
+      "common_energy": 9.003109700162415e-05,
+      "margin_energy": 2.208595411332422e-05,
+      "total_energy": 0.00011211705111494836,
+      "common_norm": 0.009488471794847901,
+      "margin_norm": 0.004699569566813989,
+      "total_norm": 0.010588533945497287,
+      "common_fraction": 0.8030098553815822,
+      "norm_ratio_to_segmentation": 3.61963899750865,
+      "margin_norm_ratio_to_segmentation": 1.6065250735470222,
+      "full_cosine_to_segmentation": 0.01050481227830843,
+      "margin_cosine_to_segmentation": 0.023668242725290296
+    }
+  },
+  "aggregate_B_over_A_logit_norm": 392.7033201787563,
+  "aggregation": "sum squared norms and dot products over bank before ratios/cosines; never mean per-patch ratios",
+  "aggregate_q_derivative": {
+    "FG": {
+      "n_voxels": 168859,
+      "A_energy": 1.1045539316788994e-07,
+      "B_energy": 0.04263386613700966,
+      "norm_multiplier_B_over_A": 621.2750252657049
+    },
+    "BG": {
+      "n_voxels": 117271653,
+      "A_energy": 1.2936692770291352e-07,
+      "B_energy": 3.727223150211885e-08,
+      "norm_multiplier_B_over_A": 0.5367611383729414
+    }
+  },
+  "aggregate_originating_gradient_energy": {
+    "A": {
+      "FG_energy": 5.548721851572974e-10,
+      "BG_energy": 1.0263419187803283e-09,
+      "FG_BG_dot": 3.669458434182542e-11,
+      "total_energy": 1.654603272487669e-09,
+      "closure_residual": -1.3360755670806043e-19,
+      "energies_do_not_add_without_cross_term": true
+    },
+    "B": {
+      "FG_energy": 0.0002551512745245678,
+      "BG_energy": 2.9519959549597985e-10,
+      "FG_BG_dot": 7.279210643686834e-09,
+      "total_energy": 0.00025516612880906094,
+      "closure_residual": 6.636102689441574e-13,
+      "energies_do_not_add_without_cross_term": true
+    }
+  },
+  "state_sha256_before": "f7be181fcb4245d756e072f22785da65be64e2a592db806e2dd2f3927a66fb7b",
+  "state_sha256_after": "f7be181fcb4245d756e072f22785da65be64e2a592db806e2dd2f3927a66fb7b",
+  "source_and_inputs_before_after_verified": true,
+  "parameter_gradients_absent": true,
+  "optimizer_created": false,
+  "parameter_updates": false,
+  "held_out_GT_read": false,
+  "limitations": [
+    "Eval-mode batch1 FP32 detached-logit derivatives exclude DS sibling/parameter Jacobian paths.",
+    "Regional-origin losses and logit-coordinate masks are different axes; convolution crosses GT boundary.",
+    "FG/BG balancing changes gradient scale, preserves empty patches, and does not guarantee lower common energy.",
+    "Training bank is not validation; no Dice/ASSD or connectivity claim; no thin-centreline supervision added."
+  ]
+}

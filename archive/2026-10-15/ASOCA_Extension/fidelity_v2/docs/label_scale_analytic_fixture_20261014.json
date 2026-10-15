@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "fixture_only": true,
+  "actual_ASOCA_GT_read": false,
+  "network_forward": false,
+  "tool_sha256": "7bc4201138cbc0f375242042c26238fb40dfa3cad17bdc39614376b269a55536",
+  "tests": {
+    "dominant_volume_can_hide_long_high_depth_centerline": "passed",
+    "unchanged_branch_set_volume_denominator_only_crosses_structure_threshold": "passed",
+    "concentric_roi_keeps_absolute_location_bin": "passed",
+    "fixed_subtile_structure_proxy_mixture": "passed",
+    "empty_roi_and_no_centerline_are_preserved_not_filled": "passed",
+    "known_gt_bbox_support_extent_and_no_sampling_use": "passed"
+  }
+}

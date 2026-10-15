@@ -1,0 +1,21 @@
+{
+  "status": "isolated_eval_runtime_ready",
+  "captured_at_utc": "2026-10-14T08:33:13.058706+00:00",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "python_executable": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.7.2",
+    "pandas": "2.3.3",
+    "tqdm": "4.67.1"
+  },
+  "CUDA_context_initialized": false,
+  "old_baseline_environment_unchanged": true,
+  "inference_or_training_started": false,
+  "scope": "same top-level package versions; hardware/driver differences remain recorded"
+}

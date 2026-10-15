@@ -1,0 +1,12 @@
+{
+  "source": "fidelity_v2/code",
+  "frozen_classifier_stage": true,
+  "source_hashes": {
+    "pretrain_classifier.py": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2",
+    "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+    "checkpoint_utils.py": "d5875f24380ceaa66c397635b6fd36a2d05a31221c3176ae503ff3427e03bc17",
+    "losses.py": "ac0481a9f89c419015793acc08e1bd5af31198740671d0e275232569e6f6bba1",
+    "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+    "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222"
+  }
+}

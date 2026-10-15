@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-15T06:38:29.018056+00:00",
+  "status": "offline_real_startup_byte_parity_and_four_plans_passed_actual_complete_capture_pending",
+  "repair": "Bind expected_* protocol SHA to expected file, retain strict expected-object==actual-object and exact A recipe delta; bind actual bytes to theta0 receipt and existing trajectory identity. CPU adapter collector pin updated only.",
+  "real_startup_fixtures": {
+    "lambda0": {
+      "startup_folder": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\lambda0_actual_launch_20261014",
+      "expected_bytes_sha256": "c2611c5b38008dade04060635ff8c3788b642403ae0e38b2a1bb31658d1d32bb",
+      "actual_bytes_sha256": "ef4f1b44e8de4e62dd5a1ebc95d5b55c8d3be5abffd0b9f06aa428fb01cb25c1",
+      "protocol_expected_SHA_binds_expected_file": true,
+      "expected_parsed_object_equals_actual_and_exact_allowed_A_delta": true,
+      "byte_difference": "Expected file is actual file plus exactly one trailing LF byte",
+      "actual_bytes_bound_by_readonly_startup_receipt": {
+        "config_sha256": "ef4f1b44e8de4e62dd5a1ebc95d5b55c8d3be5abffd0b9f06aa428fb01cb25c1"
+      },
+      "latest_actual_terminal_snapshot_config_bytes_unchanged": true,
+      "producer_source_sha256": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040"
+    },
+    "B": {
+      "startup_folder": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\B_formal_launch_20261014\\actual_startup",
+      "expected_bytes_sha256": "1dea54ff5597621d2753f1dca5be915ec27ca89b900940d2a831b12b8b0896ae",
+      "actual_bytes_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+      "protocol_expected_SHA_binds_expected_file": true,
+      "expected_parsed_object_equals_actual_and_exact_allowed_A_delta": true,
+      "byte_difference": "Expected file is actual file plus exactly one trailing LF byte",
+      "actual_bytes_bound_by_readonly_startup_receipt": {
+        "status": "actual_config_bound_to_sealed_B_protocol",
+        "actual_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+        "actual_config_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+        "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+        "gaussian_reduction": {
+          "id": "per_patch_equal_fg_bg_present_mean_v1",
+          "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+          "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+          "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+          "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+          "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+          "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+          "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+          "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+          "target_unchanged": "t=.5+.5*cached_G",
+          "lambda_unchanged": 10.0,
+          "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+          "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+          "not_changed": [
+            "Gaussian field/support/normalization",
+            "classifier labels",
+            "sampler",
+            "architecture/parameter shapes",
+            "DS4/7,2/7,1/7",
+            "50 frozen /20 partial /130 joint",
+            "optimizer/lr/clip12",
+            "200x125 updates",
+            "prediction/evaluation interface"
+          ],
+          "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+        },
+        "actual_config_has_gaussian_reduction_field": false,
+        "binding": "Exact actual config bytes plus source/file SHA map bind the separate immutable loss protocol; no config/checkpoint edits.",
+        "allowed_actual_config_differences_from_A": [
+          "output",
+          "source_sha256",
+          "source_files_sha256"
+        ],
+        "same_25000_updates": true,
+        "training_started_by_auditor": false
+      },
+      "latest_actual_terminal_snapshot_config_bytes_unchanged": true,
+      "producer_source_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b"
+    }
+  },
+  "remaining_source_parity_review": [
+    "CONTROL_COMPLETE fields/status and key extension: pinned producer source AST verified in prior round.",
+    "POSTFIT_VERIFIED keys status/root/training/count20/count80/history/training_complete/trajectory/curves/cases and all five curve artifact names match verify_postfit.postflight.",
+    "lambda0 cpu_preflight/CONTROL_PREFLIGHT.json, completion postfit_verified_sha256/formal_training_complete_sha256/verified_case_inferences and theta config_sha256 match producer.",
+    "B ACTUAL_B_CONFIG_BINDING.json, actual_B_theta0_receipt_sha256/B_postfit_verified_sha256/training_complete_sha256/verified counts/A_canonical_unchanged and theta embedded binding match producer.",
+    "Trajectory config SHA is actual bytes; source, IDs, split, epochs9..189/final199, evaluator map and checkpoint names match both producer preflights and evaluate_trajectory.",
+    "Curve sources use actual config/history/validation/summary paths and optional gradient_probes; all are within exact control inventory. Five artifact hashes come from actual POSTFIT_VERIFIED.",
+    "Collector paths map OLD controller records separately from OLD logical training root; evaluator/source/freeze are pinned. No POSTFIT_STATUS or standalone EVALUATION_COMPLETE invented.",
+    "CPU adapter passes B source through sealed context and re-runs exact actual-config checker; no expected file SHA substituted into actual binding.",
+    "No further analogous byte-versus-object mismatch or producer field/path mismatch identified by source inspection. Actual postfit bytes not yet locally available: ROOT must retry captures and actual CPU acceptance."
+  ],
+  "collector_sha256": "b824932b176c1e9016e494f9f6404391431fdc135fdfee8fc9b7c6799a064b93",
+  "cpu_adapter_sha256": "c4965b707e2a32b240170fd2d01c2c34ef6164f5590e7cd54ccffae6184f7210",
+  "plans": [
+    {
+      "helper": "collector",
+      "kind": "lambda0",
+      "returncode": 0
+    },
+    {
+      "helper": "collector",
+      "kind": "B",
+      "returncode": 0
+    },
+    {
+      "helper": "cpu_adapter",
+      "kind": "lambda0",
+      "returncode": 0
+    },
+    {
+      "helper": "cpu_adapter",
+      "kind": "B",
+      "returncode": 0
+    }
+  ],
+  "SSH_used": false,
+  "models_or_weights_loaded": false,
+  "acceptance_run": false
+}

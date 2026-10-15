@@ -1,0 +1,9 @@
+{
+  "scope": "bounded text records only; no checkpoints/raw data/credentials",
+  "limit_bytes_total": 134217728,
+  "logs_tail_bytes": 20000,
+  "fetcher_sha256": "e3c69d159510e40d651197e8ca6f3e98d86ffcd277bad2340a677a77bcfcc860",
+  "status": "failed_or_partial",
+  "sources": [],
+  "error": "Remote record collection failed (exit 1): Traceback (most recent call last):\n  File \"<string>\", line 12, in <module>\nAttributeError: 'PosixPath' object has no attribute 'is_relative_to'\n"
+}

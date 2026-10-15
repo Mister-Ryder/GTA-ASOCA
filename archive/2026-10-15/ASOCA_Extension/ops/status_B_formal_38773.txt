@@ -1,0 +1,15 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014');records=r/'results/gaussian_region_balance_controller_20261014'
+def read(p):return json.loads(p.read_text()) if p.is_file() else None
+def identity(pid):
+    p=Path('/proc')/str(pid)
+    return {'pid':pid,'alive':p.exists(),'cmdline':(p/'cmdline').read_bytes().replace(b'\0',b' ').decode() if p.exists() else None}
+launch=read(r/'GAUSSIAN_REGION_BALANCE_CONTROL_LAUNCH_20261014.json');state=read(records/'STATUS.json');theta=read(records/'ACTUAL_B_THETA0.json')
+t=r/'results/gta_region_balance200x125_20261014/training';hist=t/'history.jsonl';rows=[json.loads(x) for x in hist.read_text().splitlines() if x] if hist.exists() else []
+config=read(t/'config.json');log=records/'formal_training.log'
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launch':launch,'status':{k:state.get(k) for k in ('status','controller_pid','child_pid','updated_at_utc','gpu_lock_acquired','error','stage_wall_seconds')} if state else None,'parent_process':identity(launch['parent_pid']) if launch else None,'child_process':identity(state['child_pid']) if state and state.get('child_pid') else None,'epochs_completed':len(rows),'latest_epoch':rows[-1] if rows else None,'actual_config_brief':{k:config.get(k) for k in ('method','source_sha256','gaussian_weight','gaussian_late_weight','epochs','steps','no_ds','output')} if config else None,'actual_theta0_brief':{'state_sha256':theta['state']['state_sha256'],'tensor_count':theta['state']['tensor_count'],'model_state_and_RNG_unchanged':theta['model_state_and_RNG_unchanged'],'historical_main_theta0_verified':theta['historical_main_theta0_verified'],'actual_config_binding':theta['actual_config_binding']} if theta else None,'GPU':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip(),'controller_log_tail':(r/'GAUSSIAN_REGION_BALANCE_FORMAL_20261014.log').read_text()[-1800:],'training_log_tail':log.read_text()[-1800:] if log.is_file() else None}
+print(json.dumps(result,indent=2))
+PY

@@ -1,0 +1,6 @@
+/root/miniconda3/bin/python - <<'PY'
+import subprocess
+log=open('/root/autodl-tmp/ASOCA_GTAirway_20261013/logs/smoke.log','a')
+p=subprocess.Popen(['bash','-c','until test -f /root/autodl-tmp/ASOCA_GTAirway_20261013/manifests/environment_ready.txt; do sleep 10; done; bash /root/autodl-tmp/ASOCA_GTAirway_20261013/ops/smoke.sh'],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print('SMOKE_PID='+str(p.pid))
+PY

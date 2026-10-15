@@ -1,0 +1,8 @@
+GTA observed learning curves; development only, no final-test or comparative superiority claim.
+Lines connect recorded observations for readability; no unmeasured validation values are inserted.
+Loss scale alone does not measure gradient size. N patches is not N independent patients.
+
+Run development: gta; training N=28; internal-four model development
+Recorded epochs 200; internal4 Dice points 20; ASSD points 20.
+- Gaussian/segmentation probes use shared main logits; DS branches are excluded from this derivative
+- No positive-balanced-accuracy/majority-baseline trajectory; classifier usefulness remains unverified by this history

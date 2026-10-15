@@ -1,0 +1,136 @@
+{
+  "captured_at_utc": "2026-10-14T11:15:01.103786+00:00",
+  "launch": {
+    "time_utc": "2026-10-14T10:14:14.065076+00:00",
+    "pid": 140646,
+    "argv": [
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+      "-B",
+      "-u",
+      "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_gaussian_lambda0_control.py"
+    ],
+    "controller_sha256": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040",
+    "log": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_LAMBDA0_CONTROL_20261014.log",
+    "records": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014",
+    "disk_free_bytes_before": 22396698624,
+    "role": "FORMAL_25000_UPDATE_ALLOCATED_GAUSSIAN_LAMBDA0_CONTROL_LAUNCHED_NOT_COMPLETED"
+  },
+  "status": {
+    "status": "formal_training",
+    "controller_pid": 140646,
+    "child_pid": 140854,
+    "updated_at_utc": "2026-10-14T11:14:51.126113+00:00",
+    "gpu_lock_acquired": true,
+    "error_type": null,
+    "error": null,
+    "stage_wall_seconds": 3580.370223823935
+  },
+  "parent_process": {
+    "pid": 140646,
+    "alive": true,
+    "cmdline": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -B -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_gaussian_lambda0_control.py "
+  },
+  "child_process": {
+    "pid": 140854,
+    "alive": true,
+    "cmdline": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -u /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_gaussian_lambda0_control.py --worker --logical-root /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014 --records /root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014 "
+  },
+  "epochs_completed": 51,
+  "latest_epoch": {
+    "epoch": 50,
+    "loss": 0.5063348364830017,
+    "seconds": 72.65757843479514,
+    "stage": "partial",
+    "iterations": 125,
+    "gaussian_lambda": 0.0,
+    "gaussian_lambda_configured": 0.0,
+    "classifier_lambda": 0.1,
+    "lr_by_group": {
+      "segmentation": 0.00023549339542298714,
+      "classifier": 2.3549339542298714e-05
+    },
+    "component_means": {
+      "generation_focal": 0.541981434315443,
+      "guidance_weighted": 0.0001878838617121801,
+      "gaussian": 0.24994483292102815,
+      "segmentation": 0.316179478764534,
+      "segmentation_head_1": 0.31410831439495085,
+      "segmentation_gradient_norm": 0.7492212615013123,
+      "segmentation_head_0": 0.29903023993968963,
+      "classifier_lambda": 0.1,
+      "guidance_lambda": 0.1,
+      "segmentation_weighted": 0.316179478764534,
+      "classifier_weight": 0.1,
+      "segmentation_head_2": 0.3889186483621597,
+      "gaussian_weighted": 0.0,
+      "structure_focal": 0.603706830188632,
+      "classification": 1.8996746912002564,
+      "location_focal": 0.33131204786151647,
+      "classification_weighted": 0.18996747194230557,
+      "gaussian_lambda": 0.0,
+      "guidance_map": 0.0018788385870866478,
+      "structure_correctness": 0.24164195217821544,
+      "classifier_gradient_norm": 2.8384139795303343
+    },
+    "gradient_probe_count": 1,
+    "gpu_peak_GiB": 13.70479965209961
+  },
+  "actual_theta0_brief": {
+    "state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+    "tensor_count": 327,
+    "model_state_and_RNG_unchanged": true,
+    "actual_original_main_epoch0_state_verified": false
+  },
+  "GPU": "140854, 18924 MiB",
+  "controller_log_tail": [],
+  "CPU_preflight_log_tail": "{\"proposal\": \"/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014/cpu_preflight\", \"status\": \"prepared_not_launched\", \"cpu_reconstruction_performed\": true, \"actual_original_main_epoch0_state_verified\": false, \"training_started\": false}\n",
+  "formal_training_log_tail": "assifier_lambda\": 0.1, \"segmentation_head_0\": 0.14110422134399414, \"segmentation_head_1\": 0.1696096509695053, \"segmentation_head_2\": 0.2546344995498657, \"generation_focal\": 0.5041311383247375, \"structure_focal\": 0.26155728101730347, \"location_focal\": 0.3591476082801819, \"structure_correctness\": 0.5178824663162231, \"classification\": 1.5145559310913086, \"classifier_weight\": 0.1, \"classification_weighted\": 0.1514555960893631, \"guidance_map\": 0.0024950620718300343, \"guidance_weighted\": 0.0002495062071830034, \"gaussian\": 0.2498372346162796, \"gaussian_weighted\": 0.0}, \"segmentation_gradient_norm\": 0.25640931725502014, \"classifier_gradient_norm\": 2.4659836292266846}\n{\"epoch\": 51, \"step\": 75, \"stage\": \"partial\", \"loss\": 0.8739649057388306, \"segmentation_lr\": 0.00023462841961440197, \"components\": {\"segmentation\": 0.7717539072036743, \"segmentation_weighted\": 0.7717539072036743, \"gaussian_lambda\": 0.0, \"guidance_lambda\": 0.1, \"classifier_lambda\": 0.1, \"segmentation_head_0\": 0.7652128338813782, \"segmentation_head_1\": 0.7746583819389343, \"segmentation_head_2\": 0.7921088337898254, \"generation_focal\": 0.27768129110336304, \"structure_focal\": 0.17175735533237457, \"location_focal\": 0.14998184144496918, \"structure_correctness\": 0.6718419194221497, \"classification\": 1.021220088005066, \"classifier_weight\": 0.1, \"classification_weighted\": 0.10212200880050659, \"guidance_map\": 0.0008901352994143963, \"guidance_weighted\": 8.90135343070142e-05, \"gaussian\": 0.24983008205890656, \"gaussian_weighted\": 0.0}, \"segmentation_gradient_norm\": 1.0946499109268188, \"classifier_gradient_norm\": 1.5254549980163574}\n",
+  "classifier_audit": {
+    "launch": {
+      "captured_at_utc": "2026-10-14T10:30:14.915056+00:00",
+      "parent_pid": 141899,
+      "argv": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-B",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/audit_final_classifier_cpu.py",
+        "--audit",
+        "--reference-bank",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops_inputs/gaussian_region_balance_shadow_20261014/fixed_sampling_bank.json",
+        "--classifier-donor",
+        "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+        "--output",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014",
+        "--deadline",
+        "900"
+      ],
+      "source_sha256": "b321207067fb81536e0c70b45e83cd48280a9a6e2fce93589b9fa10da6aaaf3d",
+      "log": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/CLASSIFIER_FINAL_CPU_AUDIT_20261014.log",
+      "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/classifier_final_cpu_audit_20261014",
+      "role": "CPU_ONLY_CLASSIFIER_DISTRIBUTION_AUDIT_LAUNCHED_NOT_COMPLETE",
+      "GPU_query_or_allocation": false,
+      "optimizer_updates": false
+    },
+    "parent_process": {
+      "pid": 141899,
+      "alive": false,
+      "cmdline": null
+    },
+    "completed_patches": 56,
+    "complete": {
+      "status": "completed",
+      "n_patches": 56,
+      "n_nonempty": 49,
+      "artifact_sha256": {
+        "fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+        "audit_plan.json": "79f480cbfa0edf8ae8d6a0691607e7943154b104ece994dad578deb999b3b0c5",
+        "patch_predictions.jsonl": "dc7ebf831979ecf2668f0a5a1cda89f2dba3935913200ef652287a79a1fc41ea",
+        "summary.json": "963c66f839f877655f49c9af3beb362ff39e23fd32a8484d801e4d5ee44306a7"
+      },
+      "states_RNG_eval_unchanged": true,
+      "CUDA_initialized": false,
+      "parameter_updates": false
+    },
+    "log_tail": " 72.61950400657952}\n{\"classifier_patches_complete\": 37, \"total\": 56, \"seconds\": 74.33976606279612}\n{\"classifier_patches_complete\": 38, \"total\": 56, \"seconds\": 76.04099300689995}\n{\"classifier_patches_complete\": 39, \"total\": 56, \"seconds\": 77.76855568960309}\n{\"classifier_patches_complete\": 40, \"total\": 56, \"seconds\": 79.55834162048995}\n{\"classifier_patches_complete\": 41, \"total\": 56, \"seconds\": 81.322146454826}\n{\"classifier_patches_complete\": 42, \"total\": 56, \"seconds\": 83.03542332910001}\n{\"classifier_patches_complete\": 43, \"total\": 56, \"seconds\": 84.76319179497659}\n{\"classifier_patches_complete\": 44, \"total\": 56, \"seconds\": 86.52033347450197}\n{\"classifier_patches_complete\": 45, \"total\": 56, \"seconds\": 88.2154048141092}\n{\"classifier_patches_complete\": 46, \"total\": 56, \"seconds\": 89.95487822592258}\n{\"classifier_patches_complete\": 47, \"total\": 56, \"seconds\": 91.90134397149086}\n{\"classifier_patches_complete\": 48, \"total\": 56, \"seconds\": 93.94811886921525}\n{\"classifier_patches_complete\": 49, \"total\": 56, \"seconds\": 95.77405776455998}\n{\"classifier_patches_complete\": 50, \"total\": 56, \"seconds\": 97.52601798065007}\n{\"classifier_patches_complete\": 51, \"total\": 56, \"seconds\": 99.28332675993443}\n{\"classifier_patches_complete\": 52, \"total\": 56, \"seconds\": 101.1709805522114}\n{\"classifier_patches_complete\": 53, \"total\": 56, \"seconds\": 102.9201719686389}\n{\"classifier_patches_complete\": 54, \"total\": 56, \"seconds\": 104.65252115018666}\n{\"classifier_patches_complete\": 55, \"total\": 56, \"seconds\": 106.36219031922519}\n{\"classifier_patches_complete\": 56, \"total\": 56, \"seconds\": 108.49923426285386}\n"
+  }
+}

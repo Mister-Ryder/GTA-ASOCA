@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "controller_pid": 31589,
+  "script_sha256": "18683db9538eaf9edf2b04b4f9c9b9dffb9913c5800741d0acd780d2a9d56c3e",
+  "started_at_utc": "2026-10-14T10:25:46.694531+00:00",
+  "gpu_lock_acquired": false,
+  "updated_at_utc": "2026-10-14T10:33:58.305806+00:00",
+  "child_pid": null,
+  "completion_sha256": "6b31ae47b4a1e82128f1a7e7b34772f63cb20f4398c0434f5c2f37dea69c7d1f",
+  "locks_released_at_utc": "2026-10-14T10:33:58.305794+00:00"
+}

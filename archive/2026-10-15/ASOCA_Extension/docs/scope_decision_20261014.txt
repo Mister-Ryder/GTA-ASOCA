@@ -1,0 +1,90 @@
+ASOCA 方法开发范围决定
+决定日期：2026-10-14（Asia/Shanghai）
+依据：用户最新安排——方法尚未确定，先不展开庞大五折及逐篇外部复现；
+优先核对当前 GTA 深监督并检验自身设计。本文覆盖早期五折执行建议。
+
+一、当前范围
+
+本文件与项目 README.txt 是当前执行范围依据。原五折 manifest、30项
+队列方案、论文来源、已完成权重/预测及失败记录保留溯源，但保留计划
+不代表继续执行它。当前改用单折方法开发控制器。
+已运行的 native nnU-Net fold0 收尾，完成本次训练与8例评价后，
+依次仅安排自身fold0：gta_no_ds→gta_no_prior→gta_no_gaussian→gta_no_balance。
+现有GTA、U-Net、Swin UNETR同折结果作为阶段参考保留。
+fold1–4、未启动外部复现、unet_no_ds、U-Net+clDice恢复任务延期；
+新控制器不自动扩展这些任务。
+
+二、当前 GTA 已加入深监督
+
+已完成 ASOCA GTA fold0 config：no_ds=False、非smoke，200epochs×125
+updates，共25,000更新；96³ patch、batch2，history覆盖epoch0–199。
+主分割输出96³，两个解码辅助头48³/24³；辅助logits上采样到原96³
+target后计算同一分割目标，保留细血管监督。
+losses.py尺度权重[1,0.5,0.25]除以总和1.75后为：
+  主输出4/7；半分辨率2/7；四分之一分辨率1/7。
+这是分割损失内部的尺度权重，不是全部属性分类/指导/Gaussian目标权重。
+标准分割深监督和Gaussian等辅助目标须分别表述，推理只使用主输出。
+原肺气道两个版本目录与代码没有因此改动。
+
+下一项gta_no_ds在同一fold0关闭分割深监督，观察其实际影响。
+该控制尚未完成，不能提前把缺失深监督认定为历史气道表现不足的
+唯一或主要原因，也不能把冠脉上的效果倒推成气道效果。
+
+三、8例是方法开发验证，不是最终测试
+
+沿用冻结seed20261013的fold0：32训练、8开发验证（正常4+患病4）。
+固定验证病例：Diseased_1、15、18、7；Normal_16、19、2、8。
+manifest SHA256：141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356。
+这8例已用于问题诊断、方法比较与选择，明确为development validation，
+不是final test，也不是官方隐藏20例。固定final checkpoint避免挑最佳
+epoch，但反复用同一验证集选方法仍有选择偏差。方法确定后再冻结最终
+设计及明确最终评估方案；本决定没有自动启动完整五折或盲测。
+现有GTA Dice80.01%、clDice83.67%只标为fold0、N=8的开发阶段值。
+同一折重复消融不增加独立患者数，也不代表完成整套泛化验证。
+
+四、自身消融及归因边界
+
+  gta_no_ds：去标准分割解码深监督，保留其他方法设计。
+  gta_no_prior：去属性指导分支及其相关输出/目标，保留其他适配配置。
+  gta_no_gaussian：去Gaussian辅助分支及对应损失。
+  gta_no_balance：同时去属性平衡采样和相应样本级损失权重。
+自身消融沿用200×125更新、96³ patch、batch2和同一fold0划分，由现有
+代码开关定义变体，不为范围调整另写一个主方法。
+no_balance检验组合平衡机制，不能单独识别“采样”和“loss weight”
+各自效果；当前没有因此增加更细消融。DS与无DS的尺度归一化按原代码。
+
+五、参考结果与文献
+
+U-Net、Swin UNETR的配置、最终权重、原空间预测和逐病例指标保留。
+GTA额外模块、参数量和采样策略不同；整体差值不能归因于单一组件。
+native nnU-Net只在完成原空间8例评价后列入阶段表，训练pseudo-Dice
+不能替代独立推理Dice。U-Net+clDice非有限梯度失败保留，恢复标记
+deferred_by_user，不填造已完成指标。
+
+已阅读docs/ASOCA_literature_comparison_20261014.txt。文献中的完整40例
+五折、固定8例测试、官方20例盲测成绩仍是reported-results参照，保留
+预训练、后处理、额外中心线和距离定义。当前8例80.01%不能与这些
+不同协议成绩组成严格同条件排名，不相减后宣称正式方法优劣，也不
+因此新增逐篇复现。五折名单保留不等于当前正在做完整五折评价。
+
+六、新旧控制器与记录
+
+新入口：development/coordinator.py（项目根下，主code/之外）。
+新范围/来源记录：development/development_protocol.json。
+新状态：results/development_queue_status.json。
+自身结果仍为results/gta_no_ds|gta_no_prior|gta_no_gaussian|gta_no_balance/fold0。
+原protocol_identity、JOB_COMPLETE.json、run snapshot、历史源哈希保留。
+aggregate_results.py按原定义输出完整五折incomplete；开发控制器完成
+不代表五折研究完成。
+截至范围调整时，旧父调度器已冻结；native fold0子运行获保留收尾；
+等待中的clDice恢复停止并标deferred_by_user。旧queue_status和日志保留
+原队列历史；当前运行/延期安排以新development状态为准。
+本次文档更新没有修改主训练、模型或损失代码，也没有新增外部复现。
+
+七、研究主线
+
+ASOCA是背景/冠状动脉管腔二分类，Normal/Diseased仅是患者分组。
+与气道结合的主线仍是稀疏、细长、分支管状结构的知识表达与精细重建；
+辅助深度、形态、扫描位置是几何代理，不是新的临床类别。
+先确认设计是否值得保留，最终方法、AEI论证与完整验证以之后冻结的
+设计和实际证据为准。

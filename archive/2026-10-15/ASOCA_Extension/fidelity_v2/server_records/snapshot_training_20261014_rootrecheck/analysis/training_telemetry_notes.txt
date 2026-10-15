@@ -1,0 +1,59 @@
+正在训练的GTA与共同方案U-Net：只读遥测（2026-10-14）
+
+主snapshot采集时刻：GTA UTC05:32:09.661789；U-Net UTC05:32:08.729522
+（北京时间约13:32）。本说明不是最终成绩或完成报告。
+原始SFTP记录保留在同目录gta_38773/与unet_17552/；每文件SHA、采集
+起止时间、源size/mtime及末尾换行状态均在各自capture_manifest.json。
+两侧history连续、每轮125updates，全部已记录history/probe/batch数值
+有限，active log tail未见异常栈/OOM。采集期间未发现源文件改变，
+本次无不完整末行；分析流程仍排除不完整JSONL末行。
+
+1. 截至主snapshot
+GTA完成47/200轮（epoch0–46），5875/25000 segmentation updates；
+最新完整阶段frozen，classifier lambda和所有已记录classifier梯度均0。
+虽然optimizer的classifier LR字段非0，冻结参数未据此更新。
+最新log是epoch47/step100的frozen batch，只作进行中状态，不算完整轮。
+U-Net完成114/200轮（epoch0–113），14250/25000updates；阶段为
+segmentation_only，actual Gaussian/classifier/guidance lambda均0。
+config Gaussian默认值10没有启用模块；没有Gaussian probe是预期状态。
+最新log是epoch114/step25；完成marker均尚不存在。
+两侧同train28/internal4、128³、batch2、DS、Dice+CE、standard sampler、
+image-body centre FOV和25000主更新预算，但架构/初始化不同；GTA有
+BAS backbonewarmstart和额外5120classifier更新，还有anatomy reweight。
+不能以U-Net较低的当前训练loss排方法优劣，也不能把47与114轮当等进度。
+
+2. Gaussian在同一共享main-logits处的实际梯度
+GTA24个探针每250iter采样，覆盖iter0–5750，均属于frozen阶段。
+weighted Gaussian/segmentation梯度norm比：
+  min0.00520617，median0.01960126，max0.44036169；无ratio>1。
+  最近5探针median0.01827870；末探针0.00863569（约0.864%）。
+cosine min-0.77290881，median-0.00201564，max0.67945296；14/24为负；
+最近5median0.00019015。符号混合，后期多数接近正交，不能说一直同向。
+lambda10已乘入Gaussian项；诊断1024倍率已除去，不是人为放大后比值。
+就已测共享输出而言，Gaussian当前比segmentation弱，没有主导信号。
+这不是完整网络参数梯度比较，不含DS辅助分支和Gaussian自身参数的
+全部作用；也没有前景/细径区域分层，不能证明先验有效或无效。
+最后5完整epoch的weightedGaussian均值0.00053620、segmentation
+0.35722166，标量比例约0.1501%；这仅是标量描述，不替代梯度结论。
+不能仅据此自动加大lambda、删除Gaussian或决定延长训练。
+
+3. 后续partial证据，单列而不混入上述snapshot统计
+root另行只读确认GTA完成53轮，最新epoch52=partial；classifier lambda
+0.1，classifier gradient mean2.72906128，表明部分解冻实际激活。
+segmentation0.30857937 + classificationweighted0.16766165 +
+Gaussianweighted0.00052131 + guidanceweighted0.00019167
+约等于total0.47695401。新增辅助项使total上升，不应据此认作退化；
+分割分量和各任务梯度更适合跨阶段观察，也仍不能替代验证Dice/ASSD。
+该补充来自partial_stage_verified_20261014.json；recorded_at_utc
+05:40:19.076907为本地写入时间，不是精确采样时刻。尚无后续partial的
+新共享输出探针被本次主snapshot捕获，冻结期ratio不可直接套用partial。
+分类accuracy/BA始终仅辅助诊断，不是启动/继续训练的筛选门槛。
+
+4. 当前曲线与边界
+plots/已用既有冻结plot_learning_curves.py在本地CPU生成PNG/SVG，
+并查看清晰度；各run标题标47轮与114轮，底部Dice/ASSD明确missing。
+U-Net分类面板missing/零classifier梯度属于无分类器的预期状态，不是故障。
+图内probe count是采样数量，不是梯度norm；Gaussian判读以ratio/cosine
+及本说明为准。没有插值、虚构验证或强制early-stop/延长/调参结论。
+本轮未修改冻结训练代码、未启动训练/GPU smoke/新控制器；实际SSH
+认证由root交互完成，助手只分析本地真实记录和生成CPU图表。

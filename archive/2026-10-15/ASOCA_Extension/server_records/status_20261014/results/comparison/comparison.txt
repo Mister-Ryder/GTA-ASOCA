@@ -1,0 +1,120 @@
+ASOCA internal cross-validation comparison
+Manifest SHA256: 141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356
+
+These are patient-level internal cross-validation results on 40 publicly annotated ASOCA cases, not official blind-test scores.
+Only verified complete folds are aggregated. Incomplete method or paired results remain explicitly provisional.
+Normal/Diseased are patient strata; native segmentation is binary coronary lumen versus background.
+Standard deviations describe between-patient variation, not variation across independent random seeds.
+Paired intervals are stratified patient bootstrap percentile intervals for GTA minus comparator; they are not multiplicity-adjusted hypothesis tests.
+Undefined distance metrics are retained as missing with patient IDs; the mean is undefined if any cohort distance is undefined.
+ASOCA foreground H95 uses all foreground voxels. Surface HD95 uses boundary voxels and is a different metric.
+The fixed main budget is 25000 optimizer updates: custom 200 x 125; native nnU-Net 100 x 250. FOV, optimizer, automatic plans and batch sizes may differ; wall time is not matched.
+Fold 0 ablations evaluate eight cases only and must not be merged with fivefold main-result means.
+No clinical, hemodynamic, device-design or manual-correction benefit is established by these segmentation metrics.
+
+Available results (mean +/- patient SD):
+gta: 8/40 patients; incomplete; completed folds [0]
+  overall: dice=0.80007 +/- 0.07241 (N=8, valid=8, undefined=0); cldice=0.83667 +/- 0.06724 (N=8, valid=8, undefined=0); centerline_recall=0.87999 +/- 0.05828 (N=8, valid=8, undefined=0); asoca_foreground_hd95_mm=7.16098 +/- 8.03108 (N=8, valid=8, undefined=0); surface_hd95_mm=9.78499 +/- 8.71972 (N=8, valid=8, undefined=0)
+  Normal: dice=0.82773 +/- 0.02625 (N=4, valid=4, undefined=0); cldice=0.86736 +/- 0.02754 (N=4, valid=4, undefined=0); centerline_recall=0.88215 +/- 0.05460 (N=4, valid=4, undefined=0); asoca_foreground_hd95_mm=3.70339 +/- 5.46495 (N=4, valid=4, undefined=0); surface_hd95_mm=6.48093 +/- 8.38729 (N=4, valid=4, undefined=0)
+  Diseased: dice=0.77241 +/- 0.09750 (N=4, valid=4, undefined=0); cldice=0.80598 +/- 0.08532 (N=4, valid=4, undefined=0); centerline_recall=0.87783 +/- 0.07022 (N=4, valid=4, undefined=0); asoca_foreground_hd95_mm=10.61857 +/- 9.42074 (N=4, valid=4, undefined=0); surface_hd95_mm=13.08905 +/- 8.82913 (N=4, valid=4, undefined=0)
+  Fold 1: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 2: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 3: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 4: pending_or_unverified: No verified JOB_COMPLETE marker
+unet: 8/40 patients; incomplete; completed folds [0]
+  overall: dice=0.78702 +/- 0.07507 (N=8, valid=8, undefined=0); cldice=0.82075 +/- 0.08011 (N=8, valid=8, undefined=0); centerline_recall=0.87685 +/- 0.05000 (N=8, valid=8, undefined=0); asoca_foreground_hd95_mm=7.32699 +/- 9.45756 (N=8, valid=8, undefined=0); surface_hd95_mm=10.50374 +/- 10.95495 (N=8, valid=8, undefined=0)
+  Normal: dice=0.80524 +/- 0.03839 (N=4, valid=4, undefined=0); cldice=0.82787 +/- 0.06757 (N=4, valid=4, undefined=0); centerline_recall=0.88246 +/- 0.04372 (N=4, valid=4, undefined=0); asoca_foreground_hd95_mm=5.98705 +/- 10.58403 (N=4, valid=4, undefined=0); surface_hd95_mm=9.34527 +/- 12.12847 (N=4, valid=4, undefined=0)
+  Diseased: dice=0.76880 +/- 0.10388 (N=4, valid=4, undefined=0); cldice=0.81363 +/- 0.10136 (N=4, valid=4, undefined=0); centerline_recall=0.87125 +/- 0.06195 (N=4, valid=4, undefined=0); asoca_foreground_hd95_mm=8.66693 +/- 9.58626 (N=4, valid=4, undefined=0); surface_hd95_mm=11.66222 +/- 11.37308 (N=4, valid=4, undefined=0)
+  Fold 1: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 2: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 3: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 4: pending_or_unverified: No verified JOB_COMPLETE marker
+unet_cldice: 0/40 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 1: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 2: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 3: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 4: pending_or_unverified: No verified JOB_COMPLETE marker
+swinunetr: 8/40 patients; incomplete; completed folds [0]
+  overall: dice=0.78573 +/- 0.06865 (N=8, valid=8, undefined=0); cldice=0.81056 +/- 0.08879 (N=8, valid=8, undefined=0); centerline_recall=0.86902 +/- 0.05119 (N=8, valid=8, undefined=0); asoca_foreground_hd95_mm=16.52729 +/- 20.03394 (N=8, valid=8, undefined=0); surface_hd95_mm=17.51162 +/- 19.74271 (N=8, valid=8, undefined=0)
+  Normal: dice=0.80870 +/- 0.03075 (N=4, valid=4, undefined=0); cldice=0.83258 +/- 0.06524 (N=4, valid=4, undefined=0); centerline_recall=0.88456 +/- 0.03428 (N=4, valid=4, undefined=0); asoca_foreground_hd95_mm=13.57798 +/- 15.62285 (N=4, valid=4, undefined=0); surface_hd95_mm=14.92202 +/- 16.42564 (N=4, valid=4, undefined=0)
+  Diseased: dice=0.76275 +/- 0.09296 (N=4, valid=4, undefined=0); cldice=0.78854 +/- 0.11333 (N=4, valid=4, undefined=0); centerline_recall=0.85348 +/- 0.06553 (N=4, valid=4, undefined=0); asoca_foreground_hd95_mm=19.47660 +/- 25.86957 (N=4, valid=4, undefined=0); surface_hd95_mm=20.10121 +/- 24.93571 (N=4, valid=4, undefined=0)
+  Fold 1: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 2: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 3: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 4: pending_or_unverified: No verified JOB_COMPLETE marker
+nnunet: 0/40 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 1: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 2: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 3: pending_or_unverified: No verified JOB_COMPLETE marker
+  Fold 4: pending_or_unverified: No verified JOB_COMPLETE marker
+gta_no_prior: 0/8 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+gta_no_gaussian: 0/8 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+gta_no_balance: 0/8 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+gta_no_ds: 0/8 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+unet_no_ds: 0/8 patients; incomplete; completed folds []
+  overall: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Normal: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Diseased: dice=undefined +/- n/a (N=0, valid=0, undefined=0); cldice=undefined +/- n/a (N=0, valid=0, undefined=0); centerline_recall=undefined +/- n/a (N=0, valid=0, undefined=0); asoca_foreground_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0); surface_hd95_mm=undefined +/- n/a (N=0, valid=0, undefined=0)
+  Fold 0: pending_or_unverified: No verified JOB_COMPLETE marker
+
+Paired differences: GTA minus comparator
+unet / dice: N=8/40, incomplete, mean difference=0.013048544583218843, 95% CI=[0.0033487620745272784, 0.02609520711059679]
+  Paired patient IDs: Diseased_1, Diseased_15, Diseased_18, Diseased_7, Normal_16, Normal_19, Normal_2, Normal_8
+unet / cldice: N=8/40, incomplete, mean difference=0.015920734942731413, 95% CI=[-0.006944512217069779, 0.044871826259376184]
+  Paired patient IDs: Diseased_1, Diseased_15, Diseased_18, Diseased_7, Normal_16, Normal_19, Normal_2, Normal_8
+unet_cldice / dice: N=0/40, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+unet_cldice / cldice: N=0/40, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+swinunetr / dice: N=8/40, incomplete, mean difference=0.014343641065872048, 95% CI=[0.0037301040685945586, 0.02591469966769412]
+  Paired patient IDs: Diseased_1, Diseased_15, Diseased_18, Diseased_7, Normal_16, Normal_19, Normal_2, Normal_8
+swinunetr / cldice: N=8/40, incomplete, mean difference=0.026109878325813976, 95% CI=[0.0011284516152519214, 0.053301512543273276]
+  Paired patient IDs: Diseased_1, Diseased_15, Diseased_18, Diseased_7, Normal_16, Normal_19, Normal_2, Normal_8
+nnunet / dice: N=0/40, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+nnunet / cldice: N=0/40, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_prior / dice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_prior / cldice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_gaussian / dice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_gaussian / cldice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_balance / dice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_balance / cldice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_ds / dice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+gta_no_ds / cldice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+unet_no_ds / dice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none
+unet_no_ds / cldice: N=0/8, incomplete, mean difference=None, 95% CI=[None, None]
+  Paired patient IDs: none

@@ -1,0 +1,42 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import json, os, signal, datetime
+r = Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+stamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+s = json.loads((r/'results/queue_status.json').read_text())
+pid = s['pid']
+argv = Path(f'/proc/{pid}/cmdline').read_bytes().decode().rstrip('\0').split('\0')
+cmd = ' '.join(argv)
+cwd = Path(f'/proc/{pid}/cwd').resolve()
+scripts = [(cwd/arg).resolve() for arg in argv if arg.endswith('run_queue.py')]
+if (r/'code/run_queue.py').resolve() not in scripts:
+    raise RuntimeError('Queue PID command does not match the expected experiment')
+os.kill(pid, signal.SIGSTOP)
+print('Frozen queue parent only:', pid, cmd)
+repair = r/'repair_cldice/repair_status.json'
+rs = json.loads(repair.read_text())
+if rs['status'] != 'waiting_for_main_queue':
+    raise RuntimeError('Repair is no longer idle; inspect before stopping it')
+rp = rs['pid']
+ra = Path(f'/proc/{rp}/cmdline').read_bytes().decode().rstrip('\0').split('\0')
+rc = ' '.join(ra)
+rw = Path(f'/proc/{rp}/cwd').resolve()
+if (r/'repair_cldice/recover.py').resolve() not in [(rw/a).resolve() for a in ra if a.endswith('recover.py')]:
+    raise RuntimeError('Repair PID does not match the idle recovery controller')
+os.kill(rp, signal.SIGTERM)
+rs.update(status='deferred_by_user', stopped_at=stamp,
+          reason='Method remains undecided; no automatic external-method retraining or fivefold extension')
+repair.write_text(json.dumps(rs, indent=2)+'\n')
+scope = {'changed_at':stamp,'request':'User deferred fivefold evaluation while deciding method',
+         'stage':'fold0 method development','old_queue_pid':pid,'old_queue_parent_frozen':True,
+         'preserve_current_job':'nnunet/fold0','current_job_child_pid':54628,
+         'allowed_new_jobs':['gta_no_ds/fold0','gta_no_prior/fold0','gta_no_gaussian/fold0','gta_no_balance/fold0'],
+         'deferred':'All folds 1-4 and all not-yet-started external-method reproductions',
+         'evaluation_role':'These eight held-out cases are development validation after method selection; not an independent final test',
+         'existing_outputs':'Preserved without deletion'}
+(r/'development').mkdir(exist_ok=True)
+(r/'development/scope_change.json').write_text(json.dumps(scope, indent=2)+'\n')
+(r/'development/previous_queue_status.json').write_text(json.dumps(s,indent=2)+'\n')
+print(json.dumps(scope))
+print('Current native child still exists:', Path('/proc/54628').exists())
+PY

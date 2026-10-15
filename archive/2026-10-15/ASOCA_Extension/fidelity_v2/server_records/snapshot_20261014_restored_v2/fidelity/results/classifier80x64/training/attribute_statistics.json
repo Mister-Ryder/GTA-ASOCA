@@ -1,0 +1,102 @@
+{
+  "patients": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "samples": 2048,
+  "source": "fixed deterministic training-only patch bank; inverse-square-root frequency weights",
+  "heads": {
+    "generation": {
+      "counts": [
+        95,
+        453,
+        314,
+        637,
+        378,
+        150,
+        21
+      ],
+      "focal_weights": [
+        1.2031131982803345,
+        0.5509589314460754,
+        0.6617645621299744,
+        0.4646207392215729,
+        0.603145956993103,
+        0.9574645757675171,
+        2.558931589126587
+      ],
+      "absent_training_classes": [],
+      "majority_class": 3
+    },
+    "structure": {
+      "counts": [
+        95,
+        53,
+        63,
+        221,
+        335,
+        1245,
+        36
+      ],
+      "focal_weights": [
+        1.0517348051071167,
+        1.4080890417099,
+        1.291509985923767,
+        0.6895597577095032,
+        0.5600743293762207,
+        0.2905249297618866,
+        1.7085072994232178
+      ],
+      "absent_training_classes": [],
+      "majority_class": 5
+    },
+    "location": {
+      "counts": [
+        95,
+        219,
+        159,
+        365,
+        557,
+        156,
+        497
+      ],
+      "focal_weights": [
+        1.530949592590332,
+        1.0083253383636475,
+        1.1833797693252563,
+        0.7810454368591309,
+        0.6322591304779053,
+        1.1947041749954224,
+        0.6693365573883057
+      ],
+      "absent_training_classes": [],
+      "majority_class": 4
+    }
+  }
+}

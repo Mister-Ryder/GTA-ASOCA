@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "prepared_only_training_gate_closed",
+  "protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+  "auxiliary_files_sha256": {
+    "ops/check_variant.py": "dc785e52f628859613bbe34594ef3711621583cbd5eee17ef25910cabc0135da",
+    "losses_only.diff": "916f5b5f8488e9e18838fe8a648d4d725f89d3336c638ce3a03ccd943ee1a396",
+    "README.txt": "8ac7f7a6e7fac4ff366daface43332fe5201d4fc389d62194e13cab42da384d7",
+    "local_source_inspection.json": "4d888a4b430773312c9fdd178bd1e01e43998a6d71098378ce7de7458c770131",
+    "local_math_fixture.json": "fb66fcff8d9385efd5e638416683a524fd396bf7ca8f7e9e0ab4cf42ebcd6b48"
+  },
+  "variant_training_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "only_changed_code_files": [
+    "losses.py"
+  ],
+  "training_started": false,
+  "independent_variant_review": "pending ROOT/available independent agent",
+  "actual_candidate_Torch_fixture": "not run locally; Torch unavailable"
+}

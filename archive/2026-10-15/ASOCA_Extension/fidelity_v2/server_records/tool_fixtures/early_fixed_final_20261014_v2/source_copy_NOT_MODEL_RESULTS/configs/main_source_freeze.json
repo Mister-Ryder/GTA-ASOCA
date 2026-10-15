@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "frozen_at_utc": "2026-10-14T04:21:51.312038+00:00",
+  "role": "single-fold GTA fidelity method development; no automatic launch; no five-fold or external-method rerun",
+  "code_package_hash_algorithm": "sha256(sorted relative_posix_path UTF8 plus original file bytes)",
+  "code_package_sha256": "0d14f942a7d87c81d272cca0a1b3b55c458aa0da0e0da01f6b15456107e7c48b",
+  "training_source_hash_algorithm": "gta_fidelity_selected_python_path_and_bytes_v1",
+  "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "training_dependency_files": {
+    "checkpoint_utils.py": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+    "classification_data.py": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+    "data.py": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+    "historical/__init__.py": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+    "historical/func/AnatomicalClassifier.py": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+    "historical/func/AnatomicalFusionModules.py": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+    "historical/func/EnhancedAirwaySegmentation2gau.py": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+    "historical/func/__init__.py": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+    "historical/func/model_arch_model10.py": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+    "losses.py": "9af9c6dc2b8c9fcb7ba896bf14a959cd2421d07d1581247976ff10c2cb17aa09",
+    "model.py": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+    "train.py": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+  },
+  "code_files": {
+    ".gitignore": {
+      "sha256": "9c906d45e9fa90685434bd29ce9764a076b348f41b04b7cbdbaa44b5a313d071",
+      "bytes": 56
+    },
+    "aggregate_results.py": {
+      "sha256": "a77d30f862e476bcf2a64ce3798d7ab1e4045d5e8e30e8cf3daa3e3d249aa010",
+      "bytes": 22137
+    },
+    "audit_priors.py": {
+      "sha256": "82958858f99f034f6222afcb96376b0abe504a25cebd2ff4b33f41cd21a01df0",
+      "bytes": 23589
+    },
+    "checkpoint_utils.py": {
+      "sha256": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca",
+      "bytes": 5201
+    },
+    "classification_data.py": {
+      "sha256": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622",
+      "bytes": 11495
+    },
+    "data.py": {
+      "sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6",
+      "bytes": 10947
+    },
+    "evaluate.py": {
+      "sha256": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+      "bytes": 18550
+    },
+    "evaluate_trajectory.py": {
+      "sha256": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63",
+      "bytes": 12155
+    },
+    "historical/NaviAirway-MIT.txt": {
+      "sha256": "a8d637dcbcd086a0072c4394565c715f88d0327f3b927067c0e596579cfcfd1c",
+      "bytes": 1067
+    },
+    "historical/README.md": {
+      "sha256": "5442e7be522d030960422522177f0dca31ab6aeba14ad78d32b7a6ae416a9229",
+      "bytes": 3126
+    },
+    "historical/THIRD_PARTY_NOTICES.md": {
+      "sha256": "511bb82ea8773e30f58c0ea5531d187708cde071fd17c213824f4bcc75f8be3b",
+      "bytes": 1152
+    },
+    "historical/__init__.py": {
+      "sha256": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0",
+      "bytes": 81
+    },
+    "historical/func/AnatomicalClassifier.py": {
+      "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+      "bytes": 6864
+    },
+    "historical/func/AnatomicalFusionModules.py": {
+      "sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+      "bytes": 14098
+    },
+    "historical/func/EnhancedAirwaySegmentation2gau.py": {
+      "sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+      "bytes": 15437
+    },
+    "historical/func/__init__.py": {
+      "sha256": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e",
+      "bytes": 70
+    },
+    "historical/func/model_arch_model10.py": {
+      "sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+      "bytes": 34321
+    },
+    "historical/source_hashes.json": {
+      "sha256": "f792cc0ed802ab119ef173870390b2c015d8d2727eee94d499614876a4dbdd27",
+      "bytes": 931
+    },
+    "losses.py": {
+      "sha256": "9af9c6dc2b8c9fcb7ba896bf14a959cd2421d07d1581247976ff10c2cb17aa09",
+      "bytes": 11280
+    },
+    "metrics.py": {
+      "sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+      "bytes": 7755
+    },
+    "model.py": {
+      "sha256": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c",
+      "bytes": 21286
+    },
+    "nnunet_runner.py": {
+      "sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144",
+      "bytes": 31436
+    },
+    "prepare_data.py": {
+      "sha256": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b",
+      "bytes": 21995
+    },
+    "pretrain_classifier.py": {
+      "sha256": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2",
+      "bytes": 16627
+    },
+    "run_queue.py": {
+      "sha256": "aeed60059bf819c1c685a8b5bdafe276379a5cdbfe794ff7b953655b82ba3c1e",
+      "bytes": 29321
+    },
+    "swin_model.py": {
+      "sha256": "4d0b821a53ad4d09335f284c14d6567f14c324735ca781b3fbc4c5fbcc619477",
+      "bytes": 1153
+    },
+    "train.py": {
+      "sha256": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9",
+      "bytes": 25470
+    },
+    "verify_candidate.py": {
+      "sha256": "a98e6c9a01429bcd4020372a6ffa767c5bd92e782419242bd531e8ddbba74385",
+      "bytes": 12440
+    }
+  },
+  "command_files": {
+    "configs/classifier_quality_review_template.json": {
+      "sha256": "24e508efbfa77be9aae4ab32df93b3282f0af02a1dc954e09e7e3daa76f60131",
+      "bytes": 775
+    },
+    "configs/deployment_commands.txt": {
+      "sha256": "1bb26e96782a89b5ec5cc02ee584e0a1dfec70ff91dfa1e992d68d7ee0b76639",
+      "bytes": 4970
+    },
+    "configs/first_stage.json": {
+      "sha256": "2c5f870520024022d35e3be20e3ebd9d5c8892e074021ba02b5409ce28f74b00",
+      "bytes": 3384
+    },
+    "configs/preflight.sh": {
+      "sha256": "8b8718e7005cd858554337abde54380f105200e7b62dbf50ee728fc95e060053",
+      "bytes": 993
+    },
+    "configs/public_paths.env.example": {
+      "sha256": "e92ab2aee4c2593b12e145fa0fe5a1f66fbde7225d1733b7b43fdd66987e7b16",
+      "bytes": 500
+    },
+    "configs/run_gta200.sh": {
+      "sha256": "a0dbbfa338bc08124a7198a6c39a5aee5431d3e52da27145f69185aba7953f5d",
+      "bytes": 1469
+    },
+    "configs/run_internal_trajectory.sh": {
+      "sha256": "f5bf4df40a83ecdfd389244974c3b834b79bd934a934b741cefa5ff78aff9ed2",
+      "bytes": 728
+    },
+    "configs/run_main_smoke.sh": {
+      "sha256": "79c85153bbe6bcf2729c9e7b6f6a95d3f81480e45294b46a1fd40fa96fe27c92",
+      "bytes": 1190
+    },
+    "configs/run_unet200.sh": {
+      "sha256": "26c6dc2b379b700878f21f7b6321a02aa93890dca59d296ce9eeaaf31aa00a2e",
+      "bytes": 713
+    },
+    "configs/verify_classifier_quality.py": {
+      "sha256": "84e0acbbec91e4580862cc57d8f744d29e86be49c793ac6deb307162e2ed480c",
+      "bytes": 4714
+    },
+    "configs/verify_main_source.py": {
+      "sha256": "06a4b231bf91603b338693bd822ba10b27c409f19b7608113a3f48329cb7ba5f",
+      "bytes": 1722
+    },
+    "ops/plot_learning_curves.py": {
+      "sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+      "bytes": 27414
+    }
+  },
+  "permitted_execution_entrypoints": [
+    "code/train.py",
+    "code/evaluate.py",
+    "code/evaluate_trajectory.py",
+    "code/verify_candidate.py"
+  ],
+  "legacy_code_copies_not_scheduled": [
+    "code/run_queue.py",
+    "code/nnunet_runner.py"
+  ],
+  "classifier_stage_source_provenance_sha256": "a86f26a8d399528cb422db4e6eb42616c74bdfa029e33c588f2a7f258da4454f",
+  "baseline_source_provenance_sha256": "f20a1e69ee53bd56662e38d999814b108d425cfe348d128f25c87988d5116822",
+  "historical_initialization_metadata_sha256": "a1715716f46335509c1830442f282aabd16593d1f353db29160a347d8dbd78dc",
+  "protocol": {
+    "fold": 0,
+    "split_seed": 20261014,
+    "training_seed": 20261013,
+    "train_cases": 28,
+    "internal_diagnostic_cases": [
+      "Diseased_10",
+      "Diseased_20",
+      "Normal_12",
+      "Normal_3"
+    ],
+    "outer8_used_for_selection": false,
+    "primary_metrics": [
+      "dice",
+      "assd_mm"
+    ],
+    "auxiliary_metric": "cldice",
+    "smoke_updates": 6,
+    "formal_segmentation_epochs": 200,
+    "formal_updates_per_epoch": 125,
+    "formal_segmentation_optimizer_updates": 25000,
+    "formal_segmentation_batch_size": 2,
+    "formal_segmentation_patch_size": 128,
+    "classifier_pretraining_epochs": 80,
+    "classifier_updates_per_epoch": 64,
+    "additional_classifier_pretraining_updates": 5120,
+    "budget_comparison_to_old": "25,000 segmentation updates and 50,000 sampled patches each; physical voxel work, training cohort and pretraining cost differ. No total-FLOP/wall-time matching claim.",
+    "segmentation_output_root_default": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/results",
+    "segmentation_output_root_override": "OUTPUT_ROOT",
+    "classifier_stage_modified": false,
+    "classifier_main_initialization": "classifier80x64/training/final.pt fixed epoch79",
+    "classifier_smoke_initialization": "classifier_smoke128/training/final.pt",
+    "classification_accuracy_is_startup_gate": false,
+    "classification_best_selection_artifact": "diagnostic reference only",
+    "classifier_pretraining_purpose": "stabilize multitask convergence and supply learned training-derived prior features for segmentation",
+    "formal_classifier_readiness_checks": [
+      "complete80x64",
+      "fixed final SHA",
+      "frozen classifier source",
+      "manifest/patient isolation",
+      "finite history and model parameters"
+    ]
+  },
+  "historical_python_provenance_note": "Four original historical implementation modules retain upstream source_hashes.json identities; wrapper/staging changes have separate frozen hashes. Only README/notices documentation was updated.",
+  "configuration_revision": "fixed_classifier80_final_readiness_no_accuracy_gate_20261014"
+}

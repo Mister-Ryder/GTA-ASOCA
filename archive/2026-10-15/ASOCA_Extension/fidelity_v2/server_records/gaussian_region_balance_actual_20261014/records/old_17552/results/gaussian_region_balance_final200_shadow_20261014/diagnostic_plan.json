@@ -1,0 +1,1954 @@
+{
+  "schema_version": 1,
+  "role": "FINAL200_TRAIN28_OFFLINE_AB_SHADOW_NOT_MODEL_RESULTS",
+  "root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+  "device": "cuda",
+  "deadline_seconds": 1800,
+  "threads_max": 2,
+  "nice_min": 10,
+  "checkpoint_sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+  "config_sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "full_source_package_sha256": "0d14f942a7d87c81d272cca0a1b3b55c458aa0da0e0da01f6b15456107e7c48b",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "reference_bank_sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14",
+  "reference_bank_has_run_root": false,
+  "n_patches": 56,
+  "last_sampling_index": 194,
+  "logical_relocation": {
+    "config_untouched": true,
+    "recorded_output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training",
+    "actual_checkpoint": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/final.pt",
+    "recorded_manifest": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+    "actual_manifest": "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json",
+    "basis": "exact config/SHA, full source/evaluator guards and exact sampled bank"
+  },
+  "A": "per-patch full-voxel mean MSE",
+  "B": "equal FG/BG conditional means, present-region renormalization, then batch mean",
+  "gaussian_lambda": 10.0,
+  "main_DS_coefficient": 0.5714285714285714,
+  "model_mode": "eval, batch1, FP32, no augmentation",
+  "probe": "detached logits; segmentation/A/B and regional-origin losses; no parameter gradients",
+  "training_patients": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "excluded_internal4": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "held_out_GT_read": false,
+  "parameter_updates": false,
+  "optimizer_created": false,
+  "tracked_input_sha256": {
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/shadow_gaussian_region_balance.py": "a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/configs/main_source_freeze.json": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/diagnose_gaussian.py": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/run_early_fixed_final_eval.py": "2d7a4f24e4f2bae6fa58f5a023d726e1fb3f91bb0d2b7416a7dfe5bba4147e42",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/final.pt": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/config.json": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/history.jsonl": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/TRAINING_COMPLETE.json": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/manifest.json": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "/autodl-fs/data/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/input_runtime_audit.json": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7",
+    "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/early_final_mirror_20261014/READY.json": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/cache/manifest.json": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops_inputs/gaussian_region_balance_shadow_20261014/fixed_sampling_bank.json": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14"
+  },
+  "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014",
+  "GPU_idle_check_1": {
+    "time_utc_unix": 1791972160.2898452,
+    "compute_pids": [],
+    "own_pid": 140179,
+    "all_idle": true
+  },
+  "GPU_idle_check_2": {
+    "time_utc_unix": 1791972169.8397202,
+    "compute_pids": [],
+    "own_pid": 140179,
+    "all_idle": true
+  },
+  "runtime_versions": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.15.3",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.7.2",
+    "pandas": "2.3.3",
+    "tqdm": "4.67.1"
+  },
+  "actual_header": {
+    "epoch": 199,
+    "model_state_tensor_count": 327,
+    "all_model_tensors_finite": true,
+    "load_mode": "torch.load(map_location=cpu, weights_only=True)",
+    "CUDA_context_initialized": false
+  },
+  "state_sha256_before": "f7be181fcb4245d756e072f22785da65be64e2a592db806e2dd2f3927a66fb7b",
+  "cache_headers_training28_only": {
+    "Diseased_11": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 143380288
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 71690208
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 143380288
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 71690208
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 143380288
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 143380288
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          506,
+          506
+        ],
+        "bytes": 71690208
+      }
+    },
+    "Diseased_12": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 72576128
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 36288128
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 72576128
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 36288128
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 72576128
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 72576128
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          360,
+          360
+        ],
+        "bytes": 36288128
+      }
+    },
+    "Diseased_13": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 45700608
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 45700608
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 45700608
+      }
+    },
+    "Diseased_14": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 107923888
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 53962008
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 107923888
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 53962008
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 107923888
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 107923888
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          439,
+          439
+        ],
+        "bytes": 53962008
+      }
+    },
+    "Diseased_16": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 129024128
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 64512128
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 129024128
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 64512128
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 129024128
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 129024128
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          480,
+          480
+        ],
+        "bytes": 64512128
+      }
+    },
+    "Diseased_17": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 45700608
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 45700608
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 91401088
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          404,
+          404
+        ],
+        "bytes": 45700608
+      }
+    },
+    "Diseased_19": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 82053008
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 41026568
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 82053008
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 41026568
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 82053008
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 82053008
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          442,
+          442
+        ],
+        "bytes": 41026568
+      }
+    },
+    "Diseased_2": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 112394368
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 56197248
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 112394368
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 56197248
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 112394368
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 112394368
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          448,
+          448
+        ],
+        "bytes": 56197248
+      }
+    },
+    "Diseased_3": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 57205248
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 57205248
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 57205248
+      }
+    },
+    "Diseased_4": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 140000128
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 70000128
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 140000128
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 70000128
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 140000128
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 140000128
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          500,
+          500
+        ],
+        "bytes": 70000128
+      }
+    },
+    "Diseased_5": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 116444288
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 58222208
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 116444288
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 58222208
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 116444288
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 116444288
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          456,
+          456
+        ],
+        "bytes": 58222208
+      }
+    },
+    "Diseased_6": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 57205248
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 57205248
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 114410368
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          452,
+          452
+        ],
+        "bytes": 57205248
+      }
+    },
+    "Diseased_8": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 93219968
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 46610048
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 93219968
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 46610048
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 93219968
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 93219968
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          408,
+          408
+        ],
+        "bytes": 46610048
+      }
+    },
+    "Diseased_9": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 126882688
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 63441408
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 126882688
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 63441408
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 126882688
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 126882688
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          476,
+          476
+        ],
+        "bytes": 63441408
+      }
+    },
+    "Normal_1": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 92552888
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 46276508
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 92552888
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 46276508
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 92552888
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 92552888
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          255,
+          426,
+          426
+        ],
+        "bytes": 46276508
+      }
+    },
+    "Normal_10": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 103834280
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 51917204
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 103834280
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 51917204
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 103834280
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 103834280
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          261,
+          446,
+          446
+        ],
+        "bytes": 51917204
+      }
+    },
+    "Normal_11": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 52256008
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 26128068
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 52256008
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 26128068
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 52256008
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 52256008
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          265,
+          314,
+          314
+        ],
+        "bytes": 26128068
+      }
+    },
+    "Normal_13": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 58248200
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 29124164
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 58248200
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 29124164
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 58248200
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 58248200
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          249,
+          342,
+          342
+        ],
+        "bytes": 29124164
+      }
+    },
+    "Normal_14": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 75533168
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 37766648
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 75533168
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 37766648
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 75533168
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 75533168
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          270,
+          374,
+          374
+        ],
+        "bytes": 37766648
+      }
+    },
+    "Normal_15": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 80412376
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 40206252
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 80412376
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 40206252
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 80412376
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 80412376
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          259,
+          394,
+          394
+        ],
+        "bytes": 40206252
+      }
+    },
+    "Normal_17": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 75837568
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 37918848
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 75837568
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 37918848
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 75837568
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 75837568
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          368,
+          368
+        ],
+        "bytes": 37918848
+      }
+    },
+    "Normal_18": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 53829008
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 26914568
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 53829008
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 26914568
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 53829008
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 53829008
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          210,
+          358,
+          358
+        ],
+        "bytes": 26914568
+      }
+    },
+    "Normal_20": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 103544128
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 51772128
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 103544128
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 51772128
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 103544128
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 103544128
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          430,
+          430
+        ],
+        "bytes": 51772128
+      }
+    },
+    "Normal_4": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 80308928
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 40154528
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 80308928
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 40154528
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 80308928
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 80308928
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          264,
+          390,
+          390
+        ],
+        "bytes": 40154528
+      }
+    },
+    "Normal_5": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 65059328
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 32529728
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 65059328
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 32529728
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 65059328
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 65059328
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          251,
+          360,
+          360
+        ],
+        "bytes": 32529728
+      }
+    },
+    "Normal_6": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 88463200
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 44231664
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 88463200
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 44231664
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 88463200
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 88463200
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          271,
+          404,
+          404
+        ],
+        "bytes": 44231664
+      }
+    },
+    "Normal_7": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 84722528
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 42361328
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 84722528
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 42361328
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 84722528
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 84722528
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          252,
+          410,
+          410
+        ],
+        "bytes": 42361328
+      }
+    },
+    "Normal_9": {
+      "image": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 84304768
+      },
+      "label": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 42152448
+      },
+      "gaussian": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 84304768
+      },
+      "skeleton": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 42152448
+      },
+      "radius": {
+        "dtype": "<f2",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 84304768
+      },
+      "branch_id": {
+        "dtype": "<u2",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 84304768
+      },
+      "depth": {
+        "dtype": "|u1",
+        "shape": [
+          280,
+          388,
+          388
+        ],
+        "bytes": 42152448
+      }
+    }
+  },
+  "bank_exactly_verified": true,
+  "torch_threads": 2,
+  "torch_interop_threads": 1,
+  "affinity": [
+    0,
+    1
+  ],
+  "nice": 10,
+  "own_pid": 140179
+}

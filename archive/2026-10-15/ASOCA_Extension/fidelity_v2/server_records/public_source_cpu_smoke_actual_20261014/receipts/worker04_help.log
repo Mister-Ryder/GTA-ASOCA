@@ -1,0 +1,21 @@
+usage: evaluate.py [-h] --manifest MANIFEST --raw-root RAW_ROOT --checkpoint
+                   CHECKPOINT --output OUTPUT [--fold FOLD] [--smoke]
+                   [--max-cases MAX_CASES]
+                   [--split {internal_diagnostic,outer_development}]
+                   [--sw-batch-size SW_BATCH_SIZE] [--geometry-only]
+
+options:
+  -h, --help            show this help message and exit
+  --manifest MANIFEST
+  --raw-root RAW_ROOT
+  --checkpoint CHECKPOINT
+  --output OUTPUT
+  --fold FOLD
+  --smoke
+  --max-cases MAX_CASES
+  --split {internal_diagnostic,outer_development}
+                        Default reserves internal4; previously seen outer8
+                        requires an explicit choice
+  --sw-batch-size SW_BATCH_SIZE
+  --geometry-only       Only upgrade existing saved predictions; never infer
+                        with a legacy/unverified model source

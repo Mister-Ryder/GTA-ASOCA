@@ -1,0 +1,32 @@
+/root/miniconda3/bin/python -u - <<'PY'
+from pathlib import Path
+import json,time,datetime
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+s=Path('/root/autodl-fs/datasets/ASOCA_GTA_20261014')
+previous=None;history_previous=None;started=time.monotonic()
+while time.monotonic()-started<7200:
+ p=r/'classifier_setup_status.json'
+ if p.exists():
+  state=json.loads(p.read_text());compact={k:state.get(k) for k in ['status','phase','pid','child_pid','error']}
+  if compact!=previous:
+   print('SETUP',json.dumps(compact),flush=True);previous=compact
+   logfile=state.get('log')
+   if logfile and Path(logfile).exists():print('STAGE_LOG_TAIL','\n'.join(Path(logfile).read_text(errors='replace').splitlines()[-3:]),flush=True)
+  if state.get('status') in ['completed','failed','interrupted']:
+   print('SETUP_TERMINAL',json.dumps(state),flush=True);break
+ history=r/'results/classifier80x64/training/history.jsonl'
+ if history.exists():
+  lines=history.read_text().splitlines()
+  if lines:
+   row=json.loads(lines[-1]);selection=row.get('selection') or {}
+   compact={'epoch':row['epoch'],'loss':row['loss'],'lr':row.get('lr'),'seconds':row.get('seconds'),'components':row.get('component_means'),'selection_mean_nonempty_balanced_accuracy':selection.get('mean_head_nonempty_balanced_accuracy'),'positive_coverage':selection.get('selection_positive_coverage_valid')}
+   if compact!=history_previous:print('CLASSIFIER_EPOCH',json.dumps(compact),flush=True);history_previous=compact
+ for marker in ['RAW_DIRECTORY_READY.json','raw_extract_status.json']:
+  path=s/marker
+  if path.exists() and not globals().get('reported_'+marker):
+   value=json.loads(path.read_text())
+   if value.get('status') in ['ready','failed']:
+    print('RAW',marker,json.dumps(value),flush=True);globals()['reported_'+marker]=True
+ time.sleep(30)
+else:print('WATCH_LIMIT_REACHED; background experiment remains running',flush=True)
+PY

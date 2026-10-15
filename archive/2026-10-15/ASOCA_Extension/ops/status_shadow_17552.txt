@@ -1,0 +1,12 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -B - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+out=r/'results/gaussian_region_balance_final200_shadow_20261014'
+launch=json.loads((r/'GAUSSIAN_REGION_BALANCE_SHADOW_LAUNCH_20261014.json').read_text())
+proc=Path('/proc')/str(launch['parent_pid'])
+marker=out/'DIAGNOSTIC_COMPLETE.json'; summary=out/'summary.json'; rows=out/'patch_metrics.jsonl'
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launch':launch,'parent_alive':proc.exists(),'parent_cmdline':(proc/'cmdline').read_bytes().replace(b'\0',b' ').decode() if proc.exists() else None,'completed_patches':len(rows.read_text().splitlines()) if rows.exists() else 0,'completion':json.loads(marker.read_text()) if marker.exists() else None,'summary':json.loads(summary.read_text()) if summary.exists() else None,'gpu':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip(),'log_tail':(r/'GAUSSIAN_REGION_BALANCE_SHADOW_20261014.log').read_text().splitlines()[-14:]}
+print(json.dumps(result,indent=2))
+PY

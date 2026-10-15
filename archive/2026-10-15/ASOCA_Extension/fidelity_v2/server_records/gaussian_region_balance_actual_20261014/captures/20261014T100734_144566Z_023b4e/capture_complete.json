@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "capture": "20261014T100734_144566Z_023b4e",
+  "collector_sha256": "ebd35a8f79194dbd077b30bcf2e58f59048e7ee55ff75f8feb5807f06ed0237e",
+  "captured_at_utc": "2026-10-14T10:08:29.901847+00:00",
+  "status": "capture_completed",
+  "scope": "read-only source-backed records, not training/evaluation results",
+  "remote_writes_or_commands": false,
+  "weights_downloaded": false,
+  "hosts": [
+    {
+      "port": 38773,
+      "shadow_completion": "not_applicable_on_NEW",
+      "files": 1
+    },
+    {
+      "port": 17552,
+      "shadow_completion": "real_DIAGNOSTIC_COMPLETE_and5artifact_SHA_verified",
+      "files": 12
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+现状核查：依据冻结40-case manifest与当前分割训练源码。只读取已有元数据，尚未运行新的局部标签尺度审查。
+
+完整原始CT以XYZ表示，512×512×168–224；XY spacing0.306641–0.494141mm，Z≈0.625mm。每体44,040,192–58,720,256个体素。0.5mm各向同性缓存以NumPy ZYX表示，各轴分量范围Z210–280、Y/X314–506；实际每体26,127,940–71,690,080体素。各轴极值不是某一病例共同尺寸。完整CT FOV约XY157–253mm、Z105–140mm，重采样保留全CT空间，不是先裁成心脏/冠脉ROI。
+
+代表训练病例：Diseased_11原XYZ512×512×224、spacing .494141/.494141/.625mm → 缓存ZYX280×506×506；Normal_11原512×512×212、spacing .306641/.306641/.625mm → 265×314×314。内部4病例只引用manifest形状元数据：Diseased_10缓存280×396×396，Normal_12为257×378×378；此次没有读取其GT像素。
+
+缓存CT、二值seg mask、Gaussian target及拓扑辅助图都恢复到同一个完整缓存grid。CT/Gaussian存float16，seg mask存uint8；单个完整float16数组约49.84–136.74MiB。辅助计算可在GT包围盒内省内存，但结果写回全grid；这不是输入GT裁剪。
+
+当前GTA主分割与common-recipe U-Net均用128³ patch、batch2，0.5mm下每块边长64mm（6.4cm），几何立方体体积262.144cm³。它不是整个原始CT，也不能仅凭尺寸断言覆盖完整冠脉树。训练28的完整GT树实际包围盒extent尚待新的只读统计。
+
+训练张量：CT [2,1,128,128,128] float32；seg GT [2,128,128,128] int64；Gaussian GT [2,1,128,128,128] float32。主seg logits [2,2,128,128,128]是背景+冠脉二类；decoder DS为[2,2,64,64,64]及[2,2,32,32,32]，上采样logits对完整128³ GT监督，权重1/.5/.25归一为4/7、2/7、1/7。缓存Gaussian field为[0,1]，实际MSE target=.5+.5*field，背景为.5。
+
+分类辅助目标每patch只有三个整数，batch形状[2,3]；它不是segmentation的三类mask。128³输入形成classifier fused [2,256,8,8,8]，全8³ avg+max池化为每例512维，三个head各输出[2,7]。分类器仍有空间encoder features和guidance_map，但三个离散类别是整块代理标签。
+
+generation：无前景为0；选择块内前景体素最多的全图branch，取其depth众数。全图depth0→1、1→2、2–3→3、4–5→4、6–8→5、≥9→6。全图depth从各连通分量最粗分支定根，经junction邻接BFS计算；这是几何分支深度代理，不是已核实的冠脉解剖分级。单标签不列举块内其他细分支/其他depth。
+
+structure：空块0。可见分支数≤1时，前景包围盒最长轴/次长轴>2为1，否则2。分支数B>1时，complexity=[log(B+1)/log10]÷max(.1,log(FG体素数+1)/log10000)：≤.8为3，(.8,1]为4，(1,1.5]为5，>1.5为6。它是块级复杂度代理，log(volume)阈值有尺度敏感性。
+
+location：空块0；非空块按patch中心在完整CT grid中的归一化Z三等分和X左右半区组合为1–6。它不是冠脉LAD/LCX/RCA类别，也不是ROI内相对位置。
+
+分类预训练既有2048频率bank来自geometry采样（uniform/thin/junction）；95空、1953正块，structure5=1245/1953=63.75%，generation6=21/1953=1.08%。准备的Gaussian56/局部尺度56来自当前主分割standard采样（1/3前景、2/3均匀图像body FOV），每训练患者固定2块。两个bank用途、采样分布和规模不同，不能混称或合并频率。分类频率/准确率均不作为分割启动门槛。
+
+源码：data.py:56–87为三代理标签；classification_data.py:86–110为CT-derived均匀采样FOV；AnatomicalClassifier.py:51–58、124–143为fused尺寸和全局读出；model.py:210–216输出DS；losses.py:103–124为整块anatomy weight及DS归一。

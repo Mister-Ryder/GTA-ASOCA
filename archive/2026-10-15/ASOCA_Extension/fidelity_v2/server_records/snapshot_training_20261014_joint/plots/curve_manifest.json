@@ -1,0 +1,79 @@
+{
+  "development_only": true,
+  "formal_final_test": false,
+  "epoch_display": "1-based; source epoch convention recorded below",
+  "source_epoch_base": 0,
+  "interpolated_validation": false,
+  "artifacts": [
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\plots\\gta_learning_curves.png",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\plots\\gta_learning_curves.svg",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\plots\\unet_learning_curves.png",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\plots\\unet_learning_curves.svg"
+  ],
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+  "runs": [
+    {
+      "name": "gta",
+      "method": "gta",
+      "selection_role": "internal-four model development",
+      "n_training_cases": 28,
+      "selection_case_ids": [
+        "Diseased_10",
+        "Diseased_20",
+        "Normal_12",
+        "Normal_3"
+      ],
+      "n_recorded_epochs": 127,
+      "n_internal_dice_points": 0,
+      "n_internal_assd_points": 0,
+      "warnings": [
+        "Gaussian/segmentation probes use shared main logits; DS branches are excluded from this derivative",
+        "No positive-balanced-accuracy/majority-baseline trajectory; classifier usefulness remains unverified by this history",
+        "No usable internal-four Dice/ASSD trajectory; training loss cannot establish validation improvement"
+      ],
+      "sources": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\gta_38773\\results\\gta_enhanced200x125\\training\\config.json",
+          "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\gta_38773\\results\\gta_enhanced200x125\\training\\gradient_probes.jsonl",
+          "sha256": "82a167d7fbad6bfc7911aba08f063c409110177e751af3c7c055bdac0e516240"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\gta_38773\\results\\gta_enhanced200x125\\training\\history.jsonl",
+          "sha256": "821b36f293df56b6bd633eb353aa8e50965d77730f3b844b2e3268291a5360ff"
+        }
+      ]
+    },
+    {
+      "name": "unet",
+      "method": "unet",
+      "selection_role": "internal-four model development",
+      "n_training_cases": 28,
+      "selection_case_ids": [
+        "Diseased_10",
+        "Diseased_20",
+        "Normal_12",
+        "Normal_3"
+      ],
+      "n_recorded_epochs": 200,
+      "n_internal_dice_points": 0,
+      "n_internal_assd_points": 0,
+      "warnings": [
+        "No positive-balanced-accuracy/majority-baseline trajectory; classifier usefulness remains unverified by this history",
+        "No usable internal-four Dice/ASSD trajectory; training loss cannot establish validation improvement"
+      ],
+      "sources": [
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\unet_17552\\results\\unet_recipe200x125\\training\\config.json",
+          "sha256": "932998709bcfd9515ac9e82cef2860eab9fe7ceb5d90d6b962f9a780fcb042bd"
+        },
+        {
+          "path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\snapshot_training_20261014_joint\\unet_17552\\results\\unet_recipe200x125\\training\\history.jsonl",
+          "sha256": "b3a3debbb3a2552208aa617487b47437226913c844534e13cde0073249fe7a53"
+        }
+      ]
+    }
+  ]
+}

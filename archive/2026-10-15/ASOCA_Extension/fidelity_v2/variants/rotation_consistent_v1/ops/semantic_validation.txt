@@ -1,0 +1,7 @@
+PASS: synthetic CPU semantic validation; no real data/model/Torch/GPU/metrics.
+empty: priors=[0, 0, 0]; k=0,1,2,3 invariant
+single_tube: priors=[1, 1, 1]; k=0,1,2,3 invariant
+junction: priors=[1, 5, 1]; k=0,1,2,3 invariant
+mixed_branches: priors=[3, 5, 1]; k=0,1,2,3 invariant
+PASS: 32 actual CohortDataset foreground/uniform rotations; default-none matches original wrapper; paired inverse and C-contiguity exact.
+PASS: selection/outer disabled; train/pretrain flag default none and training-only wiring; tensor contiguity conversion checked statically.

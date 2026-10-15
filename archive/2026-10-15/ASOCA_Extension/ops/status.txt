@@ -1,0 +1,3 @@
+tail -22 /root/autodl-tmp/ASOCA_GTAirway_20261013/logs/bootstrap.log
+ls -l /root/autodl-tmp/ASOCA_GTAirway_20261013/manifests
+df -h /root/autodl-tmp

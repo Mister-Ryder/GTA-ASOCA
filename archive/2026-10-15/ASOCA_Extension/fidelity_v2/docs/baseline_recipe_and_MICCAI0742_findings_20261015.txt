@@ -1,0 +1,46 @@
+基础U-Net约80%：参考论文与共同配方的窄范围核查
+2026-10-15；仅浏览原始来源、读取现有配置/源码。未运行数据、模型、训练或服务器操作。
+
+结论
+目前可以证实“评价协议不同、共同增强偏弱、训练预算为人为限定”，不能证实某个单项就是约80%的唯一原因。也不能把一个短预算nnU-Net结果当作充分训练的性能上限。先把共同分割配方做强，再评价GTA贡献，比不断叠加GTA辅助项更有科学意义。
+
+S1：MICCAI2025 paper0742，正文实际披露
+P6 §3.1: ASOCA contains 40 CCTA scans; five-fold evaluation uses 32 training/8 testing. No case IDs or separate validation split are specified. Training: Adam, initial LR 1e-4, 600 epochs, batch 2; random 160×160×128 crops; testing uses half-window strides. Updates/epoch, LR schedule, spacing/resampling, HU normalization, augmentation details, baseline architecture/DS/checkpoint selection, ASSD implementation and the meaning of ± are unspecified. P6 §2.3 gives the proposed network 0.6Dice+0.4WCE plus KL, not a baseline-specific loss. P7 Table1 reports 3D-UNet 84.78±0.85%/1.41±0.13mm and proposed 90.15±0.57%/0.66±0.09mm. P7 §3.2 says public comparison code was used, without per-baseline configurations.
+官方PDF：https://papers.miccai.org/miccai-2025/paper/0742_paper.pdf#page=6
+表1与比较说明：https://papers.miccai.org/miccai-2025/paper/0742_paper.pdf#page=7
+不可补写：不能从600轮推出75,000更新或为我们25,000更新的3倍；不能推定作者的物理视野、增强、深监督、独立验证集、五折/患者/seed标准差或表面距离公式。本文目标是冠脉分割，并未详细给出标签编码；其“3D-UNet”不是我们同名模型已经核实的等价实现。
+
+S2：论文第1页指定的作者代码地址
+https://github.com/d1c2x3/CAseg
+本次直接访问GitHub页面和repos API均HTTP404；main/master README也不可取得。只可说明目前无法公开访问并核实代码，不能由此断言仓库被删除、私有、从未公开或作者设置有误。未找到可据以补全预处理/增强/基线超参的官方代码内容；不以其他人的复现替代。
+
+本地实际共同配方U（已执行，非准备中的旋转版）
+病例：28训练，内部4例用于开发；原8例已曝光，固定final评价。内部4 Dice81.84555%/ASSD0.749233mm，原8 Dice79.88391%/1.178692mm；不能与作者五折均值直接组成同条件排名，亦不能把两队列混合。
+网络：自定义四级32/64/128/256通道U-Net，GroupNorm、两级decoder辅助头；并非没有DS。主头/两个辅助头权重4/7、2/7、1/7。每样本foreground Dice+非加权CE，冷启动。
+数据：固定0.5mm各向同性，CT线性/GT最近邻重采样；HU截断[-200,1000]，(HU-400)/600。128³输入=64mm立方上下文；standard采样约1/3前景、2/3均匀，均匀中心来自CT自身HU>-170的body bounds，无心脏ROI。
+增强：仅乘性/加性强度扰动和噪声，没有旋转/缩放/镜像。限制来自共享CohortDataset，连不含位置辅助头的U-Net也受影响；这是可明确指出的训练配方限制，但不是已经证明的性能原因。
+优化：AdamW3e-4、weight_decay1e-4、5轮warmup、随后poly指数0.9；200×125=25,000更新、batch2，clip12。学习率时程按这个总预算下降，平台不等于更长时程无效，也不能在已接近零LR的末权重上简单续跑并称测试充分训练。
+推理：128³、overlap0.5、Gaussian窗口融合，没有镜像TTA；在0.5mm网格先argmax，再最近邻回原CT网格评价。细管可能受离散化影响，但没有证据证明这造成当前差距；作者概率回采样/融合细节未知。
+本地依据（均已有，不新增测量）：
+  server_records/unet_complete_trajectory_20261014/results/unet_recipe200x125/training/config.json
+  server_records/outer8_U_report_20261015/summary.json
+  code/model.py:220-263；code/losses.py:56-65,106-112
+  code/prepare_data.py:78-101,289-295,355-360
+  code/data.py:178-217；code/classification_data.py:60-112
+  code/train.py:165-172,235-238,273；code/evaluate.py:19-25,242-258
+
+S3：与本地native版本一致的nnU-Net官方v2.6.4
+Official defaults: 1000 epochs×250 training iterations=250,000 updates; deep supervision enabled; foreground oversampling 0.33. Optimizer is SGD/Nesterov (momentum 0.99), initial LR 0.01, weight decay 3e-5, with PolyLR tied to num_epochs. Default training transforms include rotation, scaling, mirroring and intensity augmentations. The official 100epochs subclass sets num_epochs=100; it is a shorter schedule, not the default 1000-epoch experiment.
+版本固定源码（预算L133-141；优化L457-461；增强L626-719）：
+https://github.com/MIC-DKFZ/nnUNet/blob/v2.6.4/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py#L133
+官方短预算变体（L38-42）：
+https://github.com/MIC-DKFZ/nnUNet/blob/v2.6.4/nnunetv2/training/nnUNetTrainer/variants/training_length/nnUNetTrainer_Xepochs.py#L38
+本地native nnU-Net确用2.6.4/nnUNetTrainer_100epochs、32训练/原8例评价，完成100×250=25,000更新，是默认更新数的10%；不是默认完整训练已经达到81.47484%上限。它还使用自适应CT归一化、原生增强/TTA，以及spacing[0.625,0.3964845058,0.3964845058]、patch[80,192,160]、batch2，不能当作与自定义U仅架构不同的严格控制。更长默认预算不保证成绩更高；现结果不足以证明其训练充分。
+本地依据（相对当前项目）：ASOCA_Extension/server_records/status_20261014_development/results/nnunet/fold0/training/config.json；ASOCA_Extension/fidelity_v2/server_records/snapshot_20261014_restored_v2/native_reference/results/nnunet/fold0/training/TRAINING_COMPLETE.json。
+
+供整体提升方案讨论的优先事项（推断，不是执行决定）
+1. 先明确同一病例队列和评价口径；不能用内部4例的小平台宣布原8例已充分，也不能把±0.85当作者患者波动极小的证据。
+2. 共同基础方案同时补足适当空间增强；GTA属性语义及预训练分布须一致，但辅助分类不能成为基础分割完全放弃增强的理由。
+3. 用明确总更新数和相应学习率时程定义充分预算；原25k是计算预算选择。可参考官方默认量级，但不盲抄600轮、不把同一个极低LR尾部机械接长，更不保证某个轮数达到84.78%或90.15%。
+4. 联合考虑物理分辨率、窗口上下文与输出回采样；作者160×160×128只证明体素窗口更大，未给spacing，不能证明物理视野更大。当前0.5mm/64mm和固定HU方案是设计选择，尚无证据表明最优。
+5. 先形成一套有依据的共同训练/推理方案，再作U与GTA的成对比较；若同时增强、改预算/预处理，收益应归为整体配方改进，不冒充某个GTA模块的单项因果贡献。本文件不授权开训、逐项长试、五折或公开库更新。

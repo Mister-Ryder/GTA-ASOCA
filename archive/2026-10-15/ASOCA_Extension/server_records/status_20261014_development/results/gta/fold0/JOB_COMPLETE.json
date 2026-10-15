@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "completed",
+  "method_label": "gta",
+  "training_method": "gta",
+  "fold": 0,
+  "smoke": false,
+  "protocol_identity": "fdf058c3d65b92f0665a7460778b9e41a4180554ff8d325e57013d6c72b3e71f",
+  "job_identity": "913e068a341129b8152d3bbe324319c8a32a23d479c2e93108dae6722e6ec4b8",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "completed_at": "2026-10-13T20:19:20.348189+00:00",
+  "case_ids": [
+    "Diseased_1",
+    "Diseased_15",
+    "Diseased_18",
+    "Diseased_7",
+    "Normal_16",
+    "Normal_19",
+    "Normal_2",
+    "Normal_8"
+  ],
+  "checkpoint_sha256": "0a7953ad1802be9fc11b380271cdddbc7b7142e05875bf7b8e597b1e40e01d99",
+  "checkpoint_path": "/root/autodl-tmp/ASOCA_GTAirway_20261013/results/gta/fold0/training/final.pt",
+  "n_cases": 8
+}

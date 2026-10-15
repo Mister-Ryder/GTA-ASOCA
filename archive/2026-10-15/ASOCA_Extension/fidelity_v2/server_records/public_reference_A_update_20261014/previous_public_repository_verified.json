@@ -1,0 +1,12 @@
+{
+  "status": "verified_public",
+  "url": "https://github.com/Mister-Ryder/GTA-ASOCA",
+  "private": false,
+  "commit": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+  "branch": "main",
+  "source_file_count": 48,
+  "all_published_blobs_match_reviewed_bytes": true,
+  "anonymous_access_verified": true,
+  "verification_method": "Git clone with credential helper and extra authorization headers cleared; all downloaded blob bytes compared",
+  "verified_at": "2026-10-14T05:26:05.468342+00:00"
+}

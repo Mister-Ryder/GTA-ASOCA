@@ -1,0 +1,154 @@
+ASOCA 冠状动脉分割：近期论文性能与可比性核验
+检索日期：2026-10-14（Asia/Shanghai）
+用途：配合“补充心脏分割实验”会话，提供作者报告的文献性能参照。
+
+已采纳用户最新安排：暂不逐篇复现，先进行文献成绩比较；现有 U-Net、Swin UNETR 等本地训练仅保留为参考。本文不启动、停止或修改服务器训练。
+
+一、官方划分与当前实验
+
+ASOCA 官方给出40例训练（20正常、20患病）及20例测试（10正常、10患病）。测试真值不公开，官方盲测成绩须由组织者评估。正常/患病是病例分组，原任务为背景/冠状动脉管腔二分类。
+数据集作者原文：https://pmc.ncbi.nlm.nih.gov/articles/PMC10006074/
+DOI：https://doi.org/10.1038/s41597-023-02016-2
+
+“数据集相同”不能自动推出“采用同一官方测试”。以下将作者成绩按评估方案分组，可以先作文献对照；只有测试病例、参考标注及指标定义一致的结果，才构成严格直接比较。不要求因此逐篇复现。
+当前实验使用公开40例的分层五折，每折32训练、8留出；尚不是40训练/20官方盲测。现有fold0仅8例的成绩不能当成完整五折或官方测试成绩。
+
+二、公开40例内部五折：优先文献参照
+
+1. Unleashing Vision Foundation Models for Coronary Artery Segmentation: Parallel ViT-CNN Encoding and Variational Fusion
+   MICCAI 2025 主会，Dong et al.
+   ASOCA DSC：90.15 ± 0.57%；ASSD：0.66 ± 0.09 mm。
+   协议：公开40例，五折交叉验证，每折32训练/8测试；使用预训练视觉基础模型编码器。五折策略与当前实验同类，但病例名单及训练条件不保证相同。
+   原文定位：Table 1，PDF第7页；数据与设置第6页。
+   同论文3D-UNet：84.78 ± 0.85%，ASSD 1.41 ± 0.13 mm；VSNet：88.04 ± 0.63%，0.79 ± 0.11 mm。Table 1没有nnU-Net。
+   未报告ASOCA clDice/HD95；不要把作者回复中CCTA119的clDice93.81%放到ASOCA。
+   原文未明确±是患者间还是折间变异，保留其原标法。
+   原文：https://papers.miccai.org/miccai-2025/paper/0742_paper.pdf
+   DOI：https://doi.org/10.1007/978-3-032-04971-1_61
+   论文代码链接：https://github.com/d1c2x3/CAseg （本次检查返回404）。
+
+2. A topology-preserving three-stage framework for fully-connected coronary artery extraction
+   Medical Image Analysis 103 (2025), 103578，Qiu et al.；CorSegRec期刊扩展。
+   ASOCA Dice：88.53 ± 1.81%；HD95：1.07 ± 0.60 mm。
+   协议：ASOCA五折交叉验证。完整方法包括nnU-Net分割、中心线重连及缺失血管几何重建；此值包含后两阶段。
+   仅第一阶段CorSeg：87.13% Dice、5.06 mm HD95（Table 9）。这有助于区分网络分割和完整修复流程。
+   原文定位：Table 1和§4.1–4.4；Table 9为阶段消融。摘要写HD，正式指标章节及表格为HD95。
+   原文没有充分说明距离点集实现，暂不假定与本地surface-HD95或官方foreground-HD95相同。
+   原文：https://arxiv.org/html/2504.01597v1
+   出版方：https://www.sciencedirect.com/science/article/pii/S1361841525001252
+   DOI：https://doi.org/10.1016/j.media.2025.103578
+   代码：https://github.com/YH-Qiu/CorSegRec （本次仅有readme，仍说明稍后公开）。
+   不要将2025扩展成绩改署到MICCAI 2023版本。
+
+3. The Centerline-Cross Entropy Loss for Vessel-Like Structure Segmentation: Better Topology Consistency Without Sacrificing Accuracy
+   MICCAI 2024 主会，Acebes et al.；nnU-Net + Dice + clCE。
+   主表ASOCA Dice：84.80%；clDice：84.95%。
+   同表Dice loss：84.59% / 84.81% clDice；Dice + 0.5 clDice loss：83.42% / 84.76%。
+   协议：公开40例五折，full-resolution 3D nnU-Net，只修改损失函数。
+   原文定位：Table 1，PDF第7页。无HD95/ASSD列。
+   补充Table 3另有CE+clCE：Dice85.50±0.86%、clDice86.21±0.66%；这些来自100次bootstrap的另一个统计表，作者标注mu±sigma²。不可把该误差附到主表84.80/84.95上。
+   原文：https://papers.miccai.org/miccai-2024/paper/1081_paper.pdf
+   补充：https://papers.miccai.org/miccai-2024/supp/1081_supp.pdf
+   DOI：https://doi.org/10.1007/978-3-031-72111-3_67
+   代码：https://github.com/cesaracebes/centerline_CE
+
+三、最新论文及其他评估方案：单列参考
+
+4. Beyond Volume Overlap: Surface Matching for Topology-Aware Coronary Artery Segmentation
+   STACOM 2026，MICCAI卫星工作坊，不能标为MICCAI主会。
+   ASOCA nnU-Net + 作者surface loss：Dice88.54%、clDice87.98%、surface F1 87.10%。
+   同表Best baseline：88.14% / 87.81% / 85.40%。表中没有明确best baseline所用损失，不自行改标成cbDice。
+   SwinUNETR：85.11 / 84.77 / 81.90 → 加作者loss后85.74 / 85.12 / 82.50。
+   NexToU：86.89 / 86.27 / 84.30 → 87.25 / 86.90 / 84.90。
+   协议：公开40例中固定8例作为测试，剩余32例做五折。不是对全部40例产生out-of-fold预测，也不是官方隐藏20例。
+   定位：Table 3，PDF第8页；surface F1是作者局部半径容差表面匹配指标，不等同Dice/clDice。
+   原文：https://arxiv.org/pdf/2609.31740
+   官方页：https://papers.miccai.org/miccai-2026-sat/STACOM_013.html
+   官方页Springer DOI尚未提供；arXiv v1日期2026-09-22。
+   代码：https://github.com/BCV-Uniandes/Coronary-Surface-Matching
+
+5. Wavelet-enhanced hybrid state space and convolutional network for coronary artery segmentation
+   Engineering Applications of Artificial Intelligence 181, Part 5 (2026-10-01), 115607，Zhang et al.
+   出版方摘要ASOCA Dice84.62%、clDice83.57%。
+   本次未取得完整实验表与划分，距离指标不填。可作最新期刊参照，暂不列入“已确认相同五折协议”的直接比较组。
+   出版方：https://www.sciencedirect.com/science/article/pii/S0952197626018919
+   DOI：https://doi.org/10.1016/j.engappai.2026.115607
+
+6. Segmentation and Vascular Vectorization for Coronary Artery by Geometry-Based Cascaded Neural Network
+   IEEE TMI 44(1):259–269，2025；early access为2024。
+   作者摘要及预印本报告ASOCA Dice89.5%。预印本Table 2另报HD0.193、ASSD0.38、NoS2。
+   协议描述40训练/20测试，沿用GCB-Net基线；测试真值是否来自官方盲测未证实。最终期刊版的距离表未核，不将此距离数字放进与官方HD95的比较列。
+   表头距离单位不清，写的是HD而非HD95；数值HD<ASSD提示定义/尺度需要核对。
+   作者原文：https://arxiv.org/html/2305.04208
+   期刊摘要：https://pubmed.ncbi.nlm.nih.gov/39078771/
+   DOI：https://doi.org/10.1109/TMI.2024.3435714
+   代码：https://github.com/csuzbw/Geometry_Segmentation_for_Coronary_Artery
+
+7. Graph Convolution Based Cross-Network Multiscale Feature Fusion for Deep Vessel Segmentation
+   IEEE TMI 42(1):183–195，2023。
+   Table V Ours：Dice89.89%、ASSD0.544 mm、skeleton precision95.6%、skeleton recall95.9%。
+   最强H-DenseUNet版本：89.91%、0.530 mm、95.8%、96.0%。
+   虽为40训练/20测试，但作者明确邀请专家重新标注测试集，参考真值不是已确认的官方隐藏标注；不能放入官方挑战组。
+   SP/SR不能改名成clDice。
+   原文：https://arxiv.org/pdf/2301.02393 （Table V，第10页；标注协议第7页）
+   DOI：https://doi.org/10.1109/TMI.2022.3207093
+
+8. Geometric-topological deep transfer learning for precise vessel segmentation in 3D medical volumes
+   npj Digital Medicine 9:58，2026-01-15；FlowAxis。
+   使用ASOCA，Figure 3展示Dice/clDice及距离趋势，但该图未给数值标签，主文未交代ASOCA病例划分。未将目测估计填成精确指标，也不列入性能排序。
+   原文：https://pmc.ncbi.nlm.nih.gov/articles/PMC12820045/
+   DOI：https://doi.org/10.1038/s41746-025-02061-8
+
+9. 相关但任务条件不同的MedIA 2025论文
+   SIRE（DOI10.1016/j.media.2025.103467）：公开40例自划32/8，中心线tracking recall最高0.96。它不是96%分割Dice；mask nnU-Net Dice0.86用于自动seed。中心线容差定义亦不同。
+   World of Forms（DOI10.1016/j.media.2025.103582）：单患者训练，GEM-UNet+centerline prior Dice85.2±3.1%、ASSD0.557±0.211 mm、HD951.090±0.904 mm；测试使用组织者中心线。单中心线训练Dice85.0±2.2%。属于one-shot、有额外中心线输入，不能混入常规自动分割排名。Table3底行89.4%为外部挑战方法，非WoF本身。
+   两篇完整表格、原文链接及代码差异见ASOCA_literature_20261014/MedIA2025_SIRE_WoF_verified.txt。
+
+10. 尚未取得原表的强相关方法
+    ADE-HTL：An Anatomy- and Topology-Preserving Framework for Coronary Artery Segmentation，IEEE TMI43(2):723–733，2024，DOI10.1109/TMI.2023.3319720。
+    论文及元数据已核，原作者ASOCA性能表未取得；不能用CorSegRec论文中复现的86.08±1.21%作为原作者结果。
+    出版方：https://ieeexplore.ieee.org/document/10265156
+
+四、官方20例盲测：可直接采用的外部参考
+
+挑战主论文：Automated segmentation of normal and diseased coronary arteries – The ASOCA challenge，CMIG97 (2022) 102049，DOI10.1016/j.compmedimag.2022.102049。
+Table1完整Submission列：
+  历史冠军nnU-Net+尺度/心外膜辅助：Dice87±4%，官方HD95 4.16±7.30 mm。
+  跨参赛方法Top3多数投票集成：Dice88±4%，官方HD95 1.56±2.55 mm。
+  注意Top3是跨方法集成，不能改名为普通nnU-Net。
+原文：https://www.sciencedirect.com/science/article/pii/S0895611122000222
+
+可检索官方提交hongqq（2024-03-12）：Dice89.46%，官方HD95 1.8879 mm。
+https://asoca.grand-challenge.org/evaluation/ed9bc28a-f641-4955-b630-7ce078d1054d/
+可检索官方提交stianfmo（2024-06-04）：Dice88.99%，官方HD95 2.4026 mm。
+https://asoca.grand-challenge.org/evaluation/fd9e6d9b-75d7-4d74-96b7-764aa1ea0e30/
+完整榜本次访问403；上述为可核成绩，不保证2026当前榜首，亦不猜测用户名对应论文方法。
+
+五、现在如何使用这份对照
+
+1. 不增加逐篇复现队列。以“reported results”列出已核论文，并写明来源、划分、是否预训练/后处理/额外中心线。
+2. 当前模型五折完成后，可以与第二节做同类内部CV的文献级对照；不同病例划分和训练条件仍须披露，不把表中名次写成同条件重跑排名。
+3. 若选择官方40训练/20测试的直接比较路线，需训练使用40例的最终模型，对官方20例生成预测并提交组织者评估。未获官方评估前，不填写自算的“官方测试”成绩，也不推定当前提交入口一定可用。
+4. 当前记录的fold0 GTA Dice80.01%、clDice83.67%、官方定义foreground-HD95 7.161 mm，仅8例；U-Net78.70%、Swin UNETR78.57%均是相同8例的参考。不能与完整五折或官方盲测数字相减后报告正式性能差距。
+5. 固定主指标：Dice、clDice/中心线召回，以及距离指标。ASOCA官方HD95对全部前景体素计算；本地surface-HD95对边界体素计算，两列须保留全名。作者论文若未说明距离实现，应注明待核。
+官方源码：https://raw.githubusercontent.com/Ramtingh/ASOCA_MICCAI2020_Evaluation/master/evaluation.py
+
+六、核验材料
+
+ASOCA_literature_20261014/recent_findings.txt：2025–2026原文定位。
+ASOCA_literature_20261014/established_findings.txt：TMI及clCE原表。
+ASOCA_literature_20261014/protocol_findings.txt：挑战协议及官方成绩。
+ASOCA_literature_20261014/verified_references.bib：12篇DOI文献，通过Crossref自动获取，非手写猜测。
+ASOCA_literature_20261014/citation_metadata.json：各条BibTeX获取地址与状态。
+ASOCA_literature_20261014/STACOM2026_arxiv_reference.bib：从arXiv获取，待Springer正式DOI可用后再更新。
+
+结论范围：本次为原文检索及文献参照，未声称得到完整最新榜单，也未声称当前模型优于这些方法。
+
+七、后续核验：ASOCA官方标签与全心脏扩展标签
+
+ASOCA官方冠脉标注、本地原CompressedVersion/Annotations仍为0/1二分类。但不能因此认为不存在针对同一影像的其他研究者扩展标签。
+Nature Communications 2023论文 Mining multi-center heterogeneous medical data with distributed synthetic learning（DOI10.1038/s41467-023-40687-y）为ASOCA新增了与MM-WHS同类型的七类全心脏标注，先用SenseCare全心分割算法生成，再人工修正明显错误。
+正式论文Data availability指向 https://github.com/tommy-qichang/DSL_All_Code/tree/main/data ，实际可公开获取data/Masks.zip；旧Box登录入口不影响通过GitHub获取。
+2026-10-14已下载原包并独立保存于 E:\00-Data\冠状动脉-ASOCA\WHS_Extension_DSL_2023 。其中asoca_masks有40个NIfTI，每例标签值均为0–7。通过尺寸及完整空间坐标核验，全部能唯一匹配本地40例公开CTCA；原始冠脉标签未变。
+具体病例对应、SHA256及来源见该文件夹的ASOCA_WHS_label_audit.json、case_mapping.txt及README_标签来源与使用说明.txt。1–7对应结构名称尚未得到显式字典核验，不能直接猜测。
+使用这套扩展标注进行全心脏多类任务时，需单独披露标注来源与质量控制；其多类结果不能与前述官方冠脉二分类Dice混为同一任务。当前实验范围未因下载发生改变。

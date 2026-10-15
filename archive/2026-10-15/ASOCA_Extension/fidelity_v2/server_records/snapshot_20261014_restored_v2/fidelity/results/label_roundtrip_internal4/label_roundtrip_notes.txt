@@ -1,0 +1,25 @@
+Measured nearest-neighbour label roundtrip on four internal development patients. Not model inference, independent test, or a mathematical performance ceiling. Failure/empty distances are retained; no complete-case replacement.
+{
+  "n_expected": 4,
+  "n_audited": 4,
+  "n_pipeline_verified": 4,
+  "pipeline_verified": true,
+  "dice": {
+    "mean": 0.9435492852081933,
+    "patient_sd": 0.02427805530411674,
+    "n_valid_verified_cases": 4,
+    "complete_four_case_mean": true
+  },
+  "assd_mm": {
+    "mean": 0.06414208406593812,
+    "patient_sd": 0.02504961122306155,
+    "n_valid_verified_cases": 4,
+    "complete_four_case_mean": true
+  },
+  "assd_directional_mean_mm": {
+    "mean": 0.06378882803017476,
+    "patient_sd": 0.024849617585485668,
+    "n_valid_verified_cases": 4,
+    "complete_four_case_mean": true
+  }
+}

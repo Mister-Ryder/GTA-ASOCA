@@ -1,0 +1,40 @@
+{
+  "status": "verified",
+  "boot_id": "1b77622a-2f48-430b-8e57-85cf20e2f350",
+  "verified_at": "2026-10-14T04:22:57.723584+00:00",
+  "disk": "Filesystem                 Size  Used Avail Use% Mounted on\n/dev/md0                   100G   46G   55G  46% /root/autodl-tmp\nAutoFS:fswestbthird704828  200G  181G   20G  91% /autodl-fs/data\n",
+  "torch": "2.7.1+cu128",
+  "cuda_runtime": "12.8",
+  "gpu": "NVIDIA vGPU-32GB",
+  "historical_and_fixed_final_classifier_weights_unchanged": true,
+  "manifest_unchanged": true,
+  "cuda_finite_after_restart": true,
+  "classifier_accuracy_is_diagnostic_only": true,
+  "next": "main staged smoke -> formal GTA segmentation, plus independent UNet recipe calibration",
+  "segmentation_output_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results",
+  "output_root_reason": "Expanded local SSD now has sufficient space; avoid filling shared storage",
+  "label_roundtrip": {
+    "n_expected": 4,
+    "n_audited": 4,
+    "n_pipeline_verified": 4,
+    "pipeline_verified": true,
+    "dice": {
+      "mean": 0.9435492852081933,
+      "patient_sd": 0.02427805530411674,
+      "n_valid_verified_cases": 4,
+      "complete_four_case_mean": true
+    },
+    "assd_mm": {
+      "mean": 0.06414208406593812,
+      "patient_sd": 0.02504961122306155,
+      "n_valid_verified_cases": 4,
+      "complete_four_case_mean": true
+    },
+    "assd_directional_mean_mm": {
+      "mean": 0.06378882803017476,
+      "patient_sd": 0.024849617585485668,
+      "n_valid_verified_cases": 4,
+      "complete_four_case_mean": true
+    }
+  }
+}

@@ -1,0 +1,313 @@
+{
+  "n_patches": 512,
+  "balanced_accuracy_definition": "macro recall over classes present in evaluation ground truth",
+  "mean_head_balanced_accuracy": 0.4966732310252701,
+  "selection_positive_coverage_valid": true,
+  "mean_head_nonempty_balanced_accuracy": 0.4294595724138976,
+  "heads": {
+    "generation": {
+      "confusion_matrix": [
+        [
+          75,
+          0,
+          3,
+          3,
+          2,
+          2,
+          0
+        ],
+        [
+          1,
+          60,
+          43,
+          5,
+          1,
+          0,
+          0
+        ],
+        [
+          6,
+          5,
+          28,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          12,
+          5,
+          6,
+          73,
+          45,
+          11,
+          0
+        ],
+        [
+          21,
+          3,
+          0,
+          17,
+          33,
+          9,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          5,
+          12,
+          3,
+          0
+        ],
+        [
+          2,
+          0,
+          0,
+          0,
+          4,
+          4,
+          0
+        ]
+      ],
+      "true_support": [
+        85,
+        110,
+        50,
+        152,
+        83,
+        22,
+        10
+      ],
+      "per_class_recall": [
+        0.8823529411764706,
+        0.5454545454545454,
+        0.56,
+        0.48026315789473684,
+        0.39759036144578314,
+        0.13636363636363635,
+        0.0
+      ],
+      "balanced_accuracy": 0.4288606631907389,
+      "accuracy": 0.53125,
+      "absent_evaluation_classes": [],
+      "absent_training_classes": [],
+      "majority_baseline_class": 3,
+      "majority_baseline_accuracy": 0.296875,
+      "majority_baseline_balanced_accuracy": 0.14285714285714285,
+      "nonempty_support": 427,
+      "nonempty_accuracy": 0.4613583138173302,
+      "nonempty_balanced_accuracy": 0.3532786168597836,
+      "absent_positive_evaluation_classes": [],
+      "majority_baseline_nonempty_balanced_accuracy": 0.16666666666666666,
+      "always_empty_accuracy": 0.166015625,
+      "always_empty_balanced_accuracy": 0.14285714285714285,
+      "always_empty_nonempty_balanced_accuracy": 0.0
+    },
+    "structure": {
+      "confusion_matrix": [
+        [
+          76,
+          0,
+          0,
+          3,
+          2,
+          4,
+          0
+        ],
+        [
+          8,
+          0,
+          2,
+          4,
+          2,
+          2,
+          0
+        ],
+        [
+          24,
+          0,
+          3,
+          7,
+          15,
+          12,
+          0
+        ],
+        [
+          8,
+          0,
+          1,
+          15,
+          51,
+          35,
+          0
+        ],
+        [
+          5,
+          0,
+          2,
+          3,
+          45,
+          44,
+          0
+        ],
+        [
+          7,
+          0,
+          2,
+          1,
+          13,
+          116,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "true_support": [
+        85,
+        18,
+        61,
+        110,
+        99,
+        139,
+        0
+      ],
+      "per_class_recall": [
+        0.8941176470588236,
+        0.0,
+        0.04918032786885246,
+        0.13636363636363635,
+        0.45454545454545453,
+        0.8345323741007195,
+        null
+      ],
+      "balanced_accuracy": 0.39478990665624775,
+      "accuracy": 0.498046875,
+      "absent_evaluation_classes": [
+        6
+      ],
+      "absent_training_classes": [],
+      "majority_baseline_class": 5,
+      "majority_baseline_accuracy": 0.271484375,
+      "majority_baseline_balanced_accuracy": 0.16666666666666666,
+      "nonempty_support": 427,
+      "nonempty_accuracy": 0.41920374707259955,
+      "nonempty_balanced_accuracy": 0.2949243585757325,
+      "absent_positive_evaluation_classes": [
+        6
+      ],
+      "majority_baseline_nonempty_balanced_accuracy": 0.2,
+      "always_empty_accuracy": 0.166015625,
+      "always_empty_balanced_accuracy": 0.16666666666666666,
+      "always_empty_nonempty_balanced_accuracy": 0.0
+    },
+    "location": {
+      "confusion_matrix": [
+        [
+          70,
+          0,
+          4,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          19,
+          3,
+          11,
+          0,
+          0,
+          0
+        ],
+        [
+          4,
+          1,
+          34,
+          1,
+          4,
+          0,
+          0
+        ],
+        [
+          14,
+          5,
+          0,
+          100,
+          2,
+          4,
+          0
+        ],
+        [
+          12,
+          1,
+          13,
+          0,
+          104,
+          4,
+          4
+        ],
+        [
+          1,
+          0,
+          0,
+          17,
+          0,
+          19,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          1,
+          15,
+          4,
+          22
+        ]
+      ],
+      "true_support": [
+        85,
+        35,
+        44,
+        125,
+        138,
+        37,
+        48
+      ],
+      "per_class_recall": [
+        0.8235294117647058,
+        0.5428571428571428,
+        0.7727272727272727,
+        0.8,
+        0.7536231884057971,
+        0.5135135135135135,
+        0.4583333333333333
+      ],
+      "balanced_accuracy": 0.6663691232288235,
+      "accuracy": 0.71875,
+      "absent_evaluation_classes": [],
+      "absent_training_classes": [],
+      "majority_baseline_class": 4,
+      "majority_baseline_accuracy": 0.26953125,
+      "majority_baseline_balanced_accuracy": 0.14285714285714285,
+      "nonempty_support": 427,
+      "nonempty_accuracy": 0.6978922716627635,
+      "nonempty_balanced_accuracy": 0.6401757418061766,
+      "absent_positive_evaluation_classes": [],
+      "majority_baseline_nonempty_balanced_accuracy": 0.16666666666666666,
+      "always_empty_accuracy": 0.166015625,
+      "always_empty_balanced_accuracy": 0.14285714285714285,
+      "always_empty_nonempty_balanced_accuracy": 0.0
+    }
+  }
+}

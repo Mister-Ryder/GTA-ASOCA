@@ -1,0 +1,1790 @@
+{
+  "started_at_utc": "2026-10-15T06:40:42.698922+00:00",
+  "kind": "B",
+  "port": 38773,
+  "read_only_SFTP": true,
+  "files": [
+    {
+      "relative_path": "code/evaluate.py",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/evaluate.py",
+      "bytes": 18550,
+      "sha256": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+      "source_mtime_epoch": 1791949516
+    },
+    {
+      "relative_path": "code/evaluate_trajectory.py",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/evaluate_trajectory.py",
+      "bytes": 12155,
+      "sha256": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63",
+      "source_mtime_epoch": 1791949617
+    },
+    {
+      "relative_path": "code/metrics.py",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/code/metrics.py",
+      "bytes": 7755,
+      "sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+      "source_mtime_epoch": 1791947001
+    },
+    {
+      "relative_path": "configs/main_source_freeze.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/configs/main_source_freeze.json",
+      "bytes": 10604,
+      "sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46",
+      "source_mtime_epoch": 1791951711
+    },
+    {
+      "relative_path": "dataset/cache/manifest.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+      "bytes": 136829,
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+      "source_mtime_epoch": 1791910870
+    },
+    {
+      "relative_path": "controller/source/run_gaussian_region_balance_control.py",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py",
+      "bytes": 29212,
+      "sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+      "source_mtime_epoch": 1791973927
+    },
+    {
+      "relative_path": "controller/ACTUAL_B_CONFIG_BINDING.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/ACTUAL_B_CONFIG_BINDING.json",
+      "bytes": 2379,
+      "sha256": "f50da773fe521927da5f98423f6a799303b88fbb4027e96c3c26d6809e704085",
+      "source_mtime_epoch": 1791989707
+    },
+    {
+      "relative_path": "controller/ACTUAL_B_THETA0.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/ACTUAL_B_THETA0.json",
+      "bytes": 102923,
+      "sha256": "cd6cbaf752899e027a52c06c10ff249e8610882038fc6ba89c77b62dcf986b2c",
+      "source_mtime_epoch": 1791974732
+    },
+    {
+      "relative_path": "controller/CONTROL_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/CONTROL_COMPLETE.json",
+      "bytes": 17579,
+      "sha256": "89e03018a32dbea73af6bf5467e955b4a67c0d5f8b850c588d3d76d520483928",
+      "source_mtime_epoch": 1791996085
+    },
+    {
+      "relative_path": "controller/POSTFIT_VERIFIED.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/POSTFIT_VERIFIED.json",
+      "bytes": 35903,
+      "sha256": "1a9d591c9763591b96332e6f1f4bd537b893030d71a6811b537532dd1dd3af90",
+      "source_mtime_epoch": 1791996085
+    },
+    {
+      "relative_path": "controller/POSTTRAIN_PREFLIGHT.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/POSTTRAIN_PREFLIGHT.json",
+      "bytes": 8008,
+      "sha256": "3ce460dee8fc0880e44dced9fe9fd393a05aa47fdc04c5ba494ac71a50ef1037",
+      "source_mtime_epoch": 1791989716
+    },
+    {
+      "relative_path": "controller/PROTOCOL.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/PROTOCOL.json",
+      "bytes": 13983,
+      "sha256": "1b349f7b9c1291771555abda8ba92e66081c2e00217298cf00a1e5071fee0abd",
+      "source_mtime_epoch": 1791974726
+    },
+    {
+      "relative_path": "controller/STATUS.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/STATUS.json",
+      "bytes": 3500,
+      "sha256": "6e2ddd5fd6ba79be124c4399a2cc001c74fa76d0759a0f25ebae401387f921a4",
+      "source_mtime_epoch": 1791996085
+    },
+    {
+      "relative_path": "controller/expected_B_config.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014/expected_B_config.json",
+      "bytes": 24285,
+      "sha256": "1dea54ff5597621d2753f1dca5be915ec27ca89b900940d2a831b12b8b0896ae",
+      "source_mtime_epoch": 1791974717
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/TRAJECTORY_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/TRAJECTORY_COMPLETE.json",
+      "bytes": 6806,
+      "sha256": "c5693bcae3b4923af6f1b6dfa4166fa941fc37a5a2da7eac8ebb408100c1d3a6",
+      "source_mtime_epoch": 1791996040
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_10.json",
+      "bytes": 2324,
+      "sha256": "1215792f496d28c48b1427fcf0870cabb66cfc561f8a4239d9d351322f1dba26",
+      "source_mtime_epoch": 1791989805
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_10_prediction.nrrd",
+      "bytes": 76092,
+      "sha256": "4dac6af1cfcd818d9c275e24d72e54c1b21385229b690e9a44ef37a877796b1c",
+      "source_mtime_epoch": 1791989805
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_20.json",
+      "bytes": 2323,
+      "sha256": "aaf4d0900b801f50422fb4b162c76727d615e801772a7935512e08e06ff488cf",
+      "source_mtime_epoch": 1791989893
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Diseased_20_prediction.nrrd",
+      "bytes": 85307,
+      "sha256": "32af55195354380efe02065b88d10116f98fd862410952b5d1b305e02909c89e",
+      "source_mtime_epoch": 1791989893
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "7f821a128d0d5d03b49832f88a3ca72e19eeddfe26a5f1eb82e60c6279059d5f",
+      "source_mtime_epoch": 1791990036
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_12.json",
+      "bytes": 2325,
+      "sha256": "918da9ed6e55fbb4c65669a0f6439272ba5f00fc08d323c3aae6bd6f7fd94199",
+      "source_mtime_epoch": 1791989959
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_12_prediction.nrrd",
+      "bytes": 78725,
+      "sha256": "43837bdd7cb64c556c30f59ff605532075704f4b6885e4db4763123f6971a50c",
+      "source_mtime_epoch": 1791989959
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_3.json",
+      "bytes": 2309,
+      "sha256": "094e15ca9b2698d9a3ac4948d233699586c42026004d9cfad494117dddd43984",
+      "source_mtime_epoch": 1791990034
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/Normal_3_prediction.nrrd",
+      "bytes": 91067,
+      "sha256": "2b2b9d1508e9453b1486f85deb7ceb9cbd5ce4fcd309d31701cf19f73b143e91",
+      "source_mtime_epoch": 1791990034
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/case_metrics.jsonl",
+      "bytes": 8821,
+      "sha256": "7aae3962e26eb52a9081348b2a9e52877c9c6996ce6397ff8f89306bc6c818cb",
+      "source_mtime_epoch": 1791990034
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch010/summary.json",
+      "bytes": 10313,
+      "sha256": "7bc482d2ef67adc952abe4142c56179107e25b62bcb815eb9af88bf77294daa7",
+      "source_mtime_epoch": 1791990034
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_10.json",
+      "bytes": 2329,
+      "sha256": "923ab25cc5279de69d249b252fd7c0bc8ffaebb43d11d8f74e9d760aa81356d9",
+      "source_mtime_epoch": 1791990117
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_10_prediction.nrrd",
+      "bytes": 66397,
+      "sha256": "999b5901584f4b1efce00099fa9190a8bfe11395d190cbd0f9e209e6ce5e20cd",
+      "source_mtime_epoch": 1791990117
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_20.json",
+      "bytes": 2328,
+      "sha256": "64496ae62ce06600fb4ffe74b94d1a68f08e0e490190afe25c48bcfb4abfb102",
+      "source_mtime_epoch": 1791990204
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Diseased_20_prediction.nrrd",
+      "bytes": 71650,
+      "sha256": "0e2a4c2de9570cc051351616fe80eddab7bb06bb0d9a4581ff129135a5884197",
+      "source_mtime_epoch": 1791990204
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "5e956ccf57e587ffe2125d7cc3280c0e8aa35cc5f4c9e6c5228a86fe961247ec",
+      "source_mtime_epoch": 1791990346
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_12.json",
+      "bytes": 2324,
+      "sha256": "d7a449e66ce5e4481e436b0247d3d2ed3d09e082409fca429faf3f2b6a753d04",
+      "source_mtime_epoch": 1791990271
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_12_prediction.nrrd",
+      "bytes": 66475,
+      "sha256": "64cc1e47f510517f75c6d3b3a2445c4431a805189a8c5665d2e955b9e2dd04f2",
+      "source_mtime_epoch": 1791990271
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_3.json",
+      "bytes": 2320,
+      "sha256": "03085936741ebbdffcca6b3d569876e536b6eca1e7e9d28d07e82bad750623cf",
+      "source_mtime_epoch": 1791990345
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/Normal_3_prediction.nrrd",
+      "bytes": 71815,
+      "sha256": "59a5b3fcbf6a5bdd748f7655be19791d1e8d96151910bf4105d060d8680fcb51",
+      "source_mtime_epoch": 1791990345
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/case_metrics.jsonl",
+      "bytes": 8841,
+      "sha256": "c80d745c79627ec573c9c2f229812232f25ef8aca6a5d2308a6de99a8a8c951d",
+      "source_mtime_epoch": 1791990345
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch020/summary.json",
+      "bytes": 10277,
+      "sha256": "179cfbe87c2ac59b7289bb364fd7e203b7a45fd8e46ff457f06fda9bfc5b86a7",
+      "source_mtime_epoch": 1791990345
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_10.json",
+      "bytes": 2325,
+      "sha256": "273fa23d5b7e842be533f26ec2a983c770f79564dd348adde6a8d55ac1975719",
+      "source_mtime_epoch": 1791990430
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_10_prediction.nrrd",
+      "bytes": 65878,
+      "sha256": "930f09e6a355e511abf98f092046078b90f6899d497af34a471e9ce50f689223",
+      "source_mtime_epoch": 1791990430
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_20.json",
+      "bytes": 2327,
+      "sha256": "b43c892583e8be3b1cc89c5253dcf2c7752c1ad6ad687cbb0266d145c5f7e473",
+      "source_mtime_epoch": 1791990518
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Diseased_20_prediction.nrrd",
+      "bytes": 71528,
+      "sha256": "758ca43ab55ba588676207928db273256600f360dd188d4e3cc38da78dc03a5f",
+      "source_mtime_epoch": 1791990518
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "7508ea49a3c5f1717925a6d3dea5c0c4b8d518175d6661f96fe39001ef7a4620",
+      "source_mtime_epoch": 1791990658
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_12.json",
+      "bytes": 2325,
+      "sha256": "d0e5e5ed82f51e83eacf13502b3dc1ff5e983877e6391fbd72a09c5b4eaf2408",
+      "source_mtime_epoch": 1791990585
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_12_prediction.nrrd",
+      "bytes": 66573,
+      "sha256": "d3a8d49ae1bea2ff4da376502fdb3089a14095a6fbe50715da235378f99785ba",
+      "source_mtime_epoch": 1791990585
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_3.json",
+      "bytes": 2322,
+      "sha256": "4123659b10bd3cdd0e8c1d997457cd71d5d2a220dc62a675737d2c088caed1c5",
+      "source_mtime_epoch": 1791990656
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/Normal_3_prediction.nrrd",
+      "bytes": 73228,
+      "sha256": "6b75e47e7e62e1c732259a2aff9f52b0b9c43ecd08fdd6b08cb9de735447cc41",
+      "source_mtime_epoch": 1791990656
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/case_metrics.jsonl",
+      "bytes": 8839,
+      "sha256": "913a0bf429c2ffbdbf391f4dd48a5bb9a709ade0ea08982aff1a0188d2b16663",
+      "source_mtime_epoch": 1791990656
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch030/summary.json",
+      "bytes": 10294,
+      "sha256": "51fb65c14ebcfcffad2917e61124111614e837adeaabfeff95d486ab96c07225",
+      "source_mtime_epoch": 1791990656
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_10.json",
+      "bytes": 2332,
+      "sha256": "ba0c9659e6c2058b9bf9f256b7a7e2f1af1d367bae298fafb353677a5ebd73eb",
+      "source_mtime_epoch": 1791990739
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_10_prediction.nrrd",
+      "bytes": 67324,
+      "sha256": "eeef35642414e84ad9a286b76d7489d17030e447ce517e6e0c04aa9832df75f7",
+      "source_mtime_epoch": 1791990739
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "42b4538df2c50115d0f2fdc5d0c1f4b5235be98ae0543e654379f1e52fd1a4c2",
+      "source_mtime_epoch": 1791990825
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Diseased_20_prediction.nrrd",
+      "bytes": 71766,
+      "sha256": "0d42be2518acf7f8c8ac4e591fbe6dc0b4c8bd59bd7ff65f866dfce46a46c8ef",
+      "source_mtime_epoch": 1791990825
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "7d74bc3f7d379b30f540966890550edabf01fb9c4949ada177dce357e29ed8b6",
+      "source_mtime_epoch": 1791990963
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "e5fdce058cf92680b60e47bd975c28ee49c117eefedc0fafb5c867c489e0dda1",
+      "source_mtime_epoch": 1791990888
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_12_prediction.nrrd",
+      "bytes": 68605,
+      "sha256": "7960a38b4287b758f873ca023a20a95cd0eabfa3155203afcf369ad0b02e0cfd",
+      "source_mtime_epoch": 1791990888
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_3.json",
+      "bytes": 2309,
+      "sha256": "fab6483bea95d9f435e5b79ffe6997df148f7042f8f2141e8b4f5419cec5792a",
+      "source_mtime_epoch": 1791990962
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/Normal_3_prediction.nrrd",
+      "bytes": 73318,
+      "sha256": "dcb7a0ebc091b93a5d92a30f06040fe81ebde6adadcf680ca01ffae193a2b407",
+      "source_mtime_epoch": 1791990962
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/case_metrics.jsonl",
+      "bytes": 8838,
+      "sha256": "c8c2a3d17799c31cac593143053e784cb705073815eceb6937ac59d5292001bb",
+      "source_mtime_epoch": 1791990962
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch040/summary.json",
+      "bytes": 10317,
+      "sha256": "a52c3a8ce4a88c478a0c9634d25c64fa3d898f36b7d99271840c241da2d943c7",
+      "source_mtime_epoch": 1791990962
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "527859d34167d9b06d66df5c3b96d7738cc4af535a39645bc97b2c9e29e67e65",
+      "source_mtime_epoch": 1791991046
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_10_prediction.nrrd",
+      "bytes": 66253,
+      "sha256": "c33309bfe101601439619c6d21fb2f2e86a4ee4466ebc26af90497a3c2c7d12b",
+      "source_mtime_epoch": 1791991046
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "4fb7e1c9533b07ba3178a412d88c0b796879edec9c40ffe0840edf64753cc0cf",
+      "source_mtime_epoch": 1791991133
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Diseased_20_prediction.nrrd",
+      "bytes": 71342,
+      "sha256": "0a676ce4a12599bd8094b23453edc4d601a6ed41feb9468d6ecaf52fd2385191",
+      "source_mtime_epoch": 1791991133
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "0eb6475577e1c42b5bd91b6ff59dbe2ca6e740793102b9f9bac8ca0618825541",
+      "source_mtime_epoch": 1791991272
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_12.json",
+      "bytes": 2326,
+      "sha256": "4d6e0192831887559b4a2ceeeee2c8c10ae212076107d27cca70ff7604d8a44b",
+      "source_mtime_epoch": 1791991198
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_12_prediction.nrrd",
+      "bytes": 67417,
+      "sha256": "435738894a267b07972f35e7fa982e2205ad611f46f9ce79243aee8615d10412",
+      "source_mtime_epoch": 1791991198
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_3.json",
+      "bytes": 2331,
+      "sha256": "03a7efb65ce7f1fd9ff7512a1b38d5908750c4499eca640d944cfae373180034",
+      "source_mtime_epoch": 1791991271
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/Normal_3_prediction.nrrd",
+      "bytes": 71957,
+      "sha256": "1f7aa555c14d13fae1d8a25e054a3f1a4beca10c45b257b4003d85a1165bd4bb",
+      "source_mtime_epoch": 1791991271
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/case_metrics.jsonl",
+      "bytes": 8859,
+      "sha256": "5d64a5179bef497d7d2dd72b3e1da615d4378f36effc87feec340101e2c51943",
+      "source_mtime_epoch": 1791991271
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch050/summary.json",
+      "bytes": 10301,
+      "sha256": "0f80ed9a64ba8e4783db8a4da9089257a670c4a9380a5cdbb65b487feaa508a3",
+      "source_mtime_epoch": 1791991271
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_10.json",
+      "bytes": 2334,
+      "sha256": "eeb38123a32a4338f1c6785900567c064ce2f72f99e9249c361bf7eb1628ce5a",
+      "source_mtime_epoch": 1791991354
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_10_prediction.nrrd",
+      "bytes": 66746,
+      "sha256": "2927265a5b2e0f09bf2637c371eac15b2aa1938448eccad48a5f7891b229b84e",
+      "source_mtime_epoch": 1791991354
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "71e079c25a614d9e14a09de1c1e5895fe934f0b9b796d95d4f94161caaa98761",
+      "source_mtime_epoch": 1791991444
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Diseased_20_prediction.nrrd",
+      "bytes": 71660,
+      "sha256": "3cb2b664889d709fb2b751b3a90e664bb7fd78b66c574d1fd3b4c51fdd6ad019",
+      "source_mtime_epoch": 1791991444
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "e9472d3a4c3745fb0d4f6ba8252c3a57cfc11fa41fd6d0100167d8a846b57e06",
+      "source_mtime_epoch": 1791991592
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_12.json",
+      "bytes": 2329,
+      "sha256": "74d83a7632086e2a8cdead6f1de7da25d3df63d2ee132b8cc8fa461eee5b62a1",
+      "source_mtime_epoch": 1791991513
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_12_prediction.nrrd",
+      "bytes": 67233,
+      "sha256": "79e562aeda3bd513ec5a38a033b8a94e400015baafc72f80c3d7d454efacd635",
+      "source_mtime_epoch": 1791991513
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_3.json",
+      "bytes": 2324,
+      "sha256": "9a2d16da91d450f1eaa85cefdcd477a2049440e2035cf4776ddcb215d4807759",
+      "source_mtime_epoch": 1791991590
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/Normal_3_prediction.nrrd",
+      "bytes": 72805,
+      "sha256": "3a9dac0a08853690e8d72781e9bac04faaec83c28551fc5f135b19289ed0345a",
+      "source_mtime_epoch": 1791991590
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/case_metrics.jsonl",
+      "bytes": 8856,
+      "sha256": "a133a5f913252e3bfa45d4ab1405e6dc225ad58e5c53d2aec311924e8022adc0",
+      "source_mtime_epoch": 1791991590
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch060/summary.json",
+      "bytes": 10294,
+      "sha256": "3ffa38d705254652edc805b3e3c0ee99a280853d37baa7b790d063c483cc0492",
+      "source_mtime_epoch": 1791991590
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "f13393f082cd9509d5db0a33dae1cea0fc168944fdab1f35e90694bc272c4809",
+      "source_mtime_epoch": 1791991677
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_10_prediction.nrrd",
+      "bytes": 67437,
+      "sha256": "5cc937953b402ea189e2be7be9638adbc3faf20aaa6684ee398609c2e9a0921b",
+      "source_mtime_epoch": 1791991677
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_20.json",
+      "bytes": 2328,
+      "sha256": "5c5b5efd232ea4998c1c31a31dfd63377b83867e5e10401e5097fe2815d1f0f3",
+      "source_mtime_epoch": 1791991765
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Diseased_20_prediction.nrrd",
+      "bytes": 72756,
+      "sha256": "8d6c75c1a9a336e7a59ca6b9369d4f5b8ebb36c9c259186e7cb2ff57a3b15ef5",
+      "source_mtime_epoch": 1791991765
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "902d18ade2ca13ebd5ef2f7dc92201809c8eda6f4d526f3a9953f1eaa61047d0",
+      "source_mtime_epoch": 1791991911
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_12.json",
+      "bytes": 2326,
+      "sha256": "e4448a86a1ce7968296e776376c2954d8428c85666c2b83823a4a72371bf53d1",
+      "source_mtime_epoch": 1791991833
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_12_prediction.nrrd",
+      "bytes": 69457,
+      "sha256": "27e4436b7285e189f83cea63a2a2672d5effef47a47497f3120f1d60f70d542e",
+      "source_mtime_epoch": 1791991833
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_3.json",
+      "bytes": 2326,
+      "sha256": "1a9274fc5c4a2252b6ab3db9036dc7108c6d2db75bc3ea740753a1b736edd5eb",
+      "source_mtime_epoch": 1791991910
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/Normal_3_prediction.nrrd",
+      "bytes": 73596,
+      "sha256": "f2664612bfe9d0010b7798f604c549fd7a976669d522f74a89410c2a85da4608",
+      "source_mtime_epoch": 1791991910
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/case_metrics.jsonl",
+      "bytes": 8853,
+      "sha256": "7fd40a1c4e35bc6a8710c5408f18b32512f78bd93b4a01390f210be86e8246f0",
+      "source_mtime_epoch": 1791991910
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch070/summary.json",
+      "bytes": 10294,
+      "sha256": "85be6646131a4670bdbb7795b90dd657e72efeb4a56bf9b4cecb2e83ccd698cf",
+      "source_mtime_epoch": 1791991910
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "8031c5d99e40beaae2bb1d94a16ea8127d0e7256116103b59cdacf3267a9510f",
+      "source_mtime_epoch": 1791991995
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_10_prediction.nrrd",
+      "bytes": 67639,
+      "sha256": "da857ffb54d9fc5cb19950af6dded6a232153526e20378113ab298cf5f513b38",
+      "source_mtime_epoch": 1791991995
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "1ea13a4760c9a94154606271442bd4eb219d8db656ac37350c177d105f62d96f",
+      "source_mtime_epoch": 1791992085
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Diseased_20_prediction.nrrd",
+      "bytes": 71888,
+      "sha256": "a6fd1a8c22311f327bfb0d526a3b118c8d5de73a1bca64c491202545c003c7f4",
+      "source_mtime_epoch": 1791992085
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "f0bc1a3897d419f79203d6e6d5aba1ad6c1e333e708ddcc31758bc690c524b43",
+      "source_mtime_epoch": 1791992229
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_12.json",
+      "bytes": 2329,
+      "sha256": "2ff38f9c1e97650c614ba3a742e0688723bc74f63c5a657f48ac32b31abd5393",
+      "source_mtime_epoch": 1791992150
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_12_prediction.nrrd",
+      "bytes": 66992,
+      "sha256": "41dd42aa6c9c30cfc5e1bfc097e5e7a7e6ca7d11e11a7232e7a0c3d3c07985f7",
+      "source_mtime_epoch": 1791992150
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_3.json",
+      "bytes": 2313,
+      "sha256": "697e90f2be14a434f83f5413aac3e8da2cc445942424d9d7e257fd7eea25fc2a",
+      "source_mtime_epoch": 1791992228
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/Normal_3_prediction.nrrd",
+      "bytes": 73078,
+      "sha256": "68595f8f885a6cde6a64fcabfe7bbf4af37186b070f73aa8786492e804dafce7",
+      "source_mtime_epoch": 1791992228
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/case_metrics.jsonl",
+      "bytes": 8844,
+      "sha256": "ea856407d2385b7861623d29d10bf80d48981aa9f801bd62c9286fbaa88a39dd",
+      "source_mtime_epoch": 1791992228
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch080/summary.json",
+      "bytes": 10311,
+      "sha256": "08e8a7f50ad5c9d6ea53f19b2bd2ed0a933574a033cc93d9b744e6f2704f3bf4",
+      "source_mtime_epoch": 1791992228
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_10.json",
+      "bytes": 2330,
+      "sha256": "0671355ddc37b7fe48df9f809481e60efe8794156f3d619199e9fd8a95cdb11b",
+      "source_mtime_epoch": 1791992319
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_10_prediction.nrrd",
+      "bytes": 66679,
+      "sha256": "ea2f6937d13fad5cf284e03751ced8f0445538b0b523f4968e7407199a6e1a5f",
+      "source_mtime_epoch": 1791992319
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_20.json",
+      "bytes": 2332,
+      "sha256": "901855850cfce7499304a3886465cd198e230e0f1185546556728b245cd3d151",
+      "source_mtime_epoch": 1791992411
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Diseased_20_prediction.nrrd",
+      "bytes": 70665,
+      "sha256": "95789acb0c3af58ac1ecbaf913e4df861b9cb0c07675cfb55318ff145b785385",
+      "source_mtime_epoch": 1791992411
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "127488e6a787ccca1c5a05a8941beab092a81122dbbc20914e1feb3251e73906",
+      "source_mtime_epoch": 1791992553
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "7c7d5c4dfb72567c1eedfeb2d53450cc1b6a68f032abecb8270d356e582340b2",
+      "source_mtime_epoch": 1791992476
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_12_prediction.nrrd",
+      "bytes": 66244,
+      "sha256": "30dcea1dc507c0f9ab57141f5bc41ce4d1dc80c1a5317913dd614791c25fc209",
+      "source_mtime_epoch": 1791992476
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_3.json",
+      "bytes": 2313,
+      "sha256": "e080c7b53e8dc22b597f26f5cc5bda31ac220e31a296c76506dfaacd7c672b62",
+      "source_mtime_epoch": 1791992552
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/Normal_3_prediction.nrrd",
+      "bytes": 71585,
+      "sha256": "bac0475a0c17ea10631011406d69a2cc4cda6857b5ab1b728eeca086d618af80",
+      "source_mtime_epoch": 1791992552
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/case_metrics.jsonl",
+      "bytes": 8843,
+      "sha256": "019be34ddaf0bf6be78caff350fce4561ef6a33194cd63ec843d9d795c20c64a",
+      "source_mtime_epoch": 1791992552
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch090/summary.json",
+      "bytes": 10327,
+      "sha256": "808a5faacd63ea9c1ca8c623d433ede47526e27d8369491422bf52fe3b9202a8",
+      "source_mtime_epoch": 1791992552
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_10.json",
+      "bytes": 2332,
+      "sha256": "7a0ccd491c2a54ad4182f63535139ee5f2674b40903559767183a9565e306b4b",
+      "source_mtime_epoch": 1791992639
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_10_prediction.nrrd",
+      "bytes": 67721,
+      "sha256": "7f4eb0d3b6c1894ddb3f2d7bc1ae0a61754de4fcefede8578cba11a379790a64",
+      "source_mtime_epoch": 1791992639
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_20.json",
+      "bytes": 2330,
+      "sha256": "8a46a2199216dde5d36dd52f83d711b571450e19e7d57410ec7bafc0628f69d4",
+      "source_mtime_epoch": 1791992730
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Diseased_20_prediction.nrrd",
+      "bytes": 71419,
+      "sha256": "c03d673cc5cd269349718a5ae2ec5ed8025a87f85a6f0a23b4444d2d8df6b6b9",
+      "source_mtime_epoch": 1791992730
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "6867a5a5f10d5218868051ab3935d88cdc89d17a8344edcedc49f26665124d8c",
+      "source_mtime_epoch": 1791992879
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_12.json",
+      "bytes": 2327,
+      "sha256": "f7eb905e177c917a3b659462c1d78eb03b0ffae040a0f5d58164f8c3a1c4aa12",
+      "source_mtime_epoch": 1791992800
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_12_prediction.nrrd",
+      "bytes": 68407,
+      "sha256": "0fd0b0d07c5abfa8d8fda261df2bb218173fd29a6cdff709e4a20e70f307967b",
+      "source_mtime_epoch": 1791992800
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_3.json",
+      "bytes": 2321,
+      "sha256": "6c8ebb7d8b5b98dad8a0132a5021b75171394ab7ac4266542fc70548da62b812",
+      "source_mtime_epoch": 1791992878
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/Normal_3_prediction.nrrd",
+      "bytes": 73105,
+      "sha256": "5c116764495cc58b30d7a77786f64aba0039a91dd2c9d591d4a2c77685c7ceb8",
+      "source_mtime_epoch": 1791992878
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/case_metrics.jsonl",
+      "bytes": 8850,
+      "sha256": "3b31222593e196a4e7e931229cafddb06633d15834308774f78509fd6930fedc",
+      "source_mtime_epoch": 1791992878
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch100/summary.json",
+      "bytes": 10292,
+      "sha256": "0786f793b3fe9a827299deedc415396a3e1e6a78c895d837aa45abc9c79192af",
+      "source_mtime_epoch": 1791992878
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_10.json",
+      "bytes": 2334,
+      "sha256": "45857f3e810ef265dd1f0da75fe39659ae56f1f65ec1506f265e3d410c16c5ed",
+      "source_mtime_epoch": 1791992963
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_10_prediction.nrrd",
+      "bytes": 66771,
+      "sha256": "2ca06d19b7afb681bfc1f8849976417cfece1f3a60e908378cb12b70a6c7063c",
+      "source_mtime_epoch": 1791992963
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_20.json",
+      "bytes": 2331,
+      "sha256": "2ecfc404537f114fe76efaa6da79f9cf739dbe9b64b52efd609143dc9638ef2e",
+      "source_mtime_epoch": 1791993053
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Diseased_20_prediction.nrrd",
+      "bytes": 71620,
+      "sha256": "cb3af0cb5ba448b537646a22a15bd2677b587d86868ea5a34579c458b9d1bb95",
+      "source_mtime_epoch": 1791993053
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "2b4a6eff9d7466d0b23c2706aa7e4240e9b3c6eddf7c56412104491198f1942f",
+      "source_mtime_epoch": 1791993201
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_12.json",
+      "bytes": 2327,
+      "sha256": "8b95eccd329584947644eca835386b85e14fd9099e273809e93667fb4fba4b62",
+      "source_mtime_epoch": 1791993122
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_12_prediction.nrrd",
+      "bytes": 67282,
+      "sha256": "22d24e631fe07ee0b92975dd6de0760064dae56593a801f7fd600538ad5e07aa",
+      "source_mtime_epoch": 1791993122
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_3.json",
+      "bytes": 2324,
+      "sha256": "38c971dce47a88528351ee44dcc9477ed80f45c988d3370c136592935bc0c94b",
+      "source_mtime_epoch": 1791993200
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/Normal_3_prediction.nrrd",
+      "bytes": 71989,
+      "sha256": "f06ce58c69379397d4147c37a3cdb694f70d1519c1473853e71bbb12fe766ea5",
+      "source_mtime_epoch": 1791993200
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/case_metrics.jsonl",
+      "bytes": 8856,
+      "sha256": "4d73c1473b6a878079b04e37b40f5f84db570114a6a37ac36200da6dda7824cf",
+      "source_mtime_epoch": 1791993200
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch110/summary.json",
+      "bytes": 10300,
+      "sha256": "ced6d85b4f10ec9e0d5212261e06eac1dff422d7749a8e3bcf4bc45f60a4f547",
+      "source_mtime_epoch": 1791993200
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "f4050e5abf8bba8568e6d59194ae04cadc883ac832d9fc8fe28a57e5ec1c7149",
+      "source_mtime_epoch": 1791993287
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_10_prediction.nrrd",
+      "bytes": 66939,
+      "sha256": "9abf3f2534b7b36068602a88c2ee720668642cbe64aabaef7f6c03bc6c9d28e9",
+      "source_mtime_epoch": 1791993287
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_20.json",
+      "bytes": 2332,
+      "sha256": "50bceaada6309e2a30a8160976ac83157d01a4197cd9b7383fe510cf87a30459",
+      "source_mtime_epoch": 1791993379
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Diseased_20_prediction.nrrd",
+      "bytes": 71508,
+      "sha256": "cd0ecb64e3ab34ac5d0b9e4526dde56802f24e20a0e3028607a9ae7a5e0f429b",
+      "source_mtime_epoch": 1791993379
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "d494e26948424334c406553c7ae692ba13c72afe30d9d219f7e7307a4a7c01a4",
+      "source_mtime_epoch": 1791993530
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_12.json",
+      "bytes": 2326,
+      "sha256": "ebf6f8b6ec1c20ed6c86f315ad71cc6eb01017472dd00712169545295ebd9b0a",
+      "source_mtime_epoch": 1791993449
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_12_prediction.nrrd",
+      "bytes": 67731,
+      "sha256": "6ccf7df1ade60183f181b13443abc57d9be714689871e91e9adfd74f6c9908e7",
+      "source_mtime_epoch": 1791993449
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_3.json",
+      "bytes": 2317,
+      "sha256": "7b6dd28fb51fdefc9ac727afccb45479e7f904cc11b3e076139a13ae4b0c0ff8",
+      "source_mtime_epoch": 1791993529
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/Normal_3_prediction.nrrd",
+      "bytes": 72534,
+      "sha256": "1368de965d2aaa8c7c5ccf71e5691e450c80acef35acf2cece2fd294c0559481",
+      "source_mtime_epoch": 1791993529
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/case_metrics.jsonl",
+      "bytes": 8848,
+      "sha256": "9e0aeb9058435ec6e5a7f87c37abbd857d31238c3e0a2e74300246d4743c43c1",
+      "source_mtime_epoch": 1791993529
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch120/summary.json",
+      "bytes": 10310,
+      "sha256": "d126d9de5ccf4b08b729e468f021ecd24fe6507c2f72360ab6ff0709f752cc16",
+      "source_mtime_epoch": 1791993529
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_10.json",
+      "bytes": 2335,
+      "sha256": "d43d9aada0455f33e1369a8ac0d7b06bfe306bf94dbac762bb9012fa6244625c",
+      "source_mtime_epoch": 1791993617
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_10_prediction.nrrd",
+      "bytes": 67637,
+      "sha256": "eab22132ef6fafff29034bd4c4cdce8bbb1297da778dd83bb9ddd58b98fd5eb0",
+      "source_mtime_epoch": 1791993617
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "96006aabb751bb9ebe6bff0740dcf006f5e17a7516799edc1e0ea65b94ef6fae",
+      "source_mtime_epoch": 1791993706
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Diseased_20_prediction.nrrd",
+      "bytes": 72419,
+      "sha256": "2fdc5de9304b0510f07abfaa3e0f45a6916f0d8ed055ad0204025b0c252ea1e3",
+      "source_mtime_epoch": 1791993706
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "9306f965dcf82e1900b2a76e3faa6ba7bd2c3cbdfede18a25797d7482f186924",
+      "source_mtime_epoch": 1791993852
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "3c9f94d3b71a5cd318df634cba0361bf5cbe09b7a612f9c7c3e614c5d0e775de",
+      "source_mtime_epoch": 1791993773
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_12_prediction.nrrd",
+      "bytes": 67683,
+      "sha256": "b3e2b32bdd62d03ebd5d5d9bd5ccfa9bc218771aaec4e900b91a9056046308f5",
+      "source_mtime_epoch": 1791993773
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_3.json",
+      "bytes": 2314,
+      "sha256": "f020f75bac6ed399fcae35c5e10da51a58dc10cff89b0a1780093983ca39d0eb",
+      "source_mtime_epoch": 1791993851
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/Normal_3_prediction.nrrd",
+      "bytes": 72801,
+      "sha256": "c41498e433853a964e620f25f8543c7cedf8312e86a11a9a0523ad225458fce3",
+      "source_mtime_epoch": 1791993851
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/case_metrics.jsonl",
+      "bytes": 8846,
+      "sha256": "7c1efc3f395e6c8a2b87de43c9ea040d004c46005352e4f307eaff512c6ea536",
+      "source_mtime_epoch": 1791993851
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch130/summary.json",
+      "bytes": 10332,
+      "sha256": "e1d57936d46850303032327f8eda82e73dc0f643c42c58897ddbd526f1134fd2",
+      "source_mtime_epoch": 1791993851
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "e3011a6a0d265d5c46bdd0b1aab7d2e8a6e81b6482afd26dda63912e07770a2b",
+      "source_mtime_epoch": 1791993936
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_10_prediction.nrrd",
+      "bytes": 66717,
+      "sha256": "49cb2891dbbcd41b2442728a906d6528ec2d79e36c42e1d2a8ccf809ccf73e44",
+      "source_mtime_epoch": 1791993936
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_20.json",
+      "bytes": 2333,
+      "sha256": "890b5732d652a1b8d754cdc0b047d731385291fafa67f6eb76deda8e3b3487c7",
+      "source_mtime_epoch": 1791994024
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Diseased_20_prediction.nrrd",
+      "bytes": 70842,
+      "sha256": "3802ebda22afe483f3eb8d075f12694cd7c4317b7de5a8e67e95f42efe8b84be",
+      "source_mtime_epoch": 1791994024
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "7fde751a4f9f08a69985588f7a47f1cab5e628f509f1f97ff654c72a49d965ea",
+      "source_mtime_epoch": 1791994167
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_12.json",
+      "bytes": 2316,
+      "sha256": "9ba2698e081a258e7e8b34494943f8dacddc73b0bd9aea70ef5aa8ab95edbf25",
+      "source_mtime_epoch": 1791994091
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_12_prediction.nrrd",
+      "bytes": 65883,
+      "sha256": "cf2661ed4bfcb3cd1c2283d5851a3fea8f2ef46a053b8df220dc852748d2417e",
+      "source_mtime_epoch": 1791994091
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_3.json",
+      "bytes": 2326,
+      "sha256": "d5b6582be3fc26bd50e63c008addcea884bf1d4b5a197cfe6468b364d38421b6",
+      "source_mtime_epoch": 1791994165
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/Normal_3_prediction.nrrd",
+      "bytes": 71202,
+      "sha256": "a8252fd31fa5c6fe2c3f80b9e06a27ae3deda1df3caab3c4fa3b3ff1cbfcdde6",
+      "source_mtime_epoch": 1791994165
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/case_metrics.jsonl",
+      "bytes": 8848,
+      "sha256": "4656fe0c983901d81e371b4e9b1f43df710422ae1ca0faeaa43f69a1c79dc158",
+      "source_mtime_epoch": 1791994165
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch140/summary.json",
+      "bytes": 10343,
+      "sha256": "e5b8db244d4a7330b40fed023213bbb6103b8f68ae171ce7f8f131a9167a8a8e",
+      "source_mtime_epoch": 1791994165
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_10.json",
+      "bytes": 2330,
+      "sha256": "88734909e89c601fd7480f9439298581dbf330df45a9a7ae23315321b1ead4af",
+      "source_mtime_epoch": 1791994250
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_10_prediction.nrrd",
+      "bytes": 67413,
+      "sha256": "751bbba5bf0fee70a515575e91ad1ed917086c6fca0f72a3ebea4a9de596be77",
+      "source_mtime_epoch": 1791994250
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_20.json",
+      "bytes": 2330,
+      "sha256": "0a6209ce269a6df0d25a6cc01218f0748bedf3cacce93519b590ad99ba23ff25",
+      "source_mtime_epoch": 1791994337
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Diseased_20_prediction.nrrd",
+      "bytes": 72458,
+      "sha256": "f08547d7a3b285357a8a3534769dde028716960ae49c5a0019af2ce2bd5327b2",
+      "source_mtime_epoch": 1791994337
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "a4967340809847d6b759122ee66183ca74ba1d6d6e90c4b1d32f0474c73faa6e",
+      "source_mtime_epoch": 1791994480
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_12.json",
+      "bytes": 2324,
+      "sha256": "97d42e97b64706d58e7cfeaa39a6a3c09499a7aad416da2e710f270f0e19338a",
+      "source_mtime_epoch": 1791994404
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_12_prediction.nrrd",
+      "bytes": 67635,
+      "sha256": "a9c60831c0d3d7f8611a03b2d4656387c67c8a56166b557ed01363fe96999608",
+      "source_mtime_epoch": 1791994404
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_3.json",
+      "bytes": 2318,
+      "sha256": "5f4896c78b1584bd443615e90da6279c462c796f3a1a2d7b9f5d7cd93fcd21b4",
+      "source_mtime_epoch": 1791994479
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/Normal_3_prediction.nrrd",
+      "bytes": 73164,
+      "sha256": "3109467fd76de481038f47f8d9ebfa89358caa8efaeb7f042fecbcbd98d78d5b",
+      "source_mtime_epoch": 1791994479
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/case_metrics.jsonl",
+      "bytes": 8842,
+      "sha256": "e8ea0ec99766356e2996d06feee4457622f08fcece121fb575bcb7ce9c6a7d73",
+      "source_mtime_epoch": 1791994479
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch150/summary.json",
+      "bytes": 10305,
+      "sha256": "307c60a3e537e617770dc43bf02d1f72b11f9f72d0174d8b08f40b7ce5bc1e40",
+      "source_mtime_epoch": 1791994479
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_10.json",
+      "bytes": 2319,
+      "sha256": "c8780016c176f7c55579a9441a794505f2af377765cb75c0005a768bddc4ede7",
+      "source_mtime_epoch": 1791994565
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_10_prediction.nrrd",
+      "bytes": 66599,
+      "sha256": "c2b2e36b6b1f37389ec74cb4fa10278f1abfa1dfffb173827400e1166f3d22bd",
+      "source_mtime_epoch": 1791994565
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_20.json",
+      "bytes": 2331,
+      "sha256": "3f4f9c482e65525d9d8c9b85728cda1372a89837f4bc10bac11982a72556b82d",
+      "source_mtime_epoch": 1791994648
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Diseased_20_prediction.nrrd",
+      "bytes": 71522,
+      "sha256": "9d3ac7cd3d35e041a0cc3cc8af902703ad357d1bbf0f9416b787539b3075a7b0",
+      "source_mtime_epoch": 1791994648
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "6bedabbfb292a9431490b48dbf2c74f2a68366efee780f4774463807a4440a0c",
+      "source_mtime_epoch": 1791994788
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_12.json",
+      "bytes": 2317,
+      "sha256": "b4f22e3ee015e30eadcc70da12c9e78f9d988ee81c0ce2dcdfd914a9ba0054b1",
+      "source_mtime_epoch": 1791994712
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_12_prediction.nrrd",
+      "bytes": 66093,
+      "sha256": "62ec1d61c82289832989cbe4883ca92d6afe70f169e72da399de155256550207",
+      "source_mtime_epoch": 1791994712
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_3.json",
+      "bytes": 2313,
+      "sha256": "fed2e78e06a5fd7f55f29effcb30dd4517e964c809ab5f3fe9e05400885b1d92",
+      "source_mtime_epoch": 1791994786
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/Normal_3_prediction.nrrd",
+      "bytes": 72202,
+      "sha256": "dad0772d663b33729fbd8d010b21035d4b7d35ec272b651e43f13a39466d5149",
+      "source_mtime_epoch": 1791994786
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/case_metrics.jsonl",
+      "bytes": 8820,
+      "sha256": "07c14dc796d2d40213cfcf1caa71de234919807fbf2c33284cae7465a614cade",
+      "source_mtime_epoch": 1791994786
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch160/summary.json",
+      "bytes": 10309,
+      "sha256": "d10beede067bffdc99d169be9592c6aaa55329ec265cfb0ab585d04a55cbcf3d",
+      "source_mtime_epoch": 1791994786
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_10.json",
+      "bytes": 2323,
+      "sha256": "a9b8d841765ca9a73567b535a659f52711b1fb8555afc3993e2aac5961a23bf4",
+      "source_mtime_epoch": 1791994872
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_10_prediction.nrrd",
+      "bytes": 67242,
+      "sha256": "287c938f39dfba43e1ab70b35b82d5df5aae766f6a3a03fb6ec56e48d00a01c4",
+      "source_mtime_epoch": 1791994872
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_20.json",
+      "bytes": 2329,
+      "sha256": "8aaae72ed4697cb678a5cadff7f3e5e3b814816686c84dd2cd1fb3a683791011",
+      "source_mtime_epoch": 1791994960
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Diseased_20_prediction.nrrd",
+      "bytes": 71991,
+      "sha256": "9d11dd5c419bf8bf0cb6b28109af1192f7e65f91eed3b83c654546419e8b22d0",
+      "source_mtime_epoch": 1791994960
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "01e0c8d86810202463d1bf1191a61ce6bf89292de9062a297edf242b1073ac16",
+      "source_mtime_epoch": 1791995103
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_12.json",
+      "bytes": 2328,
+      "sha256": "87ae7bd23dcb9167e7db7e4cbf111816d21df79ae25864554a7c1889fa31c071",
+      "source_mtime_epoch": 1791995026
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_12_prediction.nrrd",
+      "bytes": 66713,
+      "sha256": "654462ba0a95a16b8b9e417f72be1d65c1a5b6fe8a64589cb26d6ab568d5292a",
+      "source_mtime_epoch": 1791995026
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_3.json",
+      "bytes": 2328,
+      "sha256": "697ebb2368df8a481c9edf6a865633a89ed160224706f84fa29d826821674ac1",
+      "source_mtime_epoch": 1791995101
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/Normal_3_prediction.nrrd",
+      "bytes": 73035,
+      "sha256": "ed7657fd1521aede9f98ac12c9ca6704b1b15ab161122a5606c635fb8f20e430",
+      "source_mtime_epoch": 1791995101
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/case_metrics.jsonl",
+      "bytes": 8848,
+      "sha256": "253a1c4c24b46c5a6b9448da76ac298ba89b6424688f18d9207535b4def3dd04",
+      "source_mtime_epoch": 1791995101
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch170/summary.json",
+      "bytes": 10292,
+      "sha256": "bd8068b28ad53c9e0d3b24514156ae79a9fe8b60c3bdd8d8c38f79d820f58d2b",
+      "source_mtime_epoch": 1791995101
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_10.json",
+      "bytes": 2333,
+      "sha256": "1464d05d1a2b1bfc15283eefbb4dac91b45f7324588df3356cf7e5862df0fd84",
+      "source_mtime_epoch": 1791995186
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_10_prediction.nrrd",
+      "bytes": 66949,
+      "sha256": "14fc7203e8637f5165344fcea3d728ce8e590c3257155c17586be9db0cd64934",
+      "source_mtime_epoch": 1791995186
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_20.json",
+      "bytes": 2332,
+      "sha256": "0adf26fd3a1aa99769cb804abd199d7137a028a3558518915a602b5980cbf327",
+      "source_mtime_epoch": 1791995273
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Diseased_20_prediction.nrrd",
+      "bytes": 70931,
+      "sha256": "29fbf8d947dfdb45170916c1122ede7ad7307c190a65fb1baf08a4b6b080f638",
+      "source_mtime_epoch": 1791995273
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/EVALUATION_COMPLETE.json",
+      "bytes": 700,
+      "sha256": "3e56f535504912c7dd53d957216fa13f69cc96b59d2b4ccc7b122d9a37bf7f36",
+      "source_mtime_epoch": 1791995415
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_12.json",
+      "bytes": 2306,
+      "sha256": "992f6d94ad64c4a5286bfab476fcfaa9527c046a74fe15a3b6108e95d0c95505",
+      "source_mtime_epoch": 1791995340
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_12_prediction.nrrd",
+      "bytes": 66436,
+      "sha256": "82a670a8634f94e15b5cbcf6bb62a0f12a97a0a71fc38c9f901281378b61f8f7",
+      "source_mtime_epoch": 1791995340
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_3.json",
+      "bytes": 2328,
+      "sha256": "3cfdda0356ab93f512a2df0825234a8cc9229e77326a23212729de1532765ed0",
+      "source_mtime_epoch": 1791995413
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/Normal_3_prediction.nrrd",
+      "bytes": 71901,
+      "sha256": "3b6c556d4df05f6aba38af6bfad9f50319486c783e036957a378ec5b720ec15d",
+      "source_mtime_epoch": 1791995413
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/case_metrics.jsonl",
+      "bytes": 8839,
+      "sha256": "4438bf5a41ec53d69bc5e89e99f219837ceb32ded70d1b2a2c7625f4267d2729",
+      "source_mtime_epoch": 1791995413
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch180/summary.json",
+      "bytes": 10304,
+      "sha256": "3dd647e339f02e34232bda8136c4893a9de1a39bf7e2bba98cb356c96600964e",
+      "source_mtime_epoch": 1791995413
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_10.json",
+      "bytes": 2335,
+      "sha256": "655815fae33df23ad4e464ef555f9dd6613fd7f26af433ad78c249c75dd714df",
+      "source_mtime_epoch": 1791995498
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_10_prediction.nrrd",
+      "bytes": 67045,
+      "sha256": "77c3c18f582ece5e84ed44efe136c357599b81004456676d805e5d5cd73a6462",
+      "source_mtime_epoch": 1791995498
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_20.json",
+      "bytes": 2330,
+      "sha256": "2cc897fec23c625859ef149f4477de273bb6ebcdb2aec685af2bbc70fa328f8a",
+      "source_mtime_epoch": 1791995587
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Diseased_20_prediction.nrrd",
+      "bytes": 71254,
+      "sha256": "d43e2ac975eae83b147f35874fc2010a8ee201cc95f15427ac1ce2185f39253b",
+      "source_mtime_epoch": 1791995587
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "c07c34e48e84d09479c47c76afd4652ddfb64779cbc420558f0cf79467cefa75",
+      "source_mtime_epoch": 1791995727
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_12.json",
+      "bytes": 2317,
+      "sha256": "7fe77ff44b29202180579526542724f54fe3b7dd5e1f392bdcbbb9032137a15a",
+      "source_mtime_epoch": 1791995653
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_12_prediction.nrrd",
+      "bytes": 66144,
+      "sha256": "e4761e9a23231d831d1d3add0ad342f5a857937d4c9cc9d4bc458838cdefae56",
+      "source_mtime_epoch": 1791995653
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_3.json",
+      "bytes": 2315,
+      "sha256": "b890e35b2de10bf548baffa4cabf21b0d6d28a5a8ff5f8ca7fdb85754a6363ed",
+      "source_mtime_epoch": 1791995725
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/Normal_3_prediction.nrrd",
+      "bytes": 72141,
+      "sha256": "0adf04fed2b257ea0a57d589f69d0e6def5203d6679221f29326b13e18849ad7",
+      "source_mtime_epoch": 1791995725
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/case_metrics.jsonl",
+      "bytes": 8837,
+      "sha256": "8ab8c371db9f39836e57eeeb99d1d80fc7b72a605e16d89c51ebcdf1099755f5",
+      "source_mtime_epoch": 1791995725
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/epoch190/summary.json",
+      "bytes": 10310,
+      "sha256": "a0dd0c284f5510c517bf7d7815cbaa172dcc72a5196d8659b5680fa590a3f298",
+      "source_mtime_epoch": 1791995725
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_10.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_10.json",
+      "bytes": 2288,
+      "sha256": "ef4f03e3fdaea8afaee631e20528edb727c5031ae91c2b06ea52a4d0bec7736c",
+      "source_mtime_epoch": 1791995812
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_10_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_10_prediction.nrrd",
+      "bytes": 67034,
+      "sha256": "06d2bd52f3fe9b9d4d2bc999a26fb0e87276fc774d99dd5ed49cf672763ebe83",
+      "source_mtime_epoch": 1791995812
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_20.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_20.json",
+      "bytes": 2287,
+      "sha256": "a7272b257bc2f569f79ef2531511d08c3d6daf29bb3c94f37b4ee373af3dbb70",
+      "source_mtime_epoch": 1791995898
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_20_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Diseased_20_prediction.nrrd",
+      "bytes": 71347,
+      "sha256": "db8dcc92c02f33b73d3fe861a12de811bd31edce067de50c8c4844cc1e1d0595",
+      "source_mtime_epoch": 1791995898
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/EVALUATION_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/EVALUATION_COMPLETE.json",
+      "bytes": 699,
+      "sha256": "82ae8f7a22fcc9390eceede5a15777299ccdb196e79f90a6c580c8fd2370ce35",
+      "source_mtime_epoch": 1791996040
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_12.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_12.json",
+      "bytes": 2285,
+      "sha256": "8ab7e67203178375becce6d83b93e8b3c0a89134e8fe319bb80229ac9e9b230b",
+      "source_mtime_epoch": 1791995963
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_12_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_12_prediction.nrrd",
+      "bytes": 66345,
+      "sha256": "2af22b580614c7a8329f9870e4e07be0f507ed2b6594cf059133a164c155f45f",
+      "source_mtime_epoch": 1791995963
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_3.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_3.json",
+      "bytes": 2274,
+      "sha256": "4125a983d0eaf6fbc276cfefb4ac1f8028774a34db38b38f7dd6ab804f1eb23f",
+      "source_mtime_epoch": 1791996039
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_3_prediction.nrrd",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/Normal_3_prediction.nrrd",
+      "bytes": 72490,
+      "sha256": "90c3989eb829d57bb389ebe15ff161d15050dc32d4dcd062d79f47126ec97b8f",
+      "source_mtime_epoch": 1791996039
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/case_metrics.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/case_metrics.jsonl",
+      "bytes": 8674,
+      "sha256": "51a9c332043733eaabb5a4a0bea64a1caf6d4afa8aa3f294c04cd9642f768a6f",
+      "source_mtime_epoch": 1791996039
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/final/summary.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/final/summary.json",
+      "bytes": 10291,
+      "sha256": "fd93f264ee923cdbb4e44cb5578de80ec4313bf8a581534a7e6f38bb1eb96cd3",
+      "source_mtime_epoch": 1791996039
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/trajectory_protocol.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/trajectory_protocol.json",
+      "bytes": 6730,
+      "sha256": "36bda52ed175836fd5f225f265125daf1fea43a6303d63ad7127f3053f4f3935",
+      "source_mtime_epoch": 1791989722
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/trajectory_status.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/trajectory_status.json",
+      "bytes": 62,
+      "sha256": "7fceb55d5f130cb25f16b3dd227d23a7ccbafdfaf3b4cb6c943a979b4cc6b8d3",
+      "source_mtime_epoch": 1791996040
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/validation_curve.csv",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/validation_curve.csv",
+      "bytes": 1941,
+      "sha256": "de5005ea3587d0b9beac6044e16921ca5148df530f2abfc4799c64d4b31cda6b",
+      "source_mtime_epoch": 1791996040
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/internal4_trajectory/validation_history.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/internal4_trajectory/validation_history.jsonl",
+      "bytes": 59541,
+      "sha256": "01d11ea90a4536a0125e5976772a4812eaca52ed04beb7ddfdbd7d6f86d52fbd",
+      "source_mtime_epoch": 1791996040
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/learning_curves/curve_manifest.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves/curve_manifest.json",
+      "bytes": 7464,
+      "sha256": "06f18b052373dca03b63c88af0bdc2e58078e22865e78de8ac30222b4f66b4ad",
+      "source_mtime_epoch": 1791996060
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/learning_curves/curve_notes.txt",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves/curve_notes.txt",
+      "bytes": 638,
+      "sha256": "4a54a7d2dc97b7c189dc6d3700e571260df2a05f6e37330d6613de032253b14e",
+      "source_mtime_epoch": 1791996060
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/learning_curves/development_learning_curves.png",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves/development_learning_curves.png",
+      "bytes": 635751,
+      "sha256": "af250c0e4164dbcf5c1be13e0547cb9dbdee9738ebcd1af11e487d97ba19d7eb",
+      "source_mtime_epoch": 1791996059
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/learning_curves/development_learning_curves.svg",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves/development_learning_curves.svg",
+      "bytes": 628312,
+      "sha256": "bfbbce11ea66b610e492b0dd891e97d7e664aac9209b43c98e44be3f96ab14d1",
+      "source_mtime_epoch": 1791996060
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/learning_curves/epoch_summary.csv",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/learning_curves/epoch_summary.csv",
+      "bytes": 1301546,
+      "sha256": "6e468110cd45a2cbb9059d1000558ea820c9782ef2bb2f207e4c607b45f09b29",
+      "source_mtime_epoch": 1791996056
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/training/TRAINING_COMPLETE.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/TRAINING_COMPLETE.json",
+      "bytes": 996,
+      "sha256": "92378e04cdcaf8640185260d85c88bd9dfe74d48408c0837c44293e4b11ec45a",
+      "source_mtime_epoch": 1791989696
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/training/config.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/config.json",
+      "bytes": 24284,
+      "sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+      "source_mtime_epoch": 1791974730
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/training/final.pt",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/final.pt",
+      "bytes": 68670910,
+      "sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4",
+      "source_mtime_epoch": 1791989696
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/training/gradient_probes.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/gradient_probes.jsonl",
+      "bytes": 36720,
+      "sha256": "ab6eb2cc18901907c12eb360a486b2465a07b2080be37c6db5ebc9933c08b9c1",
+      "source_mtime_epoch": 1791989542
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/training/history.jsonl",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/history.jsonl",
+      "bytes": 220326,
+      "sha256": "ce9b99f4796fa6237ce4019bd6af260e7c9e9af81e6a8721a1345200c2e65aac",
+      "source_mtime_epoch": 1791989695
+    },
+    {
+      "relative_path": "results/gta_region_balance200x125_20261014/training/initialization_audit.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training/initialization_audit.json",
+      "bytes": 10097,
+      "sha256": "b63d8e051afd4e89ada6765e040174f72affad35f5401fa56c3a694da0646539",
+      "source_mtime_epoch": 1791974730
+    },
+    {
+      "relative_path": "variants/gaussian_region_balance_v1/VARIANT_READY.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/variants/gaussian_region_balance_v1/VARIANT_READY.json",
+      "bytes": 1030,
+      "sha256": "1fd1e3dffb7606c76bcdb5e310a69481f10c706e65505f88336487721371b53f",
+      "source_mtime_epoch": 1791972813
+    },
+    {
+      "relative_path": "variants/gaussian_region_balance_v1/code/losses.py",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/variants/gaussian_region_balance_v1/code/losses.py",
+      "bytes": 12656,
+      "sha256": "284c6d92cb9869a241d228c71459975622cf6d98cb91f7d3949a37f166bc8b32",
+      "source_mtime_epoch": 1791972373
+    },
+    {
+      "relative_path": "variants/gaussian_region_balance_v1/protocol.json",
+      "remote_path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/variants/gaussian_region_balance_v1/protocol.json",
+      "bytes": 14311,
+      "sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+      "source_mtime_epoch": 1791972758
+    }
+  ],
+  "status": "captured_completed_control_pending_independent_CPU_acceptance",
+  "ended_at_utc": "2026-10-15T06:47:44.673522+00:00",
+  "actual_final_weight_bytes_downloaded": true,
+  "actual_final_weight_sha256": "4ffdf935ace527187558df1646e6dc50c228ec942de1fa81f2acc3fb374c83f4",
+  "private_theta0_tensor_downloaded": false,
+  "actual_server_periodic_tensor_audit_receipt_retained": true,
+  "local_intermediate_checkpoint_tensor_bytes_checked": false,
+  "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+  "training_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+  "model_inference_training_or_server_mutation": false,
+  "collector_sha256": "b824932b176c1e9016e494f9f6404391431fdc135fdfee8fc9b7c6799a064b93"
+}

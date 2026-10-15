@@ -1,0 +1,34 @@
+Independent ROOT review of prepared Gaussian-region B, 2026-10-14
+
+Current files inspected directly: complete losses_only.diff, implementation of
+the new reduction, sealed protocol and check_variant.py. ROOT separately ran
+the read-only source inspection on current bytes; it passed with28 files,
+only losses.py changed,27 files identical, training source231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a,
+package52493f28ee8760d7c7d940cd26db84f440ac6c35009e344810a0284b5360a4ff,
+protocola2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a.
+The original A package/trainer remain unchanged.
+
+The implementation computes FP32 per-patch error, separate FG/BG sums divided
+by their actual region counts, the mean over present regions, then batch mean.
+clamp_min(1) affects only an absent denominator; an absent-region numerator
+and its derivative are zero. Empty-FG/all-FG cases therefore reduce to A,
+without dropping empty patches. Counts of128^3 voxels are exactly representable
+in FP32. The unchanged .5+.5G target and existing Gaussian head are retained.
+The GT mask defines only loss regions; it is not a new forward input. No
+classifier label, model allocation, conditioning, DS, sampler, phase, lambda,
+optimizer or evaluation change appears in the diff.
+
+The unchanged train.py records the changed source/file identities. An exact
+actual-config audit plus a sealed sidecar binds that configuration to the new
+loss semantics; it does not pretend the old Gaussian measure is unchanged.
+The config auditor rejects changes beyond output/source identities and checks
+lambda10, capacity and the actual A-reference bytes. This is sufficient source
+and semantic provenance without inventing a trainer config option.
+
+No blocking source/formula issue found. This is source review, not actual
+candidate Torch execution or proof of stability/performance. The completed
+final200 logit diagnostic shows B strongly increases gradient magnitude and
+does not reduce common energy. Preserve the actual candidate Torch fixture,
+initial batch2 parameter-gradient/clip12 check, complete canonical20 late-curve
+review and NEW-resource gates before deciding on a full B run. No additional
+normalization, coefficient change or training authorization is implied here.

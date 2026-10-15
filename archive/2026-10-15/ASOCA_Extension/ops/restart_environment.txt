@@ -1,0 +1,17 @@
+/root/miniconda3/bin/python - <<'PY'
+from pathlib import Path
+import os,signal,subprocess,time
+root=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+for pid,expected in [(2479,'ops/bootstrap.sh'),(3390,'ops/smoke.sh')]:
+    cmd=Path('/proc/'+str(pid)+'/cmdline')
+    if cmd.exists() and expected in cmd.read_bytes().decode(errors='replace'):
+        os.killpg(pid,signal.SIGTERM)
+        print('Stopped owned setup process group',pid)
+(root/'manifests/environment_ready.txt').unlink(missing_ok=True)
+log=open(root/'logs/bootstrap_pinned.log','a')
+p=subprocess.Popen(['bash',str(root/'ops/bootstrap.sh')],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print('PINNED_BOOTSTRAP_PID='+str(p.pid))
+log=open(root/'logs/smoke.log','a')
+p=subprocess.Popen(['bash','-c','until test -f '+str(root/'manifests/environment_ready.txt')+'; do sleep 10; done; bash '+str(root/'ops/smoke.sh')],stdin=subprocess.DEVNULL,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+print('SMOKE_PID='+str(p.pid))
+PY

@@ -1,0 +1,28 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+import datetime,hashlib,importlib.metadata as md,json,subprocess,sys
+from pathlib import Path
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2')
+c=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/cache')
+manifest_path=c/'manifest.json'
+manifest=json.loads(manifest_path.read_text())
+ids=['Diseased_10','Diseased_20','Normal_12','Normal_3']
+def sha(p):
+ h=hashlib.sha256()
+ with Path(p).open('rb') as f:
+  for b in iter(lambda:f.read(8*1024**2),b''):h.update(b)
+ return h.hexdigest()
+versions={}
+for name in ['torch','monai','numpy','scipy','scikit-image','SimpleITK','scikit-learn','pandas','tqdm']:
+ try:versions[name]=md.version(name)
+ except md.PackageNotFoundError:versions[name]=None
+cases={x['case_id']:x for x in manifest['cases']}
+code=r/'code';used={'train.py','model.py','losses.py','classification_data.py','checkpoint_utils.py','data.py'}
+names=sorted(p.relative_to(code).as_posix() for p in code.rglob('*.py') if '__pycache__' not in p.parts and(p.name in used or 'historical' in p.relative_to(code).parts))
+h=hashlib.sha256()
+for name in names:h.update(name.encode());h.update((code/name).read_bytes())
+res={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'python':sys.version,'python_executable':sys.executable,'packages':versions,'manifest_sha256':sha(manifest_path),'training_source_sha256':h.hexdigest(),'evaluation_sources':{n:sha(code/n) for n in ['evaluate.py','metrics.py','evaluate_trajectory.py']},'cache_CT_inputs':{i:{'bytes':(c/cases[i]['cache_subdir']/'image.npy').stat().st_size,'sha256':sha(c/cases[i]['cache_subdir']/'image.npy')} for i in ids},'scope':'read-only versions/source/actual internal4 CT input bytes; no inference/training'}
+res['gpu']=subprocess.check_output(['nvidia-smi','--query-gpu=name,driver_version,memory.total,compute_cap','--format=csv,noheader'],text=True).strip()
+res['gpu_processes']=subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip()
+(r/'EARLY_FINAL_INPUT_RUNTIME_AUDIT_20261014.json').write_text(json.dumps(res,indent=2)+'\n')
+print(json.dumps(res))
+PY

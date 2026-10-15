@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "status": "offline_source_contract_and_four_plans_verified_actual_controls_not_accepted_here",
+  "created_at_utc": "2026-10-15T06:33:43.249994+00:00",
+  "reason": "The completed producers intentionally replace launch status. The old collector compared status as immutable and rejected valid completion before downloading any records.",
+  "repair_scope": "Only unfrozen local collector status extension check and CPU adapter COLLECTOR_SHA. No frozen or deployed producer, model, evaluator, metric, method config or live process modified.",
+  "allowed_overwritten_launch_fields": [
+    "status"
+  ],
+  "gate_policy": "Require exact kind-specific launch status and completed terminal status; require every launch key present in completion and equal except that explicit status transition. Existing released STATUS, receipt SHA and postfit20/80 gates retained.",
+  "producer_source_AST_audit": {
+    "lambda0": {
+      "source": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\ops\\run_gaussian_lambda0_control.py",
+      "sha256": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040",
+      "protocol_assignment_line": 419,
+      "completion_assignment_line": 460,
+      "completion_overwrites_launch_keys": [
+        "status"
+      ],
+      "required_status_transition": [
+        "formal_control_authorized_recipe",
+        "completed"
+      ],
+      "new_completion_fields_not_ignored_launch_fields": [
+        "actual_control_theta0_receipt_sha256",
+        "children",
+        "completed_at_utc",
+        "curve_manifest_sha256",
+        "fixed_final_sha256",
+        "formal_training_complete_sha256",
+        "postfit_verified_sha256",
+        "trajectory_complete_sha256",
+        "verified_case_inferences"
+      ]
+    },
+    "B": {
+      "source": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\ops\\run_gaussian_region_balance_control.py",
+      "sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+      "protocol_assignment_line": 320,
+      "completion_assignment_line": 345,
+      "completion_overwrites_launch_keys": [
+        "status"
+      ],
+      "required_status_transition": [
+        "actual_ROOT_decision_authorized_formal_B",
+        "completed"
+      ],
+      "new_completion_fields_not_ignored_launch_fields": [
+        "A_canonical_unchanged",
+        "B_postfit_verified_sha256",
+        "actual_B_config_binding_sha256",
+        "actual_B_theta0_receipt_sha256",
+        "children",
+        "completed_at_utc",
+        "fixed_final_sha256",
+        "training_complete_sha256",
+        "trajectory_complete_sha256",
+        "verified_case_evaluations",
+        "verified_checkpoint_evaluations"
+      ]
+    }
+  },
+  "collector": {
+    "before_sha256": "ec612fd2e1ca017dbca81cbbafa48df136617d91a1d9c7147aa96db1ef24735f",
+    "after_sha256": "4f65c640aaa761cb32cff7cdaeae25b799d3046f8a904f30c6743d845f98c82e"
+  },
+  "cpu_adapter": {
+    "before_sha256": "f5c9ea6e23247989ddc3311be0d88e50f4e2cbd39fb542e0d90c19eb1a147666",
+    "after_sha256": "af05e1c0a06bb4af4c95bc549d310f5575921b3e5a9e719e1ea8f14622f0005f"
+  },
+  "plans": [
+    {
+      "helper": "collector",
+      "kind": "lambda0",
+      "returncode": 0,
+      "stdout_sha256": "44982accf79a4ae23becb34ad249234ff1b12ce31c46fa0fc9b96d3f5b073889",
+      "plan": {
+        "port": 17552,
+        "owner": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2",
+        "records": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_lambda0_controller_20261014",
+        "run": "gta_gaussian_lambda0_200x125_20261014",
+        "source": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+        "weight": 0.0,
+        "controller": "run_gaussian_lambda0_control.py",
+        "controller_sha": "31777dcd11f7d08579038a322a39874eb4b4244db3aba18fb78f01cecd4e5040",
+        "theta": "ACTUAL_CONTROL_THETA0.json",
+        "expected": "expected_lambda0_config.json",
+        "output": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_lambda0_complete_trajectory_20261014",
+        "role": "PLAN_ONLY_NO_SERVER_ACCESS",
+        "kind": "lambda0",
+        "logical_training_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+        "expected_checkpoint_evaluations": 20,
+        "expected_case_evaluations": 80,
+        "completion_contract": "own CONTROL_COMPLETE + fully released completed STATUS + own POSTFIT_VERIFIED; no POSTFIT_STATUS exists",
+        "final_weights": "download actual bytes once after completion; SHA against actual training/postfit receipt",
+        "private_initial_snapshot_downloaded": false
+      }
+    },
+    {
+      "helper": "collector",
+      "kind": "B",
+      "returncode": 0,
+      "stdout_sha256": "3f5f99aa2652f6dc67939bb4b10298d219e23757751be65318f0e4cf551ac6f8",
+      "plan": {
+        "port": 38773,
+        "owner": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+        "records": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_region_balance_controller_20261014",
+        "run": "gta_region_balance200x125_20261014",
+        "source": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+        "weight": 10.0,
+        "controller": "run_gaussian_region_balance_control.py",
+        "controller_sha": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+        "theta": "ACTUAL_B_THETA0.json",
+        "expected": "expected_B_config.json",
+        "output": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014",
+        "role": "PLAN_ONLY_NO_SERVER_ACCESS",
+        "kind": "B",
+        "logical_training_root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+        "expected_checkpoint_evaluations": 20,
+        "expected_case_evaluations": 80,
+        "completion_contract": "own CONTROL_COMPLETE + fully released completed STATUS + own POSTFIT_VERIFIED; no POSTFIT_STATUS exists",
+        "final_weights": "download actual bytes once after completion; SHA against actual training/postfit receipt",
+        "private_initial_snapshot_downloaded": false
+      }
+    },
+    {
+      "helper": "cpu_adapter",
+      "kind": "lambda0",
+      "returncode": 0,
+      "stdout_sha256": "ca8d5cc99f79ca4fc411dea9d02a899d0797cc73e8bbacf30cd2533684921d91",
+      "plan": {
+        "role": "PLAN_ONLY_NO_ACCEPTANCE_CREATED",
+        "kind": "lambda0",
+        "capture": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_lambda0_complete_trajectory_20261014",
+        "output": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\lambda0_fixed_final4_acceptance_20261014",
+        "paired_labels": [
+          "A",
+          "lambda0",
+          "U"
+        ],
+        "actual_completed_capture_required": true,
+        "fixed_final_pixel_recalculations_when_run": 12,
+        "CPU_only": true,
+        "network_or_model_operations": false
+      }
+    },
+    {
+      "helper": "cpu_adapter",
+      "kind": "B",
+      "returncode": 0,
+      "stdout_sha256": "d62d5e41acc6492ba616a04bd002ab6c8f284175953e384a9f6e464846c3010e",
+      "plan": {
+        "role": "PLAN_ONLY_NO_ACCEPTANCE_CREATED",
+        "kind": "B",
+        "capture": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gaussian_region_balance_complete_trajectory_20261014",
+        "output": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\B_fixed_final4_acceptance_20261014",
+        "paired_labels": [
+          "A",
+          "B",
+          "U"
+        ],
+        "actual_completed_capture_required": true,
+        "fixed_final_pixel_recalculations_when_run": 12,
+        "CPU_only": true,
+        "network_or_model_operations": false
+      }
+    }
+  ],
+  "SSH_performed": false,
+  "models_loaded": false,
+  "inference_performed": false,
+  "actual_capture_retry_required": true,
+  "actual_CPU_acceptance_required": true
+}

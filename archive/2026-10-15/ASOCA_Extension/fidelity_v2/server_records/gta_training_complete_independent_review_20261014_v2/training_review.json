@@ -1,0 +1,532 @@
+{
+  "status": "PASS_ACTUAL_COMPLETED_TRAINING_ARTIFACTS_AND_TELEMETRY",
+  "role": "actual training200 review; not Dice/ASSD, independent validation or prior-benefit evidence",
+  "review_script_sha256": "d63d83a0f626916418c790c2d947d8454a076fafd8f8c7fa52f1140c6d9ba7ac",
+  "collection_manifest": {
+    "bytes": 4022,
+    "sha256": "c20f5a863d1a8a8803a02524e28963f679a17a934a71b0e4e5d796106217ddc6"
+  },
+  "capture_files_verified": {
+    "results/gta_enhanced200x125/training/config.json": {
+      "bytes": 24269,
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    "results/gta_enhanced200x125/training/history.jsonl": {
+      "bytes": 220801,
+      "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+    },
+    "results/gta_enhanced200x125/training/initialization_audit.json": {
+      "bytes": 10097,
+      "sha256": "b63d8e051afd4e89ada6765e040174f72affad35f5401fa56c3a694da0646539"
+    },
+    "results/gta_enhanced200x125/training/TRAINING_COMPLETE.json": {
+      "bytes": 996,
+      "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+    },
+    "results/gta_enhanced200x125/training/final.pt": {
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+    },
+    "stage_records/gta200.json": {
+      "bytes": 822,
+      "sha256": "528190c776d898e00f25a71a8899e1a2e34f26b44b29132cf0151ffc82de60d5"
+    },
+    "configs/main_source_freeze.json": {
+      "bytes": 10604,
+      "sha256": "9b294024e33b0d0aaa12b473be53dd3a81dfcd9dd020446948fe667405c7ff46"
+    },
+    "LIVE_MAIN_CHECK_20261014.json": {
+      "bytes": 3337,
+      "sha256": "f49fe65d63851521b1c596343130324d9c4cc8f80d544d5cd11d99de5df01deb"
+    },
+    "FIXED_FINAL_FOLLOWUP_CHECK_20261014.json": {
+      "bytes": 8696,
+      "sha256": "f4024b1b47cb9887690d68899f2353bfb6aaf0043147f01d8f1c4bcab6455530"
+    },
+    "EARLY_FINAL_MIRROR_STATUS.json": {
+      "bytes": 2165,
+      "sha256": "5a3143134732e0b94126270f84193ab26c2bf4fb364f48ecc336427451e95201"
+    },
+    "EARLY_FINAL_MIRROR_LAUNCH_20261014.json": {
+      "bytes": 410,
+      "sha256": "0f48480649a31b480446baaec4bd5d9334e021655351f063c837e8c243cfa855"
+    },
+    "shared_mirror/READY.json": {
+      "bytes": 3616,
+      "sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d"
+    }
+  },
+  "all12_capture_byte_hashes_match": true,
+  "READY_actual_fingerprint": {
+    "bytes": 3616,
+    "sha256": "8479760327b8059cee27dffe8a1a6c131de7c40f9fd222bd9c04e2c693df3c0d"
+  },
+  "all6_mirror_evidence_hashes_match": true,
+  "mirror_evidence_local_mapping": {
+    "final.pt": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\final.pt",
+    "config.json": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\config.json",
+    "history.jsonl": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\history.jsonl",
+    "TRAINING_COMPLETE.json": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_training_complete_20261014\\results\\gta_enhanced200x125\\training\\TRAINING_COMPLETE.json",
+    "manifest.json": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\classifier_scope_20261014\\dataset\\cache\\manifest.json",
+    "input_runtime_audit.json": "E:\\01-投稿备份\\转稿投期刊-elsevier\\转投准备材料\\ASOCA_Extension\\fidelity_v2\\server_records\\early_fixed_final_preflight_20261014\\38773_EARLY_FINAL_INPUT_RUNTIME_AUDIT_20261014.json"
+  },
+  "mirror_evidence_fingerprints": {
+    "final.pt": {
+      "bytes": 68670910,
+      "sha256": "2b24a0415710e906a01ea827982006c6e7a4d5865f22b88849db78dbcbaba820"
+    },
+    "config.json": {
+      "bytes": 24269,
+      "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+    },
+    "history.jsonl": {
+      "bytes": 220801,
+      "sha256": "bde74fa275e4f9d46e779610880d67bb826913f9db297faad92a89d159794e10"
+    },
+    "TRAINING_COMPLETE.json": {
+      "bytes": 996,
+      "sha256": "3dac47da69777660b65bd10bca9d3303f0d4b60b16bf61ddb39fa76f7efeb4d4"
+    },
+    "manifest.json": {
+      "bytes": 136829,
+      "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+    },
+    "input_runtime_audit.json": {
+      "bytes": 1686,
+      "sha256": "637a767fcb8005d6c6e04a2ece8dbfaefdd582ebcac94fd828cd2257a79572c7"
+    }
+  },
+  "actual_final_byte_hash_verified": true,
+  "final_deserialized": false,
+  "model_forward_or_training_started": false,
+  "server_operations": 0,
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "method": "gta",
+  "fixed_final_epoch_1based": 200,
+  "train_ids": [
+    "Diseased_11",
+    "Diseased_12",
+    "Diseased_13",
+    "Diseased_14",
+    "Diseased_16",
+    "Diseased_17",
+    "Diseased_19",
+    "Diseased_2",
+    "Diseased_3",
+    "Diseased_4",
+    "Diseased_5",
+    "Diseased_6",
+    "Diseased_8",
+    "Diseased_9",
+    "Normal_1",
+    "Normal_10",
+    "Normal_11",
+    "Normal_13",
+    "Normal_14",
+    "Normal_15",
+    "Normal_17",
+    "Normal_18",
+    "Normal_20",
+    "Normal_4",
+    "Normal_5",
+    "Normal_6",
+    "Normal_7",
+    "Normal_9"
+  ],
+  "internal_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "outer8_used_for_selection": false,
+  "segmentation_updates": 25000,
+  "sampled_training_patches": 50000,
+  "additional_classifier_pretraining_updates": 5120,
+  "stage_counts": {
+    "frozen": 50,
+    "partial": 20,
+    "joint": 130
+  },
+  "decoder_DS": true,
+  "decoder_DS_weights_normalized": [
+    0.5714285714285714,
+    0.2857142857142857,
+    0.14285714285714285
+  ],
+  "encoder_backbone_warmup_epochs": 0,
+  "Gaussian_lambda": 10,
+  "Gaussian_late_ramp_executed": false,
+  "donor_audits": {
+    "backbone": {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/initialization/airway_backbone_epoch599.pkl",
+      "sha256": "29b6977b74e547735717fda0785a9d532397df364e1f641bed0e6682db0384d3",
+      "component": "backbone",
+      "source_domain": "airway",
+      "format_key": "model_state_dict",
+      "source_tensor_count": 118,
+      "component_tensor_count": 118,
+      "semantic_head_policy": "reinit",
+      "excluded_semantic_keys": [],
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "shape_mismatches": {},
+      "source_epoch": null,
+      "loaded_key_count": 118,
+      "allowed_missing_prefixes": [],
+      "allowed_unexpected_prefixes": [],
+      "randomly_retained_keys": []
+    },
+    "classifier": {
+      "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/final.pt",
+      "sha256": "308ebc33d55766458ebd3241c8422dbadb9259b929570bc5f03afd51fbec31a4",
+      "component": "classifier",
+      "source_domain": "asoca",
+      "format_key": "model_state_dict",
+      "source_tensor_count": 90,
+      "component_tensor_count": 90,
+      "semantic_head_policy": "load",
+      "excluded_semantic_keys": [],
+      "missing_keys": [],
+      "unexpected_keys": [],
+      "shape_mismatches": {},
+      "source_epoch": 79,
+      "loaded_key_count": 90,
+      "allowed_missing_prefixes": [],
+      "allowed_unexpected_prefixes": [],
+      "randomly_retained_keys": []
+    }
+  },
+  "windows": {
+    "epochs161_180": {
+      "n_epochs": 20,
+      "epochs_1based": [
+        161,
+        180
+      ],
+      "values": {
+        "total_loss": {
+          "mean": 0.3808362151414156,
+          "median": 0.38211457800865173,
+          "minimum": 0.3361670719385147,
+          "maximum": 0.4120122872591019,
+          "sample_sd": 0.020696654558072937
+        },
+        "segmentation": {
+          "mean": 0.25148792696744204,
+          "median": 0.2521391838490963,
+          "minimum": 0.22310637283325196,
+          "maximum": 0.27489386254549025,
+          "sample_sd": 0.013557070517288673
+        },
+        "classification_weighted": {
+          "mean": 0.12886256525577047,
+          "median": 0.12830142264673486,
+          "minimum": 0.10955467000603676,
+          "maximum": 0.14733396461606027,
+          "sample_sd": 0.009542954960922646
+        },
+        "gaussian_weighted": {
+          "mean": 0.00028934074110729854,
+          "median": 0.0002921627082687337,
+          "minimum": 0.0002702839852427132,
+          "maximum": 0.000306805353728123,
+          "sample_sd": 1.1462731476378954e-05
+        },
+        "guidance_weighted": {
+          "mean": 0.00019638204167713412,
+          "median": 0.00019459500731318257,
+          "minimum": 0.00018769937561592087,
+          "maximum": 0.00020805693394504486,
+          "sample_sd": 6.420105272961269e-06
+        },
+        "segmentation_gradient_norm": {
+          "mean": 0.8997115419894457,
+          "median": 0.8212479493021965,
+          "minimum": 0.6613920500874519,
+          "maximum": 1.8705515597760678,
+          "sample_sd": 0.2577675170202022
+        },
+        "classifier_gradient_norm": {
+          "mean": 2.566750553196669,
+          "median": 2.5411138532161712,
+          "minimum": 2.2689593901634217,
+          "maximum": 3.332311140537262,
+          "sample_sd": 0.22203861029485664
+        }
+      },
+      "first_epoch_end_lr": {
+        "segmentation": 7.049014761552062e-05,
+        "classifier": 7.0490147615520625e-06
+      },
+      "last_epoch_end_lr": {
+        "segmentation": 3.865212855790809e-05,
+        "classifier": 3.865212855790809e-06
+      }
+    },
+    "epochs181_200": {
+      "n_epochs": 20,
+      "epochs_1based": [
+        181,
+        200
+      ],
+      "values": {
+        "total_loss": {
+          "mean": 0.3752691685318947,
+          "median": 0.37425156843662266,
+          "minimum": 0.33530369865894316,
+          "maximum": 0.4266348946094513,
+          "sample_sd": 0.01718941592140994
+        },
+        "segmentation": {
+          "mean": 0.2461114715963602,
+          "median": 0.24464948269724845,
+          "minimum": 0.2268429173231125,
+          "maximum": 0.2828873107433319,
+          "sample_sd": 0.012180331026630244
+        },
+        "classification_weighted": {
+          "mean": 0.12867808321230112,
+          "median": 0.1289471298381686,
+          "minimum": 0.10796116176992655,
+          "maximum": 0.14469523672759532,
+          "sample_sd": 0.008192727295150592
+        },
+        "gaussian_weighted": {
+          "mean": 0.0002837863735141582,
+          "median": 0.0002829965747077949,
+          "minimum": 0.0002649961112765595,
+          "maximum": 0.0003053917031502351,
+          "sample_sd": 1.0455513756960337e-05
+        },
+        "guidance_weighted": {
+          "mean": 0.00019582708169764375,
+          "median": 0.00019616192401736044,
+          "minimum": 0.00018735681578982622,
+          "maximum": 0.00020322966977255418,
+          "sample_sd": 4.437999535499183e-06
+        },
+        "segmentation_gradient_norm": {
+          "mean": 0.8827294861976057,
+          "median": 0.8683327800929546,
+          "minimum": 0.6715661306381225,
+          "maximum": 1.1427104476690293,
+          "sample_sd": 0.1411360013086138
+        },
+        "classifier_gradient_norm": {
+          "mean": 2.6185140854358675,
+          "median": 2.6396810704469678,
+          "minimum": 2.2903252778053282,
+          "maximum": 2.8811601996421814,
+          "sample_sd": 0.15170062103450305
+        }
+      },
+      "first_epoch_end_lr": {
+        "segmentation": 3.690905156430436e-05,
+        "classifier": 3.6909051564304365e-06
+      },
+      "last_epoch_end_lr": {
+        "segmentation": 3.379645067493802e-08,
+        "classifier": 3.379645067493802e-09
+      }
+    },
+    "epochs181_190": {
+      "n_epochs": 10,
+      "epochs_1based": [
+        181,
+        190
+      ],
+      "values": {
+        "total_loss": {
+          "mean": 0.3787687931895256,
+          "median": 0.37425156843662266,
+          "minimum": 0.3606259799003601,
+          "maximum": 0.4266348946094513,
+          "sample_sd": 0.01948435237916354
+        },
+        "segmentation": {
+          "mean": 0.24889254742860795,
+          "median": 0.24498228043317793,
+          "minimum": 0.23202770537137984,
+          "maximum": 0.2828873107433319,
+          "sample_sd": 0.0157527790599857
+        },
+        "classification_weighted": {
+          "mean": 0.12939720290414988,
+          "median": 0.1289654589407146,
+          "minimum": 0.11659959073364734,
+          "maximum": 0.14329192947596311,
+          "sample_sd": 0.006525519494775824
+        },
+        "gaussian_weighted": {
+          "mean": 0.0002842677561508026,
+          "median": 0.00028089154447661713,
+          "minimum": 0.0002674625958316028,
+          "maximum": 0.0003053917031502351,
+          "sample_sd": 1.1746211150523565e-05
+        },
+        "guidance_weighted": {
+          "mean": 0.0001947756374895107,
+          "median": 0.00019443613738985734,
+          "minimum": 0.00018735681578982622,
+          "maximum": 0.00020322966977255418,
+          "sample_sd": 5.216935464110516e-06
+        },
+        "segmentation_gradient_norm": {
+          "mean": 0.8970862797349691,
+          "median": 0.895999608322978,
+          "minimum": 0.6715661306381225,
+          "maximum": 1.1214424929618836,
+          "sample_sd": 0.15823189023537615
+        },
+        "classifier_gradient_norm": {
+          "mean": 2.6007415565013887,
+          "median": 2.560621815800667,
+          "minimum": 2.407725082874298,
+          "maximum": 2.8811601996421814,
+          "sample_sd": 0.15394874663047234
+        }
+      },
+      "first_epoch_end_lr": {
+        "segmentation": 3.690905156430436e-05,
+        "classifier": 3.6909051564304365e-06
+      },
+      "last_epoch_end_lr": {
+        "segmentation": 2.0720616437575594e-05,
+        "classifier": 2.0720616437575595e-06
+      }
+    },
+    "epochs191_200": {
+      "n_epochs": 10,
+      "epochs_1based": [
+        191,
+        200
+      ],
+      "values": {
+        "total_loss": {
+          "mean": 0.37176954387426375,
+          "median": 0.37441863232851025,
+          "minimum": 0.33530369865894316,
+          "maximum": 0.3855156978368759,
+          "sample_sd": 0.014728419357979314
+        },
+        "segmentation": {
+          "mean": 0.24333039576411247,
+          "median": 0.24464948269724845,
+          "minimum": 0.2268429173231125,
+          "maximum": 0.25016215240955353,
+          "sample_sd": 0.0069186601604226215
+        },
+        "classification_weighted": {
+          "mean": 0.12795896352045238,
+          "median": 0.12876123632490633,
+          "minimum": 0.10796116176992655,
+          "maximum": 0.14469523672759532,
+          "sample_sd": 0.009897870283870937
+        },
+        "gaussian_weighted": {
+          "mean": 0.0002833049908775138,
+          "median": 0.00028379672908340585,
+          "minimum": 0.0002649961112765595,
+          "maximum": 0.0002964186113094911,
+          "sample_sd": 9.606951870195865e-06
+        },
+        "guidance_weighted": {
+          "mean": 0.00019687852590577677,
+          "median": 0.00019634410642902368,
+          "minimum": 0.00019181932444917038,
+          "maximum": 0.00020319967129034923,
+          "sample_sd": 3.4506443597641975e-06
+        },
+        "segmentation_gradient_norm": {
+          "mean": 0.8683726926602423,
+          "median": 0.8683327800929546,
+          "minimum": 0.7090126684904099,
+          "maximum": 1.1427104476690293,
+          "sample_sd": 0.1286725889145198
+        },
+        "classifier_gradient_norm": {
+          "mean": 2.6362866143703463,
+          "median": 2.6481014405488965,
+          "minimum": 2.2903252778053282,
+          "maximum": 2.8138171377182006,
+          "sample_sd": 0.15550251338677826
+        }
+      },
+      "first_epoch_end_lr": {
+        "segmentation": 1.8847582120672233e-05,
+        "classifier": 1.8847582120672235e-06
+      },
+      "last_epoch_end_lr": {
+        "segmentation": 3.379645067493802e-08,
+        "classifier": 3.379645067493802e-09
+      }
+    }
+  },
+  "final_epoch": {
+    "epoch": 199,
+    "loss": 0.33530369865894316,
+    "seconds": 76.68670862168074,
+    "stage": "joint",
+    "iterations": 125,
+    "gaussian_lambda": 10.0,
+    "gaussian_lambda_configured": 10.0,
+    "classifier_lambda": 0.1,
+    "lr_by_group": {
+      "segmentation": 3.379645067493802e-08,
+      "classifier": 3.379645067493802e-09
+    },
+    "component_means": {
+      "segmentation_head_1": 0.18390861940383912,
+      "gaussian_lambda": 10.0,
+      "segmentation": 0.2268429173231125,
+      "segmentation_head_0": 0.24344628083705902,
+      "classification": 1.0796115953326226,
+      "classification_weighted": 0.10796116176992655,
+      "segmentation_head_2": 0.2462979938387871,
+      "classifier_lambda": 0.1,
+      "guidance_map": 0.0020319966725073756,
+      "segmentation_gradient_norm": 0.7090126684904099,
+      "generation_focal": 0.361442774400115,
+      "classifier_weight": 0.1,
+      "segmentation_weighted": 0.2268429173231125,
+      "gaussian_weighted": 0.0002964186113094911,
+      "guidance_lambda": 0.1,
+      "gaussian": 2.9641861132404302e-05,
+      "classifier_gradient_norm": 2.2903252778053282,
+      "guidance_weighted": 0.00020319967129034923,
+      "structure_correctness": 0.1468079099988099,
+      "structure_focal": 0.33205571746081114,
+      "location_focal": 0.14668128906702624
+    },
+    "gradient_probe_count": 0,
+    "gpu_peak_GiB": 14.449434280395508
+  },
+  "telemetry_reconstruction_max_errors": {
+    "LR": 1.3552527156068805e-20,
+    "DS_weighted_loss": 8.569444909234392e-08,
+    "total_component_sum": 5.804002167764111e-09
+  },
+  "last20_segmentation_loss_rising_transitions": 9,
+  "last20_total_loss_rising_transitions": 8,
+  "final_segmentation_lr_fraction_of_base": 0.00011265483558312673,
+  "late_Gaussian_weighted_loss_to_segmentation_scalar_ratio": 0.0011530806413590808,
+  "limitations": [
+    "Final weight bytes only were hashed: no Torch deserialization or new model forward in this review.",
+    "Donor hashes/key-load counts are source-bound recorded training audits; donor checkpoint bytes are not reloaded or rehashed in this review.",
+    "Airway donor filename contains epoch599, but its audited payload source_epoch is null; this file does not independently establish its training budget.",
+    "Additional classifier80x64 budget is reported by config/marker; its full pretraining history is outside this capture.",
+    "Parameter-block gradient norms are not comparable measures of task benefit: different parameter sets, optimizer scaling and Jacobians matter.",
+    "Epoch samples and augmentations change; a sampled training-loss decrease is not evidence of validation Dice/ASSD improvement.",
+    "Stage losses differ in active auxiliary objectives: frozen and joint total losses should not be compared as identical objectives.",
+    "Capture proves terminal training; captured live/trajectory status is a timestamped snapshot, not a claim that canonical20/80 evaluation is complete."
+  ],
+  "training_extension_decision": {
+    "proven_need_for_more_training": false,
+    "reason": "Late losses remain stochastic and nonzero gradients remain, but LR is near zero; neither proves held-out improvement or more effective updates.",
+    "required_evidence": "canonical internal4 late Dice/physical-mm ASSD trajectory and per-patient behavior, then matched lambda0 control",
+    "required_new_protocol": "An explicit separate extension with preserved parent state, increased update accounting and a stated effective LR schedule; merely increasing epoch number is insufficient.",
+    "current_final_kept_immutable": true,
+    "no_automatic_epoch_extension_or_Gaussian_weight_increase": true
+  }
+}

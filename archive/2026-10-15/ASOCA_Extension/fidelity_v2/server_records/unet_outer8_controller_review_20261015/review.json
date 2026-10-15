@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "reviewed_date": "2026-10-15",
+  "reviewer": "root/review_current_ops",
+  "status": "LOCAL_SOURCE_REVIEW_AND_PLAN_PASS_ACTUAL_DEPENDENCY_FIXTURE_PENDING",
+  "controller": "ops/run_unet_outer8_baseline_only.py",
+  "controller_sha256": "7410b8d02e1c1447f696a3efe3e602e1fad938356e89b61373851b76bcd5895c",
+  "prospective_plan": "docs/unet_outer8_fixed_final_baseline_only_plan_20261014.json",
+  "prospective_plan_sha256": "27ae698cf9faa357b84408058455ea6c15bcc2dca11c185a649f643f9b4b93e3",
+  "scope": "Practical review of current standalone baseline-only controller, its immutable prospective plan and the imported helper interfaces. No SSH, model execution, CUDA allocation or training performed by this review.",
+  "checks_executed": [
+    {"check": "Python AST syntax parse without bytecode output", "exit_code": 0},
+    {"check": "Controller --plan without server operations", "exit_code": 0}
+  ],
+  "narrow_repair": {
+    "location": "dependency_ready terminal protocol/completion identity comparison",
+    "problem": "The previous all-key comparison included status. The actual lambda0 producer intentionally changes PROTOCOL status formal_control_authorized_recipe to CONTROL_COMPLETE status completed, so valid terminal completion was rejected.",
+    "change": "Require both exact expected statuses separately and compare every remaining protocol key unchanged.",
+    "other_controller_or_frozen_source_edited": false
+  },
+  "reviewed_implemented_guards": [
+    "Only the original OLD U Python environment and already fixed U final200 are accepted; no GTA or optimizer is launched.",
+    "Eight manifest fold0 IDs must match the plan in order and be disjoint from trained28 and internal4.",
+    "Actual lambda0 terminal closure, released child/resource status, POSTFIT20/80, payload hashes and source identity are required before inference.",
+    "Separate owner mutex, both OLD host stage locks and two idle GPU snapshots precede an owned evaluator process group.",
+    "Timeout and ordinary cancellation clean only the owned evaluator before releasing locks; fresh-only execution performs no retry or restart.",
+    "Original-grid predictions are checked for all eight; Dice and pooled physical-mm ASSD are recomputed from saved binary pixels and original GT.",
+    "Undefined distances remain null and prevent a complete-cohort ASSD mean; overall and subgroup summaries are checked.",
+    "Before/after source, checkpoint, accepted U evidence, CT and GT bytes are checked.",
+    "Detailed logs, metrics, predictions and errors remain in restrictive quarantine; public STATUS carries lifecycle/counts only and cannot unseal automatically."
+  ],
+  "remaining_deployment_gate": "Exercise the corrected dependency_ready production function against the actual completed lambda0 evidence, then record an explicit ROOT deployment decision. The actual lambda0 capture was not yet available to this review.",
+  "other_practical_source_blockers_found": [],
+  "limits": [
+    "No claim of actual baseline-only deployment, inference completion or performance is made.",
+    "Plan/syntax success does not prove actual terminal dependency compatibility or server runtime readiness.",
+    "SIGKILL or machine power-loss orphan handling is not established by the ordinary signal/timeout cleanup code."
+  ],
+  "related_issue_reported_separately": "The completed-control collector had the same terminal status comparison issue. A separate repair agent owns collector and adapter changes; this review did not edit either helper."
+}

@@ -1,0 +1,21 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import datetime,hashlib,json,os,shutil,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014');tool=r/'ops/run_gaussian_region_balance_control.py'
+expected='ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b'
+assert hashlib.sha256(tool.read_bytes()).hexdigest()==expected
+assert not (r/'results/gaussian_region_balance_controller_20261014').exists()
+assert not (r/'results/gta_region_balance200x125_20261014/training').exists()
+assert shutil.disk_usage(r).free>=5*1024**3
+decision=json.loads((r/'ops_inputs/B_TRAIN_DECISION_20261014.json').read_text())
+assert decision['action']=='authorize_one_B_formal_run' and decision['decision_author']=='ROOT'
+assert not subprocess.check_output(['nvidia-smi','--query-compute-apps=pid','--format=csv,noheader'],text=True).strip()
+command=['/root/miniconda3/envs/gta-asoca311/bin/python','-B','-u',str(tool)]
+log=r/'GAUSSIAN_REGION_BALANCE_FORMAL_20261014.log'
+with log.open('xb') as f:
+    proc=subprocess.Popen(command,stdin=subprocess.DEVNULL,stdout=f,stderr=subprocess.STDOUT,start_new_session=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
+receipt={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'parent_pid':proc.pid,'argv':command,'controller_sha256':expected,'decision_sha256':hashlib.sha256((r/'ops_inputs/B_TRAIN_DECISION_20261014.json').read_bytes()).hexdigest(),'log':str(log),'role':'FORMAL_B_25000_UPDATE_RUN_LAUNCHED_NOT_COMPLETE','disk_free_bytes_before':shutil.disk_usage(r).free}
+with (r/'GAUSSIAN_REGION_BALANCE_CONTROL_LAUNCH_20261014.json').open('x') as f:json.dump(receipt,f,indent=2);f.write('\n')
+print(json.dumps(receipt,indent=2))
+PY

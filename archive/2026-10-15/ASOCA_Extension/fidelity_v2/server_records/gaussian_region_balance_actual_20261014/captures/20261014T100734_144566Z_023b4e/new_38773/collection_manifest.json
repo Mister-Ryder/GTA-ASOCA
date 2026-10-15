@@ -1,0 +1,23 @@
+{
+  "donor_READY_sha256": "de02c5681374a326d711cecc4156b9dcfe79078e2bd140787cf7ff57d5756e3f",
+  "donor_sizes_checked": true,
+  "donor_weight_bytes_downloaded_and_SHA_checked": false,
+  "remote_read_only": true,
+  "shadow_completion": "not_applicable_on_NEW",
+  "port": 38773,
+  "captured_at_utc": "2026-10-14T10:07:49.188048+00:00",
+  "files": [
+    {
+      "remote_path": "/root/autodl-fs/experiments/GTA_ASOCA_Fidelity_20261014/gaussian_control_donors_20261014/DONORS_READY.json",
+      "remote_bytes_at_start": 857,
+      "captured_bytes": 857,
+      "sha256": "de02c5681374a326d711cecc4156b9dcfe79078e2bd140787cf7ff57d5756e3f",
+      "remote_mtime_at_start": 1791972138,
+      "changed_during_capture": false,
+      "tail_bytes_requested": null,
+      "local_relative_path": "records/new_38773/shared_donors/DONORS_READY.json",
+      "action": "added"
+    }
+  ],
+  "missing_paths": []
+}

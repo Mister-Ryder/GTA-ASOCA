@@ -1,0 +1,105 @@
+{
+  "source_root": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014",
+  "server_port": 17552,
+  "read_only_server_access": true,
+  "role": "NOT_MODEL_RESULTS",
+  "files": [
+    {
+      "relative_path": "ANONYMOUS_CLONE_RECEIPT.json",
+      "bytes": 655,
+      "sha256": "74305eb384d2b6c875e49f860f94c89ee3cd38439ed36e34d7887155b244d95e"
+    },
+    {
+      "relative_path": "anonymous_clone.log",
+      "bytes": 113,
+      "sha256": "e687c60b89caf0033665ab008aa0211494987ad16ca3e2cd37895b1dcf05be7e"
+    },
+    {
+      "relative_path": "receipts/PUBLIC_SOURCE_CPU_SMOKE_COMPLETE.json",
+      "bytes": 17743,
+      "sha256": "7d70e2b5ade9d94123c75d075c82eb7c57b9c25042a6938f217a51c4dac9dddc"
+    },
+    {
+      "relative_path": "receipts/worker00_help.json",
+      "bytes": 1080,
+      "sha256": "e87bb68d30a8004fc416ce7de85bfab2a49ea31fe490f8e8554a58e5871787da"
+    },
+    {
+      "relative_path": "receipts/worker00_help.log",
+      "bytes": 732,
+      "sha256": "d046919dbeaef6bbcd6edef6384c2c104a7f8534a4ff6b4f634a3c7e7c93038f"
+    },
+    {
+      "relative_path": "receipts/worker01_help.json",
+      "bytes": 1205,
+      "sha256": "a5022b22bf2feeeff67f4a2cd3553857218aa9532a1d2e77ef9d6e4d17d5fb3a"
+    },
+    {
+      "relative_path": "receipts/worker01_help.log",
+      "bytes": 1193,
+      "sha256": "3c53a80e2e8c2f890d38dd6036a05779e51fb10cce0c91b64952d01196df2688"
+    },
+    {
+      "relative_path": "receipts/worker02_help.json",
+      "bytes": 1964,
+      "sha256": "854e46c2d1d46b6318f7f441f9a0d879b5c83cf5b44b010a2263ede9017009e4"
+    },
+    {
+      "relative_path": "receipts/worker02_help.log",
+      "bytes": 2162,
+      "sha256": "43bfd70204ebacee14fc685b522792ff36c980fd5ef2f21d213dd0cd8d476f5c"
+    },
+    {
+      "relative_path": "receipts/worker03_help.json",
+      "bytes": 2467,
+      "sha256": "9ffa36e29706b8779486dcfb2a14623e3c1392be811e2e3968594bc6ad51783d"
+    },
+    {
+      "relative_path": "receipts/worker03_help.log",
+      "bytes": 3836,
+      "sha256": "fdac18c31d4d1f85ad9327afd674714ac080974c3c99c3e4d5708b1040747027"
+    },
+    {
+      "relative_path": "receipts/worker04_help.json",
+      "bytes": 2595,
+      "sha256": "8e988a6b2bd114e027d44f1c03aacc61c13444680c721f2cb28968d0d445be72"
+    },
+    {
+      "relative_path": "receipts/worker04_help.log",
+      "bytes": 878,
+      "sha256": "2fe2cd198e75eb21541af148aea8fd6446b710e582bc299abc64e31f795758ab"
+    },
+    {
+      "relative_path": "receipts/worker05_help.json",
+      "bytes": 1087,
+      "sha256": "2a115f047f4e85a2dd88821b40ce2547bc4b08c08352742c66bae6b8e5f75fde"
+    },
+    {
+      "relative_path": "receipts/worker05_help.log",
+      "bytes": 749,
+      "sha256": "ebd418bfe6cef1ee47a9ef67e8770bc386722eb87eae7480e4e2f8077ce55485"
+    },
+    {
+      "relative_path": "receipts/worker06_main_forward.json",
+      "bytes": 3603,
+      "sha256": "d86c24b3a7b93f78f64ac3c0a27031bd51c08ab4bfc9f35b662ea21eb6e13e57"
+    },
+    {
+      "relative_path": "receipts/worker06_main_forward.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "relative_path": "receipts/worker07_classifier_forward.json",
+      "bytes": 2848,
+      "sha256": "c3f62060dcc556f45760004c2a17ef4d28625764e5ec156e13c72e6119f24bc3"
+    },
+    {
+      "relative_path": "receipts/worker07_classifier_forward.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "status": "actual19files_captured_and_worker_hashes_verified",
+  "captured_at_utc": "2026-10-14T09:33:00.578081+00:00"
+}

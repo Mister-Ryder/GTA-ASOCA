@@ -1,0 +1,23 @@
+set -eu
+/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python -B - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2');out=r/'results/gaussian_lambda0_controller_20261014'
+def read(path):return json.loads(path.read_text()) if path.is_file() else None
+state=read(out/'STATUS.json');launch=read(r/'GAUSSIAN_LAMBDA0_CONTROL_LAUNCH_20261014.json')
+def identity(pid):
+    p=Path('/proc')/str(pid)
+    return {'pid':pid,'alive':p.exists(),'cmdline':(p/'cmdline').read_bytes().replace(b'\0',b' ').decode() if p.exists() else None}
+training=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_gaussian_lambda0_200x125_20261014/training')
+hist=training/'history.jsonl';rows=[json.loads(x) for x in hist.read_text().splitlines() if x] if hist.is_file() else []
+theta=read(out/'ACTUAL_CONTROL_THETA0.json')
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'launch':launch,'status':{k:state.get(k) for k in ('status','controller_pid','child_pid','updated_at_utc','gpu_lock_acquired','error_type','error','stage_wall_seconds')} if state else None,'parent_process':identity(launch['pid']) if launch else None,'child_process':identity(state['child_pid']) if state and state.get('child_pid') else None,'epochs_completed':len(rows),'latest_epoch':rows[-1] if rows else None,'actual_theta0_brief':{'state_sha256':theta['state']['state_sha256'],'tensor_count':theta['state']['tensor_count'],'model_state_and_RNG_unchanged':theta['model_state_and_RNG_unchanged'],'actual_original_main_epoch0_state_verified':theta['actual_original_main_epoch0_state_verified']} if theta else None,'GPU':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip(),'controller_log_tail':(r/'GAUSSIAN_LAMBDA0_CONTROL_20261014.log').read_text().splitlines()[-12:]}
+for name in ('CPU_preflight','formal_training'):
+    p=out/(name+'.log')
+    if p.exists():result[name+'_log_tail']=p.read_text()[-1600:]
+audit_launch=read(r/'CLASSIFIER_FINAL_CPU_AUDIT_LAUNCH_20261014.json')
+audit=r/'results/classifier_final_cpu_audit_20261014'
+ap=audit/'patch_predictions.jsonl'
+result['classifier_audit']={'launch':audit_launch,'parent_process':identity(audit_launch['parent_pid']) if audit_launch else None,'completed_patches':len(ap.read_text().splitlines()) if ap.is_file() else 0,'complete':read(audit/'AUDIT_COMPLETE.json'),'log_tail':(r/'CLASSIFIER_FINAL_CPU_AUDIT_20261014.log').read_text()[-1600:] if audit_launch else None}
+print(json.dumps(result,indent=2))
+PY

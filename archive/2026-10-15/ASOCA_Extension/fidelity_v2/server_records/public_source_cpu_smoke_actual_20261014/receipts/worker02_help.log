@@ -1,0 +1,52 @@
+usage: pretrain_classifier.py [-h] --manifest MANIFEST --output OUTPUT
+                              [--fold FOLD] [--epochs EPOCHS] [--steps STEPS]
+                              [--patch-size PATCH_SIZE]
+                              [--batch-size BATCH_SIZE] [--workers WORKERS]
+                              [--seed SEED] [--split-seed SPLIT_SEED]
+                              [--lr LR] [--warmup-epochs WARMUP_EPOCHS]
+                              [--stats-samples STATS_SAMPLES]
+                              [--validation-patches VALIDATION_PATCHES]
+                              [--eval-every EVAL_EVERY]
+                              [--sampling {standard,geometry}]
+                              [--sampling-fov {full,image-body}]
+                              [--guidance-weight GUIDANCE_WEIGHT]
+                              [--init-checkpoint INIT_CHECKPOINT]
+                              [--init-domain {airway,asoca}]
+                              [--semantic-head-policy {reinit,load}]
+                              [--device {cpu,cuda}] [--resume] [--smoke]
+                              [--diagnostic-original-dev] [--plan]
+
+Train the unchanged three-head classifier on 28 patients; select on internal
+four. The original eight development cases are never used for early checkpoint
+choice. Loss alone is not evidence that a classifier is useful: per-head
+confusion, balanced accuracy, absent classes and training-majority baselines
+are reported.
+
+options:
+  -h, --help            show this help message and exit
+  --manifest MANIFEST
+  --output OUTPUT
+  --fold FOLD
+  --epochs EPOCHS
+  --steps STEPS
+  --patch-size PATCH_SIZE
+  --batch-size BATCH_SIZE
+  --workers WORKERS
+  --seed SEED
+  --split-seed SPLIT_SEED
+  --lr LR
+  --warmup-epochs WARMUP_EPOCHS
+  --stats-samples STATS_SAMPLES
+  --validation-patches VALIDATION_PATCHES
+  --eval-every EVAL_EVERY
+  --sampling {standard,geometry}
+  --sampling-fov {full,image-body}
+  --guidance-weight GUIDANCE_WEIGHT
+  --init-checkpoint INIT_CHECKPOINT
+  --init-domain {airway,asoca}
+  --semantic-head-policy {reinit,load}
+  --device {cpu,cuda}
+  --resume
+  --smoke
+  --diagnostic-original-dev
+  --plan

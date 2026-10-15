@@ -1,0 +1,17 @@
+{
+  "checkpoint_sha256": "fe63bfaf2856bc7f026756016da2491c590a08291077b02535ce598c9197d508",
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "case_ids": [
+    "Diseased_10",
+    "Diseased_20",
+    "Normal_12",
+    "Normal_3"
+  ],
+  "summary_sha256": "38f6d17ded1d3bc17658fe92eaa18c504064e70c25ec5c41b5976cd0dac7a6b8",
+  "wall_seconds": 298.4774937927723
+}

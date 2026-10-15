@@ -1,0 +1,44 @@
+{
+  "captured_at_utc": "2026-10-14T08:00:08.566976+00:00",
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "python_executable": "/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python",
+  "packages": {
+    "torch": "2.7.1+cu128",
+    "monai": "1.5.1",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1",
+    "scikit-image": "0.25.2",
+    "SimpleITK": "2.5.2",
+    "scikit-learn": "1.9.1",
+    "pandas": "3.0.6",
+    "tqdm": "4.70.1"
+  },
+  "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+  "training_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "evaluation_sources": {
+    "evaluate.py": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb",
+    "metrics.py": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9",
+    "evaluate_trajectory.py": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+  },
+  "cache_CT_inputs": {
+    "Diseased_10": {
+      "bytes": 87817088,
+      "sha256": "a1bd28a693cca4a6c522f081eedf93e02190f1ee2bfb1bc05e23d5cbe425e82c"
+    },
+    "Diseased_20": {
+      "bytes": 130101568,
+      "sha256": "e323458226308c017157313aeee0df6f310fa63819786cc7c6ffcf5007ec8a0e"
+    },
+    "Normal_12": {
+      "bytes": 73442504,
+      "sha256": "35758699a03988d17e6eebedb494d57cef17be442616efc25a394c771bf8d849"
+    },
+    "Normal_3": {
+      "bytes": 81442048,
+      "sha256": "41ac6043bc416f8f5dd32ff82c55c25f7fb00b1dc783f6f20abed045f0f02d7e"
+    }
+  },
+  "scope": "read-only versions/source/actual internal4 CT input bytes; no inference/training",
+  "gpu": "NVIDIA GeForce RTX 4080, 595.71.05, 32760 MiB, 8.9",
+  "gpu_processes": ""
+}

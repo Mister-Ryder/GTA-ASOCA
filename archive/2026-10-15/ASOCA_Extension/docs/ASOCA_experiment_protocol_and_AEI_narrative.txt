@@ -1,0 +1,177 @@
+ASOCA 补充实验：预先约束的方法边界、验证协议与 AEI 叙事
+核查日期：2026-10-13（Asia/Shanghai）
+状态：实验设计与数据完整性核查；本文件不包含任何训练效果或优于他法的结论。
+
+一、先纠正任务定义
+
+本地原始目录：E:\00-Data\冠状动脉-ASOCA\CompressedVersion。
+逐一读取全部 40 份公开 Annotations 后，40/40 标签均为 {0, 1}：0 为背景，1 为冠状动脉管腔。Normal/Diseased 是患者分组，不是两个分割类别；左冠脉和右冠脉也没有分别赋予类别编号。因此这一补充实验应准确称为“正常与患病病例的冠状动脉树二分类分割”，不能写成多类别全心脏、动静脉、心肌或心腔分割。[S1, S2]
+
+本地数据审计结果（直接读文件得到，而非从论文抄录）：
+  - 公开已标注病例：40 例，Normal 20 例 + Diseased 20 例。
+  - 未标注官方挑战测试影像：20 例，Normal 10 例 + Diseased 10 例。
+  - 40/40 图像与掩膜的 size、spacing、origin、direction 一致；没有发现缺失配对。
+  - 原始体积：512 × 512 × 168–224，顺序为 x、y、z。
+  - x/y spacing：0.306641–0.494141 mm；z spacing：0.625 mm。
+  - 完整图像前景体素占比：均值 0.055533%，范围 0.024824%–0.100775%。此数值是在完整 CTCA 上计算，不是经过裁剪后的占比。
+  - 公开训练影像+掩膜文件：2,711,866,928 字节。
+  - CompressedVersion 全目录：181 个文件，4,209,955,876 字节（包含测试影像、STL、VTP、病例报告）。
+  - 全部 CTCA：4,060,090,098 字节；40 份标注：4,863,474 字节。
+  - 当前只有公开训练集标注；官方盲测真值不在本地。[S2]
+完整逐病例审计见 asoca_dataset_audit.json 和 asoca_case_inventory.csv。
+本机 SimpleITK 的 NRRD 读取器无法正确处理中文路径，因此只读核查使用 E:\00-Data\ASOCA_AUDIT_ASCII 目录联接；其目标就是上述原目录，未复制或修改原始数据。
+
+二、一句话主张和方法边界
+
+建议主张：通过显式表达分支层级、局部形态和空间上下文，并将其与尺度相关特征学习和稀疏结构的损失平衡结合，改善稀疏分支管状结构的精细重建；气道为主要验证对象，冠状动脉为第二解剖系统的扩展验证。
+
+建议英文工作表述：
+  We evaluate whether the same structure-guided learning design remains useful for sparse branching anatomical structures across airway and coronary artery segmentation, with task-specific supervision definitions and a shared model and training formulation.
+
+这里共享的是稀疏、细长、分支管状结构的计算问题，而不是共享“心血管”解剖类别。气道不是血管。两套独立训练可以支持框架在两个解剖系统中的适用性，不能自动支持零样本跨域泛化、免微调迁移或一套权重同时处理两个任务。
+
+主方案沿用第二版 HARL/GTAirway 的有效架构：三头属性分类器、尺度相关的指导/融合、半径相关 Gaussian 辅助表达，以及针对不平衡结构的学习设计。第一版 NaviAirway 对细分支不平衡的处理可作为方法发展背景，不能把两个版本的结果混为一套未披露的最终训练配方。
+
+保持同一方法的可审查边界：
+  1. 保存原始历史模块与源文件哈希；新接口/训练器放在 ASOCA_Extension 内，避免覆盖旧版本。
+  2. 保持主要编码器、解码器、属性指导和 Gaussian 模块及损失公式；改变输入预处理、任务标签映射、采样数据和训练配置时逐项披露。
+  3. 冠脉辅助“generation”由训练掩膜的 skeleton forest 分支深度生成；当前编码为 0 空区、1 根部、2 深度 1、3 深度 2–3、4 深度 4–5、5 深度 6–8、6 深度 ≥9。它是辅助拓扑代理，不是真实冠脉临床分段，也不等同于人工气道代次真值。应在论文里改称 branch-depth attribute，保留代码旧键名仅为兼容。
+  4. 当前六个位置区域是全扫描归一化位置（z 方向三等分 × 左右），不能称为真实心脏解剖分区。坐标定义应依赖完整体积且随随机裁剪保留一致映射；明确空间轴和左右方向的约定。
+  5. 局部结构属性依据原有拓扑复杂度/包围盒长轴比例规则；规则、阈值、空前景处理和异常 skeleton 的处理都要记录。根节点和分支划分存在近似误差，不能据此宣称“保证冠脉拓扑正确”。
+  6. 这些辅助属性只能从每折训练病例标注生成并用于学习；模型推理只读取影像，不得用验证或盲测真值生成推理指导。对验证真值生成属性，只能用于明确的评估分析。
+  7. 不为冠脉另加人工血管跟踪、专属第二阶段、分支临床类别或另一套网络；这些会扩大方法差异。若确实后续增加，必须作为另一个显式变体，而非悄然合并。
+  8. 不把自动生成的深度/位置代理类别当作多类别分割结果，也不将其与原始二分类 Dice 结果合并统计。
+
+三、深监督：需要控制变量，而不是先认定原因
+
+nnU-Net 的官方 v2 训练器默认 enable_deep_supervision=True，并通过 DeepSupervisionWrapper 监督不同解码尺度。[S3]
+这支持将标准分割深监督视为一个需要公平提供给对比方法的训练条件；它不能证明历史气道结果偏弱“就是因为缺少深监督”。Gaussian 辅助监督与在多尺度直接监督分割掩膜是不同目标，应分别说明。
+
+最低限度的 2 × 2 控制：
+  - 基础 3D U-Net，DS 关闭。
+  - 基础 3D U-Net，DS 开启。
+  - GTA/HARL 完整方法，DS 关闭。
+  - GTA/HARL 完整方法，DS 开启（拟作为新版主要结果）。
+除此之外，在 DS 开启条件下做去属性指导、去 Gaussian 辅助、去结构平衡的单项消融。
+
+DS 使用已有解码尺度的轻量输出头，最终推理仍只用最高分辨率输出；同一匹配比较中的输出层位置、权重、目标下采样方式和总损失归一化必须一致。要检查下采样后的细小前景是否消失，并在日志记录空前景辅助尺度情况，避免让 DS 以隐藏的不公平条件掩盖细分支表现。
+
+如果投稿最终把“DS+GTA/HARL”定义为同一最终方法，应至少在气道主任务上补相应 DS 控制，或清楚标明旧气道结果来自早期训练配置。只能展示冠脉 DS 增益时，不能倒推气道上必然改善。
+
+四、统一数据划分与主流基线
+
+主要可执行验证：40 例公开已标注病例上预先固定的患者级、Normal/Diseased 分层 5 折交叉验证。每折训练 32 例（16+16），验证 8 例（4+4）；每个病例作为未参与该模型训练的病例评估一次，最终形成 40 例逐病例 out-of-fold 预测。保存分割 JSON、seed 和哈希，所有方法使用相同病例划分。fold 0 仅作为流程验证与初步结果，不代表完成五折研究。
+
+不能把这 40 例的内部交叉验证称为“官方测试集结果”。20 例官方测试影像没有本地真值，只允许在方案和权重选择冻结之后生成预测；若日后获得官方评测反馈，可单独报告并与挑战方法按同一官方协议比较。不得用盲测反馈反复选择超参数。[S1, S2]
+
+建议分成两个清楚标注的比较层次：
+
+  A. 架构/训练条件匹配的机制比较
+     1) 3D U-Net + DS：同宽度、同尺度、相同训练预算的卷积基线。
+     2) 同一 3D U-Net + DS + soft-clDice：检验一个已有的管状结构连续性损失能否解释增益。clDice 比较预测/真值掩膜与 skeleton 的交叠，适合二分类管状结构；它是实质性结构感知对照，而非只列通用分割网络。[S4]
+     3) 完整 GTA/HARL + DS 与上述消融。
+     4) Swin UNETR（MONAI 官方实现）：代表 Transformer 医学分割基线，条件允许时纳入。若自行添加相同 DS 头，标记为 Swin UNETR + DS 适配实现；若保持官方原生实现，就披露其监督条件。不得把无 DS 的 Transformer 与有 DS 的本方法差异全部归因于结构先验。[S5]
+
+  B. 完整自配置方法比较
+     nnU-Net v2 原生 3d_fullres：真实运行官方包的 fingerprint、planning、preprocessing、trainer 和 inference，固定同一 folds，保存包版本与 plans。自己编写的 U-Net+Dice+DS 不能称为 nnU-Net。nnU-Net 的原生计划和通常较长训练预算与固定预算方法不同，要分别报告实际 iterations、GPU-hours、参数量、显存和预测时间；该比较回答整套方法竞争力，不能单独归因于一个模块。[S3]
+
+如果资源只够首批实验，优先完整方法、匹配 U-Net+DS、U-Net+DS+clDice、官方 nnU-Net；Swin UNETR 为扩展，不能为增加方法数量而降低所有方法的训练充分性。
+
+公平性细则：
+  - 使用真实二分类监督；所有模型从头训练，预训练实验另列并披露数据来源。
+  - 共同基线控制患者 split、输入 spacing/强度定义、基本前景采样、patch 物理覆盖范围、增强、训练更新次数、checkpoint 规则和滑窗预测。
+  - 本方法的分支/属性平衡是待检验的设计，必须有去平衡消融；不能把独有的采样优势包装成独立属性指导的效果。
+  - 学习型分类器、损失权重统计和数据依赖的属性阈值只使用当前折训练病例。固定的预先声明阈值不根据验证结果临时改动。
+  - 如采用 nnU-Net 原生整体训练队列的 fingerprint，说明它与内部自定义训练器的统计计算方式；不得使用隐藏测试数据或根据测试性能选择处理方案。
+  - 外部论文不同 split、预训练、集成和后处理的表格数值只能作为背景；不与本次内部 CV 混排后标粗宣称优于其官方盲测结果。
+
+五、预先固定的评价方式
+
+核心指标：逐病例 Dice、precision、recall、clDice、GT skeleton recall 与预测 skeleton precision。Dice 衡量体积重叠；skeleton 指标检验细分支是否被保留，并监测额外伪结构。完整输出上报告原始预测，不先只保留两个最大连通体。
+
+距离指标必须明确实现。官方 ASOCA evaluation.py 对全部前景体素建立 cKDTree，使用物理 spacing，并返回两个方向距离 95% 分位数的最大值；其变量叫 HD95，但不是仅比较表面体素的常规 surface-HD95。[S6]
+因此建议同时报告：
+  - ASOCA_H95_voxel_mm（复现官方点集定义）；
+  - HD95_surface_mm（边界距离，注明 surface 提取、连通性与双向聚合规则）。
+两列不能替换名称后直接与公开挑战成绩比较。SimpleITK 数组顺序是 z,y,x，原始 metadata 的 spacing 是 x,y,z；计算物理距离前必须对应轴顺序。原生空间导出要保留 direction、origin、spacing，不能只回填数组 shape。
+
+补充的结构分析：
+  - 连通体数量和断裂情况只是辅助诊断；ASOCA 的理想解剖树通常包含左右两部分，不应机械要求全冠脉为一个连通体。
+  - 可以按 GT skeleton 的局部物理半径预先分层，例如 <1 mm、1–2 mm、≥2 mm，报告各层 skeleton recall；解释这是标注/离散化得到的几何半径分层，不是临床狭窄等级。不能以“改善所有微血管”为结论，因为 ASOCA 标注原则有尺寸与可见性限制。[S2]
+  - 对所有病例报告 Normal/Diseased 子组结果，不用病情标签训练另一个分类任务。
+  - 两个最大连通体后处理可作为所有方法相同规则的第二张结果表，同时保留未后处理结果，避免掩盖本方法真实碎片或删除被预测到的远端分支。
+  - 可视化预先选择固定病例（正常/患病各至少一个），显示整体重建、细分支局部、断裂和伪阳性，所有方法相同视角与显示阈值；不得只展示最漂亮的病例。
+  - 失败病例不得删除；空预测的 Dice=0，距离指标按预先声明失败规则处理并单列数量，不能默默跳过。
+
+汇总与统计：以患者为统计单位，报告 40 个 out-of-fold 病例指标的均值±患者标准差、配对差值及患者级 bootstrap 95% CI。病例包含多个 patch 时不能把 patch 当独立样本放大样本量。五折平均不能当成五个独立随机训练 seed 的方差。若进行配对检验，针对预先选定主要比较使用配对置换或 Wilcoxon，并对多项正式比较校正；缺乏充分重复时不作过强显著性宣称。
+
+模型选择提醒：同一个外折的 8 例如果既用来选最佳 checkpoint/超参数，又作为最终评测病例，则结果严格属于交叉验证验证成绩，含有选择偏差。最稳妥方案是训练 epoch 预先固定并评估 final checkpoint，或在外折训练的 32 例内部建立独立 early-stopping 子划分；不能把反复看外折结果后选择的模型说成完全独立测试。原生 nnU-Net 默认模型选择应明确按其标准流程记录。[S3]
+
+六、与 AEI 范围相对应的论证，以及尚未被实验解决的问题
+
+Elsevier 官方期刊说明强调知识的显式表示和使用，以及知识密集工程任务中的新方法能力、一般性和规模化验证；单纯 pattern recognition 应用通常不足以满足其范围。[S7]
+
+本工作的可辩护角度是“结构知识如何转化为可计算属性，并改变不同尺度特征的学习和重建可靠性”。论文需要清楚给出属性词表/定义、来源、属性到学习模块的映射，以及去知识表示消融；不应仅把注意力或网络特征命名为“知识”而没有可检验含义。
+
+气道与冠脉可共同支撑的工程问题是从稀疏影像标注构建连续、细节可用的分支几何模型。ASOCA 数据作者明确将几何重建、个体模型、教育和设备模拟等列为用途，这提供了合理应用语境，但它本身不等于已验证下游工程收益。[S1, S2]
+
+写法应按证据层级区分：
+  - 当前可实际检验：细分支召回、连通一致性、空间几何误差、推理资源，以及规则在另一解剖系统中的适用性。
+  - 需要额外证据才能写：减少人工修补工时、提高设备设计决策可靠性、改善血流/通气模拟精度、真实临床价值。
+  - 当前不能写：临床验证、多中心验证、真实多类别心脏分割、所有微小结构普适性、拓扑严格保证、零样本跨解剖迁移。
+
+AEI 范围仍存在实质性不确定性：其官方说明列举的是 artifacts-centered engineering disciplines，医疗影像并非当然匹配。新增冠脉数据会增强方法一般性证据，但不能自动消除期刊范围问题。可以把分割定位为工程几何重建的入口并提出清楚的显式知识机制；如果稿件仍只有医学分割网络与 Dice 表，就应该诚实承认这个定位局限，而不能通过措辞把未完成的下游工程验证补出来。
+
+拟定贡献结构：
+  1. 把分支层级、形态和上下文属性变成显式、可追溯的结构描述，并用于多尺度指导。
+  2. 将这种描述与稀疏/细分支的平衡学习和 Gaussian 几何辅助表达结合；通过模块消融与 DS 控制区分各自贡献。
+  3. 在气道主任务及正常/患病冠脉的第二任务上，通过同 split 主流基线、细分支与结构指标验证可用性；所有结论以最终观测结果为准。
+
+七、验收项与结果状态
+
+完成实验的最低验收：数据传输校验、各折病例名单、依赖/配置/源哈希、真实训练日志、checkpoint、原生空间逐病例预测、同一评估器的结果、基线和消融配置，以及未完成/失败运行列表。
+本文件的预期结果栏保持空白；服务器上成功启动或首个 loss 降低只是运行状态，不是可投稿结果。内部 fold 0 或短期 pilot 应标明 provisional，不进入最终性能结论。只有同协议完成的结果才能合并到论文。
+
+八、已核实来源（只使用论文、作者代码和出版方官方说明）
+
+[S1] R. Gharleghi et al. Automated segmentation of normal and diseased coronary arteries – The ASOCA challenge. Computerized Medical Imaging and Graphics 97 (2022), 102049.
+DOI: https://doi.org/10.1016/j.compmedimag.2022.102049
+出版方: https://www.sciencedirect.com/science/article/pii/S0895611122000222
+PubMed 元数据: https://pubmed.ncbi.nlm.nih.gov/35334316/
+核实用途：挑战任务、原始 40/20 划分及官方 Dice/HD95 基准。挑战官方网页 https://asoca.grand-challenge.org/ 当前抓取返回 403；不把其当前提交状态当作已核实可用。
+
+[S2] R. Gharleghi et al. Annotated computed tomography coronary angiogram images and associated data of normal and diseased arteries. Scientific Data 10 (2023), 128.
+DOI: https://doi.org/10.1038/s41597-023-02016-2
+完整作者论文: https://pmc.ncbi.nlm.nih.gov/articles/PMC10006074/
+出版方 PDF: https://www.nature.com/articles/s41597-023-02016-2.pdf
+PubMed 元数据: https://pubmed.ncbi.nlm.nih.gov/36899014/
+核实用途：管腔二分类、40 例共识标注、20 例测试真值不公开、伴随 meshes/centerlines、标注尺寸限制和用途；本地标签核查与描述一致。
+
+[S3] F. Isensee et al. nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature Methods 18 (2021), 203–211.
+DOI: https://doi.org/10.1038/s41592-020-01008-z
+作者官方实现: https://github.com/MIC-DKFZ/nnUNet
+当前官方 v2 trainer: https://github.com/MIC-DKFZ/nnUNet/blob/master/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py
+Raw code: https://raw.githubusercontent.com/MIC-DKFZ/nnUNet/master/nnunetv2/training/nnUNetTrainer/nnUNetTrainer.py
+核实用途：enable_deep_supervision=True、DeepSupervisionWrapper、默认 1000 epochs × 250 iterations；实际运行必须保存安装版本，不能假定动态 master 与安装包完全相同。
+
+[S4] S. Shit et al. clDice - A Novel Topology-Preserving Loss Function for Tubular Structure Segmentation. CVPR (2021).
+DOI（Crossref 查询已核实标题）: https://doi.org/10.1109/CVPR46437.2021.01629
+作者出版论文: https://openaccess.thecvf.com/content/CVPR2021/html/Shit_clDice_-_A_Novel_Topology-Preserving_Loss_Function_for_Tubular_Structure_CVPR_2021_paper.html
+核实用途：binary 2D/3D 的 skeleton-aware metric 与可微 soft-clDice；不用其理论表述为本方法未经证明的严格拓扑保证。
+
+[S5] A. Hatamizadeh et al. Swin UNETR: Swin Transformers for Semantic Segmentation of Brain Tumors in MRI Images (2022).
+作者论文: https://arxiv.org/abs/2201.01266
+官方研究代码: https://github.com/Project-MONAI/research-contributions/tree/main/SwinUNETR
+核实用途：医学分割 Transformer 结构对照；本次冠脉运行是再训练，不能引用原始脑肿瘤成绩作为冠脉结果。
+
+[S6] ASOCA 作者官方评估实现。
+代码: https://github.com/Ramtingh/ASOCA_MICCAI2020_Evaluation
+本地归档: E:\00-Data\冠状动脉-ASOCA\ASOCA_MICCAI2020_Evaluation-master.zip
+已直接阅读 evaluation.py；其 hausdorff_95 用 np.where(mask) 全前景坐标、cKDTree 和 max(q95_forward, q95_reverse)。
+
+[S7] Elsevier 的 Advanced Engineering Informatics 官方期刊说明。
+https://shop.elsevier.com/journals/advanced-engineering-informatics/1474-0346
+核实用途：知识表示/使用、工程任务、严谨定量与定性验证、方法一般性及范围边界。2026-10-13 已成功读取该官方页；ScienceDirect aims-and-scope 页当前抓取返回 403。
+
+引用准备备注：本次为协议 txt，未生成未经验证的 BibTeX。Crossref 已核实 clDice DOI，但本机 DOI/Crossref 批量拉取发生 TLS EOF；投稿前应从 DOI/出版方再获取完整 BibTeX，不要手写猜测作者/卷期/页码。
+

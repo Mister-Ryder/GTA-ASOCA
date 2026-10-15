@@ -1,0 +1,42 @@
+/root/autodl-tmp/ASOCA_GTAirway_20261013/env/bin/python - <<'PY'
+from pathlib import Path
+import subprocess, json, time
+r=Path('/root/autodl-tmp/ASOCA_GTAirway_20261013')
+repair=json.loads((r/'repair_cldice/repair_status.json').read_text())
+if repair['status']!='deferred_by_user':
+    raise RuntimeError('Repair controller is not explicitly deferred')
+for entry in Path('/proc').iterdir():
+    if not entry.name.isdigit():continue
+    try:
+        argv=(entry/'cmdline').read_bytes().decode(errors='replace').split('\0')
+        cwd=(entry/'cwd').resolve()
+    except (FileNotFoundError,PermissionError,ProcessLookupError):continue
+    for argument in argv[1:]:
+        if argument.endswith('recover.py') and (cwd/argument).resolve()==(r/'repair_cldice/recover.py').resolve():
+            raise RuntimeError('The deferred external-method recovery controller is still running')
+command=[str(r/'env/bin/python'),'-u',str(r/'development/coordinator.py'),'--root',str(r),'--raw-root',str(r/'raw/CompressedVersion'),'--manifest',str(r/'cache/manifest.json'),'--old-parent-pid','6398','--native-runner-pid','54628']
+plan=subprocess.run(command+['--plan'],capture_output=True,text=True)
+if plan.returncode:
+    print(plan.stdout,plan.stderr)
+    raise SystemExit(plan.returncode)
+verified=json.loads(plan.stdout)
+(r/'development/verified_plan.json').write_text(json.dumps(verified,indent=2)+'\n')
+status=r/'results/development_queue_status.json'
+if status.exists():raise RuntimeError('Development status already exists; inspect before restarting')
+with (r/'development/coordinator.log').open('a') as log:
+    process=subprocess.Popen(command,cwd=r,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+deadline=time.monotonic()+30
+while time.monotonic()<deadline:
+    if process.poll() is not None:
+        print((r/'development/coordinator.log').read_text(errors='replace')[-6000:])
+        raise RuntimeError('Development controller exited during startup')
+    if status.exists():
+        state=json.loads(status.read_text())
+        if state.get('status')=='running' and state.get('phase')=='waiting_for_existing_native_runner':break
+    time.sleep(.5)
+else:raise RuntimeError('Development controller startup did not produce its durable state')
+print(json.dumps({'pid':process.pid,'status':state['status'],'phase':state['phase'],'new_jobs':[j['job_id'] for j in state['jobs']],'deferred_count':len(state['deferred']),'protocol_identity':state['protocol_identity']}))
+print('GPU process:',subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,process_name','--format=csv,noheader'],text=True).strip())
+print('Native log tail:')
+print('\n'.join((r/'results/nnunet/fold0/native_runner.log').read_text(errors='replace').splitlines()[-8:]))
+PY

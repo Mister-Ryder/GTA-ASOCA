@@ -1,0 +1,21 @@
+{
+  "role": "NOT_MODEL_RESULTS_fresh_anonymous_public_clone",
+  "command": [
+    "git",
+    "-c",
+    "credential.helper=",
+    "-c",
+    "http.extraHeader=",
+    "clone",
+    "--no-checkout",
+    "https://github.com/Mister-Ryder/GTA-ASOCA.git",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout"
+  ],
+  "return_code": 0,
+  "wall_seconds": 1.4665232188999653,
+  "captured_at_utc": "2026-10-14T09:28:37.739934+00:00",
+  "global_system_Git_configuration_disabled": true,
+  "credential_helper_and_extra_header_disabled": true,
+  "terminal_askpass_disabled": true,
+  "private_data_or_weights_copied": false
+}

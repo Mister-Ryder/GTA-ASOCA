@@ -1,0 +1,870 @@
+{
+  "status": "actual_saved_mask_connected_component_diagnosis",
+  "method": "26-neighbour components ranked by predicted voxel count; TP/FP from original binary GT",
+  "scope": "Two development patients, four existing saved predictions; no model execution or prediction changes",
+  "largest2_rule": "Descriptive accounting only; no connected-component filter applied or selected",
+  "GT_bbox_policy": "Original GT voxel-centre bounding box expanded by10 physical mm along each image axis; diagnostic only, never inference crop",
+  "limits": [
+    "A26-connected component is not an anatomical coronary branch.",
+    "FP within a large component cannot be removed by simply discarding the other components.",
+    "The largest-two counts describe only this one prespecified accounting rule, without testing alternative thresholds.",
+    "No Dice, ASSD, training, inference, metric recomputation or postprocessing search performed."
+  ],
+  "results": [
+    {
+      "summary": {
+        "model": "U",
+        "case_id": "Diseased_1",
+        "components_26": 11,
+        "TP_voxels": 18241,
+        "FP_voxels": 17038,
+        "largest2_TP_voxels": 17452,
+        "largest2_FP_voxels": 15093,
+        "largest2_FP_fraction_of_all_FP": 0.885843408850804,
+        "other_components_FP_voxels": 1945,
+        "other_components_FP_fraction_of_all_FP": 0.11415659114919592,
+        "largest2_retained_TP_fraction_of_current_prediction_TP": 0.9567457924455897,
+        "other_components_TP_voxels": 789,
+        "FP_outside_GT_bbox_plus10mm_voxels": 43,
+        "FP_outside_GT_bbox_plus10mm_fraction_of_all_FP": 0.0025237703955863365
+      },
+      "components_ranked_by_volume": [
+        {
+          "rank": 1,
+          "component_label": 8,
+          "voxels": 25465,
+          "volume_mm3": 2380.2068016018275,
+          "TP_voxels": 12116,
+          "FP_voxels": 13349,
+          "FP_outside_GT_bbox_plus10mm_voxels": 43
+        },
+        {
+          "rank": 2,
+          "component_label": 5,
+          "voxels": 7080,
+          "volume_mm3": 661.7657237518531,
+          "TP_voxels": 5336,
+          "FP_voxels": 1744,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 3,
+          "component_label": 2,
+          "voxels": 1162,
+          "volume_mm3": 108.61183206209792,
+          "TP_voxels": 0,
+          "FP_voxels": 1162,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 4,
+          "component_label": 1,
+          "voxels": 1007,
+          "volume_mm3": 94.12402313815198,
+          "TP_voxels": 591,
+          "FP_voxels": 416,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 5,
+          "component_label": 7,
+          "voxels": 357,
+          "volume_mm3": 33.368695392572256,
+          "TP_voxels": 196,
+          "FP_voxels": 161,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 6,
+          "component_label": 3,
+          "voxels": 103,
+          "volume_mm3": 9.627382704299558,
+          "TP_voxels": 0,
+          "FP_voxels": 103,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 7,
+          "component_label": 6,
+          "voxels": 66,
+          "volume_mm3": 6.169002509551173,
+          "TP_voxels": 0,
+          "FP_voxels": 66,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 8,
+          "component_label": 4,
+          "voxels": 30,
+          "volume_mm3": 2.8040920497959876,
+          "TP_voxels": 0,
+          "FP_voxels": 30,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 9,
+          "component_label": 10,
+          "voxels": 5,
+          "volume_mm3": 0.46734867496599797,
+          "TP_voxels": 0,
+          "FP_voxels": 5,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 10,
+          "component_label": 11,
+          "voxels": 3,
+          "volume_mm3": 0.28040920497959876,
+          "TP_voxels": 2,
+          "FP_voxels": 1,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 11,
+          "component_label": 9,
+          "voxels": 1,
+          "volume_mm3": 0.09346973499319959,
+          "TP_voxels": 0,
+          "FP_voxels": 1,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        }
+      ],
+      "inputs": {
+        "prediction": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\outer8_U_report_20261015\\predictions\\Diseased_1_prediction.nrrd",
+        "GT": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_1.nrrd"
+      },
+      "voxel_volume_mm3": 0.09346973499319959,
+      "spacing_zyx_mm": [
+        0.625,
+        0.3867189884,
+        0.3867189884
+      ],
+      "GT_bbox_index_zyx_inclusive": {
+        "minimum": [
+          39,
+          141,
+          142
+        ],
+        "maximum": [
+          179,
+          387,
+          367
+        ]
+      },
+      "padded_bbox_index_zyx_half_open": {
+        "minimum": [
+          23,
+          116,
+          117
+        ],
+        "maximum": [
+          196,
+          413,
+          393
+        ]
+      }
+    },
+    {
+      "summary": {
+        "model": "B",
+        "case_id": "Diseased_1",
+        "components_26": 19,
+        "TP_voxels": 18141,
+        "FP_voxels": 16982,
+        "largest2_TP_voxels": 18121,
+        "largest2_FP_voxels": 13699,
+        "largest2_FP_fraction_of_all_FP": 0.8066776586974443,
+        "other_components_FP_voxels": 3283,
+        "other_components_FP_fraction_of_all_FP": 0.19332234130255566,
+        "largest2_retained_TP_fraction_of_current_prediction_TP": 0.9988975249434981,
+        "other_components_TP_voxels": 20,
+        "FP_outside_GT_bbox_plus10mm_voxels": 179,
+        "FP_outside_GT_bbox_plus10mm_fraction_of_all_FP": 0.010540572370745495
+      },
+      "components_ranked_by_volume": [
+        {
+          "rank": 1,
+          "component_label": 3,
+          "voxels": 23714,
+          "volume_mm3": 2216.541295628735,
+          "TP_voxels": 12426,
+          "FP_voxels": 11288,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 2,
+          "component_label": 5,
+          "voxels": 8106,
+          "volume_mm3": 757.6656718548759,
+          "TP_voxels": 5695,
+          "FP_voxels": 2411,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 3,
+          "component_label": 1,
+          "voxels": 1312,
+          "volume_mm3": 122.63229231107786,
+          "TP_voxels": 0,
+          "FP_voxels": 1312,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 4,
+          "component_label": 9,
+          "voxels": 1109,
+          "volume_mm3": 103.65793610745834,
+          "TP_voxels": 0,
+          "FP_voxels": 1109,
+          "FP_outside_GT_bbox_plus10mm_voxels": 49
+        },
+        {
+          "rank": 5,
+          "component_label": 11,
+          "voxels": 279,
+          "volume_mm3": 26.078056063102686,
+          "TP_voxels": 0,
+          "FP_voxels": 279,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 6,
+          "component_label": 6,
+          "voxels": 211,
+          "volume_mm3": 19.722114083565113,
+          "TP_voxels": 0,
+          "FP_voxels": 211,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 7,
+          "component_label": 16,
+          "voxels": 131,
+          "volume_mm3": 12.244535284109146,
+          "TP_voxels": 0,
+          "FP_voxels": 131,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 8,
+          "component_label": 4,
+          "voxels": 94,
+          "volume_mm3": 8.786155089360761,
+          "TP_voxels": 0,
+          "FP_voxels": 94,
+          "FP_outside_GT_bbox_plus10mm_voxels": 94
+        },
+        {
+          "rank": 9,
+          "component_label": 17,
+          "voxels": 81,
+          "volume_mm3": 7.571048534449167,
+          "TP_voxels": 0,
+          "FP_voxels": 81,
+          "FP_outside_GT_bbox_plus10mm_voxels": 25
+        },
+        {
+          "rank": 10,
+          "component_label": 7,
+          "voxels": 21,
+          "volume_mm3": 1.9628644348571913,
+          "TP_voxels": 0,
+          "FP_voxels": 21,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 11,
+          "component_label": 10,
+          "voxels": 18,
+          "volume_mm3": 1.6824552298775926,
+          "TP_voxels": 0,
+          "FP_voxels": 18,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 12,
+          "component_label": 14,
+          "voxels": 18,
+          "volume_mm3": 1.6824552298775926,
+          "TP_voxels": 18,
+          "FP_voxels": 0,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 13,
+          "component_label": 12,
+          "voxels": 11,
+          "volume_mm3": 1.0281670849251956,
+          "TP_voxels": 0,
+          "FP_voxels": 11,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 14,
+          "component_label": 18,
+          "voxels": 8,
+          "volume_mm3": 0.7477578799455967,
+          "TP_voxels": 0,
+          "FP_voxels": 8,
+          "FP_outside_GT_bbox_plus10mm_voxels": 8
+        },
+        {
+          "rank": 15,
+          "component_label": 15,
+          "voxels": 3,
+          "volume_mm3": 0.28040920497959876,
+          "TP_voxels": 0,
+          "FP_voxels": 3,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 16,
+          "component_label": 2,
+          "voxels": 2,
+          "volume_mm3": 0.18693946998639918,
+          "TP_voxels": 2,
+          "FP_voxels": 0,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 17,
+          "component_label": 13,
+          "voxels": 2,
+          "volume_mm3": 0.18693946998639918,
+          "TP_voxels": 0,
+          "FP_voxels": 2,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 18,
+          "component_label": 19,
+          "voxels": 2,
+          "volume_mm3": 0.18693946998639918,
+          "TP_voxels": 0,
+          "FP_voxels": 2,
+          "FP_outside_GT_bbox_plus10mm_voxels": 2
+        },
+        {
+          "rank": 19,
+          "component_label": 8,
+          "voxels": 1,
+          "volume_mm3": 0.09346973499319959,
+          "TP_voxels": 0,
+          "FP_voxels": 1,
+          "FP_outside_GT_bbox_plus10mm_voxels": 1
+        }
+      ],
+      "inputs": {
+        "prediction": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\outer8_B_report_20261015\\predictions\\Diseased_1_prediction.nrrd",
+        "GT": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Diseased\\Annotations\\Diseased_1.nrrd"
+      },
+      "voxel_volume_mm3": 0.09346973499319959,
+      "spacing_zyx_mm": [
+        0.625,
+        0.3867189884,
+        0.3867189884
+      ],
+      "GT_bbox_index_zyx_inclusive": {
+        "minimum": [
+          39,
+          141,
+          142
+        ],
+        "maximum": [
+          179,
+          387,
+          367
+        ]
+      },
+      "padded_bbox_index_zyx_half_open": {
+        "minimum": [
+          23,
+          116,
+          117
+        ],
+        "maximum": [
+          196,
+          413,
+          393
+        ]
+      }
+    },
+    {
+      "summary": {
+        "model": "U",
+        "case_id": "Normal_16",
+        "components_26": 23,
+        "TP_voxels": 35740,
+        "FP_voxels": 15413,
+        "largest2_TP_voxels": 34880,
+        "largest2_FP_voxels": 6651,
+        "largest2_FP_fraction_of_all_FP": 0.4315188477259456,
+        "other_components_FP_voxels": 8762,
+        "other_components_FP_fraction_of_all_FP": 0.5684811522740544,
+        "largest2_retained_TP_fraction_of_current_prediction_TP": 0.9759373251259094,
+        "other_components_TP_voxels": 860,
+        "FP_outside_GT_bbox_plus10mm_voxels": 1177,
+        "FP_outside_GT_bbox_plus10mm_fraction_of_all_FP": 0.07636410822033349
+      },
+      "components_ranked_by_volume": [
+        {
+          "rank": 1,
+          "component_label": 5,
+          "voxels": 22272,
+          "volume_mm3": 1701.3922241035189,
+          "TP_voxels": 17864,
+          "FP_voxels": 4408,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 2,
+          "component_label": 4,
+          "voxels": 19259,
+          "volume_mm3": 1471.2245350219857,
+          "TP_voxels": 17016,
+          "FP_voxels": 2243,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 3,
+          "component_label": 14,
+          "voxels": 3325,
+          "volume_mm3": 254.00184739332795,
+          "TP_voxels": 0,
+          "FP_voxels": 3325,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 4,
+          "component_label": 2,
+          "voxels": 2088,
+          "volume_mm3": 159.5055210097049,
+          "TP_voxels": 592,
+          "FP_voxels": 1496,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 5,
+          "component_label": 23,
+          "voxels": 1177,
+          "volume_mm3": 89.91283440058557,
+          "TP_voxels": 0,
+          "FP_voxels": 1177,
+          "FP_outside_GT_bbox_plus10mm_voxels": 1177
+        },
+        {
+          "rank": 6,
+          "component_label": 8,
+          "voxels": 613,
+          "volume_mm3": 46.82800976003309,
+          "TP_voxels": 0,
+          "FP_voxels": 613,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 7,
+          "component_label": 1,
+          "voxels": 528,
+          "volume_mm3": 40.334729450729974,
+          "TP_voxels": 0,
+          "FP_voxels": 528,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 8,
+          "component_label": 10,
+          "voxels": 445,
+          "volume_mm3": 33.9942322075281,
+          "TP_voxels": 0,
+          "FP_voxels": 445,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 9,
+          "component_label": 6,
+          "voxels": 342,
+          "volume_mm3": 26.12590430331373,
+          "TP_voxels": 0,
+          "FP_voxels": 342,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 10,
+          "component_label": 22,
+          "voxels": 341,
+          "volume_mm3": 26.049512770263107,
+          "TP_voxels": 262,
+          "FP_voxels": 79,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 11,
+          "component_label": 11,
+          "voxels": 289,
+          "volume_mm3": 22.07715305163061,
+          "TP_voxels": 0,
+          "FP_voxels": 289,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 12,
+          "component_label": 18,
+          "voxels": 234,
+          "volume_mm3": 17.87561873384624,
+          "TP_voxels": 0,
+          "FP_voxels": 234,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 13,
+          "component_label": 17,
+          "voxels": 84,
+          "volume_mm3": 6.416888776252495,
+          "TP_voxels": 0,
+          "FP_voxels": 84,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 14,
+          "component_label": 15,
+          "voxels": 70,
+          "volume_mm3": 5.347407313543746,
+          "TP_voxels": 0,
+          "FP_voxels": 70,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 15,
+          "component_label": 7,
+          "voxels": 29,
+          "volume_mm3": 2.2153544584681235,
+          "TP_voxels": 0,
+          "FP_voxels": 29,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 16,
+          "component_label": 12,
+          "voxels": 28,
+          "volume_mm3": 2.1389629254174984,
+          "TP_voxels": 0,
+          "FP_voxels": 28,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 17,
+          "component_label": 9,
+          "voxels": 11,
+          "volume_mm3": 0.8403068635568745,
+          "TP_voxels": 0,
+          "FP_voxels": 11,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 18,
+          "component_label": 13,
+          "voxels": 6,
+          "volume_mm3": 0.45834919830374965,
+          "TP_voxels": 0,
+          "FP_voxels": 6,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 19,
+          "component_label": 3,
+          "voxels": 4,
+          "volume_mm3": 0.3055661322024998,
+          "TP_voxels": 4,
+          "FP_voxels": 0,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 20,
+          "component_label": 16,
+          "voxels": 3,
+          "volume_mm3": 0.22917459915187482,
+          "TP_voxels": 0,
+          "FP_voxels": 3,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 21,
+          "component_label": 20,
+          "voxels": 2,
+          "volume_mm3": 0.1527830661012499,
+          "TP_voxels": 0,
+          "FP_voxels": 2,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 22,
+          "component_label": 21,
+          "voxels": 2,
+          "volume_mm3": 0.1527830661012499,
+          "TP_voxels": 2,
+          "FP_voxels": 0,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 23,
+          "component_label": 19,
+          "voxels": 1,
+          "volume_mm3": 0.07639153305062495,
+          "TP_voxels": 0,
+          "FP_voxels": 1,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        }
+      ],
+      "inputs": {
+        "prediction": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\outer8_U_report_20261015\\predictions\\Normal_16_prediction.nrrd",
+        "GT": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_16.nrrd"
+      },
+      "voxel_volume_mm3": 0.07639153305062495,
+      "spacing_zyx_mm": [
+        0.6249999999999996,
+        0.349609,
+        0.349609
+      ],
+      "GT_bbox_index_zyx_inclusive": {
+        "minimum": [
+          36,
+          88,
+          117
+        ],
+        "maximum": [
+          177,
+          338,
+          412
+        ]
+      },
+      "padded_bbox_index_zyx_half_open": {
+        "minimum": [
+          20,
+          60,
+          89
+        ],
+        "maximum": [
+          194,
+          367,
+          441
+        ]
+      }
+    },
+    {
+      "summary": {
+        "model": "B",
+        "case_id": "Normal_16",
+        "components_26": 18,
+        "TP_voxels": 35285,
+        "FP_voxels": 10267,
+        "largest2_TP_voxels": 35197,
+        "largest2_FP_voxels": 9086,
+        "largest2_FP_fraction_of_all_FP": 0.8849712671666504,
+        "other_components_FP_voxels": 1181,
+        "other_components_FP_fraction_of_all_FP": 0.11502873283334956,
+        "largest2_retained_TP_fraction_of_current_prediction_TP": 0.9975060223891172,
+        "other_components_TP_voxels": 88,
+        "FP_outside_GT_bbox_plus10mm_voxels": 0,
+        "FP_outside_GT_bbox_plus10mm_fraction_of_all_FP": 0.0
+      },
+      "components_ranked_by_volume": [
+        {
+          "rank": 1,
+          "component_label": 3,
+          "voxels": 25357,
+          "volume_mm3": 1937.0601035646969,
+          "TP_voxels": 18063,
+          "FP_voxels": 7294,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 2,
+          "component_label": 4,
+          "voxels": 18926,
+          "volume_mm3": 1445.7861545161277,
+          "TP_voxels": 17134,
+          "FP_voxels": 1792,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 3,
+          "component_label": 9,
+          "voxels": 683,
+          "volume_mm3": 52.17541707357684,
+          "TP_voxels": 0,
+          "FP_voxels": 683,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 4,
+          "component_label": 8,
+          "voxels": 292,
+          "volume_mm3": 22.306327650782485,
+          "TP_voxels": 0,
+          "FP_voxels": 292,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 5,
+          "component_label": 1,
+          "voxels": 94,
+          "volume_mm3": 7.180804106758745,
+          "TP_voxels": 88,
+          "FP_voxels": 6,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 6,
+          "component_label": 13,
+          "voxels": 56,
+          "volume_mm3": 4.277925850834997,
+          "TP_voxels": 0,
+          "FP_voxels": 56,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 7,
+          "component_label": 6,
+          "voxels": 50,
+          "volume_mm3": 3.8195766525312473,
+          "TP_voxels": 0,
+          "FP_voxels": 50,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 8,
+          "component_label": 2,
+          "voxels": 27,
+          "volume_mm3": 2.0625713923668734,
+          "TP_voxels": 0,
+          "FP_voxels": 27,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 9,
+          "component_label": 12,
+          "voxels": 14,
+          "volume_mm3": 1.0694814627087492,
+          "TP_voxels": 0,
+          "FP_voxels": 14,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 10,
+          "component_label": 11,
+          "voxels": 13,
+          "volume_mm3": 0.9930899296581243,
+          "TP_voxels": 0,
+          "FP_voxels": 13,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 11,
+          "component_label": 7,
+          "voxels": 11,
+          "volume_mm3": 0.8403068635568745,
+          "TP_voxels": 0,
+          "FP_voxels": 11,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 12,
+          "component_label": 18,
+          "voxels": 8,
+          "volume_mm3": 0.6111322644049996,
+          "TP_voxels": 0,
+          "FP_voxels": 8,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 13,
+          "component_label": 5,
+          "voxels": 6,
+          "volume_mm3": 0.45834919830374965,
+          "TP_voxels": 0,
+          "FP_voxels": 6,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 14,
+          "component_label": 14,
+          "voxels": 6,
+          "volume_mm3": 0.45834919830374965,
+          "TP_voxels": 0,
+          "FP_voxels": 6,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 15,
+          "component_label": 10,
+          "voxels": 4,
+          "volume_mm3": 0.3055661322024998,
+          "TP_voxels": 0,
+          "FP_voxels": 4,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 16,
+          "component_label": 17,
+          "voxels": 3,
+          "volume_mm3": 0.22917459915187482,
+          "TP_voxels": 0,
+          "FP_voxels": 3,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 17,
+          "component_label": 15,
+          "voxels": 1,
+          "volume_mm3": 0.07639153305062495,
+          "TP_voxels": 0,
+          "FP_voxels": 1,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        },
+        {
+          "rank": 18,
+          "component_label": 16,
+          "voxels": 1,
+          "volume_mm3": 0.07639153305062495,
+          "TP_voxels": 0,
+          "FP_voxels": 1,
+          "FP_outside_GT_bbox_plus10mm_voxels": 0
+        }
+      ],
+      "inputs": {
+        "prediction": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\outer8_B_report_20261015\\predictions\\Normal_16_prediction.nrrd",
+        "GT": "E:\\00-Data\\\u51a0\u72b6\u52a8\u8109-ASOCA\\CompressedVersion\\Normal\\Annotations\\Normal_16.nrrd"
+      },
+      "voxel_volume_mm3": 0.07639153305062495,
+      "spacing_zyx_mm": [
+        0.6249999999999996,
+        0.349609,
+        0.349609
+      ],
+      "GT_bbox_index_zyx_inclusive": {
+        "minimum": [
+          36,
+          88,
+          117
+        ],
+        "maximum": [
+          177,
+          338,
+          412
+        ]
+      },
+      "padded_bbox_index_zyx_half_open": {
+        "minimum": [
+          20,
+          60,
+          89
+        ],
+        "maximum": [
+          194,
+          367,
+          441
+        ]
+      }
+    }
+  ]
+}

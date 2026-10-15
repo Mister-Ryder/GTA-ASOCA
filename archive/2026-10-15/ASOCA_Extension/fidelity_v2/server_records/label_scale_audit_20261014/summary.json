@@ -1,0 +1,1502 @@
+{
+  "provenance": {
+    "schema_version": 1,
+    "role": "training28 label-scale diagnosis only; no network forward/training/selection",
+    "root": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014",
+    "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "manifest_sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356",
+    "training_patients": [
+      "Diseased_11",
+      "Diseased_12",
+      "Diseased_13",
+      "Diseased_14",
+      "Diseased_16",
+      "Diseased_17",
+      "Diseased_19",
+      "Diseased_2",
+      "Diseased_3",
+      "Diseased_4",
+      "Diseased_5",
+      "Diseased_6",
+      "Diseased_8",
+      "Diseased_9",
+      "Normal_1",
+      "Normal_10",
+      "Normal_11",
+      "Normal_13",
+      "Normal_14",
+      "Normal_15",
+      "Normal_17",
+      "Normal_18",
+      "Normal_20",
+      "Normal_4",
+      "Normal_5",
+      "Normal_6",
+      "Normal_7",
+      "Normal_9"
+    ],
+    "excluded_internal4": [
+      "Diseased_10",
+      "Diseased_20",
+      "Normal_12",
+      "Normal_3"
+    ],
+    "outer8_read": false,
+    "validation_GT_read": false,
+    "input_size_vox": 128,
+    "input_side_mm": 64.0,
+    "roi_sizes_vox": [
+      64,
+      96,
+      128
+    ],
+    "roi_sides_mm": [
+      32.0,
+      48.0,
+      64.0
+    ],
+    "same_center": true,
+    "seed": 20261013,
+    "bank_epoch": 0,
+    "patches_per_case": 2,
+    "bank": [
+      {
+        "index": 0,
+        "case_id": "Diseased_6"
+      },
+      {
+        "index": 1,
+        "case_id": "Normal_7"
+      },
+      {
+        "index": 2,
+        "case_id": "Diseased_2"
+      },
+      {
+        "index": 3,
+        "case_id": "Normal_7"
+      },
+      {
+        "index": 4,
+        "case_id": "Diseased_16"
+      },
+      {
+        "index": 5,
+        "case_id": "Normal_5"
+      },
+      {
+        "index": 7,
+        "case_id": "Normal_9"
+      },
+      {
+        "index": 8,
+        "case_id": "Normal_1"
+      },
+      {
+        "index": 9,
+        "case_id": "Normal_20"
+      },
+      {
+        "index": 10,
+        "case_id": "Diseased_11"
+      },
+      {
+        "index": 11,
+        "case_id": "Diseased_11"
+      },
+      {
+        "index": 12,
+        "case_id": "Diseased_16"
+      },
+      {
+        "index": 15,
+        "case_id": "Normal_6"
+      },
+      {
+        "index": 16,
+        "case_id": "Normal_18"
+      },
+      {
+        "index": 18,
+        "case_id": "Diseased_4"
+      },
+      {
+        "index": 19,
+        "case_id": "Diseased_9"
+      },
+      {
+        "index": 20,
+        "case_id": "Normal_15"
+      },
+      {
+        "index": 21,
+        "case_id": "Diseased_9"
+      },
+      {
+        "index": 22,
+        "case_id": "Normal_4"
+      },
+      {
+        "index": 23,
+        "case_id": "Diseased_17"
+      },
+      {
+        "index": 26,
+        "case_id": "Diseased_13"
+      },
+      {
+        "index": 29,
+        "case_id": "Diseased_14"
+      },
+      {
+        "index": 31,
+        "case_id": "Normal_11"
+      },
+      {
+        "index": 32,
+        "case_id": "Normal_1"
+      },
+      {
+        "index": 33,
+        "case_id": "Diseased_4"
+      },
+      {
+        "index": 35,
+        "case_id": "Diseased_19"
+      },
+      {
+        "index": 36,
+        "case_id": "Normal_17"
+      },
+      {
+        "index": 41,
+        "case_id": "Diseased_19"
+      },
+      {
+        "index": 42,
+        "case_id": "Normal_6"
+      },
+      {
+        "index": 43,
+        "case_id": "Normal_5"
+      },
+      {
+        "index": 45,
+        "case_id": "Normal_13"
+      },
+      {
+        "index": 46,
+        "case_id": "Normal_20"
+      },
+      {
+        "index": 49,
+        "case_id": "Diseased_17"
+      },
+      {
+        "index": 50,
+        "case_id": "Diseased_13"
+      },
+      {
+        "index": 53,
+        "case_id": "Normal_14"
+      },
+      {
+        "index": 54,
+        "case_id": "Normal_18"
+      },
+      {
+        "index": 55,
+        "case_id": "Normal_11"
+      },
+      {
+        "index": 56,
+        "case_id": "Normal_17"
+      },
+      {
+        "index": 57,
+        "case_id": "Normal_13"
+      },
+      {
+        "index": 58,
+        "case_id": "Diseased_6"
+      },
+      {
+        "index": 61,
+        "case_id": "Normal_15"
+      },
+      {
+        "index": 62,
+        "case_id": "Normal_10"
+      },
+      {
+        "index": 63,
+        "case_id": "Diseased_12"
+      },
+      {
+        "index": 66,
+        "case_id": "Normal_10"
+      },
+      {
+        "index": 69,
+        "case_id": "Diseased_3"
+      },
+      {
+        "index": 74,
+        "case_id": "Diseased_12"
+      },
+      {
+        "index": 75,
+        "case_id": "Normal_4"
+      },
+      {
+        "index": 80,
+        "case_id": "Normal_9"
+      },
+      {
+        "index": 85,
+        "case_id": "Diseased_3"
+      },
+      {
+        "index": 92,
+        "case_id": "Diseased_2"
+      },
+      {
+        "index": 103,
+        "case_id": "Diseased_5"
+      },
+      {
+        "index": 105,
+        "case_id": "Diseased_5"
+      },
+      {
+        "index": 122,
+        "case_id": "Normal_14"
+      },
+      {
+        "index": 147,
+        "case_id": "Diseased_8"
+      },
+      {
+        "index": 172,
+        "case_id": "Diseased_8"
+      },
+      {
+        "index": 194,
+        "case_id": "Diseased_14"
+      }
+    ],
+    "sampling": "standard",
+    "sampling_fov": "image-body",
+    "augmentation": false,
+    "bank_population": "patient-stratified original train-time sampler indices; not natural patch frequency",
+    "tree_bbox_role": "full cached training GT physical extent for scale context only; never sampler/image ROI",
+    "aggregation": "current dominant-volume branch vs volume/equal-visible-branch/cached-centerline-voxel mode",
+    "local_mixture_definition": "at least2 distinct positive structure proxy labels across fixed2x2x2 subtiles",
+    "scale_sensitivity": "same branch set but changed structure isolates old log(volume) threshold; fixed128-volume counterfactual also reported",
+    "fused_readout_candidate_only": {
+      "64": "central fused[2:6]^3 avg+max",
+      "96": "central fused[1:7]^3 avg+max",
+      "128": "fused[0:8]^3 avg+max",
+      "head_input_dim": 512,
+      "heads_unchanged": 3,
+      "classes_per_head": 7,
+      "active_network_changed": false
+    },
+    "classification_accuracy_gate": false,
+    "parameter_updates": false,
+    "GPU_used": false,
+    "classifier_pretraining_frequency_evidence": {
+      "file": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/attribute_statistics.json",
+      "sha256": "8af11f03ba0cdefb88b7f26e501f837c2745db491e712590c3314f15d7aba5d3",
+      "n_fixed_pretraining_patches": 2048,
+      "heads": {
+        "generation": {
+          "counts": [
+            95,
+            453,
+            314,
+            637,
+            378,
+            150,
+            21
+          ],
+          "positive_patches": 1953,
+          "positive_fractions": [
+            0.23195084485407066,
+            0.16077828981054787,
+            0.32616487455197135,
+            0.1935483870967742,
+            0.07680491551459294,
+            0.010752688172043012
+          ]
+        },
+        "structure": {
+          "counts": [
+            95,
+            53,
+            63,
+            221,
+            335,
+            1245,
+            36
+          ],
+          "positive_patches": 1953,
+          "positive_fractions": [
+            0.02713773681515617,
+            0.03225806451612903,
+            0.11315924219150025,
+            0.1715309779825909,
+            0.6374807987711214,
+            0.018433179723502304
+          ]
+        },
+        "location": {
+          "counts": [
+            95,
+            219,
+            159,
+            365,
+            557,
+            156,
+            497
+          ],
+          "positive_patches": 1953,
+          "positive_fractions": [
+            0.11213517665130568,
+            0.08141321044546851,
+            0.18689196108550948,
+            0.28520225294418844,
+            0.07987711213517665,
+            0.25448028673835127
+          ]
+        }
+      },
+      "interpretation": "Pretraining geometry-sampler frequency evidence; not accuracy and not this standard-sampler bank prevalence"
+    },
+    "inputs": [
+      {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_enhanced200x125/training/config.json",
+        "sha256": "b61358e8e4e3be2b8b1a194815c50de808672a76d77c450daa9ea55ddfca598b"
+      },
+      {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/dataset/cache/manifest.json",
+        "sha256": "141d97d36d089ccf74ec6ce44133c893a916ae4fe4c07029ec5509aba43a8356"
+      },
+      {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_label_scales.py",
+        "sha256": "7bc4201138cbc0f375242042c26238fb40dfa3cad17bdc39614376b269a55536"
+      },
+      {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_gaussian.py",
+        "sha256": "62daf89c7c49d23f3cb96a32a1970b2bb5fd5c68311aa197705850a5f7dba361"
+      },
+      {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_epoch070_cpu_bank56/fixed_sampling_bank.json",
+        "sha256": "6d58425c5e057739c38c6734f37d3f0c4a79933544f0547705de81bf3853ab14"
+      },
+      {
+        "path": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/classifier80x64/training/attribute_statistics.json",
+        "sha256": "8af11f03ba0cdefb88b7f26e501f837c2745db491e712590c3314f15d7aba5d3"
+      }
+    ]
+  },
+  "roi_scales": {
+    "64": {
+      "physical_side_mm": 32.0,
+      "n_fixed_patches": 56,
+      "n_nonempty": 31,
+      "n_empty": 25,
+      "structure_histogram_including_empty0": {
+        "0": 25,
+        "1": 3,
+        "2": 9,
+        "3": 5,
+        "4": 8,
+        "5": 5,
+        "6": 1
+      },
+      "structure_histogram_positive": {
+        "1": 3,
+        "2": 9,
+        "3": 5,
+        "4": 8,
+        "5": 5,
+        "6": 1
+      },
+      "structure_entropy_all_bits": 2.296642454050711,
+      "structure_entropy_positive_bits": 2.3573094244508135,
+      "generation_histogram_including_empty0": {
+        "0": 25,
+        "1": 6,
+        "2": 7,
+        "3": 10,
+        "4": 7,
+        "5": 1
+      },
+      "branch_count_nonempty": {
+        "n_defined": 31,
+        "mean": 3.161290322580645,
+        "median": 3.0,
+        "observation_sd": 2.4778589439749306
+      },
+      "dominant_branch_volume_fraction": {
+        "n_defined": 31,
+        "mean": 0.737538040836497,
+        "median": 0.7849462365591398,
+        "observation_sd": 0.26503469880776936
+      },
+      "higher_bin_than_dominant_volume_fraction": {
+        "n_defined": 31,
+        "mean": 0.1033546136710189,
+        "median": 0.0,
+        "observation_sd": 0.19788968384003114
+      },
+      "higher_bin_than_dominant_centerline_fraction": {
+        "n_defined": 29,
+        "mean": 0.14675676376338612,
+        "median": 0.0,
+        "observation_sd": 0.2693167592289841
+      },
+      "multiple_generation_bins_present": {
+        "count": 14,
+        "denominator": 31,
+        "fraction": 0.45161290322580644
+      },
+      "mixed_local_structure_proxy_all_nonempty": {
+        "count": 14,
+        "denominator": 31,
+        "fraction": 0.45161290322580644
+      },
+      "mixed_local_structure_proxy_eligible_ge2_nonempty_subtiles": {
+        "count": 14,
+        "denominator": 21,
+        "fraction": 0.6666666666666666
+      },
+      "fixed128_denominator_structure_sensitivity": {
+        "count": 8,
+        "denominator": 31,
+        "fraction": 0.25806451612903225
+      },
+      "unchanged_branch_set_volume_threshold_only_structure_change": {
+        "count": 0,
+        "denominator": 31,
+        "fraction": 0.0
+      },
+      "aggregation_label_disagreement": {
+        "volume": {
+          "different_from_current_dominant_branch_label": 2,
+          "denominator": 31,
+          "fraction": 0.06451612903225806
+        },
+        "equal_branch": {
+          "different_from_current_dominant_branch_label": 6,
+          "denominator": 31,
+          "fraction": 0.1935483870967742
+        },
+        "centerline_voxel": {
+          "different_from_current_dominant_branch_label": 5,
+          "denominator": 29,
+          "fraction": 0.1724137931034483
+        }
+      },
+      "within_case_structure_variation": {
+        "Diseased_11": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_12": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_13": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_14": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "6": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_16": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_17": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_19": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_2": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_3": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_4": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_5": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_6": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_8": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_9": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_1": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_10": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_11": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "1": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_13": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_14": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_15": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_17": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_18": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_20": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "2": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_4": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_5": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_6": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_7": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "2": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_9": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "2": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        }
+      },
+      "structure_differs_from_whole128_among_both_nonempty": {
+        "count": 24,
+        "denominator": 31
+      },
+      "generation_differs_from_whole128_among_both_nonempty": {
+        "count": 9,
+        "denominator": 31
+      },
+      "whole128_positive_but_central_roi_empty": 18,
+      "cases_with_structure_variation": 23,
+      "n_cases": 28
+    },
+    "96": {
+      "physical_side_mm": 48.0,
+      "n_fixed_patches": 56,
+      "n_nonempty": 41,
+      "n_empty": 15,
+      "structure_histogram_including_empty0": {
+        "0": 15,
+        "1": 4,
+        "2": 6,
+        "3": 5,
+        "4": 13,
+        "5": 13
+      },
+      "structure_histogram_positive": {
+        "1": 4,
+        "2": 6,
+        "3": 5,
+        "4": 13,
+        "5": 13
+      },
+      "structure_entropy_all_bits": 2.415672652690463,
+      "structure_entropy_positive_bits": 2.1543605863148603,
+      "generation_histogram_including_empty0": {
+        "0": 15,
+        "1": 12,
+        "2": 9,
+        "3": 10,
+        "4": 7,
+        "5": 3
+      },
+      "branch_count_nonempty": {
+        "n_defined": 41,
+        "mean": 4.7560975609756095,
+        "median": 4.0,
+        "observation_sd": 3.9482938581422613
+      },
+      "dominant_branch_volume_fraction": {
+        "n_defined": 41,
+        "mean": 0.6686028113168769,
+        "median": 0.6371171171171172,
+        "observation_sd": 0.2588714551991405
+      },
+      "higher_bin_than_dominant_volume_fraction": {
+        "n_defined": 41,
+        "mean": 0.18691990320622937,
+        "median": 0.0,
+        "observation_sd": 0.23051632759323418
+      },
+      "higher_bin_than_dominant_centerline_fraction": {
+        "n_defined": 40,
+        "mean": 0.26103940486239763,
+        "median": 0.07317073170731707,
+        "observation_sd": 0.31071693686380014
+      },
+      "multiple_generation_bins_present": {
+        "count": 30,
+        "denominator": 41,
+        "fraction": 0.7317073170731707
+      },
+      "mixed_local_structure_proxy_all_nonempty": {
+        "count": 27,
+        "denominator": 41,
+        "fraction": 0.6585365853658537
+      },
+      "mixed_local_structure_proxy_eligible_ge2_nonempty_subtiles": {
+        "count": 27,
+        "denominator": 32,
+        "fraction": 0.84375
+      },
+      "fixed128_denominator_structure_sensitivity": {
+        "count": 11,
+        "denominator": 41,
+        "fraction": 0.2682926829268293
+      },
+      "unchanged_branch_set_volume_threshold_only_structure_change": {
+        "count": 1,
+        "denominator": 41,
+        "fraction": 0.024390243902439025
+      },
+      "aggregation_label_disagreement": {
+        "volume": {
+          "different_from_current_dominant_branch_label": 4,
+          "denominator": 41,
+          "fraction": 0.0975609756097561
+        },
+        "equal_branch": {
+          "different_from_current_dominant_branch_label": 21,
+          "denominator": 41,
+          "fraction": 0.5121951219512195
+        },
+        "centerline_voxel": {
+          "different_from_current_dominant_branch_label": 11,
+          "denominator": 40,
+          "fraction": 0.275
+        }
+      },
+      "within_case_structure_variation": {
+        "Diseased_11": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_12": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_13": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_14": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_16": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_17": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_19": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_2": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_3": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_4": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_5": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_6": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_8": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_9": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_1": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_10": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_11": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "1": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_13": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_14": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_15": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_17": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_18": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_20": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "2": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_4": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_5": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_6": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "1": 1,
+            "2": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_7": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "2": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_9": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        }
+      },
+      "structure_differs_from_whole128_among_both_nonempty": {
+        "count": 16,
+        "denominator": 41
+      },
+      "generation_differs_from_whole128_among_both_nonempty": {
+        "count": 5,
+        "denominator": 41
+      },
+      "whole128_positive_but_central_roi_empty": 8,
+      "cases_with_structure_variation": 20,
+      "n_cases": 28
+    },
+    "128": {
+      "physical_side_mm": 64.0,
+      "n_fixed_patches": 56,
+      "n_nonempty": 49,
+      "n_empty": 7,
+      "structure_histogram_including_empty0": {
+        "0": 7,
+        "1": 4,
+        "2": 4,
+        "3": 5,
+        "4": 16,
+        "5": 20
+      },
+      "structure_histogram_positive": {
+        "1": 4,
+        "2": 4,
+        "3": 5,
+        "4": 16,
+        "5": 20
+      },
+      "structure_entropy_all_bits": 2.2770033715828313,
+      "structure_entropy_positive_bits": 1.9810730610094112,
+      "generation_histogram_including_empty0": {
+        "0": 7,
+        "1": 15,
+        "2": 8,
+        "3": 16,
+        "4": 6,
+        "5": 4
+      },
+      "branch_count_nonempty": {
+        "n_defined": 49,
+        "mean": 6.653061224489796,
+        "median": 5.0,
+        "observation_sd": 5.186324245906099
+      },
+      "dominant_branch_volume_fraction": {
+        "n_defined": 49,
+        "mean": 0.5775769145832884,
+        "median": 0.5177878395860285,
+        "observation_sd": 0.2623405768140302
+      },
+      "higher_bin_than_dominant_volume_fraction": {
+        "n_defined": 49,
+        "mean": 0.23805641699663938,
+        "median": 0.24078947368421053,
+        "observation_sd": 0.2383019559342007
+      },
+      "higher_bin_than_dominant_centerline_fraction": {
+        "n_defined": 49,
+        "mean": 0.30245467464588205,
+        "median": 0.3246753246753247,
+        "observation_sd": 0.3017126539893546
+      },
+      "multiple_generation_bins_present": {
+        "count": 35,
+        "denominator": 49,
+        "fraction": 0.7142857142857143
+      },
+      "mixed_local_structure_proxy_all_nonempty": {
+        "count": 38,
+        "denominator": 49,
+        "fraction": 0.7755102040816326
+      },
+      "mixed_local_structure_proxy_eligible_ge2_nonempty_subtiles": {
+        "count": 38,
+        "denominator": 43,
+        "fraction": 0.8837209302325582
+      },
+      "fixed128_denominator_structure_sensitivity": {
+        "count": 0,
+        "denominator": 49,
+        "fraction": 0.0
+      },
+      "unchanged_branch_set_volume_threshold_only_structure_change": {
+        "count": 0,
+        "denominator": 49,
+        "fraction": 0.0
+      },
+      "aggregation_label_disagreement": {
+        "volume": {
+          "different_from_current_dominant_branch_label": 6,
+          "denominator": 49,
+          "fraction": 0.12244897959183673
+        },
+        "equal_branch": {
+          "different_from_current_dominant_branch_label": 23,
+          "denominator": 49,
+          "fraction": 0.46938775510204084
+        },
+        "centerline_voxel": {
+          "different_from_current_dominant_branch_label": 13,
+          "denominator": 49,
+          "fraction": 0.2653061224489796
+        }
+      },
+      "within_case_structure_variation": {
+        "Diseased_11": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_12": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_13": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_14": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_16": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_17": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_19": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_2": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_3": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_4": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Diseased_5": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_6": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_8": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Diseased_9": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "1": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_1": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "1": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_10": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_11": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_13": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_14": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_15": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_17": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "5": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_18": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "4": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_20": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_4": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "5": 2
+          },
+          "structure_entropy_bits": -0.0,
+          "structure_varies_across_fixed_patches": false
+        },
+        "Normal_5": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "3": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_6": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "3": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_7": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "0": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        },
+        "Normal_9": {
+          "n_patches": 2,
+          "structure_histogram": {
+            "2": 1,
+            "4": 1
+          },
+          "structure_entropy_bits": 1.0,
+          "structure_varies_across_fixed_patches": true
+        }
+      },
+      "structure_differs_from_whole128_among_both_nonempty": {
+        "count": 0,
+        "denominator": 49
+      },
+      "generation_differs_from_whole128_among_both_nonempty": {
+        "count": 0,
+        "denominator": 49
+      },
+      "whole128_positive_but_central_roi_empty": 0,
+      "cases_with_structure_variation": 20,
+      "n_cases": 28
+    }
+  },
+  "training_tree_extent_summary": {
+    "0": {
+      "n_defined": 28,
+      "mean": 90.64285714285714,
+      "median": 91.25,
+      "observation_sd": 8.187453299676983
+    },
+    "1": {
+      "n_defined": 28,
+      "mean": 94.03571428571429,
+      "median": 94.25,
+      "observation_sd": 13.048292474800544
+    },
+    "2": {
+      "n_defined": 28,
+      "mean": 108.41071428571429,
+      "median": 107.5,
+      "observation_sd": 9.820663750884485
+    }
+  },
+  "limitations": [
+    "Only training28; no validation/performance claim. Two fixed samples per case by default are sparse.",
+    "Cached branch-depth is a thickest-rooted geometric proxy, not validated coronary anatomical generation.",
+    "ROI cropping preserves global branch IDs/depth and cached skeleton; centreline voxel weights are not exact arc length.",
+    "Structure subtiles use scale-dependent thresholds; proxy disagreement is not proof of anatomical heterogeneity.",
+    "Fixed128-volume counterfactual diagnoses denominator sensitivity, not a proposed new target.",
+    "Wholepatch generation/structure weights multiply the entire segmentation loss; ROI weights are diagnostic and never applied.",
+    "Classification frequencies/accuracy are diagnostic, not a segmentation startup gate.",
+    "Any local pooling/label change needs a separate versioned candidate; active classifier80/final and training remain unchanged."
+  ]
+}

@@ -1,0 +1,17 @@
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+import json,subprocess,datetime
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+t=r/'results/gta_enhanced200x125/training'
+data=(t/'history.jsonl').read_bytes()
+rows=[json.loads(line) for line in data.splitlines(keepends=True) if line.endswith(b'\n')]
+postfit=json.loads((r/'POSTFIT_STATUS.json').read_text()) if (r/'POSTFIT_STATUS.json').exists() else None
+identity=False
+if postfit:
+ proc=Path('/proc')/str(postfit['pid'])
+ identity=proc.exists() and str(r/'ops/after_gta_training.py').encode() in (proc/'cmdline').read_bytes()
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'complete_epochs':len(rows),'latest_epoch':rows[-1] if rows else None,'stage':json.loads((r/'stage_records/gta200.json').read_text()),'postfit':postfit,'postfit_owned_process_alive':identity}
+(r/'LIVE_MAIN_CHECK_20261014.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))
+print(subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True))
+PY

@@ -1,0 +1,401 @@
+{
+  "status": "passed",
+  "role": "NOT_MODEL_RESULTS",
+  "utility_sha256": "fb3cf09ee7ae2459c83b19c40517b821832d37ef5f69764be3841c5936f19bc3",
+  "checkout": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+  "source_identity": {
+    "commit": "7a7e7faafef9ee99f5b714d6e808d239b79d95a0",
+    "origin": "https://github.com/Mister-Ryder/GTA-ASOCA.git",
+    "source_files": {
+      ".gitignore": {
+        "bytes": 540,
+        "sha256": "ff25fc2c1a08e4e544a546faa48e6c943724cc3f1ed62f93f687d1ff56baccff"
+      },
+      "LICENSE_SCOPE.md": {
+        "bytes": 518,
+        "sha256": "3943ab1167866fc6eba81bb8feb06f36e326a6fc3df0f695b065cfde4beada0f"
+      },
+      "PUBLIC_RELEASE_NOTES.md": {
+        "bytes": 11217,
+        "sha256": "16880f35e88c19dd454faaba7f58ab45cac683e78d8e6541277d092201a6fce1"
+      },
+      "PUBLIC_SOURCE_PROVENANCE.json": {
+        "bytes": 13595,
+        "sha256": "f31b69c60938455b8fb26c5ab8fcee667475733120e31f9215b6d993ae27136a"
+      },
+      "README.md": {
+        "bytes": 24541,
+        "sha256": "bbac53c26c74af27085718f6a7cf27cce1b6c625832acd92c03079f15b5dc206"
+      },
+      "classifier_pretraining/README.md": {
+        "bytes": 641,
+        "sha256": "602dc4e87b65edcdeb4ba2dfd2864056bf4980c4ea4fba297129eeb31fa6d898"
+      },
+      "classifier_pretraining/code/checkpoint_utils.py": {
+        "bytes": 5142,
+        "sha256": "d5875f24380ceaa66c397635b6fd36a2d05a31221c3176ae503ff3427e03bc17"
+      },
+      "classifier_pretraining/code/classification_data.py": {
+        "bytes": 11495,
+        "sha256": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622"
+      },
+      "classifier_pretraining/code/data.py": {
+        "bytes": 10947,
+        "sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6"
+      },
+      "classifier_pretraining/code/historical/func/AnatomicalClassifier.py": {
+        "bytes": 6864,
+        "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222"
+      },
+      "classifier_pretraining/code/losses.py": {
+        "bytes": 10221,
+        "sha256": "ac0481a9f89c419015793acc08e1bd5af31198740671d0e275232569e6f6bba1"
+      },
+      "classifier_pretraining/code/pretrain_classifier.py": {
+        "bytes": 16627,
+        "sha256": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2"
+      },
+      "code/.gitignore": {
+        "bytes": 56,
+        "sha256": "9c906d45e9fa90685434bd29ce9764a076b348f41b04b7cbdbaa44b5a313d071"
+      },
+      "code/aggregate_results.py": {
+        "bytes": 22137,
+        "sha256": "a77d30f862e476bcf2a64ce3798d7ab1e4045d5e8e30e8cf3daa3e3d249aa010"
+      },
+      "code/audit_priors.py": {
+        "bytes": 23589,
+        "sha256": "82958858f99f034f6222afcb96376b0abe504a25cebd2ff4b33f41cd21a01df0"
+      },
+      "code/checkpoint_utils.py": {
+        "bytes": 5201,
+        "sha256": "fe427c911982598f0c2c35346bc3314b0491012f5d7fdf3e4d1bedb04e684aca"
+      },
+      "code/classification_data.py": {
+        "bytes": 11495,
+        "sha256": "6195fab13598d6ffac1b5c09779da7ecbcf9f9e432b4ee85f3f2997b3f671622"
+      },
+      "code/data.py": {
+        "bytes": 10947,
+        "sha256": "d6dc559820df1cca694e1f835da36e71ceae20756a158925f209e478d78145a6"
+      },
+      "code/evaluate.py": {
+        "bytes": 18550,
+        "sha256": "d913495c36a245611fde854134e6dfe8ec420dd1bc76ca03cc0f8fbf5bc670bb"
+      },
+      "code/evaluate_trajectory.py": {
+        "bytes": 12155,
+        "sha256": "08850729e46bc8d5e0450b282f88e10d93851a9a055fc7ffb69249a11b21ee63"
+      },
+      "code/historical/NaviAirway-MIT.txt": {
+        "bytes": 1067,
+        "sha256": "a8d637dcbcd086a0072c4394565c715f88d0327f3b927067c0e596579cfcfd1c"
+      },
+      "code/historical/README.md": {
+        "bytes": 3297,
+        "sha256": "877373089f75b983f6e4d0c28bda5056dc378bd3a72d4d4d73067de2da1d2bf0"
+      },
+      "code/historical/THIRD_PARTY_NOTICES.md": {
+        "bytes": 1152,
+        "sha256": "511bb82ea8773e30f58c0ea5531d187708cde071fd17c213824f4bcc75f8be3b"
+      },
+      "code/historical/__init__.py": {
+        "bytes": 81,
+        "sha256": "75dd483893f680c790c930911a3a7cf0f7b10cd247b81a320527ea786e0d34a0"
+      },
+      "code/historical/func/AnatomicalClassifier.py": {
+        "bytes": 6864,
+        "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222"
+      },
+      "code/historical/func/AnatomicalFusionModules.py": {
+        "bytes": 14098,
+        "sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01"
+      },
+      "code/historical/func/EnhancedAirwaySegmentation2gau.py": {
+        "bytes": 15437,
+        "sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc"
+      },
+      "code/historical/func/__init__.py": {
+        "bytes": 70,
+        "sha256": "2f737c07b1b5e647889513540681aa42d48c8a520b63a1d73ece192f99885b8e"
+      },
+      "code/historical/func/model_arch_model10.py": {
+        "bytes": 34321,
+        "sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003"
+      },
+      "code/historical/source_hashes.json": {
+        "bytes": 931,
+        "sha256": "f792cc0ed802ab119ef173870390b2c015d8d2727eee94d499614876a4dbdd27"
+      },
+      "code/losses.py": {
+        "bytes": 11280,
+        "sha256": "9af9c6dc2b8c9fcb7ba896bf14a959cd2421d07d1581247976ff10c2cb17aa09"
+      },
+      "code/metrics.py": {
+        "bytes": 7755,
+        "sha256": "388353e557d3da61571517803938386fafdfebd0a535fead72579d8920b583f9"
+      },
+      "code/model.py": {
+        "bytes": 21286,
+        "sha256": "d7af8f07574e911133b93383b4b14b5494d184872aff6e47f522706d38b06a8c"
+      },
+      "code/nnunet_runner.py": {
+        "bytes": 31436,
+        "sha256": "9cb67af25f96d3ee81cb2305ba98670fa477e83f63f707c3d7338473db62a144"
+      },
+      "code/prepare_data.py": {
+        "bytes": 21995,
+        "sha256": "58ac83dca92ddbed4c3119554776126d6c294772378ce304e119f6292a2c298b"
+      },
+      "code/pretrain_classifier.py": {
+        "bytes": 16627,
+        "sha256": "f07200378f86da73adbcbbffc45059f978c14477ec064e7f9746fac6bc3082e2"
+      },
+      "code/run_queue.py": {
+        "bytes": 29321,
+        "sha256": "aeed60059bf819c1c685a8b5bdafe276379a5cdbfe794ff7b953655b82ba3c1e"
+      },
+      "code/swin_model.py": {
+        "bytes": 1153,
+        "sha256": "4d0b821a53ad4d09335f284c14d6567f14c324735ca781b3fbc4c5fbcc619477"
+      },
+      "code/train.py": {
+        "bytes": 25470,
+        "sha256": "7cf961ee8ad1f5e704d1d4d0a4c9542f9056dbe99389e6380b38b95e293272d9"
+      },
+      "code/verify_candidate.py": {
+        "bytes": 12440,
+        "sha256": "a98e6c9a01429bcd4020372a6ffa767c5bd92e782419242bd531e8ddbba74385"
+      },
+      "configs/public_paths.env.example": {
+        "bytes": 500,
+        "sha256": "e92ab2aee4c2593b12e145fa0fe5a1f66fbde7225d1733b7b43fdd66987e7b16"
+      },
+      "configs/scientific_settings.json": {
+        "bytes": 4780,
+        "sha256": "40cf876df6d9001f7c2df1e6579d2467fe0830a94674bb898ccdccb1b749ac07"
+      },
+      "docs/methodology_and_metric_protocol.txt": {
+        "bytes": 8865,
+        "sha256": "c89a85947fc56469e74a2e329a54ce7d1a5db8beae21ebf1e433e806839379cc"
+      },
+      "docs/prior_audit_protocol.txt": {
+        "bytes": 7986,
+        "sha256": "eab16f769360489df723d25e5e2e26f2b4c9466e856be27dd86dea613893d47e"
+      },
+      "ops/curve_interpretation_guide.txt": {
+        "bytes": 2432,
+        "sha256": "8fe8d8685ccb0f716970e9c4d47bedf6a6e443d820280b9944109a064f8ce579"
+      },
+      "ops/plot_learning_curves.py": {
+        "bytes": 27414,
+        "sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd"
+      },
+      "requirements-plot.txt": {
+        "bytes": 151,
+        "sha256": "1e0ecebb6a2e1bf87217af29669ab9f28fdab80d45b188b348815c6d93b81085"
+      },
+      "requirements.txt": {
+        "bytes": 409,
+        "sha256": "979d3c9c7596c9e0d802690e6c16a404f5513e91275ca1c4203dc184764d6fc4"
+      }
+    },
+    "source_file_count": 48,
+    "main12_source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+    "classifier6_source_sha256": "61d752700a57dc02c6c1d7cdbcc59d1171957bf072f4fd46394af3980eff0bb1",
+    "public_package_sha256_excluding_manifest": "fa3fad9af0fae985f79efc7cf8cab6bbe251bf42e67ae75678fef6c1c2539480",
+    "README_sha256": "bbac53c26c74af27085718f6a7cf27cce1b6c625832acd92c03079f15b5dc206",
+    "anonymous_download_authentication_scope": "Origin/commit/blob identity verified here; root records the separate fresh anonymous clone command."
+  },
+  "worker_records": [
+    {
+      "mode": "help",
+      "entrypoint": "code/prepare_data.py",
+      "child_pid": 138372,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "help",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker00_help.json",
+        "--entrypoint",
+        "code/prepare_data.py"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker00_help.json",
+      "receipt_sha256": "e87bb68d30a8004fc416ce7de85bfab2a49ea31fe490f8e8554a58e5871787da",
+      "log_sha256": "d046919dbeaef6bbcd6edef6384c2c104a7f8534a4ff6b4f634a3c7e7c93038f"
+    },
+    {
+      "mode": "help",
+      "entrypoint": "code/audit_priors.py",
+      "child_pid": 138482,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "help",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker01_help.json",
+        "--entrypoint",
+        "code/audit_priors.py"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker01_help.json",
+      "receipt_sha256": "a5022b22bf2feeeff67f4a2cd3553857218aa9532a1d2e77ef9d6e4d17d5fb3a",
+      "log_sha256": "3c53a80e2e8c2f890d38dd6036a05779e51fb10cce0c91b64952d01196df2688"
+    },
+    {
+      "mode": "help",
+      "entrypoint": "classifier_pretraining/code/pretrain_classifier.py",
+      "child_pid": 138590,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "help",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker02_help.json",
+        "--entrypoint",
+        "classifier_pretraining/code/pretrain_classifier.py"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker02_help.json",
+      "receipt_sha256": "854e46c2d1d46b6318f7f441f9a0d879b5c83cf5b44b010a2263ede9017009e4",
+      "log_sha256": "43bfd70204ebacee14fc685b522792ff36c980fd5ef2f21d213dd0cd8d476f5c"
+    },
+    {
+      "mode": "help",
+      "entrypoint": "code/train.py",
+      "child_pid": 138699,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "help",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker03_help.json",
+        "--entrypoint",
+        "code/train.py"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker03_help.json",
+      "receipt_sha256": "9ffa36e29706b8779486dcfb2a14623e3c1392be811e2e3968594bc6ad51783d",
+      "log_sha256": "fdac18c31d4d1f85ad9327afd674714ac080974c3c99c3e4d5708b1040747027"
+    },
+    {
+      "mode": "help",
+      "entrypoint": "code/evaluate.py",
+      "child_pid": 138806,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "help",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker04_help.json",
+        "--entrypoint",
+        "code/evaluate.py"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker04_help.json",
+      "receipt_sha256": "8e988a6b2bd114e027d44f1c03aacc61c13444680c721f2cb28968d0d445be72",
+      "log_sha256": "2fe2cd198e75eb21541af148aea8fd6446b710e582bc299abc64e31f795758ab"
+    },
+    {
+      "mode": "help",
+      "entrypoint": "code/evaluate_trajectory.py",
+      "child_pid": 138918,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "help",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker05_help.json",
+        "--entrypoint",
+        "code/evaluate_trajectory.py"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker05_help.json",
+      "receipt_sha256": "2a115f047f4e85a2dd88821b40ce2547bc4b08c08352742c66bae6b8e5f75fde",
+      "log_sha256": "ebd418bfe6cef1ee47a9ef67e8770bc386722eb87eae7480e4e2f8077ce55485"
+    },
+    {
+      "mode": "main_forward",
+      "entrypoint": null,
+      "child_pid": 139027,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "main_forward",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker06_main_forward.json"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker06_main_forward.json",
+      "receipt_sha256": "d86c24b3a7b93f78f64ac3c0a27031bd51c08ab4bfc9f35b662ea21eb6e13e57",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "mode": "classifier_forward",
+      "entrypoint": null,
+      "child_pid": 139135,
+      "command": [
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+        "-I",
+        "-u",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/public_source_cpu_smoke.py",
+        "--checkout",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/checkout",
+        "--worker-mode",
+        "classifier_forward",
+        "--worker-receipt",
+        "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker07_classifier_forward.json"
+      ],
+      "receipt": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/public_source_cpu_smoke_20261014/receipts/worker07_classifier_forward.json",
+      "receipt_sha256": "c3f62060dcc556f45760004c2a17ef4d28625764e5ec156e13c72e6119f24bc3",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "wall_seconds": 24.53389135375619,
+  "timeout_seconds": 300,
+  "CPU_only": true,
+  "max_torch_threads": 2,
+  "nice_minimum": 10,
+  "CUDA_context_initialized": false,
+  "private_checkpoint_or_real_data_used": false,
+  "optimizer_created": false,
+  "parameter_updates": 0,
+  "private_warmstart_reproduction": false,
+  "clinical_segmentation_result": false,
+  "limitations": [
+    "32cube random untrained eval-mode forward only; not128cube staged training or full-volume inference.",
+    "Uses the existing matching dependency environment; not a from-empty-environment install test.",
+    "No published/private warm-start weights, real dataset, losses/optimization or Dice/ASSD evaluation.",
+    "Anonymous clone creation is independently recorded by root; this helper verifies its public origin/commit/48 blobs."
+  ]
+}

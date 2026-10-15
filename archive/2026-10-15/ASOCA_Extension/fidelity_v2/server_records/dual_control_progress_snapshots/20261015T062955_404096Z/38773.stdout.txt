@@ -1,0 +1,134 @@
+{
+  "captured_at_utc": "2026-10-15T06:30:16.702741+00:00",
+  "launch": {
+    "captured_at_utc": "2026-10-14T10:45:17.021462+00:00",
+    "parent_pid": 32758,
+    "argv": [
+      "/root/miniconda3/envs/gta-asoca311/bin/python",
+      "-B",
+      "-u",
+      "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/run_gaussian_region_balance_control.py"
+    ],
+    "controller_sha256": "ace0561942714916fe35e4717a1c3df2736aa85b44e63bf978ea9b9fa8da1f1b",
+    "decision_sha256": "d9eb293491627533000cd01bd3274ad22f95a4650fc592ccea887988f4ed6a8b",
+    "log": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/GAUSSIAN_REGION_BALANCE_FORMAL_20261014.log",
+    "role": "FORMAL_B_25000_UPDATE_RUN_LAUNCHED_NOT_COMPLETE",
+    "disk_free_bytes_before": 56538267648
+  },
+  "status": {
+    "status": "completed",
+    "controller_pid": 32758,
+    "child_pid": null,
+    "updated_at_utc": "2026-10-14T16:41:25.514549+00:00",
+    "gpu_lock_acquired": false,
+    "error": null,
+    "stage_wall_seconds": 0.0014448463916778564
+  },
+  "parent_process": {
+    "pid": 32758,
+    "alive": false,
+    "cmdline": null
+  },
+  "child_process": null,
+  "epochs_completed": 200,
+  "latest_epoch": {
+    "epoch": 199,
+    "loss": 0.35583756589889526,
+    "seconds": 76.2814455255866,
+    "stage": "joint",
+    "iterations": 125,
+    "gaussian_lambda": 10.0,
+    "gaussian_lambda_configured": 10.0,
+    "classifier_lambda": 0.1,
+    "lr_by_group": {
+      "segmentation": 3.379645067493802e-08,
+      "classifier": 3.379645067493802e-09
+    },
+    "component_means": {
+      "classifier_gradient_norm": 2.297908940792084,
+      "classifier_lambda": 0.1,
+      "gaussian": 0.0009229912117007189,
+      "guidance_lambda": 0.1,
+      "generation_focal": 0.3630536568462849,
+      "location_focal": 0.15229294964671136,
+      "gaussian_weighted": 0.00922991215949878,
+      "segmentation": 0.23821873950958253,
+      "segmentation_head_0": 0.25813076519966127,
+      "segmentation_gradient_norm": 1.4925273270606996,
+      "classifier_weight": 0.1,
+      "guidance_map": 0.002532832860946655,
+      "guidance_weighted": 0.0002532832899596542,
+      "classification_weighted": 0.10813563058525325,
+      "classification": 1.0813562877774239,
+      "gaussian_lambda": 10.0,
+      "structure_focal": 0.3277648403942585,
+      "segmentation_head_2": 0.25052410835027694,
+      "segmentation_head_1": 0.19224196845293046,
+      "segmentation_weighted": 0.23821873950958253,
+      "structure_correctness": 0.1487248351040762
+    },
+    "gradient_probe_count": 0,
+    "gpu_peak_GiB": 14.451104164123535
+  },
+  "actual_config_brief": {
+    "method": "gta",
+    "source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+    "gaussian_weight": 10.0,
+    "gaussian_late_weight": null,
+    "epochs": 200,
+    "steps": 125,
+    "no_ds": false,
+    "output": "/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gta_region_balance200x125_20261014/training"
+  },
+  "actual_theta0_brief": {
+    "state_sha256": "d84df10851c2532e9b70311eba2efe07049f5348e56fe4e76daf7856e6427d79",
+    "tensor_count": 327,
+    "model_state_and_RNG_unchanged": true,
+    "historical_main_theta0_verified": false,
+    "actual_config_binding": {
+      "status": "actual_config_bound_to_sealed_B_protocol",
+      "actual_config_sha256": "89b06f28b1c4acdc021244eaca1f519e6f87beae0ddaada4827cc0174cf930ae",
+      "actual_config_source_sha256": "231e191e77e5f492b2602df19ce29046bb78dcb582dd8b03f1e982f21493828a",
+      "B_protocol_sha256": "a2905169196c75625772621b1f66f65e493f8bd90d02d98bf31e24547cef462a",
+      "gaussian_reduction": {
+        "id": "per_patch_equal_fg_bg_present_mean_v1",
+        "A": "per-patch uniform full-voxel MSE; same-sized patch batch mean",
+        "B": "For each patch average conditional MSE of present FG/BG regions; then average patches.",
+        "both_regions_present": ".5*sum_FG((q-t)^2)/n_FG + .5*sum_BG((q-t)^2)/n_BG",
+        "empty_foreground": "sum_BG((q-t)^2)/n_BG; equal to A, keep the sample",
+        "empty_background": "sum_FG((q-t)^2)/n_FG; equal to A, keep the sample",
+        "batch_policy": "mean of individually normalized patch losses; do not pool FG/BG counts across batch",
+        "precision": "FP32 prediction/target error and reduction, including under existing mixed precision",
+        "region_definition": "training binary coronary GT label>0 defines loss mask only; never input to forward; no classifier target changes",
+        "target_unchanged": "t=.5+.5*cached_G",
+        "lambda_unchanged": 10.0,
+        "head_unchanged": "same raw segmentation logits -> existing Conv3d(2,1,3) -> sigmoid",
+        "log_semantics": "Existing gaussian field now reports unweighted B; gaussian_weighted reports lambda10*B. These are new loss measures, not numerically comparable to old A logging.",
+        "not_changed": [
+          "Gaussian field/support/normalization",
+          "classifier labels",
+          "sampler",
+          "architecture/parameter shapes",
+          "DS4/7,2/7,1/7",
+          "50 frozen /20 partial /130 joint",
+          "optimizer/lr/clip12",
+          "200x125 updates",
+          "prediction/evaluation interface"
+        ],
+        "empty_denominator_safety": "clamp_min(1) only avoids0 denominators; positive foreground counts are unchanged; no gradient/positive-count cap"
+      },
+      "actual_config_has_gaussian_reduction_field": false,
+      "binding": "Exact actual config bytes plus source/file SHA map bind the separate immutable loss protocol; no config/checkpoint edits.",
+      "allowed_actual_config_differences_from_A": [
+        "output",
+        "source_sha256",
+        "source_files_sha256"
+      ],
+      "same_25000_updates": true,
+      "training_started_by_auditor": false
+    }
+  },
+  "GPU": "",
+  "controller_log_tail": "",
+  "training_log_tail": "9786682, \"segmentation_head_2\": 0.29053086042404175, \"generation_focal\": 0.6977246403694153, \"structure_focal\": 0.3080165386199951, \"location_focal\": 0.1269061118364334, \"structure_correctness\": 0.10855292528867722, \"classification\": 1.3409321308135986, \"classifier_weight\": 0.1, \"classification_weighted\": 0.13409321010112762, \"guidance_map\": 0.0022909704130142927, \"guidance_weighted\": 0.00022909704421181232, \"gaussian\": 0.0010942977387458086, \"gaussian_weighted\": 0.010942976921796799}, \"segmentation_gradient_norm\": 1.699096441268921, \"classifier_gradient_norm\": 2.923539876937866}\n{\"epoch\": 199, \"loss\": 0.35583756589889526, \"seconds\": 76.2814455255866, \"stage\": \"joint\", \"iterations\": 125, \"gaussian_lambda\": 10.0, \"gaussian_lambda_configured\": 10.0, \"classifier_lambda\": 0.1, \"lr_by_group\": {\"segmentation\": 3.379645067493802e-08, \"classifier\": 3.379645067493802e-09}, \"component_means\": {\"classifier_gradient_norm\": 2.297908940792084, \"classifier_lambda\": 0.1, \"gaussian\": 0.0009229912117007189, \"guidance_lambda\": 0.1, \"generation_focal\": 0.3630536568462849, \"location_focal\": 0.15229294964671136, \"gaussian_weighted\": 0.00922991215949878, \"segmentation\": 0.23821873950958253, \"segmentation_head_0\": 0.25813076519966127, \"segmentation_gradient_norm\": 1.4925273270606996, \"classifier_weight\": 0.1, \"guidance_map\": 0.002532832860946655, \"guidance_weighted\": 0.0002532832899596542, \"classification_weighted\": 0.10813563058525325, \"classification\": 1.0813562877774239, \"gaussian_lambda\": 10.0, \"structure_focal\": 0.3277648403942585, \"segmentation_head_2\": 0.25052410835027694, \"segmentation_head_1\": 0.19224196845293046, \"segmentation_weighted\": 0.23821873950958253, \"structure_correctness\": 0.1487248351040762}, \"gradient_probe_count\": 0, \"gpu_peak_GiB\": 14.451104164123535}\nTRAINING_COMPLETE\n"
+}

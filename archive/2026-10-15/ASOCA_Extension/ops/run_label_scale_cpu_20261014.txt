@@ -1,0 +1,9 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python - <<'PY'
+from pathlib import Path
+import hashlib
+p=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_label_scales.py')
+assert hashlib.sha256(p.read_bytes()).hexdigest()=='7bc4201138cbc0f375242042c26238fb40dfa3cad17bdc39614376b269a55536'
+print('Reviewed CPU-only label-scale source verified',flush=True)
+PY
+timeout --signal=TERM --kill-after=10s 600s env CUDA_VISIBLE_DEVICES='' OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 /root/miniconda3/envs/gta-asoca311/bin/python -u /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/ops/diagnose_label_scales.py --reference-bank /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/gaussian_epoch070_cpu_bank56/fixed_sampling_bank.json --output /root/autodl-tmp/GTA_ASOCA_Fidelity_20261014/results/label_scale_audit_v1

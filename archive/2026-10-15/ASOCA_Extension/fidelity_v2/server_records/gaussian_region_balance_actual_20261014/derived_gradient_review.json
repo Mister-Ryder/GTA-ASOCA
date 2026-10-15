@@ -1,0 +1,83 @@
+{
+  "role": "DERIVED_TRAIN28_SHADOW_REVIEW_NOT_VALIDATION_RESULTS",
+  "summary_sha256": "34e0f497cba2848d0bf817561c81f479b640e23463fa4d42468eff056566f415",
+  "patch_metrics_sha256": "1d2aba21056914befde4d288fd9eb42799e54a7fcd85d33b38759afdf1004648",
+  "n_patches": 56,
+  "empty_patches": 7,
+  "A": {
+    "raw_additive_statistics": [
+      1.2493471903938154e-09,
+      4.052561388376399e-10,
+      3.9405800464419365e-18,
+      2.710040944007441e-05,
+      1.748104015090728e-10,
+      1.7481038762067488e-10
+    ],
+    "common_energy": 1.2493471903938154e-09,
+    "margin_energy": 4.052561388376399e-10,
+    "total_energy": 1.6546033292314553e-09,
+    "common_norm": 3.5346105731661805e-05,
+    "margin_norm": 2.0130974612214875e-05,
+    "total_norm": 4.067681562304817e-05,
+    "common_fraction": 0.7550735383653091,
+    "norm_ratio_to_segmentation": 0.00781374116293236,
+    "margin_norm_ratio_to_segmentation": 0.0038670240668567304,
+    "full_cosine_to_segmentation": 0.0008255291197888688,
+    "margin_cosine_to_segmentation": 0.0016680709094366905
+  },
+  "B": {
+    "raw_additive_statistics": [
+      0.00020031047630888864,
+      5.485566141189517e-05,
+      3.9405800464419365e-18,
+      2.710040944007441e-05,
+      -5.76008398358223e-07,
+      -5.76008392513993e-07
+    ],
+    "common_energy": 0.00020031047630888864,
+    "margin_energy": 5.485566141189517e-05,
+    "total_energy": 0.0002551661377207838,
+    "common_norm": 0.01415310836208388,
+    "margin_norm": 0.007406460788520734,
+    "total_norm": 0.01597392054947012,
+    "common_fraction": 0.7850198231556841,
+    "norm_ratio_to_segmentation": 3.0684820977009544,
+    "margin_norm_ratio_to_segmentation": 1.4227310237658277,
+    "full_cosine_to_segmentation": -0.0069267477035752575,
+    "margin_cosine_to_segmentation": -0.014939296854443477
+  },
+  "top5_B_energy_fraction": 0.5447991625444923,
+  "top5": [
+    {
+      "ordinal": 47,
+      "case_id": "Normal_9",
+      "FG_voxels": 120,
+      "B_energy_fraction": 0.1630120153849487
+    },
+    {
+      "ordinal": 7,
+      "case_id": "Normal_1",
+      "FG_voxels": 196,
+      "B_energy_fraction": 0.11164889638780846
+    },
+    {
+      "ordinal": 27,
+      "case_id": "Diseased_19",
+      "FG_voxels": 243,
+      "B_energy_fraction": 0.10145183043082526
+    },
+    {
+      "ordinal": 42,
+      "case_id": "Diseased_12",
+      "FG_voxels": 217,
+      "B_energy_fraction": 0.084658174318812
+    },
+    {
+      "ordinal": 11,
+      "case_id": "Diseased_16",
+      "FG_voxels": 305,
+      "B_energy_fraction": 0.08402824602209791
+    }
+  ],
+  "decision": "lambda0 conditionalrecipe control can proceed; region-balanced B remains prepared pending canonical trajectory and initial parameter-gradient stability review. No reduction of common-mode energy demonstrated. No measured whole-network effect or validation gain from this diagnostic."
+}

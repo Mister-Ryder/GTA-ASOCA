@@ -1,0 +1,5 @@
+case_id,GT_newly_recovered_by_GTA_voxels,GT_newly_missed_by_GTA_voxels,FP_newly_added_by_GTA_voxels,FP_removed_by_GTA_voxels,GT_skeleton_newly_recovered_radius_le1mm,GT_skeleton_newly_missed_radius_le1mm,GT_skeleton_newly_recovered_radius_gt1mm,GT_skeleton_newly_missed_radius_gt1mm,TP_GTA_minus_UNet,FP_GTA_minus_UNet
+Diseased_10,3221,1378,1158,1462,83,35,48,0,1843,-304
+Diseased_20,998,2321,568,661,36,80,0,15,-1323,-93
+Normal_12,1028,1128,1369,2816,31,7,3,0,-100,-1447
+Normal_3,821,1121,1330,1374,32,42,0,0,-300,-44

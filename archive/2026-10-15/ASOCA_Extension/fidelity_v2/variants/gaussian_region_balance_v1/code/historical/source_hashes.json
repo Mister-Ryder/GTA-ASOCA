@@ -1,0 +1,26 @@
+[
+  {
+    "file": "func/model_arch_model10.py",
+    "sha256": "55d51ea850efd2b31aa07acd68ad5e24f64fafe6a714d26dc357919f639f3003",
+    "source": "GTAirway/func/model_arch_model10.py",
+    "original_v2_equal": true
+  },
+  {
+    "file": "func/AnatomicalClassifier.py",
+    "sha256": "f5288c74ce71db97eca63f9665e29dfb0099aa010326ce7d6748377bc0156222",
+    "source": "GTAirway/func/AnatomicalClassifier.py",
+    "original_v2_equal": true
+  },
+  {
+    "file": "func/AnatomicalFusionModules.py",
+    "sha256": "7309281bb296eb7d861050f5ead6b563823b8393addf6ff7c18a594225030b01",
+    "source": "GTAirway/func/AnatomicalFusionModules.py",
+    "original_v2_equal": true
+  },
+  {
+    "file": "func/EnhancedAirwaySegmentation2gau.py",
+    "sha256": "13808eeac5c23d084104d18e4b8425c01ba035b84168d1dc6a69cc6a25de28fc",
+    "source": "GTAirway/func/EnhancedAirwaySegmentation2gau.py",
+    "original_v2_equal": true
+  }
+]

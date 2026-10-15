@@ -1,0 +1,282 @@
+[
+  {
+    "case_id": "Diseased_10",
+    "original_grid": {
+      "size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "spacing_xyz_mm": [
+        0.3867189884,
+        0.3867189884,
+        0.625
+      ],
+      "origin_xyz_mm": [
+        -75.69999694824219,
+        -111.80000305175781,
+        -224.375
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "label_sha256": "bf3db106dbc1a61f612fe9274f5aba171428816005dd1d621b7420eced17e293",
+    "models": {
+      "U": {
+        "prediction_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+        "prediction_sha256": "4283f2727e2b6128041660cafd8aacf10b1bdd6227cff7c78e439f8e39712524",
+        "metadata_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_10.json",
+        "metrics_source": "already accepted complete-volume original-grid pixel calculation"
+      },
+      "A": {
+        "prediction_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10_prediction.nrrd",
+        "prediction_sha256": "9ad9b1cfbb0d4e71b648219447576ec8d98a3fe90506a7cad480fd3f6c6d2a6c",
+        "metadata_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_10.json",
+        "metrics_source": "already accepted complete-volume original-grid pixel calculation"
+      }
+    },
+    "full3D_metrics": {
+      "U": {
+        "dice": 0.712825254259675,
+        "assd_mm": 1.3455745965646293
+      },
+      "A": {
+        "dice": 0.778544956084683,
+        "assd_mm": 0.40105120364364777
+      }
+    },
+    "crop": {
+      "definition": "all GT/U/A foreground union + at least5mm padding, clipped only at original volume boundary",
+      "low_zyx_inclusive": [
+        18,
+        117,
+        110
+      ],
+      "high_zyx_inclusive": [
+        203,
+        387,
+        489
+      ],
+      "world_outer_min_xyz_mm": [
+        -33.35426771844219,
+        -66.7472409031578,
+        -213.4375
+      ],
+      "world_outer_max_xyz_mm": [
+        113.59894787355782,
+        38.0536049532422,
+        -97.1875
+      ],
+      "foreground_counts_preserved": {
+        "GT": 21371,
+        "U": 16484,
+        "A": 18023
+      }
+    },
+    "projections": {
+      "GT": {
+        "coronal": {
+          "shape": [
+            186,
+            380
+          ],
+          "dtype": "int16",
+          "pixel_sha256": "bdc51af4a332b741dd78fbb708f5e93dcc81daf39e88e3055b4b0abe273bb6df"
+        },
+        "sagittal": {
+          "shape": [
+            186,
+            271
+          ],
+          "dtype": "int16",
+          "pixel_sha256": "9e2d376da2122da7757778f1e8f99962c962b63e5193be70e67acf77dd4e4d0c"
+        }
+      },
+      "U": {
+        "coronal": {
+          "shape": [
+            186,
+            380
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "3bfb65444f103063c97b3102534bb4697408553b082ecdc222073b71748efb1f"
+        },
+        "sagittal": {
+          "shape": [
+            186,
+            271
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "82196be619de354b4ccae62ff3b5a3801146269c82945a248d038bfaf3002c58"
+        }
+      },
+      "A": {
+        "coronal": {
+          "shape": [
+            186,
+            380
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "f35554a16f753295fe6e8202e4868b8e759f09254d4d23672953846b7a8cf582"
+        },
+        "sagittal": {
+          "shape": [
+            186,
+            271
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "c018f56d66c6bac90ce2a81e3a8bb37cd4dca6bb5894c99ac7f9bd381f914716"
+        }
+      }
+    }
+  },
+  {
+    "case_id": "Diseased_20",
+    "original_grid": {
+      "size_xyz": [
+        512,
+        512,
+        224
+      ],
+      "spacing_xyz_mm": [
+        0.4707030058000001,
+        0.4707030058000001,
+        0.6249999999999998
+      ],
+      "origin_xyz_mm": [
+        -88.6999969482422,
+        -165.99999999999997,
+        -207.87499999999997
+      ],
+      "direction": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "label_sha256": "e61f8ac381d23efc9944e2cbcc572406c89bd082ca2191a68553526ee11fc335",
+    "models": {
+      "U": {
+        "prediction_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+        "prediction_sha256": "a84fd1e35fe4e47b6f8c37ad7ca75d36bff9a6ce93bac9ff8a1e7a53a17a01b6",
+        "metadata_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\unet_complete_trajectory_20261014\\results\\unet_recipe200x125\\internal4_trajectory\\final\\Diseased_20.json",
+        "metrics_source": "already accepted complete-volume original-grid pixel calculation"
+      },
+      "A": {
+        "prediction_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20_prediction.nrrd",
+        "prediction_sha256": "11205173a1b1a6f3cd77309fd86493f25733c6401f121692b6e6250ff7dc2cbc",
+        "metadata_path": "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\gta_complete_trajectory_20261014\\results\\gta_enhanced200x125\\internal4_trajectory\\final\\Diseased_20.json",
+        "metrics_source": "already accepted complete-volume original-grid pixel calculation"
+      }
+    },
+    "full3D_metrics": {
+      "U": {
+        "dice": 0.8262480606005294,
+        "assd_mm": 0.5418889670719269
+      },
+      "A": {
+        "dice": 0.798590942307332,
+        "assd_mm": 1.052244664395905
+      }
+    },
+    "crop": {
+      "definition": "all GT/U/A foreground union + at least5mm padding, clipped only at original volume boundary",
+      "low_zyx_inclusive": [
+        0,
+        17,
+        145
+      ],
+      "high_zyx_inclusive": [
+        192,
+        421,
+        422
+      ],
+      "world_outer_min_xyz_mm": [
+        -20.683412610142184,
+        -158.23340040429997,
+        -208.18749999999997
+      ],
+      "world_outer_max_xyz_mm": [
+        110.17202300225783,
+        32.401316944700056,
+        -87.56250000000001
+      ],
+      "foreground_counts_preserved": {
+        "GT": 30631,
+        "U": 24154,
+        "A": 22738
+      }
+    },
+    "projections": {
+      "GT": {
+        "coronal": {
+          "shape": [
+            193,
+            278
+          ],
+          "dtype": "int16",
+          "pixel_sha256": "93fa05f39bf568c24520d8962187e7f6b3a0899a984c25d2bc85852ae054e5a9"
+        },
+        "sagittal": {
+          "shape": [
+            193,
+            405
+          ],
+          "dtype": "int16",
+          "pixel_sha256": "bb357ab77d711bc05ab8c9297418bfba0820d9a0f3d2be12ad646db47b17c32a"
+        }
+      },
+      "U": {
+        "coronal": {
+          "shape": [
+            193,
+            278
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "513d812bbe63de11b1cc1373bbee02e4aade390e75d0a1b01b5550ce1a8ce13b"
+        },
+        "sagittal": {
+          "shape": [
+            193,
+            405
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "3007a45ce63af9c0da5e28fa1ac7001d5bef9032260c7463a1d718098e683a1c"
+        }
+      },
+      "A": {
+        "coronal": {
+          "shape": [
+            193,
+            278
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "4aaac16b0759228d57f2bd04c4e551eaa7f2ec96499d5dd39169d413f5dac9b8"
+        },
+        "sagittal": {
+          "shape": [
+            193,
+            405
+          ],
+          "dtype": "uint8",
+          "pixel_sha256": "b8313450d7624f28c121ffeb502debaa82de7d0741f29b62a050941925901b3d"
+        }
+      }
+    }
+  }
+]

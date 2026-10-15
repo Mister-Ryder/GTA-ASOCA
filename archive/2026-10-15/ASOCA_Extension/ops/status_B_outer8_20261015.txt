@@ -1,0 +1,15 @@
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import datetime,json,pathlib,subprocess
+r=pathlib.Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014')
+s=json.loads((r/'B_OUTER8_FIXED_FINAL_STATUS_20261015.json').read_text())
+out=dict(at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),status=s)
+for label,key in [('controller','controller_pid'),('evaluator','child_pid')]:
+ pid=s.get(key);p=pathlib.Path('/proc')/str(pid)/'cmdline'
+ out[label]=dict(pid=pid,alive=bool(pid and p.exists()),cmdline=p.read_bytes().replace(b'\0',b' ').decode() if pid and p.exists() else None)
+out['GPU_compute_processes']=subprocess.run(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader,nounits'],capture_output=True,text=True,check=True).stdout.strip()
+rec=r/'results/B_outer8_fixed_final_controller_20261015'
+if s.get('attention') and (rec/'ATTENTION_PRIVATE.json').exists():out['error']=json.loads((rec/'ATTENTION_PRIVATE.json').read_text())
+log=rec/'evaluator.log'
+if log.exists():out['evaluator_log_tail']=log.read_text(errors='replace').splitlines()[-3:]
+print(json.dumps(out))
+PY

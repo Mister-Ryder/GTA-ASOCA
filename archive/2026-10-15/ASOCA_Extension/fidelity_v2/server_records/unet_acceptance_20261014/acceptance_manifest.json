@@ -1,0 +1,84 @@
+{
+  "status": "actual_local_acceptance_complete",
+  "receipt_sha256": "d658be01a7b97cbfac44801180f96cae3e57657c14b131049767f9571ef0511b",
+  "collection_manifest_sha256": "c692649f969fb212c6ec9ec550da6f2887e06e2eb9ffc0cd608e90fa4156b6ff",
+  "verifier_sha256": "99c2b1795bf8b5aa634a08d6a205972a59e58d613a82528d6672165dd36f3b80",
+  "source_sha256": "bc8dd9dd5f56ea1b0cdf2cecd9adc7b305a54386f3ce2aa993d4fdc7f3d1f652",
+  "plotter_sha256": "103b564148acf3ac57056711035647ffb7727bb72b827f3e0e1aca04c1d85fdd",
+  "n_patients": 4,
+  "case_evaluations": 80,
+  "prediction_hash_geometry_checks": 80,
+  "pixel_metric_checks": 4,
+  "final_weights_bytes_checked": true,
+  "intermediate_checkpoint_weights_bytes_checked": false,
+  "checkpoint_selection": "fixed final",
+  "plot_observations": {
+    "training_epochs": 200,
+    "Dice": 20,
+    "ASSD": 20
+  },
+  "visual_review": "PNG2550x2720 viewed; titles/ticks/legends/20point panels readable; no clipping; classifier panel N/A for UNet",
+  "sources_unchanged_after_plot": true,
+  "artifacts": {
+    "actual_acceptance_summary.txt": {
+      "bytes": 2302,
+      "sha256": "b43fb0ccf3f1dde383d36cd09c98268670f26d8c33c94c5be8d76d2fe63685a9"
+    },
+    "all80_patient_points.csv": {
+      "bytes": 11850,
+      "sha256": "2659331f29dad2dc619ca2ebc4f9126c4305366f5888f19597a92e3cc7b762ff"
+    },
+    "fixed_final4_metrics.csv": {
+      "bytes": 855,
+      "sha256": "ebb2925e1e01d1c7376c966246b1e53d6a2ca04052ded7097d6d9125acd447b9"
+    },
+    "last5_cohort_points.csv": {
+      "bytes": 591,
+      "sha256": "16c974b4c962d3ff98fcc4585f29fc8fd459085f09e61697890028e7b0fdb174"
+    },
+    "last5_patient_points.csv": {
+      "bytes": 3035,
+      "sha256": "f0cda99c920380ee114bad58ca3da68a97197f91f59e3863fd78a338422af87c"
+    },
+    "late_curve_observation.json": {
+      "bytes": 3790,
+      "sha256": "ca8d501227cb9e32dca885f23611ee4b8a4d5d88dfe3455e247fb00c5528a3e9"
+    },
+    "plot_inputs/relocation_manifest.json": {
+      "bytes": 2426,
+      "sha256": "02ba52906a9e61031469968b25a2c0e93f91a66fa7310b946b62f2ed017d3504"
+    },
+    "plot_inputs/validation_history_localpaths.jsonl": {
+      "bytes": 71781,
+      "sha256": "dba501dc9e29dae7e88aefdca362eb478e3ff841fbd678d9ad743ff4e7142bed"
+    },
+    "plots/curve_manifest.json": {
+      "bytes": 10474,
+      "sha256": "c854fcf9df7fab527b853c5a35833560c7589bd19eaebaea0b131c993ec6df74"
+    },
+    "plots/curve_notes.txt": {
+      "bytes": 538,
+      "sha256": "4f38379d997750d571d03ea01efd8fef663cd0fabaef16a955b32607fc3d85d1"
+    },
+    "plots/epoch_summary.csv": {
+      "bytes": 943849,
+      "sha256": "7ec23e5dd7d04726b210973a9eac2fbe0327658f983dd0779d40f48dd3e719fc"
+    },
+    "plots/unet_learning_curves.png": {
+      "bytes": 499823,
+      "sha256": "9a9c8ae439c8ca393ed4bef4fdf8cffeb17dc01f7844703927c9901182abc660"
+    },
+    "plots/unet_learning_curves.svg": {
+      "bytes": 430286,
+      "sha256": "f5e0776ff5b13da96247347a655106c6a73bb4b54ce656117fb6c375b73730e4"
+    },
+    "SINGLE_RUN_VERIFIED.json": {
+      "bytes": 218501,
+      "sha256": "d658be01a7b97cbfac44801180f96cae3e57657c14b131049767f9571ef0511b"
+    },
+    "verification_notes.txt": {
+      "bytes": 694,
+      "sha256": "0898b4552fe9cd29c693bec0a3a3cdc68fe7e2b6ed8c8b969abf9ea1b4a9cfe0"
+    }
+  }
+}

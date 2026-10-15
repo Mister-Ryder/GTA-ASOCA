@@ -1,0 +1,43 @@
+Checkpoint and storage-restart state
+
+The independent classifier80x64 stage has completed. Its main-GTA initialization
+is results/classifier80x64/training/final.pt, the fixed epoch79 (80 completed epochs).
+Keep final.pt, latest.pt, CLASSIFIER_TRAINING_COMPLETE.json, config.json, history.jsonl,
+the unchanged classifier_stage/code and source_provenance.json. Preserve the exact
+cache/manifest and initialization checkpoint bytes across a storage restart.
+best_selection.pt and classification reports remain diagnostic references; they do
+not select the main initialization and classification accuracy is not a startup gate.
+
+The compatibility-named configs/verify_classifier_quality.py now checks readiness:
+complete80x64 budget, fixed-final checksum, frozen classifier source, manifest/patient
+isolation, checkpoint/config identity, complete finite-loss history and finite weights.
+It requires no manual approval record and imposes no classification-score threshold.
+Classification pretraining stabilizes the multitask recipe and supplies learned
+training-derived prior features serving segmentation. Dice and physical-mm ASSD
+judge the main task; clDice is auxiliary analysis.
+
+For a fresh main start after storage is ready, redeploy the updated configs and its
+main_source_freeze.json, retaining the exact frozen main code. Verify cache/raw and
+historical weights, then execute mechanical smoke3x2 in its separate directory,
+followed by formal GTA200x125 only after the mechanical run is valid. The smoke uses
+classifier_smoke128/training/final.pt; formal GTA uses classifier80x64/training/final.pt.
+Neither classifier BA selection nor the segmentation smoke selects a formal model.
+Default OUTPUT_ROOT is shared storage, keeping20 large snapshots off the local SSD.
+The old-server U-Net controller is independent and cannot launch GTA, external
+methods or a five-fold queue.
+
+If no main run has started, start without a resume flag. A later interrupted main
+run resumes only from that run's latest.pt, with its optimizer/scaler/RNG state:
+  GTA_RESUME=1 bash PROJECT/configs/run_gta200.sh
+All original scientific arguments,25000-update budget, logical paths, manifest and
+source identity must be unchanged. Do not use smoke weights as a formal resume or
+change epochs/steps in the same output directory. A different planned budget is a
+new, explicitly recorded run, with initialization/pretraining costs reported.
+
+For interrupted old-server U-Net calibration, use the saved17552 wrapper --resume.
+It retains the same controller protocol, kernel locks, scientific recipe and source.
+Valid completed stages are checked and reused; partial training requires latest.pt;
+failed or incompatible markers stop for inspection. The final stage is20 immutable
+checkpoint evaluations on the internal four only, with source-backed curve records
+and a validation_history SHA256 in the overall completion marker. It does not infer
+the previously exposed original eight or select an intermediate final checkpoint.

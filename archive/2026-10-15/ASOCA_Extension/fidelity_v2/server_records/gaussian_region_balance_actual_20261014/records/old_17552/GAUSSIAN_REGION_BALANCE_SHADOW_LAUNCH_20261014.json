@@ -1,0 +1,23 @@
+{
+  "time_utc": "2026-10-14T10:02:39.884361+00:00",
+  "parent_pid": 140178,
+  "argv": [
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/early_final_env311/bin/python",
+    "-B",
+    "-u",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops/shadow_gaussian_region_balance.py",
+    "--diagnose",
+    "--reference-bank",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/ops_inputs/gaussian_region_balance_shadow_20261014/fixed_sampling_bank.json",
+    "--output",
+    "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014",
+    "--device",
+    "cuda",
+    "--deadline",
+    "1800"
+  ],
+  "tool_sha256": "a8c1c6b9726aebf1fbeb7fff4a05d46b59bd4d02660d14eaf98028c4844e7137",
+  "log": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/GAUSSIAN_REGION_BALANCE_SHADOW_20261014.log",
+  "output": "/root/autodl-tmp/ASOCA_GTAirway_20261013/fidelity_v2/results/gaussian_region_balance_final200_shadow_20261014",
+  "role": "OFFLINE_DIAGNOSTIC_NOT_TRAINING"
+}

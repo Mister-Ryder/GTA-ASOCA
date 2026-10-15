@@ -1,0 +1,13 @@
+{
+  "scope": "Actual completed training28 label audit, no segmentation results",
+  "inputs": {
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\label_scale_audit_20261014\\summary.json": "ca3182d572649667eabc6651e5672470ff712cb844f8cc56003e76c3afe94705",
+    "E:\\01-\u6295\u7a3f\u5907\u4efd\\\u8f6c\u7a3f\u6295\u671f\u520a-elsevier\\\u8f6c\u6295\u51c6\u5907\u6750\u6599\\ASOCA_Extension\\fidelity_v2\\server_records\\label_scale_audit_20261014\\LABEL_SCALE_AUDIT_COMPLETE.json": "c8a481aa8759aa4ad829ce366a30ba41016bff9aaa30a57bcd3283d3b639c1bb"
+  },
+  "script_sha256": "da6348ab6eba02f4aeaccb1e582f087aa02edbb834b56318850c950daa900fbb",
+  "artifacts": {
+    "label_scale_audit.png": "6c33ebe69625a2d09f001dd6b2a3cfccd9d0de058330549a45ef3ee5234da5a7",
+    "label_scale_audit.svg": "0c4a53f99767f7d6b61af443291cc9abc4d6057fd1e096ab5a6154448e13731f",
+    "figure_values.csv": "1e8a7bcfe37cf00f18ce022d6b0eb3b929a57e183f74e5a86d13a6ddad0941b4"
+  }
+}

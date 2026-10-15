@@ -1,0 +1,20 @@
+set -eu
+/root/miniconda3/envs/gta-asoca311/bin/python -B - <<'PY'
+import datetime,json,subprocess
+from pathlib import Path
+r=Path('/root/autodl-tmp/GTA_ASOCA_Fidelity_20261014');t=r/'results/gta_enhanced200x125/internal4_trajectory'
+post=json.loads((r/'POSTFIT_STATUS.json').read_text());p=Path('/proc')/str(post['pid'])
+rows=[json.loads(x) for x in (t/'validation_history.jsonl').read_text().splitlines() if x]
+def read(name):
+    path=r/name
+    return json.loads(path.read_text()) if path.is_file() else None
+tc=read('results/gta_enhanced200x125/internal4_trajectory/TRAJECTORY_COMPLETE.json');vf=read('POSTFIT_VERIFIED.json')
+init=read('results/initial_gaussian_parameter_gradients_amp_20261014/CONTROLLER_STATUS.json')
+fixture=read('results/initial_gaussian_parameter_gradients_amp_20261014/cpu_fixture.json')
+def identity(pid):
+    proc=Path('/proc')/str(pid)
+    return {'pid':pid,'alive':proc.exists(),'cmdline':(proc/'cmdline').read_bytes().replace(b'\0',b' ').decode() if proc.exists() else None}
+result={'captured_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'postfit_status':post['status'],'postfit_pid':post['pid'],'postfit_process_alive':p.exists(),'postfit_cmdline':(p/'cmdline').read_bytes().replace(b'\0',b' ').decode() if p.exists() else None,'canonical_points_completed':len(rows),'latest_points':[{'name':x['name'],'n_cases':x['n_cases'],'dice':x['overall']['dice'],'assd_mm':x['overall']['assd_mm']} for x in rows[-4:]],'trajectory_complete':{k:tc.get(k) for k in ('n_evaluations','case_ids','training_config_sha256','source_sha256')} if tc else None,'postfit_verified':{k:vf.get(k) for k in ('status','verified_checkpoint_evaluations','verified_case_evaluations','trajectory_complete_sha256','curve_manifest_sha256')} if vf else None,'initial_parameter_diagnostic':init,'initial_parameter_parent':identity(init['controller_pid']) if init else identity(31589),'initial_parameter_child':identity(init['child_pid']) if init and init.get('child_pid') else None,'actual_candidate_torch_fixture':{k:fixture.get(k) for k in ('status','actual_candidate_torch_verified','actual_model_forward_executed')} if fixture else None,'GPU':subprocess.check_output(['nvidia-smi','--query-compute-apps=pid,used_memory','--format=csv,noheader'],text=True).strip()}
+path=r/('DUAL_SERVER_PROGRESS_'+datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%S_%fZ')+'.json')
+path.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
+PY
